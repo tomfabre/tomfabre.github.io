@@ -18,9 +18,10 @@ const SECTIONS = {
       h:{es:"01 · El reto", en:"01 · The challenge", fr:"01 · Le défi"},
       t:{es:"40 años de historia. Y mucho que conservar.", en:"40 years of history. A lot worth keeping.", fr:"40 ans d'histoire. Et beaucoup à préserver."},
       p:[{
-        es:"Contazara llevaba décadas innovando en tecnología para la medición del agua. Su identidad, sin embargo, necesitaba acompañar esa evolución.",
-        en:"Contazara had been innovating in water-measurement technology for decades. Its identity, though, needed to keep pace with that evolution.",
-        fr:"Depuis des décennies, Contazara innove dans les technologies de mesure de l'eau. Son identité, elle, devait accompagner cette évolution."
+        es:"Contazara llevaba décadas innovando en tecnología para la medición del agua. Su identidad, sin embargo, necesitaba acompañar esa evolución. Puedes ver el resultado en {web}.",
+        en:"Contazara had been innovating in water-measurement technology for decades. Its identity, though, needed to keep pace with that evolution. You can see the result on {web}.",
+        fr:"Depuis des décennies, Contazara innove dans les technologies de mesure de l'eau. Son identité, elle, devait accompagner cette évolution. Vous pouvez voir le résultat sur {web}.",
+        links:{ web:{ href:"https://www.contazara.es/", t:{es:"la web de Contazara", en:"Contazara's website", fr:"le site web de Contazara"} } }
       },{
         es:"Cambiar una marca tan presente en la historia de una empresa no era una decisión sencilla. Había dudas, recuerdos y mucho que respetar.",
         en:"Changing a brand so present in a company's history wasn't a simple decision. There were doubts, memories, and a lot to respect.",
