@@ -31,7 +31,8 @@ const NOJS = '<noscript><style>.reveal,.reveal-x,.hero{opacity:1!important;trans
       const empty = hs.filter(h => !h.textContent.trim() && !h.getAttribute("aria-label")).map(h => h.tagName + "." + h.className);
       const body = document.body.cloneNode(true);
       body.querySelectorAll("script,#toast,.win-confetti i,#hmHint-x").forEach(n => n.remove());
-      body.querySelectorAll(".in,.done").forEach(n => n.classList.remove("in", "done"));
+      body.querySelectorAll(".in,.done,.hot").forEach(n => n.classList.remove("in", "done", "hot"));
+      body.querySelectorAll("[data-wired],[data-alt]").forEach(n => { n.removeAttribute("data-wired"); n.removeAttribute("data-alt"); });
       body.querySelectorAll("main > .page[hidden]").forEach(p => { const t = document.createElement("template"); t.setAttribute("data-stash", ""); t.content.appendChild(p.cloneNode(true)); p.replaceWith(t); });
       return { html: body.innerHTML, h1, empty, active: (document.querySelector("main > .page:not([hidden])") || {}).dataset?.page, title: document.title, canon: (document.querySelector('link[rel=canonical]') || {}).href, hre: document.querySelectorAll('link[rel=alternate][hreflang]').length, lang: document.documentElement.lang, links: [...document.querySelectorAll("a[href]")].filter(a => !a.closest("template")).length };
     });
