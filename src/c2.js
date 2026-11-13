@@ -125,7 +125,7 @@ const sentence = x => { x = String(x).toLowerCase(); return x.charAt(0).toUpperC
 const oneLine = x => String(x).replace(/\n/g, " ");
 function renderHomeServices(){
   const t = L();
-  $("#svc").innerHTML = t.hs_items.map(([n, claim, body, scope, note, cta], i) => `<li><span class="num">0${i+1}</span><h3>${esc(n)}</h3><div><p class="tgl">${esc(claim)}</p><p>${esc(body)}</p>${note ? `<p class="svc-note">${esc(note)}</p>` : ""}<ul class="tagrow">${scope.replace(/\.$/, "").split(" · ").map(x => `<li>${esc(x)}</li>`).join("")}</ul><p class="svc-go"><a class="btn" href="#service-${SKEYS[i]}" data-ev="service_cta_click" data-place="home" data-service="${SKEYS[i]}"><span>${esc(cta)}</span><span class="arr" aria-hidden="true">→</span></a></p></div></li>`).join("");
+  $("#svc").innerHTML = t.hs_items.map(([n, claim, body, scope, note, cta], i) => `<li><span class="num">0${i+1}</span><h3>${esc(n)}</h3><div><p class="tgl">${esc(claim)}</p><p>${esc(body)}</p>${note ? `<p class="svc-note">${esc(note)}</p>` : ""}<ul class="tagrow">${scope.replace(/\.$/, "").split(" · ").map(x => `<li>${esc(x)}</li>`).join("")}</ul><p class="svc-go"><a class="btn cta" href="#service-${SKEYS[i]}" data-ev="service_cta_click" data-place="home" data-service="${SKEYS[i]}"><span>${esc(cta)}</span><span class="arr" aria-hidden="true">→</span></a></p></div></li>`).join("");
 }
 function renderFaq(sel, arr, acts){
   const el = $(sel); if (!el) return; const was = [...el.querySelectorAll("details")].map(d => d.open);
@@ -142,19 +142,19 @@ function projCard(k, tag){
 function renderServicesIndex(){
   const t = L(), sp = t.sp.idx; const el = $("#svIdx"); if (!el) return;
   el.innerHTML = `<section class="sv-hero">${crumbs([[t.n_home, "#home"], [t.n_services, null]])}<p class="sv-eb">${esc(sp.eb)}</p><h1 class="sv-h1">${esc(sp.h1)}</h1><p class="sv-intro">${esc(sp.intro)}</p></section>
-  <section aria-label="${esc(t.n_services)}"><ul class="svc-rows">${t.hs_items.map(([n, claim, body, scope, note, cta], i) => `<li><span class="num">0${i+1}</span><h2>${esc(n)}</h2><div><p class="tgl">${esc(claim)}</p><p>${esc(body)}</p>${note ? `<p class="svc-note">${esc(note)}</p>` : ""}<ul class="tagrow">${scope.replace(/\.$/, "").split(" · ").map(x => `<li>${esc(x)}</li>`).join("")}</ul><p class="svc-go"><a class="btn" href="#service-${SKEYS[i]}" data-ev="service_cta_click" data-place="services_index" data-service="${SKEYS[i]}"><span>${esc(cta)}</span><span class="arr" aria-hidden="true">→</span></a></p></div></li>`).join("")}</ul></section>
-  <section class="sv-team"><p class="sv-teamtx">${esc(sp.team)}</p><p><button class="btn solid" type="button" data-open-form data-ev="primary_cta_click" data-place="services_index"><span>${esc(sp.cta)}</span><span class="arr" aria-hidden="true">→</span></button></p></section>`;
+  <section aria-label="${esc(t.n_services)}"><ul class="svc-rows">${t.hs_items.map(([n, claim, body, scope, note, cta], i) => `<li><span class="num">0${i+1}</span><h2>${esc(n)}</h2><div><p class="tgl">${esc(claim)}</p><p>${esc(body)}</p>${note ? `<p class="svc-note">${esc(note)}</p>` : ""}<ul class="tagrow">${scope.replace(/\.$/, "").split(" · ").map(x => `<li>${esc(x)}</li>`).join("")}</ul><p class="svc-go"><a class="btn cta" href="#service-${SKEYS[i]}" data-ev="service_cta_click" data-place="services_index" data-service="${SKEYS[i]}"><span>${esc(cta)}</span><span class="arr" aria-hidden="true">→</span></a></p></div></li>`).join("")}</ul></section>
+  <section class="sv-team"><p class="sv-teamtx">${esc(sp.team)}</p><p><button class="btn cta solid" type="button" data-open-form data-ev="primary_cta_click" data-place="services_index"><span>${esc(sp.cta)}</span><span class="arr" aria-hidden="true">→</span></button></p></section>`;
 }
 function renderServicePage(key){
   const t = L(), sp = t.sp[key], idx = SKEYS.indexOf(key), el = $("#svPage"); if (!el || !sp) return;
   const related = PROJ.filter(p => (PSVC[p.key] || []).includes(key)).map(p => p.key);
   el.innerHTML = `<article class="sv">
   <header class="sv-hero">${crumbs([[t.n_home, "#home"], [t.n_services, "#services"], [t.hs_items[idx][0], null]])}<p class="sv-eb">${esc(sp.eb)}</p><h1 class="sv-h1">${esc(sp.h1)}</h1><p class="sv-intro">${esc(sp.intro)}</p>
-    <p class="sv-act"><button class="btn solid" type="button" data-open-form data-ev="service_cta_click" data-place="service_hero" data-service="${key}"><span>${esc(sp.cta_b)}</span><span class="arr" aria-hidden="true">→</span></button><a class="btn" href="#projects"><span>${esc(t.h_cta2)}</span><span class="arr" aria-hidden="true">→</span></a></p></header>
+    <p class="sv-act"><button class="btn cta solid" type="button" data-open-form data-ev="service_cta_click" data-place="service_hero" data-service="${key}"><span>${esc(sp.cta_b)}</span><span class="arr" aria-hidden="true">→</span></button><a class="btn cta" href="#projects"><span>${esc(t.h_cta2)}</span><span class="arr" aria-hidden="true">→</span></a></p></header>
   ${sp.blocks.map((b, i) => `<section class="sv-b"><span class="num" aria-hidden="true">0${i+1}</span><h2>${esc(b.h)}</h2><div>${b.t ? `<p>${esc(b.t)}</p>` : ""}${b.list ? `<ul class="sv-list">${b.list.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</div></section>`).join("")}
   ${related.length ? `<section class="sv-rel"><h2>${esc(sp.rel_h)}</h2><p>${esc(sp.rel_t)}</p><div class="pj-grid">${related.map(k => projCard(k, "h3")).join("")}</div></section>` : ""}
   <section class="sv-faq"><h2>${esc(sentence(t.hf_lab))}</h2><div class="faq" id="svFaq"></div></section>
-  <section class="sv-cta"><h2>${esc(sp.cta_h)}</h2><p><button class="btn solid" type="button" data-open-form data-ev="service_cta_click" data-place="service_footer" data-service="${key}"><span>${esc(sp.cta_b)}</span><span class="arr" aria-hidden="true">→</span></button></p></section>
+  <section class="sv-cta"><h2>${esc(sp.cta_h)}</h2><p><button class="btn cta solid" type="button" data-open-form data-ev="service_cta_click" data-place="service_footer" data-service="${key}"><span>${esc(sp.cta_b)}</span><span class="arr" aria-hidden="true">→</span></button></p></section>
   <nav class="sv-others" aria-label="${esc(t.n_services)}"><ul>${SKEYS.map((k, i) => k === key ? "" : `<li><a href="#service-${k}">${esc(t.hs_items[i][0])} <span aria-hidden="true">→</span></a></li>`).join("")}<li><a href="#services">${esc(t.sp_back)} <span aria-hidden="true">→</span></a></li></ul></nav></article>`;
   renderFaq("#svFaq", sp.faq);
 }
@@ -205,7 +205,7 @@ function renderProject(key){
     <dl class="pj-facts"><div><dt>${esc(t.role_l2 || "Role")}</dt><dd>${esc(d.role)}</dd></div><div><dt>${esc(t.ctx_l2 || "Context")}</dt><dd>${esc(p[2])}</dd></div><div><dt>${esc(t.serv_l2 || "Services")}</dt><dd>${esc(p[5])}</dd></div><div><dt>${esc(t.per_l2 || "Period")}</dt><dd>${esc(d.years)}</dd></div></dl>
     <div class="pj-body"><h2>${esc(t.did_h2 || "What I did")}</h2><div><p>${esc(p[4])}</p></div></div>
     <div class="pj-gal">${svgWrap(key,1)}${svgWrap(key,2)}${svgWrap(key,3)}</div>
-    <aside class="pj-more"><h2>${esc(t.pj_sim_h)}</h2><p><button class="btn solid" type="button" data-open-form data-ev="case_to_contact_click" data-place="project" data-project="${key}"><span>${esc(t.cta_talk)}</span><span class="arr" aria-hidden="true">→</span></button></p><ul>${(PSVC[key] || []).map(k => `<li><a href="#service-${k}">${esc(t.hs_items[SKEYS.indexOf(k)][0])} <span aria-hidden="true">→</span></a></li>`).join("")}</ul></aside>
+    <aside class="pj-more"><h2>${esc(t.pj_sim_h)}</h2><p><button class="btn cta solid" type="button" data-open-form data-ev="case_to_contact_click" data-place="project" data-project="${key}"><span>${esc(t.cta_talk)}</span><span class="arr" aria-hidden="true">→</span></button></p><ul>${(PSVC[key] || []).map(k => `<li><a href="#service-${k}">${esc(t.hs_items[SKEYS.indexOf(k)][0])} <span aria-hidden="true">→</span></a></li>`).join("")}</ul></aside>
     <a class="pj-next" href="#project-${PROJ[nx].key}"><span class="k"><span>${esc(t.next)}</span><span aria-hidden="true">→</span></span><b>${esc(t.projects[nx][0])}</b></a>`;
   document.title = p[0] + " · Tom Fabre";
 }
