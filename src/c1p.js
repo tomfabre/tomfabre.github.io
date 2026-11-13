@@ -1,7 +1,7 @@
 /* VERSION B · project list: 5 on home, all 12 on the Projects page */
 PROJ.length = 0;
 PROJ.push(
-  {key:"contazara", years:"2025 –",
+  {key:"contazara", years:"2025 – 2026",
     role:{es:"Dirección creativa · Branding · Estrategia digital", en:"Creative direction · Branding · Digital strategy", fr:"Direction créative · Branding · Stratégie digitale"}},
   {key:"carceral", role:"Product Designer", years:"Web", locked:{es:"En proceso", en:"In progress", fr:"En cours"}},   // locked: visible but not clickable (see projCard in c2.js); remove `locked` to publish
   {key:"a2pas", years:"2023 – 2024", role:{"es": "Product Designer · UX/UI · Branding", "en": "Product Designer · UX/UI · Branding", "fr": "Product Designer · UX/UI · Identité visuelle"}},
