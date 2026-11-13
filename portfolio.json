@@ -370,16 +370,87 @@
       },
       {
         "slug": "happylife",
-        "name": "Happylife",
-        "category": "UX/UI · App de salud mental",
-        "context": "Salud mental · App",
-        "summary": "Diseño de la experiencia de una app de salud mental: acompañar con calma, claridad y un tono humano.",
-        "description": "Dirigí el UX/UI de una app en fase MVP, coordinando al equipo de producto remoto y a las personas de negocio para que las decisiones de diseño llegaran a desarrollo sin ruido.",
-        "services": "UX/UI · Producto · Salud mental",
-        "tagline": "Hacer que cuidarse se sienta sencillo.",
+        "name": "HappyLife",
+        "category": "Product Design · UX/UI",
+        "context": "Startup francesa · App social",
+        "summary": "Una app para conectar personas a través de actividades reales, con menos clics, mejores filtros y recompensas por participar.",
+        "description": "Estudio UX/UI, investigación y análisis de necesidades, arquitectura de información y recorridos, diseño de interfaces, prototipado y puesta en marcha del MVP.",
+        "services": "UX Research · UX/UI · Prototipado · MVP",
+        "tagline": "Menos pantalla. Más vida real.",
         "role": "Lead Product Designer",
-        "period": "App",
-        "url": "https://tomfabre.com/proyectos/happylife/"
+        "period": "2023",
+        "url": "https://tomfabre.com/proyectos/happylife/",
+        "story": [
+          {
+            "id": "reto",
+            "heading": "Diseñar una app para que quieras dejar de usarla.",
+            "label": "01 · El reto",
+            "text": [
+              "Después de la pandemia, una startup francesa de Lyon llegó con una idea: ayudar a las personas a recuperar el contacto real.",
+              "La soledad no era algo nuevo. Ni tampoco esa costumbre de pasar horas mirando una pantalla mientras la vida sigue fuera de ella.",
+              "El desafío tenía algo de contradictorio. ¿Cómo diseñar una aplicación que acerque a las personas sin hacerlas más dependientes del móvil?",
+              "La respuesta no estaba en añadir funcionalidades, sino en eliminar todo lo que sobraba."
+            ]
+          },
+          {
+            "id": "experiencia",
+            "heading": "Menos buscar. Más encontrar.",
+            "label": "02 · La experiencia",
+            "text": [
+              "Queríamos evitar la típica experiencia de deslizar sin parar, recorrer cientos de opciones y terminar sin decidir nada.",
+              "HappyLife partía de algo mucho más sencillo: qué te gusta, cuándo tienes tiempo y qué te apetece compartir.",
+              "A partir de esos intereses y horarios, la app podía mostrar actividades relevantes sin obligarte a pasar por un catálogo interminable.",
+              "El trabajo estaba en hacer que esa selección sucediera detrás de la interfaz, para que la persona solo tuviera que ocuparse de lo importante.",
+              "Encontrar un buen plan debería ser fácil. Vivirlo, todavía más."
+            ]
+          },
+          {
+            "id": "gamificacion",
+            "heading": "Los puntos estaban fuera de la pantalla.",
+            "label": "03 · Gamificación con propósito",
+            "text": [
+              "HappyLife incorporaba un sistema de recompensas para motivar la participación.",
+              "Conocer personas, compartir actividades y participar en encuentros permitía acumular puntos que podían canjearse por bonos y nuevas experiencias.",
+              "La idea no era premiar el tiempo dentro de la app, sino lo que ocurría después de utilizarla.",
+              "Una pequeña diferencia que cambiaba toda la lógica del producto.",
+              "Menos recompensas por mirar. Más razones para participar."
+            ]
+          },
+          {
+            "id": "producto",
+            "heading": "Pocos clics. Más tiempo para las personas.",
+            "label": "04 · Diseño del producto",
+            "text": [
+              "El trabajo de UX/UI se centró en simplificar cada decisión.",
+              "Accesos rápidos, filtros útiles y recorridos cortos para descubrir una actividad, valorar si encajaba con tus intereses y encontrar un momento para participar.",
+              "En lugar de presentar todas las posibilidades, buscamos acercar a cada persona las opciones que tenían sentido para ella.",
+              "La complejidad debía resolverse dentro del producto, no trasladarse a quien lo utilizaba.",
+              "Desde el estudio UX/UI y los prototipos hasta la puesta en marcha del MVP, mantuvimos el mismo principio: facilitar que las personas llegaran antes a lo que buscaban.",
+              "No necesitábamos que las personas hicieran más cosas en la app. Necesitábamos que pudieran hacer más cosas fuera de ella."
+            ]
+          },
+          {
+            "id": "trabajo",
+            "heading": "Diseñar para lo que pasa después del clic.",
+            "label": "05 · Mi trabajo",
+            "text": [
+              "Trabajamos en la investigación, definición de experiencia, diseño UX/UI y prototipado de una aplicación cuyo objetivo era facilitar encuentros reales.",
+              "El proyecto avanzó hasta la puesta en marcha del MVP, trasladando las decisiones de diseño a una primera versión funcional del producto.",
+              "El desafío consistía en convertir una idea social en decisiones concretas: cómo filtrar, qué información mostrar, cuándo proponer una actividad y cómo motivar la participación sin crear dependencia ni fricción.",
+              "Una experiencia pensada para que la tecnología acompañara a las personas y supiera cuándo hacerse a un lado."
+            ]
+          },
+          {
+            "id": "cierre",
+            "heading": "La vida pasa fuera de la pantalla.",
+            "label": "Cierre",
+            "text": [
+              "HappyLife partía de una idea sencilla: siempre puede haber alguien cerca con ganas de compartir un momento.",
+              "El diseño debía ayudar a que esas personas se encontraran.",
+              "¿Tienes una idea que necesita una experiencia más humana? Hablemos."
+            ]
+          }
+        ]
       },
       {
         "slug": "binome",
@@ -656,16 +727,87 @@
       },
       {
         "slug": "happylife",
-        "name": "Happylife",
-        "category": "UX/UI · Mental health app",
-        "context": "Mental health · App",
-        "summary": "Designing the experience of a mental health app: support with calm, clarity and a human tone.",
-        "description": "I led the UX/UI of an MVP-stage app, coordinating the remote product team and business stakeholders so design decisions reached development without noise.",
-        "services": "UX/UI · Product · Mental health",
-        "tagline": "Making self-care feel simple.",
+        "name": "HappyLife",
+        "category": "Product Design · UX/UI",
+        "context": "French startup · Social app",
+        "summary": "An app bringing people together through real activities, with fewer taps, smarter filters and rewards for taking part.",
+        "description": "UX/UI study, research and needs analysis, information architecture and journeys, interface design, prototyping and MVP launch.",
+        "services": "UX Research · UX/UI · Prototyping · MVP",
+        "tagline": "Less screen time. More real life.",
         "role": "Lead Product Designer",
-        "period": "App",
-        "url": "https://tomfabre.com/en/projects/happylife/"
+        "period": "2023",
+        "url": "https://tomfabre.com/en/projects/happylife/",
+        "story": [
+          {
+            "id": "reto",
+            "heading": "Designing an app people would want to put down.",
+            "label": "01 · The challenge",
+            "text": [
+              "After the pandemic, a French startup from Lyon came to us with an idea: help people reconnect in real life.",
+              "Loneliness wasn't new. Neither was spending hours looking at a screen while life happened somewhere else.",
+              "The challenge came with a contradiction. How do you design an app that brings people closer without making them more dependent on their phones?",
+              "The answer wasn't adding more features. It was removing what got in the way."
+            ]
+          },
+          {
+            "id": "experiencia",
+            "heading": "Less searching. More finding.",
+            "label": "02 · The experience",
+            "text": [
+              "We wanted to avoid endless scrolling, hundreds of choices and the familiar feeling of closing an app without having decided anything.",
+              "HappyLife started with three simple things: what you enjoy, when you're free and what you'd like to share with others.",
+              "Based on interests and availability, the app could surface relevant activities without making people browse through an endless catalogue.",
+              "The complexity belonged behind the interface, leaving people free to focus on what mattered.",
+              "Finding a good plan should be easy. Enjoying it should be even easier."
+            ]
+          },
+          {
+            "id": "gamificacion",
+            "heading": "The rewards were waiting offline.",
+            "label": "03 · Gamification with purpose",
+            "text": [
+              "HappyLife included a rewards system designed to encourage real participation.",
+              "Meeting people, joining activities and sharing experiences could earn points, redeemable for vouchers and new experiences.",
+              "The goal wasn't to reward time spent using the app, but what happened after putting the phone away.",
+              "A small distinction that changed the logic of the product.",
+              "Less reward for scrolling. More reasons to show up."
+            ]
+          },
+          {
+            "id": "producto",
+            "heading": "Fewer taps. More time for people.",
+            "label": "04 · Product design",
+            "text": [
+              "Our UX/UI approach focused on making every decision simpler.",
+              "Quick access, useful filters and short journeys helped people discover activities that matched their interests and free time.",
+              "Instead of showing every possible option, we focused on making the relevant ones easier to find.",
+              "The product had to handle the complexity, not pass it on to the people using it.",
+              "From UX/UI research and prototypes through to bringing the MVP into operation, we kept the same principle: help people find what they needed with less effort.",
+              "We didn't need people to do more inside the app. We wanted them to do more outside it."
+            ]
+          },
+          {
+            "id": "trabajo",
+            "heading": "Designing for what happens after the tap.",
+            "label": "05 · My work",
+            "text": [
+              "We worked on research, experience definition, UX/UI design and prototyping for an app created to make real connections easier.",
+              "The project progressed to the MVP implementation stage, bringing design decisions into the first functional version of the product.",
+              "The challenge was to turn a social idea into practical product decisions: how to filter activities, what information to show, when to surface relevant opportunities and how to encourage participation without unnecessary friction or dependence.",
+              "An experience built around technology knowing when to step aside."
+            ]
+          },
+          {
+            "id": "cierre",
+            "heading": "Life happens beyond the screen.",
+            "label": "Closing",
+            "text": [
+              "HappyLife was built around a simple idea: there might always be someone nearby who'd love to share a moment.",
+              "Design could help those people find each other.",
+              "Have an idea that needs a more human experience? Let's talk."
+            ]
+          }
+        ]
       },
       {
         "slug": "binome",
@@ -942,16 +1084,87 @@
       },
       {
         "slug": "happylife",
-        "name": "Happylife",
-        "category": "UX/UI · App de santé mentale",
-        "context": "Santé mentale · App",
-        "summary": "Conception de l'expérience d'une app de santé mentale : accompagner avec calme, clarté et un ton humain.",
-        "description": "J'ai dirigé l'UX/UI d'une app en phase MVP, en coordonnant l'équipe produit à distance et le métier pour que les décisions arrivent au développement sans bruit.",
-        "services": "UX/UI · Produit · Santé mentale",
-        "tagline": "Rendre le soin de soi simple.",
+        "name": "HappyLife",
+        "category": "Design produit · UX/UI",
+        "context": "Startup française · Application sociale",
+        "summary": "Une appli pour rapprocher les gens autour d'activités réelles, avec moins de clics, des filtres pertinents et des récompenses pour participer.",
+        "description": "Étude UX/UI, recherche et analyse des besoins, architecture de l'information et parcours, design d'interfaces, prototypage et mise en œuvre du MVP.",
+        "services": "Recherche UX · UX/UI · Prototypage · MVP",
+        "tagline": "Moins d'écran. Plus de vraie vie.",
         "role": "Lead Product Designer",
-        "period": "App",
-        "url": "https://tomfabre.com/fr/projets/happylife/"
+        "period": "2023",
+        "url": "https://tomfabre.com/fr/projets/happylife/",
+        "story": [
+          {
+            "id": "reto",
+            "heading": "Concevoir une appli qu'on a envie de quitter.",
+            "label": "01 · Le défi",
+            "text": [
+              "Après la pandémie, une startup lyonnaise est venue avec une idée : aider les gens à retrouver le plaisir de se rencontrer dans la vraie vie.",
+              "La solitude n'avait pas attendu le Covid pour exister. Et cette habitude de passer des heures devant un écran non plus.",
+              "Le défi était presque paradoxal. Comment créer une application qui rapproche les personnes sans les rendre encore plus dépendantes de leur téléphone ?",
+              "La réponse n'était pas d'ajouter des fonctionnalités, mais d'enlever tout ce qui compliquait les choses."
+            ]
+          },
+          {
+            "id": "experiencia",
+            "heading": "Moins chercher. Plus trouver.",
+            "label": "02 · L'expérience",
+            "text": [
+              "Nous voulions éviter le scroll sans fin, les centaines de propositions et ce moment où l'on ferme une appli sans avoir rien décidé.",
+              "HappyLife partait de trois choses simples : ce qu'on aime, quand on est disponible et ce qu'on a envie de partager.",
+              "À partir des centres d'intérêt et des créneaux libres, l'application pouvait proposer des activités pertinentes sans obliger à parcourir un catalogue interminable.",
+              "La complexité devait rester en coulisses, pour que l'utilisateur puisse se concentrer sur l'essentiel.",
+              "Trouver une bonne sortie devrait être simple. En profiter, encore plus."
+            ]
+          },
+          {
+            "id": "gamificacion",
+            "heading": "Les récompenses étaient dans la vraie vie.",
+            "label": "03 · Une gamification qui a du sens",
+            "text": [
+              "HappyLife intégrait un système de points pour encourager la participation.",
+              "Rencontrer des personnes, prendre part à des activités et partager des moments permettait de gagner des points, échangeables contre des bons et de nouvelles expériences.",
+              "L'idée n'était pas de récompenser le temps passé dans l'application, mais ce qui se passait une fois le téléphone rangé.",
+              "Une nuance qui changeait toute la logique du produit.",
+              "Moins de récompenses pour scroller. Plus de raisons de sortir."
+            ]
+          },
+          {
+            "id": "producto",
+            "heading": "Quelques clics. Et place aux rencontres.",
+            "label": "04 · Le design produit",
+            "text": [
+              "Notre travail UX/UI visait à simplifier chaque décision.",
+              "Des accès rapides, des filtres utiles et des parcours courts pour découvrir des activités adaptées à ses envies et à ses disponibilités.",
+              "Plutôt que de multiplier les choix, nous voulions aider chacun à trouver ceux qui comptaient vraiment.",
+              "La complexité devait être gérée par le produit, pas par les personnes qui l'utilisaient.",
+              "De la recherche UX/UI aux prototypes, puis à la mise en œuvre du MVP, nous avons gardé le même principe : aider les gens à trouver ce dont ils avaient besoin avec le moins d'effort possible.",
+              "L'objectif n'était pas de faire passer plus de temps dans l'appli, mais d'en libérer pour les autres."
+            ]
+          },
+          {
+            "id": "trabajo",
+            "heading": "Penser à ce qui se passe après le clic.",
+            "label": "05 · Mon travail",
+            "text": [
+              "Nous avons travaillé sur la recherche, la définition de l'expérience, le design UX/UI et le prototypage d'une application destinée à faciliter les rencontres réelles.",
+              "Le projet est allé jusqu'à la mise en œuvre du MVP, en traduisant les choix de design dans une première version fonctionnelle.",
+              "Le défi consistait à transformer une idée sociale en choix concrets de produit : comment filtrer, quelles informations présenter, quand proposer une activité et comment encourager la participation sans créer de friction inutile ni de dépendance.",
+              "Une expérience pensée pour que la technologie sache aussi s'effacer."
+            ]
+          },
+          {
+            "id": "cierre",
+            "heading": "La vraie vie n'attend pas derrière un écran.",
+            "label": "Conclusion",
+            "text": [
+              "HappyLife reposait sur une idée simple : il y a peut-être quelqu'un tout près qui aimerait partager un moment.",
+              "Le design devait aider ces personnes à se trouver.",
+              "Vous avez une idée qui mérite une expérience plus humaine ? Parlons-en."
+            ]
+          }
+        ]
       },
       {
         "slug": "binome",
