@@ -1039,7 +1039,8 @@ footer .foot-grid{display:grid;grid-template-columns:1fr auto;gap:var(--s5) var(
   .bt-photo .bt-gal{flex:none;width:100%;aspect-ratio:1/1;min-height:0;max-height:none}
 }
 dialog .dx{position:sticky;top:0;float:right;margin:-.3rem -.3rem .6rem 1rem;z-index:2;background:var(--bg)}
-dialog .dx:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+dialog .dx{display:grid;place-items:center;padding:0;line-height:1;-webkit-appearance:none;appearance:none;box-sizing:border-box}
+dialog .dx:focus,dialog .dx:focus-visible{outline:none;border-color:var(--fg)}
 dialog#dlg:focus{outline:none}
 </style>
 <script>
