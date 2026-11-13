@@ -338,6 +338,8 @@ function wireForm(){
 
 /* ---------- copy email ---------- */
 function wireCopy(){
+  const cf = $("#copyFoot"); if (cf) cf.addEventListener("click", () => { const done = () => { const m = L().copied, o = L().copy; cf.textContent = m; $("#copiedFoot").textContent = m; setTimeout(() => { cf.textContent = L().copy; $("#copiedFoot").textContent = ""; }, 2200); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(EMAIL).then(done, done); else done(); });
   $("#copy").addEventListener("click", () => { const say = () => { $("#copied").textContent = L().copied; setTimeout(() => $("#copied").textContent = "", 2500); };
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(EMAIL).then(say, say); else say();
   });

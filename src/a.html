@@ -937,9 +937,9 @@ ol{list-style:none;margin:0;padding:0}
 
 /* ===== CTA = label pill + separate arrow pill (+ small accent flower); FAQ = rounded cards with chevron ===== */
 .faq{border:0}
-.faq-i{border:1px solid var(--line2);border-radius:1.1rem;margin-bottom:.8rem;padding:0 1.4rem;transition:border-color var(--fast) var(--ease)}
-.faq-i:hover,.faq-i[open]{border-color:var(--fg)}
-.faq-i summary{padding-block:1.15rem;font-size:clamp(1rem,.4vw + .92rem,1.2rem);font-weight:500;letter-spacing:-.005em}
+.faq-i{border:1px solid var(--line);border-radius:1.1rem;margin-bottom:.65rem;padding:0 1.4rem;transition:border-color var(--fast) var(--ease)}
+.faq-i:hover,.faq-i[open]{border-color:color-mix(in srgb,var(--fg) 38%,transparent)}
+.faq-i summary{padding-block:1rem;font-size:clamp(.95rem,.3vw + .88rem,1.08rem);font-weight:500;letter-spacing:-.005em}
 .faq-i .pm{width:.6rem;height:.6rem;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);margin-top:-.3rem;transition:transform var(--normal) var(--ease),margin var(--normal) var(--ease)}
 .faq-i .pm::before,.faq-i .pm::after{content:none}
 .faq-i[open] .pm{transform:rotate(-135deg);margin-top:.3rem}
@@ -1008,6 +1008,17 @@ footer .foot-grid{display:grid;grid-template-columns:1fr auto;gap:var(--s5) var(
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .blobs i{opacity:.12}}
 :root[data-theme="dark"] .blobs i{opacity:.12}
 @media (prefers-reduced-motion:reduce){.blobs i{animation:none}.blobs .bm{display:none}}
+
+.bigfoot-mailrow{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s5) var(--s6);margin-top:var(--s6)}
+.bigfoot-mailrow .bigfoot-mail{margin-top:0}
+.copy-btn{font:inherit;font-size:.74rem;letter-spacing:.02em;padding:.5rem .85rem;border:1px solid var(--fg);border-radius:.2rem;background:transparent;color:var(--fg);cursor:pointer;transition:background-color 200ms ease,color 200ms ease,transform 140ms ease}
+.copy-btn:active{transform:scale(.97)}
+@media (hover:hover){.copy-btn:hover{background:var(--fg);color:var(--bg)}}
+.copy-btn:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.foot-copy{text-align:center;justify-self:center}
+.foot-copy[data-w]::after{left:50%;text-align:center;max-width:min(22rem,86vw);transform:translate(-50%,4px)}
+.foot-copy[data-w]:hover::after,.foot-copy[data-w]:focus-visible::after{transform:translate(-50%,0)}
+@media (max-width:40rem){.foot-copy{text-align:center}}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}

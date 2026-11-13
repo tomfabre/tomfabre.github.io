@@ -25,7 +25,7 @@ es:{
   topics:["Una web nueva o rediseño","Marca o identidad","Diseño de producto o app","Una oferta de trabajo","Mi análisis UX/UI (premio del juego)","Otra cosa"],
   prize_msg:"He ganado el juego y quiero mi análisis UX/UI. Mi web es: ",
   w_avail:"Sí, de verdad. Y contesto yo.", w_port:"Sí, otro portfolio. Este, al menos, juega.", w_role:"Dos oficios, una misma obsesión: que se entienda.",
-  w_tag:"Binōme es «dupla» en francés. Somos dos, y se nota.", w_copy:"Hecho a mano, con café y mucho Figma.", w_portrait:"Prometo que en persona soy menos abstracto.",
+  w_tag:"Binōme es «dupla» en francés. Somos dos, y se nota.", w_copy:"Hecho a mano. Con algo de IA y demasiado café.", w_portrait:"Prometo que en persona soy menos abstracto.",
   egg_logo:"Vaya, un curioso. Me caes bien. Escríbeme →", away:"👀 ¿Te vas? Aún hay una flota por hundir"
 },
 en:{
@@ -53,7 +53,7 @@ en:{
   topics:["A new site or redesign","Brand or identity","Product or app design","A job opportunity","My UX/UI review (game prize)","Something else"],
   prize_msg:"I won the game and I'd like my UX/UI review. My website is: ",
   w_avail:"Yes, really. And I reply myself.", w_port:"Yes, another portfolio. This one, at least, plays.", w_role:"Two crafts, one obsession: making it make sense.",
-  w_tag:"Binōme means “pair” in French. There are two of us, and it shows.", w_copy:"Handmade, with coffee and a lot of Figma.", w_portrait:"I promise I'm less abstract in person.",
+  w_tag:"Binōme means “pair” in French. There are two of us, and it shows.", w_copy:"Handmade. With a bit of AI and way too much coffee.", w_portrait:"I promise I'm less abstract in person.",
   egg_logo:"Well, a curious one. I like you. Write to me →", away:"👀 Leaving? There's still a fleet to sink"
 },
 fr:{
@@ -81,7 +81,7 @@ fr:{
   topics:["Un nouveau site ou une refonte","Marque ou identité","Design produit ou app","Une offre d'emploi","Mon analyse UX/UI (cadeau du jeu)","Autre chose"],
   prize_msg:"J'ai gagné au jeu et je voudrais mon analyse UX/UI. Mon site : ",
   w_avail:"Oui, vraiment. Et je réponds moi-même.", w_port:"Oui, un portfolio de plus. Celui-ci, au moins, joue.", w_role:"Deux métiers, une obsession : que ça se comprenne.",
-  w_tag:"Binōme, c'est un duo. On est deux, et ça se voit.", w_copy:"Fait main, avec du café et beaucoup de Figma.", w_portrait:"Promis, en vrai je suis moins abstrait.",
+  w_tag:"Binōme, c'est un duo. On est deux, et ça se voit.", w_copy:"Fait main. Avec un peu d'IA et beaucoup trop de café.", w_portrait:"Promis, en vrai je suis moins abstrait.",
   egg_logo:"Tiens, un curieux. Vous me plaisez. Écrivez-moi →", away:"👀 Vous partez ? Il reste une flotte à couler"
 }};
 Object.keys(TY).forEach(k => Object.assign(T[k], TY[k]));
