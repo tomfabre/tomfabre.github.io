@@ -298,7 +298,8 @@ function openForm(opt){ const prize = opt === true, topic = opt && typeof opt ==
   if (prize){ const t = L(); $("#ft").selectedIndex = 4; if (!$("#fm").value.trim()) $("#fm").value = t.prize_msg; }
   else if (topic >= 0 && topic < $("#ft").options.length) $("#ft").selectedIndex = topic;
   if (!formStarted){ formStarted = true; track("contact_form_start", { page: route_.page }); }
-  if (dlg().showModal) dlg().showModal(); else dlg().setAttribute("open",""); }
+  if (dlg().showModal) dlg().showModal(); else dlg().setAttribute("open","");
+  if (matchMedia("(pointer:coarse)").matches){ dlg().tabIndex = -1; dlg().focus({ preventScroll:true }); }   /* touch: don't park a focus ring on the close button */ }
 let sending = false, formStarted = false;
 function wireForm(){
   document.addEventListener("click", e => { const b = e.target.closest && e.target.closest("[data-open-form]"); if (!b) return; e.preventDefault(); openForm(b.dataset.topic ? { topic:Number(b.dataset.topic) } : undefined); });
