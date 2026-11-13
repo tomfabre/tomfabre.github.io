@@ -1,6 +1,6 @@
 """Tests for validate_sections.py. Run: python3 -m unittest test_validate_sections -v   (from src/)"""
 import copy, unittest
-from validate_sections import validate, flatten
+from validate_sections import validate, flatten, validate_hero, check_no_dash
 
 L = lambda s: {"es": s, "en": s, "fr": s}
 GOOD = {"demo": [
@@ -94,6 +94,31 @@ class T(unittest.TestCase):
         e = errs(lambda s: s["demo"][0].update(p=[p])); self.assertTrue(any("links.a.t.fr" in x for x in e), e)
         p = {"es": "a {a}", "en": "a {a}", "fr": "a {a}", "links": {"a": {"href": "https://example.com/", "t": L("x"), "onclick": "x"}}}
         e = errs(lambda s: s["demo"][0].update(p=[p])); self.assertTrue(any("must be {href, t}" in x for x in e), e)
+
+    # --- image options (r / zoom / cap), hero override and the no-dash editorial rule ---
+    def _flow_img(self, **extra):
+        im = {"key": "demo", "v": "1", "alt": L("alt"), **extra}
+        return errs(lambda s: s["demo"][0].update(flow=[{"img": im}]), YESIMG)
+    def test_img_zoom_ratio_caption_ok(self): self.assertEqual(self._flow_img(r="1440/743", zoom=True, cap=L("pie")), [])
+    def test_img_bad_ratio(self): self.assertTrue(any(".r:" in x for x in self._flow_img(r="wide")))
+    def test_img_bad_zoom(self): self.assertTrue(any(".zoom" in x for x in self._flow_img(zoom="yes")))
+    def test_img_caption_needs_all_languages(self): self.assertTrue(any("cap.fr" in x for x in self._flow_img(cap={"es": "a", "en": "b"})))
+    def test_img_unknown_option(self): self.assertTrue(any("must be {key, v, alt" in x for x in self._flow_img(onclick="x")))
+    def test_hero_ok(self): self.assertEqual(validate_hero({"demo": {"tag": L("a"), "lead": L("b"), "alt": L("c")}}, KEYS), [])
+    def test_hero_missing_language(self):
+        h = {"demo": {"tag": L("a"), "lead": {"es": "b", "en": "b"}, "alt": L("c")}}
+        self.assertTrue(any("lead.fr" in x for x in validate_hero(h, KEYS)))
+    def test_hero_unknown_project(self): self.assertTrue(any("unknown project" in x for x in validate_hero({"zzz": {"tag": L("a"), "lead": L("b"), "alt": L("c")}}, KEYS)))
+    def test_no_dash_detects_en_and_em_dash(self):
+        s = copy.deepcopy(GOOD); s["demo"][0]["p"][0] = L("uno \u2014 dos")
+        self.assertTrue(check_no_dash(("demo",), s, {}, {}))
+        s["demo"][0]["p"][0] = L("uno \u2013 dos"); self.assertTrue(check_no_dash(("demo",), s, {}, {}))
+    def test_no_dash_ignores_hyphens_and_unlisted_projects(self):
+        s = copy.deepcopy(GOOD); s["demo"][0]["p"][0] = L("Aix-en-Provence")
+        self.assertEqual(check_no_dash(("demo",), s, {}, {}), [])
+        s["demo"][0]["p"][0] = L("a \u2014 b"); self.assertEqual(check_no_dash(("otro",), s, {}, {}), [])
+    def test_no_dash_checks_card_rows(self):
+        self.assertTrue(check_no_dash(("demo",), {}, {}, {"es": {"demo": ["N", "a \u2013 b"]}}))
 
 
 if __name__ == "__main__": unittest.main()

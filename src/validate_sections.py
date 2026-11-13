@@ -75,9 +75,13 @@ def _paras(v, path, errs, required):
 
 
 def _img(im, path, errs, img_exists):
-    if not isinstance(im, dict) or set(im) != {"key", "v", "alt"}:
-        errs.append(f"{path}: must be {{key, v, alt}}"); return
+    """Image {key, v, alt}; optional: r ("1440/743", exact aspect ratio, no cropping), zoom (true: opens the original in a new tab), cap (localized caption)."""
+    if not isinstance(im, dict) or not {"key", "v", "alt"} <= set(im) or set(im) - {"key", "v", "alt", "r", "zoom", "cap"}:
+        errs.append(f"{path}: must be {{key, v, alt[, r, zoom, cap]}}"); return
     _loc(im["alt"], f"{path}.alt", errs)
+    if "r" in im and not re.match(r"^\d{1,5}/\d{1,5}$", str(im["r"])): errs.append(f"{path}.r: must look like '1440/743'")
+    if "zoom" in im and not isinstance(im["zoom"], bool): errs.append(f"{path}.zoom: must be true/false")
+    if "cap" in im: _loc(im["cap"], f"{path}.cap", errs)
     if not img_exists(str(im["key"]), str(im["v"])):
         errs.append(f"{path}: file img/{im['key']}-{im['v']}.webp does not exist")
 
@@ -180,3 +184,40 @@ def flatten(secs, lg):
             paras.insert(len(s.get("p", [])), " · ".join(f"{it['n'][lg]} {it['l'][lg]}" for it in s["items"]))
         out.append({"id": s["id"], "heading": s["t"][lg] if "t" in s else s["h"][lg], "label": s["h"][lg], "text": paras})
     return out
+
+
+DASH_RE = re.compile("[\u2013\u2014]")
+
+
+def _strings(o, path=""):
+    if isinstance(o, str): yield path, o
+    elif isinstance(o, dict):
+        for k, x in o.items():
+            if k != "href": yield from _strings(x, f"{path}.{k}")
+    elif isinstance(o, list):
+        for i, x in enumerate(o): yield from _strings(x, f"{path}[{i}]")
+
+
+def validate_hero(hero, project_keys):
+    """HERO[projectKey] = {tag, lead, alt}, all localized. Returns a list of errors."""
+    errs = []
+    if not isinstance(hero, dict): return ["HERO must be an object {projectKey: {tag, lead, alt}}"]
+    for pk, h in hero.items():
+        if pk not in project_keys: errs.append(f"HERO['{pk}']: unknown project key"); continue
+        if not isinstance(h, dict) or set(h) != {"tag", "lead", "alt"}: errs.append(f"HERO['{pk}']: must be {{tag, lead, alt}}"); continue
+        for f in ("tag", "lead", "alt"): _loc(h[f], f"HERO['{pk}'].{f}", errs)
+    return errs
+
+
+def check_no_dash(projects, sections, hero, rows, role_years_exempt=True):
+    """Editorial rule: no en/em dashes in the visible text of these projects (periods like '2023 – 2024' are exempt).
+    projects: keys to check; rows: {lang: {projectKey: [name, category, context, summary, description, services, tagline]}}."""
+    errs = []
+    for pk in projects:
+        for src, name in ((sections.get(pk), "sections"), (hero.get(pk), "hero")):
+            for p, s in _strings(src, f"{pk}.{name}"):
+                if DASH_RE.search(s): errs.append(f"{p}: contains an en/em dash (editorial rule): {s[:60]!r}")
+        for lg, byk in rows.items():
+            for i, s in enumerate(byk.get(pk, [])):
+                if DASH_RE.search(s): errs.append(f"{pk}.row.{lg}[{i}]: contains an en/em dash (editorial rule): {s[:60]!r}")
+    return errs

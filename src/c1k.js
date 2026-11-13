@@ -140,7 +140,357 @@ const SECTIONS = {
         en:"Is your brand ready for its next chapter? Let's talk.",
         fr:"Votre marque est-elle prête pour sa prochaine étape ? Parlons-en."
       }] }
+  ],
+  a2pas: [
+   {
+    "type": "text",
+    "id": "reto",
+    "h": {
+     "es": "01 · El reto",
+     "en": "01 · The challenge",
+     "fr": "01 · Le défi"
+    },
+    "t": {
+     "es": "Muchos protagonistas. Una misma experiencia.",
+     "en": "Different people. One connected experience.",
+     "fr": "Plusieurs acteurs. Une seule expérience."
+    },
+    "p": [
+     {
+      "es": "¿Cómo conectas a alguien que quiere ver un concierto, un artista que busca nuevos escenarios y un teatro con fechas disponibles?",
+      "en": "How do you connect someone who wants to see a concert, an artist looking for new audiences and a venue with available dates?",
+      "fr": "Comment faire se rencontrer quelqu'un qui rêve d'assister à un concert, un artiste qui cherche de nouvelles scènes et une salle avec des dates disponibles ?"
+     },
+     {
+      "es": "Ese era uno de los grandes retos de A2PAS: diseñar una plataforma para dos grandes ecosistemas de usuarios, cada uno con sus propias necesidades.",
+      "en": "That was one of the main challenges behind A2PAS: designing a platform for two very different user ecosystems.",
+      "fr": "C'était l'un des grands défis d'A2PAS : concevoir une plateforme réunissant deux grands univers d'utilisateurs aux besoins très différents."
+     },
+     {
+      "es": "Por un lado, espectadores que querían descubrir, proponer, apoyar y comprar entradas. Por otro, artistas, productores y espacios culturales que necesitaban gestionar oportunidades, disponibilidad y eventos desde paneles con funciones y permisos específicos.",
+      "en": "On one side, audiences discovering, suggesting, supporting and booking shows. On the other, artists, producers and venues managing opportunities, availability and events through dedicated dashboards, each with its own features and permissions.",
+      "fr": "D'un côté, les spectateurs qui découvrent, proposent, soutiennent et réservent des spectacles. De l'autre, les artistes, producteurs et lieux culturels qui gèrent les opportunités, les disponibilités et les événements depuis des espaces dédiés, avec des fonctionnalités et des droits adaptés à leur profil."
+     },
+     {
+      "em": true,
+      "es": "Diferentes necesidades. Una experiencia que debía tener sentido para todos.",
+      "en": "Different needs. One experience that had to work for everyone.",
+      "fr": "Des besoins différents. Une expérience qui devait fonctionner pour tous."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "concepto",
+    "h": {
+     "es": "02 · El concepto",
+     "en": "02 · The concept",
+     "fr": "02 · Le concept"
+    },
+    "t": {
+     "es": "De querer verlo a hacerlo posible.",
+     "en": "From wanting to see it to making it happen.",
+     "fr": "De l'envie d'y aller à la possibilité de le faire."
+    },
+    "p": [
+     {
+      "es": "Imagina que vives en Aix-en-Provence y descubres un grupo emergente que actúa en París.",
+      "en": "Imagine living in Aix-en-Provence and discovering an emerging band playing in Paris.",
+      "fr": "Imaginez que vous habitez à Aix-en-Provence et que vous découvrez un groupe émergent qui se produit à Paris."
+     },
+     {
+      "es": "Te gustaría verlo cerca de casa, pero quizá nunca llegue a tu ciudad.",
+      "en": "You'd love to see them closer to home, but they might never make it to your city.",
+      "fr": "Vous aimeriez le voir près de chez vous, mais il ne passera peut-être jamais dans votre ville."
+     },
+     {
+      "es": "Con A2PAS podías buscar un espacio disponible, elegir una fecha y proponer el espectáculo. Otras personas de Aix y alrededores podían apoyar la iniciativa con sus votos.",
+      "en": "With A2PAS, you could find an available venue, choose a date and propose a show. Other people in Aix and nearby towns could vote to support the idea.",
+      "fr": "Avec A2PAS, vous pouviez chercher une salle disponible, choisir une date et proposer d'y faire venir le groupe. Les habitants d'Aix et des environs pouvaient ensuite soutenir cette proposition en votant."
+     },
+     {
+      "es": "Cuando el interés alcanzaba el umbral establecido, entre el 75 % y el 80 % de la capacidad del espacio, el evento se activaba automáticamente y comenzaba la venta de entradas.",
+      "en": "Once the proposal reached the required level of interest, between 75% and 80% of the venue's capacity, the event was automatically activated and ticket sales could begin.",
+      "fr": "Lorsque le niveau d'intérêt atteignait le seuil prévu, entre 75 % et 80 % de la capacité du lieu, l'événement était automatiquement activé et la billetterie pouvait ouvrir."
+     },
+     {
+      "es": "Quienes habían apoyado la propuesta desde el principio podían acceder a descuentos como recompensa por participar.",
+      "en": "Early supporters could benefit from discounted tickets as a reward for getting involved.",
+      "fr": "Les premiers participants pouvaient bénéficier de tarifs préférentiels pour avoir contribué au lancement du projet."
+     },
+     {
+      "em": true,
+      "es": "Una idea compartida podía convertirse en una fecha en el calendario.",
+      "en": "A shared idea could become an actual date on the calendar.",
+      "fr": "Une envie partagée pouvait devenir une vraie date de spectacle."
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "producto",
+    "h": {
+     "es": "03 · Diseño del producto",
+     "en": "03 · Product design",
+     "fr": "03 · Le design produit"
+    },
+    "t": {
+     "es": "Complejo por dentro. Sencillo por fuera.",
+     "en": "Complex behind the scenes. Simple on the surface.",
+     "fr": "Complexe en coulisses. Simple côté utilisateur."
+    },
+    "p": [
+     {
+      "es": "Mi trabajo abarcó todo el proceso: investigación, entrevistas, definición de personas, user journeys, arquitectura de información, wireframes, UX/UI, prototipos, identidad visual, desarrollo y pruebas.",
+      "en": "My work covered the full process: research, interviews, user personas, journeys, information architecture, wireframes, UX/UI, prototypes, visual identity, development and testing.",
+      "fr": "J'ai travaillé sur l'ensemble du processus : recherche, entretiens, personas, parcours utilisateurs, architecture de l'information, wireframes, UX/UI, prototypes, identité visuelle, développement et tests."
+     },
+     {
+      "es": "El mayor desafío fue conectar recorridos muy diferentes dentro de un mismo producto.",
+      "en": "The biggest challenge was bringing very different user journeys together within one product.",
+      "fr": "Le plus grand défi consistait à faire cohabiter des parcours très différents au sein d'un même produit."
+     },
+     {
+      "es": "Diseñé la experiencia del público, desde la búsqueda y los filtros hasta las fichas de eventos, la identificación, el pago y la confirmación de compra.",
+      "en": "I designed the audience experience, from searching and filtering to event pages, sign-in, checkout and purchase confirmation.",
+      "fr": "J'ai conçu l'expérience des spectateurs, de la recherche et des filtres jusqu'aux fiches événements, à l'identification, au paiement et à la confirmation d'achat."
+     }
+    ],
+    "flow": [
+     {
+      "img": {
+       "key": "a2pas",
+       "v": "4",
+       "alt": {
+        "es": "Diagrama de navegación del público en À2pas: búsqueda, filtros por categoría, fichas de evento, artistas y espacios, identificación, pago y factura de compra. Las etiquetas están en francés.",
+        "en": "Navigation diagram of the À2pas audience experience: search, category filters, event pages, artists and venues, sign-in, checkout and purchase invoice. Labels are in French.",
+        "fr": "Diagramme de navigation du public sur À2pas : recherche, filtres par catégorie, fiches événements, artistes et lieux, identification, paiement et facture d'achat."
+       },
+       "r": "1440/743",
+       "zoom": true,
+       "cap": {
+        "es": "Recorrido del público: búsqueda, filtros, fichas de evento, identificación, pago y confirmación. Toca la imagen para ampliarla. Etiquetas en francés.",
+        "en": "The audience journey: search, filters, event pages, sign-in, checkout and confirmation. Tap the image to enlarge it. Labels are in French.",
+        "fr": "Le parcours du public : recherche, filtres, fiches événements, identification, paiement et confirmation. Touchez l'image pour l'agrandir."
+       }
+      }
+     },
+     {
+      "p": [
+       {
+        "es": "En paralelo, los perfiles profesionales necesitaban gestionar su actividad desde espacios diferenciados, con funcionalidades y permisos adaptados a su papel.",
+        "en": "At the same time, professional users needed dedicated spaces to manage their activities, with features and permissions tailored to their roles.",
+        "fr": "En parallèle, les professionnels disposaient d'espaces dédiés pour gérer leur activité, avec des fonctionnalités et des droits adaptés à leurs rôles."
+       }
+      ]
+     },
+     {
+      "img": {
+       "key": "a2pas",
+       "v": "5",
+       "alt": {
+        "es": "Diagrama de los espacios profesionales de À2pas: filtros y fichas de artistas y lugares, identificación, formulario, panel de control, calendario, nuevo evento y perfiles de usuario, artista y sala. Las etiquetas están en francés.",
+        "en": "Diagram of the À2pas professional spaces: artist and venue filters and pages, sign-in, form, dashboard, calendar, new event and user, artist and venue profiles. Labels are in French.",
+        "fr": "Diagramme des espaces professionnels d'À2pas : filtres et fiches artistes et lieux, identification, formulaire, tableau de bord, calendrier, nouvel événement et profils utilisateur, artiste et salle."
+       },
+       "r": "1440/750",
+       "zoom": true,
+       "cap": {
+        "es": "Recorridos de artistas y espacios: fichas, identificación, formulario, panel de control, calendario, nuevo evento y perfiles por tipo de usuario. Toca la imagen para ampliarla. Etiquetas en francés.",
+        "en": "Artist and venue journeys: pages, sign-in, form, dashboard, calendar, new event and a profile for each type of user. Tap the image to enlarge it. Labels are in French.",
+        "fr": "Les parcours des artistes et des lieux : fiches, identification, formulaire, tableau de bord, calendrier, nouvel événement et un profil par type d'utilisateur. Touchez l'image pour l'agrandir."
+       }
+      }
+     },
+     {
+      "p": [
+       {
+        "es": "El objetivo era que cada persona entendiera qué podía hacer, qué ocurría después y cómo su participación contribuía a que la cultura llegara más lejos.",
+        "en": "The aim was to help everyone understand what they could do, what would happen next and how their participation could help bring culture closer.",
+        "fr": "L'objectif : permettre à chacun de comprendre ce qu'il pouvait faire, ce qui allait se passer ensuite et comment sa participation pouvait faire avancer un projet culturel."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "participacion",
+    "h": {
+     "es": "04 · La experiencia participativa",
+     "en": "04 · The participatory experience",
+     "fr": "04 · L'expérience participative"
+    },
+    "t": {
+     "es": "Primero la comunidad. Después el escenario.",
+     "en": "Community first. Stage second.",
+     "fr": "D'abord le public. Ensuite la scène."
+    },
+    "p": [
+     {
+      "es": "A2PAS proponía cambiar la manera habitual de programar espectáculos.",
+      "en": "A2PAS challenged part of the traditional approach to cultural programming.",
+      "fr": "A2PAS proposait une autre manière de penser la programmation culturelle."
+     },
+     {
+      "es": "En lugar de depender únicamente de una programación decidida de antemano, permitía identificar el interés de una comunidad antes de activar un evento.",
+      "en": "Instead of relying only on events planned in advance, it made it possible to measure local interest before activating a performance.",
+      "fr": "Plutôt que de s'appuyer uniquement sur des spectacles programmés à l'avance, la plateforme permettait de mesurer l'intérêt local avant de déclencher un événement."
+     },
+     {
+      "es": "Los espectadores participaban en la programación, los artistas emergentes encontraban nuevas oportunidades y los espacios podían aprovechar fechas que de otro modo quedarían libres.",
+      "en": "Audiences could help shape the programme, emerging artists could find new opportunities and venues could make better use of available dates.",
+      "fr": "Le public participait à la programmation, les artistes émergents découvraient de nouvelles opportunités et les lieux pouvaient mieux valoriser leurs dates disponibles."
+     }
+    ],
+    "flow": [
+     {
+      "img": {
+       "key": "a2pas",
+       "v": "1",
+       "alt": {
+        "es": "Componentes de interfaz de À2pas: perfil de artista, fichas de evento, botones y barras de progreso",
+        "en": "À2pas interface components: artist profile, event cards, buttons and progress bars",
+        "fr": "Composants d'interface d'À2pas : profil d'artiste, fiches événements, boutons et barres de progression"
+       }
+      }
+     },
+     {
+      "p": [
+       {
+        "es": "Diseñamos y probamos estos recorridos para que descubrir, proponer, votar y comprar formaran parte de una experiencia conectada.",
+        "en": "We designed and tested the journeys to make discovering, proposing, voting and buying tickets feel like parts of one connected experience.",
+        "fr": "Nous avons conçu et testé ces parcours pour relier naturellement découverte, proposition, vote et achat de billets."
+       },
+       {
+        "es": "La plataforma llegó a lanzarse y utilizarse.",
+        "en": "The platform was launched and used.",
+        "fr": "La plateforme a été lancée et utilisée."
+       },
+       {
+        "em": true,
+        "es": "Más que vender entradas, se trataba de crear oportunidades para que la cultura sucediera.",
+        "en": "It wasn't just about selling tickets. It was about creating more opportunities for culture to happen.",
+        "fr": "Il ne s'agissait pas seulement de vendre des billets. Mais de créer de nouvelles occasions de faire vivre la culture."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "trabajo",
+    "h": {
+     "es": "05 · Mi trabajo",
+     "en": "05 · My role",
+     "fr": "05 · Mon rôle"
+    },
+    "t": {
+     "es": "Diseñar conexiones, no solo pantallas.",
+     "en": "Designing connections, not just screens.",
+     "fr": "Créer des liens, pas seulement des écrans."
+    },
+    "p": [
+     {
+      "es": "Participé en todo el ciclo del producto, desde comprender a los usuarios y ordenar sus necesidades hasta diseñar, desarrollar y probar la experiencia.",
+      "en": "I worked across the entire product lifecycle, from understanding users and organising their needs to designing, developing and testing the experience.",
+      "fr": "J'ai participé à tout le cycle du produit, de la compréhension des utilisateurs et de leurs besoins jusqu'au design, au développement et aux tests."
+     },
+     {
+      "es": "El branding debía transmitir la misma idea que la plataforma: cercanía, participación y cultura compartida.",
+      "en": "The brand identity needed to reflect the same values as the platform: accessibility, participation and shared culture.",
+      "fr": "L'identité visuelle devait porter les mêmes valeurs que la plateforme : proximité, participation et culture partagée."
+     }
+    ],
+    "flow": [
+     {
+      "pair": [
+       {
+        "key": "a2pas",
+        "v": "2",
+        "alt": {
+         "es": "Bolsa de tela con el logotipo de À2pas y el lema «Agir à deux pas d'ici»",
+         "en": "Tote bag with the À2pas logo and the line “Agir à deux pas d'ici”",
+         "fr": "Tote bag avec le logo d'À2pas et la phrase « Agir à deux pas d'ici »"
+        }
+       },
+       {
+        "key": "a2pas",
+        "v": "3",
+        "alt": {
+         "es": "Sistema de diseño de À2pas: tipografía, botones, tarjetas, perfiles y uso del logotipo",
+         "en": "À2pas design system: typography, buttons, cards, profiles and logo usage",
+         "fr": "Système de design d'À2pas : typographie, boutons, cartes, profils et usages du logo"
+        }
+       }
+      ]
+     },
+     {
+      "p": [
+       {
+        "es": "Y el diseño digital tenía que hacerla funcionar para públicos muy distintos, sin que la complejidad del sistema terminara siendo una complicación para las personas.",
+        "en": "And the digital experience had to make it work for very different audiences, without passing the system's complexity on to the people using it.",
+        "fr": "Et l'expérience digitale devait rendre tout cela accessible à des publics très différents, sans leur faire subir la complexité du système."
+       },
+       {
+        "em": true,
+        "es": "Dos grandes ecosistemas. Muchos recorridos. Una misma idea: acercar la cultura.",
+        "en": "Two user ecosystems. Many journeys. One idea: bringing culture closer.",
+        "fr": "Deux grands univers. De nombreux parcours. Une même idée : rapprocher la culture."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "text",
+    "id": "cierre",
+    "h": {
+     "es": "Cierre",
+     "en": "Closing",
+     "fr": "Conclusion"
+    },
+    "t": {
+     "es": "La cultura empieza mucho antes de subir al escenario.",
+     "en": "Culture starts long before the curtain rises.",
+     "fr": "La culture commence bien avant le lever de rideau."
+    },
+    "p": [
+     {
+      "es": "Empieza cuando alguien descubre un artista, propone una idea y encuentra a otras personas que quieren hacerla realidad.",
+      "en": "It starts when someone discovers an artist, shares an idea and finds others who want to make it happen.",
+      "fr": "Elle commence quand quelqu'un découvre un artiste, propose une idée et rencontre d'autres personnes qui ont envie de la concrétiser."
+     },
+     {
+      "em": true,
+      "es": "¿Tienes un producto complejo que necesita una experiencia sencilla? Hablemos.",
+      "en": "Have a complex product that needs a simpler experience? Let's talk.",
+      "fr": "Vous avez un produit complexe à rendre plus simple ? Parlons-en."
+     }
+    ]
+   }
   ]
+};
+
+/* Optional hero override per project: tag (headline under the name), lead (intro) and alt of the cover image. The index card keeps using the project's own tagline/summary. */
+const HERO = {
+ "a2pas": {
+  "tag": {
+   "es": "¿Y si el próximo espectáculo lo eligiera el público?",
+   "en": "What if audiences could choose the next show?",
+   "fr": "Et si le public choisissait le prochain spectacle ?"
+  },
+  "lead": {
+   "es": "Una plataforma participativa que conecta artistas, espacios y espectadores para llevar la cultura allí donde las personas quieren vivirla.",
+   "en": "A participatory platform connecting artists, venues and audiences to bring live culture closer to the people who want to experience it.",
+   "fr": "Une plateforme participative qui rapproche artistes, lieux et spectateurs pour faire vivre la culture là où les gens ont envie de la retrouver."
+  },
+  "alt": {
+   "es": "Portada del proyecto À2pas: logotipo, interfaz de la plataforma y diagrama de navegación",
+   "en": "À2pas project cover: logo, platform interface and navigation diagram",
+   "fr": "Couverture du projet À2pas : logo, interface de la plateforme et diagramme de navigation"
+  }
+ }
 };
 
 /* Per-project SEO (override the generic "name · Tom Fabre · category" pattern). Read by build.py and c3.js.
@@ -159,3 +509,8 @@ SEO.fr.proj = { contazara: {
   t:"Contazara : Branding, Identité Visuelle & Web | Tom Fabre",
   d:"Une nouvelle identité, un site web et une communication digitale pour Contazara. Découvrez comment nous avons fait évoluer 40 ans d'histoire.",
   og:{ src:"contazara-cover", alt:"Couverture du cas Contazara : logotype et design du nouveau site web de la marque" } } };
+
+/* A2PAS: own title/description per language; the social image is its cover (automatic, see build.py og_for). */
+SEO.es.proj.a2pas = {"t": "À2pas: Diseño UX/UI y producto digital | Tom Fabre", "d": "Diseño de producto, UX/UI y branding para A2PAS, una plataforma que conecta artistas, salas y espectadores mediante programación cultural participativa."};
+SEO.en.proj.a2pas = {"t": "À2pas: UX/UI & Product Design | Tom Fabre", "d": "Product design, UX/UI and branding for A2PAS, a platform connecting artists, venues and audiences through participatory cultural programming."};
+SEO.fr.proj.a2pas = {"t": "À2pas : UX/UI & Design Produit | Tom Fabre", "d": "Design produit, UX/UI et identité visuelle pour A2PAS, une plateforme qui rapproche artistes, salles et publics grâce à une programmation participative."};

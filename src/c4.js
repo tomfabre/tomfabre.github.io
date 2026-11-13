@@ -168,7 +168,7 @@ function yProjects(id){
   const m = /^work_(ux|web|brand|all)_results$/.exec(id); if (!m) return null;
   const t = L(), box = yEl("div", "y-pjs"); box.setAttribute("role", "group"); box.setAttribute("aria-label", yT("y_projects"));
   YCAT[m[1]].forEach(k => {
-    const i = PROJ.findIndex(p => p.key === k); if (i < 0) return;
+    const i = PROJ.findIndex(p => p.key === k); if (i < 0 || PROJ[i].locked) return;   // locked projects are not offered as links
     const a = yEl("a", "y-pj"); a.href = "#project-" + k;
     const art = yEl("span", "art"); art.innerHTML = svgOf(k, 0); art.setAttribute("aria-hidden", "true");
     const tx = yEl("span", "tx"); tx.append(yEl("b", "", t.projects[i][0]), yEl("i", "", t.projects[i][1]));

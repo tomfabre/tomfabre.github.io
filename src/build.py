@@ -7,14 +7,19 @@ DOMAIN = re.sub(r"^https?://", "", SITE)
 HERE = os.path.dirname(os.path.abspath(__file__)); os.chdir(HERE)
 JS = ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1t.js","c1l.js","c1k.js"]
 # 1) data from JS (T, PROJ, SEO)
-js = "\n".join(open(f).read() for f in JS) + "\n;globalThis.__out={T,PROJ,SEO,SECTIONS};"
+js = "\n".join(open(f).read() for f in JS) + "\n;globalThis.__out={T,PROJ,SEO,SECTIONS,HERO};"
 open("/tmp/_d.js","w").write("const fs=require('fs'),vm=require('vm');const ctx={console};vm.createContext(ctx);vm.runInContext(fs.readFileSync('/tmp/_src.js','utf8').replace(/\\bconst /g,'var ').replace(/\\blet /g,'var '),ctx);fs.writeFileSync('/tmp/data.json',JSON.stringify(ctx.__out));")
 open("/tmp/_src.js","w").write(js); subprocess.check_call(["node","/tmp/_d.js"])
 D = json.load(open("/tmp/data.json")); T, PROJ = D["T"], D["PROJ"]
-SECTIONS = D["SECTIONS"]
+SECTIONS = D["SECTIONS"]; HERO = D["HERO"]
+# Projects flagged `locked` (c1p.js) stay visible but disabled in the UI: no page, no sitemap/llms/JSON-LD entry; their old URLs get a redirect stub.
+PUB = [i for i, p in enumerate(PROJ) if not p.get("locked")]
 # strict validation of case-study sections / localized role / site link: any problem aborts the build before anything is written
 import validate_sections
 _errs = validate_sections.validate(SECTIONS, {p["key"] for p in PROJ}, lambda k, v: os.path.exists(f"img/{k}-{v}.webp"), PROJ)
+_errs += validate_sections.validate_hero(HERO, {p["key"] for p in PROJ})
+_NO_DASH = ("a2pas",)   # projects whose visible copy must not contain en/em dashes
+_errs += validate_sections.check_no_dash(_NO_DASH, SECTIONS, HERO, {lg: {q["key"]: D["T"][lg]["projects"][i] for i, q in enumerate(PROJ)} for lg in ("es", "en", "fr")})
 if _errs: sys.exit("BUILD ABORTED: invalid project sections (c1k.js / c1p.js):\n  - " + "\n  - ".join(_errs))
 rl = lambda d, lg: d["role"][lg] if isinstance(d["role"], dict) else d["role"]   # role may be a plain string or {es,en,fr}
 SOC = {"Instagram":"https://www.instagram.com/tomfabre/","LinkedIn":"https://www.linkedin.com/in/tomfabreg/","Behance":"https://www.behance.net/afabre","LottieFiles":"https://lottiefiles.com/es/tomfabre","GitHub":"https://github.com/tomfabre"}
@@ -25,7 +30,7 @@ PFX = {"es":"","en":"/en","fr":"/fr"}
 SLG = {"es":{"projects":"proyectos","services":"servicios","bio":"bio","contact":"contacto"},"en":{"projects":"projects","services":"services","bio":"bio","contact":"contact"},"fr":{"projects":"projets","services":"services","bio":"bio","contact":"contact"}}
 SSLG = {"es":{"branding":"branding","web":"diseno-web","ux":"diseno-ux-ui"},"en":{"branding":"branding","web":"web-design","ux":"ux-ui-design"},"fr":{"branding":"branding","web":"design-web","ux":"design-ux-ui"}}
 SKEYS = ["branding","web","ux"]
-PSVC = {"contazara":["branding","web"],"carceral":["web"],"a2pas":["branding","web"],"happylife":["ux"],"binome":["branding","web"],"yaypegs":["ux"],"360estudio":["branding","web"],"figy":["ux"],"apolo":["ux"],"appy":["ux"],"mood":["ux"],"molyb":["ux"]}
+PSVC = {"contazara":["branding","web"],"carceral":["web"],"a2pas":["ux","web","branding"],"happylife":["ux"],"binome":["branding","web"],"yaypegs":["ux"],"360estudio":["branding","web"],"figy":["ux"],"apolo":["ux"],"appy":["ux"],"mood":["ux"],"molyb":["ux"]}
 def path(lg, page="home", key=None):
     if page == "home": return PFX[lg] + "/"
     if page == "project": return f"{PFX[lg]}/{SLG[lg]['projects']}/{key}/"
@@ -56,7 +61,7 @@ def ld(lg, r):
     if page == "home":
         g.append(faq_node(lg, t["hf_items"], url))
     elif page == "projects":
-        its = [{"@type":"ListItem","position":i+1,"url":U(lg,"project",PROJ[i]["key"]),"name":pj(lg,i)["name"]} for i in range(len(PROJ))]
+        its = [{"@type":"ListItem","position":n+1,"url":U(lg,"project",PROJ[i]["key"]),"name":pj(lg,i)["name"]} for n, i in enumerate(PUB)]
         g.append({"@type":"CollectionPage","@id":url+"#page","url":url,"name":title,"description":desc,"inLanguage":lg,"isPartOf":{"@id":SITE_ID},"mainEntity":{"@type":"ItemList","numberOfItems":len(its),"itemListElement":its}})
     elif page == "services":
         g.append({"@type":"CollectionPage","@id":url+"#page","url":url,"name":title,"description":desc,"inLanguage":lg,"isPartOf":{"@id":SITE_ID},"mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"url":U(lg,"service",k),"name":HS(lg)[i][0]} for i,k in enumerate(SKEYS)]}})
@@ -112,7 +117,7 @@ open("index.html","w").write(html.replace(IMGTOKEN, imgjs("data")).replace("<!--
 # 4) deploy pack
 dist = "dist"; shutil.rmtree(dist, ignore_errors=True); os.makedirs(dist+"/.well-known")
 LOCALE = {"es":"es_ES","en":"en_GB","fr":"fr_FR"}
-ROUTES = [("home",None),("projects",None),("services",None)] + [("service",k) for k in SKEYS] + [("bio",None),("contact",None)] + [("project",p["key"]) for p in PROJ]
+ROUTES = [("home",None),("projects",None),("services",None)] + [("service",k) for k in SKEYS] + [("bio",None),("contact",None)] + [("project",p["key"]) for p in PROJ if not p.get("locked")]
 def meta_for(lg, page, key):
     S = D["SEO"][lg]
     if page == "project":
@@ -215,7 +220,7 @@ shutil.copy("cv-alvaro-fabre.pdf", dist+"/cv-alvaro-fabre.pdf")
 pf = {"name":"Tom Fabre","jobTitle":"Product & Brand Designer","location":"Madrid, Spain","studio":{"name":"Binōme Studio","url":"https://binome.xyz"},"languages":["es","fr","en"],"email":EMAIL,"profiles":[{"name":k,"url":v} for k,v in SOC.items()],"cv":f"{SITE}/cv-alvaro-fabre.pdf","updated":today,
   "services":{l:[{"name":s[0],"tagline":s[1],"summary":s[2],"scope":s[3],"url":U(l,"service",SKEYS[i])} for i,s in enumerate(T[l]["hs_items"])] for l in ("es","en","fr")},
   "faq":{l:[{"question":q,"answer":a} for q,a in T[l]["hf_items"]] for l in ("es","en","fr")},
-  "projects":{l:[pj(l,i) for i in range(len(PROJ))] for l in ("es","en","fr")}}
+  "projects":{l:[pj(l,i) for i in PUB] for l in ("es","en","fr")}}
 open(dist+"/portfolio.json","w").write(json.dumps(pf,ensure_ascii=False,indent=2))
 # llms.txt (llmstxt.org format)
 L=[]; L.append("# Tom Fabre"); L.append("")
@@ -226,7 +231,7 @@ L.append(f"- [Bio]({U("en","bio")}): Background, way of working, quick facts and
 L.append(f"- [Contact]({U("en","contact")}): Email {EMAIL}, contact form and profile links.")
 L.append(f"- [CV (PDF)]({SITE}/cv-alvaro-fabre.pdf): Curriculum vitae.")
 L.append(""); L.append("## Projects"); L.append("")
-for i in range(len(PROJ)):
+for i in PUB:
     p=pj("en",i); L.append(f"- [{p['name']}]({p['url']}): {p['category']}. {p['summary']}")
 L.append(""); L.append("## Services"); L.append("")
 L.append(f"- [Services overview]({U('en','services')}): {en['sp']['idx']['h1']}")
@@ -256,7 +261,7 @@ for l in ("en","es","fr"):
     F.append("### FAQ" if l!="fr" else "### FAQ"); F.append("")
     for q,a in t["hf_items"]: F.append(f"Q: {q}"); F.append(f"A: {a}"); F.append("")
     F.append("### Projects" if l!="es" else "### Proyectos"); F.append("")
-    for i in range(len(PROJ)):
+    for i in PUB:
         p=pj(l,i); F.append(f"#### {p['name']} — {p['category']}"); F.append(f"URL: {p['url']}"); F.append(f"{p['tagline']}"); F.append(""); F.append(f"{p['summary']}"); F.append(""); F.append(p["description"]); F.append(f"Services: {p['services']} · Role: {p['role']} · Context: {p['context']}"); F.append("")
         for sc in p.get("story", []):
             F.append(f"##### {sc['label']} — {sc['heading']}" if sc["heading"] != sc["label"] else f"##### {sc['label']}"); F.append("")
@@ -363,3 +368,14 @@ for f in glob.glob("extras/*"): shutil.copy(f, dist + "/" + f.split("/")[-1])
 if "--no-prerender" not in sys.argv:
     rep = os.environ.get("PRERENDER_REPORT", "/tmp/prerender-report.json")
     subprocess.check_call(["node", "prerender.js", dist, rep])
+
+# 6) locked projects: their former URLs redirect to the projects index (no content, noindex, canonical = index). Written after the prerender on purpose.
+_LOCK_LABEL = {"es": "Este proyecto está en proceso. Redirigiendo a proyectos.", "en": "This project is in progress. Redirecting to projects.", "fr": "Ce projet est en cours. Redirection vers les projets."}
+for _i, _p in enumerate(PROJ):
+    if not _p.get("locked"): continue
+    for _lg in ("es", "en", "fr"):
+        _to = path(_lg, "projects"); _dir = dist + path(_lg, "project", _p["key"]); os.makedirs(_dir, exist_ok=True)
+        open(_dir + "index.html", "w", encoding="utf8").write(
+            f'<!doctype html><html lang="{_lg}"><meta charset="utf-8"><title>{T[_lg]["projects"][_i][0]}</title><meta name="robots" content="noindex,follow">'
+            f'<link rel="canonical" href="{SITE}{_to}"><meta http-equiv="refresh" content="0;url={_to}"><body><p><a href="{_to}">{_LOCK_LABEL[_lg]}</a></p><script>location.replace("{_to}")</script></body></html>\n')
+print("locked projects (redirect stubs):", [p["key"] for p in PROJ if p.get("locked")])

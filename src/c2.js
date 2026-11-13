@@ -34,7 +34,7 @@ function parseLoc(pn){
   if (!seg.length) return { lg, r:{ page:"home" } };
   if (seg[0] === s.projects){
     if (seg.length === 1) return { lg, r:{ page:"projects" } };
-    if (seg.length === 2 && PROJ.some(p => p.key === seg[1])) return { lg, r:{ page:"project", key:seg[1] } };
+    if (seg.length === 2 && PROJ.some(p => p.key === seg[1])) return { lg, r: PROJ.find(p => p.key === seg[1]).locked ? { page:"projects" } : { page:"project", key:seg[1] } };
     return null;
   }
   if (seg[0] === s.services){
@@ -48,7 +48,7 @@ function parseLoc(pn){
 }
 function parseHashStr(h){
   h = String(h || "").replace(/^#/, "");
-  if (h.startsWith("project-")) { const k = h.slice(8); if (PROJ.some(p => p.key === k)) return { page:"project", key:k }; }
+  if (h.startsWith("project-")) { const k = h.slice(8); if (PROJ.some(p => p.key === k)) return PROJ.find(p => p.key === k).locked ? { page:"projects" } : { page:"project", key:k }; }
   if (h.startsWith("service-")) { const k = h.slice(8); if (SKEYS.includes(k)) return { page:"service", key:k }; }
   return ["projects","services","bio","contact"].includes(h) ? { page:h } : (h === "home" ? { page:"home" } : null);
 }
@@ -121,7 +121,7 @@ function wireMenu(){
 
 /* ---------- home sections ---------- */
 /* service <-> project relations come from the "services" column of each project in the repo (single source) */
-const PSVC = { contazara:["branding","web"], carceral:["web"], a2pas:["branding","web"], happylife:["ux"], binome:["branding","web"], yaypegs:["ux"], "360estudio":["branding","web"], figy:["ux"], apolo:["ux"], appy:["ux"], mood:["ux"], molyb:["ux"] };
+const PSVC = { contazara:["branding","web"], carceral:["web"], a2pas:["ux","web","branding"], happylife:["ux"], binome:["branding","web"], yaypegs:["ux"], "360estudio":["branding","web"], figy:["ux"], apolo:["ux"], appy:["ux"], mood:["ux"], molyb:["ux"] };
 const sentence = x => { x = String(x).toLowerCase(); return x.charAt(0).toUpperCase() + x.slice(1); };
 const oneLine = x => String(x).replace(/\n/g, " ");
 function renderHomeServices(){
@@ -136,9 +136,11 @@ function renderFaq(sel, arr, acts){
 }
 function renderAboutHome(){ const t = L(); $("#abP").innerHTML = t.ha_p.map(x => `<p>${esc(x)}</p>`).join(""); }
 const crumbs = items => `<nav class="crumbs" aria-label="${esc(({es:"Migas de pan",en:"Breadcrumb",fr:"Fil d'Ariane"})[lang])}"><ol>${items.map(([l, h]) => h ? `<li><a href="${h}">${esc(l)}</a></li>` : `<li aria-current="page">${esc(l)}</li>`).join("")}</ol></nav>`;
+const lockTx = d => d.locked ? tr(d.locked) : "";   // label of a locked (visible but not clickable) project
 function projCard(k, tag){
   const t = L(), i = PROJ.findIndex(p => p.key === k), p = t.projects[i];
-  return `<a class="pj-card" href="#project-${k}"><span class="art">${svgOf(k, 0)}</span><span class="pj-info"><${tag}>${esc(p[0])}</${tag}><span class="tg">${esc(p[6] || "")}</span><span class="meta-row"><span>${esc(p[1])}</span><span>${esc(PROJ[i].years)}</span></span><span class="go" aria-hidden="true">→</span></span></a>`;
+  const lock = PROJ[i].locked, inner = `<span class="art">${svgOf(k, 0)}</span><span class="pj-info"><${tag}>${esc(p[0])}</${tag}><span class="tg">${esc(p[6] || "")}</span><span class="meta-row"><span>${esc(p[1])}</span><span>${esc(PROJ[i].years)}</span></span>${lock ? `<span class="lock-tag">${esc(lockTx(PROJ[i]))}</span>` : `<span class="go" aria-hidden="true">→</span>`}</span>`;
+  return lock ? `<div class="pj-card is-locked" aria-disabled="true">${inner}</div>` : `<a class="pj-card" href="#project-${k}">${inner}</a>`;
 }
 function renderServicesIndex(){
   const t = L(), sp = t.sp.idx; const el = $("#svIdx"); if (!el) return;
@@ -167,7 +169,7 @@ function renderWork(){
   const t = L(); $("#workList").innerHTML = t.projects.slice(0, HOME_PROJECTS).map((p, i) => {
     const k = PROJ[i].key, open = workOpen.has(i);
     return `<li><button class="row" type="button" aria-expanded="${open}" aria-controls="wx${i}"><span class="num">0${i+1}</span><span class="t">${esc(p[0])}</span><span class="cat">${esc(p[1])}</span><span class="yr">${esc(PROJ[i].years)}</span><span class="pm" aria-hidden="true">+</span></button>
-    <div class="px${open ? ' open' : ''}" id="wx${i}" role="region" aria-label="${esc(p[0])}"><div><div class="px-in"><div class="px-tx"><p class="tg">${esc(p[6] || "")}</p><p>${esc(p[3])}</p><a class="btn solid" href="#project-${k}"><span>${esc(t.view_project)}</span><span class="arr" aria-hidden="true">→</span></a></div><div class="px-ims"><span class="art">${svgOf(k,0)}</span><span class="art">${svgOf(k,1)}</span></div></div></div></div></li>`;
+    <div class="px${open ? ' open' : ''}" id="wx${i}" role="region" aria-label="${esc(p[0])}"><div><div class="px-in"><div class="px-tx"><p class="tg">${esc(p[6] || "")}</p><p>${esc(p[3])}</p>${PROJ[i].locked ? `<span class="btn is-locked" aria-disabled="true"><span>${esc(lockTx(PROJ[i]))}</span></span>` : `<a class="btn solid" href="#project-${k}"><span>${esc(t.view_project)}</span><span class="arr" aria-hidden="true">→</span></a>`}</div><div class="px-ims"><span class="art">${svgOf(k,0)}</span><span class="art">${svgOf(k,1)}</span></div></div></div></div></li>`;
   }).join("");
   // wire accordion
   $$("#workList .row").forEach((b, i) => b.addEventListener("click", () => {
@@ -183,7 +185,7 @@ function renderGrid(){
   const t = L(); const rn = t.projects.length; const pc = $("#pjcount"); if (pc) pc.textContent = rn + " · 2015 — 2026";
   $("#grid").innerHTML = t.projects.map((p, i) => {
     const k = PROJ[i].key;
-    return `<a class="pj-card" href="#project-${k}"><span class="art">${svgOf(k, 0)}</span><span class="pj-info"><h2>${esc(p[0])}</h2><span class="tg">${esc(p[6] || "")}</span><span class="meta-row"><span>${esc(p[1])}</span><span>${esc(PROJ[i].years)}</span></span><span class="go" aria-hidden="true">→</span></span></a>`;
+    return projCard(k, "h2");
   }).join("");
   // wire toggle once
   if (!gridWired){
@@ -205,8 +207,10 @@ const rl = d => (d.role && typeof d.role === "object") ? tr(d.role) : d.role;   
 const rich = x => tr(x).split(/\{([a-z][a-z0-9]*)\}/).map((s, i) => i % 2 ? ((x.links || {})[s] ? `<a href="${esc(x.links[s].href)}" target="_blank" rel="noopener noreferrer" data-ev="project_link_click" data-place="${esc(s)}">${esc(tr(x.links[s].t))}</a>` : "") : esc(s)).join("");
 const paras = a => (a || []).map(x => x.em ? `<p><strong>${rich(x)}</strong></p>` : `<p>${rich(x)}</p>`).join("");
 const secBody = (s, inner) => `<div class="pj-body"><h2 id="s-${s.id}-h">${esc(tr(s.h))}</h2><div>${s.t ? `<h3>${esc(tr(s.t))}</h3>` : ""}${inner}</div></div>`;
-const secImg = im => (IMG[im.key] && IMG[im.key][im.v]) ? `<div class="pj-gal"><div class="art"><img src="${IMG[im.key][im.v]}" alt="${esc(tr(im.alt))}" loading="lazy" decoding="async"></div></div>` : "";
-const imgTag = (im, st) => `<div class="art"${st ? ` style="aspect-ratio:${st}"` : ""}><img src="${IMG[im.key][im.v]}" alt="${esc(tr(im.alt))}" loading="lazy" decoding="async"></div>`;
+const ZOOM_L = { es:"Abrir la imagen ampliada en una pestaña nueva", en:"Open the enlarged image in a new tab", fr:"Ouvrir l'image agrandie dans un nouvel onglet" };
+const imgTag = (im, st) => { const u = IMG[im.key][im.v], img = `<img src="${u}" alt="${esc(tr(im.alt))}" loading="lazy" decoding="async">`; return `<div class="art"${st ? ` style="aspect-ratio:${esc(st)}"` : ""}>${im.zoom ? `<a class="zoom" href="${u}" target="_blank" rel="noopener" aria-label="${esc(tr(ZOOM_L))}: ${esc(tr(im.alt))}">${img}</a>` : img}</div>`; };
+const imgCap = im => im.cap ? `<p class="pj-cap">${esc(tr(im.cap))}</p>` : "";
+const secImg = im => (IMG[im.key] && IMG[im.key][im.v]) ? `<div class="pj-gal">${imgTag(im, im.r)}</div>${imgCap(im)}` : "";
 const okImg = im => !!(IMG[im.key] && IMG[im.key][im.v]);
 const secFig = im => okImg(im) ? `<div class="pj-body"><span aria-hidden="true"></span><div><div class="pj-gal one">${imgTag(im, im.r)}</div></div></div>` : "";
 const secPair = ims => ims.every(okImg) ? `<div class="pj-gal duo">${ims.map(im => imgTag(im)).join("")}</div>` : "";
@@ -219,11 +223,11 @@ const SECTION_RENDER = {
 };
 const renderSection = s => { const f = SECTION_RENDER[s.type]; if (!f) throw new Error("Unknown section type: " + s.type); return f(s); };
 function renderProject(key){
-  const t = L(), i = PROJ.findIndex(p => p.key === key), d = PROJ[i], p = t.projects[i], nx = (i + 1) % PROJ.length;
-  const num = "0" + (i + 1);
+  const t = L(), i = PROJ.findIndex(p => p.key === key), d = PROJ[i], p = t.projects[i], nx = (() => { let n = (i + 1) % PROJ.length; while (PROJ[n].locked && n !== i) n = (n + 1) % PROJ.length; return n; })();   // next published project
+  const num = "0" + (i + 1), hr = (typeof HERO !== "undefined" && HERO[key]) || null;   // optional hero override (HERO in c1k.js)
   $("#pj").innerHTML = `<a class="back-top" href="#projects"><span aria-hidden="true">←</span> ${esc(t.back)}</a>
-    <div class="pj-head"><span class="num-big" aria-hidden="true">${num}</span><h1>${esc(p[0])}</h1><p class="pj-tag">${esc(p[6] || "")}</p><p class="lead">${esc(p[3])}</p></div>
-    <div class="pj-cover">${svgOf(key, "cover")}</div>
+    <div class="pj-head"><span class="num-big" aria-hidden="true">${num}</span><h1>${esc(p[0])}</h1><p class="pj-tag">${esc(hr ? tr(hr.tag) : (p[6] || ""))}</p><p class="lead">${esc(hr ? tr(hr.lead) : p[3])}</p></div>
+    <div class="pj-cover">${hr ? svgOf(key, "cover").replace(/alt="[^"]*"/, `alt="${esc(tr(hr.alt))}"`) : svgOf(key, "cover")}</div>
     <dl class="pj-facts"><div><dt>${esc(t.role_l2 || "Role")}</dt><dd>${esc(rl(d))}</dd></div><div><dt>${esc(t.ctx_l2 || "Context")}</dt><dd>${esc(p[2])}</dd></div><div><dt>${esc(t.serv_l2 || "Services")}</dt><dd>${esc(p[5])}</dd></div><div><dt>${esc(t.per_l2 || "Period")}</dt><dd>${esc(d.years)}</dd></div></dl>
     ${SECTIONS[key] ? SECTIONS[key].map(renderSection).join("") : `<div class="pj-body"><h2>${esc(t.did_h2 || "What I did")}</h2><div><p>${esc(p[4])}</p></div></div>`}
     ${secHasImg(key) ? "" : `<div class="pj-gal">${svgWrap(key,1)}${svgWrap(key,2)}${svgWrap(key,3)}</div>`}
@@ -383,7 +387,7 @@ let cur = null, route_ = { page:"home" };
 function parse(){
   if (PATHS){ const pl = parseLoc(location.pathname); return pl ? pl.r : { page:"home" }; }
   const h = location.hash.slice(1);
-  if (h.startsWith("project-")) { const k = h.slice(8); if (PROJ.some(p => p.key === k)) return { page:"project", key:k }; }
+  if (h.startsWith("project-")) { const k = h.slice(8); if (PROJ.some(p => p.key === k)) return PROJ.find(p => p.key === k).locked ? { page:"projects" } : { page:"project", key:k }; }
   if (h.startsWith("service-")) { const k = h.slice(8); if (SKEYS.includes(k)) return { page:"service", key:k }; }
   return ["projects","services","bio","contact"].includes(h) ? { page:h } : { page:"home" };
 }
