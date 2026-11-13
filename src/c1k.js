@@ -1,6 +1,6 @@
 /* Case-study sections + per-project SEO overrides (optional per project; validated by validate_sections.py at build).
    SECTIONS[projectKey] = [section, ...]. Every visible string is {es, en, fr}.
-   Types today: "text" {id,h,t?,p[],img?,flow?[{p[]}|{img}|{fig}]} and "metrics" {id,h,t?,p?[],items[{n,l}],after?[]}.
+   Types today: "text" {id,h,t?,p[],img?,flow?[{p[]}|{img}|{fig}]} and "metrics" {id,h,t?,p?[],items[{n,l}],after?[],flow?}.
    A paragraph is {es,en,fr} (+ em:true for a bold line). To add a type: validate_sections.py TYPES + SECTION_RENDER in c2.js.
    Projects without an entry keep the classic layout. */
 const SECTIONS = {
@@ -44,15 +44,20 @@ const SECTIONS = {
         fr:"Une nouvelle identité en est née, construite autour d'un symbole qui unit le C et le Z par la géométrie, la précision et le mouvement."
       }],
       flow:[
-        { img:{ key:"contazara", v:"4", alt:{
-            es:"Construcción geométrica del isotipo de Contazara sobre su retícula, con la versión horizontal del logotipo y la paleta de color corporativa",
-            en:"Geometric construction of the Contazara symbol on its grid, with the horizontal logo and the corporate colour palette",
-            fr:"Construction géométrique du symbole Contazara sur sa grille, avec la version horizontale du logotype et la palette de couleurs" } } },
+        { img:{ key:"contazara", v:"6", alt:{
+            es:"Presentación editorial del sistema gráfico de Contazara: logotipo, símbolo y paleta de color corporativa",
+            en:"Editorial presentation of Contazara's graphic system: logo, symbol and corporate colour palette",
+            fr:"Présentation éditoriale du système graphique de Contazara : logotype, symbole et palette de couleurs" } } },
         { p:[{
             es:"Pero el resultado fue mucho más que un logo: un lenguaje visual con sus propias reglas, colores, tipografías y aplicaciones.",
             en:"But the result was much more than a logo: a visual language with its own rules, colours, typefaces, and applications.",
             fr:"Mais le résultat dépasse largement le logo : un langage visuel avec ses propres règles, couleurs, typographies et applications."
-          },{ em:true,
+          }] },
+        { img:{ key:"contazara", v:"4", alt:{
+            es:"Construcción geométrica del isotipo de Contazara sobre su retícula, con la versión horizontal del logotipo y la paleta de color corporativa",
+            en:"Geometric construction of the Contazara symbol on its grid, with the horizontal logo and the corporate colour palette",
+            fr:"Construction géométrique du symbole Contazara sur sa grille, avec la version horizontale du logotype et la palette de couleurs" } } },
+        { p:[{ em:true,
             es:"Una identidad que no solo los representa. También la sienten suya.",
             en:"An identity that doesn't just represent them. They feel it's theirs.",
             fr:"Une identité qui ne fait pas que les représenter. Ils se la sont appropriée."
@@ -97,7 +102,13 @@ const SECTIONS = {
         es:"La nueva identidad se ha extendido a la comunicación, los materiales corporativos, la web y los espacios de la empresa. Un sistema que sigue creciendo y que sus equipos han hecho suyo.",
         en:"The new identity has spread across communications, corporate materials, the website, and the company's spaces. A system that keeps growing and that their teams have made their own.",
         fr:"La nouvelle identité s'est étendue à la communication, aux supports corporatifs, au site web et aux espaces de l'entreprise. Un système qui continue de grandir et que les équipes se sont approprié."
-      }] },
+      }],
+      flow:[
+        { img:{ key:"contazara", v:"1", alt:{
+            es:"Propuesta de stand de Contazara con la nueva identidad aplicada a paneles, mostrador y mobiliario",
+            en:"Contazara trade-fair stand concept with the new identity applied to panels, counter and furniture",
+            fr:"Proposition de stand Contazara avec la nouvelle identité appliquée aux panneaux, au comptoir et au mobilier" } } }
+      ] },
 
     { type:"text", id:"papel",
       h:{es:"05 · Un trabajo en equipo", en:"05 · Teamwork", fr:"05 · Un travail d'équipe"},

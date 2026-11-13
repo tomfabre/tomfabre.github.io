@@ -10,7 +10,7 @@ ID_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 # type -> (required keys, optional keys)
 TYPES = {
     "text":    ({"type", "id", "h", "p"},          {"t", "img", "flow"}),
-    "metrics": ({"type", "id", "h", "items"},      {"t", "p", "after"}),
+    "metrics": ({"type", "id", "h", "items"},      {"t", "p", "after", "flow"}),
 }
 
 
@@ -88,6 +88,7 @@ def validate(sections, project_keys, img_exists, projects=None):
             if typ == "text":
                 if "p" in s: _paras(s["p"], f"{at}.p", errs, True)
                 if "img" in s: _img(s["img"], f"{at}.img", errs, img_exists)
+            if typ in ("text", "metrics"):
                 if "flow" in s:
                     fl = s["flow"]
                     if not isinstance(fl, list) or not fl:

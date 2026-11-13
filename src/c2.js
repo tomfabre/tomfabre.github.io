@@ -210,7 +210,7 @@ const secHasImg = k => !!SECTIONS[k] && SECTIONS[k].some(s => s.img || (s.flow |
 /* To add a type: add it here AND to TYPES in validate_sections.py (build fails on unknown types). */
 const SECTION_RENDER = {
   text: s => `<section class="pj-sec" id="s-${s.id}" aria-labelledby="s-${s.id}-h">${secBody(s, paras(s.p))}${s.img ? secImg(s.img) : ""}${secFlow(s.flow)}</section>`,
-  metrics: s => `<section class="pj-sec" id="s-${s.id}" aria-labelledby="s-${s.id}-h">${secBody(s, paras(s.p))}<ul class="stats pj-stats">${s.items.map(it => `<li class="stat"><b>${esc(tr(it.n))}</b><span>${esc(tr(it.l))}</span></li>`).join("")}</ul>${s.after ? `<div class="pj-body"><span aria-hidden="true"></span><div>${paras(s.after)}</div></div>` : ""}</section>`
+  metrics: s => `<section class="pj-sec" id="s-${s.id}" aria-labelledby="s-${s.id}-h">${secBody(s, paras(s.p))}<ul class="stats pj-stats">${s.items.map(it => `<li class="stat"><b>${esc(tr(it.n))}</b><span>${esc(tr(it.l))}</span></li>`).join("")}</ul>${s.after ? `<div class="pj-body"><span aria-hidden="true"></span><div>${paras(s.after)}</div></div>` : ""}${secFlow(s.flow)}</section>`
 };
 const renderSection = s => { const f = SECTION_RENDER[s.type]; if (!f) throw new Error("Unknown section type: " + s.type); return f(s); };
 function renderProject(key){
