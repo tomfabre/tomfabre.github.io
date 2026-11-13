@@ -182,7 +182,7 @@ img,svg{max-width:100%;display:block}
 main{padding-bottom:var(--s20)}
 .page[hidden]{display:none}
 section{padding-block:clamp(4.5rem,10vw,9rem)}
-.sec-head{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:var(--s6) var(--s3);align-items:end;margin-bottom:clamp(3rem,6vw,5rem);padding-bottom:var(--s5)}
+.sec-head{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:var(--s6) .35rem;align-items:end;margin-bottom:clamp(3rem,6vw,5rem);padding-bottom:var(--s5)}
 .sec-head .num{justify-self:start;text-align:left;align-self:baseline;font-size:1rem;color:var(--muted);letter-spacing:.06em;font-weight:400;font-variant-numeric:tabular-nums}
 .sec-head .num::after{content:"."}
 .sec-head h2{grid-column:1/-1;font-size:var(--display);line-height:.95}
@@ -874,7 +874,7 @@ a.bt:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
 
 /* ===== Unified rhythm (titles -> text -> content; block -> block) ===== */
 :root{--hgap:var(--s5);--bgap:clamp(2.5rem,5vw,4rem);--sgap:clamp(7rem,14vw,12rem)}
-.sec-head{row-gap:var(--hgap);column-gap:var(--s6);margin-bottom:var(--bgap);padding-bottom:0}
+.sec-head{row-gap:var(--hgap);column-gap:.35rem;margin-bottom:var(--bgap);padding-bottom:0}
 .worked>div>p,.tools-h>div>p,.worked .worked-p,.tools-h .p{margin-top:var(--hgap)}
 .sec-head h2+p{margin-top:0}
 .worked,.tools-h{gap:var(--bgap);margin-top:var(--sgap)}
@@ -1078,7 +1078,7 @@ footer .foot-grid{display:grid;grid-template-columns:1fr auto;gap:var(--s5) var(
 @media (max-width:40rem){.foot-copy{text-align:center}}
 
 /* project page CTA: a quieter version of the home contact card */
-.pj-more{position:relative;isolation:isolate;overflow:hidden;background:var(--surface);border:0;border-radius:2rem;padding:var(--s10) var(--s8);margin-block:var(--s24) var(--s8)}
+.pj-more{position:relative;isolation:isolate;overflow:hidden;background:var(--surface);border:0;border-radius:2rem;padding:var(--s10) var(--s8);margin-block:calc(var(--s24) + var(--s5)) var(--s8)}
 .pj-more .blobs i{filter:blur(64px)}
 .pj-more .blobs .b4,.pj-more .blobs .bm{display:none}
 .pj-more ul a{text-underline-offset:.3em}
