@@ -153,7 +153,7 @@ function renderProject(key){
     <div class="pj-body"><h2>${esc(t.did_h2 || "What I did")}</h2><div><p>${esc(p[4])}</p></div></div>
     <div class="pj-gal">${svgWrap(key,1)}${svgWrap(key,2)}${svgWrap(key,3)}</div>
     <a class="pj-next" href="#project-${PROJ[nx].key}"><span class="k"><span>${esc(t.next)}</span><span aria-hidden="true">→</span></span><b>${esc(t.projects[nx][0])}</b></a>`;
-  document.title = p[0] + " · Álvaro Fabre";
+  document.title = p[0] + " · Tom Fabre";
 }
 const svgWrap = (k, v) => `<div class="art">${svgOf(k, v)}</div>`;
 
@@ -287,7 +287,7 @@ function show(r){
   route_ = r; const nav = r.page === "project" ? "projects" : r.page;
   $$(".page").forEach(p => { p.hidden = p.dataset.page !== r.page; });
   $$("[data-r]").forEach(a => { if (a.dataset.r === nav) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
-  if (r.page === "project") renderProject(r.key); else document.title = "Álvaro Fabre · Portfolio";
+  if (r.page === "project") renderProject(r.key); else document.title = "Tom Fabre · Portfolio";
   closeSheet(); window.scrollTo(0, 0);
 }
 function route(first){
@@ -441,7 +441,7 @@ function renderBento(){
   const head = (k, s, u) => `<div class="bt-h"><b>${esc(k)}</b><span>${esc(s)}</span></div>${tag(u)}`;
   el.innerHTML =
     card("bt-map", null, `${map}<div class="bt-h"><b>${esc(t.bt_map)}</b><span>${esc(t.bt_map_s)}</span><span class="bt-geo">Madrid 40.4168 N · 3.7038 W</span></div>`) +
-    card("bt-photo", null, (soon.photo.img ? `<img src="${esc(soon.photo.img)}" alt="Álvaro Fabre" loading="lazy">` : `<div class="bt-ph" aria-hidden="true"><span>AF</span></div>`) + `<div class="bt-h"><b>${esc(t.bt_photo)}</b><span>${soon.photo.img ? "" : esc(t.bt_photo_s)}</span></div>`) +
+    card("bt-photo", null, (soon.photo.img ? `<img src="${esc(soon.photo.img)}" alt="Tom Fabre" loading="lazy">` : `<div class="bt-ph" aria-hidden="true"><span>AF</span></div>`) + `<div class="bt-h"><b>${esc(t.bt_photo)}</b><span>${soon.photo.img ? "" : esc(t.bt_photo_s)}</span></div>`) +
     card("bt-music", soon.music.url, head(t.bt_music, t.bt_music_s, soon.music.url)) +
     card("bt-binome", soon.binome.url, `<div class="bt-h"><b>${esc(t.bt_binome)}</b><span>${esc(t.bt_binome_s)}</span></div><span class="bt-arr" aria-hidden="true">↗</span>`) +
     card("bt-read", soon.read.url, head(t.bt_read, t.bt_read_s, soon.read.url)) +
@@ -498,11 +498,11 @@ function fireConfetti2(){
 
 /* ---------- socials ---------- */
 const SOCIALS = [
-  ["Instagram","IG","https://www.instagram.com/alvarofabre/"],
-  ["LinkedIn","LN","https://www.linkedin.com/in/alvarofabre/"],
-  ["Behance","BE","https://www.behance.net/alvarofabre"],
-  ["LottieFiles","LF","https://lottiefiles.com/alvarofabre"],
-  ["GitHub","GH","https://github.com/alvarofabre"]
+  ["Instagram","IG","https://www.instagram.com/tomfabre/"],
+  ["LinkedIn","LN","https://www.linkedin.com/in/tomfabreg/"],
+  ["Behance","BE","https://www.behance.net/afabre"],
+  ["LottieFiles","LF","https://lottiefiles.com/es/tomfabre"],
+  ["GitHub","GH","https://github.com/tomfabre"]
 ];
 function renderSocials(){
   $("#socials").innerHTML = SOCIALS.map(([n,,u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)} <span class="arr" aria-hidden="true">↗</span></a></li>`).join("");

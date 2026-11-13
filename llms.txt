@@ -1,6 +1,6 @@
-# Álvaro Fabre
+# Tom Fabre
 
-> Álvaro Fabre is a product and brand designer based in Madrid and co-founder of Binōme Studio. He designs brands, websites and digital products (branding, web design, UX/UI, strategy) with more than ten years of experience between Latin America and Europe. He works in Spanish, French and English and is available for new projects.
+> Tom Fabre is a product and brand designer based in Madrid and co-founder of Binōme Studio. He designs brands, websites and digital products (branding, web design, UX/UI, strategy) with more than ten years of experience between Latin America and Europe. He works in Spanish, French and English and is available for new projects.
 
 The portfolio has real URLs per language: Spanish at the root, English under /en/ and French under /fr/. Each project below links to its detail page. Full text of every project in all three languages is in llms-full.txt; structured data is in portfolio.json.
 

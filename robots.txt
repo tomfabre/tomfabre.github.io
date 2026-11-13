@@ -1,4 +1,4 @@
-# Álvaro Fabre — AI and search crawlers are welcome
+# Tom Fabre — AI and search crawlers are welcome
 User-agent: *
 Allow: /
 

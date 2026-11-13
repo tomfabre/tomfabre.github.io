@@ -1,4 +1,4 @@
-# Álvaro Fabre — full portfolio content
+# Tom Fabre — full portfolio content
 
  > Product and brand designer in Madrid, co-founder of Binōme Studio. Spanish, French and English.
 
@@ -6,7 +6,7 @@ Site: https://tomfabre.github.io/ · Email: alvarofabreg@gmail.com · Updated: 2
 
 ## English
 
-### Hi, I'm Álvaro — Design that connects ideas, people and products.
+### Hi, I'm Tom — Design that connects ideas, people and products.
 
 I blend strategy, branding, digital design and technology to turn complex ideas into experiences that are clear, useful and full of personality.
 
@@ -169,7 +169,7 @@ Services: UX/UI · Platforms · E-learning · Role: UX/UI Designer · Context: M
 
 ## Español
 
-### Hola, soy Álvaro — Diseño para conectar ideas, personas y productos.
+### Hola, soy Tom — Diseño para conectar ideas, personas y productos.
 
 Combino estrategia, branding, diseño digital y tecnología para convertir ideas complejas en experiencias claras, útiles y con personalidad.
 
@@ -332,7 +332,7 @@ Services: UX/UI · Plataformas · E-learning · Role: UX/UI Designer · Context:
 
 ## Français
 
-### Salut, moi c'est Álvaro — Un design qui relie les idées, les gens et les produits.
+### Salut, moi c'est Tom — Un design qui relie les idées, les gens et les produits.
 
 Je mêle stratégie, branding, design digital et technologie pour transformer des idées complexes en expériences claires, utiles et pleines de personnalité.
 

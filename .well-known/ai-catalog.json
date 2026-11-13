@@ -1,27 +1,27 @@
 {
   "specVersion": "1.0",
   "host": {
-    "displayName": "Álvaro Fabre",
+    "displayName": "Tom Fabre",
     "identifier": "tomfabre.github.io"
   },
   "entries": [
     {
       "identifier": "urn:ai:tomfabre.github.io:knowledge:llms-txt",
-      "displayName": "Álvaro Fabre — llms.txt",
+      "displayName": "Tom Fabre — llms.txt",
       "type": "text/plain",
       "url": "https://tomfabre.github.io/llms.txt",
-      "description": "Curated index of Álvaro Fabre's portfolio for AI agents: profile, projects, services and contact."
+      "description": "Curated index of Tom Fabre's portfolio for AI agents: profile, projects, services and contact."
     },
     {
       "identifier": "urn:ai:tomfabre.github.io:knowledge:llms-full-txt",
-      "displayName": "Álvaro Fabre — full content",
+      "displayName": "Tom Fabre — full content",
       "type": "text/plain",
       "url": "https://tomfabre.github.io/llms-full.txt",
       "description": "Complete portfolio text in Spanish, English and French."
     },
     {
       "identifier": "urn:ai:tomfabre.github.io:data:portfolio",
-      "displayName": "Álvaro Fabre — portfolio data",
+      "displayName": "Tom Fabre — portfolio data",
       "type": "application/json",
       "url": "https://tomfabre.github.io/portfolio.json",
       "description": "Structured JSON with profile, services and all projects in three languages."

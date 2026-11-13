@@ -11,7 +11,7 @@ js = "\n".join(open(f).read() for f in JS) + "\n;globalThis.__out={T,PROJ,SEO};"
 open("/tmp/_d.js","w").write("const fs=require('fs'),vm=require('vm');const ctx={console};vm.createContext(ctx);vm.runInContext(fs.readFileSync('/tmp/_src.js','utf8').replace(/\\bconst /g,'var ').replace(/\\blet /g,'var '),ctx);fs.writeFileSync('/tmp/data.json',JSON.stringify(ctx.__out));")
 open("/tmp/_src.js","w").write(js); subprocess.check_call(["node","/tmp/_d.js"])
 D = json.load(open("/tmp/data.json")); T, PROJ = D["T"], D["PROJ"]
-SOC = {"Instagram":"https://www.instagram.com/alvarofabre/","LinkedIn":"https://www.linkedin.com/in/alvarofabre/","Behance":"https://www.behance.net/alvarofabre","LottieFiles":"https://lottiefiles.com/alvarofabre","GitHub":"https://github.com/alvarofabre"}
+SOC = {"Instagram":"https://www.instagram.com/tomfabre/","LinkedIn":"https://www.linkedin.com/in/tomfabreg/","Behance":"https://www.behance.net/afabre","LottieFiles":"https://lottiefiles.com/es/tomfabre","GitHub":"https://github.com/tomfabre"}
 EMAIL = "alvarofabreg@gmail.com"
 today = datetime.date.today().isoformat()
 es, en, fr = T["es"], T["en"], T["fr"]
@@ -24,14 +24,14 @@ def path(lg, page="home", key=None):
 def U(lg, page="home", key=None): return SITE + path(lg, page, key)
 def pj(lang, i): p = T[lang]["projects"][i]; d = PROJ[i]; return dict(slug=d["key"], name=p[0], category=p[1], context=p[2], summary=p[3], description=p[4], services=p[5], tagline=p[6] if len(p)>6 else "", role=d["role"], period=d["years"], url=U(lang,"project",d["key"]))
 # 2) JSON-LD
-person = {"@type":"Person","@id":f"{SITE}/#person","name":"Álvaro Fabre","alternateName":"Alvaro Fabre","jobTitle":"Product & Brand Designer","description":SEO_ES if (SEO_ES:=D["SEO"]["en"]["home_d"]) else "","url":f"{SITE}/","email":EMAIL,
+person = {"@type":"Person","@id":f"{SITE}/#person","name":"Tom Fabre","alternateName":["Tom Fabre","Alvaro Fabre"],"jobTitle":"Product & Brand Designer","description":SEO_ES if (SEO_ES:=D["SEO"]["en"]["home_d"]) else "","url":f"{SITE}/","email":EMAIL,
   "address":{"@type":"PostalAddress","addressLocality":"Madrid","addressCountry":"ES"},"homeLocation":{"@type":"Place","name":"Madrid","geo":{"@type":"GeoCoordinates","latitude":40.4168,"longitude":-3.7038}},
   "worksFor":{"@id":f"{SITE}/#binome"},"knowsLanguage":["es","fr","en"],
   "knowsAbout":["Branding","Brand identity","Web design","UX/UI design","Product design","Design systems","Art direction","Prototyping","Accessibility","Webflow"],
   "sameAs":list(SOC.values())+["https://binome.xyz"],
   "hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":s[0],"description":s[1]}} for s in en["svc"]]}}
 org = {"@type":"Organization","@id":f"{SITE}/#binome","name":"Binōme Studio","url":"https://binome.xyz","founder":{"@id":f"{SITE}/#person"},"address":{"@type":"PostalAddress","addressLocality":"Madrid","addressCountry":"ES"},"description":"Digital design studio in Madrid: web design, branding, UX/UI and motion."}
-site = {"@type":"WebSite","@id":f"{SITE}/#website","url":f"{SITE}/","name":"Álvaro Fabre","inLanguage":["es","en","fr"],"publisher":{"@id":f"{SITE}/#person"}}
+site = {"@type":"WebSite","@id":f"{SITE}/#website","url":f"{SITE}/","name":"Tom Fabre","inLanguage":["es","en","fr"],"publisher":{"@id":f"{SITE}/#person"}}
 prof = {"@type":"ProfilePage","@id":f"{SITE}/#profile","isPartOf":{"@id":f"{SITE}/#website"},"mainEntity":{"@id":f"{SITE}/#person"},"dateModified":today}
 def ld(lg, r):
     pr = dict(prof, url=U(lg), inLanguage=lg, name=D["SEO"][lg]["home_t"], description=D["SEO"][lg]["home_d"])
@@ -112,16 +112,16 @@ for lg in ("es","en","fr"):
     for page, key in ROUTES:
         out = dist + path(lg, page, key) + "index.html"; os.makedirs(os.path.dirname(out), exist_ok=True)
         open(out, "w").write(page_html(lg, page, key)); npages += 1
-open(dist+"/404.html","w").write('<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>404 · Álvaro Fabre</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:Outfit,system-ui,sans-serif;background:#FDF9F0;color:#2C2C2C;padding:20px;text-align:center}h1{font-size:clamp(4rem,14vw,9rem);margin:0;font-weight:600;letter-spacing:-.03em}p{font-size:1.1rem;font-weight:300}a{display:inline-block;margin:.4rem .5rem;padding:.8rem 1.4rem;border:1px solid currentColor;border-radius:999px;color:inherit;text-decoration:none}@media(prefers-color-scheme:dark){body{background:#222;color:#FDF9F0}}</style><main><h1>404</h1><p>Esta página no existe · This page does not exist · Cette page n\'existe pas</p><a href="/">Inicio</a><a href="/en/">Home</a><a href="/fr/">Accueil</a></main>')
+open(dist+"/404.html","w").write('<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>404 · Tom Fabre</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:Outfit,system-ui,sans-serif;background:#FDF9F0;color:#2C2C2C;padding:20px;text-align:center}h1{font-size:clamp(4rem,14vw,9rem);margin:0;font-weight:600;letter-spacing:-.03em}p{font-size:1.1rem;font-weight:300}a{display:inline-block;margin:.4rem .5rem;padding:.8rem 1.4rem;border:1px solid currentColor;border-radius:999px;color:inherit;text-decoration:none}@media(prefers-color-scheme:dark){body{background:#222;color:#FDF9F0}}</style><main><h1>404</h1><p>Esta página no existe · This page does not exist · Cette page n\'existe pas</p><a href="/">Inicio</a><a href="/en/">Home</a><a href="/fr/">Accueil</a></main>')
 shutil.copy("cv-alvaro-fabre.pdf", dist+"/cv-alvaro-fabre.pdf")
 # portfolio.json
-pf = {"name":"Álvaro Fabre","jobTitle":"Product & Brand Designer","location":"Madrid, Spain","studio":{"name":"Binōme Studio","url":"https://binome.xyz"},"languages":["es","fr","en"],"email":EMAIL,"profiles":[{"name":k,"url":v} for k,v in SOC.items()],"cv":f"{SITE}/cv-alvaro-fabre.pdf","updated":today,
+pf = {"name":"Tom Fabre","jobTitle":"Product & Brand Designer","location":"Madrid, Spain","studio":{"name":"Binōme Studio","url":"https://binome.xyz"},"languages":["es","fr","en"],"email":EMAIL,"profiles":[{"name":k,"url":v} for k,v in SOC.items()],"cv":f"{SITE}/cv-alvaro-fabre.pdf","updated":today,
   "services":{l:[{"name":s[0],"tagline":s[1],"summary":s[2],"tags":s[4]} for s in T[l]["svc"]] for l in ("es","en","fr")},
   "projects":{l:[pj(l,i) for i in range(len(PROJ))] for l in ("es","en","fr")}}
 open(dist+"/portfolio.json","w").write(json.dumps(pf,ensure_ascii=False,indent=2))
 # llms.txt (llmstxt.org format)
-L=[]; L.append("# Álvaro Fabre"); L.append("")
-L.append("> Álvaro Fabre is a product and brand designer based in Madrid and co-founder of Binōme Studio. He designs brands, websites and digital products (branding, web design, UX/UI, strategy) with more than ten years of experience between Latin America and Europe. He works in Spanish, French and English and is available for new projects.")
+L=[]; L.append("# Tom Fabre"); L.append("")
+L.append("> Tom Fabre is a product and brand designer based in Madrid and co-founder of Binōme Studio. He designs brands, websites and digital products (branding, web design, UX/UI, strategy) with more than ten years of experience between Latin America and Europe. He works in Spanish, French and English and is available for new projects.")
 L.append(""); L.append("The portfolio has real URLs per language: Spanish at the root, English under /en/ and French under /fr/. Each project below links to its detail page. Full text of every project in all three languages is in llms-full.txt; structured data is in portfolio.json.")
 L.append(""); L.append("## About"); L.append("")
 L.append(f"- [Bio]({U("en","bio")}): Background, way of working, quick facts and personal links.")
@@ -139,7 +139,7 @@ L.append(f"- [AI catalog]({SITE}/.well-known/ai-catalog.json): Machine-readable 
 L.append(f"- [Binōme Studio](https://binome.xyz): The design studio Álvaro co-founded in Madrid.")
 open(dist+"/llms.txt","w").write("\n".join(L)+"\n")
 # llms-full.txt
-F=["# Álvaro Fabre — full portfolio content",""," > Product and brand designer in Madrid, co-founder of Binōme Studio. Spanish, French and English.","",f"Site: {SITE}/ · Email: {EMAIL} · Updated: {today}",""]
+F=["# Tom Fabre — full portfolio content",""," > Product and brand designer in Madrid, co-founder of Binōme Studio. Spanish, French and English.","",f"Site: {SITE}/ · Email: {EMAIL} · Updated: {today}",""]
 names={"es":"Español","en":"English","fr":"Français"}
 for l in ("en","es","fr"):
     t=T[l]; F.append(f"## {names[l]}"); F.append("")
@@ -154,15 +154,15 @@ for l in ("en","es","fr"):
     F.append(f"### {t['quote'] if 'quote' in t else t['ab_quote']}"); F.append("")
 open(dist+"/llms-full.txt","w").write("\n".join(F)+"\n")
 # ai-catalog.json
-cat = {"specVersion":"1.0","host":{"displayName":"Álvaro Fabre","identifier":DOMAIN},"entries":[
- {"identifier":f"urn:ai:{DOMAIN}:knowledge:llms-txt","displayName":"Álvaro Fabre — llms.txt","type":"text/plain","url":f"{SITE}/llms.txt","description":"Curated index of Álvaro Fabre's portfolio for AI agents: profile, projects, services and contact."},
- {"identifier":f"urn:ai:{DOMAIN}:knowledge:llms-full-txt","displayName":"Álvaro Fabre — full content","type":"text/plain","url":f"{SITE}/llms-full.txt","description":"Complete portfolio text in Spanish, English and French."},
- {"identifier":f"urn:ai:{DOMAIN}:data:portfolio","displayName":"Álvaro Fabre — portfolio data","type":"application/json","url":f"{SITE}/portfolio.json","description":"Structured JSON with profile, services and all projects in three languages."},
+cat = {"specVersion":"1.0","host":{"displayName":"Tom Fabre","identifier":DOMAIN},"entries":[
+ {"identifier":f"urn:ai:{DOMAIN}:knowledge:llms-txt","displayName":"Tom Fabre — llms.txt","type":"text/plain","url":f"{SITE}/llms.txt","description":"Curated index of Tom Fabre's portfolio for AI agents: profile, projects, services and contact."},
+ {"identifier":f"urn:ai:{DOMAIN}:knowledge:llms-full-txt","displayName":"Tom Fabre — full content","type":"text/plain","url":f"{SITE}/llms-full.txt","description":"Complete portfolio text in Spanish, English and French."},
+ {"identifier":f"urn:ai:{DOMAIN}:data:portfolio","displayName":"Tom Fabre — portfolio data","type":"application/json","url":f"{SITE}/portfolio.json","description":"Structured JSON with profile, services and all projects in three languages."},
  {"identifier":f"urn:ai:{DOMAIN}:data:sitemap","displayName":"Sitemap","type":"application/xml","url":f"{SITE}/sitemap.xml","description":"XML sitemap of the site."}]}
 open(dist+"/.well-known/ai-catalog.json","w").write(json.dumps(cat,ensure_ascii=False,indent=2))
 # robots, sitemap, favicon, manifest
 bots=["GPTBot","OAI-SearchBot","ChatGPT-User","ClaudeBot","Claude-User","Claude-SearchBot","anthropic-ai","PerplexityBot","Perplexity-User","Google-Extended","Applebot-Extended","Bingbot","Googlebot","CCBot","Amazonbot","Meta-ExternalAgent","DuckAssistBot"]
-r="# Álvaro Fabre — AI and search crawlers are welcome\nUser-agent: *\nAllow: /\n\n"+"".join(f"User-agent: {b}\nAllow: /\n\n" for b in bots)+f"Sitemap: {SITE}/sitemap.xml\n"
+r="# Tom Fabre — AI and search crawlers are welcome\nUser-agent: *\nAllow: /\n\n"+"".join(f"User-agent: {b}\nAllow: /\n\n" for b in bots)+f"Sitemap: {SITE}/sitemap.xml\n"
 open(dist+"/robots.txt","w").write(r)
 def sm_url(lg,page,key,pr):
     al = "".join(f'<xhtml:link rel="alternate" hreflang="{o}" href="{U(o,page,key)}"/>' for o in ("es","en","fr")) + f'<xhtml:link rel="alternate" hreflang="x-default" href="{U("es",page,key)}"/>'
@@ -172,8 +172,8 @@ for lg in ("es","en","fr"):
     for page, key in ROUTES: smx += sm_url(lg,page,key,{"home":"1.0","projects":"0.9","bio":"0.7","contact":"0.7"}.get(page,"0.8"))
 for f in ("cv-alvaro-fabre.pdf","llms.txt","portfolio.json"): smx += f"  <url><loc>{SITE}/{f}</loc><lastmod>{today}</lastmod><priority>0.3</priority></url>\n"
 open(dist+"/sitemap.xml","w").write(smx + "</urlset>\n")
-open(dist+"/favicon.svg","w").write('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="32" fill="#2C2C2C"/><text x="32" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="24" fill="#FDF9F0">AF</text></svg>')
-open(dist+"/manifest.webmanifest","w").write(json.dumps({"name":"Álvaro Fabre","short_name":"Álvaro Fabre","start_url":"/","display":"browser","background_color":"#FDF9F0","theme_color":"#FDF9F0","icons":[{"src":"/favicon.svg","sizes":"any","type":"image/svg+xml"}]},ensure_ascii=False,indent=2))
+open(dist+"/favicon.svg","w").write('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260"><style>.b{fill:#2C2C2C}.m{fill:#FDF9F0}@media (prefers-color-scheme:dark){.b{fill:#FDF9F0}.m{fill:#2C2C2C}}</style><rect class="b" width="260" height="260" rx="30"/><g class="m"><path d="M106.492 180.792L106.492 233.043H153.542V199.007C153.542 197.627 152.704 196.366 151.375 195.749L112.168 177.534C109.56 176.323 106.492 178.085 106.492 180.792Z"/><path d="M32 37V80.7115H106.495V124.539C106.495 127.246 109.563 129.008 112.17 127.797L151.378 109.581C152.706 108.965 153.544 107.703 153.544 106.324V80.7115H228.039V37H32Z"/><path d="M133.893 156.741L190.398 182.993C193.658 184.507 197.493 182.305 197.493 178.92V126.416C197.493 123.031 193.658 120.829 190.398 122.343L133.893 148.595C130.281 150.273 130.281 155.063 133.893 156.741Z"/></g></svg>')
+open(dist+"/manifest.webmanifest","w").write(json.dumps({"name":"Tom Fabre","short_name":"Tom Fabre","start_url":"/","display":"browser","background_color":"#FDF9F0","theme_color":"#FDF9F0","icons":[{"src":"/favicon.svg","sizes":"any","type":"image/svg+xml"}]},ensure_ascii=False,indent=2))
 open(dist+"/_headers","w").write("/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n\n/llms.txt\n  Content-Type: text/plain; charset=utf-8\n/llms-full.txt\n  Content-Type: text/plain; charset=utf-8\n/.well-known/ai-catalog.json\n  Content-Type: application/json; charset=utf-8\n  Access-Control-Allow-Origin: *\n/portfolio.json\n  Content-Type: application/json; charset=utf-8\n  Access-Control-Allow-Origin: *\n/*.pdf\n  Cache-Control: public, max-age=86400\n")
 print("built", SITE, len(html), npages, "pages")
 

@@ -125,9 +125,9 @@ fr:{
 }};
 Object.keys(TX).forEach(k => Object.assign(T[k], TX[k]));
 /* Bio heading per locale, rendered as separate spans */
-T.es.bio_h = ["Hola,","soy Álvaro."];
-T.en.bio_h = ["Hi,","I'm Álvaro."];
-T.fr.bio_h = ["Bonjour,","moi c'est Álvaro."];
+T.es.bio_h = ["Hola,","soy Tom."];
+T.en.bio_h = ["Hi,","I'm Tom."];
+T.fr.bio_h = ["Bonjour,","moi c'est Tom."];
 /* Contact monumental heading */
 T.es.c_h = ["Hablemos."];
 T.en.c_h = ["Let's talk."];

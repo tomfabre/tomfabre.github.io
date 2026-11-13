@@ -13,7 +13,7 @@ es:{
   worked_w:["Aquí aprendo cada día lo difícil que es hacerlo bien y sencillo.","Aquí aprendí a diseñar para millones sin perder el detalle.","Aquí aprendí a mirar de verdad a quien usa las cosas."],
   bio_mega1:"Detrás de cada", bio_mega2:"pantalla, alguien.", bio_sub:"Diseño producto y marcas con una obsesión: que lo que haces se entienda, se recuerde y funcione. Y que quien esté al otro lado se sienta bien tratado.", bio_tag:"Product Designer · Brand Strategist",
   foot_lead:"Lo bueno empieza con una conversación.", foot_p:"Si has llegado hasta aquí, ya tenemos algo en común: nos importan los detalles. Cuéntame qué quieres construir y hacemos que se note.",
-  w_name:"Sí, con tilde y todo. Álvaro.", w_hero:"", w_sticker:"Puedes moverme.",
+  w_name:"Mi nombre real es Álvaro, pero soy Tom.", w_hero:"", w_sticker:"Puedes moverme.",
   st_hero:"Hecho a mano", st_bio:"Con café"
 },
 en:{
@@ -29,7 +29,7 @@ en:{
   worked_w:["Here I learn every day how hard it is to make it good and simple.","Here I learned to design for millions without losing the detail.","Here I learned to really look at the people who use things."],
   bio_mega1:"Behind every", bio_mega2:"screen, someone.", bio_sub:"I design products and brands with one obsession: that what you do is understood, remembered and works. And that whoever is on the other side feels well looked after.", bio_tag:"Product Designer · Brand Strategist",
   foot_lead:"Good things start with a conversation.", foot_p:"If you've made it this far, we already have something in common: we care about details. Tell me what you want to build and we'll make it show.",
-  w_name:"Yes, accent and all. Álvaro.", w_hero:"", w_sticker:"You can move me.",
+  w_name:"My real name is Álvaro, but I'm Tom.", w_hero:"", w_sticker:"You can move me.",
   st_hero:"Handmade", st_bio:"Powered by coffee"
 },
 fr:{
@@ -45,7 +45,10 @@ fr:{
   worked_w:["Ici j'apprends chaque jour combien c'est difficile de faire bien et simple.","Ici j'ai appris à concevoir pour des millions sans perdre le détail.","Ici j'ai appris à regarder vraiment ceux qui utilisent les choses."],
   bio_mega1:"Derrière chaque", bio_mega2:"écran, quelqu'un.", bio_sub:"Je conçois produits et marques avec une obsession : que ce que vous faites soit compris, retenu et fonctionne. Et que celui qui est de l'autre côté se sente bien traité.", bio_tag:"Product Designer · Brand Strategist",
   foot_lead:"Les bonnes choses commencent par une conversation.", foot_p:"Si vous êtes arrivé jusqu'ici, on a déjà quelque chose en commun : les détails nous importent. Dites-moi ce que vous voulez construire et on le fera voir.",
-  w_name:"Oui, avec l'accent. Álvaro.", w_hero:"", w_sticker:"Vous pouvez me déplacer.",
+  w_name:"Mon vrai nom est Álvaro, mais je suis Tom.", w_hero:"", w_sticker:"Vous pouvez me déplacer.",
   st_hero:"Fait main", st_bio:"Au café"
 }};
+Object.assign(T.es, { bi_name:"Mi nombre real es Álvaro Fabre, pero mi familia y mis amigos siempre me han llamado Tom. Por eso Tom es el nombre con el que prefiero que me conozcas." });
+Object.assign(T.en, { bi_name:"My real name is Álvaro Fabre, but my family and friends have always called me Tom. That's why Tom is the name I'd rather you know me by." });
+Object.assign(T.fr, { bi_name:"Mon vrai nom est Álvaro Fabre, mais ma famille et mes amis m'ont toujours appelé Tom. C'est pourquoi Tom est le nom sous lequel je préfère qu'on me connaisse." });
 Object.keys(TZ).forEach(k => Object.assign(T[k], TZ[k]));
