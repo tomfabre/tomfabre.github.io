@@ -514,3 +514,325 @@ SEO.fr.proj = { contazara: {
 SEO.es.proj.a2pas = {"t": "À2pas: Diseño UX/UI y producto digital | Tom Fabre", "d": "Diseño de producto, UX/UI y branding para A2PAS, una plataforma que conecta artistas, salas y espectadores mediante programación cultural participativa."};
 SEO.en.proj.a2pas = {"t": "À2pas: UX/UI & Product Design | Tom Fabre", "d": "Product design, UX/UI and branding for A2PAS, a platform connecting artists, venues and audiences through participatory cultural programming."};
 SEO.fr.proj.a2pas = {"t": "À2pas : UX/UI & Design Produit | Tom Fabre", "d": "Design produit, UX/UI et identité visuelle pour A2PAS, une plateforme qui rapproche artistes, salles et publics grâce à une programmation participative."};
+
+/* HappyLife: case study (sections), hero override and SEO. Copy approved by Tom; no invented metrics. */
+SECTIONS.happylife = [
+ {
+  "type": "text",
+  "id": "reto",
+  "h": {
+   "es": "01 · El reto",
+   "en": "01 · The challenge",
+   "fr": "01 · Le défi"
+  },
+  "t": {
+   "es": "Diseñar una app para que quieras dejar de usarla.",
+   "en": "Designing an app people would want to put down.",
+   "fr": "Concevoir une appli qu'on a envie de quitter."
+  },
+  "p": [
+   {
+    "es": "Después de la pandemia, una startup francesa de Lyon llegó con una idea: ayudar a las personas a recuperar el contacto real.",
+    "en": "After the pandemic, a French startup from Lyon came to us with an idea: help people reconnect in real life.",
+    "fr": "Après la pandémie, une startup lyonnaise est venue avec une idée : aider les gens à retrouver le plaisir de se rencontrer dans la vraie vie."
+   },
+   {
+    "es": "La soledad no era algo nuevo. Ni tampoco esa costumbre de pasar horas mirando una pantalla mientras la vida sigue fuera de ella.",
+    "en": "Loneliness wasn't new. Neither was spending hours looking at a screen while life happened somewhere else.",
+    "fr": "La solitude n'avait pas attendu le Covid pour exister. Et cette habitude de passer des heures devant un écran non plus."
+   },
+   {
+    "es": "El desafío tenía algo de contradictorio. ¿Cómo diseñar una aplicación que acerque a las personas sin hacerlas más dependientes del móvil?",
+    "en": "The challenge came with a contradiction. How do you design an app that brings people closer without making them more dependent on their phones?",
+    "fr": "Le défi était presque paradoxal. Comment créer une application qui rapproche les personnes sans les rendre encore plus dépendantes de leur téléphone ?"
+   },
+   {
+    "em": true,
+    "es": "La respuesta no estaba en añadir funcionalidades, sino en eliminar todo lo que sobraba.",
+    "en": "The answer wasn't adding more features. It was removing what got in the way.",
+    "fr": "La réponse n'était pas d'ajouter des fonctionnalités, mais d'enlever tout ce qui compliquait les choses."
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "experiencia",
+  "h": {
+   "es": "02 · La experiencia",
+   "en": "02 · The experience",
+   "fr": "02 · L'expérience"
+  },
+  "t": {
+   "es": "Menos buscar. Más encontrar.",
+   "en": "Less searching. More finding.",
+   "fr": "Moins chercher. Plus trouver."
+  },
+  "p": [
+   {
+    "es": "Queríamos evitar la típica experiencia de deslizar sin parar, recorrer cientos de opciones y terminar sin decidir nada.",
+    "en": "We wanted to avoid endless scrolling, hundreds of choices and the familiar feeling of closing an app without having decided anything.",
+    "fr": "Nous voulions éviter le scroll sans fin, les centaines de propositions et ce moment où l'on ferme une appli sans avoir rien décidé."
+   },
+   {
+    "es": "HappyLife partía de algo mucho más sencillo: qué te gusta, cuándo tienes tiempo y qué te apetece compartir.",
+    "en": "HappyLife started with three simple things: what you enjoy, when you're free and what you'd like to share with others.",
+    "fr": "HappyLife partait de trois choses simples : ce qu'on aime, quand on est disponible et ce qu'on a envie de partager."
+   },
+   {
+    "es": "A partir de esos intereses y horarios, la app podía mostrar actividades relevantes sin obligarte a pasar por un catálogo interminable.",
+    "en": "Based on interests and availability, the app could surface relevant activities without making people browse through an endless catalogue.",
+    "fr": "À partir des centres d'intérêt et des créneaux libres, l'application pouvait proposer des activités pertinentes sans obliger à parcourir un catalogue interminable."
+   },
+   {
+    "es": "El trabajo estaba en hacer que esa selección sucediera detrás de la interfaz, para que la persona solo tuviera que ocuparse de lo importante.",
+    "en": "The complexity belonged behind the interface, leaving people free to focus on what mattered.",
+    "fr": "La complexité devait rester en coulisses, pour que l'utilisateur puisse se concentrer sur l'essentiel."
+   },
+   {
+    "em": true,
+    "es": "Encontrar un buen plan debería ser fácil. Vivirlo, todavía más.",
+    "en": "Finding a good plan should be easy. Enjoying it should be even easier.",
+    "fr": "Trouver une bonne sortie devrait être simple. En profiter, encore plus."
+   }
+  ],
+  "flow": [
+   {
+    "pair": [
+     {
+      "key": "happylife",
+      "v": "2",
+      "alt": {
+       "es": "Pantalla de inicio de HappyLife en un móvil: próximas actividades, agenda local, categorías y filtro por fecha",
+       "en": "HappyLife home screen on a phone: upcoming activities, local agenda, categories and a date filter",
+       "fr": "Écran d'accueil de HappyLife sur un téléphone : prochaines activités, agenda local, catégories et filtre par date"
+      }
+     },
+     {
+      "key": "happylife",
+      "v": "0",
+      "alt": {
+       "es": "Pantallas de agenda y calendario de HappyLife con actividades del día y de la semana siguiente",
+       "en": "HappyLife schedule and calendar screens with today's and next week's activities",
+       "fr": "Écrans agenda et calendrier de HappyLife avec les activités du jour et de la semaine suivante"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "gamificacion",
+  "h": {
+   "es": "03 · Gamificación con propósito",
+   "en": "03 · Gamification with purpose",
+   "fr": "03 · Une gamification qui a du sens"
+  },
+  "t": {
+   "es": "Los puntos estaban fuera de la pantalla.",
+   "en": "The rewards were waiting offline.",
+   "fr": "Les récompenses étaient dans la vraie vie."
+  },
+  "p": [
+   {
+    "es": "HappyLife incorporaba un sistema de recompensas para motivar la participación.",
+    "en": "HappyLife included a rewards system designed to encourage real participation.",
+    "fr": "HappyLife intégrait un système de points pour encourager la participation."
+   },
+   {
+    "es": "Conocer personas, compartir actividades y participar en encuentros permitía acumular puntos que podían canjearse por bonos y nuevas experiencias.",
+    "en": "Meeting people, joining activities and sharing experiences could earn points, redeemable for vouchers and new experiences.",
+    "fr": "Rencontrer des personnes, prendre part à des activités et partager des moments permettait de gagner des points, échangeables contre des bons et de nouvelles expériences."
+   },
+   {
+    "es": "La idea no era premiar el tiempo dentro de la app, sino lo que ocurría después de utilizarla.",
+    "en": "The goal wasn't to reward time spent using the app, but what happened after putting the phone away.",
+    "fr": "L'idée n'était pas de récompenser le temps passé dans l'application, mais ce qui se passait une fois le téléphone rangé."
+   },
+   {
+    "es": "Una pequeña diferencia que cambiaba toda la lógica del producto.",
+    "en": "A small distinction that changed the logic of the product.",
+    "fr": "Une nuance qui changeait toute la logique du produit."
+   },
+   {
+    "em": true,
+    "es": "Menos recompensas por mirar. Más razones para participar.",
+    "en": "Less reward for scrolling. More reasons to show up.",
+    "fr": "Moins de récompenses pour scroller. Plus de raisons de sortir."
+   }
+  ],
+  "flow": [
+   {
+    "img": {
+     "key": "happylife",
+     "v": "3",
+     "alt": {
+      "es": "Mosaico de pantallas de HappyLife: puntos acumulados, recompensas, mapa de actividades y pantallas de bienvenida",
+      "en": "Mosaic of HappyLife screens: points earned, rewards, activity map and onboarding screens",
+      "fr": "Mosaïque d'écrans HappyLife : points gagnés, récompenses, carte des activités et écrans d'accueil"
+     },
+     "r": "1600/1200"
+    }
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "producto",
+  "h": {
+   "es": "04 · Diseño del producto",
+   "en": "04 · Product design",
+   "fr": "04 · Le design produit"
+  },
+  "t": {
+   "es": "Pocos clics. Más tiempo para las personas.",
+   "en": "Fewer taps. More time for people.",
+   "fr": "Quelques clics. Et place aux rencontres."
+  },
+  "p": [
+   {
+    "es": "El trabajo de UX/UI se centró en simplificar cada decisión.",
+    "en": "Our UX/UI approach focused on making every decision simpler.",
+    "fr": "Notre travail UX/UI visait à simplifier chaque décision."
+   },
+   {
+    "es": "Accesos rápidos, filtros útiles y recorridos cortos para descubrir una actividad, valorar si encajaba con tus intereses y encontrar un momento para participar.",
+    "en": "Quick access, useful filters and short journeys helped people discover activities that matched their interests and free time.",
+    "fr": "Des accès rapides, des filtres utiles et des parcours courts pour découvrir des activités adaptées à ses envies et à ses disponibilités."
+   },
+   {
+    "es": "En lugar de presentar todas las posibilidades, buscamos acercar a cada persona las opciones que tenían sentido para ella.",
+    "en": "Instead of showing every possible option, we focused on making the relevant ones easier to find.",
+    "fr": "Plutôt que de multiplier les choix, nous voulions aider chacun à trouver ceux qui comptaient vraiment."
+   },
+   {
+    "es": "La complejidad debía resolverse dentro del producto, no trasladarse a quien lo utilizaba.",
+    "en": "The product had to handle the complexity, not pass it on to the people using it.",
+    "fr": "La complexité devait être gérée par le produit, pas par les personnes qui l'utilisaient."
+   }
+  ],
+  "flow": [
+   {
+    "p": [
+     {
+      "es": "Desde el estudio UX/UI y los prototipos hasta la puesta en marcha del MVP, mantuvimos el mismo principio: facilitar que las personas llegaran antes a lo que buscaban.",
+      "en": "From UX/UI research and prototypes through to bringing the MVP into operation, we kept the same principle: help people find what they needed with less effort.",
+      "fr": "De la recherche UX/UI aux prototypes, puis à la mise en œuvre du MVP, nous avons gardé le même principe : aider les gens à trouver ce dont ils avaient besoin avec le moins d'effort possible."
+     },
+     {
+      "em": true,
+      "es": "No necesitábamos que las personas hicieran más cosas en la app. Necesitábamos que pudieran hacer más cosas fuera de ella.",
+      "en": "We didn't need people to do more inside the app. We wanted them to do more outside it.",
+      "fr": "L'objectif n'était pas de faire passer plus de temps dans l'appli, mais d'en libérer pour les autres."
+     }
+    ]
+   },
+   {
+    "img": {
+     "key": "happylife",
+     "v": "1",
+     "alt": {
+      "es": "Value Proposition Canvas de HappyLife con ganancias, tareas y frustraciones, junto a una ficha de la app en una tienda de aplicaciones",
+      "en": "HappyLife Value Proposition Canvas with gains, jobs and pains, next to an app store listing",
+      "fr": "Value Proposition Canvas de HappyLife avec gains, tâches et frustrations, à côté d'une fiche d'application sur une boutique d'applications"
+     },
+     "r": "2400/1050",
+     "zoom": true,
+     "cap": {
+      "es": "Value Proposition Canvas y ficha de la app. Visualización conceptual: las valoraciones y cifras de la ficha forman parte del mockup, no son métricas reales. Toca la imagen para ampliarla.",
+      "en": "Value Proposition Canvas and app listing. Conceptual visualisation: the ratings and figures in the listing are part of the mockup, not real metrics. Tap the image to enlarge it.",
+      "fr": "Value Proposition Canvas et fiche de l'application. Visualisation conceptuelle : les notes et chiffres de la fiche font partie de la maquette, ce ne sont pas des métriques réelles. Touchez l'image pour l'agrandir."
+     }
+    }
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "trabajo",
+  "h": {
+   "es": "05 · Mi trabajo",
+   "en": "05 · My work",
+   "fr": "05 · Mon travail"
+  },
+  "t": {
+   "es": "Diseñar para lo que pasa después del clic.",
+   "en": "Designing for what happens after the tap.",
+   "fr": "Penser à ce qui se passe après le clic."
+  },
+  "p": [
+   {
+    "es": "Trabajamos en la investigación, definición de experiencia, diseño UX/UI y prototipado de una aplicación cuyo objetivo era facilitar encuentros reales.",
+    "en": "We worked on research, experience definition, UX/UI design and prototyping for an app created to make real connections easier.",
+    "fr": "Nous avons travaillé sur la recherche, la définition de l'expérience, le design UX/UI et le prototypage d'une application destinée à faciliter les rencontres réelles."
+   },
+   {
+    "es": "El proyecto avanzó hasta la puesta en marcha del MVP, trasladando las decisiones de diseño a una primera versión funcional del producto.",
+    "en": "The project progressed to the MVP implementation stage, bringing design decisions into the first functional version of the product.",
+    "fr": "Le projet est allé jusqu'à la mise en œuvre du MVP, en traduisant les choix de design dans une première version fonctionnelle."
+   },
+   {
+    "es": "El desafío consistía en convertir una idea social en decisiones concretas: cómo filtrar, qué información mostrar, cuándo proponer una actividad y cómo motivar la participación sin crear dependencia ni fricción.",
+    "en": "The challenge was to turn a social idea into practical product decisions: how to filter activities, what information to show, when to surface relevant opportunities and how to encourage participation without unnecessary friction or dependence.",
+    "fr": "Le défi consistait à transformer une idée sociale en choix concrets de produit : comment filtrer, quelles informations présenter, quand proposer une activité et comment encourager la participation sans créer de friction inutile ni de dépendance."
+   },
+   {
+    "es": "Una experiencia pensada para que la tecnología acompañara a las personas y supiera cuándo hacerse a un lado.",
+    "en": "An experience built around technology knowing when to step aside.",
+    "fr": "Une expérience pensée pour que la technologie sache aussi s'effacer."
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "cierre",
+  "h": {
+   "es": "Cierre",
+   "en": "Closing",
+   "fr": "Conclusion"
+  },
+  "t": {
+   "es": "La vida pasa fuera de la pantalla.",
+   "en": "Life happens beyond the screen.",
+   "fr": "La vraie vie n'attend pas derrière un écran."
+  },
+  "p": [
+   {
+    "es": "HappyLife partía de una idea sencilla: siempre puede haber alguien cerca con ganas de compartir un momento.",
+    "en": "HappyLife was built around a simple idea: there might always be someone nearby who'd love to share a moment.",
+    "fr": "HappyLife reposait sur une idée simple : il y a peut-être quelqu'un tout près qui aimerait partager un moment."
+   },
+   {
+    "es": "El diseño debía ayudar a que esas personas se encontraran.",
+    "en": "Design could help those people find each other.",
+    "fr": "Le design devait aider ces personnes à se trouver."
+   },
+   {
+    "em": true,
+    "es": "¿Tienes una idea que necesita una experiencia más humana? Hablemos.",
+    "en": "Have an idea that needs a more human experience? Let's talk.",
+    "fr": "Vous avez une idée qui mérite une expérience plus humaine ? Parlons-en."
+   }
+  ]
+ }
+];
+HERO.happylife = {
+ "tag": {
+  "es": "Menos pantalla. Más vida real.",
+  "en": "Less screen time. More real life.",
+  "fr": "Moins d'écran. Plus de vraie vie."
+ },
+ "lead": {
+  "es": "Una app diseñada para conectar personas a través de actividades compartidas. Porque a veces lo que necesitamos no es otra aplicación, sino alguien con quien hacer planes.",
+  "en": "An app designed to bring people together through shared activities. Because sometimes what we need isn't another app, but someone to make plans with.",
+  "fr": "Une application pensée pour rapprocher les gens autour d'activités à partager. Parce que parfois, ce dont on a besoin, ce n'est pas d'une appli de plus, mais de quelqu'un avec qui faire quelque chose."
+ },
+ "alt": {
+  "es": "Portada de HappyLife: dos móviles con el logotipo y la pantalla de inicio con actividades locales y categorías",
+  "en": "HappyLife cover: two phones showing the logo and the home screen with local activities and categories",
+  "fr": "Couverture de HappyLife : deux téléphones avec le logo et l'écran d'accueil avec activités locales et catégories"
+ }
+};
+SEO.es.proj.happylife = {"t": "HappyLife: UX/UI y diseño de app social | Tom Fabre", "d": "Diseño UX/UI de HappyLife, una app pensada para conectar personas mediante actividades reales, filtros inteligentes y gamificación con propósito."};
+SEO.en.proj.happylife = {"t": "HappyLife: Social App UX/UI & Product Design | Tom Fabre", "d": "UX/UI design for HappyLife, a social app created to bring people together through real activities, thoughtful filtering and meaningful rewards."};
+SEO.fr.proj.happylife = {"t": "HappyLife : UX/UI et design d'application sociale | Tom Fabre", "d": "Design UX/UI de HappyLife, une application pensée pour favoriser les rencontres réelles grâce aux activités, aux filtres pertinents et à la gamification."};

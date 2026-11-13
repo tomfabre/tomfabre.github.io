@@ -18,7 +18,7 @@ PUB = [i for i, p in enumerate(PROJ) if not p.get("locked")]
 import validate_sections
 _errs = validate_sections.validate(SECTIONS, {p["key"] for p in PROJ}, lambda k, v: os.path.exists(f"img/{k}-{v}.webp"), PROJ)
 _errs += validate_sections.validate_hero(HERO, {p["key"] for p in PROJ})
-_NO_DASH = ("a2pas",)   # projects whose visible copy must not contain en/em dashes
+_NO_DASH = ("a2pas", "happylife")   # projects whose visible copy must not contain en/em dashes
 _errs += validate_sections.check_no_dash(_NO_DASH, SECTIONS, HERO, {lg: {q["key"]: D["T"][lg]["projects"][i] for i, q in enumerate(PROJ)} for lg in ("es", "en", "fr")})
 if _errs: sys.exit("BUILD ABORTED: invalid project sections (c1k.js / c1p.js):\n  - " + "\n  - ".join(_errs))
 rl = lambda d, lg: d["role"][lg] if isinstance(d["role"], dict) else d["role"]   # role may be a plain string or {es,en,fr}
