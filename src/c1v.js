@@ -2,7 +2,7 @@
 const TV = {
 es:{
   pj_a1:"Cada reto,", pj_a2:"una solución.", pj_b1:"Cada marca,", pj_b2:"su identidad.",
-  bio_a1:"Diseño lógico.", bio_a2:"Trato cercano.", bio_b1:"Pensar primero.", bio_b2:"Crear después.",
+  bio_a1:"Sin fórmulas.", bio_a2:"Con intención.", bio_b1:"Pensar primero.", bio_b2:"Crear después.",
   ct_a1:"Buenas charlas", ct_a2:"crean proyectos.", ct_b1:"Grandes metas", ct_b2:"piden acción.",
   bi_eyebrow:"Hola, soy Tom", bi_h:"Diseño para conectar ideas, personas y productos.",
   bi_p1:"Combino estrategia, branding, diseño digital y tecnología para convertir ideas complejas en experiencias claras, útiles y con personalidad.",
@@ -17,7 +17,7 @@ es:{
 },
 en:{
   pj_a1:"Every problem,", pj_a2:"a clear path.", pj_b1:"Every product,", pj_b2:"a smart move.",
-  bio_a1:"Smart design.", bio_a2:"Human touch.", bio_b1:"Curious mind.", bio_b2:"Sharp craft.",
+  bio_a1:"No formulas.", bio_a2:"Just intention.", bio_b1:"Think first.", bio_b2:"Create second.",
   ct_a1:"Good talks", ct_a2:"spark ideas.", ct_b1:"Your vision,", ct_b2:"our next step.",
   bi_eyebrow:"Hi, I'm Tom", bi_h:"Design that connects ideas, people and products.",
   bi_p1:"I blend strategy, branding, digital design and technology to turn complex ideas into experiences that are clear, useful and full of personality.",
@@ -32,7 +32,7 @@ en:{
 },
 fr:{
   pj_a1:"Chaque défi,", pj_a2:"sa solution.", pj_b1:"Chaque marque,", pj_b2:"son identité.",
-  bio_a1:"Design logique.", bio_a2:"Approche vraie.", bio_b1:"Esprit curieux.", bio_b2:"Geste précis.",
+  bio_a1:"Sans recettes.", bio_a2:"Avec intention.", bio_b1:"Penser d'abord.", bio_b2:"Créer ensuite.",
   ct_a1:"Bonnes idées,", ct_a2:"bons projets.", ct_b1:"Ton projet,", ct_b2:"notre défi.",
   bi_eyebrow:"Salut, moi c'est Tom", bi_h:"Un design qui relie les idées, les gens et les produits.",
   bi_p1:"Je mêle stratégie, branding, design digital et technologie pour transformer des idées complexes en expériences claires, utiles et pleines de personnalité.",
