@@ -96,10 +96,19 @@ def validate(sections, project_keys, img_exists, projects=None):
                     else:
                         for j, it in enumerate(fl):
                             w = f"{at}.flow[{j}]"
-                            if not isinstance(it, dict) or len(it) != 1 or next(iter(it)) not in ("p", "img", "fig"):
-                                errs.append(f"{w}: must be exactly one of {{p: [...]}}, {{img: {{...}}}} (wide) or {{fig: {{...}}}} (4:3)"); continue
+                            if not isinstance(it, dict) or len(it) != 1 or next(iter(it)) not in ("p", "img", "fig", "pair"):
+                                errs.append(f"{w}: must be exactly one of {{p: [...]}}, {{img: {{...}}}} (wide), {{fig: {{..., r?}}}} (in the text column) or {{pair: [img, img]}}"); continue
                             k = next(iter(it))
                             if k == "p": _paras(it["p"], f"{w}.p", errs, False)
+                            elif k == "pair":
+                                pr = it["pair"]
+                                if not isinstance(pr, list) or len(pr) != 2: errs.append(f"{w}.pair: must be a list of exactly 2 images")
+                                else:
+                                    for n, im in enumerate(pr): _img(im, f"{w}.pair[{n}]", errs, img_exists)
+                            elif k == "fig" and isinstance(it["fig"], dict) and "r" in it["fig"]:
+                                im = {a: b for a, b in it["fig"].items() if a != "r"}
+                                if not re.match(r"^\d{1,2}/\d{1,2}$", str(it["fig"]["r"])): errs.append(f"{w}.fig.r: must look like '16/7'")
+                                _img(im, f"{w}.fig", errs, img_exists)
                             else: _img(it[k], f"{w}.{k}", errs, img_exists)
             if typ == "metrics":
                 if "p" in s: _paras(s["p"], f"{at}.p", errs, False)

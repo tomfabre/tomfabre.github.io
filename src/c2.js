@@ -204,9 +204,12 @@ const rl = d => (d.role && typeof d.role === "object") ? tr(d.role) : d.role;   
 const paras = a => (a || []).map(x => x.em ? `<p><strong>${esc(tr(x))}</strong></p>` : `<p>${esc(tr(x))}</p>`).join("");
 const secBody = (s, inner) => `<div class="pj-body"><h2 id="s-${s.id}-h">${esc(tr(s.h))}</h2><div>${s.t ? `<h3>${esc(tr(s.t))}</h3>` : ""}${inner}</div></div>`;
 const secImg = im => (IMG[im.key] && IMG[im.key][im.v]) ? `<div class="pj-gal"><div class="art"><img src="${IMG[im.key][im.v]}" alt="${esc(tr(im.alt))}" loading="lazy" decoding="async"></div></div>` : "";
-const secFig = im => (IMG[im.key] && IMG[im.key][im.v]) ? `<div class="pj-body"><span aria-hidden="true"></span><div><div class="pj-gal one"><div class="art"><img src="${IMG[im.key][im.v]}" alt="${esc(tr(im.alt))}" loading="lazy" decoding="async"></div></div></div></div>` : "";
-const secFlow = fl => (fl || []).map(f => f.img ? secImg(f.img) : f.fig ? secFig(f.fig) : `<div class="pj-body"><span aria-hidden="true"></span><div>${paras(f.p)}</div></div>`).join("");
-const secHasImg = k => !!SECTIONS[k] && SECTIONS[k].some(s => s.img || (s.flow || []).some(f => f.img || f.fig));   // case already carries its images inline
+const imgTag = (im, st) => `<div class="art"${st ? ` style="aspect-ratio:${st}"` : ""}><img src="${IMG[im.key][im.v]}" alt="${esc(tr(im.alt))}" loading="lazy" decoding="async"></div>`;
+const okImg = im => !!(IMG[im.key] && IMG[im.key][im.v]);
+const secFig = im => okImg(im) ? `<div class="pj-body"><span aria-hidden="true"></span><div><div class="pj-gal one">${imgTag(im, im.r)}</div></div></div>` : "";
+const secPair = ims => ims.every(okImg) ? `<div class="pj-gal duo">${ims.map(im => imgTag(im)).join("")}</div>` : "";
+const secFlow = fl => (fl || []).map(f => f.img ? secImg(f.img) : f.fig ? secFig(f.fig) : f.pair ? secPair(f.pair) : `<div class="pj-body"><span aria-hidden="true"></span><div>${paras(f.p)}</div></div>`).join("");
+const secHasImg = k => !!SECTIONS[k] && SECTIONS[k].some(s => s.img || (s.flow || []).some(f => f.img || f.fig || f.pair));   // case already carries its images inline
 /* To add a type: add it here AND to TYPES in validate_sections.py (build fails on unknown types). */
 const SECTION_RENDER = {
   text: s => `<section class="pj-sec" id="s-${s.id}" aria-labelledby="s-${s.id}-h">${secBody(s, paras(s.p))}${s.img ? secImg(s.img) : ""}${secFlow(s.flow)}</section>`,

@@ -44,20 +44,15 @@ const SECTIONS = {
         fr:"Une nouvelle identité en est née, construite autour d'un symbole qui unit le C et le Z par la géométrie, la précision et le mouvement."
       }],
       flow:[
-        { img:{ key:"contazara", v:"6", alt:{
-            es:"Presentación editorial del sistema gráfico de Contazara: logotipo, símbolo y paleta de color corporativa",
-            en:"Editorial presentation of Contazara's graphic system: logo, symbol and corporate colour palette",
-            fr:"Présentation éditoriale du système graphique de Contazara : logotype, symbole et palette de couleurs" } } },
+        { fig:{ key:"contazara", v:"4", r:"16/7", alt:{
+            es:"Construcción geométrica del isotipo de Contazara sobre su retícula, con la versión horizontal del logotipo y la paleta de color corporativa",
+            en:"Geometric construction of the Contazara symbol on its grid, with the horizontal logo and the corporate colour palette",
+            fr:"Construction géométrique du symbole Contazara sur sa grille, avec la version horizontale du logotype et la palette de couleurs" } } },
         { p:[{
             es:"Pero el resultado fue mucho más que un logo: un lenguaje visual con sus propias reglas, colores, tipografías y aplicaciones.",
             en:"But the result was much more than a logo: a visual language with its own rules, colours, typefaces, and applications.",
             fr:"Mais le résultat dépasse largement le logo : un langage visuel avec ses propres règles, couleurs, typographies et applications."
-          }] },
-        { img:{ key:"contazara", v:"4", alt:{
-            es:"Construcción geométrica del isotipo de Contazara sobre su retícula, con la versión horizontal del logotipo y la paleta de color corporativa",
-            en:"Geometric construction of the Contazara symbol on its grid, with the horizontal logo and the corporate colour palette",
-            fr:"Construction géométrique du symbole Contazara sur sa grille, avec la version horizontale du logotype et la palette de couleurs" } } },
-        { p:[{ em:true,
+          },{ em:true,
             es:"Una identidad que no solo los representa. También la sienten suya.",
             en:"An identity that doesn't just represent them. They feel it's theirs.",
             fr:"Une identité qui ne fait pas que les représenter. Ils se la sont appropriée."
@@ -73,13 +68,14 @@ const SECTIONS = {
         fr:"Nous avons porté la nouvelle identité sur le web, avec une expérience plus claire pour explorer les produits, comprendre la technologie et découvrir les personnes derrière Contazara."
       }],
       flow:[
-        { fig:{ key:"contazara", v:"3", alt:{es:"Diseño de la web de Contazara", en:"Contazara website design", fr:"Design du site web de Contazara"} } },
         { p:[{
             es:"También desarrollamos su tono de voz y una línea editorial para LinkedIn e Instagram, combinando innovación, sostenibilidad, datos, actualidad y personas.",
             en:"We also developed their tone of voice and an editorial line for LinkedIn and Instagram, combining innovation, sustainability, data, current affairs, and people.",
             fr:"Nous avons aussi développé leur ton de voix et une ligne éditoriale pour LinkedIn et Instagram, mêlant innovation, durabilité, données, actualité et humain."
           }] },
-        { fig:{ key:"contazara", v:"2", alt:{es:"Publicaciones de Contazara en LinkedIn e Instagram", en:"Contazara posts on LinkedIn and Instagram", fr:"Publications de Contazara sur LinkedIn et Instagram"} } },
+        { pair:[
+          { key:"contazara", v:"3", alt:{es:"Diseño de la web de Contazara", en:"Contazara website design", fr:"Design du site web de Contazara"} },
+          { key:"contazara", v:"2", alt:{es:"Publicaciones de Contazara en LinkedIn e Instagram", en:"Contazara posts on LinkedIn and Instagram", fr:"Publications de Contazara sur LinkedIn et Instagram"} }] },
         { p:[{ em:true,
             es:"Porque una marca no se construye solo con lo que muestra. También con lo que cuenta.",
             en:"Because a brand isn't built only with what it shows. Also with what it tells.",
