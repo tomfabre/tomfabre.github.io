@@ -56,5 +56,22 @@ class T(unittest.TestCase):
     def test_flatten(self):
         f = flatten(GOOD["demo"], "es"); self.assertEqual(f[0]["heading"], "Titular"); self.assertEqual(f[1]["text"], ["Intro", "+1 algo", "Nota"])
 
+    def test_flow_valid(self):
+        im = {"key": "demo", "v": "1", "alt": L("alt")}
+        e = errs(lambda s: s["demo"][0].update(flow=[{"img": im}, {"fig": im}, {"p": [L("Despues")]}]), YESIMG); self.assertEqual(e, [])
+    def test_flow_bad_item(self):
+        e = errs(lambda s: s["demo"][0].update(flow=[{"p": [L("x")], "imgs": []}])); self.assertTrue(any("flow[0]" in x for x in e), e)
+    def test_flow_missing_translation(self):
+        e = errs(lambda s: s["demo"][0].update(flow=[{"p": [{"es": "a", "en": "b"}]}])); self.assertTrue(any("flow[0].p[0].fr" in x for x in e), e)
+    def test_flow_missing_image_file(self):
+        im = {"key": "demo", "v": "9", "alt": L("alt")}
+        e = errs(lambda s: s["demo"][0].update(flow=[{"fig": im}])); self.assertTrue(any("does not exist" in x for x in e), e)
+    def test_flow_unknown_item(self):
+        im = {"key": "demo", "v": "1", "alt": L("alt")}
+        e = errs(lambda s: s["demo"][0].update(flow=[{"imgs": [im]}]), YESIMG); self.assertTrue(any("flow[0]" in x for x in e), e)
+    def test_flatten_includes_flow(self):
+        s = copy.deepcopy(GOOD); s["demo"][0]["flow"] = [{"p": [L("En medio")]}]
+        self.assertIn("En medio", flatten(s["demo"], "es")[0]["text"])
+
 
 if __name__ == "__main__": unittest.main()

@@ -9,7 +9,7 @@ LANGS = ("es", "en", "fr")
 ID_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 # type -> (required keys, optional keys)
 TYPES = {
-    "text":    ({"type", "id", "h", "p"},          {"t", "img"}),
+    "text":    ({"type", "id", "h", "p"},          {"t", "img", "flow"}),
     "metrics": ({"type", "id", "h", "items"},      {"t", "p", "after"}),
 }
 
@@ -41,6 +41,14 @@ def _paras(v, path, errs, required):
         errs.append(f"{path}: must be a non-empty list of paragraphs" if required else f"{path}: must be a list of paragraphs"); return
     for i, p in enumerate(v):
         _para(p, f"{path}[{i}]", errs)
+
+
+def _img(im, path, errs, img_exists):
+    if not isinstance(im, dict) or set(im) != {"key", "v", "alt"}:
+        errs.append(f"{path}: must be {{key, v, alt}}"); return
+    _loc(im["alt"], f"{path}.alt", errs)
+    if not img_exists(str(im["key"]), str(im["v"])):
+        errs.append(f"{path}: file img/{im['key']}-{im['v']}.webp does not exist")
 
 
 def validate(sections, project_keys, img_exists, projects=None):
@@ -79,14 +87,19 @@ def validate(sections, project_keys, img_exists, projects=None):
             if "t" in s: _loc(s["t"], f"{at}.t", errs)
             if typ == "text":
                 if "p" in s: _paras(s["p"], f"{at}.p", errs, True)
-                if "img" in s:
-                    im = s["img"]
-                    if not isinstance(im, dict) or set(im) != {"key", "v", "alt"}:
-                        errs.append(f"{at}.img: must be {{key, v, alt}}")
+                if "img" in s: _img(s["img"], f"{at}.img", errs, img_exists)
+                if "flow" in s:
+                    fl = s["flow"]
+                    if not isinstance(fl, list) or not fl:
+                        errs.append(f"{at}.flow: must be a non-empty list")
                     else:
-                        _loc(im["alt"], f"{at}.img.alt", errs)
-                        if not img_exists(str(im["key"]), str(im["v"])):
-                            errs.append(f"{at}.img: file img/{im['key']}-{im['v']}.webp does not exist")
+                        for j, it in enumerate(fl):
+                            w = f"{at}.flow[{j}]"
+                            if not isinstance(it, dict) or len(it) != 1 or next(iter(it)) not in ("p", "img", "fig"):
+                                errs.append(f"{w}: must be exactly one of {{p: [...]}}, {{img: {{...}}}} (wide) or {{fig: {{...}}}} (4:3)"); continue
+                            k = next(iter(it))
+                            if k == "p": _paras(it["p"], f"{w}.p", errs, False)
+                            else: _img(it[k], f"{w}.{k}", errs, img_exists)
             if typ == "metrics":
                 if "p" in s: _paras(s["p"], f"{at}.p", errs, False)
                 if "after" in s: _paras(s["after"], f"{at}.after", errs, False)
@@ -116,7 +129,7 @@ def flatten(secs, lg):
     """Plain-text view of a project's sections in one language (for llms-full.txt and portfolio.json)."""
     out = []
     for s in secs:
-        paras = [p[lg] for p in s.get("p", [])] + [p[lg] for p in s.get("after", [])]
+        paras = [p[lg] for p in s.get("p", [])] + [p[lg] for f in s.get("flow", []) for p in f.get("p", [])] + [p[lg] for p in s.get("after", [])]
         if s["type"] == "metrics":
             paras.insert(len(s.get("p", [])), " · ".join(f"{it['n'][lg]} {it['l'][lg]}" for it in s["items"]))
         out.append({"id": s["id"], "heading": s["t"][lg] if "t" in s else s["h"][lg], "label": s["h"][lg], "text": paras})

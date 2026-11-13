@@ -1,6 +1,6 @@
 /* Case-study sections + per-project SEO overrides (optional per project; validated by validate_sections.py at build).
    SECTIONS[projectKey] = [section, ...]. Every visible string is {es, en, fr}.
-   Types today: "text" {id,h,t?,p[],img?} and "metrics" {id,h,t?,p?[],items[{n,l}],after?[]}.
+   Types today: "text" {id,h,t?,p[],img?,flow?[{p[]}|{img}|{fig}]} and "metrics" {id,h,t?,p?[],items[{n,l}],after?[]}.
    A paragraph is {es,en,fr} (+ em:true for a bold line). To add a type: validate_sections.py TYPES + SECTION_RENDER in c2.js.
    Projects without an entry keep the classic layout. */
 const SECTIONS = {
@@ -9,188 +9,124 @@ const SECTIONS = {
       h:{es:"Contazara", en:"Contazara", fr:"Contazara"},
       t:{es:"Cambiar de imagen. Sin perder quién eres.", en:"A new look. The same identity at heart.", fr:"Changer d'image. Sans perdre son identité."},
       p:[{
-        es:"¿Cómo renuevas la identidad de una empresa después de cuatro décadas sin perder todo lo que la hace reconocible? Con conversaciones, ideas compartidas y muchas ganas de hacer las cosas bien. Así empezó una nueva etapa para Contazara.",
-        en:"How do you refresh a brand after more than four decades without losing what makes it familiar? By listening, bringing people into the process, and building something that feels right. That's how a new chapter began for Contazara.",
-        fr:"Comment faire évoluer l'identité d'une entreprise après plus de quarante ans, sans perdre ce qui fait sa singularité ? En prenant le temps d'écouter, d'échanger et de construire ensemble. C'est comme ça qu'un nouveau chapitre a commencé pour Contazara."
+        es:"¿Cómo renuevas la identidad de una empresa después de 40 años sin perder lo que la hace única? Escuchando, compartiendo ideas y construyendo el cambio con las personas que forman parte de ella.",
+        en:"How do you refresh a company's identity after 40 years without losing what makes it unique? By listening, sharing ideas, and building the change together with the people who are part of it.",
+        fr:"Comment renouveler l'identité d'une entreprise après 40 ans sans perdre ce qui la rend unique ? En écoutant, en partageant des idées et en construisant le changement avec les personnes qui la font vivre."
       }] },
 
     { type:"text", id:"reto",
-      h:{es:"El reto", en:"The challenge", fr:"Le défi"},
-      t:{es:"40 años de historia. Y muchas cosas que cuidar.", en:"40 years of history. A lot worth keeping.", fr:"40 ans d'histoire. Et beaucoup à préserver."},
+      h:{es:"01 · El reto", en:"01 · The challenge", fr:"01 · Le défi"},
+      t:{es:"40 años de historia. Y mucho que conservar.", en:"40 years of history. A lot worth keeping.", fr:"40 ans d'histoire. Et beaucoup à préserver."},
       p:[{
-        es:"Contazara llevaba décadas innovando en tecnología para la medición del agua. Sin embargo, su identidad necesitaba evolucionar para acompañar lo que la empresa era hoy y hacia dónde quería ir.",
-        en:"For decades, Contazara had been pushing water measurement technology forward. But its visual identity needed to catch up with the company it had become and the direction it was heading.",
-        fr:"Depuis des décennies, Contazara fait avancer les technologies de mesure de l'eau. Mais son identité visuelle devait évoluer pour mieux refléter l'entreprise d'aujourd'hui et ses ambitions pour demain."
+        es:"Contazara llevaba décadas innovando en tecnología para la medición del agua. Su identidad, sin embargo, necesitaba acompañar esa evolución.",
+        en:"Contazara had been innovating in water-measurement technology for decades. Its identity, though, needed to keep pace with that evolution.",
+        fr:"Depuis des décennies, Contazara innove dans les technologies de mesure de l'eau. Son identité, elle, devait accompagner cette évolution."
       },{
-        es:"El reto no era solo visual. Había recuerdos, costumbres y una forma de reconocerse en aquella marca. Cambiarla generaba dudas, tanto dentro como fuera de la empresa. Y era completamente comprensible.",
-        en:"The challenge went beyond design. The existing brand carried memories, habits, and a strong sense of belonging. Changing it naturally raised questions, both inside and outside the company.",
-        fr:"Le défi allait bien au-delà du design. L'ancienne identité faisait partie du quotidien. Elle portait des habitudes, des souvenirs et un véritable sentiment d'appartenance. La faire évoluer soulevait forcément des questions, en interne comme à l'extérieur."
-      },{
-        es:"No se trataba de borrar su historia, sino de encontrar una nueva manera de contarla.",
-        en:"The goal wasn't to erase its history. It was to find a better way to tell it.",
-        fr:"L'idée n'était pas d'effacer son histoire. Mais de trouver une nouvelle manière de la raconter."
+        es:"Cambiar una marca tan presente en la historia de una empresa no era una decisión sencilla. Había dudas, recuerdos y mucho que respetar.",
+        en:"Changing a brand so present in a company's history wasn't a simple decision. There were doubts, memories, and a lot to respect.",
+        fr:"Changer une marque aussi présente dans l'histoire d'une entreprise n'avait rien d'évident. Il y avait des doutes, des souvenirs et beaucoup à respecter."
+      },{ em:true,
+        es:"El reto no era empezar de cero. Era evolucionar sin dejar de ser Contazara.",
+        en:"The challenge wasn't starting from scratch. It was evolving without ceasing to be Contazara.",
+        fr:"Le défi n'était pas de repartir de zéro. C'était d'évoluer sans cesser d'être Contazara."
       }] },
 
     { type:"text", id:"proceso",
-      h:{es:"El proceso", en:"The process", fr:"La démarche"},
-      t:{es:"Antes de diseñar, había que escuchar.", en:"Good design starts with listening.", fr:"Avant de dessiner, il fallait écouter."},
+      h:{es:"02 · El proceso y la identidad", en:"02 · Process and identity", fr:"02 · La démarche et l'identité"},
+      t:{es:"Antes de diseñar, había que escuchar.", en:"Before designing, we had to listen.", fr:"Avant de dessiner, il fallait écouter."},
       p:[{
-        es:"Empezamos hablando. Con dirección, con los equipos y con las personas que conocen Contazara desde dentro.",
-        en:"We started with conversations. With leadership, with teams, and with the people who knew Contazara best.",
-        fr:"Nous avons commencé par échanger. Avec la direction, les équipes et les personnes qui connaissent le mieux Contazara."
+        es:"Empezamos conversando con dirección y con los equipos. Queríamos entender qué debía cambiar, qué merecía quedarse y cómo hacer que todos se sintieran parte del proceso.",
+        en:"We started by talking with management and the teams. We wanted to understand what had to change, what deserved to stay, and how to make everyone feel part of the process.",
+        fr:"Nous avons commencé par échanger avec la direction et les équipes. Nous voulions comprendre ce qui devait changer, ce qui méritait de rester et comment faire en sorte que chacun se sente partie prenante."
       },{
-        es:"Escuchar, observar, compartir ideas, probar y volver a conversar. El objetivo era entender qué debía cambiar, qué merecía quedarse y qué hacía que Contazara fuera Contazara.",
-        en:"We listened, observed, explored ideas, tested directions, and kept talking. The aim was to understand what needed to evolve, what deserved to stay, and what truly made Contazara itself.",
-        fr:"Écouter, observer, partager des idées, explorer des pistes, puis en discuter à nouveau. L'objectif était de comprendre ce qui devait changer, ce qui méritait de rester et ce qui faisait vraiment l'identité de Contazara."
-      },{
-        es:"El equipo participó en el proceso y pudo conocer cómo iba tomando forma la nueva identidad. Porque una marca funciona mucho mejor cuando las personas que conviven con ella también se reconocen en el resultado.",
-        en:"Employees were involved throughout the process, getting to see and contribute to the identity as it took shape. Because a brand means more when the people behind it can see themselves in it.",
-        fr:"Les collaborateurs ont participé à la démarche et ont pu voir la nouvelle identité prendre forme. Parce qu'une marque prend tout son sens quand celles et ceux qui la font vivre se reconnaissent en elle."
-      }] },
-
-    { type:"text", id:"identidad",
-      h:{es:"Identidad", en:"The identity", fr:"L'identité"},
-      t:{es:"Más que un nuevo logo. Todo un lenguaje.", en:"More than a new logo. A visual language.", fr:"Bien plus qu'un nouveau logo. Tout un langage visuel."},
-      p:[{
-        es:"La nueva identidad nació de una idea sencilla: representar mejor lo que Contazara ya era.",
-        en:"The new identity started with a simple idea: better express what Contazara already stood for.",
-        fr:"La nouvelle identité est née d'une idée simple : mieux exprimer ce que Contazara était déjà."
-      },{
-        es:"El símbolo combina las letras C y Z en una construcción geométrica que habla de precisión, tecnología y movimiento. A partir de ahí, desarrollamos un sistema visual con sus propias reglas, tipografías, colores y aplicaciones.",
-        en:"The symbol brings the letters C and Z together through a geometric construction inspired by precision, technology, and movement. From there, we built a complete visual system, with its own typography, colour palette, rules, and applications.",
-        fr:"Le symbole réunit les lettres C et Z dans une construction géométrique qui évoque la précision, la technologie et le mouvement. À partir de là, nous avons développé un véritable système visuel, avec ses typographies, ses couleurs, ses règles et ses applications."
-      },{
-        es:"El azul mantiene ese vínculo con la tecnología y la confianza. El amarillo introduce energía. Y juntos dan vida a un lenguaje gráfico reconocible, flexible y preparado para convivir en muchos formatos.",
-        en:"Blue carries the sense of technology and trust. Yellow brings energy. Together, they create a recognisable, flexible identity that works across different formats.",
-        fr:"Le bleu conserve le lien avec la technologie et la confiance. Le jaune apporte de l'énergie. Ensemble, ils donnent vie à une identité reconnaissable, souple et adaptée à de nombreux supports."
-      },{
-        es:"Pero lo más importante no está en el manual de marca. Está en que las personas de Contazara participaron en el cambio, lo vieron crecer y hoy lo sienten suyo.",
-        en:"But the most important part isn't in the brand guidelines. It's the fact that Contazara's people helped shape the change, watched it evolve, and now feel that it belongs to them.",
-        fr:"Mais le plus important ne se trouve pas dans la charte graphique. Il se trouve dans la façon dont les équipes ont participé au changement, l'ont vu prendre forme et se sont approprié le résultat."
-      },{
-        em:true,
-        es:"No cambiamos su esencia. Le dimos nuevas formas de expresarse.",
-        en:"We didn't change who they were. We gave them new ways to express it.",
-        fr:"Nous n'avons pas changé leur essence. Nous lui avons donné de nouvelles façons de s'exprimer."
-      }] },
+        es:"De ahí nació una nueva identidad, construida alrededor de un símbolo que une la C y la Z mediante geometría, precisión y movimiento.",
+        en:"A new identity came out of it, built around a symbol that joins the C and the Z through geometry, precision, and movement.",
+        fr:"Une nouvelle identité en est née, construite autour d'un symbole qui unit le C et le Z par la géométrie, la précision et le mouvement."
+      }],
+      flow:[
+        { img:{ key:"contazara", v:"4", alt:{
+            es:"Construcción geométrica del isotipo de Contazara sobre su retícula, con la versión horizontal del logotipo y la paleta de color corporativa",
+            en:"Geometric construction of the Contazara symbol on its grid, with the horizontal logo and the corporate colour palette",
+            fr:"Construction géométrique du symbole Contazara sur sa grille, avec la version horizontale du logotype et la palette de couleurs" } } },
+        { p:[{
+            es:"Pero el resultado fue mucho más que un logo: un lenguaje visual con sus propias reglas, colores, tipografías y aplicaciones.",
+            en:"But the result was much more than a logo: a visual language with its own rules, colours, typefaces, and applications.",
+            fr:"Mais le résultat dépasse largement le logo : un langage visuel avec ses propres règles, couleurs, typographies et applications."
+          },{ em:true,
+            es:"Una identidad que no solo los representa. También la sienten suya.",
+            en:"An identity that doesn't just represent them. They feel it's theirs.",
+            fr:"Une identité qui ne fait pas que les représenter. Ils se la sont appropriée."
+          }] }
+      ] },
 
     { type:"text", id:"web",
-      h:{es:"Web", en:"The website", fr:"Le site web"},
-      t:{es:"Una nueva imagen merecía una nueva experiencia.", en:"A new identity deserved a better digital experience.", fr:"Une nouvelle identité méritait une nouvelle expérience."},
+      h:{es:"03 · Web y comunicación", en:"03 · Web and communication", fr:"03 · Web et communication"},
+      t:{es:"Una marca que funciona dentro y fuera de la pantalla.", en:"A brand that works on and off the screen.", fr:"Une marque qui vit dans et hors de l'écran."},
       p:[{
-        es:"La web tenía que acompañar el cambio.",
-        en:"The website needed to move forward too.",
-        fr:"Le site devait lui aussi évoluer."
-      },{
-        es:"Trabajamos en una experiencia digital más clara y actual, pensada para que la tecnología de Contazara sea más fácil de explorar y comprender, sin perder el rigor de su información técnica.",
-        en:"We designed a clearer, more contemporary experience that makes Contazara's technology easier to explore and understand, without losing the rigour of its technical information.",
-        fr:"Nous avons imaginé une expérience digitale plus claire et plus actuelle, pour que la technologie de Contazara soit plus facile à explorer et à comprendre, sans rien perdre de la rigueur de ses informations techniques."
-      },{
-        es:"Desde la arquitectura de la información y los contenidos hasta la experiencia completa, todo se ordenó en torno a la nueva identidad.",
-        en:"From information architecture and content to the overall digital experience, everything was brought together around the new identity.",
-        fr:"De l'architecture de l'information aux contenus et aux parcours, tout a été repensé autour de la nouvelle identité."
-      },{
-        es:"Un lugar donde descubrir sus soluciones, comprender mejor lo que hacen y acercarse a las personas que están detrás.",
-        en:"A place to discover solutions, understand the business, and connect with the people behind the technology.",
-        fr:"Un espace pour découvrir les solutions, mieux comprendre l'entreprise et rencontrer les personnes derrière la technologie."
-      }] },
-
-    { type:"text", id:"comunicacion",
-      h:{es:"Comunicación", en:"Digital communications", fr:"Communication digitale"},
-      t:{es:"Una marca también se construye conversando.", en:"A brand grows through conversations, too.", fr:"Une marque se construit aussi dans la conversation."},
-      p:[{
-        es:"Una identidad no termina cuando se entrega el logo. Empieza a vivir cuando la marca tiene algo que contar.",
-        en:"A brand identity doesn't end with a logo. It starts living when the brand has something worth saying.",
-        fr:"Une identité ne s'arrête pas à la livraison d'un logo. Elle commence à vivre lorsque la marque a quelque chose à raconter."
-      },{
-        es:"Trabajé la voz de Contazara para hacer su comunicación más clara, cercana y reconocible. Una manera de hablar que pudiera conectar la precisión técnica de sus productos con las personas que los utilizan y con los retos del agua.",
-        en:"I worked on Contazara's tone of voice to make its communications clearer, more approachable, and more recognisable: a way of speaking that connects the technical precision of its products with the people who use them and the challenges around water.",
-        fr:"J'ai travaillé le ton de Contazara pour rendre sa communication plus claire, plus accessible et plus reconnaissable : une façon de s'exprimer qui relie la précision technique de ses produits aux personnes qui les utilisent et aux enjeux de l'eau."
-      },{
-        es:"En LinkedIn e Instagram desarrollamos una línea editorial que combina tecnología, innovación, sostenibilidad, datos, actualidad, eventos y personas.",
-        en:"Across LinkedIn and Instagram, we developed an editorial approach combining technology, innovation, sustainability, industry insights, events, and people.",
-        fr:"Sur LinkedIn et Instagram, nous avons développé une ligne éditoriale qui mêle technologie, innovation, développement durable, données, actualité, événements et vie de l'entreprise."
-      },{
-        es:"No se trata solo de publicar más. Se trata de tener algo interesante que decir y saber cómo contarlo. De explicar qué hay detrás de sus soluciones, generar conversación y acercar la marca a profesionales, empresas e instituciones.",
-        en:"It wasn't about publishing more for the sake of it. It was about sharing useful knowledge, telling better stories, and creating conversations with professionals, companies, and institutions.",
-        fr:"L'objectif n'était pas de publier davantage pour publier. Il s'agissait de partager des connaissances, de raconter des histoires intéressantes et de créer des échanges avec des professionnels, des entreprises et des institutions."
-      },{
-        em:true,
-        es:"Menos publicaciones por publicar. Más historias que vale la pena compartir.",
-        en:"Less content for the sake of content. More stories worth sharing.",
-        fr:"Moins de contenus pour remplir un calendrier. Plus d'histoires qui méritent d'être partagées."
-      }] },
+        es:"Llevamos la nueva identidad a la web, creando una experiencia más clara para explorar sus productos, comprender su tecnología y descubrir a las personas detrás de Contazara.",
+        en:"We brought the new identity to the web, creating a clearer experience for exploring their products, understanding their technology, and meeting the people behind Contazara.",
+        fr:"Nous avons porté la nouvelle identité sur le web, avec une expérience plus claire pour explorer les produits, comprendre la technologie et découvrir les personnes derrière Contazara."
+      }],
+      flow:[
+        { fig:{ key:"contazara", v:"3", alt:{es:"Diseño de la web de Contazara", en:"Contazara website design", fr:"Design du site web de Contazara"} } },
+        { p:[{
+            es:"También desarrollamos su tono de voz y una línea editorial para LinkedIn e Instagram, combinando innovación, sostenibilidad, datos, actualidad y personas.",
+            en:"We also developed their tone of voice and an editorial line for LinkedIn and Instagram, combining innovation, sustainability, data, current affairs, and people.",
+            fr:"Nous avons aussi développé leur ton de voix et une ligne éditoriale pour LinkedIn et Instagram, mêlant innovation, durabilité, données, actualité et humain."
+          }] },
+        { fig:{ key:"contazara", v:"2", alt:{es:"Publicaciones de Contazara en LinkedIn e Instagram", en:"Contazara posts on LinkedIn and Instagram", fr:"Publications de Contazara sur LinkedIn et Instagram"} } },
+        { p:[{ em:true,
+            es:"Porque una marca no se construye solo con lo que muestra. También con lo que cuenta.",
+            en:"Because a brand isn't built only with what it shows. Also with what it tells.",
+            fr:"Car une marque ne se construit pas seulement avec ce qu'elle montre. Mais aussi avec ce qu'elle raconte."
+          }] }
+      ] },
 
     { type:"metrics", id:"resultados",
-      h:{es:"Resultados", en:"The results", fr:"Les résultats"},
-      t:{es:"El cambio se ve. Y también se siente.", en:"A change you can see. And feel.", fr:"Un changement qui se voit. Et qui se ressent."},
-      p:[{
-        es:"El proyecto empezó con muchas preguntas. Hoy, Contazara tiene una identidad que acompaña su nueva etapa y con la que su equipo se siente identificado.",
-        en:"The project started with questions and uncertainty. Today, Contazara has a brand identity that reflects its next chapter and feels genuinely connected to its people.",
-        fr:"Le projet a commencé avec beaucoup de questions. Aujourd'hui, Contazara possède une identité qui accompagne sa nouvelle étape et dans laquelle ses équipes se reconnaissent."
-      },{
-        es:"El cambio pasó de un nuevo logo a un ecosistema visual completo: comunicación corporativa, materiales, presentaciones, web y redes sociales. Y, durante ese periodo, sus comunidades digitales también han crecido.",
-        en:"What began as a new logo became a complete visual ecosystem, extending across corporate communications, presentations, the website, and social media. And, over that period, its digital communities have grown too.",
-        fr:"Ce qui avait commencé par un nouveau logo est devenu un écosystème visuel complet : communication institutionnelle, supports, présentations, site web et réseaux sociaux. Et, sur cette période, ses communautés digitales ont elles aussi grandi."
-      }],
+      h:{es:"04 · Resultados", en:"04 · Results", fr:"04 · Résultats"},
+      t:{es:"El cambio se ve. Y también se siente.", en:"The change shows. And it's felt.", fr:"Le changement se voit. Et se ressent."},
       items:[
-        { n:{es:"+77,2 %", en:"+77.2%", fr:"+77,2 %"},
-          l:{es:"seguidores en LinkedIn · de\u00a0930\u00a0a\u00a01.648", en:"followers on LinkedIn · from\u00a0930\u00a0to\u00a01,648", fr:"abonnés sur LinkedIn · de\u00a0930\u00a0à\u00a01\u202f648"} },
-        { n:{es:"+46 %", en:"+46%", fr:"+46 %"},
-          l:{es:"seguidores en Instagram · de\u00a0250\u00a0a\u00a0365", en:"followers on Instagram · from\u00a0250\u00a0to\u00a0365", fr:"abonnés sur Instagram · de\u00a0250\u00a0à\u00a0365"} }
+        { n:{es:"+77,2 %", en:"+77.2%", fr:"+77,2 %"}, l:{es:"seguidores en LinkedIn", en:"LinkedIn followers", fr:"abonnés sur LinkedIn"} },
+        { n:{es:"+46 %",   en:"+46%",   fr:"+46 %"},   l:{es:"seguidores en Instagram", en:"Instagram followers", fr:"abonnés sur Instagram"} }
       ],
       after:[{
-        es:"Entre septiembre de 2025 y noviembre de 2026, las comunidades de Contazara crecieron un 77,2\u00a0% en LinkedIn y un 46\u00a0% en Instagram, acompañadas de una estrategia de contenidos y comunicación que sigue evolucionando.",
-        en:"Between September 2025 and November 2026, Contazara's communities grew by 77.2% on LinkedIn and 46% on Instagram, alongside a content and communications strategy that keeps evolving.",
-        fr:"Entre septembre 2025 et novembre 2026, les communautés de Contazara ont progressé de 77,2\u00a0% sur LinkedIn et de 46\u00a0% sur Instagram, portées par une stratégie de contenus et de communication qui continue d'évoluer."
+        es:"Entre septiembre de 2025 y noviembre de 2026, Contazara pasó de 930 a 1.648 seguidores en LinkedIn y de 250 a 365 en Instagram.",
+        en:"Between September 2025 and November 2026, Contazara went from 930 to 1,648 followers on LinkedIn and from 250 to 365 on Instagram.",
+        fr:"Entre septembre 2025 et novembre 2026, Contazara est passée de 930 à 1 648 abonnés sur LinkedIn et de 250 à 365 sur Instagram."
       },{
-        es:"Los contenidos también han ayudado a abrir conversaciones y generar nuevas conexiones con profesionales, medios, empresas e instituciones relacionadas con el sector.",
-        en:"The content has also helped create new conversations and professional connections with industry stakeholders, businesses, media, and institutions.",
-        fr:"Les contenus ont également contribué à ouvrir de nouvelles conversations et à créer des liens avec des professionnels, des médias, des entreprises et des institutions du secteur."
-      },{
-        es:"Pero hay un resultado que no cabe en una gráfica: ver cómo las personas que al principio tenían dudas hoy reconocen la nueva identidad como algo propio.",
-        en:"But there's another result that doesn't fit neatly into a chart: seeing the people who were initially unsure about the change now embrace the identity as their own.",
-        fr:"Mais il y a aussi un résultat qui ne se mesure pas en chiffres : voir les personnes qui hésitaient au départ s'approprier aujourd'hui cette nouvelle identité."
-      },{
-        em:true,
-        es:"Porque el mejor cambio no es el que más se nota. Es el que las personas hacen suyo.",
-        en:"Because the best change isn't just the one people notice. It's the one they make their own.",
-        fr:"Parce que le plus beau changement n'est pas seulement celui qui se voit. C'est celui qu'on s'approprie."
+        es:"La nueva identidad se ha extendido a la comunicación, los materiales corporativos, la web y los espacios de la empresa. Un sistema que sigue creciendo y que sus equipos han hecho suyo.",
+        en:"The new identity has spread across communications, corporate materials, the website, and the company's spaces. A system that keeps growing and that their teams have made their own.",
+        fr:"La nouvelle identité s'est étendue à la communication, aux supports corporatifs, au site web et aux espaces de l'entreprise. Un système qui continue de grandir et que les équipes se sont approprié."
       }] },
 
     { type:"text", id:"papel",
-      h:{es:"Papel y colaboradores", en:"Role and collaborators", fr:"Rôle et collaborateurs"},
-      t:{es:"De la primera conversación al último detalle.", en:"From the first conversation to the final details.", fr:"Des premiers échanges aux derniers détails."},
+      h:{es:"05 · Un trabajo en equipo", en:"05 · Teamwork", fr:"05 · Un travail d'équipe"},
+      t:{es:"De la primera conversación al último detalle.", en:"From the first conversation to the last detail.", fr:"De la première conversation au dernier détail."},
       p:[{
-        es:"Me involucré desde el principio: escuchar a dirección y a los equipos, encontrar el enfoque, construir la nueva identidad y llevarla a la web y la comunicación digital.",
-        en:"I was involved from the start: listening to leadership and teams, finding the right approach, building the new identity and taking it into the website and digital communications.",
-        fr:"Je me suis impliqué dès le début\u00a0: écouter la direction et les équipes, trouver la bonne approche, construire la nouvelle identité et la déployer sur le site web et la communication digitale."
+        es:"Lideré el trabajo de identidad, tono de marca y comunicación digital, desde las primeras reuniones con dirección hasta su aplicación en distintos canales.",
+        en:"I led the identity, brand voice, and digital communication work, from the first meetings with management through to its application across different channels.",
+        fr:"J'ai piloté le travail d'identité, de ton de marque et de communication digitale, des premières réunions avec la direction jusqu'à son application sur différents canaux."
       },{
-        es:"Para las entrevistas y el proyecto web trabajé junto a Betsabé y Binōme Studio. En paralelo, 360estudio desarrolló la arquitectura y construcción de las nuevas oficinas, colaborando también con nosotros en aspectos del diseño interior.",
-        en:"For the interviews and the web project I worked alongside Betsabé and Binōme Studio. In parallel, 360estudio designed and built Contazara's new offices, also collaborating with us on aspects of the interior design.",
-        fr:"Pour les entretiens et le projet web, j'ai travaillé avec Betsabé et Binōme Studio. En parallèle, 360estudio a conçu et construit les nouveaux bureaux de Contazara, en collaborant aussi avec nous sur certains aspects de l'aménagement intérieur."
-      },{
-        es:"Diferentes disciplinas, una misma dirección: que todo se sintiera parte de Contazara.",
-        en:"Different disciplines, one shared direction: making everything feel like part of Contazara.",
-        fr:"Des disciplines différentes, une même direction\u00a0: que tout semble faire partie de Contazara."
+        es:"Para las entrevistas y el proyecto web trabajé junto a Betsabé y Binōme Studio. En paralelo, 360estudio desarrolló la arquitectura y construcción de las nuevas oficinas, y colaboramos en aspectos del interiorismo.",
+        en:"For the interviews and the web project I worked alongside Betsabé and Binōme Studio. In parallel, 360estudio designed and built the new offices, and we collaborated on aspects of the interior design.",
+        fr:"Pour les entretiens et le projet web, j'ai travaillé avec Betsabé et Binōme Studio. En parallèle, 360estudio a conçu et construit les nouveaux bureaux, et nous avons collaboré sur certains aspects de l'aménagement intérieur."
+      },{ em:true,
+        es:"Diferentes disciplinas. Una misma dirección.",
+        en:"Different disciplines. One shared direction.",
+        fr:"Des disciplines différentes. Une même direction."
       }] },
 
     { type:"text", id:"cierre",
       h:{es:"Cierre", en:"Closing", fr:"Conclusion"},
       t:{es:"Una nueva identidad. La misma esencia.", en:"A new identity. The same essence.", fr:"Une nouvelle identité. La même essence."},
       p:[{
-        es:"Contazara no necesitaba convertirse en otra empresa. Necesitaba una identidad capaz de contar mejor quién es hoy, todo lo que ha conseguido y lo que todavía tiene por delante. Y, sobre todo, una marca en la que su gente pudiera seguir reconociéndose.",
-        en:"Contazara didn't need to become a different company. It needed a brand that could better express who it is today, what it has achieved, and where it's going next. And, most importantly, something its people could truly call their own.",
-        fr:"Contazara n'avait pas besoin de devenir une autre entreprise. Elle avait besoin d'une identité capable de mieux raconter ce qu'elle est aujourd'hui, ce qu'elle a construit et ce qu'il lui reste à accomplir. Et surtout, d'une marque dans laquelle ses équipes puissent continuer à se reconnaître."
-      },{
-        em:true,
-        es:"¿Tu marca también está lista para su próxima etapa?",
-        en:"Is your brand ready for its next chapter?",
-        fr:"Votre marque est prête pour sa prochaine étape ?"
-      },{
-        es:"Hablemos de lo que tienes en mente.",
-        en:"Let's talk about what's on your mind.",
-        fr:"Parlons de ce que vous avez en tête."
+        es:"No se trataba de cambiar quiénes eran, sino de encontrar una nueva manera de contarlo.",
+        en:"It was never about changing who they were, but about finding a new way to tell it.",
+        fr:"Il ne s'agissait pas de changer ce qu'ils étaient, mais de trouver une nouvelle façon de le raconter."
+      },{ em:true,
+        es:"¿Tu marca también está lista para su próxima etapa? Hablemos.",
+        en:"Is your brand ready for its next chapter? Let's talk.",
+        fr:"Votre marque est-elle prête pour sa prochaine étape ? Parlons-en."
       }] }
   ]
 };
