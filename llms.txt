@@ -13,8 +13,7 @@ The portfolio has real URLs per language: Spanish at the root, English under /en
 ## Projects
 
 - [Contazara](https://tomfabre.com/en/projects/contazara/): Branding · Web · Digital. Rebranding, website and digital communications for a company with 40 years of history, shaped together with its team.
-- [Carceral Ecologies](https://tomfabre.com/en/projects/carceral/): Web design. Web design for Carceral Ecologies: a clear structure so the content can be read, explored and remembered.
-- [À2pas](https://tomfabre.com/en/projects/a2pas/): Branding · Web design. Identity and website for À2pas: a close, recognisable brand with a consistent digital presence.
+- [À2pas](https://tomfabre.com/en/projects/a2pas/): Product Design · UX/UI · Branding. A participatory platform connecting audiences, artists and venues to make new performances possible.
 - [Happylife](https://tomfabre.com/en/projects/happylife/): UX/UI · Mental health app. Designing the experience of a mental health app: support with calm, clarity and a human tone.
 - [Binōme Studio](https://tomfabre.com/en/projects/binome/): Brand · Web. Identity and website for Binōme, the design studio I run in Madrid with my partner.
 - [Yaypegs](https://tomfabre.com/en/projects/yaypegs/): Digital design. Digital design for Yaypegs: a clear experience with personality that's easy to use.

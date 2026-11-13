@@ -285,30 +285,88 @@
         ]
       },
       {
-        "slug": "carceral",
-        "name": "Carceral Ecologies",
-        "category": "Diseño web",
-        "context": "Proyecto web",
-        "summary": "Diseño web para Carceral Ecologies: una estructura clara para que el contenido se lea, se explore y se recuerde.",
-        "description": "Diseñé la experiencia web: arquitectura de la información, jerarquía de contenidos y una interfaz sobria que pone el foco en lo que hay que contar.",
-        "services": "Diseño web · Arquitectura de la información",
-        "tagline": "Un sitio que da espacio a las ideas.",
-        "role": "Product Designer",
-        "period": "Web",
-        "url": "https://tomfabre.com/proyectos/carceral/"
-      },
-      {
         "slug": "a2pas",
         "name": "À2pas",
-        "category": "Branding · Diseño web",
-        "context": "Marca y web",
-        "summary": "Identidad y web para À2pas: una marca cercana y reconocible, con una presencia digital coherente.",
-        "description": "Construí la identidad visual y el diseño web buscando un lenguaje cercano, claro y coherente entre marca y sitio.",
-        "services": "Branding · Diseño web",
-        "tagline": "Una marca cercana, a dos pasos de las personas.",
-        "role": "Product Designer",
-        "period": "Brand + web",
-        "url": "https://tomfabre.com/proyectos/a2pas/"
+        "category": "Product Design · UX/UI · Branding",
+        "context": "Cultura y espectáculos",
+        "summary": "Una plataforma participativa que conecta espectadores, artistas y espacios para hacer posibles nuevos espectáculos.",
+        "description": "Investigación de usuarios, personas, user journeys, arquitectura de información, wireframes, UX/UI, prototipos, identidad visual, desarrollo y pruebas.",
+        "services": "Investigación UX · Diseño de producto · Branding · Desarrollo",
+        "tagline": "La cultura, en manos de quienes la viven.",
+        "role": "Product Designer · UX/UI · Branding",
+        "period": "2023 – 2024",
+        "url": "https://tomfabre.com/proyectos/a2pas/",
+        "story": [
+          {
+            "id": "reto",
+            "heading": "Muchos protagonistas. Una misma experiencia.",
+            "label": "01 · El reto",
+            "text": [
+              "¿Cómo conectas a alguien que quiere ver un concierto, un artista que busca nuevos escenarios y un teatro con fechas disponibles?",
+              "Ese era uno de los grandes retos de A2PAS: diseñar una plataforma para dos grandes ecosistemas de usuarios, cada uno con sus propias necesidades.",
+              "Por un lado, espectadores que querían descubrir, proponer, apoyar y comprar entradas. Por otro, artistas, productores y espacios culturales que necesitaban gestionar oportunidades, disponibilidad y eventos desde paneles con funciones y permisos específicos.",
+              "Diferentes necesidades. Una experiencia que debía tener sentido para todos."
+            ]
+          },
+          {
+            "id": "concepto",
+            "heading": "De querer verlo a hacerlo posible.",
+            "label": "02 · El concepto",
+            "text": [
+              "Imagina que vives en Aix-en-Provence y descubres un grupo emergente que actúa en París.",
+              "Te gustaría verlo cerca de casa, pero quizá nunca llegue a tu ciudad.",
+              "Con A2PAS podías buscar un espacio disponible, elegir una fecha y proponer el espectáculo. Otras personas de Aix y alrededores podían apoyar la iniciativa con sus votos.",
+              "Cuando el interés alcanzaba el umbral establecido, entre el 75 % y el 80 % de la capacidad del espacio, el evento se activaba automáticamente y comenzaba la venta de entradas.",
+              "Quienes habían apoyado la propuesta desde el principio podían acceder a descuentos como recompensa por participar.",
+              "Una idea compartida podía convertirse en una fecha en el calendario."
+            ]
+          },
+          {
+            "id": "producto",
+            "heading": "Complejo por dentro. Sencillo por fuera.",
+            "label": "03 · Diseño del producto",
+            "text": [
+              "Mi trabajo abarcó todo el proceso: investigación, entrevistas, definición de personas, user journeys, arquitectura de información, wireframes, UX/UI, prototipos, identidad visual, desarrollo y pruebas.",
+              "El mayor desafío fue conectar recorridos muy diferentes dentro de un mismo producto.",
+              "Diseñé la experiencia del público, desde la búsqueda y los filtros hasta las fichas de eventos, la identificación, el pago y la confirmación de compra.",
+              "En paralelo, los perfiles profesionales necesitaban gestionar su actividad desde espacios diferenciados, con funcionalidades y permisos adaptados a su papel.",
+              "El objetivo era que cada persona entendiera qué podía hacer, qué ocurría después y cómo su participación contribuía a que la cultura llegara más lejos."
+            ]
+          },
+          {
+            "id": "participacion",
+            "heading": "Primero la comunidad. Después el escenario.",
+            "label": "04 · La experiencia participativa",
+            "text": [
+              "A2PAS proponía cambiar la manera habitual de programar espectáculos.",
+              "En lugar de depender únicamente de una programación decidida de antemano, permitía identificar el interés de una comunidad antes de activar un evento.",
+              "Los espectadores participaban en la programación, los artistas emergentes encontraban nuevas oportunidades y los espacios podían aprovechar fechas que de otro modo quedarían libres.",
+              "Diseñamos y probamos estos recorridos para que descubrir, proponer, votar y comprar formaran parte de una experiencia conectada.",
+              "La plataforma llegó a lanzarse y utilizarse.",
+              "Más que vender entradas, se trataba de crear oportunidades para que la cultura sucediera."
+            ]
+          },
+          {
+            "id": "trabajo",
+            "heading": "Diseñar conexiones, no solo pantallas.",
+            "label": "05 · Mi trabajo",
+            "text": [
+              "Participé en todo el ciclo del producto, desde comprender a los usuarios y ordenar sus necesidades hasta diseñar, desarrollar y probar la experiencia.",
+              "El branding debía transmitir la misma idea que la plataforma: cercanía, participación y cultura compartida.",
+              "Y el diseño digital tenía que hacerla funcionar para públicos muy distintos, sin que la complejidad del sistema terminara siendo una complicación para las personas.",
+              "Dos grandes ecosistemas. Muchos recorridos. Una misma idea: acercar la cultura."
+            ]
+          },
+          {
+            "id": "cierre",
+            "heading": "La cultura empieza mucho antes de subir al escenario.",
+            "label": "Cierre",
+            "text": [
+              "Empieza cuando alguien descubre un artista, propone una idea y encuentra a otras personas que quieren hacerla realidad.",
+              "¿Tienes un producto complejo que necesita una experiencia sencilla? Hablemos."
+            ]
+          }
+        ]
       },
       {
         "slug": "happylife",
@@ -513,30 +571,88 @@
         ]
       },
       {
-        "slug": "carceral",
-        "name": "Carceral Ecologies",
-        "category": "Web design",
-        "context": "Web project",
-        "summary": "Web design for Carceral Ecologies: a clear structure so the content can be read, explored and remembered.",
-        "description": "I designed the web experience: information architecture, content hierarchy and a restrained interface that keeps the focus on what needs to be said.",
-        "services": "Web design · Information architecture",
-        "tagline": "A site that gives ideas room.",
-        "role": "Product Designer",
-        "period": "Web",
-        "url": "https://tomfabre.com/en/projects/carceral/"
-      },
-      {
         "slug": "a2pas",
         "name": "À2pas",
-        "category": "Branding · Web design",
-        "context": "Brand and web",
-        "summary": "Identity and website for À2pas: a close, recognisable brand with a consistent digital presence.",
-        "description": "I built the visual identity and web design aiming for a warm, clear language shared between brand and site.",
-        "services": "Branding · Web design",
-        "tagline": "A brand within arm's reach.",
-        "role": "Product Designer",
-        "period": "Brand + web",
-        "url": "https://tomfabre.com/en/projects/a2pas/"
+        "category": "Product Design · UX/UI · Branding",
+        "context": "Culture & Live Entertainment",
+        "summary": "A participatory platform connecting audiences, artists and venues to make new performances possible.",
+        "description": "User research, personas, user journeys, information architecture, wireframes, UX/UI, prototypes, visual identity, development and testing.",
+        "services": "UX Research · Product Design · Branding · Development",
+        "tagline": "Putting culture in the hands of its audience.",
+        "role": "Product Designer · UX/UI · Branding",
+        "period": "2023 – 2024",
+        "url": "https://tomfabre.com/en/projects/a2pas/",
+        "story": [
+          {
+            "id": "reto",
+            "heading": "Different people. One connected experience.",
+            "label": "01 · The challenge",
+            "text": [
+              "How do you connect someone who wants to see a concert, an artist looking for new audiences and a venue with available dates?",
+              "That was one of the main challenges behind A2PAS: designing a platform for two very different user ecosystems.",
+              "On one side, audiences discovering, suggesting, supporting and booking shows. On the other, artists, producers and venues managing opportunities, availability and events through dedicated dashboards, each with its own features and permissions.",
+              "Different needs. One experience that had to work for everyone."
+            ]
+          },
+          {
+            "id": "concepto",
+            "heading": "From wanting to see it to making it happen.",
+            "label": "02 · The concept",
+            "text": [
+              "Imagine living in Aix-en-Provence and discovering an emerging band playing in Paris.",
+              "You'd love to see them closer to home, but they might never make it to your city.",
+              "With A2PAS, you could find an available venue, choose a date and propose a show. Other people in Aix and nearby towns could vote to support the idea.",
+              "Once the proposal reached the required level of interest, between 75% and 80% of the venue's capacity, the event was automatically activated and ticket sales could begin.",
+              "Early supporters could benefit from discounted tickets as a reward for getting involved.",
+              "A shared idea could become an actual date on the calendar."
+            ]
+          },
+          {
+            "id": "producto",
+            "heading": "Complex behind the scenes. Simple on the surface.",
+            "label": "03 · Product design",
+            "text": [
+              "My work covered the full process: research, interviews, user personas, journeys, information architecture, wireframes, UX/UI, prototypes, visual identity, development and testing.",
+              "The biggest challenge was bringing very different user journeys together within one product.",
+              "I designed the audience experience, from searching and filtering to event pages, sign-in, checkout and purchase confirmation.",
+              "At the same time, professional users needed dedicated spaces to manage their activities, with features and permissions tailored to their roles.",
+              "The aim was to help everyone understand what they could do, what would happen next and how their participation could help bring culture closer."
+            ]
+          },
+          {
+            "id": "participacion",
+            "heading": "Community first. Stage second.",
+            "label": "04 · The participatory experience",
+            "text": [
+              "A2PAS challenged part of the traditional approach to cultural programming.",
+              "Instead of relying only on events planned in advance, it made it possible to measure local interest before activating a performance.",
+              "Audiences could help shape the programme, emerging artists could find new opportunities and venues could make better use of available dates.",
+              "We designed and tested the journeys to make discovering, proposing, voting and buying tickets feel like parts of one connected experience.",
+              "The platform was launched and used.",
+              "It wasn't just about selling tickets. It was about creating more opportunities for culture to happen."
+            ]
+          },
+          {
+            "id": "trabajo",
+            "heading": "Designing connections, not just screens.",
+            "label": "05 · My role",
+            "text": [
+              "I worked across the entire product lifecycle, from understanding users and organising their needs to designing, developing and testing the experience.",
+              "The brand identity needed to reflect the same values as the platform: accessibility, participation and shared culture.",
+              "And the digital experience had to make it work for very different audiences, without passing the system's complexity on to the people using it.",
+              "Two user ecosystems. Many journeys. One idea: bringing culture closer."
+            ]
+          },
+          {
+            "id": "cierre",
+            "heading": "Culture starts long before the curtain rises.",
+            "label": "Closing",
+            "text": [
+              "It starts when someone discovers an artist, shares an idea and finds others who want to make it happen.",
+              "Have a complex product that needs a simpler experience? Let's talk."
+            ]
+          }
+        ]
       },
       {
         "slug": "happylife",
@@ -741,30 +857,88 @@
         ]
       },
       {
-        "slug": "carceral",
-        "name": "Carceral Ecologies",
-        "category": "Web design",
-        "context": "Projet web",
-        "summary": "Design web pour Carceral Ecologies : une structure claire pour que le contenu se lise, s'explore et se retienne.",
-        "description": "J'ai conçu l'expérience web : architecture de l'information, hiérarchie des contenus et interface sobre qui met l'accent sur l'essentiel.",
-        "services": "Web design · Architecture de l'information",
-        "tagline": "Un site qui laisse de la place aux idées.",
-        "role": "Product Designer",
-        "period": "Web",
-        "url": "https://tomfabre.com/fr/projets/carceral/"
-      },
-      {
         "slug": "a2pas",
         "name": "À2pas",
-        "category": "Branding · Web design",
-        "context": "Marque et web",
-        "summary": "Identité et site pour À2pas : une marque proche et reconnaissable, avec une présence digitale cohérente.",
-        "description": "J'ai construit l'identité visuelle et le design web avec un langage chaleureux, clair et cohérent entre marque et site.",
-        "services": "Branding · Web design",
-        "tagline": "Une marque à deux pas des gens.",
-        "role": "Product Designer",
-        "period": "Brand + web",
-        "url": "https://tomfabre.com/fr/projets/a2pas/"
+        "category": "Product Design · UX/UI · Identité visuelle",
+        "context": "Culture et spectacle vivant",
+        "summary": "Une plateforme participative qui rapproche publics, artistes et lieux pour faire naître de nouveaux spectacles.",
+        "description": "Recherche utilisateurs, personas, parcours utilisateurs, architecture de l'information, wireframes, UX/UI, prototypes, identité visuelle, développement et tests.",
+        "services": "Recherche UX · Design produit · Identité visuelle · Développement",
+        "tagline": "La culture entre les mains de son public.",
+        "role": "Product Designer · UX/UI · Identité visuelle",
+        "period": "2023 – 2024",
+        "url": "https://tomfabre.com/fr/projets/a2pas/",
+        "story": [
+          {
+            "id": "reto",
+            "heading": "Plusieurs acteurs. Une seule expérience.",
+            "label": "01 · Le défi",
+            "text": [
+              "Comment faire se rencontrer quelqu'un qui rêve d'assister à un concert, un artiste qui cherche de nouvelles scènes et une salle avec des dates disponibles ?",
+              "C'était l'un des grands défis d'A2PAS : concevoir une plateforme réunissant deux grands univers d'utilisateurs aux besoins très différents.",
+              "D'un côté, les spectateurs qui découvrent, proposent, soutiennent et réservent des spectacles. De l'autre, les artistes, producteurs et lieux culturels qui gèrent les opportunités, les disponibilités et les événements depuis des espaces dédiés, avec des fonctionnalités et des droits adaptés à leur profil.",
+              "Des besoins différents. Une expérience qui devait fonctionner pour tous."
+            ]
+          },
+          {
+            "id": "concepto",
+            "heading": "De l'envie d'y aller à la possibilité de le faire.",
+            "label": "02 · Le concept",
+            "text": [
+              "Imaginez que vous habitez à Aix-en-Provence et que vous découvrez un groupe émergent qui se produit à Paris.",
+              "Vous aimeriez le voir près de chez vous, mais il ne passera peut-être jamais dans votre ville.",
+              "Avec A2PAS, vous pouviez chercher une salle disponible, choisir une date et proposer d'y faire venir le groupe. Les habitants d'Aix et des environs pouvaient ensuite soutenir cette proposition en votant.",
+              "Lorsque le niveau d'intérêt atteignait le seuil prévu, entre 75 % et 80 % de la capacité du lieu, l'événement était automatiquement activé et la billetterie pouvait ouvrir.",
+              "Les premiers participants pouvaient bénéficier de tarifs préférentiels pour avoir contribué au lancement du projet.",
+              "Une envie partagée pouvait devenir une vraie date de spectacle."
+            ]
+          },
+          {
+            "id": "producto",
+            "heading": "Complexe en coulisses. Simple côté utilisateur.",
+            "label": "03 · Le design produit",
+            "text": [
+              "J'ai travaillé sur l'ensemble du processus : recherche, entretiens, personas, parcours utilisateurs, architecture de l'information, wireframes, UX/UI, prototypes, identité visuelle, développement et tests.",
+              "Le plus grand défi consistait à faire cohabiter des parcours très différents au sein d'un même produit.",
+              "J'ai conçu l'expérience des spectateurs, de la recherche et des filtres jusqu'aux fiches événements, à l'identification, au paiement et à la confirmation d'achat.",
+              "En parallèle, les professionnels disposaient d'espaces dédiés pour gérer leur activité, avec des fonctionnalités et des droits adaptés à leurs rôles.",
+              "L'objectif : permettre à chacun de comprendre ce qu'il pouvait faire, ce qui allait se passer ensuite et comment sa participation pouvait faire avancer un projet culturel."
+            ]
+          },
+          {
+            "id": "participacion",
+            "heading": "D'abord le public. Ensuite la scène.",
+            "label": "04 · L'expérience participative",
+            "text": [
+              "A2PAS proposait une autre manière de penser la programmation culturelle.",
+              "Plutôt que de s'appuyer uniquement sur des spectacles programmés à l'avance, la plateforme permettait de mesurer l'intérêt local avant de déclencher un événement.",
+              "Le public participait à la programmation, les artistes émergents découvraient de nouvelles opportunités et les lieux pouvaient mieux valoriser leurs dates disponibles.",
+              "Nous avons conçu et testé ces parcours pour relier naturellement découverte, proposition, vote et achat de billets.",
+              "La plateforme a été lancée et utilisée.",
+              "Il ne s'agissait pas seulement de vendre des billets. Mais de créer de nouvelles occasions de faire vivre la culture."
+            ]
+          },
+          {
+            "id": "trabajo",
+            "heading": "Créer des liens, pas seulement des écrans.",
+            "label": "05 · Mon rôle",
+            "text": [
+              "J'ai participé à tout le cycle du produit, de la compréhension des utilisateurs et de leurs besoins jusqu'au design, au développement et aux tests.",
+              "L'identité visuelle devait porter les mêmes valeurs que la plateforme : proximité, participation et culture partagée.",
+              "Et l'expérience digitale devait rendre tout cela accessible à des publics très différents, sans leur faire subir la complexité du système.",
+              "Deux grands univers. De nombreux parcours. Une même idée : rapprocher la culture."
+            ]
+          },
+          {
+            "id": "cierre",
+            "heading": "La culture commence bien avant le lever de rideau.",
+            "label": "Conclusion",
+            "text": [
+              "Elle commence quand quelqu'un découvre un artiste, propose une idée et rencontre d'autres personnes qui ont envie de la concrétiser.",
+              "Vous avez un produit complexe à rendre plus simple ? Parlons-en."
+            ]
+          }
+        ]
       },
       {
         "slug": "happylife",
