@@ -122,10 +122,46 @@ def meta_for(lg, page, key):
     if page == "service": return S["svc_"+key+"_t"], S["svc_"+key+"_d"]
     return S[page+"_t"], S[page+"_d"]
 OG_W, OG_H = 1200, 630
-def og_for(lg, page, key):
-    """Specific social image of a project (SEO[lg].proj[key].og), or None to keep the site's default. -> (url, alt)"""
-    o = (D["SEO"][lg].get("proj", {}).get(key) or {}).get("og") if page == "project" else None
-    return (f"{SITE}/img/og/{o['src']}-{OG_W}x{OG_H}.jpg", o["alt"]) if o else None
+# ---- Social images (single source of truth) -------------------------------------------------------------------------
+# Priority: 1) explicit image of the page (SEO[lg].proj[key].og = {src, alt})  2) the project's own cover (img/<key>-cover.webp,
+# derived to 1200x630 without distortion)  3) language fallback og-default-{lg}.jpg (official files, served untouched from extras/).
+# A Spanish image is never used as fallback for an English or French page. New projects get 2) automatically if img/<key>-cover.webp exists.
+OG_ALT_COVER = {"es": "Portada del proyecto {n} · {c}", "en": "Cover of the {n} project · {c}", "fr": "Couverture du projet {n} · {c}"}
+OG_ALT_DEFAULT = {
+    "es": "Tom Fabre · Diseñador de marca y producto digital. Branding, diseño web, UX/UI y estrategia digital",
+    "en": "Tom Fabre · Brand & Digital Product Designer. Branding, web design, UX/UI and digital strategy",
+    "fr": "Tom Fabre · Designer de marque et de produit digital. Branding, design web, UX/UI et stratégie digitale"}
+_ogsz = {}
+def _size(fp):
+    if fp not in _ogsz: _ogsz[fp] = Image.open(fp).size
+    return _ogsz[fp]
+def og_variant_ok(src):
+    """True if img/<src>.webp exists and opens as an image large enough to derive a 1200x630 variant without upscaling distortion."""
+    try: w, h = _size(f"img/{src}.webp") if os.path.exists(f"img/{src}.webp") else (0, 0)
+    except Exception: return False
+    return w >= 600 and h >= 315
+def _proj_idx(key): return [q["key"] for q in PROJ].index(key)
+def og_for(lg, page, key=None):
+    """-> dict(kind, url, file, alt, w, h). kind: explicit | cover | fallback."""
+    if page == "project":
+        o = (D["SEO"][lg].get("proj", {}).get(key) or {}).get("og")
+        if o:
+            return dict(kind="explicit", url=f"{SITE}/img/og/{o['src']}-{OG_W}x{OG_H}.jpg", file=f"img/og/{o['src']}-{OG_W}x{OG_H}.jpg", alt=o["alt"], w=OG_W, h=OG_H, src=o["src"])
+        if og_variant_ok(key + "-cover"):
+            p = T[lg]["projects"][_proj_idx(key)]
+            return dict(kind="cover", url=f"{SITE}/img/og/{key}-cover-{OG_W}x{OG_H}.jpg", file=f"img/og/{key}-cover-{OG_W}x{OG_H}.jpg",
+                        alt=OG_ALT_COVER[lg].format(n=p[0], c=p[1]), w=OG_W, h=OG_H, src=key + "-cover")
+    fn = f"og-default-{lg}.jpg"; w, h = _size("extras/" + fn)
+    return dict(kind="fallback", url=f"{SITE}/{fn}", file=fn, alt=OG_ALT_DEFAULT[lg], w=w, h=h)
+def og_tags(o, e=lambda x: x):
+    u = o["url"]; mime = "image/jpeg"
+    return (f'<meta property="og:image" content="{u}"><meta property="og:image:secure_url" content="{u}"><meta property="og:image:type" content="{mime}">'
+            f'<meta property="og:image:width" content="{o["w"]}"><meta property="og:image:height" content="{o["h"]}"><meta property="og:image:alt" content="{e(o["alt"])}">'
+            f'<meta name="twitter:image" content="{u}"><meta name="twitter:image:alt" content="{e(o["alt"])}">')
+def social_for(lg, page, key, title, desc):
+    """Social title/description: the page's own, unless SEO[lg].social["page"] / ["page:key"] = {t, d} overrides them."""
+    s = (D["SEO"][lg].get("social") or {}).get(page + (":" + key if key else "")) or {}
+    return s.get("t") or title, s.get("d") or desc
 def sub1(pat, rep, h): 
     n = re.subn(pat, lambda m: rep, h, count=1); assert n[1] == 1, pat; return n[0]
 def page_html(lg, page, key):
@@ -134,19 +170,18 @@ def page_html(lg, page, key):
     h = re.sub(r'<script type="application/ld\+json">.*?</script>', lambda m: ld(lg,(page,key)), h, count=1, flags=re.S)
     h = sub1(r"<title>.*?</title>", f"<title>{e(title)}</title>", h)
     h = sub1(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{e(desc)}">', h)
-    h = sub1(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{e(title)}">', h)
-    h = sub1(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{e(desc)}">', h)
-    h = sub1(r'<meta name="twitter:title" content="[^"]*">', f'<meta name="twitter:title" content="{e(title)}">', h)
-    h = sub1(r'<meta name="twitter:description" content="[^"]*">', f'<meta name="twitter:description" content="{e(desc)}">', h)
+    st, sd = social_for(lg, page, key, title, desc)
+    h = sub1(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{e(st)}">', h)
+    h = sub1(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{e(sd)}">', h)
+    h = sub1(r'<meta name="twitter:title" content="[^"]*">', f'<meta name="twitter:title" content="{e(st)}">', h)
+    h = sub1(r'<meta name="twitter:description" content="[^"]*">', f'<meta name="twitter:description" content="{e(sd)}">', h)
     h = sub1(r'<meta property="og:url" content="[^"]*">', f'<meta property="og:url" content="{U(lg,page,key)}">', h)
-    og = og_for(lg, page, key)
-    if og:   # project with its own social image: replace the default image block (width/height are the real file size, verified after the build)
-        u, alt = og
-        h = sub1(r'<meta property="og:image" content="[^"]*">', f'<meta property="og:image" content="{u}"><meta property="og:image:secure_url" content="{u}"><meta property="og:image:type" content="image/jpeg">', h)
-        h = sub1(r'<meta property="og:image:width" content="[^"]*">', f'<meta property="og:image:width" content="{OG_W}">', h)
-        h = sub1(r'<meta property="og:image:height" content="[^"]*">', f'<meta property="og:image:height" content="{OG_H}">', h)
-        h = sub1(r'<meta property="og:image:alt" content="[^"]*">', f'<meta property="og:image:alt" content="{e(alt)}">', h)
-        h = sub1(r'<meta name="twitter:image" content="[^"]*">', f'<meta name="twitter:image" content="{u}"><meta name="twitter:image:alt" content="{e(alt)}">', h)
+    # every page gets the full image block from og_for (specific > cover > language fallback); the template's fixed Spanish image is always replaced
+    h = sub1(r'<meta property="og:image:width" content="[^"]*">\n?', "", h)
+    h = sub1(r'<meta property="og:image:height" content="[^"]*">\n?', "", h)
+    h = sub1(r'<meta property="og:image:alt" content="[^"]*">\n?', "", h)
+    h = sub1(r'<meta name="twitter:image" content="[^"]*">\n?', "", h)
+    h = sub1(r'<meta property="og:image" content="[^"]*">', og_tags(og_for(lg, page, key), e), h)
     h = sub1(r'<meta property="og:locale" content="[^"]*">', f'<meta property="og:locale" content="{LOCALE[lg]}">', h)
     h = re.sub(r'<meta property="og:locale:alternate" content="[^"]*">\n?', "", h)
     alts = "".join(f'<meta property="og:locale:alternate" content="{LOCALE[o]}">' for o in ("es","en","fr") if o != lg)
@@ -234,7 +269,7 @@ import legal
 _css = "".join(re.findall(r"<style>(.*?)</style>", html, flags=re.S))
 for _lg in ("es","en","fr"):
     _p = dist + "/" + legal.PATHS[_lg]; os.makedirs(_p, exist_ok=True)
-    open(_p + "/index.html", "w", encoding="utf8").write(legal.render(_lg, SITE, EMAIL, _css, CONSENT_JS))
+    open(_p + "/index.html", "w", encoding="utf8").write(legal.render(_lg, SITE, EMAIL, _css, CONSENT_JS, og_html=og_tags(og_for(_lg, 'legal'), lambda x: x.replace('&','&amp;').replace('"','&quot;').replace('<','&lt;'))))
     _alts = "".join(f'<xhtml:link rel="alternate" hreflang="{o}" href="{SITE}/{legal.PATHS[o]}/"/>' for o in ("es","en","fr")) + f'<xhtml:link rel="alternate" hreflang="x-default" href="{SITE}/{legal.PATHS["es"]}/"/>'
     smx += f"  <url><loc>{SITE}/{legal.PATHS[_lg]}/</loc>{_alts}<priority>0.2</priority></url>\n"
 if not legal.CFG["id"]: print("WARNING: legal.json has no ID (NIE) yet: do not publish the legal pages")
@@ -246,44 +281,65 @@ open(dist+"/_headers","w").write("/*\n  X-Content-Type-Options: nosniff\n  Refer
 print("built", SITE, len(html), npages, "pages")
 
 shutil.copytree("img", dist + "/img");
-# social images derived from project covers: centre-crop to 1200x630 (no stretching), so they cannot drift from the cover
+# social images derived from covers / explicit sources: centre-crop to 1200x630 (no stretching), regenerated every build so they cannot drift from the cover
 os.makedirs(dist + "/img/og", exist_ok=True)
-for _s in sorted({(o["src"]) for _lg in ("es","en","fr") for _p in D["SEO"][_lg].get("proj", {}).values() for o in [_p.get("og")] if o}):
+_srcs = sorted({o["src"] for _lg in ("es","en","fr") for _pg, _k in ROUTES for o in [og_for(_lg, _pg, _k)] if o["kind"] != "fallback"})
+for _s in _srcs:
     _im = Image.open(f"img/{_s}.webp").convert("RGB"); _w, _h = _im.size; _r = OG_W / OG_H
     _cw, _ch = (int(round(_h * _r)), _h) if _w / _h > _r else (_w, int(round(_w / _r)))
     _x, _y = (_w - _cw) // 2, (_h - _ch) // 2
     _im.crop((_x, _y, _x + _cw, _y + _ch)).resize((OG_W, OG_H), Image.LANCZOS).save(f"{dist}/img/og/{_s}-{OG_W}x{OG_H}.jpg", "JPEG", quality=88, optimize=True, progressive=True)
+for _lg in ("es","en","fr"): shutil.copy(f"extras/og-default-{_lg}.jpg", f"{dist}/og-default-{_lg}.jpg")   # official files, byte-identical
 
-# post-build social-metadata check for pages with their own OG image: abort (never ship silently) on any mismatch
+# post-build social-metadata check on EVERY page (app pages + legal): abort (never ship silently) on any mismatch; prints a report
 import html as _H
-_bad = []
-for _lg in ("es","en","fr"):
-    for _pg, _k in ROUTES:
-        _og = og_for(_lg, _pg, _k)
-        if not _og: continue
-        _u, _alt = _og; _f = dist + path(_lg, _pg, _k) + "index.html"; _t = open(_f, encoding="utf8").read(); _head = _t[:_t.find("<body")]
-        _fp = dist + _u[len(SITE):]
-        if not _u.startswith("https://"): _bad.append(f"{_f}: og:image is not an absolute https URL")
-        if not os.path.exists(_fp): _bad.append(f"{_f}: image file missing {_fp}")
-        elif Image.open(_fp).size != (OG_W, OG_H): _bad.append(f"{_f}: declared {OG_W}x{OG_H} but file is {Image.open(_fp).size}")
-        def _one(attr, name):
-            m = re.findall(r'<meta %s="%s" content="([^"]*)">' % (attr, re.escape(name)), _head)
-            if len(m) != 1: _bad.append(f"{_f}: {name} appears {len(m)} times (expected 1)"); return None
-            return _H.unescape(m[0])
-        _v = {n: _one("property", n) for n in ("og:title","og:description","og:url","og:image","og:image:secure_url","og:image:width","og:image:height","og:image:alt","og:image:type")}
-        _v.update({n: _one("name", n) for n in ("twitter:card","twitter:title","twitter:description","twitter:image","twitter:image:alt","description")})
-        _can = re.findall(r'<link rel="canonical" href="([^"]*)">', _head); _ti = re.findall(r"<title>(.*?)</title>", _head, re.S)
-        if _can != [U(_lg,_pg,_k)]: _bad.append(f"{_f}: canonical {_can} != {U(_lg,_pg,_k)}")
-        if _v["og:url"] != U(_lg,_pg,_k): _bad.append(f"{_f}: og:url differs from canonical")
-        if not (_ti and _H.unescape(_ti[0]) == _v["og:title"] == _v["twitter:title"]): _bad.append(f"{_f}: title / og:title / twitter:title differ")
-        if not (_v["og:description"] == _v["twitter:description"] == _v["description"]): _bad.append(f"{_f}: description / og / twitter descriptions differ")
-        if not (_v["og:image"] == _v["og:image:secure_url"] == _v["twitter:image"] == _u): _bad.append(f"{_f}: og:image / secure_url / twitter:image differ")
-        if _v["og:image:alt"] != _v["twitter:image:alt"] or not _v["og:image:alt"]: _bad.append(f"{_f}: image alt missing or differs between og and twitter")
-        if (_v["og:image:width"], _v["og:image:height"]) != (str(OG_W), str(OG_H)): _bad.append(f"{_f}: declared og:image size differs")
-        if re.findall(r'<html lang="(\w+)"', _t) != [_lg]: _bad.append(f"{_f}: wrong html lang")
-        _hl = dict(re.findall(r'<link rel="alternate" hreflang="(\w[\w-]*)" href="([^"]*)"', _head))
-        if _hl != {**{o: U(o,_pg,_k) for o in ("es","en","fr")}, "x-default": U("es",_pg,_k)}: _bad.append(f"{_f}: hreflang inconsistent {_hl}")
+_bad, _rep = [], []
+_pages = [(_lg, _pg, _k, dist + path(_lg, _pg, _k) + "index.html", U(_lg, _pg, _k), og_for(_lg, _pg, _k)) for _lg in ("es","en","fr") for _pg, _k in ROUTES]
+_pages += [(_lg, "legal", None, dist + "/" + legal.PATHS[_lg] + "/index.html", f"{SITE}/{legal.PATHS[_lg]}/", og_for(_lg, "legal")) for _lg in ("es","en","fr")]
+for _lg, _pg, _k, _f, _can_u, _og in _pages:
+    if not os.path.exists(_f): _bad.append(f"{_f}: page file missing"); continue
+    _t = open(_f, encoding="utf8").read(); _head = _t[:_t.find("<body")]; _u = _og["url"]
+    _fp = dist + "/" + _og["file"]
+    if not _u.startswith("https://"): _bad.append(f"{_f}: og:image is not an absolute https URL")
+    if _u != f"{SITE}/{_og['file']}": _bad.append(f"{_f}: og url/file mismatch")
+    if not os.path.exists(_fp): _bad.append(f"{_f}: image file missing {_fp}")
+    else:
+        try: _real = Image.open(_fp).size
+        except Exception as _x: _bad.append(f"{_f}: image unreadable {_fp}: {_x}"); _real = None
+        if _real and _real != (_og["w"], _og["h"]): _bad.append(f"{_f}: declared {_og['w']}x{_og['h']} but file is {_real}")
+        if _real and _real != (OG_W, OG_H): _bad.append(f"{_f}: social image must be {OG_W}x{OG_H}, file is {_real}")
+    def _one(attr, name):
+        m = re.findall(r'<meta %s="%s" content="([^"]*)">' % (attr, re.escape(name)), _head)
+        if len(m) != 1: _bad.append(f"{_f}: {name} appears {len(m)} times (expected 1)"); return None
+        if not m[0].strip(): _bad.append(f"{_f}: {name} is empty"); return None
+        return _H.unescape(m[0])
+    _v = {n: _one("property", n) for n in ("og:type","og:site_name","og:title","og:description","og:url","og:image","og:image:secure_url","og:image:width","og:image:height","og:image:alt","og:image:type","og:locale")}
+    _v.update({n: _one("name", n) for n in ("twitter:card","twitter:title","twitter:description","twitter:image","twitter:image:alt","description","robots")})
+    _can = re.findall(r'<link rel="canonical" href="([^"]*)">', _head); _ti = re.findall(r"<title>(.*?)</title>", _head, re.S)
+    if len(_ti) != 1 or not _H.unescape(_ti[0]).strip(): _bad.append(f"{_f}: missing/duplicated/empty <title>")
+    if _can != [_can_u]: _bad.append(f"{_f}: canonical {_can} != {_can_u}")
+    if _v["og:url"] != _can_u: _bad.append(f"{_f}: og:url differs from canonical")
+    if _v["twitter:card"] != "summary_large_image": _bad.append(f"{_f}: twitter:card is {_v['twitter:card']}")
+    if _v["og:locale"] != LOCALE[_lg]: _bad.append(f"{_f}: og:locale {_v['og:locale']} != {LOCALE[_lg]}")
+    if _v["og:title"] != _v["twitter:title"]: _bad.append(f"{_f}: og:title / twitter:title differ")
+    if _v["og:description"] != _v["twitter:description"]: _bad.append(f"{_f}: og:description / twitter:description differ")
+    if _pg != "legal" and not (_ti and _H.unescape(_ti[0]) == _v["og:title"] or social_for(_lg, _pg, _k, "", "")[0]): _bad.append(f"{_f}: title / og:title differ")
+    if _pg != "legal" and _v["og:description"] != _v["description"] and not social_for(_lg, _pg, _k, "", "")[1]: _bad.append(f"{_f}: description / og:description differ")
+    if not (_v["og:image"] == _v["og:image:secure_url"] == _v["twitter:image"] == _u): _bad.append(f"{_f}: og:image / secure_url / twitter:image differ")
+    if _v["og:image:alt"] != _v["twitter:image:alt"]: _bad.append(f"{_f}: og/twitter image alt differ")
+    if (_v["og:image:width"], _v["og:image:height"]) != (str(_og["w"]), str(_og["h"])): _bad.append(f"{_f}: declared og:image size differs")
+    if _og["kind"] == "fallback" and not _u.endswith(f"/og-default-{_lg}.jpg"): _bad.append(f"{_f}: wrong-language fallback image")
+    if re.findall(r'<html lang="(\w+)"', _t) != [_lg]: _bad.append(f"{_f}: wrong html lang")
+    _hl = dict(re.findall(r'<link rel="alternate" hreflang="(\w[\w-]*)" href="([^"]*)"', _head))
+    if _pg == "legal": _exp = {**{o: f"{SITE}/{legal.PATHS[o]}/" for o in ("es","en","fr")}, "x-default": f"{SITE}/{legal.PATHS['es']}/"}
+    else: _exp = {**{o: U(o,_pg,_k) for o in ("es","en","fr")}, "x-default": U("es",_pg,_k)}
+    if _hl != _exp: _bad.append(f"{_f}: hreflang inconsistent {_hl}")
+    _rep.append((_lg, _pg, _k, _og["kind"], _og["file"], _v["og:title"]))
 if _bad: sys.exit("BUILD ABORTED: social metadata problems:\n  " + "\n  ".join(_bad))
+json.dump([dict(lang=a, page=b, key=c, image_kind=d, image=e_, title=f_) for a, b, c, d, e_, f_ in _rep], open(os.environ.get("OG_REPORT", "/tmp/og-report.json"), "w"), ensure_ascii=False, indent=1)
+_cnt = {}
+for r in _rep: _cnt[(r[0], r[3])] = _cnt.get((r[0], r[3]), 0) + 1
+print("social metadata OK:", len(_rep), "pages |", ", ".join(f"{l}/{k}={n}" for (l, k), n in sorted(_cnt.items())))
 shutil.copytree("fonts", dist + "/fonts"); open(dist + "/.nojekyll", "w").close()
 if not SITE.endswith("github.io"): open(dist + "/CNAME", "w").write(SITE.split("//")[-1] + "\n")   # GitHub Pages custom domain
 for f in glob.glob("extras/*"): shutil.copy(f, dist + "/" + f.split("/")[-1])

@@ -136,7 +136,7 @@ def txt(lg, email, site):
           ("p","Google LLC peut traiter ces données en tant que sous-traitant ; voir la politique de confidentialité de Google pour plus d'informations.")])]
         )
 
-def render(lg, site, email, css, consent_js, nav_extra=""):
+def render(lg, site, email, css, consent_js, nav_extra="", og_html=""):
     d = txt(lg, email, site)
     e = lambda s: _h.escape(s, quote=True)
     out = []
@@ -181,7 +181,7 @@ def render(lg, site, email, css, consent_js, nav_extra=""):
 <meta name="description" content="{e(d['desc'])}">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="{url(lg)}">{hre}
-<meta property="og:title" content="{e(d['title'])}"><meta property="og:description" content="{e(d['desc'])}"><meta property="og:type" content="website"><meta property="og:url" content="{url(lg)}"><meta property="og:locale" content="{LOC[lg]}"><meta property="og:image" content="{site}/og-image.png">
+<meta property="og:title" content="{e(d['title'])}"><meta property="og:description" content="{e(d['desc'])}"><meta property="og:type" content="website"><meta property="og:url" content="{url(lg)}"><meta property="og:locale" content="{LOC[lg]}"><meta property="og:site_name" content="Tom Fabre">{og_html}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{e(d['title'])}"><meta name="twitter:description" content="{e(d['desc'])}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script>try{{var t=localStorage.getItem("af-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}}catch(e){{}}</script>
 <script>
