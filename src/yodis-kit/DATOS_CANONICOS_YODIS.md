@@ -18,7 +18,7 @@
 - Respetar ES/EN/FR y modos light/dark. Probar los recorridos y eliminar referencias incorrectas a DJ y género masculino de Yodis.
 
 ## Datos de contacto profesional y privacidad (V4, prevalece sobre versiones anteriores)
-- Email: `hola@tomfabre.com` (contacto general).
+- Email: `hey@tomfabre.com` (contacto general).
 - WhatsApp: `+33 7 83 83 56 54` (`https://wa.me/33783835654`). Mostrar SOLO tras interés profesional explícito, necesidad definida y plazo ≤3 meses; de lo contrario formulario o email.
 - El chat NO ofrece reservas de llamada como CTA.
 - La elegibilidad de WhatsApp es una regla de UX, no una medida de privacidad real en una web pública.

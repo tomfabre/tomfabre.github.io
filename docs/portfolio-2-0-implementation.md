@@ -10,4 +10,4 @@ Copy importado de la Brand & Content Bible a `src/c1t.js` (ES/EN/FR). Build: `cd
 - Analítica: `track()` solo emite un evento DOM y reenvía a `window.AF_ANALYTICS` si existe. No carga nada.
 
 ## Pendiente de verificar (no inventar)
-Texto legal/privacidad y responsable; correo definitivo (`hola@tomfabre.com` vs `alvarofabreg@gmail.com`) y destino de Formspree; testimonios autorizados; cifras (3M+, 500K, 5M+, 12 países); hechos de cada caso (cliente, rol, resultados); ficheros WOFF2 de Galano Grotesque con licencia; fotos reales de la galería; GA4/consentimiento; dominio `tomfabre.com`; capacidades de Binōme.
+Texto legal/privacidad y responsable; correo definitivo (`hey@tomfabre.com` vs `alvarofabreg@gmail.com`) y destino de Formspree; testimonios autorizados; cifras (3M+, 500K, 5M+, 12 países); hechos de cada caso (cliente, rol, resultados); ficheros WOFF2 de Galano Grotesque con licencia; fotos reales de la galería; GA4/consentimiento; dominio `tomfabre.com`; capacidades de Binōme.

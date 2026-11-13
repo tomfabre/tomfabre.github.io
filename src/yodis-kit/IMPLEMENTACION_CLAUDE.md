@@ -16,7 +16,7 @@ Reemplaza el **chat IA existente** por un asistente determinista sin llamadas a 
 - Al volver atrás o reiniciar, reconstruir estado a partir de opciones elegidas, sin conservar cualificaciones obsoletas. No considerar ver About, Sorpréndeme o Contacto como intención profesional.
 - Desde cualquier zona, `professional_intent → professional_need → professional_timing → contact_choice` permite explicar una propuesta concreta sin pasar por presupuesto.
 - `@whatsapp` debe abrir con clic explícito `https://wa.me/33783835654?text=...` usando un resumen breve y localizado, codificado con `encodeURIComponent`. Nunca mostrar a visitantes exploratorios ni afirmar mensaje enviado.
-- `@email` abrir `mailto:hola@tomfabre.com` con asunto/contexto cuando exista; nunca afirmar correo enviado.
+- `@email` abrir `mailto:hey@tomfabre.com` con asunto/contexto cuando exista; nunca afirmar correo enviado.
 - `@contact_form` abrir formulario **real** del sitio; precargar respuestas conocidas; recopilar nombre/email solo al momento de enviar. No inventar endpoint de envío. Si no existe formulario, documentar bloqueo y ofrecer email de fallback.
 - `@copy_summary`: opcional cuando hay resumen; no convertirlo en CTA principal.
 - `@series_music`: abrir URL de YouTube proporcionada (sin autoplay); `@random_fact`: rotar sin repetir inmediatamente.

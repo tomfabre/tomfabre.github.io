@@ -3205,7 +3205,7 @@
   },
   "config": {
     "contactFormSelector": null,
-    "email": "hola@tomfabre.com",
+    "email": "hey@tomfabre.com",
     "cvUrl": null,
     "projects": {
       "ux": null,
@@ -3219,7 +3219,7 @@
     "whatsappDisplay": "+33 7 83 83 56 54"
   },
   "actions": {
-    "@email": "Open mailto:hola@tomfabre.com with URL-encoded localized subject/body. If project summary absent, friendly generic message; opening does NOT confirm delivery.",
+    "@email": "Open mailto:hey@tomfabre.com with URL-encoded localized subject/body. If project summary absent, friendly generic message; opening does NOT confirm delivery.",
     "@contact_form": "Open actual existing portfolio contact form. Prefill only available project details; if unavailable ask for missing form integration, do not fake submission. Only real successful submit counts as lead.",
     "@copy_summary": "Copy localized human-readable recap; show success feedback only after successful clipboard copy",
     "@cv": "Open configured cvUrl; hide option when missing",

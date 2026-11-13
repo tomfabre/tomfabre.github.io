@@ -5,7 +5,7 @@
 | Canal | Dato | Visibilidad | Contexto |
 |---|---|---|---|
 | Formulario | Formulario real de la web, por resolver en repositorio | Siempre en menú de contacto | Principal para briefs y propuestas; precargar recap si existe |
-| Email | `hola@tomfabre.com` | Siempre en menú de contacto | Consultas, empleo, colaboraciones y proyectos |
+| Email | `hey@tomfabre.com` | Siempre en menú de contacto | Consultas, empleo, colaboraciones y proyectos |
 | WhatsApp | `+33 7 83 83 56 54`, `https://wa.me/33783835654` | Solo tras cualificación | Contacto ágil ante oportunidad concreta |
 
 ## Regla exacta para WhatsApp

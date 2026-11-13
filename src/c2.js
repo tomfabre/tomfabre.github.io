@@ -3,7 +3,7 @@ const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const store = { get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }, set(k,v){ try { localStorage.setItem(k,v); } catch(e){} } };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const root = document.documentElement;
-const EMAIL = "hola@tomfabre.com";
+const EMAIL = "hey@tomfabre.com";
 /* Pega aquí tu endpoint de Formspree (https://formspree.io/f/xxxxxxxx) para que el formulario envíe los mensajes a tu email. Vacío = abre el correo del visitante. */
 const FORM_ENDPOINT = "https://formspree.io/f/xvkaoqbl";
 /* ---------- analytics hook: loads nothing. Fires a DOM event and, only if the owner later defines window.AF_ANALYTICS (after consent), forwards it. Never pass personal data. ---------- */
