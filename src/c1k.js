@@ -112,20 +112,20 @@ const SECTIONS = {
       h:{es:"05 · Un trabajo en equipo", en:"05 · Teamwork", fr:"05 · Un travail d'équipe"},
       t:{es:"De la primera conversación al último detalle.", en:"From the first conversation to the last detail.", fr:"De la première conversation au dernier détail."},
       p:[{
-        es:"Lideré el trabajo de identidad, tono de marca y comunicación digital, desde las primeras reuniones con dirección hasta su aplicación en distintos canales.",
-        en:"I led the identity, brand voice, and digital communication work, from the first meetings with management through to its application across different channels.",
-        fr:"J'ai piloté le travail d'identité, de ton de marque et de communication digitale, des premières réunions avec la direction jusqu'à son application sur différents canaux."
+        es:"Lideré la evolución de la identidad visual, la personalidad de marca y la comunicación digital de Contazara. Un trabajo que comenzó escuchando las inquietudes de su equipo directivo y que fue tomando forma en cada punto de contacto de la marca.",
+        en:"I led the evolution of Contazara's visual identity, brand personality and digital communication. The work began by listening to the concerns of its management team and took shape at every touchpoint of the brand.",
+        fr:"J'ai piloté l'évolution de l'identité visuelle, de la personnalité de marque et de la communication digitale de Contazara. Un travail qui a commencé par l'écoute des préoccupations de sa direction et qui a pris forme à chaque point de contact de la marque."
       },{
-        es:"Para las entrevistas y el proyecto web trabajé junto a Betsabé y {binome}. En paralelo, {estudio360} desarrolló la arquitectura y construcción de las nuevas oficinas, y colaboramos en aspectos del interiorismo.",
-        en:"For the interviews and the web project I worked alongside Betsabé and {binome}. In parallel, {estudio360} designed and built the new offices, and we collaborated on aspects of the interior design.",
-        fr:"Pour les entretiens et le projet web, j'ai travaillé avec Betsabé et {binome}. En parallèle, {estudio360} a conçu et construit les nouveaux bureaux, et nous avons collaboré sur certains aspects de l'aménagement intérieur.",
+        es:"Para las entrevistas con los equipos y el diseño y desarrollo web conté con la colaboración de {binome}. En paralelo, {estudio360} se encargó de la arquitectura y construcción de las nuevas oficinas, donde también trabajamos juntos para integrar la nueva identidad en los espacios.",
+        en:"For the team interviews and the web design and development I had the collaboration of {binome}. In parallel, {estudio360} took care of the architecture and construction of the new offices, where we also worked together to bring the new identity into the spaces.",
+        fr:"Pour les entretiens avec les équipes et la conception et le développement web, j'ai pu compter sur la collaboration de {binome}. En parallèle, {estudio360} s'est chargé de l'architecture et de la construction des nouveaux bureaux, où nous avons aussi travaillé ensemble pour intégrer la nouvelle identité dans les espaces.",
         links:{
           binome:{ href:"https://binome.xyz/", t:{es:"Binōme Studio", en:"Binōme Studio", fr:"Binōme Studio"} },
           estudio360:{ href:"https://www.360estudio.io/", t:{es:"360estudio", en:"360estudio", fr:"360estudio"} } }
       },{ em:true,
-        es:"Diferentes disciplinas. Una misma dirección.",
-        en:"Different disciplines. One shared direction.",
-        fr:"Des disciplines différentes. Une même direction."
+        es:"Distintas disciplinas. Una misma visión.",
+        en:"Different disciplines. One shared vision.",
+        fr:"Des disciplines différentes. Une même vision."
       }] },
 
     { type:"text", id:"cierre",
