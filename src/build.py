@@ -205,6 +205,7 @@ open(dist+"/_headers","w").write("/*\n  X-Content-Type-Options: nosniff\n  Refer
 print("built", SITE, len(html), npages, "pages")
 
 shutil.copytree("img", dist + "/img"); open(dist + "/.nojekyll", "w").close()
+if not SITE.endswith("github.io"): open(dist + "/CNAME", "w").write(SITE.split("//")[-1] + "\n")   # GitHub Pages custom domain
 for f in glob.glob("extras/*"): shutil.copy(f, dist + "/" + f.split("/")[-1])
 
 # 5) prerender (needs node + playwright). Skip with --no-prerender for quick previews; never deploy a dist without it.

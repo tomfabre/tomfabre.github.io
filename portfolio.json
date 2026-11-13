@@ -34,7 +34,7 @@
       "url": "https://github.com/tomfabre"
     }
   ],
-  "cv": "https://tomfabre.github.io/cv-alvaro-fabre.pdf",
+  "cv": "https://tomfabre.com/cv-alvaro-fabre.pdf",
   "updated": "2026-11-13",
   "services": {
     "es": [
@@ -43,21 +43,21 @@
         "tagline": "Una marca que tenga algo que decir.",
         "summary": "Creo y transformo identidades para que las marcas se reconozcan, se diferencien y conecten con las personas adecuadas.",
         "scope": "Estrategia de marca · Identidad visual · Rebranding · Dirección de arte · Sistemas de marca.",
-        "url": "https://tomfabre.github.io/servicios/branding/"
+        "url": "https://tomfabre.com/servicios/branding/"
       },
       {
         "name": "Web & desarrollo",
         "tagline": "Una buena web tiene que hacer más que verse bien.",
         "summary": "Diseño y desarrollo webs que comunican con claridad, funcionan sin complicaciones y ayudan a convertir visitas en oportunidades.",
         "scope": "Diseño web · Webflow · Shopify · WordPress · Framer · Desarrollo a medida.",
-        "url": "https://tomfabre.github.io/servicios/diseno-web/"
+        "url": "https://tomfabre.com/servicios/diseno-web/"
       },
       {
         "name": "Producto digital, UX/UI & estrategia digital",
         "tagline": "Menos fricción. Más sentido.",
         "summary": "Diseño y mejoro experiencias digitales para que sean intuitivas, útiles y fáciles de usar, sin perder de vista los objetivos del negocio.",
         "scope": "UX research · Interfaces · Prototipos · Design systems · Auditorías UX · Estrategia de producto.",
-        "url": "https://tomfabre.github.io/servicios/diseno-ux-ui/"
+        "url": "https://tomfabre.com/servicios/diseno-ux-ui/"
       }
     ],
     "en": [
@@ -66,21 +66,21 @@
         "tagline": "A brand with something to say.",
         "summary": "I build and evolve brand identities that help businesses become recognizable, stand apart and connect with the right people.",
         "scope": "Brand strategy · Visual identity · Rebranding · Art direction · Brand systems.",
-        "url": "https://tomfabre.github.io/en/services/branding/"
+        "url": "https://tomfabre.com/en/services/branding/"
       },
       {
         "name": "Web design & development",
         "tagline": "A good website should do more than look good.",
         "summary": "I design and build websites that communicate clearly, work smoothly and help turn visits into opportunities.",
         "scope": "Web design · Webflow · Shopify · WordPress · Framer · Custom development.",
-        "url": "https://tomfabre.github.io/en/services/web-design/"
+        "url": "https://tomfabre.com/en/services/web-design/"
       },
       {
         "name": "Digital product, UX/UI & digital strategy",
         "tagline": "Less friction. More purpose.",
         "summary": "I design and improve digital experiences so they're intuitive, useful and easy to navigate, without losing sight of business goals.",
         "scope": "UX research · Interfaces · Prototypes · Design systems · UX audits · Product strategy.",
-        "url": "https://tomfabre.github.io/en/services/ux-ui-design/"
+        "url": "https://tomfabre.com/en/services/ux-ui-design/"
       }
     ],
     "fr": [
@@ -89,21 +89,21 @@
         "tagline": "Une marque qui a quelque chose à dire.",
         "summary": "Je crée et fais évoluer des identités qui rendent les marques reconnaissables, singulières et proches des bonnes personnes.",
         "scope": "Stratégie de marque · Identité visuelle · Rebranding · Direction artistique · Systèmes de marque.",
-        "url": "https://tomfabre.github.io/fr/services/branding/"
+        "url": "https://tomfabre.com/fr/services/branding/"
       },
       {
         "name": "Web & développement",
         "tagline": "Un bon site doit faire plus qu'être beau.",
         "summary": "Je conçois et développe des sites clairs, agréables à utiliser et pensés pour transformer les visites en opportunités.",
         "scope": "Design web · Webflow · Shopify · WordPress · Framer · Développement sur mesure.",
-        "url": "https://tomfabre.github.io/fr/services/design-web/"
+        "url": "https://tomfabre.com/fr/services/design-web/"
       },
       {
         "name": "Produit digital, UX/UI & stratégie digitale",
         "tagline": "Moins de friction. Plus de sens.",
         "summary": "Je conçois et améliore des expériences digitales intuitives et utiles, pensées pour les utilisateurs comme pour les objectifs de l'entreprise.",
         "scope": "Recherche UX · Interfaces · Prototypes · Design systems · Audits UX · Stratégie produit.",
-        "url": "https://tomfabre.github.io/fr/services/design-ux-ui/"
+        "url": "https://tomfabre.com/fr/services/design-ux-ui/"
       }
     ]
   },
@@ -212,7 +212,7 @@
         "tagline": "40 años de historia. Una identidad preparada para lo que viene.",
         "role": "Lead Product Designer",
         "period": "2022 –",
-        "url": "https://tomfabre.github.io/proyectos/contazara/"
+        "url": "https://tomfabre.com/proyectos/contazara/"
       },
       {
         "slug": "carceral",
@@ -225,7 +225,7 @@
         "tagline": "Un sitio que da espacio a las ideas.",
         "role": "Product Designer",
         "period": "Web",
-        "url": "https://tomfabre.github.io/proyectos/carceral/"
+        "url": "https://tomfabre.com/proyectos/carceral/"
       },
       {
         "slug": "a2pas",
@@ -238,7 +238,7 @@
         "tagline": "Una marca cercana, a dos pasos de las personas.",
         "role": "Product Designer",
         "period": "Brand + web",
-        "url": "https://tomfabre.github.io/proyectos/a2pas/"
+        "url": "https://tomfabre.com/proyectos/a2pas/"
       },
       {
         "slug": "happylife",
@@ -251,7 +251,7 @@
         "tagline": "Hacer que cuidarse se sienta sencillo.",
         "role": "Lead Product Designer",
         "period": "App",
-        "url": "https://tomfabre.github.io/proyectos/happylife/"
+        "url": "https://tomfabre.com/proyectos/happylife/"
       },
       {
         "slug": "binome",
@@ -264,7 +264,7 @@
         "tagline": "El estudio, diseñado con el mismo cuidado que sus clientes.",
         "role": "Co-founder & Lead Designer",
         "period": "Studio",
-        "url": "https://tomfabre.github.io/proyectos/binome/"
+        "url": "https://tomfabre.com/proyectos/binome/"
       },
       {
         "slug": "yaypegs",
@@ -277,7 +277,7 @@
         "tagline": "Detalles que se notan.",
         "role": "Product Designer",
         "period": "Digital",
-        "url": "https://tomfabre.github.io/proyectos/yaypegs/"
+        "url": "https://tomfabre.com/proyectos/yaypegs/"
       },
       {
         "slug": "360estudio",
@@ -290,7 +290,7 @@
         "tagline": "Arquitectura con una identidad a su altura.",
         "role": "Lead Product Designer",
         "period": "Binōme",
-        "url": "https://tomfabre.github.io/proyectos/360estudio/"
+        "url": "https://tomfabre.com/proyectos/360estudio/"
       },
       {
         "slug": "figy",
@@ -303,7 +303,7 @@
         "tagline": "Una idea, bien resuelta.",
         "role": "Product Designer",
         "period": "Digital",
-        "url": "https://tomfabre.github.io/proyectos/figy/"
+        "url": "https://tomfabre.com/proyectos/figy/"
       },
       {
         "slug": "apolo",
@@ -316,7 +316,7 @@
         "tagline": "Un móvil que se siente tuyo.",
         "role": "Senior UX/UI Designer",
         "period": "2018–2022",
-        "url": "https://tomfabre.github.io/proyectos/apolo/"
+        "url": "https://tomfabre.com/proyectos/apolo/"
       },
       {
         "slug": "appy",
@@ -329,7 +329,7 @@
         "tagline": "Menos pasos, más gente que llega.",
         "role": "Senior UX/UI Designer",
         "period": "2018–2022",
-        "url": "https://tomfabre.github.io/proyectos/appy/"
+        "url": "https://tomfabre.com/proyectos/appy/"
       },
       {
         "slug": "mood",
@@ -342,7 +342,7 @@
         "tagline": "Conversar, a tu manera.",
         "role": "Senior UX/UI Designer",
         "period": "2018–2022",
-        "url": "https://tomfabre.github.io/proyectos/mood/"
+        "url": "https://tomfabre.com/proyectos/mood/"
       },
       {
         "slug": "molyb",
@@ -355,7 +355,7 @@
         "tagline": "Hacer simple lo técnico.",
         "role": "UX/UI Designer",
         "period": "2015–2017",
-        "url": "https://tomfabre.github.io/proyectos/molyb/"
+        "url": "https://tomfabre.com/proyectos/molyb/"
       }
     ],
     "en": [
@@ -370,7 +370,7 @@
         "tagline": "40 years of history. A brand ready for what's next.",
         "role": "Lead Product Designer",
         "period": "2022 –",
-        "url": "https://tomfabre.github.io/en/projects/contazara/"
+        "url": "https://tomfabre.com/en/projects/contazara/"
       },
       {
         "slug": "carceral",
@@ -383,7 +383,7 @@
         "tagline": "A site that gives ideas room.",
         "role": "Product Designer",
         "period": "Web",
-        "url": "https://tomfabre.github.io/en/projects/carceral/"
+        "url": "https://tomfabre.com/en/projects/carceral/"
       },
       {
         "slug": "a2pas",
@@ -396,7 +396,7 @@
         "tagline": "A brand within arm's reach.",
         "role": "Product Designer",
         "period": "Brand + web",
-        "url": "https://tomfabre.github.io/en/projects/a2pas/"
+        "url": "https://tomfabre.com/en/projects/a2pas/"
       },
       {
         "slug": "happylife",
@@ -409,7 +409,7 @@
         "tagline": "Making self-care feel simple.",
         "role": "Lead Product Designer",
         "period": "App",
-        "url": "https://tomfabre.github.io/en/projects/happylife/"
+        "url": "https://tomfabre.com/en/projects/happylife/"
       },
       {
         "slug": "binome",
@@ -422,7 +422,7 @@
         "tagline": "A studio designed with the care it gives its clients.",
         "role": "Co-founder & Lead Designer",
         "period": "Studio",
-        "url": "https://tomfabre.github.io/en/projects/binome/"
+        "url": "https://tomfabre.com/en/projects/binome/"
       },
       {
         "slug": "yaypegs",
@@ -435,7 +435,7 @@
         "tagline": "Details you notice.",
         "role": "Product Designer",
         "period": "Digital",
-        "url": "https://tomfabre.github.io/en/projects/yaypegs/"
+        "url": "https://tomfabre.com/en/projects/yaypegs/"
       },
       {
         "slug": "360estudio",
@@ -448,7 +448,7 @@
         "tagline": "An architectural identity built to match the work.",
         "role": "Lead Product Designer",
         "period": "Binōme",
-        "url": "https://tomfabre.github.io/en/projects/360estudio/"
+        "url": "https://tomfabre.com/en/projects/360estudio/"
       },
       {
         "slug": "figy",
@@ -461,7 +461,7 @@
         "tagline": "One idea, well solved.",
         "role": "Product Designer",
         "period": "Digital",
-        "url": "https://tomfabre.github.io/en/projects/figy/"
+        "url": "https://tomfabre.com/en/projects/figy/"
       },
       {
         "slug": "apolo",
@@ -474,7 +474,7 @@
         "tagline": "A phone that feels like yours.",
         "role": "Senior UX/UI Designer",
         "period": "2018–2022",
-        "url": "https://tomfabre.github.io/en/projects/apolo/"
+        "url": "https://tomfabre.com/en/projects/apolo/"
       },
       {
         "slug": "appy",
@@ -487,7 +487,7 @@
         "tagline": "Fewer steps, more people arriving.",
         "role": "Senior UX/UI Designer",
         "period": "2018–2022",
-        "url": "https://tomfabre.github.io/en/projects/appy/"
+        "url": "https://tomfabre.com/en/projects/appy/"
       },
       {
         "slug": "mood",
@@ -500,7 +500,7 @@
         "tagline": "Chat, your way.",
         "role": "Senior UX/UI Designer",
         "period": "2018–2022",
-        "url": "https://tomfabre.github.io/en/projects/mood/"
+        "url": "https://tomfabre.com/en/projects/mood/"
       },
       {
         "slug": "molyb",
@@ -513,7 +513,7 @@
         "tagline": "Making technical simple.",
         "role": "UX/UI Designer",
         "period": "2015–2017",
-        "url": "https://tomfabre.github.io/en/projects/molyb/"
+        "url": "https://tomfabre.com/en/projects/molyb/"
       }
     ],
     "fr": [
@@ -528,7 +528,7 @@
         "tagline": "40 ans d'histoire. Une identité tournée vers demain.",
         "role": "Lead Product Designer",
         "period": "2022 –",
-        "url": "https://tomfabre.github.io/fr/projets/contazara/"
+        "url": "https://tomfabre.com/fr/projets/contazara/"
       },
       {
         "slug": "carceral",
@@ -541,7 +541,7 @@
         "tagline": "Un site qui laisse de la place aux idées.",
         "role": "Product Designer",
         "period": "Web",
-        "url": "https://tomfabre.github.io/fr/projets/carceral/"
+        "url": "https://tomfabre.com/fr/projets/carceral/"
       },
       {
         "slug": "a2pas",
@@ -554,7 +554,7 @@
         "tagline": "Une marque à deux pas des gens.",
         "role": "Product Designer",
         "period": "Brand + web",
-        "url": "https://tomfabre.github.io/fr/projets/a2pas/"
+        "url": "https://tomfabre.com/fr/projets/a2pas/"
       },
       {
         "slug": "happylife",
@@ -567,7 +567,7 @@
         "tagline": "Rendre le soin de soi simple.",
         "role": "Lead Product Designer",
         "period": "App",
-        "url": "https://tomfabre.github.io/fr/projets/happylife/"
+        "url": "https://tomfabre.com/fr/projets/happylife/"
       },
       {
         "slug": "binome",
@@ -580,7 +580,7 @@
         "tagline": "Un studio conçu avec le soin qu'il offre à ses clients.",
         "role": "Co-founder & Lead Designer",
         "period": "Studio",
-        "url": "https://tomfabre.github.io/fr/projets/binome/"
+        "url": "https://tomfabre.com/fr/projets/binome/"
       },
       {
         "slug": "yaypegs",
@@ -593,7 +593,7 @@
         "tagline": "Des détails qui se remarquent.",
         "role": "Product Designer",
         "period": "Digital",
-        "url": "https://tomfabre.github.io/fr/projets/yaypegs/"
+        "url": "https://tomfabre.com/fr/projets/yaypegs/"
       },
       {
         "slug": "360estudio",
@@ -606,7 +606,7 @@
         "tagline": "Une identité à la hauteur de son architecture.",
         "role": "Lead Product Designer",
         "period": "Binōme",
-        "url": "https://tomfabre.github.io/fr/projets/360estudio/"
+        "url": "https://tomfabre.com/fr/projets/360estudio/"
       },
       {
         "slug": "figy",
@@ -619,7 +619,7 @@
         "tagline": "Une idée, bien résolue.",
         "role": "Product Designer",
         "period": "Digital",
-        "url": "https://tomfabre.github.io/fr/projets/figy/"
+        "url": "https://tomfabre.com/fr/projets/figy/"
       },
       {
         "slug": "apolo",
@@ -632,7 +632,7 @@
         "tagline": "Un mobile qui vous ressemble.",
         "role": "Senior UX/UI Designer",
         "period": "2018–2022",
-        "url": "https://tomfabre.github.io/fr/projets/apolo/"
+        "url": "https://tomfabre.com/fr/projets/apolo/"
       },
       {
         "slug": "appy",
@@ -645,7 +645,7 @@
         "tagline": "Moins d'étapes, plus de monde au bout.",
         "role": "Senior UX/UI Designer",
         "period": "2018–2022",
-        "url": "https://tomfabre.github.io/fr/projets/appy/"
+        "url": "https://tomfabre.com/fr/projets/appy/"
       },
       {
         "slug": "mood",
@@ -658,7 +658,7 @@
         "tagline": "Discuter, à votre manière.",
         "role": "Senior UX/UI Designer",
         "period": "2018–2022",
-        "url": "https://tomfabre.github.io/fr/projets/mood/"
+        "url": "https://tomfabre.com/fr/projets/mood/"
       },
       {
         "slug": "molyb",
@@ -671,7 +671,7 @@
         "tagline": "Rendre le technique simple.",
         "role": "UX/UI Designer",
         "period": "2015–2017",
-        "url": "https://tomfabre.github.io/fr/projets/molyb/"
+        "url": "https://tomfabre.com/fr/projets/molyb/"
       }
     ]
   }

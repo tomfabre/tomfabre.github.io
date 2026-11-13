@@ -53,4 +53,4 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
-Sitemap: https://tomfabre.github.io/sitemap.xml
+Sitemap: https://tomfabre.com/sitemap.xml

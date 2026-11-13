@@ -6,35 +6,35 @@ The portfolio has real URLs per language: Spanish at the root, English under /en
 
 ## About
 
-- [Bio](https://tomfabre.github.io/en/bio/): Background, way of working, quick facts and personal links.
-- [Contact](https://tomfabre.github.io/en/contact/): Email hola@tomfabre.com, contact form and profile links.
-- [CV (PDF)](https://tomfabre.github.io/cv-alvaro-fabre.pdf): Curriculum vitae.
+- [Bio](https://tomfabre.com/en/bio/): Background, way of working, quick facts and personal links.
+- [Contact](https://tomfabre.com/en/contact/): Email hola@tomfabre.com, contact form and profile links.
+- [CV (PDF)](https://tomfabre.com/cv-alvaro-fabre.pdf): Curriculum vitae.
 
 ## Projects
 
-- [Contazara](https://tomfabre.github.io/en/projects/contazara/): Branding · Creative direction · Web. Refreshing the visual world of an established industrial company, creating a contemporary and consistent identity across brand and digital experiences.
-- [Carceral Ecologies](https://tomfabre.github.io/en/projects/carceral/): Web design. Web design for Carceral Ecologies: a clear structure so the content can be read, explored and remembered.
-- [À2pas](https://tomfabre.github.io/en/projects/a2pas/): Branding · Web design. Identity and website for À2pas: a close, recognisable brand with a consistent digital presence.
-- [Happylife](https://tomfabre.github.io/en/projects/happylife/): UX/UI · Mental health app. Designing the experience of a mental health app: support with calm, clarity and a human tone.
-- [Binōme Studio](https://tomfabre.github.io/en/projects/binome/): Brand · Web. Identity and website for Binōme, the design studio I run in Madrid with my partner.
-- [Yaypegs](https://tomfabre.github.io/en/projects/yaypegs/): Digital design. Digital design for Yaypegs: a clear experience with personality that's easy to use.
-- [360estudio](https://tomfabre.github.io/en/projects/360estudio/): Branding · Web design · Art direction. Creating a visual and digital experience that gives the studio's projects room to shine while expressing its distinctive personality.
-- [Figy](https://tomfabre.github.io/en/projects/figy/): Digital design. Digital design for Figy: a clear, consistent experience from start to finish.
-- [Apolo](https://tomfabre.github.io/en/projects/apolo/): App · Android launcher. The interface of an accessible, highly customisable Android launcher with 3M+ downloads.
-- [Appy](https://tomfabre.github.io/en/projects/appy/): App · Onboarding. A shorter onboarding that reduced drop-off for 500K+ users.
-- [Mood Messenger](https://tomfabre.github.io/en/projects/mood/): App · Messaging. Messaging flows redesigned to prioritise personalisation and retention, with 5M+ downloads.
-- [Molyb](https://tomfabre.github.io/en/projects/molyb/): Educational platform. An interactive educational platform that made complex technical content accessible.
+- [Contazara](https://tomfabre.com/en/projects/contazara/): Branding · Creative direction · Web. Refreshing the visual world of an established industrial company, creating a contemporary and consistent identity across brand and digital experiences.
+- [Carceral Ecologies](https://tomfabre.com/en/projects/carceral/): Web design. Web design for Carceral Ecologies: a clear structure so the content can be read, explored and remembered.
+- [À2pas](https://tomfabre.com/en/projects/a2pas/): Branding · Web design. Identity and website for À2pas: a close, recognisable brand with a consistent digital presence.
+- [Happylife](https://tomfabre.com/en/projects/happylife/): UX/UI · Mental health app. Designing the experience of a mental health app: support with calm, clarity and a human tone.
+- [Binōme Studio](https://tomfabre.com/en/projects/binome/): Brand · Web. Identity and website for Binōme, the design studio I run in Madrid with my partner.
+- [Yaypegs](https://tomfabre.com/en/projects/yaypegs/): Digital design. Digital design for Yaypegs: a clear experience with personality that's easy to use.
+- [360estudio](https://tomfabre.com/en/projects/360estudio/): Branding · Web design · Art direction. Creating a visual and digital experience that gives the studio's projects room to shine while expressing its distinctive personality.
+- [Figy](https://tomfabre.com/en/projects/figy/): Digital design. Digital design for Figy: a clear, consistent experience from start to finish.
+- [Apolo](https://tomfabre.com/en/projects/apolo/): App · Android launcher. The interface of an accessible, highly customisable Android launcher with 3M+ downloads.
+- [Appy](https://tomfabre.com/en/projects/appy/): App · Onboarding. A shorter onboarding that reduced drop-off for 500K+ users.
+- [Mood Messenger](https://tomfabre.com/en/projects/mood/): App · Messaging. Messaging flows redesigned to prioritise personalisation and retention, with 5M+ downloads.
+- [Molyb](https://tomfabre.com/en/projects/molyb/): Educational platform. An interactive educational platform that made complex technical content accessible.
 
 ## Services
 
-- [Services overview](https://tomfabre.github.io/en/services/): Three ways to move a good idea forward.
-- [Branding & identity](https://tomfabre.github.io/en/services/branding/): A brand with something to say. I build and evolve brand identities that help businesses become recognizable, stand apart and connect with the right people.
-- [Web design & development](https://tomfabre.github.io/en/services/web-design/): A good website should do more than look good. I design and build websites that communicate clearly, work smoothly and help turn visits into opportunities.
-- [Digital product, UX/UI & digital strategy](https://tomfabre.github.io/en/services/ux-ui-design/): Less friction. More purpose. I design and improve digital experiences so they're intuitive, useful and easy to navigate, without losing sight of business goals.
+- [Services overview](https://tomfabre.com/en/services/): Three ways to move a good idea forward.
+- [Branding & identity](https://tomfabre.com/en/services/branding/): A brand with something to say. I build and evolve brand identities that help businesses become recognizable, stand apart and connect with the right people.
+- [Web design & development](https://tomfabre.com/en/services/web-design/): A good website should do more than look good. I design and build websites that communicate clearly, work smoothly and help turn visits into opportunities.
+- [Digital product, UX/UI & digital strategy](https://tomfabre.com/en/services/ux-ui-design/): Less friction. More purpose. I design and improve digital experiences so they're intuitive, useful and easy to navigate, without losing sight of business goals.
 
 ## Optional
 
-- [Full content](https://tomfabre.github.io/llms-full.txt): Complete portfolio text in Spanish, English and French.
-- [Portfolio data (JSON)](https://tomfabre.github.io/portfolio.json): Projects, services and profile links as structured data.
-- [AI catalog](https://tomfabre.github.io/.well-known/ai-catalog.json): Machine-readable index of resources for agents.
+- [Full content](https://tomfabre.com/llms-full.txt): Complete portfolio text in Spanish, English and French.
+- [Portfolio data (JSON)](https://tomfabre.com/portfolio.json): Projects, services and profile links as structured data.
+- [AI catalog](https://tomfabre.com/.well-known/ai-catalog.json): Machine-readable index of resources for agents.
 - [Binōme Studio](https://binome.xyz): The design studio Álvaro co-founded in Madrid.

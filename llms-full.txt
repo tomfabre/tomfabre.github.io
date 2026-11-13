@@ -2,7 +2,7 @@
 
  > Product and brand designer in Madrid, co-founder of Binōme Studio. Spanish, French and English.
 
-Site: https://tomfabre.github.io/ · Email: hola@tomfabre.com · Updated: 2026-11-13
+Site: https://tomfabre.com/ · Email: hola@tomfabre.com · Updated: 2026-11-13
 
 ## English
 
@@ -15,7 +15,7 @@ Moving between Latin America and Europe has shaped how I work: listening, questi
 ### Services
 
 #### Branding & identity — A strong brand doesn't start with a logo.
-URL: https://tomfabre.github.io/en/services/branding/
+URL: https://tomfabre.com/en/services/branding/
 A brand with something to say.
 
 It starts with knowing who you are, what sets you apart and how you want to be remembered. I help turn that understanding into a clear, distinctive identity designed to grow with you.
@@ -42,7 +42,7 @@ Q: What will I receive?
 A: We'll define deliverables upfront based on how you'll actually use the identity.
 
 #### Web design & development — Your website should work as hard as you do.
-URL: https://tomfabre.github.io/en/services/web-design/
+URL: https://tomfabre.com/en/services/web-design/
 A good website should do more than look good.
 
 Looking good isn't enough. Your site should explain what you do, build trust, be effortless to navigate and help people take the next step. I design and develop around those goals.
@@ -69,7 +69,7 @@ Q: Do you build online stores?
 A: Yes, we can evaluate e-commerce solutions such as Shopify based on requirements.
 
 #### Digital product, UX/UI & digital strategy — Easy to use shouldn't be hard to achieve.
-URL: https://tomfabre.github.io/en/services/ux-ui-design/
+URL: https://tomfabre.com/en/services/ux-ui-design/
 Less friction. More purpose.
 
 A digital product works best when people know what to do and the business knows what matters. I help find friction, make sense of complex problems and design useful experiences for both.
@@ -121,7 +121,7 @@ A: Tell me a little about what you need. We'll discuss your goals and scope and,
 ### Projects
 
 #### Contazara — Branding · Creative direction · Web
-URL: https://tomfabre.github.io/en/projects/contazara/
+URL: https://tomfabre.com/en/projects/contazara/
 40 years of history. A brand ready for what's next.
 
 Refreshing the visual world of an established industrial company, creating a contemporary and consistent identity across brand and digital experiences.
@@ -130,7 +130,7 @@ I designed and run the visual identity and the whole digital presence: brand, we
 Services: Branding · Web · Social media · Role: Lead Product Designer · Context: Industry and energy
 
 #### Carceral Ecologies — Web design
-URL: https://tomfabre.github.io/en/projects/carceral/
+URL: https://tomfabre.com/en/projects/carceral/
 A site that gives ideas room.
 
 Web design for Carceral Ecologies: a clear structure so the content can be read, explored and remembered.
@@ -139,7 +139,7 @@ I designed the web experience: information architecture, content hierarchy and a
 Services: Web design · Information architecture · Role: Product Designer · Context: Web project
 
 #### À2pas — Branding · Web design
-URL: https://tomfabre.github.io/en/projects/a2pas/
+URL: https://tomfabre.com/en/projects/a2pas/
 A brand within arm's reach.
 
 Identity and website for À2pas: a close, recognisable brand with a consistent digital presence.
@@ -148,7 +148,7 @@ I built the visual identity and web design aiming for a warm, clear language sha
 Services: Branding · Web design · Role: Product Designer · Context: Brand and web
 
 #### Happylife — UX/UI · Mental health app
-URL: https://tomfabre.github.io/en/projects/happylife/
+URL: https://tomfabre.com/en/projects/happylife/
 Making self-care feel simple.
 
 Designing the experience of a mental health app: support with calm, clarity and a human tone.
@@ -157,7 +157,7 @@ I led the UX/UI of an MVP-stage app, coordinating the remote product team and bu
 Services: UX/UI · Product · Mental health · Role: Lead Product Designer · Context: Mental health · App
 
 #### Binōme Studio — Brand · Web
-URL: https://tomfabre.github.io/en/projects/binome/
+URL: https://tomfabre.com/en/projects/binome/
 A studio designed with the care it gives its clients.
 
 Identity and website for Binōme, the design studio I run in Madrid with my partner.
@@ -166,7 +166,7 @@ I designed the brand and website of our own studio: a place to explain how we wo
 Services: Branding · Web · Role: Co-founder & Lead Designer · Context: Own studio
 
 #### Yaypegs — Digital design
-URL: https://tomfabre.github.io/en/projects/yaypegs/
+URL: https://tomfabre.com/en/projects/yaypegs/
 Details you notice.
 
 Digital design for Yaypegs: a clear experience with personality that's easy to use.
@@ -175,7 +175,7 @@ I worked on the experience and visual identity, caring for ease of use and consi
 Services: Digital design · UX/UI · Role: Product Designer · Context: Digital project
 
 #### 360estudio — Branding · Web design · Art direction
-URL: https://tomfabre.github.io/en/projects/360estudio/
+URL: https://tomfabre.com/en/projects/360estudio/
 An architectural identity built to match the work.
 
 Creating a visual and digital experience that gives the studio's projects room to shine while expressing its distinctive personality.
@@ -184,7 +184,7 @@ I built the full visual system: identity, website and social content management,
 Services: Identity · Web · Social content · Role: Lead Product Designer · Context: Architecture
 
 #### Figy — Digital design
-URL: https://tomfabre.github.io/en/projects/figy/
+URL: https://tomfabre.com/en/projects/figy/
 One idea, well solved.
 
 Digital design for Figy: a clear, consistent experience from start to finish.
@@ -193,7 +193,7 @@ I worked on the experience and interface, caring for clarity, rhythm and visual 
 Services: Digital design · UX/UI · Role: Product Designer · Context: Digital project
 
 #### Apolo — App · Android launcher
-URL: https://tomfabre.github.io/en/projects/apolo/
+URL: https://tomfabre.com/en/projects/apolo/
 A phone that feels like yours.
 
 The interface of an accessible, highly customisable Android launcher with 3M+ downloads.
@@ -202,7 +202,7 @@ I designed the interface of a launcher built to be personalised without losing c
 Services: Mobile product · UI · Accessibility · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
 
 #### Appy — App · Onboarding
-URL: https://tomfabre.github.io/en/projects/appy/
+URL: https://tomfabre.com/en/projects/appy/
 Fewer steps, more people arriving.
 
 A shorter onboarding that reduced drop-off for 500K+ users.
@@ -211,7 +211,7 @@ I simplified the onboarding using behaviour analytics and A/B testing.
 Services: Onboarding · UX · A/B · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
 
 #### Mood Messenger — App · Messaging
-URL: https://tomfabre.github.io/en/projects/mood/
+URL: https://tomfabre.com/en/projects/mood/
 Chat, your way.
 
 Messaging flows redesigned to prioritise personalisation and retention, with 5M+ downloads.
@@ -220,7 +220,7 @@ I redesigned the messaging flows so personalising and coming back felt more natu
 Services: Mobile product · Flows · Retention · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
 
 #### Molyb — Educational platform
-URL: https://tomfabre.github.io/en/projects/molyb/
+URL: https://tomfabre.com/en/projects/molyb/
 Making technical simple.
 
 An interactive educational platform that made complex technical content accessible.
@@ -241,7 +241,7 @@ Mi recorrido entre Latinoamérica y Europa ha marcado mi manera de trabajar: esc
 ### Servicios
 
 #### Branding & identidad — Una buena marca no empieza por un logo.
-URL: https://tomfabre.github.io/servicios/branding/
+URL: https://tomfabre.com/servicios/branding/
 Una marca que tenga algo que decir.
 
 Empieza por entender quién eres, qué te hace diferente y cómo quieres que te recuerden. Te ayudo a darle forma a esa idea y convertirla en una identidad coherente, reconocible y preparada para crecer.
@@ -268,7 +268,7 @@ Q: ¿Qué entregables recibiré?
 A: Los definiremos antes de empezar según los usos y las necesidades de la marca.
 
 #### Web & desarrollo — Tu web debería trabajar tan bien como tú.
-URL: https://tomfabre.github.io/servicios/diseno-web/
+URL: https://tomfabre.com/servicios/diseno-web/
 Una buena web tiene que hacer más que verse bien.
 
 Una web no tiene que limitarse a verse bien. Tiene que explicar lo que haces, transmitir confianza, ser sencilla de usar y facilitar que las personas den el siguiente paso. Diseño y desarrollo cada proyecto pensando en esas necesidades.
@@ -295,7 +295,7 @@ Q: ¿También haces tiendas online?
 A: Sí, podemos valorar un e-commerce, especialmente con plataformas adecuadas como Shopify, en función del alcance.
 
 #### Producto digital, UX/UI & estrategia digital — Que sea fácil de usar no debería ser complicado.
-URL: https://tomfabre.github.io/servicios/diseno-ux-ui/
+URL: https://tomfabre.com/servicios/diseno-ux-ui/
 Menos fricción. Más sentido.
 
 Un producto digital funciona mejor cuando sus usuarios entienden qué hacer y el negocio tiene claros sus objetivos. Te ayudo a detectar fricciones, ordenar problemas y diseñar experiencias que tengan sentido para ambos.
@@ -347,7 +347,7 @@ A: Me cuentas brevemente qué necesitas. Hablamos del proyecto, valoramos su alc
 ### Proyectos
 
 #### Contazara — Branding · Dirección creativa · Web
-URL: https://tomfabre.github.io/proyectos/contazara/
+URL: https://tomfabre.com/proyectos/contazara/
 40 años de historia. Una identidad preparada para lo que viene.
 
 Transformar la presencia de una empresa industrial con trayectoria en un universo de marca contemporáneo, reconocible y coherente, desde su identidad hasta sus experiencias digitales.
@@ -356,7 +356,7 @@ Diseñé y gestiono la identidad visual y toda la presencia digital: marca, web 
 Services: Branding · Web · Redes sociales · Role: Lead Product Designer · Context: Industria y energía
 
 #### Carceral Ecologies — Diseño web
-URL: https://tomfabre.github.io/proyectos/carceral/
+URL: https://tomfabre.com/proyectos/carceral/
 Un sitio que da espacio a las ideas.
 
 Diseño web para Carceral Ecologies: una estructura clara para que el contenido se lea, se explore y se recuerde.
@@ -365,7 +365,7 @@ Diseñé la experiencia web: arquitectura de la información, jerarquía de cont
 Services: Diseño web · Arquitectura de la información · Role: Product Designer · Context: Proyecto web
 
 #### À2pas — Branding · Diseño web
-URL: https://tomfabre.github.io/proyectos/a2pas/
+URL: https://tomfabre.com/proyectos/a2pas/
 Una marca cercana, a dos pasos de las personas.
 
 Identidad y web para À2pas: una marca cercana y reconocible, con una presencia digital coherente.
@@ -374,7 +374,7 @@ Construí la identidad visual y el diseño web buscando un lenguaje cercano, cla
 Services: Branding · Diseño web · Role: Product Designer · Context: Marca y web
 
 #### Happylife — UX/UI · App de salud mental
-URL: https://tomfabre.github.io/proyectos/happylife/
+URL: https://tomfabre.com/proyectos/happylife/
 Hacer que cuidarse se sienta sencillo.
 
 Diseño de la experiencia de una app de salud mental: acompañar con calma, claridad y un tono humano.
@@ -383,7 +383,7 @@ Dirigí el UX/UI de una app en fase MVP, coordinando al equipo de producto remot
 Services: UX/UI · Producto · Salud mental · Role: Lead Product Designer · Context: Salud mental · App
 
 #### Binōme Studio — Marca · Web
-URL: https://tomfabre.github.io/proyectos/binome/
+URL: https://tomfabre.com/proyectos/binome/
 El estudio, diseñado con el mismo cuidado que sus clientes.
 
 Identidad y web de Binōme, el estudio de diseño que dirijo en Madrid con mi socia.
@@ -392,7 +392,7 @@ Diseñé la marca y la web de nuestro propio estudio: un lugar donde explicar c�
 Services: Branding · Web · Role: Co-founder & Lead Designer · Context: Estudio propio
 
 #### Yaypegs — Diseño digital
-URL: https://tomfabre.github.io/proyectos/yaypegs/
+URL: https://tomfabre.com/proyectos/yaypegs/
 Detalles que se notan.
 
 Diseño digital para Yaypegs: una experiencia clara, con personalidad y fácil de usar.
@@ -401,7 +401,7 @@ Trabajé la experiencia y la identidad visual cuidando la claridad de uso y la c
 Services: Diseño digital · UX/UI · Role: Product Designer · Context: Proyecto digital
 
 #### 360estudio — Branding · Diseño web · Dirección de arte
-URL: https://tomfabre.github.io/proyectos/360estudio/
+URL: https://tomfabre.com/proyectos/360estudio/
 Arquitectura con una identidad a su altura.
 
 Construir una identidad digital que deje hablar a los proyectos, refleje la personalidad del estudio y convierta su trabajo en una experiencia visual coherente.
@@ -410,7 +410,7 @@ Construí el sistema visual completo: identidad, web y gestión del contenido en
 Services: Identidad · Web · Contenido social · Role: Lead Product Designer · Context: Arquitectura
 
 #### Figy — Diseño digital
-URL: https://tomfabre.github.io/proyectos/figy/
+URL: https://tomfabre.com/proyectos/figy/
 Una idea, bien resuelta.
 
 Diseño digital para Figy: una experiencia clara y coherente de principio a fin.
@@ -419,7 +419,7 @@ Trabajé la experiencia y la interfaz cuidando la claridad, el ritmo y la cohere
 Services: Diseño digital · UX/UI · Role: Product Designer · Context: Proyecto digital
 
 #### Apolo — App · Launcher Android
-URL: https://tomfabre.github.io/proyectos/apolo/
+URL: https://tomfabre.com/proyectos/apolo/
 Un móvil que se siente tuyo.
 
 La interfaz de un launcher Android accesible y muy personalizable, con más de 3M de descargas.
@@ -428,7 +428,7 @@ Diseñé la interfaz de un launcher pensado para personalizarse sin perder clari
 Services: Producto móvil · UI · Accesibilidad · Role: Senior UX/UI Designer · Context: Móvil · MadSeven
 
 #### Appy — App · Onboarding
-URL: https://tomfabre.github.io/proyectos/appy/
+URL: https://tomfabre.com/proyectos/appy/
 Menos pasos, más gente que llega.
 
 Un onboarding más corto que redujo el abandono en más de 500K usuarios.
@@ -437,7 +437,7 @@ Simplifiqué el onboarding apoyándome en análisis de comportamiento y pruebas 
 Services: Onboarding · UX · A/B · Role: Senior UX/UI Designer · Context: Móvil · MadSeven
 
 #### Mood Messenger — App · Mensajería
-URL: https://tomfabre.github.io/proyectos/mood/
+URL: https://tomfabre.com/proyectos/mood/
 Conversar, a tu manera.
 
 Flujos de mensajería rediseñados para priorizar personalización y retención, con más de 5M de descargas.
@@ -446,7 +446,7 @@ Rediseñé los flujos de mensajería para que personalizar y volver a la app fue
 Services: Producto móvil · Flujos · Retención · Role: Senior UX/UI Designer · Context: Móvil · MadSeven
 
 #### Molyb — Plataforma educativa
-URL: https://tomfabre.github.io/proyectos/molyb/
+URL: https://tomfabre.com/proyectos/molyb/
 Hacer simple lo técnico.
 
 Una plataforma educativa interactiva que volvía accesible contenido técnico complejo.
@@ -467,7 +467,7 @@ Mon parcours entre l'Amérique latine et l'Europe a façonné ma façon de trava
 ### Services
 
 #### Branding & identité — Une bonne marque ne commence pas par un logo.
-URL: https://tomfabre.github.io/fr/services/branding/
+URL: https://tomfabre.com/fr/services/branding/
 Une marque qui a quelque chose à dire.
 
 Elle commence par une question : qui êtes-vous, qu'est-ce qui vous distingue et comment voulez-vous marquer les esprits ? Je vous aide à transformer cette réflexion en une identité claire, reconnaissable et faite pour évoluer.
@@ -494,7 +494,7 @@ Q: Quels livrables vais-je recevoir ?
 A: Ils seront définis dès le départ selon les usages et les besoins de votre marque.
 
 #### Web & développement — Votre site devrait travailler aussi bien que vous.
-URL: https://tomfabre.github.io/fr/services/design-web/
+URL: https://tomfabre.com/fr/services/design-web/
 Un bon site doit faire plus qu'être beau.
 
 Un site ne doit pas seulement être beau. Il doit expliquer ce que vous faites, inspirer confiance, être simple à utiliser et faciliter le passage à l'action. Je le conçois et le développe avec ces objectifs en tête.
@@ -521,7 +521,7 @@ Q: Créez-vous des boutiques en ligne ?
 A: Oui, nous pouvons évaluer une solution e-commerce adaptée, notamment Shopify, selon le projet.
 
 #### Produit digital, UX/UI & stratégie digitale — Simple à utiliser ne devrait pas être compliqué à concevoir.
-URL: https://tomfabre.github.io/fr/services/design-ux-ui/
+URL: https://tomfabre.com/fr/services/design-ux-ui/
 Moins de friction. Plus de sens.
 
 Un produit digital fonctionne mieux quand les utilisateurs savent quoi faire et que l'entreprise sait où elle va. Je vous aide à identifier les frictions, clarifier les enjeux et concevoir des expériences utiles pour tous.
@@ -573,7 +573,7 @@ A: Vous m'expliquez brièvement votre besoin. Nous échangeons sur les objectifs
 ### Projects
 
 #### Contazara — Branding · Direction créative · Web
-URL: https://tomfabre.github.io/fr/projets/contazara/
+URL: https://tomfabre.com/fr/projets/contazara/
 40 ans d'histoire. Une identité tournée vers demain.
 
 Faire évoluer l'univers visuel d'une entreprise industrielle historique vers une identité contemporaine, cohérente et reconnaissable, de la marque aux expériences numériques.
@@ -582,7 +582,7 @@ J'ai conçu et je gère l'identité visuelle et toute la présence numérique : 
 Services: Branding · Web · Réseaux sociaux · Role: Lead Product Designer · Context: Industrie et énergie
 
 #### Carceral Ecologies — Web design
-URL: https://tomfabre.github.io/fr/projets/carceral/
+URL: https://tomfabre.com/fr/projets/carceral/
 Un site qui laisse de la place aux idées.
 
 Design web pour Carceral Ecologies : une structure claire pour que le contenu se lise, s'explore et se retienne.
@@ -591,7 +591,7 @@ J'ai conçu l'expérience web : architecture de l'information, hiérarchie des c
 Services: Web design · Architecture de l'information · Role: Product Designer · Context: Projet web
 
 #### À2pas — Branding · Web design
-URL: https://tomfabre.github.io/fr/projets/a2pas/
+URL: https://tomfabre.com/fr/projets/a2pas/
 Une marque à deux pas des gens.
 
 Identité et site pour À2pas : une marque proche et reconnaissable, avec une présence digitale cohérente.
@@ -600,7 +600,7 @@ J'ai construit l'identité visuelle et le design web avec un langage chaleureux,
 Services: Branding · Web design · Role: Product Designer · Context: Marque et web
 
 #### Happylife — UX/UI · App de santé mentale
-URL: https://tomfabre.github.io/fr/projets/happylife/
+URL: https://tomfabre.com/fr/projets/happylife/
 Rendre le soin de soi simple.
 
 Conception de l'expérience d'une app de santé mentale : accompagner avec calme, clarté et un ton humain.
@@ -609,7 +609,7 @@ J'ai dirigé l'UX/UI d'une app en phase MVP, en coordonnant l'équipe produit à
 Services: UX/UI · Produit · Santé mentale · Role: Lead Product Designer · Context: Santé mentale · App
 
 #### Binōme Studio — Marque · Web
-URL: https://tomfabre.github.io/fr/projets/binome/
+URL: https://tomfabre.com/fr/projets/binome/
 Un studio conçu avec le soin qu'il offre à ses clients.
 
 Identité et site de Binōme, le studio de design que je dirige à Madrid avec mon associée.
@@ -618,7 +618,7 @@ J'ai conçu la marque et le site de notre propre studio : un lieu pour expliquer
 Services: Branding · Web · Role: Co-founder & Lead Designer · Context: Studio propre
 
 #### Yaypegs — Design digital
-URL: https://tomfabre.github.io/fr/projets/yaypegs/
+URL: https://tomfabre.com/fr/projets/yaypegs/
 Des détails qui se remarquent.
 
 Design digital pour Yaypegs : une expérience claire, avec de la personnalité et facile à utiliser.
@@ -627,7 +627,7 @@ J'ai travaillé l'expérience et l'identité visuelle en soignant la lisibilité
 Services: Design digital · UX/UI · Role: Product Designer · Context: Projet digital
 
 #### 360estudio — Branding · Web design · Direction artistique
-URL: https://tomfabre.github.io/fr/projets/360estudio/
+URL: https://tomfabre.com/fr/projets/360estudio/
 Une identité à la hauteur de son architecture.
 
 Créer une expérience visuelle et digitale qui laisse toute leur place aux projets, tout en révélant la personnalité du studio.
@@ -636,7 +636,7 @@ J'ai construit le système visuel complet : identité, site et gestion du conten
 Services: Identité · Web · Contenu social · Role: Lead Product Designer · Context: Architecture
 
 #### Figy — Design digital
-URL: https://tomfabre.github.io/fr/projets/figy/
+URL: https://tomfabre.com/fr/projets/figy/
 Une idée, bien résolue.
 
 Design digital pour Figy : une expérience claire et cohérente de bout en bout.
@@ -645,7 +645,7 @@ J'ai travaillé l'expérience et l'interface en soignant la clarté, le rythme e
 Services: Design digital · UX/UI · Role: Product Designer · Context: Projet digital
 
 #### Apolo — App · Launcher Android
-URL: https://tomfabre.github.io/fr/projets/apolo/
+URL: https://tomfabre.com/fr/projets/apolo/
 Un mobile qui vous ressemble.
 
 L'interface d'un launcher Android accessible et très personnalisable, avec plus de 3M de téléchargements.
@@ -654,7 +654,7 @@ J'ai conçu l'interface d'un launcher pensé pour se personnaliser sans perdre e
 Services: Produit mobile · UI · Accessibilité · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
 
 #### Appy — App · Onboarding
-URL: https://tomfabre.github.io/fr/projets/appy/
+URL: https://tomfabre.com/fr/projets/appy/
 Moins d'étapes, plus de monde au bout.
 
 Un onboarding plus court qui a réduit l'abandon pour plus de 500K utilisateurs.
@@ -663,7 +663,7 @@ J'ai simplifié l'onboarding à partir de l'analyse des comportements et de test
 Services: Onboarding · UX · A/B · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
 
 #### Mood Messenger — App · Messagerie
-URL: https://tomfabre.github.io/fr/projets/mood/
+URL: https://tomfabre.com/fr/projets/mood/
 Discuter, à votre manière.
 
 Parcours de messagerie repensés pour favoriser personnalisation et rétention, avec plus de 5M de téléchargements.
@@ -672,7 +672,7 @@ J'ai repensé les parcours de messagerie pour que personnaliser et revenir dans 
 Services: Produit mobile · Parcours · Rétention · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
 
 #### Molyb — Plateforme éducative
-URL: https://tomfabre.github.io/fr/projets/molyb/
+URL: https://tomfabre.com/fr/projets/molyb/
 Rendre le technique simple.
 
 Une plateforme éducative interactive qui rendait accessible un contenu technique complexe.
