@@ -1,9 +1,9 @@
 /* VERSION B · editorial direction — dual headlines, bio, quick facts, bento */
 const TV = {
 es:{
-  pj_a1:"Cada reto,", pj_a2:"una nueva mirada.", pj_b1:"Ideas que toman forma.", pj_b2:"Soluciones que funcionan.",
-  bio_a1:"Diseño con cabeza.", bio_a2:"Y un poco de corazón.", bio_b1:"Curioso por naturaleza.", bio_b2:"Diseñador por vocación.",
-  ct_a1:"Las buenas ideas", ct_a2:"empiezan hablando.", ct_b1:"Tú tienes una idea.", ct_b2:"Hagámosla realidad.",
+  pj_a1:"Cada reto,", pj_a2:"una solución.", pj_b1:"Cada marca,", pj_b2:"su identidad.",
+  bio_a1:"Diseño lógico.", bio_a2:"Trato cercano.", bio_b1:"Pensar primero.", bio_b2:"Crear después.",
+  ct_a1:"Buenas charlas", ct_a2:"crean proyectos.", ct_b1:"Grandes metas", ct_b2:"piden acción.",
   bi_eyebrow:"Hola, soy Tom", bi_h:"Diseño para conectar ideas, personas y productos.",
   bi_p1:"Combino estrategia, branding, diseño digital y tecnología para convertir ideas complejas en experiencias claras, útiles y con personalidad.",
   bi_p2:"Mi recorrido entre Latinoamérica y Europa ha marcado mi manera de trabajar: escuchar, cuestionar, conectar perspectivas y encontrar soluciones que tengan sentido.",
@@ -16,9 +16,9 @@ es:{
   bt_read:"Lecturas", bt_read_s:"Artículos y libros", bt_int:"Intereses creativos", bt_int_l:["Cine","Música","Viajes","Bicicleta","Camping","Caminar","Tecnología","Noticias","Productos","Arte","Cocina"], bt_soc:"Redes"
 },
 en:{
-  pj_a1:"Every challenge,", pj_a2:"a fresh look.", pj_b1:"Ideas taking shape.", pj_b2:"Solutions that work.",
-  bio_a1:"Design with a head.", bio_a2:"And a little heart.", bio_b1:"Curious by nature.", bio_b2:"Designer by calling.",
-  ct_a1:"Good ideas begin", ct_a2:"by talking.", ct_b1:"You bring the idea.", ct_b2:"Let's make it real.",
+  pj_a1:"Every problem,", pj_a2:"a clear path.", pj_b1:"Every product,", pj_b2:"a smart move.",
+  bio_a1:"Smart design.", bio_a2:"Human touch.", bio_b1:"Curious mind.", bio_b2:"Sharp craft.",
+  ct_a1:"Good talks", ct_a2:"spark ideas.", ct_b1:"Your vision,", ct_b2:"our next step.",
   bi_eyebrow:"Hi, I'm Tom", bi_h:"Design that connects ideas, people and products.",
   bi_p1:"I blend strategy, branding, digital design and technology to turn complex ideas into experiences that are clear, useful and full of personality.",
   bi_p2:"Moving between Latin America and Europe has shaped how I work: listening, questioning, connecting perspectives and finding solutions that make sense.",
@@ -31,9 +31,9 @@ en:{
   bt_read:"Reading", bt_read_s:"Articles and books", bt_int:"Creative interests", bt_int_l:["Film","Music","Travel","Cycling","Camping","Walking","Technology","News","Products","Art","Cooking"], bt_soc:"Elsewhere"
 },
 fr:{
-  pj_a1:"Chaque défi,", pj_a2:"un nouveau regard.", pj_b1:"Idées qui prennent forme.", pj_b2:"Solutions qui fonctionnent.",
-  bio_a1:"Un design réfléchi.", bio_a2:"Et un peu de cœur.", bio_b1:"Curieux de nature.", bio_b2:"Designer par vocation.",
-  ct_a1:"Les bonnes idées", ct_a2:"naissent d'un échange.", ct_b1:"Tu as une idée.", ct_b2:"Concrétisons-la.",
+  pj_a1:"Chaque défi,", pj_a2:"sa solution.", pj_b1:"Chaque marque,", pj_b2:"son identité.",
+  bio_a1:"Design logique.", bio_a2:"Approche vraie.", bio_b1:"Esprit curieux.", bio_b2:"Geste précis.",
+  ct_a1:"Bonnes idées,", ct_a2:"bons projets.", ct_b1:"Ton projet,", ct_b2:"notre défi.",
   bi_eyebrow:"Salut, moi c'est Tom", bi_h:"Un design qui relie les idées, les gens et les produits.",
   bi_p1:"Je mêle stratégie, branding, design digital et technologie pour transformer des idées complexes en expériences claires, utiles et pleines de personnalité.",
   bi_p2:"Mon parcours entre l'Amérique latine et l'Europe a façonné ma façon de travailler : écouter, questionner, relier les points de vue et trouver des solutions qui ont du sens.",

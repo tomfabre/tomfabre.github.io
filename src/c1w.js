@@ -1,7 +1,7 @@
 /* VERSION B — copy from the UX/copy audit (ES / EN / FR) */
 const TW = {
 es:{
-  av_w:"Disponible", av_r:"para nuevos proyectos", hm_a1:"Buenas ideas.", hm_a2:"Mejor diseñadas.", hm_b1:"Ideas que conectan.", hm_b2:"Diseño que funciona.", hm_hint:"Pulsa para ver otra frase.", scroll_l:"Desliza para explorar",
+  av_w:"Disponible", av_r:"para nuevos proyectos", hm_a1:"Buenas ideas.", hm_a2:"Mejor diseñadas.", hm_b1:"Marcas vivas.", hm_b2:"Mejor pensadas.", hm_hint:"Pulsa para ver otra frase.", scroll_l:"Desliza para explorar",
   avail:"Abierto a nuevos proyectos y oportunidades.",
   hero_mega1:"Buenas ideas.", hero_mega2:"Mejor diseñadas.",
   h_sub:"Hago que las ideas se entiendan, las marcas se recuerden y los productos funcionen.",
@@ -49,7 +49,7 @@ es:{
       ["Codelco & Molyb","UX/UI · Plataformas empresariales · Arquitectura de información","Hacer sencillo lo que parece imposible de simplificar.","Transformar procesos y contenidos técnicos complejos en plataformas digitales comprensibles, útiles y pensadas para las personas que las utilizan cada día."]]
 },
 en:{
-  av_w:"Available", av_r:"for new projects", hm_a1:"Good ideas.", hm_a2:"Better by design.", hm_b1:"Ideas that connect.", hm_b2:"Design that works.", hm_hint:"Press to see another line.", scroll_l:"Scroll to explore",
+  av_w:"Available", av_r:"for new projects", hm_a1:"Good ideas.", hm_a2:"Better by design.", hm_b1:"Bold brands.", hm_b2:"Built to perform.", hm_hint:"Press to see another line.", scroll_l:"Scroll to explore",
   avail:"Open to new projects and opportunities.",
   hero_mega1:"Good ideas.", hero_mega2:"Better designed.",
   h_sub:"I make ideas easier to understand, brands harder to forget, and digital products better to use.",
@@ -97,7 +97,7 @@ en:{
       ["Codelco & Molyb","UX/UI · Enterprise platforms · Information architecture","Making complicated things feel surprisingly simple.","Turning complex technical content and workflows into clear, practical digital experiences built for the people who use them every day."]]
 },
 fr:{
-  av_w:"Disponible", av_r:"pour de nouveaux projets", hm_a1:"Bonnes idées.", hm_a2:"Mieux conçues.", hm_b1:"Idées qui relient.", hm_b2:"Design qui fonctionne.", hm_hint:"Appuyez pour voir une autre phrase.", scroll_l:"Défiler pour explorer",
+  av_w:"Disponible", av_r:"pour de nouveaux projets", hm_a1:"Bonnes idées.", hm_a2:"Mieux conçues.", hm_b1:"Marques fortes.", hm_b2:"Mieux pensées.", hm_hint:"Appuyez pour voir une autre phrase.", scroll_l:"Défiler pour explorer",
   avail:"Ouvert aux nouveaux projets et opportunités.",
   hero_mega1:"De belles idées.", hero_mega2:"Un design qui fait la différence.",
   h_sub:"Je donne du sens aux idées, du caractère aux marques et de la simplicité aux expériences numériques.",
