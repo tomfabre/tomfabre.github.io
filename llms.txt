@@ -7,7 +7,7 @@ The portfolio has real URLs per language: Spanish at the root, English under /en
 ## About
 
 - [Bio](https://tomfabre.github.io/en/bio/): Background, way of working, quick facts and personal links.
-- [Contact](https://tomfabre.github.io/en/contact/): Email alvarofabreg@gmail.com, contact form and profile links.
+- [Contact](https://tomfabre.github.io/en/contact/): Email hola@tomfabre.com, contact form and profile links.
 - [CV (PDF)](https://tomfabre.github.io/cv-alvaro-fabre.pdf): Curriculum vitae.
 
 ## Projects

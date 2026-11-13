@@ -3,7 +3,7 @@ const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const store = { get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }, set(k,v){ try { localStorage.setItem(k,v); } catch(e){} } };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const root = document.documentElement;
-const EMAIL = "alvarofabreg@gmail.com";
+const EMAIL = "hola@tomfabre.com";
 /* Pega aquí tu endpoint de Formspree (https://formspree.io/f/xxxxxxxx) para que el formulario envíe los mensajes a tu email. Vacío = abre el correo del visitante. */
 const FORM_ENDPOINT = "https://formspree.io/f/xvkaoqbl";
 /* ---------- path routing (real URLs per language) · hash mode in the artifact preview ---------- */
@@ -427,7 +427,8 @@ function wireQF(){
 
 /* ---------- bio: bento (resources: set img / url when real ones exist) ---------- */
 const BENTO = {
-  photo: { img: (window.__IMG && window.__IMG.profile && window.__IMG.profile[1]) || null },                          // TODO real portrait: "assets/alvaro.jpg"
+  photo: { img: (window.__IMG && window.__IMG.profile && window.__IMG.profile[1]) || null },   // portrait at the top of the bio
+  gallery: Object.entries((window.__IMG && window.__IMG.gallery) || {}).sort((a, b) => a[0] - b[0]).map(e => e[1]),   // placeholders: replace img/gallery-1..6.webp with real photos
   music: { url: null },                          // TODO link to the choir/miniseries music / playlist link
   read:  { url: null },                          // TODO real reading list / articles link
   binome:{ url: "https://binome.xyz" }
@@ -441,13 +442,32 @@ function renderBento(){
   const head = (k, s, u) => `<div class="bt-h"><b>${esc(k)}</b><span>${esc(s)}</span></div>${tag(u)}`;
   el.innerHTML =
     card("bt-map", null, `${map}<div class="bt-h"><b>${esc(t.bt_map)}</b><span>${esc(t.bt_map_s)}</span><span class="bt-geo">Madrid 40.4168 N · 3.7038 W</span></div>`) +
-    card("bt-photo", null, (soon.photo.img ? `<img src="${esc(soon.photo.img)}" alt="Tom Fabre" loading="lazy">` : `<div class="bt-ph" aria-hidden="true"><span>AF</span></div>`) + `<div class="bt-h"><b>${esc(t.bt_photo)}</b><span>${soon.photo.img ? "" : esc(t.bt_photo_s)}</span></div>`) +
+    card("bt-photo", null, (soon.gallery.length ? `<div class="bt-gal" role="img" aria-label="${esc(t.bt_photo)}">${soon.gallery.map((u, i) => `<img src="${esc(u)}" alt="" class="${i ? "" : "on"}" loading="lazy" decoding="async">`).join("")}</div>` : `<div class="bt-ph" aria-hidden="true"><span>TF</span></div>`) + `<div class="bt-h"><b>${esc(t.bt_photo)}</b><span>${soon.gallery.length ? "" : esc(t.bt_photo_s)}</span></div>`) +
     card("bt-music", soon.music.url, head(t.bt_music, t.bt_music_s, soon.music.url)) +
     card("bt-binome", soon.binome.url, `<div class="bt-h"><b>${esc(t.bt_binome)}</b><span>${esc(t.bt_binome_s)}</span></div><span class="bt-arr" aria-hidden="true">↗</span>`) +
     card("bt-read", soon.read.url, head(t.bt_read, t.bt_read_s, soon.read.url)) +
     card("bt-int", null, `<div class="bt-h"><b>${esc(t.bt_int)}</b></div><ul class="bt-chips">${t.bt_int_l.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`) +
     card("bt-soc", null, `<div class="bt-h"><b>${esc(t.bt_soc)}</b></div><ul class="bt-links">${SOCIALS.map(([n,,u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ul>`);
 }
+
+/* gallery: crossfade every 3.2 s; paused while hidden, off-screen, hovered or with reduced motion */
+let galVis = false, galHover = false;
+(function(){
+  const rm = window.matchMedia("(prefers-reduced-motion: reduce)");
+  setInterval(() => {
+    const g = document.querySelector(".bt-gal"); if (!g) return;
+    if (!galVis || galHover || rm.matches || document.hidden) return;
+    const im = g.querySelectorAll("img"); if (im.length < 2) return;
+    let i = [...im].findIndex(x => x.classList.contains("on")); if (i < 0) i = 0;
+    im[i].classList.remove("on"); im[(i + 1) % im.length].classList.add("on");
+  }, 3200);
+  document.addEventListener("mouseover", e => { galHover = !!(e.target.closest && e.target.closest(".bt-photo")); });
+  if ("IntersectionObserver" in window) new IntersectionObserver(es => { es.forEach(x => { galVis = x.isIntersecting; }); }).observe(document.body);
+  else galVis = true;
+  document.addEventListener("scroll", () => {
+    const g = document.querySelector(".bt-gal"); if (!g) return; const r = g.getBoundingClientRect(); galVis = r.bottom > 0 && r.top < innerHeight;
+  }, { passive:true });
+})();
 
 /* ---------- hidden details ---------- */
 const CHCOL = ["var(--coral)","var(--lav)","var(--mustard)","var(--mint)"];

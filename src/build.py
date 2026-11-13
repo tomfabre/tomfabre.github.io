@@ -12,7 +12,7 @@ open("/tmp/_d.js","w").write("const fs=require('fs'),vm=require('vm');const ctx=
 open("/tmp/_src.js","w").write(js); subprocess.check_call(["node","/tmp/_d.js"])
 D = json.load(open("/tmp/data.json")); T, PROJ = D["T"], D["PROJ"]
 SOC = {"Instagram":"https://www.instagram.com/tomfabre/","LinkedIn":"https://www.linkedin.com/in/tomfabreg/","Behance":"https://www.behance.net/afabre","LottieFiles":"https://lottiefiles.com/es/tomfabre","GitHub":"https://github.com/tomfabre"}
-EMAIL = "alvarofabreg@gmail.com"
+EMAIL = "hola@tomfabre.com"
 today = datetime.date.today().isoformat()
 es, en, fr = T["es"], T["en"], T["fr"]
 PFX = {"es":"","en":"/en","fr":"/fr"}

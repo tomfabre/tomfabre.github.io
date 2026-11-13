@@ -12,6 +12,6 @@
 ## Uso
 Descomprime la carpeta en tu repositorio y pega el prompt a Claude Code. Claude debe inspeccionar el proyecto para identificar el formulario real y las URLs de proyectos/CV.
 
-Email público: `alvarofabreg@gmail.com`. WhatsApp con visibilidad condicional: `+33 7 83 83 56 54`. La condición no oculta criptográficamente el número del código frontend.
+Email público: `hola@tomfabre.com`. WhatsApp con visibilidad condicional: `+33 7 83 83 56 54`. La condición no oculta criptográficamente el número del código frontend.
 
 Enlace musical confirmado por el usuario: https://www.youtube.com/watch?v=6GeaUr-J4co (sin metadatos verificados).

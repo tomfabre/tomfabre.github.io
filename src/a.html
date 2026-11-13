@@ -102,12 +102,12 @@ img,svg{max-width:100%;display:block}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--bg);margin-left:calc(max(20px,env(safe-area-inset-left,0px)) * -1);margin-right:calc(max(20px,env(safe-area-inset-right,0px)) * -1);padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 .top-in{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);padding-block:var(--s5)}
 .brand{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;font-weight:600;font-size:1.05rem;letter-spacing:-.01em;min-height:2.75rem}
-.brand .af{display:inline-flex;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;border:1.5px solid var(--fg);border-radius:var(--pill);font-size:.9rem;letter-spacing:0;transition:background-color var(--fast),color var(--fast)}
-.brand:hover .af,.brand:focus-visible .af{background:var(--fg);color:var(--bg)}
+.brand .af{display:inline-flex;width:2.4rem;height:2.4rem;flex:none}
+.brand .af svg{display:block;width:100%;height:100%}.lg-bg{fill:var(--fg)}.lg-mk{fill:var(--bg)}
 .brand .full{max-width:0;overflow:hidden;white-space:nowrap;opacity:0;font-weight:500;transition:max-width 500ms var(--ease),opacity 300ms var(--ease),margin 500ms var(--ease)}
 @media (hover:hover) and (pointer:fine){.brand:hover .full{max-width:12rem;opacity:1;margin-left:.3rem}}
 .brand:focus-visible .full{max-width:12rem;opacity:1;margin-left:.3rem}
-@media (hover:none),(pointer:coarse){.brand .full,.brand:focus-visible .full{display:none}.brand:hover .af{background:none;color:inherit}.brand:active .af{background:var(--fg);color:var(--bg)}}
+@media (hover:none),(pointer:coarse){.brand .full,.brand:focus-visible .full{display:none}}
 .toolbar{display:flex;align-items:center;gap:.6rem}
 .theme-toggle{position:relative;width:3.4rem;height:2.1rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--pill);padding:0;cursor:pointer;transition:background-color var(--fast);display:inline-block;overflow:hidden}
 .theme-toggle .knob{position:absolute;top:3px;left:3px;width:1.55rem;height:1.55rem;border-radius:var(--pill);background:var(--fg);transition:transform var(--normal) var(--ease);display:grid;place-items:center}
@@ -730,7 +730,6 @@ html[lang="fr"] .dh-s .hm-btn .l2{padding-left:0}
 .bi-main>p:not(.bi-eyebrow){font-size:clamp(1.05rem,.8vw + .8rem,1.35rem);max-width:52ch;color:var(--muted);line-height:1.5;font-weight:300;margin:0}
 .bi-main>p:not(.bi-eyebrow)+p{margin-top:var(--s4)}
 .bi-main>p.bi-name{font-size:var(--small,.95rem);max-width:58ch;color:var(--fg);border-top:1px solid var(--line,currentColor);padding-top:var(--s4);margin-top:var(--s5);font-weight:400}
-.brand .af svg{display:block;width:1.4rem;height:1.4rem}
 .bi-main .bio-foot{margin-top:var(--s8);display:flex;flex-wrap:wrap;gap:var(--s3)}
 .bi-main .socials{margin-top:var(--s6);display:flex;flex-wrap:wrap;gap:.25rem var(--s5);list-style:none;padding:0}
 .bi-main .socials a{font-size:.85rem;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;min-height:2.25rem}
@@ -775,6 +774,10 @@ html[lang="fr"] .quote-sec p{font-size:clamp(1.75rem,4.6vw,4.25rem)}
 .bt-soon{align-self:flex-start;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line2);border-radius:var(--pill);padding:.2rem .6rem}
 .bt-map svg{width:100%;height:auto;flex:1;min-height:6rem;max-height:11rem}
 .bt-photo .bt-ph,.bt-photo img{flex:1;min-height:5rem;max-height:13rem;width:100%;border-radius:.9rem;object-fit:cover;filter:grayscale(1);transition:filter 500ms var(--ease)}
+.bt-photo .bt-gal{position:relative;flex:1;min-height:5rem;max-height:13rem;border-radius:.9rem;overflow:hidden;background:var(--surface)}
+.bt-photo .bt-gal img{position:absolute;inset:0;width:100%;height:100%;max-height:none;min-height:0;border-radius:0;object-fit:cover;filter:none;opacity:0;transition:opacity 900ms var(--ease)}
+.bt-photo .bt-gal img.on{opacity:1}
+@media (prefers-reduced-motion:reduce){.bt-photo .bt-gal img{transition:none}}
 .bt-ph{display:grid;place-items:center;background:repeating-linear-gradient(135deg,transparent 0 .6rem,var(--line) .6rem calc(.6rem + 1px));font-size:2rem;font-weight:600;letter-spacing:-.03em;color:var(--muted)}
 @media (hover:hover){.bt-photo:hover img{filter:none}a.bt{transition:background-color 400ms var(--ease),border-color 400ms var(--ease)}a.bt:hover{border-color:var(--line2)}}
 @media (hover:none){.bt-photo img{filter:none}}

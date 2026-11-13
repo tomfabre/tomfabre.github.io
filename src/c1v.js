@@ -11,7 +11,7 @@ es:{
   qf_l:"Datos rápidos", qf_prev:"Dato anterior", qf_next:"Dato siguiente",
   qf:[["Tres idiomas","ES · FR · EN"],["Base actual","Madrid"],["Co-founder","Binōme"],["Enfoque","Product + Brand"]],
   bt_h:"Fuera de la pantalla", bt_p:"Algunas piezas del mapa personal.",
-  bt_map:"Recorrido", bt_map_s:"Latinoamérica → Europa", bt_photo:"Retrato", bt_photo_s:"Espacio para una foto real",
+  bt_map:"Recorrido", bt_map_s:"Latinoamérica → Europa", bt_photo:"Galería", bt_photo_s:"Espacio para una foto real",
   bt_music:"Música", bt_music_s:"Música latina y un coro en Aix", bt_binome:"Binōme Studio", bt_binome_s:"El estudio que dirijo con mi socia.",
   bt_read:"Lecturas", bt_read_s:"Artículos y libros", bt_int:"Intereses creativos", bt_int_l:["Marca","Producto","Web","Estrategia","Tecnología","Personas"], bt_soc:"Redes"
 },
@@ -26,7 +26,7 @@ en:{
   qf_l:"Quick facts", qf_prev:"Previous fact", qf_next:"Next fact",
   qf:[["Three languages","ES · FR · EN"],["Currently based in","Madrid"],["Co-founder","Binōme"],["Focus","Product + Brand"]],
   bt_h:"Off the screen", bt_p:"A few pieces of the personal map.",
-  bt_map:"Route", bt_map_s:"Latin America → Europe", bt_photo:"Portrait", bt_photo_s:"Space for a real photo",
+  bt_map:"Route", bt_map_s:"Latin America → Europe", bt_photo:"Gallery", bt_photo_s:"Space for a real photo",
   bt_music:"Music", bt_music_s:"Latin music and a choir in Aix", bt_binome:"Binōme Studio", bt_binome_s:"The studio I run with my partner.",
   bt_read:"Reading", bt_read_s:"Articles and books", bt_int:"Creative interests", bt_int_l:["Brand","Product","Web","Strategy","Technology","People"], bt_soc:"Elsewhere"
 },
@@ -41,7 +41,7 @@ fr:{
   qf_l:"En bref", qf_prev:"Fait précédent", qf_next:"Fait suivant",
   qf:[["Trois langues","ES · FR · EN"],["Basé à","Madrid"],["Co-fondateur","Binōme"],["Focus","Product + Brand"]],
   bt_h:"Hors écran", bt_p:"Quelques pièces de la carte personnelle.",
-  bt_map:"Parcours", bt_map_s:"Amérique latine → Europe", bt_photo:"Portrait", bt_photo_s:"Place pour une vraie photo",
+  bt_map:"Parcours", bt_map_s:"Amérique latine → Europe", bt_photo:"Galerie", bt_photo_s:"Place pour une vraie photo",
   bt_music:"Musique", bt_music_s:"Musique latine et une chorale à Aix", bt_binome:"Binōme Studio", bt_binome_s:"Le studio que je dirige avec mon associée.",
   bt_read:"Lectures", bt_read_s:"Articles et livres", bt_int:"Intérêts créatifs", bt_int_l:["Marque","Produit","Web","Stratégie","Technologie","Gens"], bt_soc:"Ailleurs"
 }};
