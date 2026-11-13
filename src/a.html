@@ -1009,12 +1009,16 @@ footer .foot-grid{display:grid;grid-template-columns:1fr auto;gap:var(--s5) var(
 :root[data-theme="dark"] .blobs i{opacity:.12}
 @media (prefers-reduced-motion:reduce){.blobs i{animation:none}.blobs .bm{display:none}}
 
-.bigfoot-mailrow{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s5) var(--s6);margin-top:var(--s6)}
+.bigfoot-mailrow{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s4);margin-top:var(--s6)}
 .bigfoot-mailrow .bigfoot-mail{margin-top:0}
-.copy-btn{font:inherit;font-size:.74rem;letter-spacing:.02em;padding:.5rem .85rem;border:1px solid var(--fg);border-radius:.2rem;background:transparent;color:var(--fg);cursor:pointer;transition:background-color 200ms ease,color 200ms ease,transform 140ms ease}
-.copy-btn:active{transform:scale(.97)}
-@media (hover:hover){.copy-btn:hover{background:var(--fg);color:var(--bg)}}
-.copy-btn:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.copy-txt{font:inherit;font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);background:none;border:0;padding:.3rem 0;min-height:2rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.copy-txt:hover,.copy-txt:focus-visible{color:var(--fg)}
+.copy-txt:focus-visible{outline:2px solid var(--fg);outline-offset:3px;border-radius:.2rem}
+/* contact hero: small rounded gif that follows the pointer over the email */
+.mail{position:relative}
+.mail-pop{position:absolute;left:0;top:0;width:min(15rem,40vw);height:auto;aspect-ratio:1;object-fit:cover;border-radius:1.6rem;box-shadow:0 18px 40px -12px rgba(0,0,0,.35);pointer-events:none;opacity:0;scale:.85;rotate:0deg;transition:opacity 220ms ease,scale 320ms var(--ease),rotate 320ms var(--ease);z-index:5;will-change:transform}
+.mail.pop .mail-pop{opacity:1;scale:1;rotate:8deg}
+@media (hover:none),(prefers-reduced-motion:reduce){.mail-pop{display:none}}
 .foot-copy{text-align:center;justify-self:center}
 .foot-copy[data-w]::after{left:50%;text-align:center;max-width:min(22rem,86vw);transform:translate(-50%,4px)}
 .foot-copy[data-w]:hover::after,.foot-copy[data-w]:focus-visible::after{transform:translate(-50%,0)}

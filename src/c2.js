@@ -337,7 +337,18 @@ function wireForm(){
 }
 
 /* ---------- copy email ---------- */
+function wireMailPop(){
+  const box = $(".mail"), link = $("#mailLink"), img = $("#mailPop");
+  if (!box || !link || !img || !matchMedia("(hover:hover)").matches || reduced) return;
+  let x = 0, y = 0, tx = 0, ty = 0, raf = 0;
+  const draw = () => { raf = 0; x += (tx - x) * .18; y += (ty - y) * .18; img.style.transform = `translate3d(${x}px,${y}px,0)`; if (Math.abs(tx - x) + Math.abs(ty - y) > .4) raf = requestAnimationFrame(draw); };
+  const move = e => { const r = box.getBoundingClientRect(), w = img.offsetWidth; tx = Math.min(Math.max(e.clientX - r.left - w * .35, 0), Math.max(r.width - w, 0)); ty = e.clientY - r.top - img.offsetHeight - 18; if (!box.classList.contains("pop")){ x = tx; y = ty; } if (!raf) raf = requestAnimationFrame(draw); };
+  link.addEventListener("pointerenter", e => { if (!img.getAttribute("src")) img.src = (PATHS ? "/" : "") + img.dataset.src; move(e); box.classList.add("pop"); });
+  link.addEventListener("pointermove", move);
+  link.addEventListener("pointerleave", () => box.classList.remove("pop"));
+}
 function wireCopy(){
+  wireMailPop();
   const cf = $("#copyFoot"); if (cf) cf.addEventListener("click", () => { const done = () => { const m = L().copied, o = L().copy; cf.textContent = m; $("#copiedFoot").textContent = m; setTimeout(() => { cf.textContent = L().copy; $("#copiedFoot").textContent = ""; }, 2200); };
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(EMAIL).then(done, done); else done(); });
   $("#copy").addEventListener("click", () => { const say = () => { $("#copied").textContent = L().copied; setTimeout(() => $("#copied").textContent = "", 2500); };
