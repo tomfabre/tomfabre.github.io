@@ -15,7 +15,7 @@ The portfolio has real URLs per language: Spanish at the root, English under /en
 - [Contazara](https://tomfabre.com/en/projects/contazara/): Branding · Web · Digital. Rebranding, website and digital communications for a company with 40 years of history, shaped together with its team.
 - [À2pas](https://tomfabre.com/en/projects/a2pas/): Product Design · UX/UI · Branding. A participatory platform connecting audiences, artists and venues to make new performances possible.
 - [HappyLife](https://tomfabre.com/en/projects/happylife/): Product Design · UX/UI. An app bringing people together through real activities, with fewer taps, smarter filters and rewards for taking part.
-- [Binōme Studio](https://tomfabre.com/en/projects/binome/): Brand · Web. Identity and website for Binōme, the design studio I run in Madrid with my partner.
+- [Binōme Studio](https://tomfabre.com/en/projects/binome/): Branding · Strategy · Web. An independent studio built on combining experience, ideas and different skills to create thoughtful work.
 - [Yaypegs](https://tomfabre.com/en/projects/yaypegs/): Digital design. Digital design for Yaypegs: a clear experience with personality that's easy to use.
 - [360estudio](https://tomfabre.com/en/projects/360estudio/): Branding · Web design · Art direction. Creating a visual and digital experience that gives the studio's projects room to shine while expressing its distinctive personality.
 - [Figy](https://tomfabre.com/en/projects/figy/): Digital design. Digital design for Figy: a clear, consistent experience from start to finish.
