@@ -63,9 +63,10 @@ const SECTIONS = {
       h:{es:"03 · Web y comunicación", en:"03 · Web and communication", fr:"03 · Web et communication"},
       t:{es:"Una marca que funciona dentro y fuera de la pantalla.", en:"A brand that works on and off the screen.", fr:"Une marque qui vit dans et hors de l'écran."},
       p:[{
-        es:"Llevamos la nueva identidad a la web, creando una experiencia más clara para explorar sus productos, comprender su tecnología y descubrir a las personas detrás de Contazara.",
-        en:"We brought the new identity to the web, creating a clearer experience for exploring their products, understanding their technology, and meeting the people behind Contazara.",
-        fr:"Nous avons porté la nouvelle identité sur le web, avec une expérience plus claire pour explorer les produits, comprendre la technologie et découvrir les personnes derrière Contazara."
+        es:"Llevamos la nueva identidad a {web}, creando una experiencia más clara para explorar sus productos, comprender su tecnología y descubrir a las personas detrás de la empresa.",
+        en:"We brought the new identity to {web}, creating a clearer experience for exploring its products, understanding its technology, and meeting the people behind the company.",
+        fr:"Nous avons porté la nouvelle identité sur {web}, avec une expérience plus claire pour explorer ses produits, comprendre sa technologie et découvrir les personnes derrière l'entreprise.",
+        links:{ web:{ href:"https://www.contazara.es/", t:{es:"la web de Contazara", en:"Contazara's website", fr:"le site web de Contazara"} } }
       }],
       flow:[
         { p:[{
@@ -114,9 +115,12 @@ const SECTIONS = {
         en:"I led the identity, brand voice, and digital communication work, from the first meetings with management through to its application across different channels.",
         fr:"J'ai piloté le travail d'identité, de ton de marque et de communication digitale, des premières réunions avec la direction jusqu'à son application sur différents canaux."
       },{
-        es:"Para las entrevistas y el proyecto web trabajé junto a Betsabé y Binōme Studio. En paralelo, 360estudio desarrolló la arquitectura y construcción de las nuevas oficinas, y colaboramos en aspectos del interiorismo.",
-        en:"For the interviews and the web project I worked alongside Betsabé and Binōme Studio. In parallel, 360estudio designed and built the new offices, and we collaborated on aspects of the interior design.",
-        fr:"Pour les entretiens et le projet web, j'ai travaillé avec Betsabé et Binōme Studio. En parallèle, 360estudio a conçu et construit les nouveaux bureaux, et nous avons collaboré sur certains aspects de l'aménagement intérieur."
+        es:"Para las entrevistas y el proyecto web trabajé junto a Betsabé y {binome}. En paralelo, {estudio360} desarrolló la arquitectura y construcción de las nuevas oficinas, y colaboramos en aspectos del interiorismo.",
+        en:"For the interviews and the web project I worked alongside Betsabé and {binome}. In parallel, {estudio360} designed and built the new offices, and we collaborated on aspects of the interior design.",
+        fr:"Pour les entretiens et le projet web, j'ai travaillé avec Betsabé et {binome}. En parallèle, {estudio360} a conçu et construit les nouveaux bureaux, et nous avons collaboré sur certains aspects de l'aménagement intérieur.",
+        links:{
+          binome:{ href:"https://binome.xyz/", t:{es:"Binōme Studio", en:"Binōme Studio", fr:"Binōme Studio"} },
+          estudio360:{ href:"https://www.360estudio.io/", t:{es:"360estudio", en:"360estudio", fr:"360estudio"} } }
       },{ em:true,
         es:"Diferentes disciplinas. Una misma dirección.",
         en:"Different disciplines. One shared direction.",
@@ -138,13 +142,19 @@ const SECTIONS = {
   ]
 };
 
-/* Per-project title/description (override the generic "name · Tom Fabre · category" pattern). Read by build.py and c3.js. */
+/* Per-project SEO (override the generic "name · Tom Fabre · category" pattern). Read by build.py and c3.js.
+   t/d  = <title> + description + og:/twitter: title and description.
+   og   = specific social image: src = img/<src>.webp (the project cover); build.py derives a 1200x630 JPEG from it
+          (centre crop, never stretched) into /img/og/ so the social image always matches the cover. alt is per language. */
 SEO.es.proj = { contazara: {
-  t:"Contazara: Rebranding, Web y Redes Sociales · Tom Fabre",
-  d:"Rebranding, diseño web y comunicación digital para Contazara. Descubre cómo evolucionamos una identidad de 40 años junto a su equipo." } };
+  t:"Contazara: Rebranding, identidad visual y web | Tom Fabre",
+  d:"Una nueva identidad, web y comunicación digital para Contazara. Descubre cómo evolucionamos una marca con 40 años de historia junto a su equipo.",
+  og:{ src:"contazara-cover", alt:"Portada del caso Contazara: logotipo y diseño de la nueva web de la marca" } } };
 SEO.en.proj = { contazara: {
-  t:"Contazara: Brand Identity, Web Design & Social · Tom Fabre",
-  d:"Brand identity, website and digital communications for Contazara. Discover how we helped evolve a 40-year-old brand with its people." } };
+  t:"Contazara: Branding, Visual Identity & Web | Tom Fabre",
+  d:"A new identity, website and digital communications for Contazara. Discover how we helped evolve a brand with 40 years of history.",
+  og:{ src:"contazara-cover", alt:"Contazara case study cover: logo and design of the brand's new website" } } };
 SEO.fr.proj = { contazara: {
-  t:"Contazara : Identité de marque, Web & Réseaux · Tom Fabre",
-  d:"Identité visuelle, site web et communication digitale pour Contazara. Découvrez comment nous avons fait évoluer une marque de 40 ans avec ses équipes." } };
+  t:"Contazara : Branding, Identité Visuelle & Web | Tom Fabre",
+  d:"Une nouvelle identité, un site web et une communication digitale pour Contazara. Découvrez comment nous avons fait évoluer 40 ans d'histoire.",
+  og:{ src:"contazara-cover", alt:"Couverture du cas Contazara : logotype et design du nouveau site web de la marque" } } };

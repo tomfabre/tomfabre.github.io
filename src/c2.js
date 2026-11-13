@@ -201,7 +201,9 @@ function renderGrid(){
 /* ---------- case-study sections: optional per project (SECTIONS in c1k.js, validated at build). Reuses .pj-body / .pj-gal / .stats ---------- */
 const tr = o => (o && o[lang]) || "";                                              // pick the current language from {es,en,fr}
 const rl = d => (d.role && typeof d.role === "object") ? tr(d.role) : d.role;      // role: plain string or {es,en,fr}
-const paras = a => (a || []).map(x => x.em ? `<p><strong>${esc(tr(x))}</strong></p>` : `<p>${esc(tr(x))}</p>`).join("");
+/* Paragraph text with optional inline links: {name} markers in the text map to x.links[name] = {href, t}. Everything is escaped; no raw HTML ever comes from content. */
+const rich = x => tr(x).split(/\{([a-z][a-z0-9]*)\}/).map((s, i) => i % 2 ? ((x.links || {})[s] ? `<a href="${esc(x.links[s].href)}" target="_blank" rel="noopener noreferrer" data-ev="project_link_click" data-place="${esc(s)}">${esc(tr(x.links[s].t))}</a>` : "") : esc(s)).join("");
+const paras = a => (a || []).map(x => x.em ? `<p><strong>${rich(x)}</strong></p>` : `<p>${rich(x)}</p>`).join("");
 const secBody = (s, inner) => `<div class="pj-body"><h2 id="s-${s.id}-h">${esc(tr(s.h))}</h2><div>${s.t ? `<h3>${esc(tr(s.t))}</h3>` : ""}${inner}</div></div>`;
 const secImg = im => (IMG[im.key] && IMG[im.key][im.v]) ? `<div class="pj-gal"><div class="art"><img src="${IMG[im.key][im.v]}" alt="${esc(tr(im.alt))}" loading="lazy" decoding="async"></div></div>` : "";
 const imgTag = (im, st) => `<div class="art"${st ? ` style="aspect-ratio:${st}"` : ""}><img src="${IMG[im.key][im.v]}" alt="${esc(tr(im.alt))}" loading="lazy" decoding="async"></div>`;

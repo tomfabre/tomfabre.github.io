@@ -4,6 +4,7 @@ A section is a dict with a `type` from TYPES. Every visible string is a localize
 To add a new type: add it to TYPES here and to SECTION_RENDER in c2.js. An unknown type is always an error.
 """
 import re
+from urllib.parse import urlparse
 
 LANGS = ("es", "en", "fr")
 ID_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
@@ -27,13 +28,43 @@ def _loc(v, path, errs):
             errs.append(f"{path}.{lg}: missing or empty translation")
 
 
+TOKEN_RE = re.compile(r"\{([a-z][a-z0-9]*)\}")
+
+
+def _url_ok(u):
+    """Absolute https URL with a host, no credentials, no whitespace/control characters."""
+    if not isinstance(u, str) or not u.strip() or len(u) > 300 or re.search(r"[\s\x00-\x1f<>\"']", u): return False
+    p = urlparse(u)
+    return p.scheme == "https" and bool(p.hostname) and "@" not in p.netloc and "." in p.hostname
+
+
 def _para(v, path, errs):
-    """Paragraph: localized dict plus optional em:true (rendered bold)."""
+    """Paragraph: localized dict plus optional em:true (rendered bold) and optional `links`.
+    Inline links are structured data, never HTML: the text holds {name} markers and `links` maps each name to
+    {href, t:{es,en,fr}}. Every marker must exist in every language exactly once, and every link must be used."""
     if not isinstance(v, dict):
-        errs.append(f"{path}: must be an object {{es, en, fr[, em]}}"); return
+        errs.append(f"{path}: must be an object {{es, en, fr[, em, links]}}"); return
     if "em" in v and not isinstance(v["em"], bool):
         errs.append(f"{path}.em: must be true/false")
-    _loc({k: x for k, x in v.items() if k != "em"}, path, errs)
+    _loc({k: x for k, x in v.items() if k not in ("em", "links")}, path, errs)
+    links = v.get("links", {})
+    if not isinstance(links, dict):
+        errs.append(f"{path}.links: must be an object {{name: {{href, t}}}}"); return
+    for name, ln in links.items():
+        w = f"{path}.links.{name}"
+        if not re.match(r"^[a-z][a-z0-9]*$", str(name)): errs.append(f"{w}: invalid link name (use lowercase letters/digits)")
+        if not isinstance(ln, dict) or set(ln) != {"href", "t"}: errs.append(f"{w}: must be {{href, t}}"); continue
+        if not _url_ok(ln["href"]): errs.append(f"{w}.href: must be an absolute https URL ({ln['href']!r})")
+        _loc(ln["t"], f"{w}.t", errs)
+    for lg in LANGS:
+        s = v.get(lg)
+        if not isinstance(s, str): continue
+        used = TOKEN_RE.findall(s)
+        for name in used:
+            if name not in links: errs.append(f"{path}.{lg}: marker {{{name}}} has no entry in links")
+        for name in links:
+            if used.count(name) != 1: errs.append(f"{path}.{lg}: link '{name}' must appear exactly once as {{{name}}} (found {used.count(name)})")
+        if re.search(r"[{}]", TOKEN_RE.sub("", s)): errs.append(f"{path}.{lg}: stray '{{' or '}}' in text")
 
 
 def _paras(v, path, errs, required):
@@ -135,11 +166,16 @@ def validate(sections, project_keys, img_exists, projects=None):
     return errs
 
 
+def plain(p, lg):
+    """Paragraph text for one language; {name} markers become Markdown links [text](url)."""
+    return TOKEN_RE.sub(lambda m: f"[{p['links'][m.group(1)]['t'][lg]}]({p['links'][m.group(1)]['href']})" if m.group(1) in p.get("links", {}) else m.group(0), p[lg])
+
+
 def flatten(secs, lg):
     """Plain-text view of a project's sections in one language (for llms-full.txt and portfolio.json)."""
     out = []
     for s in secs:
-        paras = [p[lg] for p in s.get("p", [])] + [p[lg] for f in s.get("flow", []) for p in f.get("p", [])] + [p[lg] for p in s.get("after", [])]
+        paras = [plain(p, lg) for p in s.get("p", [])] + [plain(p, lg) for f in s.get("flow", []) for p in f.get("p", [])] + [plain(p, lg) for p in s.get("after", [])]
         if s["type"] == "metrics":
             paras.insert(len(s.get("p", [])), " · ".join(f"{it['n'][lg]} {it['l'][lg]}" for it in s["items"]))
         out.append({"id": s["id"], "heading": s["t"][lg] if "t" in s else s["h"][lg], "label": s["h"][lg], "text": paras})

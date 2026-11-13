@@ -73,5 +73,27 @@ class T(unittest.TestCase):
         s = copy.deepcopy(GOOD); s["demo"][0]["flow"] = [{"p": [L("En medio")]}]
         self.assertIn("En medio", flatten(s["demo"], "es")[0]["text"])
 
+    def test_links_valid(self):
+        p = {"es": "Hola {a} fin", "en": "Hi {a} end", "fr": "Salut {a} fin", "links": {"a": {"href": "https://example.com/", "t": L("x")}}}
+        e = errs(lambda s: s["demo"][0].update(p=[p])); self.assertEqual(e, [])
+        self.assertIn("[x](https://example.com/)", flatten([dict(GOOD["demo"][0], p=[p])], "es")[0]["text"][0])
+    def test_links_bad_url(self):
+        for bad in ("http://example.com/", "javascript:alert(1)", "https://", "//example.com", "https://u:p@example.com/", "https://exa mple.com/"):
+            p = {"es": "a {a}", "en": "a {a}", "fr": "a {a}", "links": {"a": {"href": bad, "t": L("x")}}}
+            e = errs(lambda s: s["demo"][0].update(p=[p])); self.assertTrue(any("href" in x for x in e), (bad, e))
+    def test_links_marker_missing_in_one_language(self):
+        p = {"es": "a {a}", "en": "a", "fr": "a {a}", "links": {"a": {"href": "https://example.com/", "t": L("x")}}}
+        e = errs(lambda s: s["demo"][0].update(p=[p])); self.assertTrue(any("p[0].en" in x and "'a'" in x for x in e), e)
+    def test_links_marker_without_entry_and_stray_braces(self):
+        p = {"es": "a {b}", "en": "a {b}", "fr": "a {b}"}
+        e = errs(lambda s: s["demo"][0].update(p=[p])); self.assertTrue(any("no entry in links" in x for x in e), e)
+        p = {"es": "a { b", "en": "a", "fr": "a"}
+        e = errs(lambda s: s["demo"][0].update(p=[p])); self.assertTrue(any("stray" in x for x in e), e)
+    def test_links_missing_text_translation_and_extra_keys(self):
+        p = {"es": "a {a}", "en": "a {a}", "fr": "a {a}", "links": {"a": {"href": "https://example.com/", "t": {"es": "x", "en": "x"}}}}
+        e = errs(lambda s: s["demo"][0].update(p=[p])); self.assertTrue(any("links.a.t.fr" in x for x in e), e)
+        p = {"es": "a {a}", "en": "a {a}", "fr": "a {a}", "links": {"a": {"href": "https://example.com/", "t": L("x"), "onclick": "x"}}}
+        e = errs(lambda s: s["demo"][0].update(p=[p])); self.assertTrue(any("must be {href, t}" in x for x in e), e)
+
 
 if __name__ == "__main__": unittest.main()
