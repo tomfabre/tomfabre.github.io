@@ -6,6 +6,7 @@ PATHS = {"es": "legal", "en": "en/legal", "fr": "fr/mentions-legales"}
 HOME = {"es": "/", "en": "/en/", "fr": "/fr/"}
 
 def txt(lg, email, site):
+    AD = CFG["address"]
     N, B, ID, IDL, R, GR = CFG["name"], CFG["brand"], CFG["id"] or "[" + CFG["id_label"] + " PENDIENTE]", CFG["id_label"], CFG["retention_months"], CFG["ga_retention_months"]
     dom = re.sub(r"^https?://", "", site)
     if lg == "es": return dict(
@@ -13,7 +14,7 @@ def txt(lg, email, site):
         sections=[
         ("aviso-legal","Aviso legal",[
           ("p","En cumplimiento del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), estos son los datos del titular de este sitio web:"),
-          ("ul",[f"Titular: {N} (nombre profesional: {B})", f"{IDL}: {ID}", "Actividad: servicios de diseño de producto, marca y web, como profesional autónomo", "Establecimiento: Madrid, España", f"Correo electrónico: {email}", f"Sitio web: {dom}"]),
+          ("ul",[f"Titular: {N} (nombre profesional: {B})", f"{IDL}: {ID}", "Actividad: servicios de diseño de producto, marca y web, como profesional autónomo", f"Domicilio: {AD}", f"Correo electrónico: {email}", f"Sitio web: {dom}"]),
           ("h3","Propiedad intelectual"),
           ("p","Los contenidos de este sitio (textos, diseños, código, ilustraciones y fotografías) son de su titular o se usan con permiso, salvo que se indique lo contrario. Los nombres y marcas de clientes y proyectos pertenecen a sus respectivos propietarios y se muestran como referencia de trabajo. No se permite su reproducción o uso comercial sin autorización."),
           ("h3","Responsabilidad"),
@@ -23,7 +24,7 @@ def txt(lg, email, site):
         ("privacidad","Política de privacidad",[
           ("p","Esta política explica qué datos personales trato a través de este sitio, para qué y qué derechos tienes, conforme al Reglamento (UE) 2016/679 (RGPD) y a la Ley Orgánica 3/2018 (LOPDGDD)."),
           ("h3","Responsable del tratamiento"),
-          ("ul",[f"{N} ({B}) · {IDL}: {ID}", f"Contacto: {email}"]),
+          ("ul",[f"{N} ({B}) · {IDL}: {ID}", f"Domicilio: {AD}", f"Contacto: {email}"]),
           ("h3","Qué datos trato, para qué y con qué base jurídica"),
           ("ul",["Formulario de contacto: nombre, correo electrónico, tema, mensaje y, si lo indicas, un presupuesto orientativo. Finalidad: responder a tu consulta y, si lo pides, preparar una propuesta. Base jurídica: tu consentimiento al enviar el formulario (art. 6.1.a RGPD) y, cuando solicitas una propuesta, la aplicación de medidas precontractuales a petición tuya (art. 6.1.b).",
                  f"Correo directo a {email}: los datos que incluyas en tu mensaje, con la misma finalidad y base jurídica.",
@@ -55,7 +56,7 @@ def txt(lg, email, site):
         sections=[
         ("aviso-legal","Legal notice",[
           ("p","In accordance with Article 10 of Spanish Law 34/2002 on Information Society Services and Electronic Commerce (LSSI-CE), these are the details of the owner of this website:"),
-          ("ul",[f"Owner: {N} (professional name: {B})", f"{IDL}: {ID}", "Activity: product, brand and web design services, as a self-employed professional", "Established in: Madrid, Spain", f"Email: {email}", f"Website: {dom}"]),
+          ("ul",[f"Owner: {N} (professional name: {B})", f"{IDL}: {ID}", "Activity: product, brand and web design services, as a self-employed professional", f"Address: {AD}", f"Email: {email}", f"Website: {dom}"]),
           ("h3","Intellectual property"),
           ("p","The contents of this site (text, designs, code, illustrations and photographs) belong to the owner or are used with permission unless stated otherwise. Client and project names and trademarks belong to their respective owners and are shown as a reference of my work. They may not be reproduced or used commercially without authorisation."),
           ("h3","Liability"),
@@ -65,7 +66,7 @@ def txt(lg, email, site):
         ("privacidad","Privacy policy",[
           ("p","This policy explains what personal data I process through this site, why, and what rights you have, in line with Regulation (EU) 2016/679 (GDPR) and Spanish Organic Law 3/2018."),
           ("h3","Data controller"),
-          ("ul",[f"{N} ({B}) · {IDL}: {ID}", f"Contact: {email}"]),
+          ("ul",[f"{N} ({B}) · {IDL}: {ID}", f"Address: {AD}", f"Contact: {email}"]),
           ("h3","What data I process, why and on what legal basis"),
           ("ul",["Contact form: name, email, topic, message and, if you choose, an approximate budget. Purpose: to answer your enquiry and, if you ask for it, prepare a proposal. Legal basis: your consent when you submit the form (Art. 6.1.a GDPR) and, when you ask for a proposal, steps taken at your request before entering a contract (Art. 6.1.b).",
                  f"Direct email to {email}: the data you include in your message, for the same purpose and on the same legal basis.",
@@ -97,7 +98,7 @@ def txt(lg, email, site):
         sections=[
         ("aviso-legal","Mentions légales",[
           ("p","Conformément à l'article 10 de la loi espagnole 34/2002 sur les services de la société de l'information et le commerce électronique (LSSI-CE), voici les informations sur l'éditeur de ce site :"),
-          ("ul",[f"Éditeur : {N} (nom professionnel : {B})", f"{IDL} : {ID}", "Activité : services de design de produit, de marque et de web, en tant que professionnel indépendant", "Établissement : Madrid, Espagne", f"Courriel : {email}", f"Site web : {dom}"]),
+          ("ul",[f"Éditeur : {N} (nom professionnel : {B})", f"{IDL} : {ID}", "Activité : services de design de produit, de marque et de web, en tant que professionnel indépendant", f"Domicile : {AD}", f"Courriel : {email}", f"Site web : {dom}"]),
           ("h3","Propriété intellectuelle"),
           ("p","Les contenus de ce site (textes, designs, code, illustrations et photographies) appartiennent à l'éditeur ou sont utilisés avec autorisation, sauf mention contraire. Les noms et marques de clients et de projets appartiennent à leurs propriétaires respectifs et sont présentés comme références de travail. Leur reproduction ou leur usage commercial sans autorisation est interdit."),
           ("h3","Responsabilité"),
@@ -107,7 +108,7 @@ def txt(lg, email, site):
         ("privacidad","Politique de confidentialité",[
           ("p","Cette politique explique quelles données personnelles je traite via ce site, pourquoi, et quels sont vos droits, conformément au règlement (UE) 2016/679 (RGPD) et à la loi organique espagnole 3/2018."),
           ("h3","Responsable du traitement"),
-          ("ul",[f"{N} ({B}) · {IDL} : {ID}", f"Contact : {email}"]),
+          ("ul",[f"{N} ({B}) · {IDL} : {ID}", f"Domicile : {AD}", f"Contact : {email}"]),
           ("h3","Quelles données, pourquoi et sur quelle base juridique"),
           ("ul",["Formulaire de contact : nom, courriel, sujet, message et, si vous le souhaitez, un budget indicatif. Finalité : répondre à votre demande et, si vous le demandez, préparer une proposition. Base juridique : votre consentement lors de l'envoi du formulaire (art. 6.1.a RGPD) et, lorsque vous demandez une proposition, des mesures précontractuelles prises à votre demande (art. 6.1.b).",
                  f"Courriel direct à {email} : les données incluses dans votre message, avec la même finalité et la même base juridique.",
