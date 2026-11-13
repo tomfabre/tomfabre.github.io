@@ -460,6 +460,11 @@ html[lang="fr"] .hm-btn .l2{padding-left:0}
 .pj-body h2{font-size:var(--small);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-weight:500}
 .pj-body div{max-width:58ch;font-size:1.1rem;line-height:1.55}
 @media (min-width:56rem){.pj-body{grid-template-columns:18rem 1fr}}
+.pj-sec{padding-block:0;scroll-margin-top:calc(var(--hh,5.75rem) + var(--s6))}   /* neutralise the global section{padding} */
+.pj-body h3{font-size:var(--h3);line-height:1.1;margin-bottom:var(--s4)}
+.pj-body p+p{margin-top:var(--s4)}
+.pj-stats{margin-top:var(--s12)}
+@media (min-width:56rem){.pj-stats{grid-template-columns:repeat(2,1fr);margin-left:calc(18rem + var(--s8))}}
 .pj-gal{display:grid;grid-template-columns:1fr;gap:var(--s4);margin-top:var(--s16)}
 .pj-gal .art{background:var(--surface);aspect-ratio:4/3;overflow:hidden}
 .pj-gal .art svg{width:100%;height:100%}

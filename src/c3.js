@@ -6,7 +6,7 @@ function updateHead(r){
   let title, desc;
   if (key === "project"){
     const i = PROJ.findIndex(p => p.key === r.key), p = L().projects[i];
-    if (p){ title = p[0] + " · " + s.name + " · " + p[1]; desc = p[3]; }
+    if (p){ const o = (s.proj || {})[r.key]; title = o ? o.t : p[0] + " · " + s.name + " · " + p[1]; desc = o ? o.d : p[3]; }
   } else { title = s[key + "_t"]; desc = s[key + "_d"]; }
   if (!title) return;
   document.title = title;
@@ -34,7 +34,7 @@ updateHead(route_ || parse());
 const TOPIC_IDS = ["brand","web","product","unsure","prize","collab"];
 const LANGS = ["es","en","fr"];
 const textOut = o => ({ content:[{ type:"text", text: typeof o === "string" ? o : JSON.stringify(o, null, 2) }] });
-const pjOut = (i, lg) => { const p = T[lg].projects[i], d = PROJ[i]; return { slug:d.key, url: PATHS ? location.origin + urlFor({page:"project",key:d.key}, lg) : location.origin + location.pathname + "#project-" + d.key, name:p[0], category:p[1], context:p[2], summary:p[3], description:p[4], services:p[5], tagline:p[6] || "", role:d.role, period:d.years }; };
+const pjOut = (i, lg) => { const p = T[lg].projects[i], d = PROJ[i]; return { slug:d.key, url: PATHS ? location.origin + urlFor({page:"project",key:d.key}, lg) : location.origin + location.pathname + "#project-" + d.key, name:p[0], category:p[1], context:p[2], summary:p[3], description:p[4], services:p[5], tagline:p[6] || "", role:rl(d), period:d.years }; };
 const pickLang = a => (a && LANGS.includes(a.language)) ? a.language : lang;
 const WEBMCP_TOOLS = [
   { name:"get_portfolio_overview",

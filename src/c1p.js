@@ -1,7 +1,9 @@
 /* VERSION B · project list: 5 on home, all 12 on the Projects page */
 PROJ.length = 0;
 PROJ.push(
-  {key:"contazara", role:"Lead Product Designer", years:"2022 –"},
+  {key:"contazara", years:"2022 –",
+    role:{es:"Dirección creativa · Branding · Estrategia digital", en:"Creative direction · Branding · Digital strategy", fr:"Direction créative · Branding · Stratégie digitale"},
+    site:{href:"https://www.contazara.es/", l:{es:"Ver la web", en:"Visit the website", fr:"Découvrir le site"}}},
   {key:"carceral", role:"Product Designer", years:"Web"},
   {key:"a2pas", role:"Product Designer", years:"Brand + web"},
   {key:"happylife", role:"Lead Product Designer", years:"App"},

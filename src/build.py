@@ -5,12 +5,18 @@ SITE = "https://TU-DOMINIO.com"
 if "--site" in sys.argv: SITE = sys.argv[sys.argv.index("--site")+1].rstrip("/")
 DOMAIN = re.sub(r"^https?://", "", SITE)
 HERE = os.path.dirname(os.path.abspath(__file__)); os.chdir(HERE)
-JS = ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1t.js","c1l.js"]
+JS = ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1t.js","c1l.js","c1k.js"]
 # 1) data from JS (T, PROJ, SEO)
-js = "\n".join(open(f).read() for f in JS) + "\n;globalThis.__out={T,PROJ,SEO};"
+js = "\n".join(open(f).read() for f in JS) + "\n;globalThis.__out={T,PROJ,SEO,SECTIONS};"
 open("/tmp/_d.js","w").write("const fs=require('fs'),vm=require('vm');const ctx={console};vm.createContext(ctx);vm.runInContext(fs.readFileSync('/tmp/_src.js','utf8').replace(/\\bconst /g,'var ').replace(/\\blet /g,'var '),ctx);fs.writeFileSync('/tmp/data.json',JSON.stringify(ctx.__out));")
 open("/tmp/_src.js","w").write(js); subprocess.check_call(["node","/tmp/_d.js"])
 D = json.load(open("/tmp/data.json")); T, PROJ = D["T"], D["PROJ"]
+SECTIONS = D["SECTIONS"]
+# strict validation of case-study sections / localized role / site link: any problem aborts the build before anything is written
+import validate_sections
+_errs = validate_sections.validate(SECTIONS, {p["key"] for p in PROJ}, lambda k, v: os.path.exists(f"img/{k}-{v}.webp"), PROJ)
+if _errs: sys.exit("BUILD ABORTED: invalid project sections (c1k.js / c1p.js):\n  - " + "\n  - ".join(_errs))
+rl = lambda d, lg: d["role"][lg] if isinstance(d["role"], dict) else d["role"]   # role may be a plain string or {es,en,fr}
 SOC = {"Instagram":"https://www.instagram.com/tomfabre/","LinkedIn":"https://www.linkedin.com/in/tomfabreg/","Behance":"https://www.behance.net/afabre","LottieFiles":"https://lottiefiles.com/es/tomfabre","GitHub":"https://github.com/tomfabre"}
 EMAIL = "hey@tomfabre.com"
 today = datetime.date.today().isoformat()
@@ -26,7 +32,7 @@ def path(lg, page="home", key=None):
     if page == "service": return f"{PFX[lg]}/{SLG[lg]['services']}/{SSLG[lg][key]}/"
     return f"{PFX[lg]}/{SLG[lg][page]}/"
 def U(lg, page="home", key=None): return SITE + path(lg, page, key)
-def pj(lang, i): p = T[lang]["projects"][i]; d = PROJ[i]; return dict(slug=d["key"], name=p[0], category=p[1], context=p[2], summary=p[3], description=p[4], services=p[5], tagline=p[6] if len(p)>6 else "", role=d["role"], period=d["years"], url=U(lang,"project",d["key"]))
+def pj(lang, i): p = T[lang]["projects"][i]; d = PROJ[i]; return dict(slug=d["key"], name=p[0], category=p[1], context=p[2], summary=p[3], description=p[4], services=p[5], tagline=p[6] if len(p)>6 else "", role=rl(d, lang), period=d["years"], url=U(lang,"project",d["key"]), **({"story":validate_sections.flatten(SECTIONS[d["key"]], lang)} if d["key"] in SECTIONS else {}))
 # 2) JSON-LD (only facts that are visible on the page; nothing invented: no ratings, reviews, employee counts or addresses beyond the city)
 HS = lambda lg: T[lg]["hs_items"]
 PERSON_ID, ORG_ID, SITE_ID = f"{SITE}/#person", f"{SITE}/#binome", f"{SITE}/#website"
@@ -78,7 +84,7 @@ a = open("a.html").read().replace("<!--JSONLD-->", ld_tag).replace("%%SITE%%", S
 b = open("b.html").read()
 # c1s.js must precede c3; c2 doesn't need SEO
 open("yodis-data.js","w").write("const YODIS_DATA = " + json.dumps(json.load(open("conversations.json")), ensure_ascii=False) + ";")
-body_js = "\n".join(open(f).read() for f in ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1q.js","c1r.js","c1t.js","c1l.js","yodis-data.js","c2.js","c4.js","c3.js"])
+body_js = "\n".join(open(f).read() for f in ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1q.js","c1r.js","c1t.js","c1l.js","c1k.js","yodis-data.js","c2.js","c4.js","c3.js"])
 import base64, io
 from PIL import Image
 def imgjs(mode):
@@ -110,6 +116,7 @@ ROUTES = [("home",None),("projects",None),("services",None)] + [("service",k) fo
 def meta_for(lg, page, key):
     S = D["SEO"][lg]
     if page == "project":
+        if key in S.get("proj", {}): return S["proj"][key]["t"], S["proj"][key]["d"]   # explicit per-project override (c1k.js)
         p = T[lg]["projects"][[q["key"] for q in PROJ].index(key)]
         return p[0] + " · " + S["name"] + " · " + p[1], p[3]
     if page == "service": return S["svc_"+key+"_t"], S["svc_"+key+"_d"]
@@ -188,6 +195,9 @@ for l in ("en","es","fr"):
     F.append("### Projects" if l!="es" else "### Proyectos"); F.append("")
     for i in range(len(PROJ)):
         p=pj(l,i); F.append(f"#### {p['name']} — {p['category']}"); F.append(f"URL: {p['url']}"); F.append(f"{p['tagline']}"); F.append(""); F.append(f"{p['summary']}"); F.append(""); F.append(p["description"]); F.append(f"Services: {p['services']} · Role: {p['role']} · Context: {p['context']}"); F.append("")
+        for sc in p.get("story", []):
+            F.append(f"##### {sc['label']} — {sc['heading']}" if sc["heading"] != sc["label"] else f"##### {sc['label']}"); F.append("")
+            for tx in sc["text"]: F.append(tx); F.append("")
     F.append(f"### {t['quote'] if 'quote' in t else t['ab_quote']}"); F.append("")
 open(dist+"/llms-full.txt","w").write("\n".join(F)+"\n")
 # ai-catalog.json

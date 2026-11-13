@@ -198,18 +198,30 @@ function renderGrid(){
     if (saved === "list") $('.view-seg button[data-view="list"]').click();
   }
 }
+/* ---------- case-study sections: optional per project (SECTIONS in c1k.js, validated at build). Reuses .pj-body / .pj-gal / .stats ---------- */
+const tr = o => (o && o[lang]) || "";                                              // pick the current language from {es,en,fr}
+const rl = d => (d.role && typeof d.role === "object") ? tr(d.role) : d.role;      // role: plain string or {es,en,fr}
+const paras = a => (a || []).map(x => x.em ? `<p><strong>${esc(tr(x))}</strong></p>` : `<p>${esc(tr(x))}</p>`).join("");
+const secBody = (s, inner) => `<div class="pj-body"><h2 id="s-${s.id}-h">${esc(tr(s.h))}</h2><div>${s.t ? `<h3>${esc(tr(s.t))}</h3>` : ""}${inner}</div></div>`;
+const secImg = im => (IMG[im.key] && IMG[im.key][im.v]) ? `<div class="pj-gal"><div class="art"><img src="${IMG[im.key][im.v]}" alt="${esc(tr(im.alt))}" loading="lazy" decoding="async"></div></div>` : "";
+/* To add a type: add it here AND to TYPES in validate_sections.py (build fails on unknown types). */
+const SECTION_RENDER = {
+  text: s => `<section class="pj-sec" id="s-${s.id}" aria-labelledby="s-${s.id}-h">${secBody(s, paras(s.p))}${s.img ? secImg(s.img) : ""}</section>`,
+  metrics: s => `<section class="pj-sec" id="s-${s.id}" aria-labelledby="s-${s.id}-h">${secBody(s, paras(s.p))}<ul class="stats pj-stats">${s.items.map(it => `<li class="stat"><b>${esc(tr(it.n))}</b><span>${esc(tr(it.l))}</span></li>`).join("")}</ul>${s.after ? `<div class="pj-body"><span aria-hidden="true"></span><div>${paras(s.after)}</div></div>` : ""}</section>`
+};
+const renderSection = s => { const f = SECTION_RENDER[s.type]; if (!f) throw new Error("Unknown section type: " + s.type); return f(s); };
 function renderProject(key){
   const t = L(), i = PROJ.findIndex(p => p.key === key), d = PROJ[i], p = t.projects[i], nx = (i + 1) % PROJ.length;
   const num = "0" + (i + 1);
   $("#pj").innerHTML = `<a class="back-top" href="#projects"><span aria-hidden="true">←</span> ${esc(t.back)}</a>
     <div class="pj-head"><span class="num-big" aria-hidden="true">${num}</span><h1>${esc(p[0])}</h1><p class="pj-tag">${esc(p[6] || "")}</p><p class="lead">${esc(p[3])}</p></div>
     <div class="pj-cover">${svgOf(key, "cover")}</div>
-    <dl class="pj-facts"><div><dt>${esc(t.role_l2 || "Role")}</dt><dd>${esc(d.role)}</dd></div><div><dt>${esc(t.ctx_l2 || "Context")}</dt><dd>${esc(p[2])}</dd></div><div><dt>${esc(t.serv_l2 || "Services")}</dt><dd>${esc(p[5])}</dd></div><div><dt>${esc(t.per_l2 || "Period")}</dt><dd>${esc(d.years)}</dd></div></dl>
-    <div class="pj-body"><h2>${esc(t.did_h2 || "What I did")}</h2><div><p>${esc(p[4])}</p></div></div>
+    <dl class="pj-facts"><div><dt>${esc(t.role_l2 || "Role")}</dt><dd>${esc(rl(d))}</dd></div><div><dt>${esc(t.ctx_l2 || "Context")}</dt><dd>${esc(p[2])}</dd></div><div><dt>${esc(t.serv_l2 || "Services")}</dt><dd>${esc(p[5])}</dd></div><div><dt>${esc(t.per_l2 || "Period")}</dt><dd>${esc(d.years)}</dd></div></dl>
+    ${SECTIONS[key] ? SECTIONS[key].map(renderSection).join("") : `<div class="pj-body"><h2>${esc(t.did_h2 || "What I did")}</h2><div><p>${esc(p[4])}</p></div></div>`}
     <div class="pj-gal">${svgWrap(key,1)}${svgWrap(key,2)}${svgWrap(key,3)}</div>
-    <aside class="pj-more"><span class="blobs" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></span><h2>${esc(t.pj_sim_h)}</h2><p><button class="btn solid" type="button" data-open-form data-ev="case_to_contact_click" data-place="project" data-project="${key}"><span>${esc(t.cta_talk)}</span><span class="arr" aria-hidden="true">→</span></button></p><ul>${(PSVC[key] || []).map(k => `<li><a href="#service-${k}">${esc(t.hs_items[SKEYS.indexOf(k)][0])} <span aria-hidden="true">→</span></a></li>`).join("")}</ul></aside>
+    <aside class="pj-more"><span class="blobs" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></span><h2>${esc(t.pj_sim_h)}</h2><p><button class="btn solid" type="button" data-open-form data-ev="case_to_contact_click" data-place="project" data-project="${key}"><span>${esc(t.cta_talk)}</span><span class="arr" aria-hidden="true">→</span></button>${d.site ? ` <a class="btn" href="${esc(d.site.href)}" target="_blank" rel="noopener" data-ev="project_cta_click" data-place="project_site"><span>${esc(tr(d.site.l))}</span><span class="arr" aria-hidden="true">↗</span></a>` : ""}</p><ul>${(PSVC[key] || []).map(k => `<li><a href="#service-${k}">${esc(t.hs_items[SKEYS.indexOf(k)][0])} <span aria-hidden="true">→</span></a></li>`).join("")}</ul></aside>
     <a class="pj-next" href="#project-${PROJ[nx].key}"><span class="k"><span>${esc(t.next)}</span><span aria-hidden="true">→</span></span><b>${esc(t.projects[nx][0])}</b></a>`;
-  document.title = p[0] + " · Tom Fabre";
+  document.title = ((SEO[lang] || {}).proj || {})[key]?.t || (p[0] + " · Tom Fabre");
 }
 const svgWrap = (k, v) => `<div class="art">${svgOf(k, v)}</div>`;
 
