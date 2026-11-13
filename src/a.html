@@ -1,3 +1,14 @@
+<script>
+/* Google Tag Manager · Consent Mode v2: everything is denied until the visitor accepts (banner comes with the privacy/cookies step).
+   Only loads on the production hostname so previews and tests don't pollute the data. */
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+gtag("consent", "default", { ad_storage:"denied", ad_user_data:"denied", ad_personalization:"denied", analytics_storage:"denied", wait_for_update:500 });
+gtag("js", new Date());
+if (/^(www\.)?tomfabre\.com$/.test(location.hostname)) {
+  (function(w,d,s,l,i){ w[l]=w[l]||[]; w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"}); var f=d.getElementsByTagName(s)[0], j=d.createElement(s); j.async=true; j.src="https://www.googletagmanager.com/gtm.js?id="+i; f.parentNode.insertBefore(j,f); })(window,document,"script","dataLayer","GTM-5XXDSPVX");
+}
+</script>
 <title>Tom Fabre · Diseñador de producto y marca en Madrid</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">

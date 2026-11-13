@@ -10,6 +10,7 @@ const FORM_ENDPOINT = "https://formspree.io/f/xvkaoqbl";
 function track(name, props){
   const detail = Object.assign({ locale: typeof lang === "string" ? lang : "es" }, props || {});
   try { document.dispatchEvent(new CustomEvent("af:track", { detail:{ name, props:detail } })); } catch(e){}
+  try { if (window.dataLayer) window.dataLayer.push(Object.assign({ event:name }, detail)); } catch(e){}   // GTM custom events (no personal data)
   try { if (window.AF_ANALYTICS && typeof window.AF_ANALYTICS.track === "function") window.AF_ANALYTICS.track(name, detail); } catch(e){}
 }
 document.addEventListener("click", e => { const el = e.target.closest && e.target.closest("[data-ev]"); if (el) track(el.dataset.ev, { page: (typeof route_ === "object" && route_.page) || "home", placement: el.dataset.place || "", service: el.dataset.service || undefined }); });
