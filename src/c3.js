@@ -1,5 +1,6 @@
 /* ---------- SEO: per-route head ---------- */
 function setMeta(sel, attr, val){ const el = document.querySelector(sel); if (el) el.setAttribute(attr, val); }
+const OGI = "%%OGI%%";   // build.py injects {lang:{fb:[url,alt,w,h], p:{projectKey:[...]}}} computed by og_for (single source of truth)
 function updateHead(r){
 { const ll = document.getElementById("legalLink"); if (ll) ll.href = LEGAL_URL[lang] || "/legal/"; }
   const s = SEO[lang] || SEO.es, key = r && r.page === "service" ? "svc_" + r.key : (r && r.page || "home");
@@ -13,6 +14,10 @@ function updateHead(r){
   setMeta('meta[name="description"]', "content", desc);
   setMeta('meta[property="og:title"]', "content", title); setMeta('meta[property="og:description"]', "content", desc);
   setMeta('meta[name="twitter:title"]', "content", title); setMeta('meta[name="twitter:description"]', "content", desc);
+  { const rp = r || { page:"home" }, so = (s.social || {})[rp.page + (rp.key ? ":" + rp.key : "")];   // optional custom social title/description (same keys as build.py)
+    if (so){ if (so.t){ setMeta('meta[property="og:title"]', "content", so.t); setMeta('meta[name="twitter:title"]', "content", so.t); } if (so.d){ setMeta('meta[property="og:description"]', "content", so.d); setMeta('meta[name="twitter:description"]', "content", so.d); } } }
+  { const g = OGI[lang] || OGI.es, im = (r && r.page === "project" && g.p[r.key]) || g.fb;   // specific/cover image of the active project, else language fallback
+    [['meta[property="og:image"]', im[0]], ['meta[property="og:image:secure_url"]', im[0]], ['meta[name="twitter:image"]', im[0]], ['meta[property="og:image:alt"]', im[1]], ['meta[name="twitter:image:alt"]', im[1]], ['meta[property="og:image:width"]', im[2]], ['meta[property="og:image:height"]', im[3]]].forEach(a => setMeta(a[0], "content", a[1])); }
   setMeta('meta[property="og:locale"]', "content", s.locale);
   if (PATHS){
     const rr = r || route_, cn = document.querySelector('link[rel="canonical"]'); if (!cn) return;

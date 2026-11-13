@@ -141,18 +141,33 @@ def og_variant_ok(src):
     except Exception: return False
     return w >= 600 and h >= 315
 def _proj_idx(key): return [q["key"] for q in PROJ].index(key)
+# Projects whose cover must NOT be used as social image (explicit exception; the visible project is untouched). Remove the key once it has a final cover.
+OG_FALLBACK_PROJECTS = {"carceral": "provisional cover (\"in progress\"): use the language fallback until a final cover exists"}
+import hashlib
+def _ver(path, salt=""):
+    """Cache-busting version: content hash of the source file. It changes whenever the image changes, so platforms re-fetch it."""
+    return hashlib.md5(open(path, "rb").read() + salt.encode()).hexdigest()[:8]
 def og_for(lg, page, key=None):
-    """-> dict(kind, url, file, alt, w, h). kind: explicit | cover | fallback."""
+    """-> dict(kind, url, file, alt, w, h). kind: explicit | cover | fallback. url carries ?v=<content hash>."""
     if page == "project":
         o = (D["SEO"][lg].get("proj", {}).get(key) or {}).get("og")
         if o:
-            return dict(kind="explicit", url=f"{SITE}/img/og/{o['src']}-{OG_W}x{OG_H}.jpg", file=f"img/og/{o['src']}-{OG_W}x{OG_H}.jpg", alt=o["alt"], w=OG_W, h=OG_H, src=o["src"])
-        if og_variant_ok(key + "-cover"):
-            p = T[lg]["projects"][_proj_idx(key)]
-            return dict(kind="cover", url=f"{SITE}/img/og/{key}-cover-{OG_W}x{OG_H}.jpg", file=f"img/og/{key}-cover-{OG_W}x{OG_H}.jpg",
+            f = f"img/og/{o['src']}-{OG_W}x{OG_H}.jpg"
+            return dict(kind="explicit", url=f"{SITE}/{f}?v={_ver('img/' + o['src'] + '.webp', 'og1')}", file=f, alt=o["alt"], w=OG_W, h=OG_H, src=o["src"])
+        if key not in OG_FALLBACK_PROJECTS and og_variant_ok(key + "-cover"):
+            p = T[lg]["projects"][_proj_idx(key)]; f = f"img/og/{key}-cover-{OG_W}x{OG_H}.jpg"
+            return dict(kind="cover", url=f"{SITE}/{f}?v={_ver('img/' + key + '-cover.webp', 'og1')}", file=f,
                         alt=OG_ALT_COVER[lg].format(n=p[0], c=p[1]), w=OG_W, h=OG_H, src=key + "-cover")
     fn = f"og-default-{lg}.jpg"; w, h = _size("extras/" + fn)
-    return dict(kind="fallback", url=f"{SITE}/{fn}", file=fn, alt=OG_ALT_DEFAULT[lg], w=w, h=h)
+    return dict(kind="fallback", url=f"{SITE}/{fn}?v={_ver('extras/' + fn)}", file=fn, alt=OG_ALT_DEFAULT[lg], w=w, h=h)
+# Runtime sync (c3.js updateHead): only the data comes from og_for, so the logic stays in one place.
+_ogi = {lg: {"fb": [(lambda o: [o["url"], o["alt"], o["w"], o["h"]])(og_for(lg, "home"))],
+             "p": {q["key"]: [o["url"], o["alt"], o["w"], o["h"]] for q in PROJ for o in [og_for(lg, "project", q["key"])] if o["kind"] != "fallback"}} for lg in ("es","en","fr")}
+for _lg in _ogi: _ogi[_lg]["fb"] = _ogi[_lg]["fb"][0]
+_n = 0
+for _q in ('"%%OGI%%"', "'%%OGI%%'"):
+    _n += html.count(_q); html = html.replace(_q, json.dumps(_ogi, ensure_ascii=False, separators=(",", ":")))
+assert _n == 1, "OGI placeholder not found exactly once in the generated script"
 def og_tags(o, e=lambda x: x):
     u = o["url"]; mime = "image/jpeg"
     return (f'<meta property="og:image" content="{u}"><meta property="og:image:secure_url" content="{u}"><meta property="og:image:type" content="{mime}">'
@@ -301,7 +316,7 @@ for _lg, _pg, _k, _f, _can_u, _og in _pages:
     _t = open(_f, encoding="utf8").read(); _head = _t[:_t.find("<body")]; _u = _og["url"]
     _fp = dist + "/" + _og["file"]
     if not _u.startswith("https://"): _bad.append(f"{_f}: og:image is not an absolute https URL")
-    if _u != f"{SITE}/{_og['file']}": _bad.append(f"{_f}: og url/file mismatch")
+    if not re.fullmatch(re.escape(f"{SITE}/{_og['file']}") + r"\?v=[0-9a-f]{8}", _u): _bad.append(f"{_f}: og url must be {SITE}/{_og['file']}?v=<hash>")
     if not os.path.exists(_fp): _bad.append(f"{_f}: image file missing {_fp}")
     else:
         try: _real = Image.open(_fp).size
@@ -328,7 +343,7 @@ for _lg, _pg, _k, _f, _can_u, _og in _pages:
     if not (_v["og:image"] == _v["og:image:secure_url"] == _v["twitter:image"] == _u): _bad.append(f"{_f}: og:image / secure_url / twitter:image differ")
     if _v["og:image:alt"] != _v["twitter:image:alt"]: _bad.append(f"{_f}: og/twitter image alt differ")
     if (_v["og:image:width"], _v["og:image:height"]) != (str(_og["w"]), str(_og["h"])): _bad.append(f"{_f}: declared og:image size differs")
-    if _og["kind"] == "fallback" and not _u.endswith(f"/og-default-{_lg}.jpg"): _bad.append(f"{_f}: wrong-language fallback image")
+    if _og["kind"] == "fallback" and _og["file"] != f"og-default-{_lg}.jpg": _bad.append(f"{_f}: wrong-language fallback image")
     if re.findall(r'<html lang="(\w+)"', _t) != [_lg]: _bad.append(f"{_f}: wrong html lang")
     _hl = dict(re.findall(r'<link rel="alternate" hreflang="(\w[\w-]*)" href="([^"]*)"', _head))
     if _pg == "legal": _exp = {**{o: f"{SITE}/{legal.PATHS[o]}/" for o in ("es","en","fr")}, "x-default": f"{SITE}/{legal.PATHS['es']}/"}
