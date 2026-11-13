@@ -143,7 +143,7 @@ function renderServicesIndex(){
   const t = L(), sp = t.sp.idx; const el = $("#svIdx"); if (!el) return;
   el.innerHTML = `<section class="sv-hero">${crumbs([[t.n_home, "#home"], [t.n_services, null]])}<p class="sv-eb">${esc(sp.eb)}</p><h1 class="sv-h1">${esc(sp.h1)}</h1><p class="sv-intro">${esc(sp.intro)}</p></section>
   <section aria-label="${esc(t.n_services)}"><ul class="svc-rows">${t.hs_items.map(([n, claim, body, scope, note, cta], i) => `<li><span class="num">0${i+1}</span><h2>${esc(n)}</h2><div><p class="tgl">${esc(claim)}</p><p>${esc(body)}</p>${note ? `<p class="svc-note">${esc(note)}</p>` : ""}<ul class="tagrow">${scope.replace(/\.$/, "").split(" · ").map(x => `<li>${esc(x)}</li>`).join("")}</ul><p class="svc-go"><a class="btn cta" href="#service-${SKEYS[i]}" data-ev="service_cta_click" data-place="services_index" data-service="${SKEYS[i]}"><span>${esc(cta)}</span><span class="arr" aria-hidden="true">→</span></a></p></div></li>`).join("")}</ul></section>
-  <section class="sv-team"><p class="sv-teamtx">${esc(sp.team)}</p><p><button class="btn cta solid" type="button" data-open-form data-ev="primary_cta_click" data-place="services_index"><span>${esc(sp.cta)}</span><span class="arr" aria-hidden="true">→</span></button></p></section>`;
+  <section class="sv-team"><span class="cta-star" aria-hidden="true">✱</span><p class="sv-teamtx">${esc(sp.team)}</p><p><button class="btn solid" type="button" data-open-form data-ev="primary_cta_click" data-place="services_index"><span>${esc(sp.cta)}</span><span class="arr" aria-hidden="true">→</span></button></p></section>`;
 }
 function renderServicePage(key){
   const t = L(), sp = t.sp[key], idx = SKEYS.indexOf(key), el = $("#svPage"); if (!el || !sp) return;
@@ -154,7 +154,7 @@ function renderServicePage(key){
   ${sp.blocks.map((b, i) => `<section class="sv-b"><span class="num" aria-hidden="true">0${i+1}</span><h2>${esc(b.h)}</h2><div>${b.t ? `<p>${esc(b.t)}</p>` : ""}${b.list ? `<ul class="sv-list">${b.list.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</div></section>`).join("")}
   ${related.length ? `<section class="sv-rel"><h2>${esc(sp.rel_h)}</h2><p>${esc(sp.rel_t)}</p><div class="pj-grid">${related.map(k => projCard(k, "h3")).join("")}</div></section>` : ""}
   <section class="sv-faq"><h2>${esc(sentence(t.hf_lab))}</h2><div class="faq" id="svFaq"></div></section>
-  <section class="sv-cta"><h2>${esc(sp.cta_h)}</h2><p><button class="btn cta solid" type="button" data-open-form data-ev="service_cta_click" data-place="service_footer" data-service="${key}"><span>${esc(sp.cta_b)}</span><span class="arr" aria-hidden="true">→</span></button></p></section>
+  <section class="sv-cta"><span class="cta-star" aria-hidden="true">✱</span><h2>${esc(sp.cta_h)}</h2><p><button class="btn solid" type="button" data-open-form data-ev="service_cta_click" data-place="service_footer" data-service="${key}"><span>${esc(sp.cta_b)}</span><span class="arr" aria-hidden="true">→</span></button></p></section>
   <nav class="sv-others" aria-label="${esc(t.n_services)}"><ul>${SKEYS.map((k, i) => k === key ? "" : `<li><a href="#service-${k}">${esc(t.hs_items[i][0])} <span aria-hidden="true">→</span></a></li>`).join("")}<li><a href="#services">${esc(t.sp_back)} <span aria-hidden="true">→</span></a></li></ul></nav></article>`;
   renderFaq("#svFaq", sp.faq);
 }
@@ -707,3 +707,10 @@ buildBoard(); newGame(); wireGame();
 applyTheme(); wireTheme(); wireLang(); wireMenu(); wireForm(); wireCopy(); 
 (function(){const h=document.querySelector("header.top");if(h){const set=()=>document.documentElement.style.setProperty("--hh",h.offsetHeight+"px");set();new ResizeObserver(set).observe(h);}})();
 applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); wireStickers(); wireHero(); wireQF();
+
+/* animated contact cards: a soft spotlight follows the pointer; the star spins faster on hover. CSS-only fallback when motion is reduced. */
+document.addEventListener("pointermove", e => {
+  if (e.pointerType !== "mouse" || reduced) return;
+  const card = e.target.closest && e.target.closest(".cta-band, .sv-cta, .sv-team"); if (!card) return;
+  const r = card.getBoundingClientRect(); card.style.setProperty("--mx", (e.clientX - r.left) + "px"); card.style.setProperty("--my", (e.clientY - r.top) + "px");
+}, { passive:true });

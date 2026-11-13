@@ -962,6 +962,27 @@ ol{list-style:none;margin:0;padding:0}
 .faq-a .btn{margin-top:var(--s5)}
 /* menu: links a little smaller so five fit without going to the minimum */
 .sheet-nav a{font-size:clamp(2.1rem,min(7.4vw,9.4vh),4.6rem);padding-block:clamp(.55rem,1.4vw,1rem)}
+
+/* ===== animated contact cards (home 06, services index, service pages) ===== */
+.cta-band,.sv-cta,.sv-team{--mx:72%;--my:35%;position:relative;overflow:hidden;isolation:isolate;background:var(--surface);border-radius:2rem}
+.sv-cta,.sv-team{border:0;padding:clamp(2rem,5vw,4rem) clamp(1.5rem,4vw,3.5rem);margin-block:var(--s12)}
+.sv-cta h2{margin-bottom:var(--s6)}
+.cta-band::before,.sv-cta::before,.sv-team::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle,var(--fg) 1px,transparent 1.3px);background-size:18px 18px;opacity:.22;-webkit-mask-image:radial-gradient(circle 13rem at var(--mx) var(--my),#000,transparent 70%);mask-image:radial-gradient(circle 13rem at var(--mx) var(--my),#000,transparent 70%);mix-blend-mode:normal}
+.cta-band::after,.sv-cta::after,.sv-team::after{content:"";position:absolute;inset:-12%;z-index:-2;pointer-events:none;opacity:1;mix-blend-mode:normal;
+  background:radial-gradient(circle 15rem at var(--mx) var(--my),color-mix(in srgb,var(--coral) 20%,transparent),transparent 70%),radial-gradient(circle at 12% 88%,color-mix(in srgb,var(--lav) 22%,transparent),transparent 42%),radial-gradient(circle at 88% 12%,color-mix(in srgb,var(--mint) 24%,transparent),transparent 42%),radial-gradient(circle at 60% 90%,color-mix(in srgb,var(--mustard) 16%,transparent),transparent 40%);
+  animation:ctaDrift 14s ease-in-out infinite alternate}
+.cta-band:hover::after,.cta-band:focus-within::after{opacity:1}
+@keyframes ctaDrift{0%{transform:translate3d(-2%,1%,0) scale(1)}100%{transform:translate3d(3%,-3%,0) scale(1.1)}}
+.cta-star{position:absolute;right:clamp(1rem,3vw,2.5rem);top:clamp(.5rem,2vw,1.5rem);z-index:0;font-size:clamp(3.5rem,9vw,8rem);line-height:1;color:var(--coral);opacity:.9;animation:ctaSpin 22s linear infinite;pointer-events:none;transition:filter 400ms}
+.cta-band:hover .cta-star,.sv-cta:hover .cta-star,.sv-team:hover .cta-star,.cta-band:focus-within .cta-star{animation-duration:4s}
+@keyframes ctaSpin{to{transform:rotate(360deg)}}
+.cta-band .band-big,.sv-cta h2,.sv-teamtx{position:relative;z-index:1}
+.band-sub{color:var(--fg)}
+.band-loc{color:color-mix(in srgb,var(--fg) 72%,var(--bg))}
+.sv-cta h2{max-width:18ch}
+.sv-team .btn,.sv-cta .btn{position:relative;z-index:1}
+@media (prefers-reduced-motion:reduce){.cta-band::after,.sv-cta::after,.sv-team::after,.cta-star{animation:none}}
+.cta-band .cta-star{top:auto;bottom:clamp(.4rem,1.5vw,1.2rem);font-size:clamp(3rem,7vw,6rem)}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
