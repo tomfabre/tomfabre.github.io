@@ -342,7 +342,7 @@ function wireMailPop(){
   if (!box || !link || !img || !matchMedia("(hover:hover)").matches || reduced) return;
   let x = 0, y = 0, tx = 0, ty = 0, raf = 0;
   const draw = () => { raf = 0; x += (tx - x) * .18; y += (ty - y) * .18; img.style.transform = `translate3d(${x}px,${y}px,0)`; if (Math.abs(tx - x) + Math.abs(ty - y) > .4) raf = requestAnimationFrame(draw); };
-  const move = e => { const r = box.getBoundingClientRect(), w = img.offsetWidth; tx = Math.min(Math.max(e.clientX - r.left - w * .35, 0), Math.max(r.width - w, 0)); ty = e.clientY - r.top - img.offsetHeight - 18; if (!box.classList.contains("pop")){ x = tx; y = ty; } if (!raf) raf = requestAnimationFrame(draw); };
+  const move = e => { const r = box.getBoundingClientRect(), w = img.offsetWidth; tx = Math.min(Math.max(e.clientX - r.left + 24, 0), Math.max(r.width - w, 0)); ty = link.getBoundingClientRect().top - r.top - w - 40; if (!box.classList.contains("pop")){ x = tx; y = ty; } if (!raf) raf = requestAnimationFrame(draw); };
   link.addEventListener("pointerenter", e => { if (!img.getAttribute("src")) img.src = (PATHS ? "/" : "") + img.dataset.src; move(e); box.classList.add("pop"); });
   link.addEventListener("pointermove", move);
   link.addEventListener("pointerleave", () => box.classList.remove("pop"));
