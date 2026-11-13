@@ -20,7 +20,10 @@ function updateHead(r){
     document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(l => { const g = l.getAttribute("hreflang"); l.href = base + urlFor(rr, g === "x-default" ? "es" : g); });
   }
 }
-const _show = show; show = function(r){ _show(r); updateHead(r); };
+let _pvUrl = "";
+function sendPageView(){ const u = location.origin + location.pathname + location.search; if (u === _pvUrl) return; _pvUrl = u; try { if (typeof gtag === "function") gtag("event", "page_view", { page_location: u, page_title: document.title, page_language: document.documentElement.lang }); } catch(e){} }
+const _show = show; show = function(r){ _show(r); updateHead(r); setTimeout(sendPageView, 0); };
+setTimeout(sendPageView, 0);   // first page view of the visit
 const _applyLang = applyLang; applyLang = function(){ _applyLang.apply(this, arguments); updateHead(route_ || { page:"home" }); };
 updateHead(route_ || parse());
 
