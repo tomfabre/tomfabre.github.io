@@ -994,19 +994,19 @@ footer .foot-grid{display:grid;grid-template-columns:1fr auto;gap:var(--s5) var(
 /* fluid animated card background: soft blurred blobs drifting on separate compositor layers */
 .cta-band::after,.sv-cta::after,.sv-team::after{content:none;animation:none}
 .blobs{position:absolute;inset:0;z-index:-2;overflow:hidden;pointer-events:none;border-radius:inherit}
-.blobs i{position:absolute;border-radius:50%;filter:blur(54px);opacity:.5;will-change:transform;backface-visibility:hidden}
+.blobs i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.2;will-change:transform;backface-visibility:hidden}
 .blobs .b1{width:46%;aspect-ratio:1;left:-10%;top:-35%;background:var(--coral);animation:bl1 19s ease-in-out infinite alternate}
 .blobs .b2{width:40%;aspect-ratio:1;right:-8%;top:-25%;background:var(--mint);animation:bl2 23s ease-in-out infinite alternate}
 .blobs .b3{width:44%;aspect-ratio:1;left:28%;bottom:-50%;background:var(--lav);animation:bl3 27s ease-in-out infinite alternate}
 .blobs .b4{width:30%;aspect-ratio:1;right:16%;bottom:-35%;background:var(--mustard);animation:bl4 21s ease-in-out infinite alternate}
 .blobs .bm{width:20rem;height:20rem;left:0;top:0;background:var(--coral);opacity:0;transition:opacity 600ms ease}
-.hot .blobs .bm{opacity:.38}
+.hot .blobs .bm{opacity:.16}
 @keyframes bl1{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(30%,22%,0) scale(1.18)}100%{transform:translate3d(10%,45%,0) scale(.92)}}
 @keyframes bl2{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-35%,25%,0) scale(1.12)}100%{transform:translate3d(-12%,50%,0) scale(1.2)}}
 @keyframes bl3{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-40%,-18%,0) scale(1.2)}100%{transform:translate3d(25%,-30%,0) scale(.95)}}
 @keyframes bl4{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-30%,-35%,0) scale(1.25)}100%{transform:translate3d(-8%,-12%,0) scale(.9)}}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .blobs i{opacity:.34}}
-:root[data-theme="dark"] .blobs i{opacity:.34}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .blobs i{opacity:.12}}
+:root[data-theme="dark"] .blobs i{opacity:.12}
 @media (prefers-reduced-motion:reduce){.blobs i{animation:none}.blobs .bm{display:none}}
 </style>
 <script>
