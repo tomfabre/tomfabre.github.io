@@ -127,9 +127,11 @@ function renderHomeServices(){
   const t = L();
   $("#svc").innerHTML = t.hs_items.map(([n, claim, body, scope, note, cta], i) => `<li><span class="num">0${i+1}</span><h3>${esc(n)}</h3><div><p class="tgl">${esc(claim)}</p><p>${esc(body)}</p>${note ? `<p class="svc-note">${esc(note)}</p>` : ""}<ul class="tagrow">${scope.replace(/\.$/, "").split(" · ").map(x => `<li>${esc(x)}</li>`).join("")}</ul><p class="svc-go"><a class="btn" href="#service-${SKEYS[i]}" data-ev="service_cta_click" data-place="home" data-service="${SKEYS[i]}"><span>${esc(cta)}</span><span class="arr" aria-hidden="true">→</span></a></p></div></li>`).join("");
 }
-function renderFaq(sel, arr){
+function renderFaq(sel, arr, acts){
   const el = $(sel); if (!el) return; const was = [...el.querySelectorAll("details")].map(d => d.open);
-  el.innerHTML = arr.map(([q, a], i) => `<details class="faq-i"${was[i] ? " open" : ""}><summary><span class="q">${esc(q)}</span><span class="pm" aria-hidden="true"></span></summary><div class="faq-a"><p>${esc(a)}</p></div></details>`).join("");
+  const act = i => { const a = acts && acts[i]; if (!a) return ""; const arrow = `<span class="arr" aria-hidden="true">↗</span>`;
+    return a[0] === "form" ? `<button class="btn sm" type="button" data-open-form data-ev="primary_cta_click" data-place="faq"><span>${esc(a[1])}</span>${arrow}</button>` : `<a class="btn sm" href="#${a[0]}" data-ev="faq_link_click" data-place="faq"><span>${esc(a[1])}</span>${arrow}</a>`; };
+  el.innerHTML = arr.map(([q, a], i) => `<details class="faq-i"${was[i] ? " open" : ""}><summary><span class="q">${esc(q)}</span><span class="pm" aria-hidden="true"></span></summary><div class="faq-a"><p>${esc(a)}</p>${act(i)}</div></details>`).join("");
 }
 function renderAboutHome(){ const t = L(); $("#abP").innerHTML = t.ha_p.map(x => `<p>${esc(x)}</p>`).join(""); }
 const crumbs = items => `<nav class="crumbs" aria-label="${esc(({es:"Migas de pan",en:"Breadcrumb",fr:"Fil d'Ariane"})[lang])}"><ol>${items.map(([l, h]) => h ? `<li><a href="${h}">${esc(l)}</a></li>` : `<li aria-current="page">${esc(l)}</li>`).join("")}</ol></nav>`;
@@ -617,7 +619,7 @@ function applyLang(){
   t.serv_l2 = ({es:"Servicios",en:"Services",fr:"Services"})[lang];
   t.per_l2 = ({es:"Periodo",en:"Period",fr:"Période"})[lang];
   t.did_h2 = ({es:"Qué hice",en:"What I did",fr:"Ce que j'ai fait"})[lang];
-  renderHomeServices(); renderSvc("#how", t.hp_steps); renderAboutHome(); renderFaq("#faqHome", t.hf_items); renderWork(); renderGrid(); renderBio(); renderCnext(); renderGame(); renderMarquee(); renderSocials();
+  renderHomeServices(); renderSvc("#how", t.hp_steps); renderAboutHome(); renderFaq("#faqHome", t.hf_items, [["services", t.sp_back], ["bio", t.ha_cta1], ["form", t.h_cta1], ["services", t.sp_back], ["form", t.h_cta1], ["form", t.h_cta1], ["form", t.h_cta1]]); renderWork(); renderGrid(); renderBio(); renderCnext(); renderGame(); renderMarquee(); renderSocials();
   $$("[data-ti]").forEach(el => el.setAttribute("data-t", t[el.dataset.ti] || ""));
   if (route_.page === "services") renderServicesIndex(); if (route_.page === "service") renderServicePage(route_.key);
   armReveal();

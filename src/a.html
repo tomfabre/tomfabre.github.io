@@ -934,6 +934,34 @@ ol{list-style:none;margin:0;padding:0}
 .pj-more ul a{text-decoration:underline;text-underline-offset:.25em;font-weight:500}
 .f-hint{font-size:.78rem;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){.hmin .h-intro,.hmin .h-cta,.hmin .h-ctx{animation:none}}
+
+/* ===== CTA = label pill + separate arrow pill (+ small accent flower); FAQ = rounded cards with chevron ===== */
+.btn:has(> .arr):not(dialog .btn){padding:0;border:0;background:none;min-height:0;gap:.4rem;color:var(--fg)}
+.btn:has(> .arr):not(dialog .btn) > span:first-child,.btn:has(> .arr):not(dialog .btn) > .arr{display:inline-flex;align-items:center;min-height:3rem;border:1px solid var(--fg);border-radius:var(--pill);transition:background-color var(--fast) var(--ease),color var(--fast) var(--ease)}
+.btn:has(> .arr):not(dialog .btn) > span:first-child{padding:0 1.5rem}
+.btn:has(> .arr):not(dialog .btn) > .arr{gap:.5rem;padding:0 1.1rem;font-size:1rem;transform:none}
+.btn:has(> .arr):not(dialog .btn) > .arr::after{content:"✱";color:var(--accent);font-size:.95em;display:inline-block;transition:transform 500ms var(--ease)}
+.btn.sm:has(> .arr):not(dialog .btn) > span:first-child,.btn.sm:has(> .arr):not(dialog .btn) > .arr{min-height:2.3rem}
+.btn.sm:has(> .arr):not(dialog .btn) > span:first-child{padding:0 1rem}
+.btn:has(> .arr):not(dialog .btn):hover,.btn:has(> .arr):not(dialog .btn):focus-visible{background:none;color:var(--fg)}
+.btn:has(> .arr):not(dialog .btn):hover > span:first-child,.btn:has(> .arr):not(dialog .btn):focus-visible > span:first-child{background:var(--fg);color:var(--bg)}
+.btn:has(> .arr):not(dialog .btn):hover > .arr,.btn:has(> .arr):not(dialog .btn):focus-visible > .arr{background:var(--fg);color:var(--bg);transform:none}
+.btn:has(> .arr):not(dialog .btn):hover > .arr::after{transform:rotate(90deg)}
+.btn.solid:has(> .arr):not(dialog .btn){color:var(--fg)}
+.btn.solid:has(> .arr):not(dialog .btn) > span:first-child{background:var(--fg);color:var(--bg)}
+.btn.solid:has(> .arr):not(dialog .btn):hover > span:first-child,.btn.solid:has(> .arr):not(dialog .btn):focus-visible > span:first-child{background:none;color:var(--fg)}
+.btn.solid:has(> .arr):not(dialog .btn):hover > .arr,.btn.solid:has(> .arr):not(dialog .btn):focus-visible > .arr{background:var(--fg);color:var(--bg)}
+.faq{border:0}
+.faq-i{border:1px solid var(--line2);border-radius:1.1rem;margin-bottom:.8rem;padding:0 1.4rem;transition:border-color var(--fast) var(--ease)}
+.faq-i:hover,.faq-i[open]{border-color:var(--fg)}
+.faq-i summary{padding-block:1.15rem;font-size:clamp(1rem,.4vw + .92rem,1.2rem);font-weight:500;letter-spacing:-.005em}
+.faq-i .pm{width:.6rem;height:.6rem;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);margin-top:-.3rem;transition:transform var(--normal) var(--ease),margin var(--normal) var(--ease)}
+.faq-i .pm::before,.faq-i .pm::after{content:none}
+.faq-i[open] .pm{transform:rotate(-135deg);margin-top:.3rem}
+.faq-a{padding:0 0 1.3rem;font-size:.95rem}
+.faq-a .btn{margin-top:var(--s5)}
+/* menu: links a little smaller so five fit without going to the minimum */
+.sheet-nav a{font-size:clamp(1.9rem,min(6.2vw,8.2vh),3.9rem);padding-block:clamp(.55rem,1.4vw,1rem)}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
