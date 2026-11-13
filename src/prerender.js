@@ -7,7 +7,7 @@ const { chromium } = require("playwright");
 const DIST = path.resolve(process.argv[2] || "dist"), REPORT = process.argv[3];
 const MIME = { ".html":"text/html; charset=utf-8", ".js":"text/javascript", ".json":"application/json", ".svg":"image/svg+xml", ".webp":"image/webp", ".png":"image/png", ".css":"text/css", ".txt":"text/plain", ".xml":"application/xml", ".pdf":"application/pdf", ".webmanifest":"application/manifest+json" };
 function walk(d){ return fs.readdirSync(d, { withFileTypes:true }).flatMap(e => e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]); }
-const pages = walk(DIST).filter(f => f.endsWith("index.html") && !f.includes(path.sep + "img" + path.sep));
+const pages = walk(DIST).filter(f => f.endsWith("index.html") && !/(\/legal\/|mentions-legales\/)index\.html$/.test(f.split(path.sep).join("/")) && !f.includes(path.sep + "img" + path.sep));
 const server = http.createServer((req, res) => {
   let p = decodeURIComponent(req.url.split("?")[0]); if (p.endsWith("/")) p += "index.html";
   const f = path.join(DIST, p); if (!f.startsWith(DIST) || !fs.existsSync(f) || fs.statSync(f).isDirectory()){ res.writeHead(404); return res.end("404"); }
@@ -32,6 +32,7 @@ const NOJS = '<noscript><style>.reveal,.reveal-x,.hero{opacity:1!important;trans
       const body = document.body.cloneNode(true);
       body.querySelectorAll("script,#toast,.win-confetti i,#hmHint-x").forEach(n => n.remove());
       body.querySelectorAll(".in,.done,.hot").forEach(n => n.classList.remove("in", "done", "hot"));
+      body.querySelectorAll(".cc").forEach(n => n.remove());
       body.querySelectorAll("[data-wired],[data-alt]").forEach(n => { n.removeAttribute("data-wired"); n.removeAttribute("data-alt"); });
       body.querySelectorAll("main > .page[hidden]").forEach(p => { const t = document.createElement("template"); t.setAttribute("data-stash", ""); t.content.appendChild(p.cloneNode(true)); p.replaceWith(t); });
       return { html: body.innerHTML, h1, empty, active: (document.querySelector("main > .page:not([hidden])") || {}).dataset?.page, title: document.title, canon: (document.querySelector('link[rel=canonical]') || {}).href, hre: document.querySelectorAll('link[rel=alternate][hreflang]').length, lang: document.documentElement.lang, links: [...document.querySelectorAll("a[href]")].filter(a => !a.closest("template")).length };

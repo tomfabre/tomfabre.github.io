@@ -5,7 +5,7 @@ SITE = "https://TU-DOMINIO.com"
 if "--site" in sys.argv: SITE = sys.argv[sys.argv.index("--site")+1].rstrip("/")
 DOMAIN = re.sub(r"^https?://", "", SITE)
 HERE = os.path.dirname(os.path.abspath(__file__)); os.chdir(HERE)
-JS = ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1t.js"]
+JS = ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1t.js","c1l.js"]
 # 1) data from JS (T, PROJ, SEO)
 js = "\n".join(open(f).read() for f in JS) + "\n;globalThis.__out={T,PROJ,SEO};"
 open("/tmp/_d.js","w").write("const fs=require('fs'),vm=require('vm');const ctx={console};vm.createContext(ctx);vm.runInContext(fs.readFileSync('/tmp/_src.js','utf8').replace(/\\bconst /g,'var ').replace(/\\blet /g,'var '),ctx);fs.writeFileSync('/tmp/data.json',JSON.stringify(ctx.__out));")
@@ -78,7 +78,7 @@ a = open("a.html").read().replace("<!--JSONLD-->", ld_tag).replace("%%SITE%%", S
 b = open("b.html").read()
 # c1s.js must precede c3; c2 doesn't need SEO
 open("yodis-data.js","w").write("const YODIS_DATA = " + json.dumps(json.load(open("conversations.json")), ensure_ascii=False) + ";")
-body_js = "\n".join(open(f).read() for f in ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1q.js","c1r.js","c1t.js","yodis-data.js","c2.js","c4.js","c3.js"])
+body_js = "\n".join(open(f).read() for f in ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1q.js","c1r.js","c1t.js","c1l.js","yodis-data.js","c2.js","c4.js","c3.js"])
 import base64, io
 from PIL import Image
 def imgjs(mode):
@@ -99,6 +99,8 @@ def _min(src, loader):
     return r.stdout if r.returncode == 0 and r.stdout.strip() else src
 a = re.sub(r"(<style>)(.*?)(</style>)", lambda m: m.group(1) + _min(m.group(2), "css") + m.group(3), a, flags=re.S)
 body_js = _min(body_js, "js")
+CONSENT_JS = _min(open("consent.js", encoding="utf8").read(), "js")
+a = a.replace("/*CONSENT*/", CONSENT_JS)
 html = a + "<!--BODY-->" + b + "<!--/BODY-->" + "<script>\n" + IMGTOKEN + body_js + "\n</script>\n"
 open("index.html","w").write(html.replace(IMGTOKEN, imgjs("data")).replace("<!--BODY-->","").replace("<!--/BODY-->",""))
 # 4) deploy pack
@@ -205,6 +207,14 @@ def sm_url(lg,page,key,pr):
 smx = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
 for lg in ("es","en","fr"):
     for page, key in ROUTES: smx += sm_url(lg,page,key,{"home":"1.0","projects":"0.9","services":"0.9","service":"0.9","bio":"0.7","contact":"0.7"}.get(page,"0.8"))
+import legal
+_css = "".join(re.findall(r"<style>(.*?)</style>", html, flags=re.S))
+for _lg in ("es","en","fr"):
+    _p = dist + "/" + legal.PATHS[_lg]; os.makedirs(_p, exist_ok=True)
+    open(_p + "/index.html", "w", encoding="utf8").write(legal.render(_lg, SITE, EMAIL, _css, CONSENT_JS))
+    _alts = "".join(f'<xhtml:link rel="alternate" hreflang="{o}" href="{SITE}/{legal.PATHS[o]}/"/>' for o in ("es","en","fr")) + f'<xhtml:link rel="alternate" hreflang="x-default" href="{SITE}/{legal.PATHS["es"]}/"/>'
+    smx += f"  <url><loc>{SITE}/{legal.PATHS[_lg]}/</loc>{_alts}<priority>0.2</priority></url>\n"
+if not legal.CFG["id"]: print("WARNING: legal.json has no ID (NIE) yet: do not publish the legal pages")
 for f in ("cv-alvaro-fabre.pdf","llms.txt","portfolio.json"): smx += f"  <url><loc>{SITE}/{f}</loc><priority>0.3</priority></url>\n"
 open(dist+"/sitemap.xml","w").write(smx + "</urlset>\n")
 open(dist+"/favicon.svg","w").write('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197 197"><style>.m{fill:#2C2C2C}@media (prefers-color-scheme:dark){.m{fill:#FDF9F0}}</style><g class="m"><path d="M74.4922 143.792L74.4922 196.043H121.542V162.007C121.542 160.627 120.704 159.366 119.375 158.749L80.1675 140.534C77.5602 139.323 74.4922 141.085 74.4922 143.792Z"/><path d="M0 0V43.7115H74.4949V87.539C74.4949 90.2459 77.5629 92.008 80.1702 90.7969L119.378 72.5815C120.706 71.9645 121.544 70.7033 121.544 69.3236V43.7115H196.039V0H0Z"/><path d="M101.893 119.741L158.398 145.993C161.658 147.507 165.493 145.305 165.493 141.92V89.416C165.493 86.0307 161.658 83.8292 158.398 85.3431L101.893 111.595C98.2806 113.273 98.2806 118.063 101.893 119.741Z"/></g></svg>')
