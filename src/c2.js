@@ -6,13 +6,23 @@ const root = document.documentElement;
 const EMAIL = "hola@tomfabre.com";
 /* Pega aquí tu endpoint de Formspree (https://formspree.io/f/xxxxxxxx) para que el formulario envíe los mensajes a tu email. Vacío = abre el correo del visitante. */
 const FORM_ENDPOINT = "https://formspree.io/f/xvkaoqbl";
+/* ---------- analytics hook: loads nothing. Fires a DOM event and, only if the owner later defines window.AF_ANALYTICS (after consent), forwards it. Never pass personal data. ---------- */
+function track(name, props){
+  const detail = Object.assign({ locale: typeof lang === "string" ? lang : "es" }, props || {});
+  try { document.dispatchEvent(new CustomEvent("af:track", { detail:{ name, props:detail } })); } catch(e){}
+  try { if (window.AF_ANALYTICS && typeof window.AF_ANALYTICS.track === "function") window.AF_ANALYTICS.track(name, detail); } catch(e){}
+}
+document.addEventListener("click", e => { const el = e.target.closest && e.target.closest("[data-ev]"); if (el) track(el.dataset.ev, { page: (typeof route_ === "object" && route_.page) || "home", placement: el.dataset.place || "", service: el.dataset.service || undefined }); });
 /* ---------- path routing (real URLs per language) · hash mode in the artifact preview ---------- */
 const PATHS = !!document.querySelector('meta[name="af-paths"]');
-const SLUG = { es:{projects:"proyectos",bio:"bio",contact:"contacto"}, en:{projects:"projects",bio:"bio",contact:"contact"}, fr:{projects:"projets",bio:"bio",contact:"contact"} };
+const SLUG = { es:{projects:"proyectos",services:"servicios",bio:"bio",contact:"contacto"}, en:{projects:"projects",services:"services",bio:"bio",contact:"contact"}, fr:{projects:"projets",services:"services",bio:"bio",contact:"contact"} };
+const SSLUG = { es:{branding:"branding",web:"diseno-web",ux:"diseno-ux-ui"}, en:{branding:"branding",web:"web-design",ux:"ux-ui-design"}, fr:{branding:"branding",web:"design-web",ux:"design-ux-ui"} };
+const SKEYS = ["branding","web","ux"];
 const PFX = { es:"", en:"/en", fr:"/fr" };
 function urlFor(r, lg){
   lg = lg || lang; const b = PFX[lg] || "", s = SLUG[lg];
   if (r.page === "project") return b + "/" + s.projects + "/" + r.key + "/";
+  if (r.page === "service") return b + "/" + s.services + "/" + SSLUG[lg][r.key] + "/";
   if (r.page === "home") return b + "/";
   return b + "/" + s[r.page] + "/";
 }
@@ -26,13 +36,20 @@ function parseLoc(pn){
     if (seg.length === 2 && PROJ.some(p => p.key === seg[1])) return { lg, r:{ page:"project", key:seg[1] } };
     return null;
   }
+  if (seg[0] === s.services){
+    if (seg.length === 1) return { lg, r:{ page:"services" } };
+    const k = SKEYS.find(x => SSLUG[lg][x] === seg[1]);
+    if (seg.length === 2 && k) return { lg, r:{ page:"service", key:k } };
+    return null;
+  }
   if (seg.length === 1 && (seg[0] === "bio" || seg[0] === s.contact)) return { lg, r:{ page: seg[0] === "bio" ? "bio" : "contact" } };
   return null;
 }
 function parseHashStr(h){
   h = String(h || "").replace(/^#/, "");
   if (h.startsWith("project-")) { const k = h.slice(8); if (PROJ.some(p => p.key === k)) return { page:"project", key:k }; }
-  return ["projects","bio","contact"].includes(h) ? { page:h } : (h === "home" ? { page:"home" } : null);
+  if (h.startsWith("service-")) { const k = h.slice(8); if (SKEYS.includes(k)) return { page:"service", key:k }; }
+  return ["projects","services","bio","contact"].includes(h) ? { page:h } : (h === "home" ? { page:"home" } : null);
 }
 let lang = store.get("af-lang");
 if (!T[lang]) { const n = (navigator.language || "es").slice(0,2); lang = T[n] ? n : "es"; }
@@ -102,8 +119,42 @@ function wireMenu(){
 }
 
 /* ---------- home sections ---------- */
-function renderStats(){
-  const t = L(); $("#stats").innerHTML = t.stats.map(([v, l, w]) => `<div class="stat"><b data-stat="${esc(v)}">${esc(v)}</b><span><span class="l">${esc(l)}</span><span class="w" aria-hidden="true">${esc(w || "")}</span></span></div>`).join("");
+/* service <-> project relations come from the "services" column of each project in the repo (single source) */
+const PSVC = { contazara:["branding","web"], carceral:["web"], a2pas:["branding","web"], happylife:["ux"], binome:["branding","web"], yaypegs:["ux"], "360estudio":["branding","web"], figy:["ux"], apolo:["ux"], appy:["ux"], mood:["ux"], molyb:["ux"] };
+const sentence = x => { x = String(x).toLowerCase(); return x.charAt(0).toUpperCase() + x.slice(1); };
+const oneLine = x => String(x).replace(/\n/g, " ");
+function renderHomeServices(){
+  const t = L();
+  $("#svc").innerHTML = t.hs_items.map(([n, claim, body, scope, note, cta], i) => `<li><span class="num">0${i+1}</span><h3>${esc(n)}</h3><div><p class="tgl">${esc(claim)}</p><p>${esc(body)}</p>${note ? `<p class="svc-note">${esc(note)}</p>` : ""}<ul class="tagrow">${scope.replace(/\.$/, "").split(" · ").map(x => `<li>${esc(x)}</li>`).join("")}</ul><p class="svc-go"><a class="btn" href="#service-${SKEYS[i]}" data-ev="service_cta_click" data-place="home" data-service="${SKEYS[i]}"><span>${esc(cta)}</span><span class="arr" aria-hidden="true">→</span></a></p></div></li>`).join("");
+}
+function renderFaq(sel, arr){
+  const el = $(sel); if (!el) return; const was = [...el.querySelectorAll("details")].map(d => d.open);
+  el.innerHTML = arr.map(([q, a], i) => `<details class="faq-i"${was[i] ? " open" : ""}><summary><span class="q">${esc(q)}</span><span class="pm" aria-hidden="true"></span></summary><div class="faq-a"><p>${esc(a)}</p></div></details>`).join("");
+}
+function renderAboutHome(){ const t = L(); $("#abP").innerHTML = t.ha_p.map(x => `<p>${esc(x)}</p>`).join(""); }
+const crumbs = items => `<nav class="crumbs" aria-label="${esc(({es:"Migas de pan",en:"Breadcrumb",fr:"Fil d'Ariane"})[lang])}"><ol>${items.map(([l, h]) => h ? `<li><a href="${h}">${esc(l)}</a></li>` : `<li aria-current="page">${esc(l)}</li>`).join("")}</ol></nav>`;
+function projCard(k, tag){
+  const t = L(), i = PROJ.findIndex(p => p.key === k), p = t.projects[i];
+  return `<a class="pj-card" href="#project-${k}" aria-label="${esc(p[0])} — ${esc(t.view_project)}"><span class="art">${svgOf(k, 0)}</span><span class="pj-info"><${tag}>${esc(p[0])}</${tag}><span class="tg">${esc(p[6] || "")}</span><span class="meta-row"><span>${esc(p[1])}</span><span>${esc(PROJ[i].years)}</span></span><span class="go" aria-hidden="true">→</span></span></a>`;
+}
+function renderServicesIndex(){
+  const t = L(), sp = t.sp.idx; const el = $("#svIdx"); if (!el) return;
+  el.innerHTML = `<section class="sv-hero">${crumbs([[t.n_home, "#home"], [t.n_services, null]])}<p class="sv-eb">${esc(sp.eb)}</p><h1 class="sv-h1">${esc(sp.h1)}</h1><p class="sv-intro">${esc(sp.intro)}</p></section>
+  <section aria-label="${esc(t.n_services)}"><ul class="svc-rows">${t.hs_items.map(([n, claim, body, scope, note, cta], i) => `<li><span class="num">0${i+1}</span><h2>${esc(n)}</h2><div><p class="tgl">${esc(claim)}</p><p>${esc(body)}</p>${note ? `<p class="svc-note">${esc(note)}</p>` : ""}<ul class="tagrow">${scope.replace(/\.$/, "").split(" · ").map(x => `<li>${esc(x)}</li>`).join("")}</ul><p class="svc-go"><a class="btn" href="#service-${SKEYS[i]}" data-ev="service_cta_click" data-place="services_index" data-service="${SKEYS[i]}"><span>${esc(cta)}</span><span class="arr" aria-hidden="true">→</span></a></p></div></li>`).join("")}</ul></section>
+  <section class="sv-team"><p class="sv-teamtx">${esc(sp.team)}</p><p><button class="btn solid" type="button" data-open-form data-ev="primary_cta_click" data-place="services_index"><span>${esc(sp.cta)}</span><span class="arr" aria-hidden="true">→</span></button></p></section>`;
+}
+function renderServicePage(key){
+  const t = L(), sp = t.sp[key], idx = SKEYS.indexOf(key), el = $("#svPage"); if (!el || !sp) return;
+  const related = PROJ.filter(p => (PSVC[p.key] || []).includes(key)).map(p => p.key);
+  el.innerHTML = `<article class="sv">
+  <header class="sv-hero">${crumbs([[t.n_home, "#home"], [t.n_services, "#services"], [t.hs_items[idx][0], null]])}<p class="sv-eb">${esc(sp.eb)}</p><h1 class="sv-h1">${esc(sp.h1)}</h1><p class="sv-intro">${esc(sp.intro)}</p>
+    <p class="sv-act"><button class="btn solid" type="button" data-open-form data-ev="service_cta_click" data-place="service_hero" data-service="${key}"><span>${esc(sp.cta_b)}</span><span class="arr" aria-hidden="true">→</span></button><a class="btn" href="#projects"><span>${esc(t.h_cta2)}</span><span class="arr" aria-hidden="true">→</span></a></p></header>
+  ${sp.blocks.map((b, i) => `<section class="sv-b"><span class="num" aria-hidden="true">0${i+1}</span><h2>${esc(b.h)}</h2><div>${b.t ? `<p>${esc(b.t)}</p>` : ""}${b.list ? `<ul class="sv-list">${b.list.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</div></section>`).join("")}
+  ${related.length ? `<section class="sv-rel"><h2>${esc(sp.rel_h)}</h2><p>${esc(sp.rel_t)}</p><div class="pj-grid">${related.map(k => projCard(k, "h3")).join("")}</div></section>` : ""}
+  <section class="sv-faq"><h2>${esc(sentence(t.hf_lab))}</h2><div class="faq" id="svFaq"></div></section>
+  <section class="sv-cta"><h2>${esc(sp.cta_h)}</h2><p><button class="btn solid" type="button" data-open-form data-ev="service_cta_click" data-place="service_footer" data-service="${key}"><span>${esc(sp.cta_b)}</span><span class="arr" aria-hidden="true">→</span></button></p></section>
+  <nav class="sv-others" aria-label="${esc(t.n_services)}"><ul>${SKEYS.map((k, i) => k === key ? "" : `<li><a href="#service-${k}">${esc(t.hs_items[i][0])} <span aria-hidden="true">→</span></a></li>`).join("")}<li><a href="#services">${esc(t.sp_back)} <span aria-hidden="true">→</span></a></li></ul></nav></article>`;
+  renderFaq("#svFaq", sp.faq);
 }
 function renderServices(id, arr){ $(id).innerHTML = arr.map(([h, tg, p1, p2, tags], i) => `<li><span class="num">0${i+1}</span><h3>${esc(h)}</h3><div><p class="tgl">${esc(tg)}</p><p>${esc(p1)}</p><p>${esc(p2)}</p><ul class="tagrow">${tags.split(" · ").map(x => `<li>${esc(x)}</li>`).join("")}</ul></div></li>`).join(""); }
 function renderCards(id, arr){ $(id).innerHTML = arr.map(([h, p], i) => `<li><span class="num">0${i+1} / 0${arr.length}</span><h3>${esc(h)}</h3><p>${esc(p)}</p></li>`).join(""); }
@@ -152,6 +203,7 @@ function renderProject(key){
     <dl class="pj-facts"><div><dt>${esc(t.role_l2 || "Role")}</dt><dd>${esc(d.role)}</dd></div><div><dt>${esc(t.ctx_l2 || "Context")}</dt><dd>${esc(p[2])}</dd></div><div><dt>${esc(t.serv_l2 || "Services")}</dt><dd>${esc(p[5])}</dd></div><div><dt>${esc(t.per_l2 || "Period")}</dt><dd>${esc(d.years)}</dd></div></dl>
     <div class="pj-body"><h2>${esc(t.did_h2 || "What I did")}</h2><div><p>${esc(p[4])}</p></div></div>
     <div class="pj-gal">${svgWrap(key,1)}${svgWrap(key,2)}${svgWrap(key,3)}</div>
+    <aside class="pj-more"><h2>${esc(t.pj_sim_h)}</h2><p><button class="btn solid" type="button" data-open-form data-ev="case_to_contact_click" data-place="project" data-project="${key}"><span>${esc(t.cta_talk)}</span><span class="arr" aria-hidden="true">→</span></button></p><ul>${(PSVC[key] || []).map(k => `<li><a href="#service-${k}">${esc(t.hs_items[SKEYS.indexOf(k)][0])} <span aria-hidden="true">→</span></a></li>`).join("")}</ul></aside>
     <a class="pj-next" href="#project-${PROJ[nx].key}"><span class="k"><span>${esc(t.next)}</span><span aria-hidden="true">→</span></span><b>${esc(t.projects[nx][0])}</b></a>`;
   document.title = p[0] + " · Tom Fabre";
 }
@@ -238,31 +290,44 @@ const dlg = () => $("#dlg"); let draft = "";
 let qa = 0, qb = 0;
 function newQ(){ qa = 1 + Math.floor(Math.random() * 9); qb = 1 + Math.floor(Math.random() * 9); $("#fq").value = ""; setQ(); }
 function setQ(){ $("#fql").textContent = `${L().d_q} ${qa} + ${qb}?`; }
-function openForm(ev){ const prize = ev === true; $("#form").hidden = false; $("#dres").hidden = true; $("#dsent").hidden = true; $("#ferr").textContent = ""; newQ(); closeSheet(); closeChat();
+function openForm(opt){ const prize = opt === true, topic = opt && typeof opt === "object" && Number.isInteger(opt.topic) ? opt.topic : -1;
+  $("#form").hidden = false; $("#dres").hidden = true; $("#dsent").hidden = true; $("#ferr").textContent = ""; $("#fstat").textContent = ""; sending = false; newQ(); closeSheet(); closeChat();
   if (prize){ const t = L(); $("#ft").selectedIndex = 4; if (!$("#fm").value.trim()) $("#fm").value = t.prize_msg; }
+  else if (topic >= 0 && topic < $("#ft").options.length) $("#ft").selectedIndex = topic;
+  if (!formStarted){ formStarted = true; track("contact_form_start", { page: route_.page }); }
   if (dlg().showModal) dlg().showModal(); else dlg().setAttribute("open",""); }
+let sending = false, formStarted = false;
 function wireForm(){
-  $$("[data-open-form]").forEach(b => b.addEventListener("click", openForm));
+  document.addEventListener("click", e => { const b = e.target.closest && e.target.closest("[data-open-form]"); if (!b) return; e.preventDefault(); openForm(b.dataset.topic ? { topic:Number(b.dataset.topic) } : undefined); });
   $("#dclose").addEventListener("click", () => dlg().close());
   dlg().addEventListener("click", e => { if (e.target === dlg()) dlg().close(); });
+  dlg().addEventListener("close", () => { formStarted = false; });
+  const MAIL = /^\S+@\S+\.\S+$/;
   $("#form").addEventListener("submit", e => {
-    e.preventDefault(); const t = L(), n = $("#fn").value.trim(), m = $("#fe").value.trim(), msg = $("#fm").value.trim(), topic = $("#ft").selectedOptions[0].textContent;
+    e.preventDefault(); if (sending) return;
+    const t = L(), n = $("#fn").value.trim(), m = $("#fe").value.trim(), msg = $("#fm").value.trim(), topic = $("#ft").selectedOptions[0].textContent, budget = $("#fb") && $("#fb").value ? $("#fb").selectedOptions[0].textContent : "";
     const agent = !!e.agentInvoked && typeof e.respondWith === "function";
-    if (!n || !/^\S+@\S+\.\S+$/.test(m) || !msg) { $("#ferr").textContent = t.d_err; if (agent) e.respondWith(Promise.resolve({ content:[{ type:"text", text:"Missing or invalid fields: name, a valid email and a message are required." }], isError:true })); (!n ? $("#fn") : (!/^\S+@\S+\.\S+$/.test(m) ? $("#fe") : $("#fm"))).focus(); return; }
+    if (!n || !MAIL.test(m) || !msg){
+      const bad = !n ? $("#fn") : (!MAIL.test(m) ? $("#fe") : $("#fm"));
+      $("#ferr").textContent = (n && !MAIL.test(m)) ? t.d_mail_err : t.d_err;
+      if (agent) e.respondWith(Promise.resolve({ content:[{ type:"text", text:"Missing or invalid fields: name, a valid email and a message are required." }], isError:true }));
+      bad.focus(); return;
+    }
     if (!agent && parseInt($("#fq").value, 10) !== qa + qb) { $("#ferr").textContent = t.d_qerr; $("#fq").focus(); return; }
     if (agent) e.respondWith(Promise.resolve({ content:[{ type:"text", text:"Draft prepared. The visitor still has to open it in their email app or copy it; nothing was sent automatically." }] }));
-    draft = `${msg}\n\n— ${n} (${m})\n${topic}`;
+    draft = `${msg}\n\n— ${n} (${m})\n${topic}${budget ? "\n" + budget : ""}`;
+    const fallback = () => { $("#mailto").href = `mailto:${EMAIL}?subject=${encodeURIComponent(topic + " · " + n)}&body=${encodeURIComponent(draft)}`; $("#form").hidden = true; $("#dres").hidden = false; $("#dcopied").textContent = ""; };
     if (FORM_ENDPOINT && !agent){
-      if ($("#fh").value) return;
-      const sb = $("#form button[type=submit]"); sb.disabled = true; $("#ferr").textContent = "";
-      fetch(FORM_ENDPOINT, { method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" }, body:JSON.stringify({ name:n, email:m, topic, message:msg, _replyto:m, _subject:topic + " · " + n + " (portfolio)" }) })
-        .then(r => { if (!r.ok) throw 0; $("#form").hidden = true; $("#dsent").hidden = false; $("#form").reset(); })
-        .catch(() => { $("#ferr").textContent = t.d_fail; $("#mailto").href = `mailto:${EMAIL}?subject=${encodeURIComponent(topic + " · " + n)}&body=${encodeURIComponent(draft)}`; $("#form").hidden = true; $("#dres").hidden = false; $("#dcopied").textContent = ""; })
-        .finally(() => { sb.disabled = false; });
+      if ($("#fh").value) return;   /* honeypot */
+      const sb = $("#form button[type=submit]"), lab = sb.querySelector("[data-i]"), old = lab.textContent;
+      sending = true; sb.disabled = true; sb.setAttribute("aria-busy", "true"); lab.textContent = t.d_sending; $("#ferr").textContent = ""; $("#fstat").textContent = t.d_sending;
+      fetch(FORM_ENDPOINT, { method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" }, body:JSON.stringify({ name:n, email:m, topic, budget: budget || undefined, message:msg, _replyto:m, _subject:topic + " · " + n + " (portfolio)" }) })
+        .then(r => { if (!r.ok) throw 0; $("#form").hidden = true; $("#dsent").hidden = false; $("#form").reset(); $("#fstat").textContent = ""; track("contact_form_submit_success", { project_type: topic, budget_band: budget || undefined }); })
+        .catch(() => { $("#ferr").textContent = t.d_fail; $("#fstat").textContent = ""; fallback(); })
+        .finally(() => { sending = false; sb.disabled = false; sb.removeAttribute("aria-busy"); lab.textContent = old; });
       return;
     }
-    $("#mailto").href = `mailto:${EMAIL}?subject=${encodeURIComponent(topic + " · " + n)}&body=${encodeURIComponent(draft)}`;
-    $("#form").hidden = true; $("#dres").hidden = false; $("#dcopied").textContent = "";
+    fallback();
   });
   $("#dcopy").addEventListener("click", () => { const say = () => { $("#dcopied").textContent = L().d_done; };
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(draft).then(say, say); else say(); });
@@ -281,13 +346,15 @@ function parse(){
   if (PATHS){ const pl = parseLoc(location.pathname); return pl ? pl.r : { page:"home" }; }
   const h = location.hash.slice(1);
   if (h.startsWith("project-")) { const k = h.slice(8); if (PROJ.some(p => p.key === k)) return { page:"project", key:k }; }
-  return ["projects","bio","contact"].includes(h) ? { page:h } : { page:"home" };
+  if (h.startsWith("service-")) { const k = h.slice(8); if (SKEYS.includes(k)) return { page:"service", key:k }; }
+  return ["projects","services","bio","contact"].includes(h) ? { page:h } : { page:"home" };
 }
 function show(r){
-  route_ = r; const nav = r.page === "project" ? "projects" : r.page;
+  route_ = r; const nav = r.page === "project" ? "projects" : r.page === "service" ? "services" : r.page;
   $$(".page").forEach(p => { p.hidden = p.dataset.page !== r.page; });
   $$("[data-r]").forEach(a => { if (a.dataset.r === nav) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
-  if (r.page === "project") renderProject(r.key); else document.title = "Tom Fabre · Portfolio";
+  if (r.page === "project") renderProject(r.key); else if (r.page === "service") renderServicePage(r.key); else if (r.page === "services") renderServicesIndex(); else document.title = "Tom Fabre · Portfolio";
+  if (r.page === "project") track("project_view", { project_slug:r.key });
   closeSheet(); window.scrollTo(0, 0);
 }
 function route(first){
@@ -295,7 +362,7 @@ function route(first){
   show(r);
 }
 function goRoute(r, replace){
-  if (!PATHS){ location.hash = "#" + (r.page === "project" ? "project-" + r.key : r.page); return; }
+  if (!PATHS){ location.hash = "#" + (r.page === "project" ? "project-" + r.key : r.page === "service" ? "service-" + r.key : r.page); return; }
   const u = urlFor(r); if (u !== location.pathname) history[replace ? "replaceState" : "pushState"](null, "", u);
   route(false);
 }
@@ -381,7 +448,8 @@ function applyWhispers(){
 /* ---------- dual headlines (home, projects, bio, contact) ---------- */
 function syncDH(btn){
   const alt = btn.dataset.alt === "1";
-  btn.querySelector(".hm-a").setAttribute("aria-hidden", String(alt)); btn.querySelector(".hm-b").setAttribute("aria-hidden", String(!alt));
+  /* the alternate line is painted by CSS (data-t), so it is not in the DOM text: the real headline stays readable in both states */
+  btn.querySelector(".hm-b").setAttribute("aria-hidden", "true");
 }
 function wireHero(){
   const touch = matchMedia("(hover:none)"), rm = matchMedia("(prefers-reduced-motion:reduce)");
@@ -549,12 +617,16 @@ function applyLang(){
   t.serv_l2 = ({es:"Servicios",en:"Services",fr:"Services"})[lang];
   t.per_l2 = ({es:"Periodo",en:"Period",fr:"Période"})[lang];
   t.did_h2 = ({es:"Qué hice",en:"What I did",fr:"Ce que j'ai fait"})[lang];
-  renderStats(); renderServices("#svc", t.svc); renderSvc("#how", t.how); renderWork(); renderGrid(); renderBio(); renderCnext(); renderGame(); renderMarquee(); renderSocials();
-  animateStats(); armReveal();
+  renderHomeServices(); renderSvc("#how", t.hp_steps); renderAboutHome(); renderFaq("#faqHome", t.hf_items); renderWork(); renderGrid(); renderBio(); renderCnext(); renderGame(); renderMarquee(); renderSocials();
+  $$("[data-ti]").forEach(el => el.setAttribute("data-t", t[el.dataset.ti] || ""));
+  if (route_.page === "services") renderServicesIndex(); if (route_.page === "service") renderServicePage(route_.key);
+  armReveal();
   $$("[data-wi]").forEach(el => { el.dataset.w = t[el.dataset.wi] || ""; if (el.classList.contains("wr") || el.classList.contains("wup")) el.classList.add(el.classList.contains("wr") ? "wr" : "wup"); });
   splitHero(); renderStickers(); applyWhispers(); wireChars();
   // dialog topic select
-  $("#ft").innerHTML = t.topics.map(x => `<option>${esc(x)}</option>`).join("");
+  { const ft = $("#ft"), fb = $("#fb"), tv = ft.selectedIndex, bv = fb ? fb.selectedIndex : 0;
+    ft.innerHTML = t.topics.map(x => `<option>${esc(x)}</option>`).join(""); if (tv > 0 && tv < t.topics.length) ft.selectedIndex = tv;
+    if (fb){ fb.innerHTML = `<option value="">—</option>` + t.budget.map(x => `<option>${esc(x)}</option>`).join(""); if (bv > 0) fb.selectedIndex = bv; } }
   // language code
   $("#langCode").textContent = lang.toUpperCase();
   $("#howList").innerHTML = (t.game_rules || []).map(x => `<li>${esc(x)}</li>`).join("");

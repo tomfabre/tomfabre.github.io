@@ -5,7 +5,7 @@ SITE = "https://TU-DOMINIO.com"
 if "--site" in sys.argv: SITE = sys.argv[sys.argv.index("--site")+1].rstrip("/")
 DOMAIN = re.sub(r"^https?://", "", SITE)
 HERE = os.path.dirname(os.path.abspath(__file__)); os.chdir(HERE)
-JS = ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js"]
+JS = ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1t.js"]
 # 1) data from JS (T, PROJ, SEO)
 js = "\n".join(open(f).read() for f in JS) + "\n;globalThis.__out={T,PROJ,SEO};"
 open("/tmp/_d.js","w").write("const fs=require('fs'),vm=require('vm');const ctx={console};vm.createContext(ctx);vm.runInContext(fs.readFileSync('/tmp/_src.js','utf8').replace(/\\bconst /g,'var ').replace(/\\blet /g,'var '),ctx);fs.writeFileSync('/tmp/data.json',JSON.stringify(ctx.__out));")
@@ -16,42 +16,69 @@ EMAIL = "hola@tomfabre.com"
 today = datetime.date.today().isoformat()
 es, en, fr = T["es"], T["en"], T["fr"]
 PFX = {"es":"","en":"/en","fr":"/fr"}
-SLG = {"es":{"projects":"proyectos","bio":"bio","contact":"contacto"},"en":{"projects":"projects","bio":"bio","contact":"contact"},"fr":{"projects":"projets","bio":"bio","contact":"contact"}}
+SLG = {"es":{"projects":"proyectos","services":"servicios","bio":"bio","contact":"contacto"},"en":{"projects":"projects","services":"services","bio":"bio","contact":"contact"},"fr":{"projects":"projets","services":"services","bio":"bio","contact":"contact"}}
+SSLG = {"es":{"branding":"branding","web":"diseno-web","ux":"diseno-ux-ui"},"en":{"branding":"branding","web":"web-design","ux":"ux-ui-design"},"fr":{"branding":"branding","web":"design-web","ux":"design-ux-ui"}}
+SKEYS = ["branding","web","ux"]
+PSVC = {"contazara":["branding","web"],"carceral":["web"],"a2pas":["branding","web"],"happylife":["ux"],"binome":["branding","web"],"yaypegs":["ux"],"360estudio":["branding","web"],"figy":["ux"],"apolo":["ux"],"appy":["ux"],"mood":["ux"],"molyb":["ux"]}
 def path(lg, page="home", key=None):
     if page == "home": return PFX[lg] + "/"
     if page == "project": return f"{PFX[lg]}/{SLG[lg]['projects']}/{key}/"
+    if page == "service": return f"{PFX[lg]}/{SLG[lg]['services']}/{SSLG[lg][key]}/"
     return f"{PFX[lg]}/{SLG[lg][page]}/"
 def U(lg, page="home", key=None): return SITE + path(lg, page, key)
 def pj(lang, i): p = T[lang]["projects"][i]; d = PROJ[i]; return dict(slug=d["key"], name=p[0], category=p[1], context=p[2], summary=p[3], description=p[4], services=p[5], tagline=p[6] if len(p)>6 else "", role=d["role"], period=d["years"], url=U(lang,"project",d["key"]))
-# 2) JSON-LD
-person = {"@type":"Person","@id":f"{SITE}/#person","name":"Tom Fabre","alternateName":["Tom Fabre","Alvaro Fabre"],"jobTitle":"Product & Brand Designer","description":SEO_ES if (SEO_ES:=D["SEO"]["en"]["home_d"]) else "","url":f"{SITE}/","email":EMAIL,
-  "address":{"@type":"PostalAddress","addressLocality":"Madrid","addressCountry":"ES"},"homeLocation":{"@type":"Place","name":"Madrid","geo":{"@type":"GeoCoordinates","latitude":40.4168,"longitude":-3.7038}},
-  "worksFor":{"@id":f"{SITE}/#binome"},"knowsLanguage":["es","fr","en"],
-  "knowsAbout":["Branding","Brand identity","Web design","UX/UI design","Product design","Design systems","Art direction","Prototyping","Accessibility","Webflow"],
-  "sameAs":list(SOC.values())+["https://binome.xyz"],
-  "hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":s[0],"description":s[1]}} for s in en["svc"]]}}
-org = {"@type":"Organization","@id":f"{SITE}/#binome","name":"Binōme Studio","url":"https://binome.xyz","founder":{"@id":f"{SITE}/#person"},"address":{"@type":"PostalAddress","addressLocality":"Madrid","addressCountry":"ES"},"description":"Digital design studio in Madrid: web design, branding, UX/UI and motion."}
-site = {"@type":"WebSite","@id":f"{SITE}/#website","url":f"{SITE}/","name":"Tom Fabre","inLanguage":["es","en","fr"],"publisher":{"@id":f"{SITE}/#person"}}
-prof = {"@type":"ProfilePage","@id":f"{SITE}/#profile","isPartOf":{"@id":f"{SITE}/#website"},"mainEntity":{"@id":f"{SITE}/#person"},"dateModified":today}
+# 2) JSON-LD (only facts that are visible on the page; nothing invented: no ratings, reviews, employee counts or addresses beyond the city)
+HS = lambda lg: T[lg]["hs_items"]
+PERSON_ID, ORG_ID, SITE_ID = f"{SITE}/#person", f"{SITE}/#binome", f"{SITE}/#website"
+person = {"@type":"Person","@id":PERSON_ID,"name":"Tom Fabre","alternateName":"Álvaro Fabre","jobTitle":"Branding, web and product designer","description":D["SEO"]["en"]["home_d"],"url":f"{SITE}/","email":EMAIL,
+  "homeLocation":{"@type":"Place","name":"Madrid, Spain"},"knowsLanguage":["es","en","fr"],
+  "knowsAbout":["Branding","Brand identity","Web design","Web development","UX/UI design","Product design","Design systems","Art direction","Webflow"],
+  "sameAs":list(SOC.values()),"owns":{"@id":ORG_ID}}
+person.pop("owns")
+org = {"@type":"Organization","@id":ORG_ID,"name":"Binōme Studio","url":"https://binome.xyz","founder":{"@id":PERSON_ID}}
+site = {"@type":"WebSite","@id":SITE_ID,"url":f"{SITE}/","name":"Tom Fabre","inLanguage":["es","en","fr"],"publisher":{"@id":PERSON_ID}}
+def svc_node(lg, k):
+    i = SKEYS.index(k); n = HS(lg)[i]
+    return {"@type":"Service","@id":f"{SITE}/#service-{k}-{lg}","name":n[0],"serviceType":HS("en")[i][0],"description":n[2],"url":U(lg,"service",k),"inLanguage":lg,
+            "provider":{"@id":PERSON_ID},"areaServed":"Madrid, Spain (collaboration worldwide, remote)"}
+def faq_node(lg, items, url):
+    return {"@type":"FAQPage","@id":url+"#faq","url":url,"inLanguage":lg,"mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in items]}
 def ld(lg, r):
-    pr = dict(prof, url=U(lg), inLanguage=lg, name=D["SEO"][lg]["home_t"], description=D["SEO"][lg]["home_d"])
-    its = [{"@type":"ListItem","position":i+1,"item":{"@type":"CreativeWork","@id":f"{SITE}/#project-{PROJ[i]['key']}","name":pj(lg,i)["name"],"description":pj(lg,i)["summary"],"url":U(lg,"project",PROJ[i]['key']),"genre":pj(lg,i)["category"],"creator":{"@id":f"{SITE}/#person"},"inLanguage":lg}} for i in range(len(PROJ))]
-    pl = {"@type":"ItemList","@id":f"{SITE}/#projects","name":"Projects","numberOfItems":len(its),"itemListElement":its}
-    g = [site, person, org, pr, pl]
-    if r[0] != "home":
-        crumbs = [("Home" if lg!="es" else "Inicio", U(lg))]
-        if r[0] == "project": crumbs += [(T[lg]["n_work"], U(lg,"projects")), (T[lg]["projects"][[p["key"] for p in PROJ].index(r[1])][0], U(lg,"project",r[1]))]
-        else: crumbs.append((T[lg]["n_"+{"projects":"work","bio":"bio","contact":"contact"}[r[0]]], U(lg,r[0])))
+    page, key = r; S = D["SEO"][lg]; t = T[lg]; url = U(lg, page, key)
+    title, desc = meta_for(lg, page, key)
+    g = [site, person, org]
+    if page == "home":
+        g.append(faq_node(lg, t["hf_items"], url))
+    elif page == "projects":
+        its = [{"@type":"ListItem","position":i+1,"url":U(lg,"project",PROJ[i]["key"]),"name":pj(lg,i)["name"]} for i in range(len(PROJ))]
+        g.append({"@type":"CollectionPage","@id":url+"#page","url":url,"name":title,"description":desc,"inLanguage":lg,"isPartOf":{"@id":SITE_ID},"mainEntity":{"@type":"ItemList","numberOfItems":len(its),"itemListElement":its}})
+    elif page == "services":
+        g.append({"@type":"CollectionPage","@id":url+"#page","url":url,"name":title,"description":desc,"inLanguage":lg,"isPartOf":{"@id":SITE_ID},"mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"url":U(lg,"service",k),"name":HS(lg)[i][0]} for i,k in enumerate(SKEYS)]}})
+        g += [svc_node(lg,k) for k in SKEYS]
+    elif page == "service":
+        g.append(svc_node(lg,key)); g.append(faq_node(lg, t["sp"][key]["faq"], url))
+    elif page == "bio":
+        g.append({"@type":"ProfilePage","@id":url+"#page","url":url,"name":title,"description":desc,"inLanguage":lg,"isPartOf":{"@id":SITE_ID},"mainEntity":{"@id":PERSON_ID}})
+    elif page == "contact":
+        g.append({"@type":"ContactPage","@id":url+"#page","url":url,"name":title,"description":desc,"inLanguage":lg,"isPartOf":{"@id":SITE_ID},"about":{"@id":PERSON_ID}})
+    elif page == "project":
+        i = [q["key"] for q in PROJ].index(key); p = pj(lg,i)
+        g.append({"@type":"CreativeWork","@id":url+"#work","url":url,"name":p["name"],"description":p["summary"],"genre":p["category"],"inLanguage":lg,"creator":{"@id":PERSON_ID},"isPartOf":{"@id":SITE_ID}})
+    if page != "home":
+        home = ("Inicio" if lg=="es" else ("Accueil" if lg=="fr" else "Home"))
+        crumbs = [(home, U(lg))]
+        if page == "project": crumbs += [(t["n_work"], U(lg,"projects")), (pj(lg,[q["key"] for q in PROJ].index(key))["name"], url)]
+        elif page == "service": crumbs += [(t["n_services"], U(lg,"services")), (HS(lg)[SKEYS.index(key)][0], url)]
+        else: crumbs.append((t["n_"+{"projects":"work","services":"services","bio":"bio","contact":"contact"}[page]], url))
         g.append({"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":k+1,"name":n,"item":u} for k,(n,u) in enumerate(crumbs)]})
     return '<script type="application/ld+json">'+json.dumps({"@context":"https://schema.org","@graph":g},ensure_ascii=False,separators=(",",":"))+'</script>'
-ld_tag = ld("es",("home",))
+ld_tag = '<script type="application/ld+json">{"@context":"https://schema.org","@graph":[]}</script>'  # replaced per page in page_html()
 # 3) assemble html
 a = open("a.html").read().replace("<!--JSONLD-->", ld_tag).replace("%%SITE%%", SITE)
 b = open("b.html").read()
-body_js = "\n".join(open(f).read() for f in JS[:-1]) + "\n" + open("c2.js").read() + "\n" + open("c3.js").read()
 # c1s.js must precede c3; c2 doesn't need SEO
 open("yodis-data.js","w").write("const YODIS_DATA = " + json.dumps(json.load(open("conversations.json")), ensure_ascii=False) + ";")
-body_js = "\n".join(open(f).read() for f in ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1q.js","c1r.js","yodis-data.js","c2.js","c4.js","c3.js"])
+body_js = "\n".join(open(f).read() for f in ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1q.js","c1r.js","c1t.js","yodis-data.js","c2.js","c4.js","c3.js"])
 import base64, io
 from PIL import Image
 def imgjs(mode):
@@ -64,17 +91,18 @@ def imgjs(mode):
             out.setdefault(k, {})[v] = "data:image/webp;base64," + base64.b64encode(bio.getvalue()).decode()
     return "window.__IMG=" + json.dumps(out) + ";\n"
 IMGTOKEN = "/*IMG*/"
-html = a + b + "<script>\n" + IMGTOKEN + body_js + "\n</script>\n"
-open("index.html","w").write(html.replace(IMGTOKEN, imgjs("data")))
+html = a + "<!--BODY-->" + b + "<!--/BODY-->" + "<script>\n" + IMGTOKEN + body_js + "\n</script>\n"
+open("index.html","w").write(html.replace(IMGTOKEN, imgjs("data")).replace("<!--BODY-->","").replace("<!--/BODY-->",""))
 # 4) deploy pack
 dist = "dist"; shutil.rmtree(dist, ignore_errors=True); os.makedirs(dist+"/.well-known")
 LOCALE = {"es":"es_ES","en":"en_GB","fr":"fr_FR"}
-ROUTES = [("home",None),("projects",None),("bio",None),("contact",None)] + [("project",p["key"]) for p in PROJ]
+ROUTES = [("home",None),("projects",None),("services",None)] + [("service",k) for k in SKEYS] + [("bio",None),("contact",None)] + [("project",p["key"]) for p in PROJ]
 def meta_for(lg, page, key):
     S = D["SEO"][lg]
     if page == "project":
         p = T[lg]["projects"][[q["key"] for q in PROJ].index(key)]
         return p[0] + " · " + S["name"] + " · " + p[1], p[3]
+    if page == "service": return S["svc_"+key+"_t"], S["svc_"+key+"_d"]
     return S[page+"_t"], S[page+"_d"]
 def sub1(pat, rep, h): 
     n = re.subn(pat, lambda m: rep, h, count=1); assert n[1] == 1, pat; return n[0]
@@ -95,17 +123,6 @@ def page_html(lg, page, key):
     hre = "".join(f'<link rel="alternate" hreflang="{o}" href="{U(o,page,key)}">' for o in ("es","en","fr")) + f'<link rel="alternate" hreflang="x-default" href="{U("es",page,key)}">'
     h = sub1(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{U(lg,page,key)}">{hre}<meta name="af-paths" content="1">{alts}', h)
     h = h.replace('href="cv-alvaro-fabre.pdf"','href="/cv-alvaro-fabre.pdf"').replace('cvUrl:"cv-alvaro-fabre.pdf"','cvUrl:"/cv-alvaro-fabre.pdf"')
-    # no-JS content
-    t = T[lg]; nav = "".join(f'<li><a href="{path(lg,pg)}">{t[k]}</a></li>' for pg,k in (("home","n_home"),("projects","n_work"),("bio","n_bio"),("contact","n_contact")))
-    langs = "".join(f'<li><a href="{path(o,page,key)}" hreflang="{o}" lang="{o}">{ {"es":"Español","en":"English","fr":"Français"}[o] }</a></li>' for o in ("es","en","fr"))
-    body = f"<h1>{e(title.split(' · ')[0])}</h1><p>{e(desc)}</p>"
-    if page == "project":
-        p = t["projects"][[q["key"] for q in PROJ].index(key)]; body += f"<p>{e(p[4])}</p><p>{e(p[5])}</p>"
-    if page in ("home","projects"):
-        body += "<ul>" + "".join(f'<li><a href="{path(lg,"project",q["key"])}">{e(t["projects"][i][0])}</a> — {e(t["projects"][i][1])}</li>' for i,q in enumerate(PROJ)) + "</ul>"
-    body += f'<p><a href="mailto:{EMAIL}">{EMAIL}</a></p>'
-    ns = f'<noscript><nav><ul>{nav}</ul><ul>{langs}</ul></nav><main>{body}</main></noscript>'
-    h = h.replace('<a class="skip"', ns + '<a class="skip"', 1)
     return f'<!doctype html>\n<html lang="{lg}">\n<meta charset="utf-8">\n' + h
 npages = 0
 for lg in ("es","en","fr"):
@@ -116,7 +133,8 @@ open(dist+"/404.html","w").write('<!doctype html><html lang="es"><meta charset="
 shutil.copy("cv-alvaro-fabre.pdf", dist+"/cv-alvaro-fabre.pdf")
 # portfolio.json
 pf = {"name":"Tom Fabre","jobTitle":"Product & Brand Designer","location":"Madrid, Spain","studio":{"name":"Binōme Studio","url":"https://binome.xyz"},"languages":["es","fr","en"],"email":EMAIL,"profiles":[{"name":k,"url":v} for k,v in SOC.items()],"cv":f"{SITE}/cv-alvaro-fabre.pdf","updated":today,
-  "services":{l:[{"name":s[0],"tagline":s[1],"summary":s[2],"tags":s[4]} for s in T[l]["svc"]] for l in ("es","en","fr")},
+  "services":{l:[{"name":s[0],"tagline":s[1],"summary":s[2],"scope":s[3],"url":U(l,"service",SKEYS[i])} for i,s in enumerate(T[l]["hs_items"])] for l in ("es","en","fr")},
+  "faq":{l:[{"question":q,"answer":a} for q,a in T[l]["hf_items"]] for l in ("es","en","fr")},
   "projects":{l:[pj(l,i) for i in range(len(PROJ))] for l in ("es","en","fr")}}
 open(dist+"/portfolio.json","w").write(json.dumps(pf,ensure_ascii=False,indent=2))
 # llms.txt (llmstxt.org format)
@@ -131,7 +149,8 @@ L.append(""); L.append("## Projects"); L.append("")
 for i in range(len(PROJ)):
     p=pj("en",i); L.append(f"- [{p['name']}]({p['url']}): {p['category']}. {p['summary']}")
 L.append(""); L.append("## Services"); L.append("")
-for s in en["svc"]: L.append(f"- {s[0]}: {s[1]}")
+L.append(f"- [Services overview]({U('en','services')}): {en['sp']['idx']['h1']}")
+for i,s in enumerate(en["hs_items"]): L.append(f"- [{s[0]}]({U('en','service',SKEYS[i])}): {s[1]} {s[2]}")
 L.append(""); L.append("## Optional"); L.append("")
 L.append(f"- [Full content]({SITE}/llms-full.txt): Complete portfolio text in Spanish, English and French.")
 L.append(f"- [Portfolio data (JSON)]({SITE}/portfolio.json): Projects, services and profile links as structured data.")
@@ -144,10 +163,18 @@ names={"es":"Español","en":"English","fr":"Français"}
 for l in ("en","es","fr"):
     t=T[l]; F.append(f"## {names[l]}"); F.append("")
     F.append(f"### {t['bi_eyebrow']} — {t['bi_h']}"); F.append(""); F.append(t["bi_p1"]); F.append(""); F.append(t["bi_p2"]); F.append("")
-    F.append(f"### {t['stats_h'].replace(chr(10),' ')}"); F.append(""); F.append(t["stats_p"]); F.append("")
-    for s in t["stats"]: F.append(f"- {s[0]} {s[1]}")
-    F.append(""); F.append("### Services" if l=="en" else ("### Servicios" if l=="es" else "### Services")); F.append("")
-    for s in t["svc"]: F.append(f"#### {s[0]}"); F.append(f"{s[1]}"); F.append(""); F.append(s[2]); F.append(""); F.append(s[3]); F.append(f"Tags: {s[4]}"); F.append("")
+    F.append("### Services" if l!="es" else "### Servicios"); F.append("")
+    for i,s in enumerate(t["hs_items"]):
+        sp = t["sp"][SKEYS[i]]
+        F.append(f"#### {s[0]} — {sp['h1']}"); F.append(f"URL: {U(l,'service',SKEYS[i])}"); F.append(s[1]); F.append(""); F.append(sp["intro"]); F.append("")
+        for b in sp["blocks"]:
+            F.append(f"##### {b['h']}"); 
+            if b.get("t"): F.append(b["t"])
+            if b.get("list"): F.append("; ".join(b["list"]) + ".")
+            F.append("")
+        for q,a in sp["faq"]: F.append(f"Q: {q}"); F.append(f"A: {a}"); F.append("")
+    F.append("### FAQ" if l!="fr" else "### FAQ"); F.append("")
+    for q,a in t["hf_items"]: F.append(f"Q: {q}"); F.append(f"A: {a}"); F.append("")
     F.append("### Projects" if l!="es" else "### Proyectos"); F.append("")
     for i in range(len(PROJ)):
         p=pj(l,i); F.append(f"#### {p['name']} — {p['category']}"); F.append(f"URL: {p['url']}"); F.append(f"{p['tagline']}"); F.append(""); F.append(f"{p['summary']}"); F.append(""); F.append(p["description"]); F.append(f"Services: {p['services']} · Role: {p['role']} · Context: {p['context']}"); F.append("")
@@ -166,11 +193,11 @@ r="# Tom Fabre — AI and search crawlers are welcome\nUser-agent: *\nAllow: /\n
 open(dist+"/robots.txt","w").write(r)
 def sm_url(lg,page,key,pr):
     al = "".join(f'<xhtml:link rel="alternate" hreflang="{o}" href="{U(o,page,key)}"/>' for o in ("es","en","fr")) + f'<xhtml:link rel="alternate" hreflang="x-default" href="{U("es",page,key)}"/>'
-    return f"  <url><loc>{U(lg,page,key)}</loc><lastmod>{today}</lastmod><priority>{pr}</priority>{al}</url>\n"
+    return f"  <url><loc>{U(lg,page,key)}</loc><priority>{pr}</priority>{al}</url>\n"
 smx = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
 for lg in ("es","en","fr"):
-    for page, key in ROUTES: smx += sm_url(lg,page,key,{"home":"1.0","projects":"0.9","bio":"0.7","contact":"0.7"}.get(page,"0.8"))
-for f in ("cv-alvaro-fabre.pdf","llms.txt","portfolio.json"): smx += f"  <url><loc>{SITE}/{f}</loc><lastmod>{today}</lastmod><priority>0.3</priority></url>\n"
+    for page, key in ROUTES: smx += sm_url(lg,page,key,{"home":"1.0","projects":"0.9","services":"0.9","service":"0.9","bio":"0.7","contact":"0.7"}.get(page,"0.8"))
+for f in ("cv-alvaro-fabre.pdf","llms.txt","portfolio.json"): smx += f"  <url><loc>{SITE}/{f}</loc><priority>0.3</priority></url>\n"
 open(dist+"/sitemap.xml","w").write(smx + "</urlset>\n")
 open(dist+"/favicon.svg","w").write('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197 197"><style>.m{fill:#2C2C2C}@media (prefers-color-scheme:dark){.m{fill:#FDF9F0}}</style><g class="m"><path d="M74.4922 143.792L74.4922 196.043H121.542V162.007C121.542 160.627 120.704 159.366 119.375 158.749L80.1675 140.534C77.5602 139.323 74.4922 141.085 74.4922 143.792Z"/><path d="M0 0V43.7115H74.4949V87.539C74.4949 90.2459 77.5629 92.008 80.1702 90.7969L119.378 72.5815C120.706 71.9645 121.544 70.7033 121.544 69.3236V43.7115H196.039V0H0Z"/><path d="M101.893 119.741L158.398 145.993C161.658 147.507 165.493 145.305 165.493 141.92V89.416C165.493 86.0307 161.658 83.8292 158.398 85.3431L101.893 111.595C98.2806 113.273 98.2806 118.063 101.893 119.741Z"/></g></svg>')
 open(dist+"/manifest.webmanifest","w").write(json.dumps({"name":"Tom Fabre","short_name":"Tom Fabre","start_url":"/","display":"browser","background_color":"#FDF9F0","theme_color":"#FDF9F0","icons":[{"src":"/favicon.svg","sizes":"any","type":"image/svg+xml"}]},ensure_ascii=False,indent=2))
@@ -179,3 +206,8 @@ print("built", SITE, len(html), npages, "pages")
 
 shutil.copytree("img", dist + "/img"); open(dist + "/.nojekyll", "w").close()
 for f in glob.glob("extras/*"): shutil.copy(f, dist + "/" + f.split("/")[-1])
+
+# 5) prerender (needs node + playwright). Skip with --no-prerender for quick previews; never deploy a dist without it.
+if "--no-prerender" not in sys.argv:
+    rep = os.environ.get("PRERENDER_REPORT", "/tmp/prerender-report.json")
+    subprocess.check_call(["node", "prerender.js", dist, rep])

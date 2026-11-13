@@ -40,79 +40,162 @@
     "es": [
       {
         "name": "Branding & identidad",
-        "tagline": "Que te reconozcan. Incluso antes de leer tu nombre.",
-        "summary": "Una marca no es simplemente un logo bonito. Es una forma de contar quién eres, qué te hace diferente y por qué alguien debería elegirte.",
-        "tags": "Estrategia de marca · Identidad visual · Dirección de arte · Sistemas de marca"
+        "tagline": "Una marca que tenga algo que decir.",
+        "summary": "Creo y transformo identidades para que las marcas se reconozcan, se diferencien y conecten con las personas adecuadas.",
+        "scope": "Estrategia de marca · Identidad visual · Rebranding · Dirección de arte · Sistemas de marca.",
+        "url": "https://tomfabre.github.io/servicios/branding/"
       },
       {
-        "name": "Diseño & desarrollo web",
-        "tagline": "Tu web debería trabajar tanto como tú.",
-        "summary": "Tienes pocos segundos para despertar interés. Hagamos que cuenten.",
-        "tags": "UX/UI · Webflow · Desarrollo web · Responsive · SEO técnico"
+        "name": "Web & desarrollo",
+        "tagline": "Una buena web tiene que hacer más que verse bien.",
+        "summary": "Diseño y desarrollo webs que comunican con claridad, funcionan sin complicaciones y ayudan a convertir visitas en oportunidades.",
+        "scope": "Diseño web · Webflow · Shopify · WordPress · Framer · Desarrollo a medida.",
+        "url": "https://tomfabre.github.io/servicios/diseno-web/"
       },
       {
-        "name": "Product Design & UX/UI",
-        "tagline": "Menos fricción. Más ganas de volver.",
-        "summary": "Los mejores productos no necesitan explicarse demasiado. Simplemente hacen que todo tenga sentido.",
-        "tags": "UX Research · User Flows · Prototipos · Testing · Interfaces · Design Systems"
-      },
-      {
-        "name": "Estrategia & dirección creativa",
-        "tagline": "Primero encontramos el sentido. Después le damos forma.",
-        "summary": "A veces el problema no es el diseño. Es que todavía no está claro qué quieres contar, a quién o por qué debería importarle.",
-        "tags": "Discovery · Estrategia digital · Concepto creativo · Experiencia de marca"
+        "name": "Producto digital, UX/UI & estrategia digital",
+        "tagline": "Menos fricción. Más sentido.",
+        "summary": "Diseño y mejoro experiencias digitales para que sean intuitivas, útiles y fáciles de usar, sin perder de vista los objetivos del negocio.",
+        "scope": "UX research · Interfaces · Prototipos · Design systems · Auditorías UX · Estrategia de producto.",
+        "url": "https://tomfabre.github.io/servicios/diseno-ux-ui/"
       }
     ],
     "en": [
       {
-        "name": "Branding & Identity",
-        "tagline": "Be recognised. Before they even read your name.",
-        "summary": "A brand is more than a good-looking logo. It's how you tell people who you are, what makes you different and why they should care.",
-        "tags": "Brand strategy · Visual identity · Art direction · Brand systems"
+        "name": "Branding & identity",
+        "tagline": "A brand with something to say.",
+        "summary": "I build and evolve brand identities that help businesses become recognizable, stand apart and connect with the right people.",
+        "scope": "Brand strategy · Visual identity · Rebranding · Art direction · Brand systems.",
+        "url": "https://tomfabre.github.io/en/services/branding/"
       },
       {
-        "name": "Web Design & Development",
-        "tagline": "Your website should work as hard as you do.",
-        "summary": "You've got seconds to make an impression. Let's make them count.",
-        "tags": "UX/UI · Webflow · Web development · Responsive design · Technical SEO"
+        "name": "Web design & development",
+        "tagline": "A good website should do more than look good.",
+        "summary": "I design and build websites that communicate clearly, work smoothly and help turn visits into opportunities.",
+        "scope": "Web design · Webflow · Shopify · WordPress · Framer · Custom development.",
+        "url": "https://tomfabre.github.io/en/services/web-design/"
       },
       {
-        "name": "Product Design & UX/UI",
-        "tagline": "Less friction. More reasons to come back.",
-        "summary": "Great products don't need much explaining. They just make sense.",
-        "tags": "UX Research · User flows · Prototyping · Testing · Interfaces · Design systems"
-      },
-      {
-        "name": "Strategy & Creative Direction",
-        "tagline": "Find the meaning. Then make it matter.",
-        "summary": "Sometimes design isn't the problem. The real challenge is knowing what you're trying to say, who you're talking to and why anyone should care.",
-        "tags": "Discovery · Digital strategy · Creative concepts · Brand experience"
+        "name": "Digital product, UX/UI & digital strategy",
+        "tagline": "Less friction. More purpose.",
+        "summary": "I design and improve digital experiences so they're intuitive, useful and easy to navigate, without losing sight of business goals.",
+        "scope": "UX research · Interfaces · Prototypes · Design systems · UX audits · Product strategy.",
+        "url": "https://tomfabre.github.io/en/services/ux-ui-design/"
       }
     ],
     "fr": [
       {
-        "name": "Branding & Identité",
-        "tagline": "Être reconnu. Avant même qu'on lise votre nom.",
-        "summary": "Une marque, ce n'est pas simplement un beau logo. C'est une façon de raconter qui vous êtes, ce qui vous rend unique et pourquoi on devrait vous choisir.",
-        "tags": "Stratégie de marque · Identité visuelle · Direction artistique · Systèmes de marque"
+        "name": "Branding & identité",
+        "tagline": "Une marque qui a quelque chose à dire.",
+        "summary": "Je crée et fais évoluer des identités qui rendent les marques reconnaissables, singulières et proches des bonnes personnes.",
+        "scope": "Stratégie de marque · Identité visuelle · Rebranding · Direction artistique · Systèmes de marque.",
+        "url": "https://tomfabre.github.io/fr/services/branding/"
       },
       {
-        "name": "Web Design & Développement",
-        "tagline": "Votre site devrait travailler autant que vous.",
-        "summary": "Quelques secondes suffisent pour faire une première impression. Autant bien les utiliser.",
-        "tags": "UX/UI · Webflow · Développement web · Responsive · SEO technique"
+        "name": "Web & développement",
+        "tagline": "Un bon site doit faire plus qu'être beau.",
+        "summary": "Je conçois et développe des sites clairs, agréables à utiliser et pensés pour transformer les visites en opportunités.",
+        "scope": "Design web · Webflow · Shopify · WordPress · Framer · Développement sur mesure.",
+        "url": "https://tomfabre.github.io/fr/services/design-web/"
       },
       {
-        "name": "Product Design & UX/UI",
-        "tagline": "Moins de friction. Plus de plaisir à revenir.",
-        "summary": "Les meilleurs produits n'ont pas besoin de longues explications. Tout semble naturel.",
-        "tags": "Recherche UX · Parcours utilisateurs · Prototypage · Tests · Interfaces · Design systems"
+        "name": "Produit digital, UX/UI & stratégie digitale",
+        "tagline": "Moins de friction. Plus de sens.",
+        "summary": "Je conçois et améliore des expériences digitales intuitives et utiles, pensées pour les utilisateurs comme pour les objectifs de l'entreprise.",
+        "scope": "Recherche UX · Interfaces · Prototypes · Design systems · Audits UX · Stratégie produit.",
+        "url": "https://tomfabre.github.io/fr/services/design-ux-ui/"
+      }
+    ]
+  },
+  "faq": {
+    "es": [
+      {
+        "question": "¿En qué tipo de proyectos puedes ayudarme?",
+        "answer": "En branding e identidad, diseño y desarrollo web y producto digital. También puedo ayudarte a definir la estrategia antes de comenzar, si todavía no tienes claro qué necesitas."
       },
       {
-        "name": "Stratégie & Direction créative",
-        "tagline": "Trouver le sens. Puis lui donner forme.",
-        "summary": "Parfois, le problème n'est pas le design. C'est de savoir ce qu'on veut raconter, à qui on s'adresse et pourquoi cela devrait compter.",
-        "tags": "Discovery · Stratégie digitale · Concept créatif · Expérience de marque"
+        "question": "¿Trabajas solo o con un equipo?",
+        "answer": "Soy tu interlocutor principal y participo directamente en el trabajo. Si el proyecto necesita otras especialidades, puedo sumar a Binōme Studio y a profesionales de confianza con los que ya he colaborado."
+      },
+      {
+        "question": "¿Cuánto cuesta trabajar contigo?",
+        "answer": "Depende de los objetivos, el alcance y la complejidad del proyecto. Cuéntame lo que tienes en mente y prepararé una propuesta adaptada a lo que realmente necesitas."
+      },
+      {
+        "question": "¿Tengo que saber qué plataforma necesita mi web?",
+        "answer": "Para nada. Primero entendemos el proyecto y después elegimos la tecnología que mejor encaje, ya sea Webflow, Shopify, WordPress, Framer o una solución a medida."
+      },
+      {
+        "question": "¿Puedes mejorar una web o una marca que ya existe?",
+        "answer": "Claro. No todo necesita empezar de cero. A veces la mejor solución es identificar qué funciona, corregir lo que falla y construir a partir de ahí."
+      },
+      {
+        "question": "¿Trabajas con clientes fuera de España?",
+        "answer": "Sí. Trabajo desde Madrid con clientes de distintos lugares y puedo colaborar en español, inglés y francés."
+      },
+      {
+        "question": "¿Cómo empezamos a trabajar juntos?",
+        "answer": "Me cuentas brevemente qué necesitas. Hablamos del proyecto, valoramos su alcance y, si encajamos, definimos la mejor manera de trabajar juntos."
+      }
+    ],
+    "en": [
+      {
+        "question": "What kind of projects can you help with?",
+        "answer": "Branding and identity, web design and development, and digital product design. I can also help shape the strategy if you're not yet sure what you need."
+      },
+      {
+        "question": "Do you work alone or with a team?",
+        "answer": "I'm your main point of contact and work directly on the project. When other skills are needed, I can bring in Binōme Studio and trusted specialists I've collaborated with before."
+      },
+      {
+        "question": "How much does it cost to work with you?",
+        "answer": "It depends on your goals, scope and complexity. Tell me what you're planning and I'll put together a proposal around what you actually need."
+      },
+      {
+        "question": "Do I need to know which platform my website should use?",
+        "answer": "Not at all. We first understand the project, then choose the best fit—whether that's Webflow, Shopify, WordPress, Framer or a custom solution."
+      },
+      {
+        "question": "Can you improve an existing website or brand without starting over?",
+        "answer": "Absolutely. Starting from scratch isn't always the answer. Sometimes it's better to keep what works, fix what doesn't and build from there."
+      },
+      {
+        "question": "Do you work with clients outside Spain?",
+        "answer": "Yes. I'm based in Madrid and collaborate internationally in Spanish, English and French."
+      },
+      {
+        "question": "How do we get started?",
+        "answer": "Tell me a little about what you need. We'll discuss your goals and scope and, if we're a good fit, decide how best to work together."
+      }
+    ],
+    "fr": [
+      {
+        "question": "Sur quels types de projets pouvez-vous m'aider ?",
+        "answer": "Sur le branding et l'identité, le design et le développement web, ainsi que les produits digitaux. Je peux aussi vous aider à clarifier la stratégie si vous ne savez pas encore exactement ce qu'il vous faut."
+      },
+      {
+        "question": "Travaillez-vous seul ou en équipe ?",
+        "answer": "Je reste votre interlocuteur principal et je participe directement au projet. Si d'autres compétences sont nécessaires, je peux réunir Binōme Studio et des spécialistes de confiance avec lesquels j'ai déjà travaillé."
+      },
+      {
+        "question": "Combien coûte un projet avec vous ?",
+        "answer": "Cela dépend de vos objectifs, du périmètre et de la complexité. Racontez-moi ce que vous avez en tête et je préparerai une proposition adaptée à vos besoins réels."
+      },
+      {
+        "question": "Dois-je savoir quelle technologie choisir pour mon site ?",
+        "answer": "Pas du tout. On commence par comprendre le projet, puis on choisit la solution la plus adaptée : Webflow, Shopify, WordPress, Framer ou un développement sur mesure."
+      },
+      {
+        "question": "Pouvez-vous améliorer une marque ou un site existant sans tout refaire ?",
+        "answer": "Bien sûr. Repartir de zéro n'est pas toujours nécessaire. Parfois, il vaut mieux conserver ce qui fonctionne, corriger ce qui coince et avancer à partir de là."
+      },
+      {
+        "question": "Travaillez-vous avec des clients hors d'Espagne ?",
+        "answer": "Oui. Je suis basé à Madrid et je collabore à l'international en espagnol, anglais et français."
+      },
+      {
+        "question": "Comment commencer à travailler ensemble ?",
+        "answer": "Vous m'expliquez brièvement votre besoin. Nous échangeons sur les objectifs et le périmètre puis, si le courant passe, nous définissons la meilleure façon de collaborer."
       }
     ]
   },

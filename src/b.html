@@ -15,8 +15,9 @@
   <nav class="sheet-nav" id="snav" data-aria="nav_label">
     <a href="#home" data-r="home"><span class="num">01</span><span data-i="n_home"></span><span class="arr" aria-hidden="true">→</span></a>
     <a href="#projects" data-r="projects"><span class="num">02</span><span data-i="n_work"></span><span class="arr" aria-hidden="true">→</span></a>
-    <a href="#bio" data-r="bio"><span class="num">03</span><span data-i="n_bio"></span><span class="arr" aria-hidden="true">→</span></a>
-    <a href="#contact" data-r="contact"><span class="num">04</span><span data-i="n_contact"></span><span class="arr" aria-hidden="true">→</span></a>
+    <a href="#services" data-r="services"><span class="num">03</span><span data-i="n_services"></span><span class="arr" aria-hidden="true">→</span></a>
+    <a href="#bio" data-r="bio"><span class="num">04</span><span data-i="n_bio"></span><span class="arr" aria-hidden="true">→</span></a>
+    <a href="#contact" data-r="contact"><span class="num">05</span><span data-i="n_contact"></span><span class="arr" aria-hidden="true">→</span></a>
   </nav>
   <div class="sheet-foot">
     <span data-i="menu_foot"></span>
@@ -28,49 +29,56 @@
 <!-- HOME -->
 <div class="page" data-page="home"><div class="wrap">
   <section class="hmin" aria-labelledby="hmH">
-    <p class="avail"><span class="av-w" data-i="av_w"></span> <span data-i="av_r"></span></p>
+    <p class="avail"><span class="h-greet" data-i="h_greet"></span> <span class="av-w" data-i="av_w"></span> <span data-i="av_r"></span></p>
     <h1 class="hmega" id="hmH"><button type="button" class="hm-btn" id="hmBtn" aria-describedby="hmHint">
       <span class="hm-a" id="hmA"><span class="ln" data-i="hm_a1"></span><span class="ln l2" data-i="hm_a2"></span></span>
-      <span class="hm-b" id="hmB" aria-hidden="true"><span class="ln" data-i="hm_b1"></span><span class="ln l2" data-i="hm_b2"></span></span>
+      <span class="hm-b" id="hmB" aria-hidden="true"><span class="ln" data-ti="hm_b1"></span><span class="ln l2" data-ti="hm_b2"></span></span>
     </button></h1>
     <span class="sr-only" id="hmHint" data-i="hm_hint"></span>
+    <p class="h-intro" data-i="h_intro"></p>
+    <div class="h-cta"><a class="btn solid" href="#contact" data-ev="primary_cta_click" data-place="hero"><span data-i="h_cta1"></span><span class="arr" aria-hidden="true">→</span></a><a class="btn" href="#projects" data-ev="secondary_cta_click" data-place="hero"><span data-i="h_cta2"></span><span class="arr" aria-hidden="true">→</span></a></div>
+    <p class="h-ctx" data-i="h_ctx"></p>
     <button type="button" class="scroll-hint" id="scrollHint"><span data-i="scroll_l"></span><span class="ar" aria-hidden="true">↓</span></button>
   </section>
 
-  <section>
-    <div class="sec-head reveal"><span class="num">I</span><span class="lab" data-i="sec1"></span><h2 data-i="stats_h"></h2><p class="rh" data-i="stats_p"></p></div>
-    <div class="stats reveal-x" id="stats"></div>
+  <section id="work" aria-labelledby="hWorkH">
+    <div class="sec-head reveal"><span class="num">01</span><span class="lab" data-i="hw_lab"></span><h2 id="hWorkH" data-i="hw_h"></h2><p class="rh" data-i="hw_p"></p></div>
+    <ul class="idx reveal" id="workList"></ul>
+    <p style="margin-top:var(--s10)"><a class="btn" href="#projects"><span data-i="hw_cta"></span><span class="arr" aria-hidden="true">→</span></a></p>
   </section>
 
-  <section>
-    <div class="sec-head reveal"><span class="num">II</span><span class="lab" data-i="sec2"></span><h2 data-i="svc_h"></h2><p class="rh" data-i="svc_p"></p></div>
+  <section id="services" aria-labelledby="hSvcH">
+    <div class="sec-head reveal"><span class="num">02</span><span class="lab" data-i="hs_lab"></span><h2 id="hSvcH" data-i="hs_h"></h2><p class="rh" data-i="hs_p"></p></div>
     <ul class="svc-rows reveal" id="svc"></ul>
   </section>
 
-  <section>
-    <div class="sec-head reveal"><span class="num">III</span><span class="lab" data-i="sec3"></span><h2 data-i="work_h"></h2><p class="rh" data-i="work_p"></p></div>
-    <ul class="idx reveal" id="workList"></ul>
-    <p style="margin-top:var(--s10)"><a class="btn" href="#projects"><span data-i="all"></span><span class="arr" aria-hidden="true">→</span></a></p>
+  <section id="process" aria-labelledby="hProcH">
+    <div class="sec-head reveal"><span class="num">03</span><span class="lab" data-i="hp_lab"></span><h2 id="hProcH" data-i="hp_h"></h2><p class="rh" data-i="hp_p"></p></div>
+    <ol class="svc-list reveal" id="how"></ol>
   </section>
 
-  <section>
-    <div class="sec-head reveal"><span class="num">IV</span><span class="lab" data-i="sec4"></span><h2 data-i="how_h"></h2><p class="rh" data-i="how_p"></p></div>
-    <ul class="svc-list reveal" id="how"></ul>
-  </section>
+  <!-- Testimonials (Bible §05): intentionally absent until real, authorised quotes exist. -->
 
-  <section>
-    <div class="sec-head reveal"><span class="num">V</span><span class="lab" data-i="sec5"></span><h2 data-i="ab_h"></h2></div>
+  <section id="about" aria-labelledby="hAboutH">
+    <div class="sec-head reveal"><span class="num">04</span><span class="lab" data-i="ha_lab"></span><h2 id="hAboutH" data-i="ha_h"></h2></div>
     <div class="about-teaser reveal">
-      <p class="ab-quote" data-i="ab_quote"></p>
-      <div><h3 data-i="ab_hi"></h3><p data-i="ab_p"></p><p style="margin-top:var(--s6)"><a class="btn solid" href="#bio"><span data-i="about_cta"></span><span class="arr" aria-hidden="true">→</span></a></p></div>
+      <p class="ab-quote" data-i="ha_hi"></p>
+      <div class="ab-body"><div id="abP"></div><h3 data-i="ha_sub"></h3><p data-i="ha_txt"></p><p class="ab-cta"><a class="btn solid" href="#bio"><span data-i="ha_cta1"></span><span class="arr" aria-hidden="true">→</span></a><a class="btn" href="https://binome.xyz" target="_blank" rel="noopener"><span data-i="ha_cta2"></span><span class="arr" aria-hidden="true">↗</span></a></p></div>
     </div>
   </section>
 
-  <section>
-    <div class="sec-head reveal"><span class="num">VI</span><span class="lab" data-i="sec6"></span><h2 data-i="band_h"></h2><p class="rh" data-i="band_p"></p></div>
+  <section id="faq" aria-labelledby="hFaqH">
+    <div class="sec-head reveal"><span class="num">05</span><span class="lab" data-i="hf_lab"></span><h2 id="hFaqH" data-i="hf_h"></h2></div>
+    <div class="faq reveal" id="faqHome"></div>
+  </section>
+
+  <section id="contact-cta" aria-labelledby="hCtH">
+    <div class="sec-head reveal"><span class="num">06</span><span class="lab" data-i="hc_lab"></span><h2 id="hCtH" data-i="hc_h"></h2></div>
     <div class="cta-band reveal">
-      <p class="band-big" data-i="band_big"></p>
-      <div class="pack"><a class="btn solid" href="#contact"><span data-i="cta3"></span><span class="arr" aria-hidden="true">→</span></a><button class="btn" type="button" data-open-form data-i="cta4"></button></div>
+      <p class="band-big" data-i="hc_p"></p>
+      <div class="pack"><button class="btn solid" type="button" data-open-form data-ev="primary_cta_click" data-place="home_contact"><span data-i="hc_cta"></span><span class="arr" aria-hidden="true">→</span></button><a class="btn" href="#contact"><span data-i="n_contact"></span><span class="arr" aria-hidden="true">→</span></a></div>
+      <p class="band-sub"><span data-i="hc_mail"></span> <a class="ml-inline" href="mailto:hola@tomfabre.com" data-ev="email_click" data-place="home_contact">hola@tomfabre.com</a> · <button class="linklike" type="button" data-open-form data-topic="5" data-ev="collab_click" data-place="home_contact" data-i="hc_collab"></button></p>
+      <p class="band-loc" data-i="hc_loc"></p>
     </div>
   </section>
 </div></div>
@@ -81,7 +89,7 @@
     <div class="meta-top"><span data-i="port_l"></span><span class="r">2015 — 2026</span></div>
     <h1 class="hmega dh-s"><button type="button" class="hm-btn" aria-describedby="pjHint">
       <span class="hm-a"><span class="ln" data-i="pj_a1"></span><span class="ln l2" data-i="pj_a2"></span></span>
-      <span class="hm-b" aria-hidden="true"><span class="ln" data-i="pj_b1"></span><span class="ln l2" data-i="pj_b2"></span></span>
+      <span class="hm-b" aria-hidden="true"><span class="ln" data-ti="pj_b1"></span><span class="ln l2" data-ti="pj_b2"></span></span>
     </button></h1>
     <span class="sr-only" id="pjHint" data-i="hm_hint"></span>
     <p class="dh-p" data-i="pj_p"></p>
@@ -101,13 +109,19 @@
 <!-- PROJECT DETAIL -->
 <div class="page" data-page="project" hidden><div class="wrap"><section class="pj" id="pj"></section></div></div>
 
+<!-- SERVICES INDEX -->
+<div class="page" data-page="services" hidden><div class="wrap" id="svIdx"></div></div>
+
+<!-- SERVICE DETAIL -->
+<div class="page" data-page="service" hidden><div class="wrap" id="svPage"></div></div>
+
 <!-- BIO -->
 <div class="page" data-page="bio" hidden><div class="wrap">
   <section class="dh-sec hero95 bio-dh">
     <div class="meta-top" style="padding-top:0"><span data-i="n_bio"></span><span class="r wr" data-i="role_l" data-wi="w_role" tabindex="0"></span></div>
     <h1 class="hmega dh-s"><button type="button" class="hm-btn" aria-describedby="bioHint">
       <span class="hm-a"><span class="ln" data-i="bio_a1"></span><span class="ln l2" data-i="bio_a2"></span></span>
-      <span class="hm-b" aria-hidden="true"><span class="ln" data-i="bio_b1"></span><span class="ln l2" data-i="bio_b2"></span></span>
+      <span class="hm-b" aria-hidden="true"><span class="ln" data-ti="bio_b1"></span><span class="ln l2" data-ti="bio_b2"></span></span>
     </button></h1>
     <span class="sr-only" id="bioHint" data-i="hm_hint"></span>
     <div class="sticker s-mint" id="stickerBio" data-sticker="bio"></div>
@@ -179,7 +193,7 @@
     <div class="meta-top"><span data-i="n_contact"></span><span class="r">2026</span></div>
     <h1 class="hmega dh-s"><button type="button" class="hm-btn" aria-describedby="ctHint">
       <span class="hm-a"><span class="ln" data-i="ct_a1"></span><span class="ln l2" data-i="ct_a2"></span></span>
-      <span class="hm-b" aria-hidden="true"><span class="ln" data-i="ct_b1"></span><span class="ln l2" data-i="ct_b2"></span></span>
+      <span class="hm-b" aria-hidden="true"><span class="ln" data-ti="ct_b1"></span><span class="ln l2" data-ti="ct_b2"></span></span>
     </button></h1>
     <span class="sr-only" id="ctHint" data-i="hm_hint"></span>
         <div class="mail">
@@ -189,8 +203,8 @@
     </div>
   </section>
   <section class="ct-body">
-    <p class="contact-lead" data-i="c_p"></p>
-    <div class="c-actions"><button class="btn solid" type="button" data-open-form><span data-i="write"></span><span class="arr" aria-hidden="true">→</span></button><a class="btn" href="mailto:hola@tomfabre.com" data-i="write2"></a></div>
+    <p class="contact-lead" data-i="hc_p"></p>
+    <div class="c-actions"><button class="btn solid" type="button" data-open-form data-ev="primary_cta_click" data-place="contact_page"><span data-i="ct_client"></span><span class="arr" aria-hidden="true">→</span></button><button class="btn" type="button" data-open-form data-topic="5" data-ev="collab_click" data-place="contact_page"><span data-i="ct_collab"></span><span class="arr" aria-hidden="true">→</span></button><a class="btn ghost" href="mailto:hola@tomfabre.com" data-ev="email_click" data-place="contact_page"><span data-i="hc_mail"></span> hola@tomfabre.com</a></div>
     <div class="cnext"><h2 data-i="cn_h"></h2><ol id="cnext"></ol></div>
   </section>
 </div></div>
@@ -212,7 +226,7 @@
   </div>
   <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marq"></div></div>
 </div></section>
-<footer><div class="wrap"><span data-wi="w_copy" class="wup" tabindex="0">© 2026 · Tom Fabre / Álvaro Fabre</span><ul class="socials-foot" id="socialsFoot"></ul></div></footer>
+<footer><div class="wrap"><nav class="foot-nav" data-aria="nav_label"><a href="#projects" data-i="n_work"></a><a href="#services" data-i="n_services"></a><a href="#bio" data-i="n_bio"></a><a href="#contact" data-i="n_contact"></a></nav><p class="foot-strap" data-i="hc_strap"></p><span data-wi="w_copy" class="wup" tabindex="0">© 2026 · Tom Fabre / Álvaro Fabre</span><ul class="socials-foot" id="socialsFoot"></ul></div></footer>
 
 <button class="chatbtn" id="chatbtn" type="button" aria-expanded="false" aria-controls="chat" data-aria="chat_btn"><span class="spark" aria-hidden="true"></span><span class="cl" data-i="chat_btn"></span></button>
 <div class="chat" id="chat" role="dialog" aria-labelledby="chatT" aria-describedby="chatSub">
@@ -242,7 +256,7 @@
   <div class="win-confetti" id="confetti" aria-hidden="true"></div>
   <div class="win-inner">
     <span class="win-kicker" id="gameKicker"></span>
-    <h2 class="win-h" id="gameH"></h2>
+    <div class="win-h" id="gameH" role="heading" aria-level="2"></div>
     <p class="win-p" id="gameP"></p>
     <div class="prize"><b data-i="prize_t"></b><span data-i="prize_p"></span></div>
     <div class="win-actions">
@@ -261,10 +275,12 @@
     <div class="f"><label for="fn" data-i="d_name"></label><input id="fn" name="name" toolparamdescription="Sender full name." autocomplete="name" required></div>
     <div class="f"><label for="fe" data-i="d_mail"></label><input id="fe" name="email" toolparamdescription="Sender email address." type="email" autocomplete="email" required></div>
     <div class="f"><label for="ft" data-i="d_topic"></label><select id="ft" name="topic" toolparamdescription="What the message is about."></select></div>
-    <div class="f"><label for="fm" data-i="d_msg"></label><textarea id="fm" name="message" toolparamdescription="Message for Tom." required></textarea></div>
+    <div class="f"><label for="fm" data-i="d_msg"></label><textarea id="fm" name="message" aria-describedby="fmh" toolparamdescription="Message for Tom." required></textarea><span class="f-hint" id="fmh" data-i="d_msg_h"></span></div>
+    <div class="f"><label for="fb" data-i="d_budget"></label><select id="fb" name="budget" toolparamdescription="Optional budget band. Never required."></select></div>
     <div class="f"><label for="fq" id="fql"></label><input id="fq" name="human" inputmode="numeric" pattern="[0-9]*" autocomplete="off" required></div>
     <input type="text" name="_gotcha" id="fh" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
     <p class="err" id="ferr" role="alert"></p>
+    <p class="sr" id="fstat" role="status" aria-live="polite"></p>
     <button class="btn solid" type="submit" style="width:100%;justify-content:center"><span data-i="d_send"></span><span class="arr" aria-hidden="true">→</span></button>
   </form>
   <div class="d-res" id="dsent" hidden><p style="font-size:var(--lead,1.15rem)" role="status" data-i="d_sent"></p></div>

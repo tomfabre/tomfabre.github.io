@@ -27,10 +27,10 @@ The portfolio has real URLs per language: Spanish at the root, English under /en
 
 ## Services
 
-- Branding & Identity: Be recognised. Before they even read your name.
-- Web Design & Development: Your website should work as hard as you do.
-- Product Design & UX/UI: Less friction. More reasons to come back.
-- Strategy & Creative Direction: Find the meaning. Then make it matter.
+- [Services overview](https://tomfabre.github.io/en/services/): Three ways to move a good idea forward.
+- [Branding & identity](https://tomfabre.github.io/en/services/branding/): A brand with something to say. I build and evolve brand identities that help businesses become recognizable, stand apart and connect with the right people.
+- [Web design & development](https://tomfabre.github.io/en/services/web-design/): A good website should do more than look good. I design and build websites that communicate clearly, work smoothly and help turn visits into opportunities.
+- [Digital product, UX/UI & digital strategy](https://tomfabre.github.io/en/services/ux-ui-design/): Less friction. More purpose. I design and improve digital experiences so they're intuitive, useful and easy to navigate, without losing sight of business goals.
 
 ## Optional
 

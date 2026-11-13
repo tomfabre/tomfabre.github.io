@@ -12,48 +12,111 @@ I blend strategy, branding, digital design and technology to turn complex ideas 
 
 Moving between Latin America and Europe has shaped how I work: listening, questioning, connecting perspectives and finding solutions that make sense.
 
-### Not my first rodeo. Still learning every day.
-
-From industrial platforms to apps used by millions, I've worked with different businesses, brands and teams. One thing has stayed the same: making complex things feel simple.
-
-- 10+ years designing digital experiences.
-- 12 countries I've worked with, from Latin America to Europe.
-- 5M+ downloads for one of the apps I worked on.
-- 3 languages to collaborate, create and connect across borders.
-
 ### Services
 
-#### Branding & Identity
-Be recognised. Before they even read your name.
+#### Branding & identity — A strong brand doesn't start with a logo.
+URL: https://tomfabre.github.io/en/services/branding/
+A brand with something to say.
 
-A brand is more than a good-looking logo. It's how you tell people who you are, what makes you different and why they should care.
+It starts with knowing who you are, what sets you apart and how you want to be remembered. I help turn that understanding into a clear, distinctive identity designed to grow with you.
 
-I build identities with character, consistency and a story worth telling. Brands that feel just as right on a screen as they do in the real world.
-Tags: Brand strategy · Visual identity · Art direction · Brand systems
+##### When is it time to work on your brand?
+When you're launching, when your business has evolved beyond its current identity, or when your message no longer reflects what makes you different. Starting over isn't always necessary: first we identify what to keep and what to improve.
 
-#### Web Design & Development
-Your website should work as hard as you do.
+##### What we can build
+Brand strategy and positioning; Concept exploration; Visual identity and design system; Digital and physical applications; Brand guidelines; Implementation support depending on scope.
 
-You've got seconds to make an impression. Let's make them count.
+##### How I approach it
+We get to know the business and the people it wants to reach, agree on a direction, explore concepts and build a visual language that works far beyond a logo.
 
-I design and build websites that tell your story, build trust and make the next step feel effortless. Thoughtful experiences, strong visual identities and clear paths that help turn visitors into opportunities.
-Tags: UX/UI · Webflow · Web development · Responsive design · Technical SEO
+##### A brand has to work in the real world
+The identity should feel consistent whether it's on a website, in a presentation, on social media or anywhere your audience meets it.
 
-#### Product Design & UX/UI
-Less friction. More reasons to come back.
+Q: Do we need to change everything?
+A: Not necessarily. We'll first see what still works and what needs to evolve.
 
-Great products don't need much explaining. They just make sense.
+Q: Can you also build the website?
+A: Yes. We can combine brand and web in one project or tackle them as separate stages.
 
-I design apps and digital platforms around real people and real business goals. From understanding the problem to prototyping, testing and getting the experience ready to build.
-Tags: UX Research · User flows · Prototyping · Testing · Interfaces · Design systems
+Q: What will I receive?
+A: We'll define deliverables upfront based on how you'll actually use the identity.
 
-#### Strategy & Creative Direction
-Find the meaning. Then make it matter.
+#### Web design & development — Your website should work as hard as you do.
+URL: https://tomfabre.github.io/en/services/web-design/
+A good website should do more than look good.
 
-Sometimes design isn't the problem. The real challenge is knowing what you're trying to say, who you're talking to and why anyone should care.
+Looking good isn't enough. Your site should explain what you do, build trust, be effortless to navigate and help people take the next step. I design and develop around those goals.
 
-I help turn scattered ideas into a clear direction, connect the dots and make smarter decisions before the design work even begins.
-Tags: Discovery · Digital strategy · Creative concepts · Brand experience
+##### What kind of website do you need?
+From a focused landing page to a corporate site, editorial platform or online store. The right format depends on your business model, content, audience and goals.
+
+##### What I can help with
+Content strategy and information architecture; Responsive UX/UI; Development and integrations; Manageable CMS; Technical SEO and performance fundamentals; Redesign and optimization.
+
+##### The right tool, not the trendiest one
+Webflow is one of my main tools, but Shopify, WordPress, Framer or custom development may make more sense depending on your project. We define the needs first, then choose the stack.
+
+##### Designed for people and business
+From navigation to calls to action, I build experiences that help visitors understand, trust and do what matters—whether that's getting in touch, booking or buying.
+
+Q: Can I update the site myself?
+A: If that's important, we'll choose an appropriate editing setup and I'll show you how it works.
+
+Q: Is SEO included?
+A: Technical and structural SEO foundations can be included in scope; ongoing SEO strategy is quoted separately when needed.
+
+Q: Do you build online stores?
+A: Yes, we can evaluate e-commerce solutions such as Shopify based on requirements.
+
+#### Digital product, UX/UI & digital strategy — Easy to use shouldn't be hard to achieve.
+URL: https://tomfabre.github.io/en/services/ux-ui-design/
+Less friction. More purpose.
+
+A digital product works best when people know what to do and the business knows what matters. I help find friction, make sense of complex problems and design useful experiences for both.
+
+##### When I can help
+Whether you're starting a product, users struggle through key flows, or an existing interface needs rethinking. I can also help teams clarify direction before development begins.
+
+##### What we can work on
+UX research and audits; Product strategy and prioritization; Information architecture; User journeys and wireframes; Interface design; Prototypes and validation; Design systems and iterative improvement.
+
+##### Fewer assumptions. Better design decisions.
+I don't start by adding features. I start with the context, user needs and business priorities so we can focus on what brings the most value.
+
+##### How we collaborate
+I can contribute to a focused stage—an audit, a critical flow or a prototype—or work with your team across a broader product process.
+
+Q: Do I need an existing product?
+A: No. We can start with an idea or improve something already live.
+
+Q: Can you work with our development team?
+A: Yes. I can help with flows, prototypes, specifications and design follow-through depending on scope.
+
+Q: How do we decide what to fix first?
+A: We start with the problem, users and objectives to set sensible priorities.
+
+### FAQ
+
+Q: What kind of projects can you help with?
+A: Branding and identity, web design and development, and digital product design. I can also help shape the strategy if you're not yet sure what you need.
+
+Q: Do you work alone or with a team?
+A: I'm your main point of contact and work directly on the project. When other skills are needed, I can bring in Binōme Studio and trusted specialists I've collaborated with before.
+
+Q: How much does it cost to work with you?
+A: It depends on your goals, scope and complexity. Tell me what you're planning and I'll put together a proposal around what you actually need.
+
+Q: Do I need to know which platform my website should use?
+A: Not at all. We first understand the project, then choose the best fit—whether that's Webflow, Shopify, WordPress, Framer or a custom solution.
+
+Q: Can you improve an existing website or brand without starting over?
+A: Absolutely. Starting from scratch isn't always the answer. Sometimes it's better to keep what works, fix what doesn't and build from there.
+
+Q: Do you work with clients outside Spain?
+A: Yes. I'm based in Madrid and collaborate internationally in Spanish, English and French.
+
+Q: How do we get started?
+A: Tell me a little about what you need. We'll discuss your goals and scope and, if we're a good fit, decide how best to work together.
 
 ### Projects
 
@@ -175,48 +238,111 @@ Combino estrategia, branding, diseño digital y tecnología para convertir ideas
 
 Mi recorrido entre Latinoamérica y Europa ha marcado mi manera de trabajar: escuchar, cuestionar, conectar perspectivas y encontrar soluciones que tengan sentido.
 
-### No empecé ayer. Y sigo aprendiendo.
-
-De plataformas industriales a aplicaciones utilizadas por millones de personas. He trabajado con negocios, marcas y equipos muy diferentes, pero siempre con una misma idea: hacer que lo complejo parezca sencillo.
-
-- 10+ años diseñando experiencias digitales.
-- 12 países con los que he trabajado, de Latinoamérica a Europa.
-- 5M+ descargas de una de las aplicaciones en las que trabajé.
-- 3 idiomas para trabajar, colaborar y crear sin fronteras.
-
 ### Servicios
 
-#### Branding & identidad
-Que te reconozcan. Incluso antes de leer tu nombre.
+#### Branding & identidad — Una buena marca no empieza por un logo.
+URL: https://tomfabre.github.io/servicios/branding/
+Una marca que tenga algo que decir.
 
-Una marca no es simplemente un logo bonito. Es una forma de contar quién eres, qué te hace diferente y por qué alguien debería elegirte.
+Empieza por entender quién eres, qué te hace diferente y cómo quieres que te recuerden. Te ayudo a darle forma a esa idea y convertirla en una identidad coherente, reconocible y preparada para crecer.
 
-Creo identidades con carácter, coherencia y una historia detrás. Marcas que funcionan en una pantalla, en una conversación y en el mundo real.
-Tags: Estrategia de marca · Identidad visual · Dirección de arte · Sistemas de marca
+##### ¿Cuándo tiene sentido trabajar tu marca?
+Cuando tu negocio está naciendo, cuando ha cambiado pero su identidad se ha quedado atrás o cuando necesitas comunicar mejor lo que te diferencia. No siempre hace falta empezar de cero: primero vemos qué merece conservarse y qué necesita evolucionar.
 
-#### Diseño & desarrollo web
-Tu web debería trabajar tanto como tú.
+##### Qué podemos construir
+Estrategia y posicionamiento de marca; Exploración conceptual; Identidad visual y sistema gráfico; Aplicaciones digitales y físicas; Guías de uso; Acompañamiento de implementación según alcance.
 
-Tienes pocos segundos para despertar interés. Hagamos que cuenten.
+##### Cómo lo abordo
+Entender el negocio, conocer a las personas a las que quieres llegar, definir una dirección, explorar conceptos y construir un sistema visual que funcione más allá de un logo.
 
-Diseño y desarrollo webs que cuentan tu historia, transmiten confianza y hacen fácil dar el siguiente paso. Con una experiencia fluida, una identidad sólida y una estructura pensada para convertir visitas en oportunidades.
-Tags: UX/UI · Webflow · Desarrollo web · Responsive · SEO técnico
+##### Una marca también vive fuera del manual
+Me interesa cómo se aplica la identidad de verdad: en una web, en una presentación, en redes o en cualquier punto de contacto. Una buena idea tiene que mantenerse reconocible en todos ellos.
 
-#### Product Design & UX/UI
-Menos fricción. Más ganas de volver.
+Q: ¿Necesito cambiar todo?
+A: No necesariamente. Primero revisamos qué funciona y qué merece evolucionar.
 
-Los mejores productos no necesitan explicarse demasiado. Simplemente hacen que todo tenga sentido.
+Q: ¿Incluyes el diseño web?
+A: Podemos combinar marca y web en un mismo alcance o trabajar cada etapa por separado.
 
-Diseño aplicaciones y plataformas poniendo a las personas en el centro y los objetivos del negocio sobre la mesa. Desde entender el problema hasta prototipar, validar y preparar una solución lista para construir.
-Tags: UX Research · User Flows · Prototipos · Testing · Interfaces · Design Systems
+Q: ¿Qué entregables recibiré?
+A: Los definiremos antes de empezar según los usos y las necesidades de la marca.
 
-#### Estrategia & dirección creativa
-Primero encontramos el sentido. Después le damos forma.
+#### Web & desarrollo — Tu web debería trabajar tan bien como tú.
+URL: https://tomfabre.github.io/servicios/diseno-web/
+Una buena web tiene que hacer más que verse bien.
 
-A veces el problema no es el diseño. Es que todavía no está claro qué quieres contar, a quién o por qué debería importarle.
+Una web no tiene que limitarse a verse bien. Tiene que explicar lo que haces, transmitir confianza, ser sencilla de usar y facilitar que las personas den el siguiente paso. Diseño y desarrollo cada proyecto pensando en esas necesidades.
 
-Te ayudo a ordenar las ideas, encontrar oportunidades y construir una dirección creativa coherente. Para tomar mejores decisiones antes de invertir tiempo y dinero en ejecutarlas.
-Tags: Discovery · Estrategia digital · Concepto creativo · Experiencia de marca
+##### ¿Qué tipo de web necesitas?
+Desde una landing clara hasta una web corporativa, un sitio editorial o una tienda online. El formato correcto depende de tu modelo de negocio, contenido, audiencia y objetivos.
+
+##### Qué puedo hacer
+Estrategia de contenido y estructura; Diseño UX/UI responsive; Desarrollo e integraciones; CMS/autonomía de edición según plataforma; Fundamentos de SEO y rendimiento; Rediseño y optimización de webs existentes.
+
+##### La herramienta correcta, no la herramienta de moda
+Webflow es una de las plataformas con las que más trabajo, pero puedo valorar Shopify, WordPress, Framer o desarrollo a medida si encajan mejor con la complejidad y el crecimiento previsto. Primero definimos la necesidad y después la tecnología.
+
+##### Diseñar para el negocio y para las personas
+Pensamos los contenidos, la navegación, la accesibilidad y las llamadas a la acción para que sea fácil entender tu propuesta y contactar, comprar o hacer lo que corresponda.
+
+Q: ¿Puedo actualizar la web sin saber programar?
+A: Cuando sea una necesidad, elegiré una solución con un sistema de edición adecuado y te explicaré cómo utilizarla.
+
+Q: ¿Incluyes SEO?
+A: Incluyo una base técnica y estructural según alcance; una estrategia SEO continuada se presupuesta por separado cuando haga falta.
+
+Q: ¿También haces tiendas online?
+A: Sí, podemos valorar un e-commerce, especialmente con plataformas adecuadas como Shopify, en función del alcance.
+
+#### Producto digital, UX/UI & estrategia digital — Que sea fácil de usar no debería ser complicado.
+URL: https://tomfabre.github.io/servicios/diseno-ux-ui/
+Menos fricción. Más sentido.
+
+Un producto digital funciona mejor cuando sus usuarios entienden qué hacer y el negocio tiene claros sus objetivos. Te ayudo a detectar fricciones, ordenar problemas y diseñar experiencias que tengan sentido para ambos.
+
+##### ¿Cuándo puedo ayudarte?
+Si estás construyendo un nuevo producto, si tus usuarios se pierden en procesos complejos o si necesitas mejorar una interfaz que ya existe. También cuando el equipo necesita una dirección de diseño más clara antes de desarrollar.
+
+##### Qué podemos trabajar
+Investigación y diagnóstico UX; Estrategia de producto y priorización; Arquitectura de información; Flujos y wireframes; Diseño de interfaces; Prototipos y validación; Design systems y mejora continua.
+
+##### Menos pantallas por intuición. Más decisiones con sentido.
+No empiezo por añadir funciones: investigo el contexto, entiendo las necesidades y priorizo las soluciones que pueden aportar más valor. Diseño y tecnología deben ayudar a las personas, no complicarles la vida.
+
+##### Cómo colaboramos
+Puedo acompañar una etapa puntual —una auditoría, una mejora de flujo, un prototipo— o trabajar con tu equipo durante un proceso más amplio, según el alcance.
+
+Q: ¿Necesito un producto ya desarrollado?
+A: No. Podemos trabajar desde una idea o mejorar un producto existente.
+
+Q: ¿Puedes colaborar con un equipo de desarrollo?
+A: Sí. Puedo aportar estructura, prototipos, especificaciones y seguimiento, según el proyecto.
+
+Q: ¿Cómo sabemos qué mejorar primero?
+A: Empezamos con un diagnóstico del problema, usuarios y objetivos para decidir prioridades.
+
+### FAQ
+
+Q: ¿En qué tipo de proyectos puedes ayudarme?
+A: En branding e identidad, diseño y desarrollo web y producto digital. También puedo ayudarte a definir la estrategia antes de comenzar, si todavía no tienes claro qué necesitas.
+
+Q: ¿Trabajas solo o con un equipo?
+A: Soy tu interlocutor principal y participo directamente en el trabajo. Si el proyecto necesita otras especialidades, puedo sumar a Binōme Studio y a profesionales de confianza con los que ya he colaborado.
+
+Q: ¿Cuánto cuesta trabajar contigo?
+A: Depende de los objetivos, el alcance y la complejidad del proyecto. Cuéntame lo que tienes en mente y prepararé una propuesta adaptada a lo que realmente necesitas.
+
+Q: ¿Tengo que saber qué plataforma necesita mi web?
+A: Para nada. Primero entendemos el proyecto y después elegimos la tecnología que mejor encaje, ya sea Webflow, Shopify, WordPress, Framer o una solución a medida.
+
+Q: ¿Puedes mejorar una web o una marca que ya existe?
+A: Claro. No todo necesita empezar de cero. A veces la mejor solución es identificar qué funciona, corregir lo que falla y construir a partir de ahí.
+
+Q: ¿Trabajas con clientes fuera de España?
+A: Sí. Trabajo desde Madrid con clientes de distintos lugares y puedo colaborar en español, inglés y francés.
+
+Q: ¿Cómo empezamos a trabajar juntos?
+A: Me cuentas brevemente qué necesitas. Hablamos del proyecto, valoramos su alcance y, si encajamos, definimos la mejor manera de trabajar juntos.
 
 ### Proyectos
 
@@ -338,49 +464,111 @@ Je mêle stratégie, branding, design digital et technologie pour transformer de
 
 Mon parcours entre l'Amérique latine et l'Europe a façonné ma façon de travailler : écouter, questionner, relier les points de vue et trouver des solutions qui ont du sens.
 
-### Quelques années au compteur. Toujours aussi curieux.
-
-Des plateformes industrielles aux applications utilisées par des millions de personnes, j'ai travaillé avec des marques, des entreprises et des équipes très différentes.
-Avec toujours la même envie : rendre les choses complexes étonnamment simples.
-
-- 10+ ans à concevoir des expériences numériques.
-- 12 pays avec lesquels j'ai travaillé, de l'Amérique latine à l'Europe.
-- 5M+ de téléchargements pour l'une des applications sur lesquelles j'ai travaillé.
-- 3 langues pour imaginer, collaborer et créer sans frontières.
-
 ### Services
 
-#### Branding & Identité
-Être reconnu. Avant même qu'on lise votre nom.
+#### Branding & identité — Une bonne marque ne commence pas par un logo.
+URL: https://tomfabre.github.io/fr/services/branding/
+Une marque qui a quelque chose à dire.
 
-Une marque, ce n'est pas simplement un beau logo. C'est une façon de raconter qui vous êtes, ce qui vous rend unique et pourquoi on devrait vous choisir.
+Elle commence par une question : qui êtes-vous, qu'est-ce qui vous distingue et comment voulez-vous marquer les esprits ? Je vous aide à transformer cette réflexion en une identité claire, reconnaissable et faite pour évoluer.
 
-Je crée des identités avec du caractère, de la cohérence et une vraie histoire. Des marques qui trouvent leur place aussi bien sur un écran que dans la vraie vie.
-Tags: Stratégie de marque · Identité visuelle · Direction artistique · Systèmes de marque
+##### Quand faut-il repenser sa marque ?
+Au lancement d'une activité, lorsque l'entreprise évolue plus vite que son identité, ou lorsque son message ne reflète plus ce qui la rend différente. Il n'est pas toujours nécessaire de repartir de zéro : commençons par voir ce qui mérite d'être conservé.
 
-#### Web Design & Développement
-Votre site devrait travailler autant que vous.
+##### Ce que nous pouvons créer
+Stratégie et positionnement; Recherche de concepts; Identité visuelle et système graphique; Applications web et print; Guide de marque; Accompagnement à la mise en œuvre selon le périmètre.
 
-Quelques secondes suffisent pour faire une première impression. Autant bien les utiliser.
+##### Ma façon de procéder
+Nous prenons le temps de comprendre l'activité, les publics et les objectifs, puis nous définissons une direction, explorons des pistes et construisons un langage visuel qui va au-delà du logo.
 
-Je conçois et développe des sites qui racontent votre histoire, inspirent confiance et donnent envie de passer à l'action. Une expérience fluide, une identité affirmée et un parcours pensé pour transformer les visites en opportunités.
-Tags: UX/UI · Webflow · Développement web · Responsive · SEO technique
+##### Une marque doit vivre au-delà du guide
+Sur un site, dans une présentation, sur les réseaux et dans chaque point de contact, l'identité doit rester cohérente et reconnaissable.
 
-#### Product Design & UX/UI
-Moins de friction. Plus de plaisir à revenir.
+Q: Faut-il tout changer ?
+A: Pas forcément. Nous regarderons d'abord ce qui fonctionne et ce qui doit évoluer.
 
-Les meilleurs produits n'ont pas besoin de longues explications. Tout semble naturel.
+Q: Pouvez-vous aussi créer le site web ?
+A: Oui, nous pouvons réunir marque et web dans un même projet ou avancer par étapes.
 
-Je conçois des applications et des plateformes numériques en conciliant les besoins des utilisateurs et les objectifs de l'entreprise. De la compréhension du problème aux prototypes, aux tests et à la préparation du développement.
-Tags: Recherche UX · Parcours utilisateurs · Prototypage · Tests · Interfaces · Design systems
+Q: Quels livrables vais-je recevoir ?
+A: Ils seront définis dès le départ selon les usages et les besoins de votre marque.
 
-#### Stratégie & Direction créative
-Trouver le sens. Puis lui donner forme.
+#### Web & développement — Votre site devrait travailler aussi bien que vous.
+URL: https://tomfabre.github.io/fr/services/design-web/
+Un bon site doit faire plus qu'être beau.
 
-Parfois, le problème n'est pas le design. C'est de savoir ce qu'on veut raconter, à qui on s'adresse et pourquoi cela devrait compter.
+Un site ne doit pas seulement être beau. Il doit expliquer ce que vous faites, inspirer confiance, être simple à utiliser et faciliter le passage à l'action. Je le conçois et le développe avec ces objectifs en tête.
 
-Je vous aide à clarifier vos idées, identifier les opportunités et construire une direction créative cohérente. Pour faire les bons choix avant même de commencer à produire.
-Tags: Discovery · Stratégie digitale · Concept créatif · Expérience de marque
+##### De quel type de site avez-vous besoin ?
+Landing page, site vitrine, plateforme éditoriale ou boutique en ligne : le bon format dépend de votre activité, de vos contenus, de votre public et de vos objectifs.
+
+##### Ce que je peux prendre en charge
+Stratégie de contenu et architecture; UX/UI responsive; Développement et intégrations; CMS facile à administrer; Bases du SEO technique et de la performance; Refonte et optimisation.
+
+##### Le bon outil, pas celui à la mode
+Webflow fait partie de mes outils principaux, mais Shopify, WordPress, Framer ou un développement sur mesure peuvent être plus adaptés. On définit d'abord les besoins, puis la technologie.
+
+##### Pensé pour les personnes et l'entreprise
+Navigation, contenu, accessibilité, appels à l'action : l'objectif est que chacun comprenne votre proposition et puisse facilement vous contacter, réserver ou acheter.
+
+Q: Pourrai-je mettre à jour le site moi-même ?
+A: Si c'est un besoin, nous choisirons un outil d'édition adapté et je vous expliquerai son fonctionnement.
+
+Q: Le SEO est-il inclus ?
+A: Les fondations techniques et structurelles peuvent faire partie du périmètre; un accompagnement SEO continu se définit séparément.
+
+Q: Créez-vous des boutiques en ligne ?
+A: Oui, nous pouvons évaluer une solution e-commerce adaptée, notamment Shopify, selon le projet.
+
+#### Produit digital, UX/UI & stratégie digitale — Simple à utiliser ne devrait pas être compliqué à concevoir.
+URL: https://tomfabre.github.io/fr/services/design-ux-ui/
+Moins de friction. Plus de sens.
+
+Un produit digital fonctionne mieux quand les utilisateurs savent quoi faire et que l'entreprise sait où elle va. Je vous aide à identifier les frictions, clarifier les enjeux et concevoir des expériences utiles pour tous.
+
+##### Quand puis-je vous aider ?
+Pour créer un produit, simplifier un parcours complexe ou améliorer une interface existante. Je peux aussi aider une équipe à définir une direction de design avant le développement.
+
+##### Ce que nous pouvons travailler
+Recherche et audits UX; Stratégie produit et priorisation; Architecture de l'information; Parcours et wireframes; Interfaces; Prototypes et validation; Design systems et amélioration continue.
+
+##### Moins d'intuition gratuite. Plus de décisions pertinentes.
+Je ne commence pas par ajouter des fonctionnalités. Je m'intéresse au contexte, aux besoins des utilisateurs et aux priorités métier pour concentrer les efforts là où ils sont utiles.
+
+##### Notre façon de collaborer
+Je peux intervenir sur une étape précise —audit, parcours ou prototype— ou accompagner l'équipe sur un processus plus large selon les besoins.
+
+Q: Faut-il déjà avoir un produit ?
+A: Non. Nous pouvons partir d'une idée ou améliorer un produit existant.
+
+Q: Pouvez-vous collaborer avec nos développeurs ?
+A: Oui, sur les parcours, prototypes, spécifications et le suivi design selon le périmètre.
+
+Q: Comment savoir quoi améliorer en priorité ?
+A: Nous commençons par analyser le problème, les usages et les objectifs pour établir les priorités.
+
+### FAQ
+
+Q: Sur quels types de projets pouvez-vous m'aider ?
+A: Sur le branding et l'identité, le design et le développement web, ainsi que les produits digitaux. Je peux aussi vous aider à clarifier la stratégie si vous ne savez pas encore exactement ce qu'il vous faut.
+
+Q: Travaillez-vous seul ou en équipe ?
+A: Je reste votre interlocuteur principal et je participe directement au projet. Si d'autres compétences sont nécessaires, je peux réunir Binōme Studio et des spécialistes de confiance avec lesquels j'ai déjà travaillé.
+
+Q: Combien coûte un projet avec vous ?
+A: Cela dépend de vos objectifs, du périmètre et de la complexité. Racontez-moi ce que vous avez en tête et je préparerai une proposition adaptée à vos besoins réels.
+
+Q: Dois-je savoir quelle technologie choisir pour mon site ?
+A: Pas du tout. On commence par comprendre le projet, puis on choisit la solution la plus adaptée : Webflow, Shopify, WordPress, Framer ou un développement sur mesure.
+
+Q: Pouvez-vous améliorer une marque ou un site existant sans tout refaire ?
+A: Bien sûr. Repartir de zéro n'est pas toujours nécessaire. Parfois, il vaut mieux conserver ce qui fonctionne, corriger ce qui coince et avancer à partir de là.
+
+Q: Travaillez-vous avec des clients hors d'Espagne ?
+A: Oui. Je suis basé à Madrid et je collabore à l'international en espagnol, anglais et français.
+
+Q: Comment commencer à travailler ensemble ?
+A: Vous m'expliquez brièvement votre besoin. Nous échangeons sur les objectifs et le périmètre puis, si le courant passe, nous définissons la meilleure façon de collaborer.
 
 ### Projects
 

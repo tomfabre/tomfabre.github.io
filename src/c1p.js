@@ -14,7 +14,7 @@ PROJ.push(
   {key:"mood", role:"Senior UX/UI Designer", years:"2018–2022"},
   {key:"molyb", role:"UX/UI Designer", years:"2015–2017"}
 );
-const HOME_PROJECTS = 5;
+const HOME_PROJECTS = 4;
 // [name, category, context, short, long, services, tagline]
 const NP = {
 es: (() => { const o = T.es.projects; return [

@@ -857,6 +857,83 @@ a.bt:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
 @media (hover:none){.art img,.pj-cover img{filter:none}}
 .portrait img{display:block;width:100%;height:100%;object-fit:cover}
 .pj-cover img,.pj-gal .art img{filter:none!important}
+
+/* ===== Portfolio 2.0 additions (same tokens, same type; nothing here changes the palette or the font) ===== */
+ol{list-style:none;margin:0;padding:0}
+/* hero: the alternate headline is painted from data-t so it never enters the DOM text (single, complete H1 for crawlers and screen readers) */
+.hm-b .ln::before{content:attr(data-t)}
+.hmin .h-greet{color:var(--fg);margin-right:.7em}
+.h-intro{max-width:50ch;margin-top:var(--s8);font-size:clamp(1.05rem,.8vw + .9rem,1.4rem);line-height:1.5;color:var(--muted);font-weight:300}
+.h-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:var(--s8)}
+.h-ctx{margin-top:var(--s6);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hmin .h-intro,.hmin .h-cta,.hmin .h-ctx{animation:rise 900ms var(--ease) 300ms both}
+/* services rows (home + index) */
+.svc-rows h2{font-size:var(--h2);line-height:1.05;letter-spacing:-.02em}
+.svc-note{color:var(--fg)!important;font-weight:500!important}
+.svc-go{margin-top:var(--s6)}
+.svc-rows .svc-go p,.svc-go{max-width:none}
+/* home about */
+.ab-body #abP p{margin-bottom:var(--s4)}
+.ab-body h3{margin-top:var(--s8)}
+.ab-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:var(--s6)}
+/* FAQ (native details/summary: keyboard + assistive tech out of the box) */
+.faq{border-bottom:1px solid var(--line2)}
+.faq-i{border-top:1px solid var(--line2)}
+.faq-i summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:var(--s6);padding-block:var(--s6);cursor:pointer;font-size:clamp(1.1rem,1vw + .85rem,1.6rem);font-weight:600;letter-spacing:-.015em;line-height:1.2}
+.faq-i summary::-webkit-details-marker{display:none}
+.faq-i summary:focus-visible{outline:2px solid var(--fg);outline-offset:4px;border-radius:.4rem}
+.faq-i .pm{position:relative;flex:none;width:1.1rem;height:1.1rem}
+.faq-i .pm::before,.faq-i .pm::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;margin-top:-.75px;background:currentColor;transition:transform var(--normal) var(--ease)}
+.faq-i .pm::after{transform:rotate(90deg)}
+.faq-i[open] .pm::after{transform:rotate(0)}
+.faq-a{padding:0 0 var(--s8);max-width:62ch;color:var(--muted);line-height:1.6;font-weight:300}
+.faq-a p{max-width:none}
+/* contact band */
+.band-sub{margin-top:var(--s6);color:var(--muted);line-height:1.6;grid-column:1/-1}
+.ml-inline,.linklike{color:var(--fg);text-decoration:underline;text-underline-offset:.2em;background:none;border:0;padding:0;font:inherit;cursor:pointer}
+.ml-inline:hover,.linklike:hover{text-decoration-thickness:2px}
+.linklike:focus-visible,.ml-inline:focus-visible{outline:2px solid var(--fg);outline-offset:3px;border-radius:.3rem}
+.band-loc{grid-column:1/-1;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.c-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+/* footer */
+.foot-nav{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem}
+.foot-strap{flex-basis:100%;text-transform:none;letter-spacing:0;font-size:.9rem;color:var(--muted)}
+/* breadcrumbs */
+.crumbs{margin-bottom:var(--s8)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:.2rem .6rem;font-size:.82rem;color:var(--muted)}
+.crumbs li+li::before{content:"/";margin-right:.6rem;opacity:.6}
+.crumbs a{color:var(--muted);text-decoration:underline;text-underline-offset:.2em}
+.crumbs a:hover,.crumbs a:focus-visible{color:var(--fg)}
+/* services pages */
+.sv-hero{padding-block:calc(var(--hh,5.75rem) + var(--s8)) var(--s16)}
+.sv-eb{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.sv-h1{font-size:clamp(2.2rem,6.4vw,6.2rem);line-height:.98;letter-spacing:-.045em;font-weight:600;margin-top:var(--s6);max-width:18ch;word-break:keep-all;hyphens:manual}
+.sv-intro{max-width:54ch;margin-top:var(--s8);font-size:clamp(1.1rem,.8vw + .95rem,1.5rem);line-height:1.5;color:var(--muted);font-weight:300}
+.sv-act{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:var(--s10)}
+.sv-b{display:grid;grid-template-columns:1fr;gap:var(--s4);border-top:1px solid var(--line2);padding-block:var(--s12)}
+@media (min-width:52rem){.sv-b{grid-template-columns:3rem 1fr 1.4fr;gap:var(--s8)}}
+.sv-b .num{font-size:.85rem;color:var(--muted);letter-spacing:.14em;font-variant-numeric:tabular-nums}
+.sv-b h2{font-size:var(--h2);line-height:1.05;letter-spacing:-.02em}
+.sv-b p{color:var(--muted);line-height:1.6;font-weight:300;max-width:54ch;font-size:clamp(1.05rem,.5vw + .9rem,1.25rem)}
+.sv-list{display:flex;flex-wrap:wrap;gap:.5rem}
+.sv-list li{border:1px solid var(--line2);border-radius:var(--pill);padding:.45rem 1rem;font-size:.9rem}
+.sv-rel,.sv-faq,.sv-cta{border-top:1px solid var(--line2);padding-block:var(--s12)}
+.sv-rel h2,.sv-faq h2,.sv-cta h2{font-size:var(--h2);line-height:1.05;letter-spacing:-.02em;margin-bottom:var(--s5)}
+.sv-rel>p{color:var(--muted);max-width:54ch;margin-bottom:var(--s10)}
+.sv-faq h2{margin-bottom:var(--s8)}
+.sv-cta{text-align:left}
+.sv-cta h2{font-size:clamp(1.9rem,4vw,3.6rem);max-width:20ch}
+.sv-others{border-top:1px solid var(--line2);padding-block:var(--s10)}
+.sv-others ul{display:flex;flex-wrap:wrap;gap:.75rem 2rem}
+.sv-others a{font-weight:600;text-decoration:underline;text-underline-offset:.25em}
+.sv-team{border-top:1px solid var(--line2);padding-block:var(--s12);display:grid;gap:var(--s6)}
+.sv-teamtx{font-size:clamp(1.3rem,1.6vw + 1rem,2.2rem);line-height:1.2;font-weight:600;letter-spacing:-.02em;max-width:28ch}
+.pj-more{border-top:1px solid var(--line2);padding-block:var(--s12);display:grid;gap:var(--s5);justify-items:start}
+.pj-more h2{font-size:var(--h2);line-height:1.05;letter-spacing:-.02em}
+.pj-more ul{display:flex;flex-wrap:wrap;gap:.5rem 1.6rem}
+.pj-more ul a{text-decoration:underline;text-underline-offset:.25em;font-weight:500}
+.f-hint{font-size:.78rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.hmin .h-intro,.hmin .h-cta,.hmin .h-ctx{animation:none}}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
