@@ -4,9 +4,9 @@
   var KEY = "af-consent";
   var LEGAL = { es:"/legal/#cookies", en:"/en/legal/#cookies", fr:"/fr/mentions-legales/#cookies" };
   var TX = {
-    es:{ l:"Cookies", p:"Uso cookies de analítica (Google Analytics) para saber cómo se usa la web, pero solo si lo aceptas. Las necesarias para que la web funcione no requieren consentimiento.", a:"Aceptar", r:"Rechazar", m:"Más información" },
-    en:{ l:"Cookies", p:"I use analytics cookies (Google Analytics) to understand how the site is used, but only if you accept. Cookies strictly needed for the site to work don't need consent.", a:"Accept", r:"Reject", m:"More information" },
-    fr:{ l:"Cookies", p:"J'utilise des cookies de mesure d'audience (Google Analytics) pour comprendre l'usage du site, mais seulement si vous acceptez. Les cookies nécessaires au fonctionnement du site ne demandent pas de consentement.", a:"Accepter", r:"Refuser", m:"En savoir plus" }
+    es:{ l:"Cookies", p:"Uso cookies de analítica (Google Analytics) para saber cómo se usa la web, pero solo si lo aceptas. Las necesarias para que la web funcione no requieren consentimiento.", a:"Aceptar", r:"Rechazar", m:"Política de cookies" },
+    en:{ l:"Cookies", p:"I use analytics cookies (Google Analytics) to understand how the site is used, but only if you accept. Cookies strictly needed for the site to work don't need consent.", a:"Accept", r:"Reject", m:"Cookie policy" },
+    fr:{ l:"Cookies", p:"J'utilise des cookies de mesure d'audience (Google Analytics) pour comprendre l'usage du site, mais seulement si vous acceptez. Les cookies nécessaires au fonctionnement du site ne demandent pas de consentement.", a:"Accepter", r:"Refuser", m:"Politique de cookies" }
   };
   function get(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
   function put(v){ try { localStorage.setItem(KEY, v); } catch(e){} }

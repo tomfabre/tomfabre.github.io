@@ -221,7 +221,7 @@ function renderBio(){
   const TOOLS = [["Figma","Fi","#F24E1E","#fff"],["Webflow","Wf","#146EF5","#fff"],["HTML / CSS","</>","#E34F26","#fff"],["Storybook","Sb","#FF4785","#fff"],["Maze","Mz","#6C5CE7","#fff"],["Hotjar","Hj","#FD3A5C","#fff"],["Notion","No","#000","#fff"],["Jira","Ji","#0052CC","#fff"]];
   $("#tools").innerHTML = TOOLS.map(([n, m, c, tt]) => `<li class="tool" tabindex="0" style="--tc:${c};--tt:${tt}"><b>${esc(m)}</b><span>${esc(n)}</span></li>`).join("");
   // portrait: abstract typographic composition from AF monogram
-  if (BENTO.photo.img) $("#portrait").innerHTML = `<img src="${BENTO.photo.img}" alt="" loading="lazy" decoding="async">`; else $("#portrait").innerHTML = `<svg viewBox="0 0 400 400" aria-hidden="true"><rect width="400" height="400" fill="var(--surface)"/><circle cx="110" cy="140" r="90" fill="var(--coral)" opacity=".85"/><circle cx="260" cy="200" r="110" fill="var(--lav)" opacity=".75"/><circle cx="200" cy="320" r="85" fill="var(--mint)" opacity=".8"/><text x="50%" y="56%" text-anchor="middle" fill="var(--fg)" font-family="var(--font)" font-size="180" font-weight="600" letter-spacing="-10">AF</text></svg>`;
+  if (BENTO.photo.img) $("#portrait").innerHTML = `<img src="${BENTO.photo.img}" alt="Tom Fabre" loading="lazy" decoding="async">`; else $("#portrait").innerHTML = `<svg viewBox="0 0 400 400" aria-hidden="true"><rect width="400" height="400" fill="var(--surface)"/><circle cx="110" cy="140" r="90" fill="var(--coral)" opacity=".85"/><circle cx="260" cy="200" r="110" fill="var(--lav)" opacity=".75"/><circle cx="200" cy="320" r="85" fill="var(--mint)" opacity=".8"/><text x="50%" y="56%" text-anchor="middle" fill="var(--fg)" font-family="var(--font)" font-size="180" font-weight="600" letter-spacing="-10">AF</text></svg>`;
 }
 
 /* ---------- game ---------- */
@@ -528,7 +528,7 @@ function renderBento(){
   const head = (k, s, u) => `<div class="bt-h"><b>${esc(k)}</b><span>${esc(s)}</span></div>${tag(u)}`;
   el.innerHTML =
     card("bt-map", null, `${map}<div class="bt-h"><b>${esc(t.bt_map)}</b><span>${esc(t.bt_map_s)}</span><span class="bt-geo">Madrid 40.4168 N · 3.7038 W</span></div>`) +
-    card("bt-photo", null, (soon.gallery.length ? `<div class="bt-gal" role="img" aria-label="${esc(t.bt_photo)}">${soon.gallery.map((u, i) => `<img src="${esc(u)}" alt="" class="${i ? "" : "on"}" loading="lazy" decoding="async">`).join("")}</div>` : `<div class="bt-ph" aria-hidden="true"><span>TF</span></div>`) + `<div class="bt-h"><b>${esc(t.bt_photo)}</b><span>${soon.gallery.length ? "" : esc(t.bt_photo_s)}</span></div>`) +
+    card("bt-photo", null, (soon.gallery.length ? `<div class="bt-gal" role="img" aria-label="${esc(t.bt_photo)}">${soon.gallery.map((u, i) => `<img src="${esc(u)}" alt="${esc(t.bt_photo)} ${i + 1}" class="${i ? "" : "on"}" loading="lazy" decoding="async">`).join("")}</div>` : `<div class="bt-ph" aria-hidden="true"><span>TF</span></div>`) + `<div class="bt-h"><b>${esc(t.bt_photo)}</b><span>${soon.gallery.length ? "" : esc(t.bt_photo_s)}</span></div>`) +
     card("bt-music", soon.music.url, head(t.bt_music, t.bt_music_s, soon.music.url)) +
     card("bt-binome", soon.binome.url, `<div class="bt-h"><b>${esc(t.bt_binome)}</b><span>${esc(t.bt_binome_s)}</span></div><span class="bt-arr" aria-hidden="true">↗</span>`) +
     card("bt-read", soon.read.url, head(t.bt_read, t.bt_read_s, soon.read.url)) +

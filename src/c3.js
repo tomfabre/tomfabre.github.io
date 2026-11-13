@@ -23,8 +23,9 @@ function updateHead(r){
 }
 let _pvUrl = "";
 function sendPageView(){ const u = location.origin + location.pathname + location.search; if (u === _pvUrl) return; _pvUrl = u; try { if (typeof gtag === "function") gtag("event", "page_view", { page_location: u, page_title: document.title, page_language: document.documentElement.lang }); } catch(e){} }
-const _show = show; show = function(r){ _show(r); updateHead(r); setTimeout(sendPageView, 0); };
-setTimeout(sendPageView, 0);   // first page view of the visit
+function syncH1(){ const act = document.querySelector(".page:not([hidden])"); document.querySelectorAll(".page").forEach(pg => { const on = pg === act; pg.querySelectorAll(on ? "h2[data-h1]" : "h1").forEach(h => { const n = document.createElement(on ? "h1" : "h2"); [...h.attributes].forEach(at => n.setAttribute(at.name, at.value)); n.setAttribute("data-h1", ""); while (h.firstChild) n.appendChild(h.firstChild); h.replaceWith(n); }); }); }
+const _show = show; show = function(r){ _show(r); updateHead(r); syncH1(); setTimeout(sendPageView, 0); };
+syncH1(); setTimeout(sendPageView, 0);   // first page view of the visit
 const LEGAL_URL = { es:"/legal/", en:"/en/legal/", fr:"/fr/mentions-legales/" };
 const _applyLang = applyLang; applyLang = function(){ _applyLang.apply(this, arguments); updateHead(route_ || { page:"home" }); };
 updateHead(route_ || parse());
