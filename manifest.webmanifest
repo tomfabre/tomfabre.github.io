@@ -1,0 +1,15 @@
+{
+  "name": "Álvaro Fabre",
+  "short_name": "Álvaro Fabre",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FDF9F0",
+  "theme_color": "#FDF9F0",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

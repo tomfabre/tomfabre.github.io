@@ -1,0 +1,40 @@
+# Álvaro Fabre
+
+> Álvaro Fabre is a product and brand designer based in Madrid and co-founder of Binōme Studio. He designs brands, websites and digital products (branding, web design, UX/UI, strategy) with more than ten years of experience between Latin America and Europe. He works in Spanish, French and English and is available for new projects.
+
+The portfolio has real URLs per language: Spanish at the root, English under /en/ and French under /fr/. Each project below links to its detail page. Full text of every project in all three languages is in llms-full.txt; structured data is in portfolio.json.
+
+## About
+
+- [Bio](https://tomfabre.github.io/en/bio/): Background, way of working, quick facts and personal links.
+- [Contact](https://tomfabre.github.io/en/contact/): Email alvarofabreg@gmail.com, contact form and profile links.
+- [CV (PDF)](https://tomfabre.github.io/cv-alvaro-fabre.pdf): Curriculum vitae.
+
+## Projects
+
+- [Contazara](https://tomfabre.github.io/en/projects/contazara/): Branding · Creative direction · Web. Refreshing the visual world of an established industrial company, creating a contemporary and consistent identity across brand and digital experiences.
+- [Carceral Ecologies](https://tomfabre.github.io/en/projects/carceral/): Web design. Web design for Carceral Ecologies: a clear structure so the content can be read, explored and remembered.
+- [À2pas](https://tomfabre.github.io/en/projects/a2pas/): Branding · Web design. Identity and website for À2pas: a close, recognisable brand with a consistent digital presence.
+- [Happylife](https://tomfabre.github.io/en/projects/happylife/): UX/UI · Mental health app. Designing the experience of a mental health app: support with calm, clarity and a human tone.
+- [Binōme Studio](https://tomfabre.github.io/en/projects/binome/): Brand · Web. Identity and website for Binōme, the design studio I run in Madrid with my partner.
+- [Yaypegs](https://tomfabre.github.io/en/projects/yaypegs/): Digital design. Digital design for Yaypegs: a clear experience with personality that's easy to use.
+- [360estudio](https://tomfabre.github.io/en/projects/360estudio/): Branding · Web design · Art direction. Creating a visual and digital experience that gives the studio's projects room to shine while expressing its distinctive personality.
+- [Figy](https://tomfabre.github.io/en/projects/figy/): Digital design. Digital design for Figy: a clear, consistent experience from start to finish.
+- [Apolo](https://tomfabre.github.io/en/projects/apolo/): App · Android launcher. The interface of an accessible, highly customisable Android launcher with 3M+ downloads.
+- [Appy](https://tomfabre.github.io/en/projects/appy/): App · Onboarding. A shorter onboarding that reduced drop-off for 500K+ users.
+- [Mood Messenger](https://tomfabre.github.io/en/projects/mood/): App · Messaging. Messaging flows redesigned to prioritise personalisation and retention, with 5M+ downloads.
+- [Molyb](https://tomfabre.github.io/en/projects/molyb/): Educational platform. An interactive educational platform that made complex technical content accessible.
+
+## Services
+
+- Branding & Identity: Be recognised. Before they even read your name.
+- Web Design & Development: Your website should work as hard as you do.
+- Product Design & UX/UI: Less friction. More reasons to come back.
+- Strategy & Creative Direction: Find the meaning. Then make it matter.
+
+## Optional
+
+- [Full content](https://tomfabre.github.io/llms-full.txt): Complete portfolio text in Spanish, English and French.
+- [Portfolio data (JSON)](https://tomfabre.github.io/portfolio.json): Projects, services and profile links as structured data.
+- [AI catalog](https://tomfabre.github.io/.well-known/ai-catalog.json): Machine-readable index of resources for agents.
+- [Binōme Studio](https://binome.xyz): The design studio Álvaro co-founded in Madrid.

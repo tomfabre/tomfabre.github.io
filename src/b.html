@@ -1,0 +1,275 @@
+<a class="skip" href="#main" data-i="skip"></a>
+<header class="top"><div class="wrap top-in">
+  <a class="brand" href="#home" aria-label="Álvaro Fabre"><span class="af">AF</span><span class="full" aria-hidden="true">Álvaro Fabre</span></a>
+  <div class="toolbar">
+    <button class="theme-toggle" id="themeT" type="button" aria-pressed="false" data-aria="theme_label"><span class="knob"></span><span class="lbl" id="themeLbl">—</span></button>
+    <div class="lw">
+      <button class="lang-btn" id="langBtn" type="button" aria-expanded="false" aria-controls="langPop" data-aria="lang_label"><span id="langCode">ES</span><span aria-hidden="true">▾</span></button>
+      <div class="lang-pop" id="langPop" hidden role="menu"></div>
+    </div>
+    <button class="menu-btn" id="burger" type="button" aria-expanded="false" aria-controls="sheet"><span class="bars" aria-hidden="true"><i></i><i></i></span><span data-i="menu"></span></button>
+  </div>
+</div></header>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <nav class="sheet-nav" id="snav" data-aria="nav_label">
+    <a href="#home" data-r="home"><span class="num">01</span><span data-i="n_home"></span><span class="arr" aria-hidden="true">→</span></a>
+    <a href="#projects" data-r="projects"><span class="num">02</span><span data-i="n_work"></span><span class="arr" aria-hidden="true">→</span></a>
+    <a href="#bio" data-r="bio"><span class="num">03</span><span data-i="n_bio"></span><span class="arr" aria-hidden="true">→</span></a>
+    <a href="#contact" data-r="contact"><span class="num">04</span><span data-i="n_contact"></span><span class="arr" aria-hidden="true">→</span></a>
+  </nav>
+  <div class="sheet-foot">
+    <span data-i="menu_foot"></span>
+    <span><a href="https://www.linkedin.com/in/alvarofabre/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://binome.xyz" target="_blank" rel="noopener">binome.xyz</a></span>
+  </div>
+</div>
+
+<main id="main">
+<!-- HOME -->
+<div class="page" data-page="home"><div class="wrap">
+  <section class="hmin" aria-labelledby="hmH">
+    <p class="avail"><span class="av-w" data-i="av_w"></span> <span data-i="av_r"></span></p>
+    <h1 class="hmega" id="hmH"><button type="button" class="hm-btn" id="hmBtn" aria-describedby="hmHint">
+      <span class="hm-a" id="hmA"><span class="ln" data-i="hm_a1"></span><span class="ln l2" data-i="hm_a2"></span></span>
+      <span class="hm-b" id="hmB" aria-hidden="true"><span class="ln" data-i="hm_b1"></span><span class="ln l2" data-i="hm_b2"></span></span>
+    </button></h1>
+    <span class="sr-only" id="hmHint" data-i="hm_hint"></span>
+    <button type="button" class="scroll-hint" id="scrollHint"><span data-i="scroll_l"></span><span class="ar" aria-hidden="true">↓</span></button>
+  </section>
+
+  <section>
+    <div class="sec-head reveal"><span class="num">I</span><span class="lab" data-i="sec1"></span><h2 data-i="stats_h"></h2><p class="rh" data-i="stats_p"></p></div>
+    <div class="stats reveal-x" id="stats"></div>
+  </section>
+
+  <section>
+    <div class="sec-head reveal"><span class="num">II</span><span class="lab" data-i="sec2"></span><h2 data-i="svc_h"></h2><p class="rh" data-i="svc_p"></p></div>
+    <ul class="svc-rows reveal" id="svc"></ul>
+  </section>
+
+  <section>
+    <div class="sec-head reveal"><span class="num">III</span><span class="lab" data-i="sec3"></span><h2 data-i="work_h"></h2><p class="rh" data-i="work_p"></p></div>
+    <ul class="idx reveal" id="workList"></ul>
+    <p style="margin-top:var(--s10)"><a class="btn" href="#projects"><span data-i="all"></span><span class="arr" aria-hidden="true">→</span></a></p>
+  </section>
+
+  <section>
+    <div class="sec-head reveal"><span class="num">IV</span><span class="lab" data-i="sec4"></span><h2 data-i="how_h"></h2><p class="rh" data-i="how_p"></p></div>
+    <ul class="svc-list reveal" id="how"></ul>
+  </section>
+
+  <section>
+    <div class="sec-head reveal"><span class="num">V</span><span class="lab" data-i="sec5"></span><h2 data-i="ab_h"></h2></div>
+    <div class="about-teaser reveal">
+      <p class="ab-quote" data-i="ab_quote"></p>
+      <div><h3 data-i="ab_hi"></h3><p data-i="ab_p"></p><p style="margin-top:var(--s6)"><a class="btn solid" href="#bio"><span data-i="about_cta"></span><span class="arr" aria-hidden="true">→</span></a></p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head reveal"><span class="num">VI</span><span class="lab" data-i="sec6"></span><h2 data-i="band_h"></h2><p class="rh" data-i="band_p"></p></div>
+    <div class="cta-band reveal">
+      <p class="band-big" data-i="band_big"></p>
+      <div class="pack"><a class="btn solid" href="#contact"><span data-i="cta3"></span><span class="arr" aria-hidden="true">→</span></a><button class="btn" type="button" data-open-form data-i="cta4"></button></div>
+    </div>
+  </section>
+</div></div>
+
+<!-- PROJECTS -->
+<div class="page" data-page="projects" hidden><div class="wrap">
+  <section class="dh-sec hero95">
+    <div class="meta-top"><span data-i="port_l"></span><span class="r">2015 — 2026</span></div>
+    <h1 class="hmega dh-s"><button type="button" class="hm-btn" aria-describedby="pjHint">
+      <span class="hm-a"><span class="ln" data-i="pj_a1"></span><span class="ln l2" data-i="pj_a2"></span></span>
+      <span class="hm-b" aria-hidden="true"><span class="ln" data-i="pj_b1"></span><span class="ln l2" data-i="pj_b2"></span></span>
+    </button></h1>
+    <span class="sr-only" id="pjHint" data-i="hm_hint"></span>
+    <p class="dh-p" data-i="pj_p"></p>
+  </section>
+  <section style="padding-top:0">
+    <div class="pj-tools">
+      <span class="count" id="pjcount">12 · 2015 — 2026</span>
+      <div class="view-seg" role="group" aria-label="View">
+        <button type="button" data-view="grid" aria-pressed="true" data-i="view_grid"></button>
+        <button type="button" data-view="list" aria-pressed="false" data-i="view_list"></button>
+      </div>
+    </div>
+    <div class="pj-grid" id="grid"></div>
+  </section>
+</div></div>
+
+<!-- PROJECT DETAIL -->
+<div class="page" data-page="project" hidden><div class="wrap"><section class="pj" id="pj"></section></div></div>
+
+<!-- BIO -->
+<div class="page" data-page="bio" hidden><div class="wrap">
+  <section class="dh-sec hero95 bio-dh">
+    <div class="meta-top" style="padding-top:0"><span data-i="n_bio"></span><span class="r wr" data-i="role_l" data-wi="w_role" tabindex="0"></span></div>
+    <h1 class="hmega dh-s"><button type="button" class="hm-btn" aria-describedby="bioHint">
+      <span class="hm-a"><span class="ln" data-i="bio_a1"></span><span class="ln l2" data-i="bio_a2"></span></span>
+      <span class="hm-b" aria-hidden="true"><span class="ln" data-i="bio_b1"></span><span class="ln l2" data-i="bio_b2"></span></span>
+    </button></h1>
+    <span class="sr-only" id="bioHint" data-i="hm_hint"></span>
+    <div class="sticker s-mint" id="stickerBio" data-sticker="bio"></div>
+  </section>
+
+  <section class="bio-sec" style="padding-top:0">
+    <div class="bio-intro">
+      <div class="bi-id">
+        <div class="portrait" id="portrait" role="img" aria-label="Álvaro Fabre"></div>
+      </div>
+      <div class="bi-main">
+        <p class="bi-eyebrow" data-i="bi_eyebrow"></p>
+        <h2 class="bi-h" data-i="bi_h"></h2>
+        <p data-i="bi_p1"></p>
+        <p data-i="bi_p2"></p>
+        <div class="bio-foot"><a class="btn solid" href="cv-alvaro-fabre.pdf" target="_blank" rel="noopener" data-i="cv"></a><a class="btn" href="https://binome.xyz" target="_blank" rel="noopener">Binōme Studio <span class="arr" aria-hidden="true">↗</span></a></div>
+        <ul class="socials" id="socials" data-aria="bi_links"></ul>
+      </div>
+      <div class="qf" id="qf" role="group" aria-roledescription="carousel" data-aria="qf_l">
+        <div class="qf-top"><span class="qf-l" data-i="qf_l"></span><span class="qf-n" id="qfN" aria-hidden="true"></span></div>
+        <div class="qf-stage" id="qfStage"></div>
+        <div class="qf-ctl"><button type="button" id="qfPrev" data-aria="qf_prev"><span aria-hidden="true">←</span></button><button type="button" id="qfNext" data-aria="qf_next"><span aria-hidden="true">→</span></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-sec reveal"><blockquote><p data-i="ab_quote"></p></blockquote></section>
+
+  <section class="bento-sec">
+    <div class="sec-head reveal"><h2 data-i="bt_h"></h2><p class="rh" data-i="bt_p"></p></div>
+    <div class="bento reveal" id="bento"></div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="worked reveal">
+      <div><h2 data-i="worked_h"></h2><p class="worked-p" data-i="worked_p"></p></div>
+      <ul class="worked-list" id="worked"></ul>
+    </div>
+
+    <div class="tools-h reveal">
+      <div><h2 data-i="dos_h"></h2><p class="p" data-i="dos_p"></p></div>
+      <ul class="dos reveal-x" id="dos"></ul>
+    </div>
+
+    <div class="tools-h reveal">
+      <div><h2 data-i="tools_h"></h2><p class="p" data-i="tools_p"></p></div>
+      <ul class="tools-grid" id="tools"></ul>
+    </div>
+  </section>
+
+  <section id="gamesec">
+    <div class="sec-head reveal"><h2 data-i="game_h"></h2><p class="rh" data-i="game_p"></p></div>
+    <div class="game-wrap">
+      <div class="board reveal" id="board" role="group" data-aria="game_h"></div>
+      <div class="panel reveal">
+        <div class="meter"><span class="n" id="left">20</span><span class="l" data-i="left_l"></span></div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+        <ul class="fleet" id="fleet"></ul>
+        <div class="gbtns"><button class="btn sm" id="again" type="button" data-i="again"></button><button class="btn sm ghost" id="howBtn" type="button" aria-haspopup="dialog" data-i="game_how"></button></div>
+      </div>
+    </div>
+  </section>
+</div></div>
+
+<!-- CONTACT -->
+<div class="page" data-page="contact" hidden><div class="wrap">
+  <section class="dh-sec hero95 ct-hero">
+    <div class="meta-top"><span data-i="n_contact"></span><span class="r">2026</span></div>
+    <h1 class="hmega dh-s"><button type="button" class="hm-btn" aria-describedby="ctHint">
+      <span class="hm-a"><span class="ln" data-i="ct_a1"></span><span class="ln l2" data-i="ct_a2"></span></span>
+      <span class="hm-b" aria-hidden="true"><span class="ln" data-i="ct_b1"></span><span class="ln l2" data-i="ct_b2"></span></span>
+    </button></h1>
+    <span class="sr-only" id="ctHint" data-i="hm_hint"></span>
+        <div class="mail">
+      <span style="font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)" data-i="c_l"></span>
+      <a class="ml cyc" id="mailLink" href="mailto:alvarofabreg@gmail.com">alvarofabreg@gmail.com</a>
+      <span class="copyline"><button id="copy" type="button" data-i="copy"></button><span class="sr" id="copied" role="status" aria-live="polite"></span></span>
+    </div>
+  </section>
+  <section class="ct-body">
+    <p class="contact-lead" data-i="c_p"></p>
+    <div class="c-actions"><button class="btn solid" type="button" data-open-form><span data-i="write"></span><span class="arr" aria-hidden="true">→</span></button><a class="btn" href="mailto:alvarofabreg@gmail.com" data-i="write2"></a></div>
+    <div class="cnext"><h2 data-i="cn_h"></h2><ol id="cnext"></ol></div>
+  </section>
+</div></div>
+</main>
+
+<section class="bigfoot reveal" data-aria="n_contact"><div class="wrap">
+  <div class="meta"><span data-i="port_l"></span><span>Madrid 40.4168 N · 3.7038 W</span></div>
+  <div class="bigfoot-lead">
+    <div>
+      <span class="bigfoot-sub" data-i="foot_lead"></span>
+      <h2 class="bigfoot-h" data-i="foot_mega"></h2>
+      <p class="bigfoot-p" data-i="foot_p"></p>
+      <a class="bigfoot-mail cyc" href="mailto:alvarofabreg@gmail.com" aria-label="alvarofabreg@gmail.com">alvarofabreg@gmail.com</a>
+    </div>
+    <a href="#contact" class="orb" aria-label="Contact">
+      <svg class="rot" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="orbp2" d="M 50 50 m -37 0 a 37 37 0 1 1 74 0 a 37 37 0 1 1 -74 0"/></defs><text><textPath href="#orbp2" textLength="232" lengthAdjust="spacing"><tspan class="t1">Say</tspan> <tspan class="t2">hello</tspan> · <tspan class="t3">Open</tspan> <tspan class="t4">to</tspan> <tspan class="t5">projects</tspan> · </textPath></text></svg>
+      <span class="orb-arr" aria-hidden="true">→</span>
+    </a>
+  </div>
+  <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marq"></div></div>
+</div></section>
+<footer><div class="wrap"><span data-wi="w_copy" class="wup" tabindex="0">© 2026 · Álvaro Fabre</span><ul class="socials-foot" id="socialsFoot"></ul></div></footer>
+
+<button class="chatbtn" id="chatbtn" type="button" aria-expanded="false" aria-controls="chat" data-aria="chat_btn"><span class="spark" aria-hidden="true"></span><span class="cl" data-i="chat_btn"></span></button>
+<div class="chat" id="chat" role="dialog" aria-labelledby="chatT" aria-describedby="chatSub">
+  <div class="chat-h">
+    <div class="ha"><span class="av" aria-hidden="true">Y✳</span><div><h2 id="chatT" data-i="chat_h"></h2><p id="chatSub"></p></div></div>
+    <div class="y-tools">
+      <button type="button" class="y-ic" id="yback" data-aria="y_back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" class="y-ic" id="yrestart" data-aria="y_restart"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" class="dx2" id="chatx" data-aria="chat_close">×</button>
+    </div>
+  </div>
+  <div class="chat-log" id="clog"></div>
+  <div class="sr" id="ystatus" role="status" aria-live="polite"></div>
+  <div class="chat-foot"><button type="button" data-open-form data-i="write"></button></div>
+</div>
+</div>
+
+<dialog id="howDlg" class="win-dlg" aria-labelledby="howH">
+  <div class="win-inner">
+    <span class="win-kicker" data-i="how_k"></span>
+    <h2 class="win-h" id="howH" data-i="game_how"></h2>
+    <ol class="how-list" id="howList"></ol>
+    <div class="win-actions"><button class="btn solid" type="button" id="howClose" data-i="how_ok"></button></div>
+  </div>
+</dialog>
+<dialog id="gameDlg" class="win-dlg" aria-labelledby="gameH">
+  <div class="win-confetti" id="confetti" aria-hidden="true"></div>
+  <div class="win-inner">
+    <span class="win-kicker" id="gameKicker"></span>
+    <h2 class="win-h" id="gameH"></h2>
+    <p class="win-p" id="gameP"></p>
+    <div class="prize"><b data-i="prize_t"></b><span data-i="prize_p"></span></div>
+    <div class="win-actions">
+      <button class="btn solid" type="button" id="gameWrite"><span id="gameWriteL"></span><span class="arr" aria-hidden="true">→</span></button>
+      <button class="btn" type="button" id="gameRetry" data-i="play_again"></button>
+    </div>
+  </div>
+  <button class="dx" type="button" id="gameClose" aria-label="Close">×</button>
+</dialog>
+
+<dialog id="dlg" aria-labelledby="dlgT">
+  <button class="dx" type="button" id="dclose" data-aria="close">×</button>
+  <h2 id="dlgT" data-i="d_h"></h2>
+  <p class="sub" data-i="d_sub"></p>
+  <form id="form" novalidate toolname="draft_contact_message" tooldescription="Prepare a contact message to Álvaro Fabre about a project, collaboration or job. It produces a draft for the visitor to send by email; nothing is sent automatically.">
+    <div class="f"><label for="fn" data-i="d_name"></label><input id="fn" name="name" toolparamdescription="Sender full name." autocomplete="name" required></div>
+    <div class="f"><label for="fe" data-i="d_mail"></label><input id="fe" name="email" toolparamdescription="Sender email address." type="email" autocomplete="email" required></div>
+    <div class="f"><label for="ft" data-i="d_topic"></label><select id="ft" name="topic" toolparamdescription="What the message is about."></select></div>
+    <div class="f"><label for="fm" data-i="d_msg"></label><textarea id="fm" name="message" toolparamdescription="Message for Álvaro." required></textarea></div>
+    <div class="f"><label for="fq" id="fql"></label><input id="fq" name="human" inputmode="numeric" pattern="[0-9]*" autocomplete="off" required></div>
+    <input type="text" name="_gotcha" id="fh" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
+    <p class="err" id="ferr" role="alert"></p>
+    <button class="btn solid" type="submit" style="width:100%;justify-content:center"><span data-i="d_send"></span><span class="arr" aria-hidden="true">→</span></button>
+  </form>
+  <div class="d-res" id="dsent" hidden><p style="font-size:var(--lead,1.15rem)" role="status" data-i="d_sent"></p></div>
+  <div class="d-res" id="dres" hidden>
+    <p style="color:var(--muted);font-size:var(--small);margin-bottom:var(--s5)" data-i="d_note"></p>
+    <div style="display:flex;flex-wrap:wrap;gap:.6rem"><a class="btn solid" id="mailto" href="#" target="_blank" rel="noopener" data-i="d_open"></a><button class="btn" type="button" id="dcopy" data-i="d_copy"></button></div>
+    <p class="sr" id="dcopied" role="status" aria-live="polite"></p>
+  </div>
+</dialog>

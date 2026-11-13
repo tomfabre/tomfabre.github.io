@@ -1,0 +1,595 @@
+{
+  "name": "Álvaro Fabre",
+  "jobTitle": "Product & Brand Designer",
+  "location": "Madrid, Spain",
+  "studio": {
+    "name": "Binōme Studio",
+    "url": "https://binome.xyz"
+  },
+  "languages": [
+    "es",
+    "fr",
+    "en"
+  ],
+  "email": "alvarofabreg@gmail.com",
+  "profiles": [
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/alvarofabre/"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/alvarofabre/"
+    },
+    {
+      "name": "Behance",
+      "url": "https://www.behance.net/alvarofabre"
+    },
+    {
+      "name": "LottieFiles",
+      "url": "https://lottiefiles.com/alvarofabre"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/alvarofabre"
+    }
+  ],
+  "cv": "https://tomfabre.github.io/cv-alvaro-fabre.pdf",
+  "updated": "2026-11-13",
+  "services": {
+    "es": [
+      {
+        "name": "Branding & identidad",
+        "tagline": "Que te reconozcan. Incluso antes de leer tu nombre.",
+        "summary": "Una marca no es simplemente un logo bonito. Es una forma de contar quién eres, qué te hace diferente y por qué alguien debería elegirte.",
+        "tags": "Estrategia de marca · Identidad visual · Dirección de arte · Sistemas de marca"
+      },
+      {
+        "name": "Diseño & desarrollo web",
+        "tagline": "Tu web debería trabajar tanto como tú.",
+        "summary": "Tienes pocos segundos para despertar interés. Hagamos que cuenten.",
+        "tags": "UX/UI · Webflow · Desarrollo web · Responsive · SEO técnico"
+      },
+      {
+        "name": "Product Design & UX/UI",
+        "tagline": "Menos fricción. Más ganas de volver.",
+        "summary": "Los mejores productos no necesitan explicarse demasiado. Simplemente hacen que todo tenga sentido.",
+        "tags": "UX Research · User Flows · Prototipos · Testing · Interfaces · Design Systems"
+      },
+      {
+        "name": "Estrategia & dirección creativa",
+        "tagline": "Primero encontramos el sentido. Después le damos forma.",
+        "summary": "A veces el problema no es el diseño. Es que todavía no está claro qué quieres contar, a quién o por qué debería importarle.",
+        "tags": "Discovery · Estrategia digital · Concepto creativo · Experiencia de marca"
+      }
+    ],
+    "en": [
+      {
+        "name": "Branding & Identity",
+        "tagline": "Be recognised. Before they even read your name.",
+        "summary": "A brand is more than a good-looking logo. It's how you tell people who you are, what makes you different and why they should care.",
+        "tags": "Brand strategy · Visual identity · Art direction · Brand systems"
+      },
+      {
+        "name": "Web Design & Development",
+        "tagline": "Your website should work as hard as you do.",
+        "summary": "You've got seconds to make an impression. Let's make them count.",
+        "tags": "UX/UI · Webflow · Web development · Responsive design · Technical SEO"
+      },
+      {
+        "name": "Product Design & UX/UI",
+        "tagline": "Less friction. More reasons to come back.",
+        "summary": "Great products don't need much explaining. They just make sense.",
+        "tags": "UX Research · User flows · Prototyping · Testing · Interfaces · Design systems"
+      },
+      {
+        "name": "Strategy & Creative Direction",
+        "tagline": "Find the meaning. Then make it matter.",
+        "summary": "Sometimes design isn't the problem. The real challenge is knowing what you're trying to say, who you're talking to and why anyone should care.",
+        "tags": "Discovery · Digital strategy · Creative concepts · Brand experience"
+      }
+    ],
+    "fr": [
+      {
+        "name": "Branding & Identité",
+        "tagline": "Être reconnu. Avant même qu'on lise votre nom.",
+        "summary": "Une marque, ce n'est pas simplement un beau logo. C'est une façon de raconter qui vous êtes, ce qui vous rend unique et pourquoi on devrait vous choisir.",
+        "tags": "Stratégie de marque · Identité visuelle · Direction artistique · Systèmes de marque"
+      },
+      {
+        "name": "Web Design & Développement",
+        "tagline": "Votre site devrait travailler autant que vous.",
+        "summary": "Quelques secondes suffisent pour faire une première impression. Autant bien les utiliser.",
+        "tags": "UX/UI · Webflow · Développement web · Responsive · SEO technique"
+      },
+      {
+        "name": "Product Design & UX/UI",
+        "tagline": "Moins de friction. Plus de plaisir à revenir.",
+        "summary": "Les meilleurs produits n'ont pas besoin de longues explications. Tout semble naturel.",
+        "tags": "Recherche UX · Parcours utilisateurs · Prototypage · Tests · Interfaces · Design systems"
+      },
+      {
+        "name": "Stratégie & Direction créative",
+        "tagline": "Trouver le sens. Puis lui donner forme.",
+        "summary": "Parfois, le problème n'est pas le design. C'est de savoir ce qu'on veut raconter, à qui on s'adresse et pourquoi cela devrait compter.",
+        "tags": "Discovery · Stratégie digitale · Concept créatif · Expérience de marque"
+      }
+    ]
+  },
+  "projects": {
+    "es": [
+      {
+        "slug": "contazara",
+        "name": "Contazara",
+        "category": "Branding · Dirección creativa · Web",
+        "context": "Industria y energía",
+        "summary": "Transformar la presencia de una empresa industrial con trayectoria en un universo de marca contemporáneo, reconocible y coherente, desde su identidad hasta sus experiencias digitales.",
+        "description": "Diseñé y gestiono la identidad visual y toda la presencia digital: marca, web y redes sociales. Mantener un criterio común entre canales es lo que hace que una empresa industrial transmita solidez y se sienta cercana a la vez.",
+        "services": "Branding · Web · Redes sociales",
+        "tagline": "40 años de historia. Una identidad preparada para lo que viene.",
+        "role": "Lead Product Designer",
+        "period": "2022 –",
+        "url": "https://tomfabre.github.io/proyectos/contazara/"
+      },
+      {
+        "slug": "carceral",
+        "name": "Carceral Ecologies",
+        "category": "Diseño web",
+        "context": "Proyecto web",
+        "summary": "Diseño web para Carceral Ecologies: una estructura clara para que el contenido se lea, se explore y se recuerde.",
+        "description": "Diseñé la experiencia web: arquitectura de la información, jerarquía de contenidos y una interfaz sobria que pone el foco en lo que hay que contar.",
+        "services": "Diseño web · Arquitectura de la información",
+        "tagline": "Un sitio que da espacio a las ideas.",
+        "role": "Product Designer",
+        "period": "Web",
+        "url": "https://tomfabre.github.io/proyectos/carceral/"
+      },
+      {
+        "slug": "a2pas",
+        "name": "À2pas",
+        "category": "Branding · Diseño web",
+        "context": "Marca y web",
+        "summary": "Identidad y web para À2pas: una marca cercana y reconocible, con una presencia digital coherente.",
+        "description": "Construí la identidad visual y el diseño web buscando un lenguaje cercano, claro y coherente entre marca y sitio.",
+        "services": "Branding · Diseño web",
+        "tagline": "Una marca cercana, a dos pasos de las personas.",
+        "role": "Product Designer",
+        "period": "Brand + web",
+        "url": "https://tomfabre.github.io/proyectos/a2pas/"
+      },
+      {
+        "slug": "happylife",
+        "name": "Happylife",
+        "category": "UX/UI · App de salud mental",
+        "context": "Salud mental · App",
+        "summary": "Diseño de la experiencia de una app de salud mental: acompañar con calma, claridad y un tono humano.",
+        "description": "Dirigí el UX/UI de una app en fase MVP, coordinando al equipo de producto remoto y a las personas de negocio para que las decisiones de diseño llegaran a desarrollo sin ruido.",
+        "services": "UX/UI · Producto · Salud mental",
+        "tagline": "Hacer que cuidarse se sienta sencillo.",
+        "role": "Lead Product Designer",
+        "period": "App",
+        "url": "https://tomfabre.github.io/proyectos/happylife/"
+      },
+      {
+        "slug": "binome",
+        "name": "Binōme Studio",
+        "category": "Marca · Web",
+        "context": "Estudio propio",
+        "summary": "Identidad y web de Binōme, el estudio de diseño que dirijo en Madrid con mi socia.",
+        "description": "Diseñé la marca y la web de nuestro propio estudio: un lugar donde explicar cómo trabajamos y mostrar lo que hacemos, con el mismo criterio que aplicamos a cada cliente.",
+        "services": "Branding · Web",
+        "tagline": "El estudio, diseñado con el mismo cuidado que sus clientes.",
+        "role": "Co-founder & Lead Designer",
+        "period": "Studio",
+        "url": "https://tomfabre.github.io/proyectos/binome/"
+      },
+      {
+        "slug": "yaypegs",
+        "name": "Yaypegs",
+        "category": "Diseño digital",
+        "context": "Proyecto digital",
+        "summary": "Diseño digital para Yaypegs: una experiencia clara, con personalidad y fácil de usar.",
+        "description": "Trabajé la experiencia y la identidad visual cuidando la claridad de uso y la coherencia entre marca y producto.",
+        "services": "Diseño digital · UX/UI",
+        "tagline": "Detalles que se notan.",
+        "role": "Product Designer",
+        "period": "Digital",
+        "url": "https://tomfabre.github.io/proyectos/yaypegs/"
+      },
+      {
+        "slug": "360estudio",
+        "name": "360estudio",
+        "category": "Branding · Diseño web · Dirección de arte",
+        "context": "Arquitectura",
+        "summary": "Construir una identidad digital que deje hablar a los proyectos, refleje la personalidad del estudio y convierta su trabajo en una experiencia visual coherente.",
+        "description": "Construí el sistema visual completo: identidad, web y gestión del contenido en redes, con un nivel de marca coherente con la calidad de sus proyectos de arquitectura.",
+        "services": "Identidad · Web · Contenido social",
+        "tagline": "Arquitectura con una identidad a su altura.",
+        "role": "Lead Product Designer",
+        "period": "Binōme",
+        "url": "https://tomfabre.github.io/proyectos/360estudio/"
+      },
+      {
+        "slug": "figy",
+        "name": "Figy",
+        "category": "Diseño digital",
+        "context": "Proyecto digital",
+        "summary": "Diseño digital para Figy: una experiencia clara y coherente de principio a fin.",
+        "description": "Trabajé la experiencia y la interfaz cuidando la claridad, el ritmo y la coherencia visual.",
+        "services": "Diseño digital · UX/UI",
+        "tagline": "Una idea, bien resuelta.",
+        "role": "Product Designer",
+        "period": "Digital",
+        "url": "https://tomfabre.github.io/proyectos/figy/"
+      },
+      {
+        "slug": "apolo",
+        "name": "Apolo",
+        "category": "App · Launcher Android",
+        "context": "Móvil · MadSeven",
+        "summary": "La interfaz de un launcher Android accesible y muy personalizable, con más de 3M de descargas.",
+        "description": "Diseñé la interfaz de un launcher pensado para personalizarse sin perder claridad ni accesibilidad.",
+        "services": "Producto móvil · UI · Accesibilidad",
+        "tagline": "Un móvil que se siente tuyo.",
+        "role": "Senior UX/UI Designer",
+        "period": "2018–2022",
+        "url": "https://tomfabre.github.io/proyectos/apolo/"
+      },
+      {
+        "slug": "appy",
+        "name": "Appy",
+        "category": "App · Onboarding",
+        "context": "Móvil · MadSeven",
+        "summary": "Un onboarding más corto que redujo el abandono en más de 500K usuarios.",
+        "description": "Simplifiqué el onboarding apoyándome en análisis de comportamiento y pruebas A/B.",
+        "services": "Onboarding · UX · A/B",
+        "tagline": "Menos pasos, más gente que llega.",
+        "role": "Senior UX/UI Designer",
+        "period": "2018–2022",
+        "url": "https://tomfabre.github.io/proyectos/appy/"
+      },
+      {
+        "slug": "mood",
+        "name": "Mood Messenger",
+        "category": "App · Mensajería",
+        "context": "Móvil · MadSeven",
+        "summary": "Flujos de mensajería rediseñados para priorizar personalización y retención, con más de 5M de descargas.",
+        "description": "Rediseñé los flujos de mensajería para que personalizar y volver a la app fuese más natural.",
+        "services": "Producto móvil · Flujos · Retención",
+        "tagline": "Conversar, a tu manera.",
+        "role": "Senior UX/UI Designer",
+        "period": "2018–2022",
+        "url": "https://tomfabre.github.io/proyectos/mood/"
+      },
+      {
+        "slug": "molyb",
+        "name": "Molyb",
+        "category": "Plataforma educativa",
+        "context": "Minería · INGC",
+        "summary": "Una plataforma educativa interactiva que volvía accesible contenido técnico complejo.",
+        "description": "Creé una plataforma educativa para el sector minero: contenido técnico presentado de forma clara e interactiva.",
+        "services": "UX/UI · Plataformas · E-learning",
+        "tagline": "Hacer simple lo técnico.",
+        "role": "UX/UI Designer",
+        "period": "2015–2017",
+        "url": "https://tomfabre.github.io/proyectos/molyb/"
+      }
+    ],
+    "en": [
+      {
+        "slug": "contazara",
+        "name": "Contazara",
+        "category": "Branding · Creative direction · Web",
+        "context": "Industry and energy",
+        "summary": "Refreshing the visual world of an established industrial company, creating a contemporary and consistent identity across brand and digital experiences.",
+        "description": "I designed and run the visual identity and the whole digital presence: brand, website and social. A shared standard across channels is what lets an industrial company feel solid and approachable at once.",
+        "services": "Branding · Web · Social media",
+        "tagline": "40 years of history. A brand ready for what's next.",
+        "role": "Lead Product Designer",
+        "period": "2022 –",
+        "url": "https://tomfabre.github.io/en/projects/contazara/"
+      },
+      {
+        "slug": "carceral",
+        "name": "Carceral Ecologies",
+        "category": "Web design",
+        "context": "Web project",
+        "summary": "Web design for Carceral Ecologies: a clear structure so the content can be read, explored and remembered.",
+        "description": "I designed the web experience: information architecture, content hierarchy and a restrained interface that keeps the focus on what needs to be said.",
+        "services": "Web design · Information architecture",
+        "tagline": "A site that gives ideas room.",
+        "role": "Product Designer",
+        "period": "Web",
+        "url": "https://tomfabre.github.io/en/projects/carceral/"
+      },
+      {
+        "slug": "a2pas",
+        "name": "À2pas",
+        "category": "Branding · Web design",
+        "context": "Brand and web",
+        "summary": "Identity and website for À2pas: a close, recognisable brand with a consistent digital presence.",
+        "description": "I built the visual identity and web design aiming for a warm, clear language shared between brand and site.",
+        "services": "Branding · Web design",
+        "tagline": "A brand within arm's reach.",
+        "role": "Product Designer",
+        "period": "Brand + web",
+        "url": "https://tomfabre.github.io/en/projects/a2pas/"
+      },
+      {
+        "slug": "happylife",
+        "name": "Happylife",
+        "category": "UX/UI · Mental health app",
+        "context": "Mental health · App",
+        "summary": "Designing the experience of a mental health app: support with calm, clarity and a human tone.",
+        "description": "I led the UX/UI of an MVP-stage app, coordinating the remote product team and business stakeholders so design decisions reached development without noise.",
+        "services": "UX/UI · Product · Mental health",
+        "tagline": "Making self-care feel simple.",
+        "role": "Lead Product Designer",
+        "period": "App",
+        "url": "https://tomfabre.github.io/en/projects/happylife/"
+      },
+      {
+        "slug": "binome",
+        "name": "Binōme Studio",
+        "category": "Brand · Web",
+        "context": "Own studio",
+        "summary": "Identity and website for Binōme, the design studio I run in Madrid with my partner.",
+        "description": "I designed the brand and website of our own studio: a place to explain how we work and show what we do, with the same care we give every client.",
+        "services": "Branding · Web",
+        "tagline": "A studio designed with the care it gives its clients.",
+        "role": "Co-founder & Lead Designer",
+        "period": "Studio",
+        "url": "https://tomfabre.github.io/en/projects/binome/"
+      },
+      {
+        "slug": "yaypegs",
+        "name": "Yaypegs",
+        "category": "Digital design",
+        "context": "Digital project",
+        "summary": "Digital design for Yaypegs: a clear experience with personality that's easy to use.",
+        "description": "I worked on the experience and visual identity, caring for ease of use and consistency between brand and product.",
+        "services": "Digital design · UX/UI",
+        "tagline": "Details you notice.",
+        "role": "Product Designer",
+        "period": "Digital",
+        "url": "https://tomfabre.github.io/en/projects/yaypegs/"
+      },
+      {
+        "slug": "360estudio",
+        "name": "360estudio",
+        "category": "Branding · Web design · Art direction",
+        "context": "Architecture",
+        "summary": "Creating a visual and digital experience that gives the studio's projects room to shine while expressing its distinctive personality.",
+        "description": "I built the full visual system: identity, website and social content management, with a brand level consistent with the quality of their architecture projects.",
+        "services": "Identity · Web · Social content",
+        "tagline": "An architectural identity built to match the work.",
+        "role": "Lead Product Designer",
+        "period": "Binōme",
+        "url": "https://tomfabre.github.io/en/projects/360estudio/"
+      },
+      {
+        "slug": "figy",
+        "name": "Figy",
+        "category": "Digital design",
+        "context": "Digital project",
+        "summary": "Digital design for Figy: a clear, consistent experience from start to finish.",
+        "description": "I worked on the experience and interface, caring for clarity, rhythm and visual consistency.",
+        "services": "Digital design · UX/UI",
+        "tagline": "One idea, well solved.",
+        "role": "Product Designer",
+        "period": "Digital",
+        "url": "https://tomfabre.github.io/en/projects/figy/"
+      },
+      {
+        "slug": "apolo",
+        "name": "Apolo",
+        "category": "App · Android launcher",
+        "context": "Mobile · MadSeven",
+        "summary": "The interface of an accessible, highly customisable Android launcher with 3M+ downloads.",
+        "description": "I designed the interface of a launcher built to be personalised without losing clarity or accessibility.",
+        "services": "Mobile product · UI · Accessibility",
+        "tagline": "A phone that feels like yours.",
+        "role": "Senior UX/UI Designer",
+        "period": "2018–2022",
+        "url": "https://tomfabre.github.io/en/projects/apolo/"
+      },
+      {
+        "slug": "appy",
+        "name": "Appy",
+        "category": "App · Onboarding",
+        "context": "Mobile · MadSeven",
+        "summary": "A shorter onboarding that reduced drop-off for 500K+ users.",
+        "description": "I simplified the onboarding using behaviour analytics and A/B testing.",
+        "services": "Onboarding · UX · A/B",
+        "tagline": "Fewer steps, more people arriving.",
+        "role": "Senior UX/UI Designer",
+        "period": "2018–2022",
+        "url": "https://tomfabre.github.io/en/projects/appy/"
+      },
+      {
+        "slug": "mood",
+        "name": "Mood Messenger",
+        "category": "App · Messaging",
+        "context": "Mobile · MadSeven",
+        "summary": "Messaging flows redesigned to prioritise personalisation and retention, with 5M+ downloads.",
+        "description": "I redesigned the messaging flows so personalising and coming back felt more natural.",
+        "services": "Mobile product · Flows · Retention",
+        "tagline": "Chat, your way.",
+        "role": "Senior UX/UI Designer",
+        "period": "2018–2022",
+        "url": "https://tomfabre.github.io/en/projects/mood/"
+      },
+      {
+        "slug": "molyb",
+        "name": "Molyb",
+        "category": "Educational platform",
+        "context": "Mining · INGC",
+        "summary": "An interactive educational platform that made complex technical content accessible.",
+        "description": "I created an educational platform for the mining sector: technical content presented clearly and interactively.",
+        "services": "UX/UI · Platforms · E-learning",
+        "tagline": "Making technical simple.",
+        "role": "UX/UI Designer",
+        "period": "2015–2017",
+        "url": "https://tomfabre.github.io/en/projects/molyb/"
+      }
+    ],
+    "fr": [
+      {
+        "slug": "contazara",
+        "name": "Contazara",
+        "category": "Branding · Direction créative · Web",
+        "context": "Industrie et énergie",
+        "summary": "Faire évoluer l'univers visuel d'une entreprise industrielle historique vers une identité contemporaine, cohérente et reconnaissable, de la marque aux expériences numériques.",
+        "description": "J'ai conçu et je gère l'identité visuelle et toute la présence numérique : marque, site et réseaux sociaux. Un cap commun entre les canaux permet à une entreprise industrielle d'inspirer confiance tout en restant proche.",
+        "services": "Branding · Web · Réseaux sociaux",
+        "tagline": "40 ans d'histoire. Une identité tournée vers demain.",
+        "role": "Lead Product Designer",
+        "period": "2022 –",
+        "url": "https://tomfabre.github.io/fr/projets/contazara/"
+      },
+      {
+        "slug": "carceral",
+        "name": "Carceral Ecologies",
+        "category": "Web design",
+        "context": "Projet web",
+        "summary": "Design web pour Carceral Ecologies : une structure claire pour que le contenu se lise, s'explore et se retienne.",
+        "description": "J'ai conçu l'expérience web : architecture de l'information, hiérarchie des contenus et interface sobre qui met l'accent sur l'essentiel.",
+        "services": "Web design · Architecture de l'information",
+        "tagline": "Un site qui laisse de la place aux idées.",
+        "role": "Product Designer",
+        "period": "Web",
+        "url": "https://tomfabre.github.io/fr/projets/carceral/"
+      },
+      {
+        "slug": "a2pas",
+        "name": "À2pas",
+        "category": "Branding · Web design",
+        "context": "Marque et web",
+        "summary": "Identité et site pour À2pas : une marque proche et reconnaissable, avec une présence digitale cohérente.",
+        "description": "J'ai construit l'identité visuelle et le design web avec un langage chaleureux, clair et cohérent entre marque et site.",
+        "services": "Branding · Web design",
+        "tagline": "Une marque à deux pas des gens.",
+        "role": "Product Designer",
+        "period": "Brand + web",
+        "url": "https://tomfabre.github.io/fr/projets/a2pas/"
+      },
+      {
+        "slug": "happylife",
+        "name": "Happylife",
+        "category": "UX/UI · App de santé mentale",
+        "context": "Santé mentale · App",
+        "summary": "Conception de l'expérience d'une app de santé mentale : accompagner avec calme, clarté et un ton humain.",
+        "description": "J'ai dirigé l'UX/UI d'une app en phase MVP, en coordonnant l'équipe produit à distance et le métier pour que les décisions arrivent au développement sans bruit.",
+        "services": "UX/UI · Produit · Santé mentale",
+        "tagline": "Rendre le soin de soi simple.",
+        "role": "Lead Product Designer",
+        "period": "App",
+        "url": "https://tomfabre.github.io/fr/projets/happylife/"
+      },
+      {
+        "slug": "binome",
+        "name": "Binōme Studio",
+        "category": "Marque · Web",
+        "context": "Studio propre",
+        "summary": "Identité et site de Binōme, le studio de design que je dirige à Madrid avec mon associée.",
+        "description": "J'ai conçu la marque et le site de notre propre studio : un lieu pour expliquer notre façon de travailler, avec le même soin que pour chaque client.",
+        "services": "Branding · Web",
+        "tagline": "Un studio conçu avec le soin qu'il offre à ses clients.",
+        "role": "Co-founder & Lead Designer",
+        "period": "Studio",
+        "url": "https://tomfabre.github.io/fr/projets/binome/"
+      },
+      {
+        "slug": "yaypegs",
+        "name": "Yaypegs",
+        "category": "Design digital",
+        "context": "Projet digital",
+        "summary": "Design digital pour Yaypegs : une expérience claire, avec de la personnalité et facile à utiliser.",
+        "description": "J'ai travaillé l'expérience et l'identité visuelle en soignant la lisibilité d'usage et la cohérence entre marque et produit.",
+        "services": "Design digital · UX/UI",
+        "tagline": "Des détails qui se remarquent.",
+        "role": "Product Designer",
+        "period": "Digital",
+        "url": "https://tomfabre.github.io/fr/projets/yaypegs/"
+      },
+      {
+        "slug": "360estudio",
+        "name": "360estudio",
+        "category": "Branding · Web design · Direction artistique",
+        "context": "Architecture",
+        "summary": "Créer une expérience visuelle et digitale qui laisse toute leur place aux projets, tout en révélant la personnalité du studio.",
+        "description": "J'ai construit le système visuel complet : identité, site et gestion du contenu sur les réseaux, avec un niveau de marque cohérent avec la qualité de leurs projets d'architecture.",
+        "services": "Identité · Web · Contenu social",
+        "tagline": "Une identité à la hauteur de son architecture.",
+        "role": "Lead Product Designer",
+        "period": "Binōme",
+        "url": "https://tomfabre.github.io/fr/projets/360estudio/"
+      },
+      {
+        "slug": "figy",
+        "name": "Figy",
+        "category": "Design digital",
+        "context": "Projet digital",
+        "summary": "Design digital pour Figy : une expérience claire et cohérente de bout en bout.",
+        "description": "J'ai travaillé l'expérience et l'interface en soignant la clarté, le rythme et la cohérence visuelle.",
+        "services": "Design digital · UX/UI",
+        "tagline": "Une idée, bien résolue.",
+        "role": "Product Designer",
+        "period": "Digital",
+        "url": "https://tomfabre.github.io/fr/projets/figy/"
+      },
+      {
+        "slug": "apolo",
+        "name": "Apolo",
+        "category": "App · Launcher Android",
+        "context": "Mobile · MadSeven",
+        "summary": "L'interface d'un launcher Android accessible et très personnalisable, avec plus de 3M de téléchargements.",
+        "description": "J'ai conçu l'interface d'un launcher pensé pour se personnaliser sans perdre en clarté ni en accessibilité.",
+        "services": "Produit mobile · UI · Accessibilité",
+        "tagline": "Un mobile qui vous ressemble.",
+        "role": "Senior UX/UI Designer",
+        "period": "2018–2022",
+        "url": "https://tomfabre.github.io/fr/projets/apolo/"
+      },
+      {
+        "slug": "appy",
+        "name": "Appy",
+        "category": "App · Onboarding",
+        "context": "Mobile · MadSeven",
+        "summary": "Un onboarding plus court qui a réduit l'abandon pour plus de 500K utilisateurs.",
+        "description": "J'ai simplifié l'onboarding à partir de l'analyse des comportements et de tests A/B.",
+        "services": "Onboarding · UX · A/B",
+        "tagline": "Moins d'étapes, plus de monde au bout.",
+        "role": "Senior UX/UI Designer",
+        "period": "2018–2022",
+        "url": "https://tomfabre.github.io/fr/projets/appy/"
+      },
+      {
+        "slug": "mood",
+        "name": "Mood Messenger",
+        "category": "App · Messagerie",
+        "context": "Mobile · MadSeven",
+        "summary": "Parcours de messagerie repensés pour favoriser personnalisation et rétention, avec plus de 5M de téléchargements.",
+        "description": "J'ai repensé les parcours de messagerie pour que personnaliser et revenir dans l'app soient plus naturels.",
+        "services": "Produit mobile · Parcours · Rétention",
+        "tagline": "Discuter, à votre manière.",
+        "role": "Senior UX/UI Designer",
+        "period": "2018–2022",
+        "url": "https://tomfabre.github.io/fr/projets/mood/"
+      },
+      {
+        "slug": "molyb",
+        "name": "Molyb",
+        "category": "Plateforme éducative",
+        "context": "Mines · INGC",
+        "summary": "Une plateforme éducative interactive qui rendait accessible un contenu technique complexe.",
+        "description": "J'ai créé une plateforme éducative pour le secteur minier : un contenu technique présenté de façon claire et interactive.",
+        "services": "UX/UI · Plateformes · E-learning",
+        "tagline": "Rendre le technique simple.",
+        "role": "UX/UI Designer",
+        "period": "2015–2017",
+        "url": "https://tomfabre.github.io/fr/projets/molyb/"
+      }
+    ]
+  }
+}

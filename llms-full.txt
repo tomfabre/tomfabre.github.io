@@ -1,0 +1,496 @@
+# Álvaro Fabre — full portfolio content
+
+ > Product and brand designer in Madrid, co-founder of Binōme Studio. Spanish, French and English.
+
+Site: https://tomfabre.github.io/ · Email: alvarofabreg@gmail.com · Updated: 2026-11-13
+
+## English
+
+### Hi, I'm Álvaro — Design that connects ideas, people and products.
+
+I blend strategy, branding, digital design and technology to turn complex ideas into experiences that are clear, useful and full of personality.
+
+Moving between Latin America and Europe has shaped how I work: listening, questioning, connecting perspectives and finding solutions that make sense.
+
+### Not my first rodeo. Still learning every day.
+
+From industrial platforms to apps used by millions, I've worked with different businesses, brands and teams. One thing has stayed the same: making complex things feel simple.
+
+- 10+ years designing digital experiences.
+- 12 countries I've worked with, from Latin America to Europe.
+- 5M+ downloads for one of the apps I worked on.
+- 3 languages to collaborate, create and connect across borders.
+
+### Services
+
+#### Branding & Identity
+Be recognised. Before they even read your name.
+
+A brand is more than a good-looking logo. It's how you tell people who you are, what makes you different and why they should care.
+
+I build identities with character, consistency and a story worth telling. Brands that feel just as right on a screen as they do in the real world.
+Tags: Brand strategy · Visual identity · Art direction · Brand systems
+
+#### Web Design & Development
+Your website should work as hard as you do.
+
+You've got seconds to make an impression. Let's make them count.
+
+I design and build websites that tell your story, build trust and make the next step feel effortless. Thoughtful experiences, strong visual identities and clear paths that help turn visitors into opportunities.
+Tags: UX/UI · Webflow · Web development · Responsive design · Technical SEO
+
+#### Product Design & UX/UI
+Less friction. More reasons to come back.
+
+Great products don't need much explaining. They just make sense.
+
+I design apps and digital platforms around real people and real business goals. From understanding the problem to prototyping, testing and getting the experience ready to build.
+Tags: UX Research · User flows · Prototyping · Testing · Interfaces · Design systems
+
+#### Strategy & Creative Direction
+Find the meaning. Then make it matter.
+
+Sometimes design isn't the problem. The real challenge is knowing what you're trying to say, who you're talking to and why anyone should care.
+
+I help turn scattered ideas into a clear direction, connect the dots and make smarter decisions before the design work even begins.
+Tags: Discovery · Digital strategy · Creative concepts · Brand experience
+
+### Projects
+
+#### Contazara — Branding · Creative direction · Web
+URL: https://tomfabre.github.io/en/projects/contazara/
+40 years of history. A brand ready for what's next.
+
+Refreshing the visual world of an established industrial company, creating a contemporary and consistent identity across brand and digital experiences.
+
+I designed and run the visual identity and the whole digital presence: brand, website and social. A shared standard across channels is what lets an industrial company feel solid and approachable at once.
+Services: Branding · Web · Social media · Role: Lead Product Designer · Context: Industry and energy
+
+#### Carceral Ecologies — Web design
+URL: https://tomfabre.github.io/en/projects/carceral/
+A site that gives ideas room.
+
+Web design for Carceral Ecologies: a clear structure so the content can be read, explored and remembered.
+
+I designed the web experience: information architecture, content hierarchy and a restrained interface that keeps the focus on what needs to be said.
+Services: Web design · Information architecture · Role: Product Designer · Context: Web project
+
+#### À2pas — Branding · Web design
+URL: https://tomfabre.github.io/en/projects/a2pas/
+A brand within arm's reach.
+
+Identity and website for À2pas: a close, recognisable brand with a consistent digital presence.
+
+I built the visual identity and web design aiming for a warm, clear language shared between brand and site.
+Services: Branding · Web design · Role: Product Designer · Context: Brand and web
+
+#### Happylife — UX/UI · Mental health app
+URL: https://tomfabre.github.io/en/projects/happylife/
+Making self-care feel simple.
+
+Designing the experience of a mental health app: support with calm, clarity and a human tone.
+
+I led the UX/UI of an MVP-stage app, coordinating the remote product team and business stakeholders so design decisions reached development without noise.
+Services: UX/UI · Product · Mental health · Role: Lead Product Designer · Context: Mental health · App
+
+#### Binōme Studio — Brand · Web
+URL: https://tomfabre.github.io/en/projects/binome/
+A studio designed with the care it gives its clients.
+
+Identity and website for Binōme, the design studio I run in Madrid with my partner.
+
+I designed the brand and website of our own studio: a place to explain how we work and show what we do, with the same care we give every client.
+Services: Branding · Web · Role: Co-founder & Lead Designer · Context: Own studio
+
+#### Yaypegs — Digital design
+URL: https://tomfabre.github.io/en/projects/yaypegs/
+Details you notice.
+
+Digital design for Yaypegs: a clear experience with personality that's easy to use.
+
+I worked on the experience and visual identity, caring for ease of use and consistency between brand and product.
+Services: Digital design · UX/UI · Role: Product Designer · Context: Digital project
+
+#### 360estudio — Branding · Web design · Art direction
+URL: https://tomfabre.github.io/en/projects/360estudio/
+An architectural identity built to match the work.
+
+Creating a visual and digital experience that gives the studio's projects room to shine while expressing its distinctive personality.
+
+I built the full visual system: identity, website and social content management, with a brand level consistent with the quality of their architecture projects.
+Services: Identity · Web · Social content · Role: Lead Product Designer · Context: Architecture
+
+#### Figy — Digital design
+URL: https://tomfabre.github.io/en/projects/figy/
+One idea, well solved.
+
+Digital design for Figy: a clear, consistent experience from start to finish.
+
+I worked on the experience and interface, caring for clarity, rhythm and visual consistency.
+Services: Digital design · UX/UI · Role: Product Designer · Context: Digital project
+
+#### Apolo — App · Android launcher
+URL: https://tomfabre.github.io/en/projects/apolo/
+A phone that feels like yours.
+
+The interface of an accessible, highly customisable Android launcher with 3M+ downloads.
+
+I designed the interface of a launcher built to be personalised without losing clarity or accessibility.
+Services: Mobile product · UI · Accessibility · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
+
+#### Appy — App · Onboarding
+URL: https://tomfabre.github.io/en/projects/appy/
+Fewer steps, more people arriving.
+
+A shorter onboarding that reduced drop-off for 500K+ users.
+
+I simplified the onboarding using behaviour analytics and A/B testing.
+Services: Onboarding · UX · A/B · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
+
+#### Mood Messenger — App · Messaging
+URL: https://tomfabre.github.io/en/projects/mood/
+Chat, your way.
+
+Messaging flows redesigned to prioritise personalisation and retention, with 5M+ downloads.
+
+I redesigned the messaging flows so personalising and coming back felt more natural.
+Services: Mobile product · Flows · Retention · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
+
+#### Molyb — Educational platform
+URL: https://tomfabre.github.io/en/projects/molyb/
+Making technical simple.
+
+An interactive educational platform that made complex technical content accessible.
+
+I created an educational platform for the mining sector: technical content presented clearly and interactively.
+Services: UX/UI · Platforms · E-learning · Role: UX/UI Designer · Context: Mining · INGC
+
+### I don't design to impress other designers. I design for the people on the other side of the screen.
+
+## Español
+
+### Hola, soy Álvaro — Diseño para conectar ideas, personas y productos.
+
+Combino estrategia, branding, diseño digital y tecnología para convertir ideas complejas en experiencias claras, útiles y con personalidad.
+
+Mi recorrido entre Latinoamérica y Europa ha marcado mi manera de trabajar: escuchar, cuestionar, conectar perspectivas y encontrar soluciones que tengan sentido.
+
+### No empecé ayer. Y sigo aprendiendo.
+
+De plataformas industriales a aplicaciones utilizadas por millones de personas. He trabajado con negocios, marcas y equipos muy diferentes, pero siempre con una misma idea: hacer que lo complejo parezca sencillo.
+
+- 10+ años diseñando experiencias digitales.
+- 12 países con los que he trabajado, de Latinoamérica a Europa.
+- 5M+ descargas de una de las aplicaciones en las que trabajé.
+- 3 idiomas para trabajar, colaborar y crear sin fronteras.
+
+### Servicios
+
+#### Branding & identidad
+Que te reconozcan. Incluso antes de leer tu nombre.
+
+Una marca no es simplemente un logo bonito. Es una forma de contar quién eres, qué te hace diferente y por qué alguien debería elegirte.
+
+Creo identidades con carácter, coherencia y una historia detrás. Marcas que funcionan en una pantalla, en una conversación y en el mundo real.
+Tags: Estrategia de marca · Identidad visual · Dirección de arte · Sistemas de marca
+
+#### Diseño & desarrollo web
+Tu web debería trabajar tanto como tú.
+
+Tienes pocos segundos para despertar interés. Hagamos que cuenten.
+
+Diseño y desarrollo webs que cuentan tu historia, transmiten confianza y hacen fácil dar el siguiente paso. Con una experiencia fluida, una identidad sólida y una estructura pensada para convertir visitas en oportunidades.
+Tags: UX/UI · Webflow · Desarrollo web · Responsive · SEO técnico
+
+#### Product Design & UX/UI
+Menos fricción. Más ganas de volver.
+
+Los mejores productos no necesitan explicarse demasiado. Simplemente hacen que todo tenga sentido.
+
+Diseño aplicaciones y plataformas poniendo a las personas en el centro y los objetivos del negocio sobre la mesa. Desde entender el problema hasta prototipar, validar y preparar una solución lista para construir.
+Tags: UX Research · User Flows · Prototipos · Testing · Interfaces · Design Systems
+
+#### Estrategia & dirección creativa
+Primero encontramos el sentido. Después le damos forma.
+
+A veces el problema no es el diseño. Es que todavía no está claro qué quieres contar, a quién o por qué debería importarle.
+
+Te ayudo a ordenar las ideas, encontrar oportunidades y construir una dirección creativa coherente. Para tomar mejores decisiones antes de invertir tiempo y dinero en ejecutarlas.
+Tags: Discovery · Estrategia digital · Concepto creativo · Experiencia de marca
+
+### Proyectos
+
+#### Contazara — Branding · Dirección creativa · Web
+URL: https://tomfabre.github.io/proyectos/contazara/
+40 años de historia. Una identidad preparada para lo que viene.
+
+Transformar la presencia de una empresa industrial con trayectoria en un universo de marca contemporáneo, reconocible y coherente, desde su identidad hasta sus experiencias digitales.
+
+Diseñé y gestiono la identidad visual y toda la presencia digital: marca, web y redes sociales. Mantener un criterio común entre canales es lo que hace que una empresa industrial transmita solidez y se sienta cercana a la vez.
+Services: Branding · Web · Redes sociales · Role: Lead Product Designer · Context: Industria y energía
+
+#### Carceral Ecologies — Diseño web
+URL: https://tomfabre.github.io/proyectos/carceral/
+Un sitio que da espacio a las ideas.
+
+Diseño web para Carceral Ecologies: una estructura clara para que el contenido se lea, se explore y se recuerde.
+
+Diseñé la experiencia web: arquitectura de la información, jerarquía de contenidos y una interfaz sobria que pone el foco en lo que hay que contar.
+Services: Diseño web · Arquitectura de la información · Role: Product Designer · Context: Proyecto web
+
+#### À2pas — Branding · Diseño web
+URL: https://tomfabre.github.io/proyectos/a2pas/
+Una marca cercana, a dos pasos de las personas.
+
+Identidad y web para À2pas: una marca cercana y reconocible, con una presencia digital coherente.
+
+Construí la identidad visual y el diseño web buscando un lenguaje cercano, claro y coherente entre marca y sitio.
+Services: Branding · Diseño web · Role: Product Designer · Context: Marca y web
+
+#### Happylife — UX/UI · App de salud mental
+URL: https://tomfabre.github.io/proyectos/happylife/
+Hacer que cuidarse se sienta sencillo.
+
+Diseño de la experiencia de una app de salud mental: acompañar con calma, claridad y un tono humano.
+
+Dirigí el UX/UI de una app en fase MVP, coordinando al equipo de producto remoto y a las personas de negocio para que las decisiones de diseño llegaran a desarrollo sin ruido.
+Services: UX/UI · Producto · Salud mental · Role: Lead Product Designer · Context: Salud mental · App
+
+#### Binōme Studio — Marca · Web
+URL: https://tomfabre.github.io/proyectos/binome/
+El estudio, diseñado con el mismo cuidado que sus clientes.
+
+Identidad y web de Binōme, el estudio de diseño que dirijo en Madrid con mi socia.
+
+Diseñé la marca y la web de nuestro propio estudio: un lugar donde explicar cómo trabajamos y mostrar lo que hacemos, con el mismo criterio que aplicamos a cada cliente.
+Services: Branding · Web · Role: Co-founder & Lead Designer · Context: Estudio propio
+
+#### Yaypegs — Diseño digital
+URL: https://tomfabre.github.io/proyectos/yaypegs/
+Detalles que se notan.
+
+Diseño digital para Yaypegs: una experiencia clara, con personalidad y fácil de usar.
+
+Trabajé la experiencia y la identidad visual cuidando la claridad de uso y la coherencia entre marca y producto.
+Services: Diseño digital · UX/UI · Role: Product Designer · Context: Proyecto digital
+
+#### 360estudio — Branding · Diseño web · Dirección de arte
+URL: https://tomfabre.github.io/proyectos/360estudio/
+Arquitectura con una identidad a su altura.
+
+Construir una identidad digital que deje hablar a los proyectos, refleje la personalidad del estudio y convierta su trabajo en una experiencia visual coherente.
+
+Construí el sistema visual completo: identidad, web y gestión del contenido en redes, con un nivel de marca coherente con la calidad de sus proyectos de arquitectura.
+Services: Identidad · Web · Contenido social · Role: Lead Product Designer · Context: Arquitectura
+
+#### Figy — Diseño digital
+URL: https://tomfabre.github.io/proyectos/figy/
+Una idea, bien resuelta.
+
+Diseño digital para Figy: una experiencia clara y coherente de principio a fin.
+
+Trabajé la experiencia y la interfaz cuidando la claridad, el ritmo y la coherencia visual.
+Services: Diseño digital · UX/UI · Role: Product Designer · Context: Proyecto digital
+
+#### Apolo — App · Launcher Android
+URL: https://tomfabre.github.io/proyectos/apolo/
+Un móvil que se siente tuyo.
+
+La interfaz de un launcher Android accesible y muy personalizable, con más de 3M de descargas.
+
+Diseñé la interfaz de un launcher pensado para personalizarse sin perder claridad ni accesibilidad.
+Services: Producto móvil · UI · Accesibilidad · Role: Senior UX/UI Designer · Context: Móvil · MadSeven
+
+#### Appy — App · Onboarding
+URL: https://tomfabre.github.io/proyectos/appy/
+Menos pasos, más gente que llega.
+
+Un onboarding más corto que redujo el abandono en más de 500K usuarios.
+
+Simplifiqué el onboarding apoyándome en análisis de comportamiento y pruebas A/B.
+Services: Onboarding · UX · A/B · Role: Senior UX/UI Designer · Context: Móvil · MadSeven
+
+#### Mood Messenger — App · Mensajería
+URL: https://tomfabre.github.io/proyectos/mood/
+Conversar, a tu manera.
+
+Flujos de mensajería rediseñados para priorizar personalización y retención, con más de 5M de descargas.
+
+Rediseñé los flujos de mensajería para que personalizar y volver a la app fuese más natural.
+Services: Producto móvil · Flujos · Retención · Role: Senior UX/UI Designer · Context: Móvil · MadSeven
+
+#### Molyb — Plataforma educativa
+URL: https://tomfabre.github.io/proyectos/molyb/
+Hacer simple lo técnico.
+
+Una plataforma educativa interactiva que volvía accesible contenido técnico complejo.
+
+Creé una plataforma educativa para el sector minero: contenido técnico presentado de forma clara e interactiva.
+Services: UX/UI · Plataformas · E-learning · Role: UX/UI Designer · Context: Minería · INGC
+
+### No diseño para impresionar a otros diseñadores. Diseño para las personas que están al otro lado.
+
+## Français
+
+### Salut, moi c'est Álvaro — Un design qui relie les idées, les gens et les produits.
+
+Je mêle stratégie, branding, design digital et technologie pour transformer des idées complexes en expériences claires, utiles et pleines de personnalité.
+
+Mon parcours entre l'Amérique latine et l'Europe a façonné ma façon de travailler : écouter, questionner, relier les points de vue et trouver des solutions qui ont du sens.
+
+### Quelques années au compteur. Toujours aussi curieux.
+
+Des plateformes industrielles aux applications utilisées par des millions de personnes, j'ai travaillé avec des marques, des entreprises et des équipes très différentes.
+Avec toujours la même envie : rendre les choses complexes étonnamment simples.
+
+- 10+ ans à concevoir des expériences numériques.
+- 12 pays avec lesquels j'ai travaillé, de l'Amérique latine à l'Europe.
+- 5M+ de téléchargements pour l'une des applications sur lesquelles j'ai travaillé.
+- 3 langues pour imaginer, collaborer et créer sans frontières.
+
+### Services
+
+#### Branding & Identité
+Être reconnu. Avant même qu'on lise votre nom.
+
+Une marque, ce n'est pas simplement un beau logo. C'est une façon de raconter qui vous êtes, ce qui vous rend unique et pourquoi on devrait vous choisir.
+
+Je crée des identités avec du caractère, de la cohérence et une vraie histoire. Des marques qui trouvent leur place aussi bien sur un écran que dans la vraie vie.
+Tags: Stratégie de marque · Identité visuelle · Direction artistique · Systèmes de marque
+
+#### Web Design & Développement
+Votre site devrait travailler autant que vous.
+
+Quelques secondes suffisent pour faire une première impression. Autant bien les utiliser.
+
+Je conçois et développe des sites qui racontent votre histoire, inspirent confiance et donnent envie de passer à l'action. Une expérience fluide, une identité affirmée et un parcours pensé pour transformer les visites en opportunités.
+Tags: UX/UI · Webflow · Développement web · Responsive · SEO technique
+
+#### Product Design & UX/UI
+Moins de friction. Plus de plaisir à revenir.
+
+Les meilleurs produits n'ont pas besoin de longues explications. Tout semble naturel.
+
+Je conçois des applications et des plateformes numériques en conciliant les besoins des utilisateurs et les objectifs de l'entreprise. De la compréhension du problème aux prototypes, aux tests et à la préparation du développement.
+Tags: Recherche UX · Parcours utilisateurs · Prototypage · Tests · Interfaces · Design systems
+
+#### Stratégie & Direction créative
+Trouver le sens. Puis lui donner forme.
+
+Parfois, le problème n'est pas le design. C'est de savoir ce qu'on veut raconter, à qui on s'adresse et pourquoi cela devrait compter.
+
+Je vous aide à clarifier vos idées, identifier les opportunités et construire une direction créative cohérente. Pour faire les bons choix avant même de commencer à produire.
+Tags: Discovery · Stratégie digitale · Concept créatif · Expérience de marque
+
+### Projects
+
+#### Contazara — Branding · Direction créative · Web
+URL: https://tomfabre.github.io/fr/projets/contazara/
+40 ans d'histoire. Une identité tournée vers demain.
+
+Faire évoluer l'univers visuel d'une entreprise industrielle historique vers une identité contemporaine, cohérente et reconnaissable, de la marque aux expériences numériques.
+
+J'ai conçu et je gère l'identité visuelle et toute la présence numérique : marque, site et réseaux sociaux. Un cap commun entre les canaux permet à une entreprise industrielle d'inspirer confiance tout en restant proche.
+Services: Branding · Web · Réseaux sociaux · Role: Lead Product Designer · Context: Industrie et énergie
+
+#### Carceral Ecologies — Web design
+URL: https://tomfabre.github.io/fr/projets/carceral/
+Un site qui laisse de la place aux idées.
+
+Design web pour Carceral Ecologies : une structure claire pour que le contenu se lise, s'explore et se retienne.
+
+J'ai conçu l'expérience web : architecture de l'information, hiérarchie des contenus et interface sobre qui met l'accent sur l'essentiel.
+Services: Web design · Architecture de l'information · Role: Product Designer · Context: Projet web
+
+#### À2pas — Branding · Web design
+URL: https://tomfabre.github.io/fr/projets/a2pas/
+Une marque à deux pas des gens.
+
+Identité et site pour À2pas : une marque proche et reconnaissable, avec une présence digitale cohérente.
+
+J'ai construit l'identité visuelle et le design web avec un langage chaleureux, clair et cohérent entre marque et site.
+Services: Branding · Web design · Role: Product Designer · Context: Marque et web
+
+#### Happylife — UX/UI · App de santé mentale
+URL: https://tomfabre.github.io/fr/projets/happylife/
+Rendre le soin de soi simple.
+
+Conception de l'expérience d'une app de santé mentale : accompagner avec calme, clarté et un ton humain.
+
+J'ai dirigé l'UX/UI d'une app en phase MVP, en coordonnant l'équipe produit à distance et le métier pour que les décisions arrivent au développement sans bruit.
+Services: UX/UI · Produit · Santé mentale · Role: Lead Product Designer · Context: Santé mentale · App
+
+#### Binōme Studio — Marque · Web
+URL: https://tomfabre.github.io/fr/projets/binome/
+Un studio conçu avec le soin qu'il offre à ses clients.
+
+Identité et site de Binōme, le studio de design que je dirige à Madrid avec mon associée.
+
+J'ai conçu la marque et le site de notre propre studio : un lieu pour expliquer notre façon de travailler, avec le même soin que pour chaque client.
+Services: Branding · Web · Role: Co-founder & Lead Designer · Context: Studio propre
+
+#### Yaypegs — Design digital
+URL: https://tomfabre.github.io/fr/projets/yaypegs/
+Des détails qui se remarquent.
+
+Design digital pour Yaypegs : une expérience claire, avec de la personnalité et facile à utiliser.
+
+J'ai travaillé l'expérience et l'identité visuelle en soignant la lisibilité d'usage et la cohérence entre marque et produit.
+Services: Design digital · UX/UI · Role: Product Designer · Context: Projet digital
+
+#### 360estudio — Branding · Web design · Direction artistique
+URL: https://tomfabre.github.io/fr/projets/360estudio/
+Une identité à la hauteur de son architecture.
+
+Créer une expérience visuelle et digitale qui laisse toute leur place aux projets, tout en révélant la personnalité du studio.
+
+J'ai construit le système visuel complet : identité, site et gestion du contenu sur les réseaux, avec un niveau de marque cohérent avec la qualité de leurs projets d'architecture.
+Services: Identité · Web · Contenu social · Role: Lead Product Designer · Context: Architecture
+
+#### Figy — Design digital
+URL: https://tomfabre.github.io/fr/projets/figy/
+Une idée, bien résolue.
+
+Design digital pour Figy : une expérience claire et cohérente de bout en bout.
+
+J'ai travaillé l'expérience et l'interface en soignant la clarté, le rythme et la cohérence visuelle.
+Services: Design digital · UX/UI · Role: Product Designer · Context: Projet digital
+
+#### Apolo — App · Launcher Android
+URL: https://tomfabre.github.io/fr/projets/apolo/
+Un mobile qui vous ressemble.
+
+L'interface d'un launcher Android accessible et très personnalisable, avec plus de 3M de téléchargements.
+
+J'ai conçu l'interface d'un launcher pensé pour se personnaliser sans perdre en clarté ni en accessibilité.
+Services: Produit mobile · UI · Accessibilité · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
+
+#### Appy — App · Onboarding
+URL: https://tomfabre.github.io/fr/projets/appy/
+Moins d'étapes, plus de monde au bout.
+
+Un onboarding plus court qui a réduit l'abandon pour plus de 500K utilisateurs.
+
+J'ai simplifié l'onboarding à partir de l'analyse des comportements et de tests A/B.
+Services: Onboarding · UX · A/B · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
+
+#### Mood Messenger — App · Messagerie
+URL: https://tomfabre.github.io/fr/projets/mood/
+Discuter, à votre manière.
+
+Parcours de messagerie repensés pour favoriser personnalisation et rétention, avec plus de 5M de téléchargements.
+
+J'ai repensé les parcours de messagerie pour que personnaliser et revenir dans l'app soient plus naturels.
+Services: Produit mobile · Parcours · Rétention · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
+
+#### Molyb — Plateforme éducative
+URL: https://tomfabre.github.io/fr/projets/molyb/
+Rendre le technique simple.
+
+Une plateforme éducative interactive qui rendait accessible un contenu technique complexe.
+
+J'ai créé une plateforme éducative pour le secteur minier : un contenu technique présenté de façon claire et interactive.
+Services: UX/UI · Plateformes · E-learning · Role: UX/UI Designer · Context: Mines · INGC
+
+### Je ne conçois pas pour impressionner d'autres designers. Je conçois pour les personnes de l'autre côté de l'écran.
+
