@@ -137,7 +137,7 @@ function renderAboutHome(){ const t = L(); $("#abP").innerHTML = t.ha_p.map(x =>
 const crumbs = items => `<nav class="crumbs" aria-label="${esc(({es:"Migas de pan",en:"Breadcrumb",fr:"Fil d'Ariane"})[lang])}"><ol>${items.map(([l, h]) => h ? `<li><a href="${h}">${esc(l)}</a></li>` : `<li aria-current="page">${esc(l)}</li>`).join("")}</ol></nav>`;
 function projCard(k, tag){
   const t = L(), i = PROJ.findIndex(p => p.key === k), p = t.projects[i];
-  return `<a class="pj-card" href="#project-${k}" aria-label="${esc(p[0])} — ${esc(t.view_project)}"><span class="art">${svgOf(k, 0)}</span><span class="pj-info"><${tag}>${esc(p[0])}</${tag}><span class="tg">${esc(p[6] || "")}</span><span class="meta-row"><span>${esc(p[1])}</span><span>${esc(PROJ[i].years)}</span></span><span class="go" aria-hidden="true">→</span></span></a>`;
+  return `<a class="pj-card" href="#project-${k}"><span class="art">${svgOf(k, 0)}</span><span class="pj-info"><${tag}>${esc(p[0])}</${tag}><span class="tg">${esc(p[6] || "")}</span><span class="meta-row"><span>${esc(p[1])}</span><span>${esc(PROJ[i].years)}</span></span><span class="go" aria-hidden="true">→</span></span></a>`;
 }
 function renderServicesIndex(){
   const t = L(), sp = t.sp.idx; const el = $("#svIdx"); if (!el) return;
@@ -182,7 +182,7 @@ function renderGrid(){
   const t = L(); const rn = t.projects.length; const pc = $("#pjcount"); if (pc) pc.textContent = rn + " · 2015 — 2026";
   $("#grid").innerHTML = t.projects.map((p, i) => {
     const k = PROJ[i].key;
-    return `<a class="pj-card" href="#project-${k}" aria-label="${esc(p[0])} — ${esc(t.view_project)}"><span class="art">${svgOf(k, 0)}</span><span class="pj-info"><h2>${esc(p[0])}</h2><span class="tg">${esc(p[6] || "")}</span><span class="meta-row"><span>${esc(p[1])}</span><span>${esc(PROJ[i].years)}</span></span><span class="go" aria-hidden="true">→</span></span></a>`;
+    return `<a class="pj-card" href="#project-${k}"><span class="art">${svgOf(k, 0)}</span><span class="pj-info"><h2>${esc(p[0])}</h2><span class="tg">${esc(p[6] || "")}</span><span class="meta-row"><span>${esc(p[1])}</span><span>${esc(PROJ[i].years)}</span></span><span class="go" aria-hidden="true">→</span></span></a>`;
   }).join("");
   // wire toggle once
   if (!gridWired){
@@ -611,7 +611,7 @@ const SOCIALS = [
 function renderSocials(){
   $("#socials").innerHTML = SOCIALS.map(([n,,u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)} <span class="arr" aria-hidden="true">↗</span></a></li>`).join("");
   const AB = { Instagram:"IG", LinkedIn:"IN", Behance:"Bē", LottieFiles:"Lottie", GitHub:"GH" };
-  $("#socialsFoot").innerHTML = SOCIALS.map(([n,,u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener" aria-label="${esc(n)}" data-n="${esc(n)}">${esc(AB[n] || n)}</a></li>`).join("");
+  $("#socialsFoot").innerHTML = SOCIALS.map(([n,,u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener" aria-label="${esc((AB[n] && AB[n] !== n) ? AB[n] + " – " + n : n)}" data-n="${esc(n)}">${esc(AB[n] || n)}</a></li>`).join("");
 }
 
 /* ---------- hide chat near footer ---------- */
@@ -627,6 +627,7 @@ function applyLang(){
   const t = L(); root.lang = lang; store.set("af-lang", lang);
   $$("[data-i]").forEach(el => { if (t[el.dataset.i] != null) el.textContent = t[el.dataset.i]; });
   $$("[data-aria]").forEach(el => el.setAttribute("aria-label", t[el.dataset.aria]));
+  { const lb = $("#langBtn"); if (lb) lb.setAttribute("aria-label", document.documentElement.lang.slice(0,2).toUpperCase() + " – " + t.lang_label); }   // accessible name contains the visible text (WCAG 2.5.3)
   // project meta labels
   t.role_l2 = t.role_l2 || ({es:"Rol",en:"Role",fr:"Rôle"})[lang];
   t.ctx_l2 = ({es:"Contexto",en:"Context",fr:"Contexte"})[lang];
