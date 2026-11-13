@@ -91,6 +91,14 @@ def imgjs(mode):
             out.setdefault(k, {})[v] = "data:image/webp;base64," + base64.b64encode(bio.getvalue()).decode()
     return "window.__IMG=" + json.dumps(out) + ";\n"
 IMGTOKEN = "/*IMG*/"
+def _min(src, loader):
+    """Minify with esbuild when available (set ESBUILD=/path/to/esbuild); otherwise keep the source as is."""
+    exe = os.environ.get("ESBUILD") or shutil.which("esbuild")
+    if not exe: return src
+    r = subprocess.run([exe, "--minify", "--loader=" + loader], input=src, capture_output=True, text=True)
+    return r.stdout if r.returncode == 0 and r.stdout.strip() else src
+a = re.sub(r"(<style>)(.*?)(</style>)", lambda m: m.group(1) + _min(m.group(2), "css") + m.group(3), a, flags=re.S)
+body_js = _min(body_js, "js")
 html = a + "<!--BODY-->" + b + "<!--/BODY-->" + "<script>\n" + IMGTOKEN + body_js + "\n</script>\n"
 open("index.html","w").write(html.replace(IMGTOKEN, imgjs("data")).replace("<!--BODY-->","").replace("<!--/BODY-->",""))
 # 4) deploy pack
@@ -121,7 +129,7 @@ def page_html(lg, page, key):
     h = re.sub(r'<meta property="og:locale:alternate" content="[^"]*">\n?', "", h)
     alts = "".join(f'<meta property="og:locale:alternate" content="{LOCALE[o]}">' for o in ("es","en","fr") if o != lg)
     hre = "".join(f'<link rel="alternate" hreflang="{o}" href="{U(o,page,key)}">' for o in ("es","en","fr")) + f'<link rel="alternate" hreflang="x-default" href="{U("es",page,key)}">'
-    h = sub1(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{U(lg,page,key)}">{hre}<meta name="af-paths" content="1">{alts}', h)
+    h = sub1(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{U(lg,page,key)}">{hre}<meta name="af-paths" content="1"><link rel="ard" href="/.well-known/ard.json">{alts}', h)
     h = h.replace('href="cv-alvaro-fabre.pdf"','href="/cv-alvaro-fabre.pdf"').replace('cvUrl:"cv-alvaro-fabre.pdf"','cvUrl:"/cv-alvaro-fabre.pdf"')
     return f'<!doctype html>\n<html lang="{lg}">\n<meta charset="utf-8">\n' + h
 npages = 0
@@ -154,7 +162,7 @@ for i,s in enumerate(en["hs_items"]): L.append(f"- [{s[0]}]({U('en','service',SK
 L.append(""); L.append("## Optional"); L.append("")
 L.append(f"- [Full content]({SITE}/llms-full.txt): Complete portfolio text in Spanish, English and French.")
 L.append(f"- [Portfolio data (JSON)]({SITE}/portfolio.json): Projects, services and profile links as structured data.")
-L.append(f"- [AI catalog]({SITE}/.well-known/ai-catalog.json): Machine-readable index of resources for agents.")
+L.append(f"- [AI resource catalog]({SITE}/.well-known/ard.json): Machine-readable index of resources for agents.")
 L.append(f"- [Binōme Studio](https://binome.xyz): The design studio Álvaro co-founded in Madrid.")
 open(dist+"/llms.txt","w").write("\n".join(L)+"\n")
 # llms-full.txt
@@ -182,11 +190,11 @@ for l in ("en","es","fr"):
 open(dist+"/llms-full.txt","w").write("\n".join(F)+"\n")
 # ai-catalog.json
 cat = {"specVersion":"1.0","host":{"displayName":"Tom Fabre","identifier":DOMAIN},"entries":[
- {"identifier":f"urn:ai:{DOMAIN}:knowledge:llms-txt","displayName":"Tom Fabre — llms.txt","type":"text/plain","url":f"{SITE}/llms.txt","description":"Curated index of Tom Fabre's portfolio for AI agents: profile, projects, services and contact."},
- {"identifier":f"urn:ai:{DOMAIN}:knowledge:llms-full-txt","displayName":"Tom Fabre — full content","type":"text/plain","url":f"{SITE}/llms-full.txt","description":"Complete portfolio text in Spanish, English and French."},
- {"identifier":f"urn:ai:{DOMAIN}:data:portfolio","displayName":"Tom Fabre — portfolio data","type":"application/json","url":f"{SITE}/portfolio.json","description":"Structured JSON with profile, services and all projects in three languages."},
- {"identifier":f"urn:ai:{DOMAIN}:data:sitemap","displayName":"Sitemap","type":"application/xml","url":f"{SITE}/sitemap.xml","description":"XML sitemap of the site."}]}
-open(dist+"/.well-known/ai-catalog.json","w").write(json.dumps(cat,ensure_ascii=False,indent=2))
+ {"identifier":f"urn:air:{DOMAIN}:knowledge:llms-txt","displayName":"Tom Fabre — llms.txt","type":"text/plain","url":f"{SITE}/llms.txt","description":"Curated index of Tom Fabre's portfolio for AI agents: profile, projects, services and contact.","representativeQueries":["Who is Tom Fabre and what does he design?","What services does Tom Fabre offer?"]},
+ {"identifier":f"urn:air:{DOMAIN}:knowledge:llms-full-txt","displayName":"Tom Fabre — full content","type":"text/plain","url":f"{SITE}/llms-full.txt","description":"Complete portfolio text in Spanish, English and French.","representativeQueries":["Show all of Tom Fabre's projects with details","Tom Fabre portfolio full text in Spanish, English and French"]},
+ {"identifier":f"urn:air:{DOMAIN}:data:portfolio","displayName":"Tom Fabre — portfolio data","type":"application/json","url":f"{SITE}/portfolio.json","description":"Structured JSON with profile, services and all projects in three languages.","representativeQueries":["Structured data about Tom Fabre's projects and services","Which projects has Tom Fabre worked on?"]},
+ {"identifier":f"urn:air:{DOMAIN}:data:sitemap","displayName":"Sitemap","type":"application/xml","url":f"{SITE}/sitemap.xml","description":"XML sitemap of the site.","representativeQueries":["List every page of tomfabre.com","Which language versions does tomfabre.com have?"]}]}
+for _n in ("ard.json","ai-catalog.json"): open(dist+"/.well-known/"+_n,"w").write(json.dumps(cat,ensure_ascii=False,indent=2))
 # robots, sitemap, favicon, manifest
 bots=["GPTBot","OAI-SearchBot","ChatGPT-User","ClaudeBot","Claude-User","Claude-SearchBot","anthropic-ai","PerplexityBot","Perplexity-User","Google-Extended","Applebot-Extended","Bingbot","Googlebot","CCBot","Amazonbot","Meta-ExternalAgent","DuckAssistBot"]
 r="# Tom Fabre — AI and search crawlers are welcome\nUser-agent: *\nAllow: /\n\n"+"".join(f"User-agent: {b}\nAllow: /\n\n" for b in bots)+f"Sitemap: {SITE}/sitemap.xml\n"
@@ -204,7 +212,7 @@ open(dist+"/manifest.webmanifest","w").write(json.dumps({"name":"Tom Fabre","sho
 open(dist+"/_headers","w").write("/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n\n/llms.txt\n  Content-Type: text/plain; charset=utf-8\n/llms-full.txt\n  Content-Type: text/plain; charset=utf-8\n/.well-known/ai-catalog.json\n  Content-Type: application/json; charset=utf-8\n  Access-Control-Allow-Origin: *\n/portfolio.json\n  Content-Type: application/json; charset=utf-8\n  Access-Control-Allow-Origin: *\n/*.pdf\n  Cache-Control: public, max-age=86400\n")
 print("built", SITE, len(html), npages, "pages")
 
-shutil.copytree("img", dist + "/img"); open(dist + "/.nojekyll", "w").close()
+shutil.copytree("img", dist + "/img"); shutil.copytree("fonts", dist + "/fonts"); open(dist + "/.nojekyll", "w").close()
 if not SITE.endswith("github.io"): open(dist + "/CNAME", "w").write(SITE.split("//")[-1] + "\n")   # GitHub Pages custom domain
 for f in glob.glob("extras/*"): shutil.copy(f, dist + "/" + f.split("/")[-1])
 

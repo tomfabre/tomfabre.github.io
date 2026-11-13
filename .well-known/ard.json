@@ -1,0 +1,53 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Tom Fabre",
+    "identifier": "tomfabre.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:tomfabre.com:knowledge:llms-txt",
+      "displayName": "Tom Fabre — llms.txt",
+      "type": "text/plain",
+      "url": "https://tomfabre.com/llms.txt",
+      "description": "Curated index of Tom Fabre's portfolio for AI agents: profile, projects, services and contact.",
+      "representativeQueries": [
+        "Who is Tom Fabre and what does he design?",
+        "What services does Tom Fabre offer?"
+      ]
+    },
+    {
+      "identifier": "urn:air:tomfabre.com:knowledge:llms-full-txt",
+      "displayName": "Tom Fabre — full content",
+      "type": "text/plain",
+      "url": "https://tomfabre.com/llms-full.txt",
+      "description": "Complete portfolio text in Spanish, English and French.",
+      "representativeQueries": [
+        "Show all of Tom Fabre's projects with details",
+        "Tom Fabre portfolio full text in Spanish, English and French"
+      ]
+    },
+    {
+      "identifier": "urn:air:tomfabre.com:data:portfolio",
+      "displayName": "Tom Fabre — portfolio data",
+      "type": "application/json",
+      "url": "https://tomfabre.com/portfolio.json",
+      "description": "Structured JSON with profile, services and all projects in three languages.",
+      "representativeQueries": [
+        "Structured data about Tom Fabre's projects and services",
+        "Which projects has Tom Fabre worked on?"
+      ]
+    },
+    {
+      "identifier": "urn:air:tomfabre.com:data:sitemap",
+      "displayName": "Sitemap",
+      "type": "application/xml",
+      "url": "https://tomfabre.com/sitemap.xml",
+      "description": "XML sitemap of the site.",
+      "representativeQueries": [
+        "List every page of tomfabre.com",
+        "Which language versions does tomfabre.com have?"
+      ]
+    }
+  ]
+}

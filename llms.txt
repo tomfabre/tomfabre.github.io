@@ -36,5 +36,5 @@ The portfolio has real URLs per language: Spanish at the root, English under /en
 
 - [Full content](https://tomfabre.com/llms-full.txt): Complete portfolio text in Spanish, English and French.
 - [Portfolio data (JSON)](https://tomfabre.com/portfolio.json): Projects, services and profile links as structured data.
-- [AI catalog](https://tomfabre.com/.well-known/ai-catalog.json): Machine-readable index of resources for agents.
+- [AI resource catalog](https://tomfabre.com/.well-known/ard.json): Machine-readable index of resources for agents.
 - [Binōme Studio](https://binome.xyz): The design studio Álvaro co-founded in Madrid.

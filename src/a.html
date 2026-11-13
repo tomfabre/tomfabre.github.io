@@ -34,9 +34,12 @@
 <link rel="alternate" type="application/json" href="%%SITE%%/portfolio.json" title="Portfolio data (JSON)">
 <link rel="sitemap" type="application/xml" href="%%SITE%%/sitemap.xml">
 <!--JSONLD-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap">
+<link rel="preload" href="/fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Outfit (SIL Open Font License) self-hosted: no third-party request, no render-blocking stylesheet */
+@font-face{font-family:"Outfit";font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/outfit-latin-ext-wght-normal.woff2) format("woff2-variations"),url(/fonts/outfit-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Outfit";font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/outfit-latin-wght-normal.woff2) format("woff2-variations"),url(/fonts/outfit-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
 <style>
 /* Editorial portfolio: monumental type, numbered index with hairline rules, pill UI. Palette and font kept. */
 :root{
@@ -379,8 +382,8 @@ html[lang="fr"] .hm-btn .l2{padding-left:0}
 .scroll-hint .ar{display:inline-block;animation:nudge 2.6s ease-in-out infinite}
 @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 @keyframes rise{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:none}}
-.hmin .avail{animation:rise 800ms var(--ease) both}
-.hmin .hmega{animation:rise 1000ms var(--ease) 120ms both}
+.hmin .avail{animation:rise 450ms var(--ease) both}
+.hmin .hmega{animation:rise 550ms var(--ease) both}
 .hmin .scroll-hint{animation:rise 900ms var(--ease) 500ms both}
 @media (prefers-reduced-motion:reduce){
  .av-w{animation:none;color:var(--av1)}
@@ -1023,6 +1026,20 @@ footer .foot-grid{display:grid;grid-template-columns:1fr auto;gap:var(--s5) var(
 .foot-copy[data-w]::after{left:50%;text-align:center;max-width:min(22rem,86vw);transform:translate(-50%,4px)}
 .foot-copy[data-w]:hover::after,.foot-copy[data-w]:focus-visible::after{transform:translate(-50%,0)}
 @media (max-width:40rem){.foot-copy{text-align:center}}
+
+/* project page CTA: a quieter version of the home contact card */
+.pj-more{position:relative;isolation:isolate;overflow:hidden;background:var(--surface);border:0;border-radius:2rem;padding:var(--s10) var(--s8);margin-block:var(--s12) var(--s8)}
+.pj-more .blobs i{filter:blur(64px)}
+.pj-more .blobs .b4,.pj-more .blobs .bm{display:none}
+.pj-more ul a{text-underline-offset:.3em}
+@media (max-width:40rem){.pj-more{padding:var(--s8) var(--s6);border-radius:1.5rem}}
+/* mobile fixes: hero hint flows below the text instead of overlapping; square bento gallery; form close button */
+@media (max-width:59.99rem){
+  .hmin .scroll-hint{position:static;margin-top:var(--s8)}
+  .bt-photo .bt-gal{flex:none;width:100%;aspect-ratio:1/1;min-height:0;max-height:none}
+}
+dialog .dx{position:sticky;top:0;float:right;margin:-.3rem -.3rem .6rem 1rem;z-index:2;background:var(--bg)}
+dialog .dx:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
