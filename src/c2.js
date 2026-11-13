@@ -121,7 +121,7 @@ function wireMenu(){
 
 /* ---------- home sections ---------- */
 /* service <-> project relations come from the "services" column of each project in the repo (single source) */
-const PSVC = { contazara:["branding","web"], carceral:["web"], a2pas:["ux","web","branding"], happylife:["ux"], binome:["branding","web"], yaypegs:["ux"], "360estudio":["branding","web"], figy:["ux"], apolo:["ux"], appy:["ux"], mood:["ux"], molyb:["ux"] };
+const PSVC = { contazara:["branding","web"], carceral:["web"], a2pas:["ux","web","branding"], happylife:["ux"], binome:["branding","web","ux"], yaypegs:["ux"], "360estudio":["branding","web"], figy:["ux"], apolo:["ux"], appy:["ux"], mood:["ux"], molyb:["ux"] };
 const sentence = x => { x = String(x).toLowerCase(); return x.charAt(0).toUpperCase() + x.slice(1); };
 const oneLine = x => String(x).replace(/\n/g, " ");
 function renderHomeServices(){
@@ -202,7 +202,8 @@ function renderGrid(){
 }
 /* ---------- case-study sections: optional per project (SECTIONS in c1k.js, validated at build). Reuses .pj-body / .pj-gal / .stats ---------- */
 const tr = o => (o && o[lang]) || "";                                              // pick the current language from {es,en,fr}
-const rl = d => (d.role && typeof d.role === "object") ? tr(d.role) : d.role;      // role: plain string or {es,en,fr}
+const rl = d => (d.role && typeof d.role === "object") ? tr(d.role) : d.role;
+const yl = d => (d.years && typeof d.years === "object") ? tr(d.years) : d.years;      // period: plain string or {es,en,fr}      // role: plain string or {es,en,fr}
 /* Paragraph text with optional inline links: {name} markers in the text map to x.links[name] = {href, t}. Everything is escaped; no raw HTML ever comes from content. */
 const rich = x => tr(x).split(/\{([a-z][a-z0-9]*)\}/).map((s, i) => i % 2 ? ((x.links || {})[s] ? `<a href="${esc(x.links[s].href)}" target="_blank" rel="noopener noreferrer" data-ev="project_link_click" data-place="${esc(s)}">${esc(tr(x.links[s].t))}</a>` : "") : esc(s)).join("");
 const paras = a => (a || []).map(x => x.em ? `<p><strong>${rich(x)}</strong></p>` : `<p>${rich(x)}</p>`).join("");
@@ -228,7 +229,7 @@ function renderProject(key){
   $("#pj").innerHTML = `<a class="back-top" href="#projects"><span aria-hidden="true">←</span> ${esc(t.back)}</a>
     <div class="pj-head"><span class="num-big" aria-hidden="true">${num}</span><h1>${esc(p[0])}</h1><p class="pj-tag">${esc(hr ? tr(hr.tag) : (p[6] || ""))}</p><p class="lead">${esc(hr ? tr(hr.lead) : p[3])}</p></div>
     <div class="pj-cover">${hr ? svgOf(key, "cover").replace(/alt="[^"]*"/, `alt="${esc(tr(hr.alt))}"`) : svgOf(key, "cover")}</div>
-    <dl class="pj-facts"><div><dt>${esc(t.role_l2 || "Role")}</dt><dd>${esc(rl(d))}</dd></div><div><dt>${esc(t.ctx_l2 || "Context")}</dt><dd>${esc(p[2])}</dd></div><div><dt>${esc(t.serv_l2 || "Services")}</dt><dd>${esc(p[5])}</dd></div><div><dt>${esc(t.per_l2 || "Period")}</dt><dd>${esc(d.years)}</dd></div></dl>
+    <dl class="pj-facts"><div><dt>${esc(t.role_l2 || "Role")}</dt><dd>${esc(rl(d))}</dd></div><div><dt>${esc(t.ctx_l2 || "Context")}</dt><dd>${esc(p[2])}</dd></div><div><dt>${esc(t.serv_l2 || "Services")}</dt><dd>${esc(p[5])}</dd></div><div><dt>${esc(t.per_l2 || "Period")}</dt><dd>${esc(yl(d))}</dd></div></dl>
     ${SECTIONS[key] ? SECTIONS[key].map(renderSection).join("") : `<div class="pj-body"><h2>${esc(t.did_h2 || "What I did")}</h2><div><p>${esc(p[4])}</p></div></div>`}
     ${secHasImg(key) ? "" : `<div class="pj-gal">${svgWrap(key,1)}${svgWrap(key,2)}${svgWrap(key,3)}</div>`}
     <aside class="pj-more"><span class="blobs" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></span><h2>${esc(t.pj_sim_h)}</h2><p><button class="btn solid" type="button" data-open-form data-ev="case_to_contact_click" data-place="project" data-project="${key}"><span>${esc(t.cta_talk)}</span><span class="arr" aria-hidden="true">→</span></button>${d.site ? ` <a class="btn" href="${esc(d.site.href)}" target="_blank" rel="noopener" data-ev="project_cta_click" data-place="project_site"><span>${esc(tr(d.site.l))}</span><span class="arr" aria-hidden="true">↗</span></a>` : ""}</p><ul>${(PSVC[key] || []).map(k => `<li><a href="#service-${k}">${esc(t.hs_items[SKEYS.indexOf(k)][0])} <span aria-hidden="true">→</span></a></li>`).join("")}</ul></aside>

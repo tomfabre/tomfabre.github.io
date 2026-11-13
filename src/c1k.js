@@ -836,3 +836,299 @@ HERO.happylife = {
 SEO.es.proj.happylife = {"t": "HappyLife: UX/UI y diseño de app social | Tom Fabre", "d": "Diseño UX/UI de HappyLife, una app pensada para conectar personas mediante actividades reales, filtros inteligentes y gamificación con propósito."};
 SEO.en.proj.happylife = {"t": "HappyLife: Social App UX/UI & Product Design | Tom Fabre", "d": "UX/UI design for HappyLife, a social app created to bring people together through real activities, thoughtful filtering and meaningful rewards."};
 SEO.fr.proj.happylife = {"t": "HappyLife : UX/UI et design d'application sociale | Tom Fabre", "d": "Design UX/UI de HappyLife, une application pensée pour favoriser les rencontres réelles grâce aux activités, aux filtres pertinents et à la gamification."};
+
+/* Binōme Studio: case study (sections), hero override and SEO. Copy approved by Tom. No founding year is confirmed anywhere: the period is an editorial label. */
+SECTIONS.binome = [
+ {
+  "type": "text",
+  "id": "comienzo",
+  "h": {
+   "es": "01 · El comienzo",
+   "en": "01 · The beginning",
+   "fr": "01 · Le début"
+  },
+  "t": {
+   "es": "Algunas ideas funcionan mejor de a dos.",
+   "en": "Some ideas are better together.",
+   "fr": "Certaines idées fonctionnent mieux à deux."
+  },
+  "p": [
+   {
+    "es": "Cada uno venía de su propio recorrido, con experiencias, disciplinas y formas distintas de entender el diseño.",
+    "en": "We each came from different backgrounds, with our own experiences, disciplines and ways of looking at design.",
+    "fr": "Nous venions chacun de parcours différents, avec nos expériences, nos disciplines et nos façons de voir le design."
+   },
+   {
+    "es": "Después de pasar por diferentes oficinas, proyectos y equipos, sentimos que era el momento de construir algo juntos.",
+    "en": "After years of working with different teams and companies, we felt it was time to create something together.",
+    "fr": "Après plusieurs années de projets, d'équipes et de bureaux différents, nous avons eu envie de construire quelque chose ensemble."
+   },
+   {
+    "es": "No queríamos simplemente trabajar por nuestra cuenta. Queríamos crear un espacio donde combinar conocimientos, compartir decisiones y tener la libertad de abordar cada proyecto desde una perspectiva más amplia.",
+    "en": "We didn't just want to work independently. We wanted the freedom to combine our skills, share decisions and approach projects from a broader perspective.",
+    "fr": "Pas simplement travailler à notre compte. Créer un espace où partager nos compétences, prendre des décisions ensemble et aborder les projets avec une vision plus large."
+   },
+   {
+    "em": true,
+    "es": "Dos trayectorias distintas. Una ambición compartida.",
+    "en": "Different journeys. A shared ambition.",
+    "fr": "Deux parcours différents. Une ambition commune."
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "idea",
+  "h": {
+   "es": "02 · La idea",
+   "en": "02 · The idea",
+   "fr": "02 · L'idée"
+  },
+  "t": {
+   "es": "Uno más uno puede llegar mucho más lejos.",
+   "en": "One plus one can go a lot further.",
+   "fr": "À deux, on peut aller beaucoup plus loin."
+  },
+  "p": [
+   {
+    "es": "{web} nació de algo sencillo: cuando se combinan distintas habilidades, las posibilidades crecen.",
+    "en": "{web} started with a simple belief: combining different skills opens up more possibilities.",
+    "fr": "{web} est né d'une conviction simple : en réunissant des compétences différentes, on ouvre davantage de possibilités.",
+    "links": {
+     "web": {
+      "href": "https://binome.xyz/",
+      "t": {
+       "es": "Binōme",
+       "en": "Binōme",
+       "fr": "Binōme"
+      }
+     }
+    }
+   },
+   {
+    "es": "Branding, diseño digital, experiencia de usuario, desarrollo web y estrategia se encuentran en un mismo lugar, sin necesidad de tratar cada disciplina como un mundo separado.",
+    "en": "Branding, digital design, user experience, web development and strategy all come together without being treated as separate worlds.",
+    "fr": "Branding, design digital, expérience utilisateur, développement web et stratégie se retrouvent au même endroit, sans avoir besoin de séparer chaque discipline."
+   },
+   {
+    "es": "Nos gusta pensar los proyectos en conjunto, desde las primeras preguntas hasta los detalles que hacen que todo funcione.",
+    "en": "We like looking at the whole picture, from the first questions to the details that make everything work.",
+    "fr": "Nous aimons penser les projets dans leur ensemble, des premières questions jusqu'aux détails qui font la différence."
+   },
+   {
+    "es": "Porque una buena idea gana fuerza cuando encuentra a las personas adecuadas para desarrollarla.",
+    "en": "Because good ideas become stronger when the right people work on them together.",
+    "fr": "Parce qu'une bonne idée prend une autre dimension lorsqu'elle rencontre les bonnes personnes."
+   }
+  ],
+  "flow": [
+   {
+    "pair": [
+     {
+      "key": "binome",
+      "v": "0",
+      "alt": {
+       "es": "Logotipo de Binōme sobre fondo crema, con las cuatro disciplinas del estudio: branding, páginas web, producto digital y estrategia de marca digital",
+       "en": "Binōme logo on a cream background, with the studio's four disciplines: branding, websites, digital product and digital brand strategy",
+       "fr": "Logo de Binōme sur fond crème, avec les quatre disciplines du studio : branding, sites web, produit digital et stratégie de marque digitale"
+      }
+     },
+     {
+      "key": "binome",
+      "v": "3",
+      "alt": {
+       "es": "Paleta de color del sistema de diseño de Binōme: rojo coral, verde, amarillo, violeta y neutros. Los textos de la imagen están en inglés",
+       "en": "Color palette of the Binōme design system: coral red, green, yellow, violet and neutrals",
+       "fr": "Palette de couleurs du système de design de Binōme : rouge corail, vert, jaune, violet et neutres. Les textes de l'image sont en anglais"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "marca",
+  "h": {
+   "es": "03 · Construir nuestra propia marca",
+   "en": "03 · Building our own brand",
+   "fr": "03 · Créer notre propre marque"
+  },
+  "t": {
+   "es": "Diseñarnos también fue parte del reto.",
+   "en": "Designing for ourselves was part of the challenge.",
+   "fr": "Se designer soi-même, tout un exercice."
+  },
+  "p": [
+   {
+    "es": "Crear la identidad de nuestro propio estudio significaba responder a las mismas preguntas que hacemos a nuestros clientes.",
+    "en": "Creating our studio's identity meant asking ourselves the same questions we ask our clients.",
+    "fr": "Créer l'identité de notre studio, c'était aussi se poser les questions que nous posons habituellement à nos clients."
+   },
+   {
+    "es": "Quiénes somos, qué hacemos, cómo trabajamos y qué nos hace diferentes.",
+    "en": "Who are we? What do we do? How do we work? What makes us different?",
+    "fr": "Qui sommes-nous ? Que faisons-nous ? Comment travaillons-nous ? Qu'est-ce qui nous rend différents ?"
+   },
+   {
+    "es": "La identidad y la web debían transmitir nuestra forma de entender el diseño: claridad, personalidad, colaboración y atención al detalle.",
+    "en": "Our identity and website needed to reflect how we see design: clarity, character, collaboration and attention to detail.",
+    "fr": "Notre identité et notre site devaient refléter notre vision du design : de la clarté, du caractère, de la collaboration et le souci du détail."
+   },
+   {
+    "es": "No se trataba únicamente de tener una marca bonita, sino de construir una presencia capaz de mostrar nuestro trabajo y abrir nuevas conversaciones.",
+    "en": "It wasn't just about creating a good-looking brand. It was about building a presence that could showcase our work and start new conversations.",
+    "fr": "Il ne s'agissait pas seulement de créer une belle marque, mais de construire une présence capable de montrer notre travail et d'ouvrir de nouvelles conversations."
+   }
+  ],
+  "flow": [
+   {
+    "img": {
+     "key": "binome",
+     "v": "2",
+     "r": "1600/1200",
+     "alt": {
+      "es": "Sistema de identidad de Binōme aplicado a una bolsa de tela, una bolsa de papel, libretas, papelería, tarjetas y un cartel con el titular «Tu marca al nivel que tu negocio merece»",
+      "en": "Binōme identity system applied to a tote bag, paper bag, notebooks, stationery, cards and a poster reading «Tu marca al nivel que tu negocio merece»",
+      "fr": "Système d'identité de Binōme décliné sur un tote bag, un sac en papier, des carnets, de la papeterie, des cartes et une affiche « Tu marca al nivel que tu negocio merece »"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "proyectos",
+  "h": {
+   "es": "04 · De la idea a los proyectos reales",
+   "en": "04 · From an idea to real projects",
+   "fr": "04 · De l'idée aux vrais projets"
+  },
+  "t": {
+   "es": "Lo mejor empezó después del lanzamiento.",
+   "en": "The best part came after launch.",
+   "fr": "Le plus intéressant est venu après."
+  },
+  "p": [
+   {
+    "es": "Con el tiempo, Binōme dejó de ser solamente una idea entre dos personas.",
+    "en": "Over time, Binōme became much more than an idea shared by two people.",
+    "fr": "Avec le temps, Binōme est devenu bien plus qu'une idée partagée à deux."
+   },
+   {
+    "es": "Hemos tenido la oportunidad de trabajar con empresas y startups, desarrollar proyectos de distintas escalas y colaborar con profesionales tanto del mundo del diseño como de otras disciplinas.",
+    "en": "We've worked with companies and startups, taken on projects of different sizes and collaborated with professionals both inside and outside the design industry.",
+    "fr": "Nous avons eu l'occasion de travailler avec des entreprises et des startups, de réaliser des projets de différentes tailles et de collaborer avec des professionnels du design comme d'autres univers."
+   },
+   {
+    "es": "Cada colaboración nos ha permitido ampliar nuestra mirada, descubrir nuevas formas de trabajar y asumir retos que difícilmente abordaríamos de la misma manera por separado.",
+    "en": "Each project has helped us broaden our perspective, explore different ways of working and take on challenges we might not have approached the same way alone.",
+    "fr": "Chaque collaboration nous a permis d'élargir notre regard, d'explorer de nouvelles façons de travailler et de relever des défis que nous n'aurions peut-être pas abordés de la même manière seuls."
+   },
+   {
+    "em": true,
+    "es": "Un estudio pequeño no tiene por qué tener ideas pequeñas.",
+    "en": "A small studio doesn't have to think small.",
+    "fr": "Un petit studio peut avoir de grandes idées."
+   }
+  ],
+  "flow": [
+   {
+    "img": {
+     "key": "binome",
+     "v": "1",
+     "r": "2400/1050",
+     "zoom": true,
+     "alt": {
+      "es": "Parrilla de publicaciones de Instagram del estudio con piezas editoriales sobre diseño y una hoja con las portadas numeradas",
+      "en": "Grid of the studio's Instagram posts with editorial pieces about design, next to a sheet of numbered covers",
+      "fr": "Grille de publications Instagram du studio avec des contenus éditoriaux sur le design, à côté d'une planche de couvertures numérotées"
+     },
+     "cap": {
+      "es": "Contenidos y comunicación del estudio",
+      "en": "Studio content and communication",
+      "fr": "Contenus et communication du studio"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "papel",
+  "h": {
+   "es": "05 · Mi papel",
+   "en": "05 · My role",
+   "fr": "05 · Mon rôle"
+  },
+  "t": {
+   "es": "Diseñar, construir y seguir aprendiendo.",
+   "en": "Designing, building and always learning.",
+   "fr": "Concevoir, construire et continuer à apprendre."
+  },
+  "p": [
+   {
+    "es": "Como cofundador de Binōme, participo en las decisiones creativas y estratégicas del estudio, conectando branding, diseño digital, producto y desarrollo web.",
+    "en": "As a co-founder of Binōme, I'm involved in the studio's creative and strategic decisions, bringing together branding, digital design, product thinking and web development.",
+    "fr": "En tant que cofondateur de Binōme, je participe aux décisions créatives et stratégiques du studio, en faisant le lien entre branding, design digital, produit et développement web."
+   },
+   {
+    "es": "También implica algo que no siempre aparece en un portfolio: escuchar a los clientes, entender sus necesidades, organizar proyectos, colaborar con otros profesionales y convertir ideas en entregables reales.",
+    "en": "It also means doing the work that doesn't always make it into a portfolio: listening to clients, understanding their needs, organising projects, collaborating with other professionals and turning ideas into real deliverables.",
+    "fr": "C'est aussi tout ce qui ne se voit pas toujours dans un portfolio : écouter les clients, comprendre leurs besoins, organiser les projets, collaborer avec d'autres professionnels et transformer les idées en réalisations concrètes."
+   },
+   {
+    "es": "Binōme es una extensión de mi forma de trabajar. Un lugar para explorar ideas, compartir responsabilidades y construir proyectos con intención.",
+    "en": "Binōme is an extension of how I work. A place to explore ideas, share responsibilities and make thoughtful work happen.",
+    "fr": "Binōme prolonge ma façon de travailler. Un espace pour explorer des idées, partager les responsabilités et créer des projets qui ont du sens."
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "cierre",
+  "h": {
+   "es": "Cierre",
+   "en": "Closing",
+   "fr": "Conclusion"
+  },
+  "t": {
+   "es": "Lo que empieza entre dos puede llegar mucho más lejos.",
+   "en": "What starts with two can go much further.",
+   "fr": "Ce qui commence à deux peut aller bien plus loin."
+  },
+  "p": [
+   {
+    "es": "Binōme sigue creciendo con cada proyecto, cada cliente y cada persona que se suma al camino.",
+    "en": "Binōme keeps growing with every project, every client and every new collaboration.",
+    "fr": "Binōme continue de grandir au fil des projets, des rencontres et des collaborations."
+   },
+   {
+    "em": true,
+    "es": "¿Tienes algo en mente? Conozcamos qué podemos hacer juntos.",
+    "en": "Got something in mind? Let's see what we can create together.",
+    "fr": "Vous avez une idée en tête ? Voyons ce que nous pourrions créer ensemble."
+   }
+  ]
+ }
+];
+HERO.binome = {
+ "tag": {
+  "es": "Dos caminos. Una forma de hacer las cosas.",
+  "en": "Two paths. One way of doing things.",
+  "fr": "Deux parcours. Une même façon de faire."
+ },
+ "lead": {
+  "es": "Después de años trabajando en diferentes estudios, empresas y equipos, decidimos unir nuestras experiencias para crear algo propio. Así nació Binōme, un estudio independiente donde las buenas ideas se encuentran con diferentes maneras de hacerlas realidad.",
+  "en": "After years working across different studios, companies and teams, we decided to bring our experience together and build something of our own. That's how Binōme began: an independent design studio where different skills come together to bring good ideas to life.",
+  "fr": "Après plusieurs années passées dans différentes entreprises, agences et équipes, nous avons décidé de réunir nos expériences pour créer quelque chose à nous. C'est comme ça qu'est né Binōme, un studio indépendant où les compétences se croisent pour donner vie aux bonnes idées."
+ },
+ "alt": {
+  "es": "Portada de Binōme Studio: la web del estudio en un portátil junto a una página de caso, con el titular «Tu marca al nivel que tu negocio merece»",
+  "en": "Binōme Studio cover: the studio website on a laptop next to a case study page, with the headline «Tu marca al nivel que tu negocio merece»",
+  "fr": "Couverture de Binōme Studio : le site du studio sur un ordinateur portable à côté d'une page d'étude de cas, avec le titre « Tu marca al nivel que tu negocio merece »"
+ }
+};
+SEO.es.proj.binome = {"t": "Binōme Studio: Branding, diseño web y estrategia | Tom Fabre", "d": "Binōme Studio es un estudio independiente de branding, diseño web y estrategia digital. Descubre cómo nació y mi trabajo como cofundador."};
+SEO.en.proj.binome = {"t": "Binōme Studio: Branding, Web Design & Strategy | Tom Fabre", "d": "Discover Binōme Studio, an independent branding and digital design studio, and my role as co-founder in building its identity and projects."};
+SEO.fr.proj.binome = {"t": "Binōme Studio : Branding, Design Web & Stratégie | Tom Fabre", "d": "Découvrez Binōme Studio, un studio indépendant de branding et de design digital, son histoire et mon rôle de cofondateur."};

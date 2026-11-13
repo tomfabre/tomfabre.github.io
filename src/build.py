@@ -18,7 +18,7 @@ PUB = [i for i, p in enumerate(PROJ) if not p.get("locked")]
 import validate_sections
 _errs = validate_sections.validate(SECTIONS, {p["key"] for p in PROJ}, lambda k, v: os.path.exists(f"img/{k}-{v}.webp"), PROJ)
 _errs += validate_sections.validate_hero(HERO, {p["key"] for p in PROJ})
-_NO_DASH = ("a2pas", "happylife")   # projects whose visible copy must not contain en/em dashes
+_NO_DASH = ("a2pas", "happylife", "binome")   # projects whose visible copy must not contain en/em dashes
 _errs += validate_sections.check_no_dash(_NO_DASH, SECTIONS, HERO, {lg: {q["key"]: D["T"][lg]["projects"][i] for i, q in enumerate(PROJ)} for lg in ("es", "en", "fr")})
 if _errs: sys.exit("BUILD ABORTED: invalid project sections (c1k.js / c1p.js):\n  - " + "\n  - ".join(_errs))
 rl = lambda d, lg: d["role"][lg] if isinstance(d["role"], dict) else d["role"]   # role may be a plain string or {es,en,fr}
@@ -30,14 +30,14 @@ PFX = {"es":"","en":"/en","fr":"/fr"}
 SLG = {"es":{"projects":"proyectos","services":"servicios","bio":"bio","contact":"contacto"},"en":{"projects":"projects","services":"services","bio":"bio","contact":"contact"},"fr":{"projects":"projets","services":"services","bio":"bio","contact":"contact"}}
 SSLG = {"es":{"branding":"branding","web":"diseno-web","ux":"diseno-ux-ui"},"en":{"branding":"branding","web":"web-design","ux":"ux-ui-design"},"fr":{"branding":"branding","web":"design-web","ux":"design-ux-ui"}}
 SKEYS = ["branding","web","ux"]
-PSVC = {"contazara":["branding","web"],"carceral":["web"],"a2pas":["ux","web","branding"],"happylife":["ux"],"binome":["branding","web"],"yaypegs":["ux"],"360estudio":["branding","web"],"figy":["ux"],"apolo":["ux"],"appy":["ux"],"mood":["ux"],"molyb":["ux"]}
+PSVC = {"contazara":["branding","web"],"carceral":["web"],"a2pas":["ux","web","branding"],"happylife":["ux"],"binome":["branding","web","ux"],"yaypegs":["ux"],"360estudio":["branding","web"],"figy":["ux"],"apolo":["ux"],"appy":["ux"],"mood":["ux"],"molyb":["ux"]}
 def path(lg, page="home", key=None):
     if page == "home": return PFX[lg] + "/"
     if page == "project": return f"{PFX[lg]}/{SLG[lg]['projects']}/{key}/"
     if page == "service": return f"{PFX[lg]}/{SLG[lg]['services']}/{SSLG[lg][key]}/"
     return f"{PFX[lg]}/{SLG[lg][page]}/"
 def U(lg, page="home", key=None): return SITE + path(lg, page, key)
-def pj(lang, i): p = T[lang]["projects"][i]; d = PROJ[i]; return dict(slug=d["key"], name=p[0], category=p[1], context=p[2], summary=p[3], description=p[4], services=p[5], tagline=p[6] if len(p)>6 else "", role=rl(d, lang), period=d["years"], url=U(lang,"project",d["key"]), **({"story":validate_sections.flatten(SECTIONS[d["key"]], lang)} if d["key"] in SECTIONS else {}))
+def pj(lang, i): p = T[lang]["projects"][i]; d = PROJ[i]; return dict(slug=d["key"], name=p[0], category=p[1], context=p[2], summary=p[3], description=p[4], services=p[5], tagline=p[6] if len(p)>6 else "", role=rl(d, lang), period=(d["years"][lang] if isinstance(d["years"], dict) else d["years"]), url=U(lang,"project",d["key"]), **({"story":validate_sections.flatten(SECTIONS[d["key"]], lang)} if d["key"] in SECTIONS else {}))
 # 2) JSON-LD (only facts that are visible on the page; nothing invented: no ratings, reviews, employee counts or addresses beyond the city)
 HS = lambda lg: T[lg]["hs_items"]
 PERSON_ID, ORG_ID, SITE_ID = f"{SITE}/#person", f"{SITE}/#binome", f"{SITE}/#website"

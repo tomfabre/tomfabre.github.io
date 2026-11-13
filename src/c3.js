@@ -39,7 +39,7 @@ updateHead(route_ || parse());
 const TOPIC_IDS = ["brand","web","product","unsure","prize","collab"];
 const LANGS = ["es","en","fr"];
 const textOut = o => ({ content:[{ type:"text", text: typeof o === "string" ? o : JSON.stringify(o, null, 2) }] });
-const pjOut = (i, lg) => { const p = T[lg].projects[i], d = PROJ[i]; return { slug:d.key, url: PATHS ? location.origin + urlFor({page:"project",key:d.key}, lg) : location.origin + location.pathname + "#project-" + d.key, name:p[0], category:p[1], context:p[2], summary:p[3], description:p[4], services:p[5], tagline:p[6] || "", role:rl(d), period:d.years }; };
+const pjOut = (i, lg) => { const p = T[lg].projects[i], d = PROJ[i]; return { slug:d.key, url: PATHS ? location.origin + urlFor({page:"project",key:d.key}, lg) : location.origin + location.pathname + "#project-" + d.key, name:p[0], category:p[1], context:p[2], summary:p[3], description:p[4], services:p[5], tagline:p[6] || "", role:rl(d), period:(d.years && typeof d.years === "object" ? d.years[lg] : d.years) }; };
 const pickLang = a => (a && LANGS.includes(a.language)) ? a.language : lang;
 const WEBMCP_TOOLS = [
   { name:"get_portfolio_overview",
