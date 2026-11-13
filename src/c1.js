@@ -1,5 +1,5 @@
 const PROJ = [
-  {key:"contazara", role:"Lead Product Designer", years:"2022 –"},
+  {key:"contazara", role:"Lead Product Designer", years:"2025 –"},
   {key:"healthtech", role:"Lead Product Designer", years:"MVP"},
   {key:"360estudio", role:"Lead Product Designer", years:"Binōme"},
   {key:"freethem", role:"Lead Product Designer", years:"Binōme"},
