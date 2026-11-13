@@ -140,9 +140,9 @@ const SECTIONS = {
           l:{es:"seguidores en Instagram · de\u00a0250\u00a0a\u00a0365", en:"followers on Instagram · from\u00a0250\u00a0to\u00a0365", fr:"abonnés sur Instagram · de\u00a0250\u00a0à\u00a0365"} }
       ],
       after:[{
-        es:"Crecimiento de seguidores observado entre septiembre de 2025, cuando se estrenó la nueva identidad, y el 13 de noviembre de 2026. No se atribuye solo al rebranding: en él influye todo el trabajo de comunicación digital de ese periodo.",
-        en:"Follower growth observed between September 2025, when the new identity launched, and 13 November 2026. It isn't credited to the rebrand alone: all of the digital communications work over that period played a part.",
-        fr:"Croissance d'abonnés observée entre septembre 2025, date de lancement de la nouvelle identité, et le 13 novembre 2026. Elle n'est pas attribuée au seul changement d'identité : tout le travail de communication digitale de la période y a contribué."
+        es:"Entre septiembre de 2025 y noviembre de 2026, las comunidades de Contazara crecieron un 77,2\u00a0% en LinkedIn y un 46\u00a0% en Instagram, acompañadas de una estrategia de contenidos y comunicación que sigue evolucionando.",
+        en:"Between September 2025 and November 2026, Contazara's communities grew by 77.2% on LinkedIn and 46% on Instagram, alongside a content and communications strategy that keeps evolving.",
+        fr:"Entre septembre 2025 et novembre 2026, les communautés de Contazara ont progressé de 77,2\u00a0% sur LinkedIn et de 46\u00a0% sur Instagram, portées par une stratégie de contenus et de communication qui continue d'évoluer."
       },{
         es:"Los contenidos también han ayudado a abrir conversaciones y generar nuevas conexiones con profesionales, medios, empresas e instituciones relacionadas con el sector.",
         en:"The content has also helped create new conversations and professional connections with industry stakeholders, businesses, media, and institutions.",
@@ -162,21 +162,17 @@ const SECTIONS = {
       h:{es:"Papel y colaboradores", en:"Role and collaborators", fr:"Rôle et collaborateurs"},
       t:{es:"De la primera conversación al último detalle.", en:"From the first conversation to the final details.", fr:"Des premiers échanges aux derniers détails."},
       p:[{
-        es:"Me involucré en todo el recorrido: desde las primeras reuniones con dirección para entender sus inquietudes, pasando por la escucha, la investigación y la definición de la nueva identidad, hasta la dirección creativa, el tono de voz y el copy, el proyecto web y la comunicación digital.",
-        en:"I was involved throughout the journey: from the early meetings with leadership to understand their concerns, through listening, research and defining the new identity, to creative direction, tone of voice and copy, the website project and digital communications.",
-        fr:"J'ai accompagné le projet de bout en bout : des premières réunions avec la direction, pour comprendre ses préoccupations, à l'écoute, la recherche et la définition de la nouvelle identité, jusqu'à la direction créative, le ton et les textes, le projet web et la communication digitale."
+        es:"Me involucré desde el principio: escuchar a dirección y a los equipos, encontrar el enfoque, construir la nueva identidad y llevarla a la web y la comunicación digital.",
+        en:"I was involved from the start: listening to leadership and teams, finding the right approach, building the new identity and taking it into the website and digital communications.",
+        fr:"Je me suis impliqué dès le début\u00a0: écouter la direction et les équipes, trouver la bonne approche, construire la nouvelle identité et la déployer sur le site web et la communication digitale."
       },{
-        es:"Binōme Studio y Betsabé, mi compañera y binōme profesional, colaboraron en las entrevistas con los equipos, en el diseño y desarrollo web y con apoyo creativo durante el proyecto. Una colaboración en la que combinamos nuestras formas de pensar y trabajar.",
-        en:"Binōme Studio and Betsabé, my creative partner and professional other half, worked with me on the employee interviews and on web design and development, with creative support throughout the project. A collaboration where we combined our ways of thinking and working.",
-        fr:"Binōme Studio et Betsabé, ma partenaire créative et mon binôme professionnel, ont collaboré aux entretiens avec les équipes et au design et développement web, avec un appui créatif tout au long du projet. Une collaboration où nous avons uni nos façons de penser et de travailler."
+        es:"Para las entrevistas y el proyecto web trabajé junto a Betsabé y Binōme Studio. En paralelo, 360estudio desarrolló la arquitectura y construcción de las nuevas oficinas, colaborando también con nosotros en aspectos del diseño interior.",
+        en:"For the interviews and the web project I worked alongside Betsabé and Binōme Studio. In parallel, 360estudio designed and built Contazara's new offices, also collaborating with us on aspects of the interior design.",
+        fr:"Pour les entretiens et le projet web, j'ai travaillé avec Betsabé et Binōme Studio. En parallèle, 360estudio a conçu et construit les nouveaux bureaux de Contazara, en collaborant aussi avec nous sur certains aspects de l'aménagement intérieur."
       },{
-        es:"En paralelo, 360estudio se encargó del proyecto arquitectónico y la construcción de las nuevas oficinas. También colaboramos en aspectos del diseño interior para que la nueva identidad encontrara su lugar en los espacios de la empresa.",
-        en:"In parallel, 360estudio led the architectural design and construction of Contazara's new offices. We also collaborated on aspects of the interior design, helping the identity find its place within the company's physical spaces.",
-        fr:"En parallèle, 360estudio a pris en charge la conception architecturale et la construction des nouveaux bureaux de Contazara. Nous avons également collaboré sur certains aspects de l'aménagement intérieur pour intégrer la nouvelle identité dans les espaces de l'entreprise."
-      },{
-        es:"Al final, no se trataba de hacer muchas cosas por separado. Se trataba de conseguir que todas hablaran el mismo idioma.",
-        en:"The goal was never to create a collection of disconnected pieces. It was to make everything feel like part of the same story.",
-        fr:"L'idée n'était pas de créer une série d'éléments indépendants, mais de faire en sorte que tout raconte la même histoire."
+        es:"Diferentes disciplinas, una misma dirección: que todo se sintiera parte de Contazara.",
+        en:"Different disciplines, one shared direction: making everything feel like part of Contazara.",
+        fr:"Des disciplines différentes, une même direction\u00a0: que tout semble faire partie de Contazara."
       }] },
 
     { type:"text", id:"cierre",
