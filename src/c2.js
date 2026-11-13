@@ -139,7 +139,7 @@ const crumbs = items => `<nav class="crumbs" aria-label="${esc(({es:"Migas de pa
 const lockTx = d => d.locked ? tr(d.locked) : "";   // label of a locked (visible but not clickable) project
 function projCard(k, tag){
   const t = L(), i = PROJ.findIndex(p => p.key === k), p = t.projects[i];
-  const lock = PROJ[i].locked, inner = `<span class="art">${svgOf(k, 0)}</span><span class="pj-info"><${tag}>${esc(p[0])}</${tag}><span class="tg">${esc(p[6] || "")}</span><span class="meta-row"><span>${esc(p[1])}</span><span>${esc(PROJ[i].years)}</span></span>${lock ? `<span class="lock-tag">${esc(lockTx(PROJ[i]))}</span>` : `<span class="go" aria-hidden="true">→</span>`}</span>`;
+  const lock = PROJ[i].locked, inner = `<span class="art">${svgOf(k, 0)}</span><span class="pj-info"><${tag}>${esc(p[0])}</${tag}><span class="tg">${esc(p[6] || "")}</span><span class="meta-row"><span>${esc(p[1])}</span></span>${lock ? `<span class="lock-tag">${esc(lockTx(PROJ[i]))}</span>` : `<span class="go" aria-hidden="true">→</span>`}</span>`;
   return lock ? `<div class="pj-card is-locked" aria-disabled="true">${inner}</div>` : `<a class="pj-card" href="#project-${k}">${inner}</a>`;
 }
 function renderServicesIndex(){
@@ -168,7 +168,7 @@ const workOpen = new Set();
 function renderWork(){
   const t = L(); $("#workList").innerHTML = t.projects.slice(0, HOME_PROJECTS).map((p, i) => {
     const k = PROJ[i].key, open = workOpen.has(i);
-    return `<li><button class="row" type="button" aria-expanded="${open}" aria-controls="wx${i}"><span class="num">0${i+1}</span><span class="t">${esc(p[0])}</span><span class="cat">${esc(p[1])}</span><span class="yr">${esc(PROJ[i].years)}</span><span class="pm" aria-hidden="true">+</span></button>
+    return `<li><button class="row" type="button" aria-expanded="${open}" aria-controls="wx${i}"><span class="num">0${i+1}</span><span class="t">${esc(p[0])}</span><span class="cat">${esc(p[1])}</span><span class="pm" aria-hidden="true">+</span></button>
     <div class="px${open ? ' open' : ''}" id="wx${i}" role="region" aria-label="${esc(p[0])}"><div><div class="px-in"><div class="px-tx"><p class="tg">${esc(p[6] || "")}</p><p>${esc(p[3])}</p>${PROJ[i].locked ? `<span class="btn is-locked" aria-disabled="true"><span>${esc(lockTx(PROJ[i]))}</span></span>` : `<a class="btn solid" href="#project-${k}"><span>${esc(t.view_project)}</span><span class="arr" aria-hidden="true">→</span></a>`}</div><div class="px-ims"><span class="art">${svgOf(k,0)}</span><span class="art">${svgOf(k,1)}</span></div></div></div></div></li>`;
   }).join("");
   // wire accordion
