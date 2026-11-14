@@ -562,15 +562,6 @@
           }
         },
         {
-          "id": "professional_proposal",
-          "next": "professional_intent",
-          "label": {
-            "es": "Tengo una propuesta profesional",
-            "en": "I have a work proposal",
-            "fr": "J’ai une proposition professionnelle"
-          }
-        },
-        {
           "id": "whatsapp_contact",
           "next": "whatsapp_info",
           "label": {
