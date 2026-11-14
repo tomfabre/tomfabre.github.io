@@ -617,14 +617,84 @@
         "slug": "360estudio",
         "name": "360estudio",
         "category": "Branding · Diseño web · Dirección de arte",
-        "context": "Arquitectura",
+        "context": "Arquitectura · Espacios sanitarios",
         "summary": "Construir una identidad digital que deje hablar a los proyectos, refleje la personalidad del estudio y convierta su trabajo en una experiencia visual coherente.",
-        "description": "Construí el sistema visual completo: identidad, web y gestión del contenido en redes, con un nivel de marca coherente con la calidad de sus proyectos de arquitectura.",
-        "services": "Identidad · Web · Contenido social",
+        "description": "Identidad visual, aplicaciones corporativas, diseño web y colaboración en detalles de interiorismo, junto a Binōme Studio.",
+        "services": "Branding · Diseño web · Interiorismo",
         "tagline": "Arquitectura con una identidad a su altura.",
-        "role": "Lead Product Designer",
-        "period": "Binōme",
-        "url": "https://tomfabre.com/proyectos/360estudio/"
+        "role": "Dirección creativa · Branding · Diseño digital",
+        "period": "2024",
+        "url": "https://tomfabre.com/proyectos/360estudio/",
+        "story": [
+          {
+            "id": "reto",
+            "heading": "Hacer visible lo que ya estaba ahí.",
+            "label": "01 · El reto",
+            "text": [
+              "[360estudio](https://www.360estudio.io/) ya tenía lo más importante: un equipo con experiencia, una forma de trabajar sólida y proyectos que hablaban por sí solos.",
+              "El desafío era construir una identidad capaz de transmitir esas cualidades desde el primer contacto.",
+              "Una marca que representara tanto la dimensión técnica de la arquitectura y la construcción como la mirada humana con la que el estudio aborda cada espacio.",
+              "No necesitábamos inventar quiénes eran. Necesitábamos encontrar la mejor manera de mostrarlo."
+            ]
+          },
+          {
+            "id": "identidad",
+            "heading": "Todo empieza por encontrar una dirección.",
+            "label": "02 · La identidad",
+            "text": [
+              "Desarrollamos una identidad visual completa, pensada para funcionar en distintos contextos, desde las aplicaciones corporativas hasta la comunicación digital.",
+              "Cada decisión debía aportar coherencia, reconocimiento y personalidad, sin perder la claridad que necesita una empresa con un perfil técnico.",
+              "El objetivo era que todos los elementos hablaran el mismo idioma, independientemente del formato o del canal.",
+              "Una marca reconocible, sin importar dónde aparezca."
+            ]
+          },
+          {
+            "id": "web",
+            "heading": "Una identidad que también funciona en pantalla.",
+            "label": "03 · Del branding a la web",
+            "text": [
+              "La presencia digital debía continuar el trabajo de marca, pero también ayudar a explicar qué hace 360estudio y cómo aborda sus proyectos.",
+              "Trabajamos una experiencia visual que permitiera presentar sus servicios, dar protagonismo a sus trabajos y conectar la identidad con su especialización en arquitectura y construcción.",
+              "La web se convirtió en otra expresión de la marca, con sus propias necesidades de navegación, contenido y comunicación."
+            ]
+          },
+          {
+            "id": "espacio",
+            "heading": "Cuando la marca entra en el espacio.",
+            "label": "04 · Más allá de lo gráfico",
+            "text": [
+              "Una de las partes más interesantes del proyecto fue poder llevar la identidad más allá de los soportes habituales.",
+              "También colaboramos en detalles del diseño interior de las oficinas, buscando que el lenguaje visual de 360estudio tuviera continuidad en su propio entorno de trabajo.",
+              "Fue una oportunidad para conectar branding y arquitectura, dos disciplinas que pueden enriquecerse cuando se piensan juntas.",
+              "Porque una identidad no solo se ve. También se puede vivir."
+            ]
+          },
+          {
+            "id": "impacto",
+            "heading": "El buen hacer también merece verse bien.",
+            "label": "05 · El impacto y mi trabajo",
+            "text": [
+              "360estudio ya contaba con el talento, la experiencia y el compromiso de su equipo. Nuestra aportación fue construir una identidad capaz de transmitir todo eso con claridad.",
+              "Hoy, sus propios fundadores reconocen que la nueva imagen ha contribuido a reforzar la presencia y la percepción profesional del estudio.",
+              "Con proyectos en distintos lugares de España, la marca los acompaña allí donde trabajan, manteniendo una personalidad coherente en sus comunicaciones y aplicaciones.",
+              "Mi participación, junto a Binōme Studio, abarcó el desarrollo de la identidad, sus aplicaciones, el diseño web y la colaboración en detalles de interiorismo.",
+              "Un trabajo que conectó diseño gráfico, comunicación y arquitectura alrededor de una misma visión.",
+              "El diseño no creó su profesionalismo. Lo hizo visible."
+            ]
+          },
+          {
+            "id": "cierre",
+            "heading": "Una marca que crece con quienes la hacen posible.",
+            "label": "Cierre",
+            "text": [
+              "Lo más bonito de este proyecto es ver cómo la identidad que construimos sigue acompañando a 360estudio en su evolución.",
+              "Hoy viaja con ellos a distintos lugares de España, llevando algo más que un logotipo: una forma de trabajar, una reputación y el esfuerzo de todo un equipo.",
+              "Eso también es construir marca.",
+              "¿Tienes una marca que merece mostrar todo lo que vale?",
+              "Hablemos."
+            ]
+          }
+        ]
       },
       {
         "slug": "figy",
@@ -1109,14 +1179,84 @@
         "slug": "360estudio",
         "name": "360estudio",
         "category": "Branding · Web design · Art direction",
-        "context": "Architecture",
+        "context": "Architecture · Healthcare Spaces",
         "summary": "Creating a visual and digital experience that gives the studio's projects room to shine while expressing its distinctive personality.",
-        "description": "I built the full visual system: identity, website and social content management, with a brand level consistent with the quality of their architecture projects.",
-        "services": "Identity · Web · Social content",
+        "description": "Visual identity, corporate applications, web design and collaboration on interior design details, alongside Binōme Studio.",
+        "services": "Branding · Web Design · Interior Design",
         "tagline": "An architectural identity built to match the work.",
-        "role": "Lead Product Designer",
-        "period": "Binōme",
-        "url": "https://tomfabre.com/en/projects/360estudio/"
+        "role": "Creative Direction · Branding · Digital Design",
+        "period": "2024",
+        "url": "https://tomfabre.com/en/projects/360estudio/",
+        "story": [
+          {
+            "id": "reto",
+            "heading": "Making what was already there visible.",
+            "label": "01 · The challenge",
+            "text": [
+              "[360estudio](https://www.360estudio.io/) already had what mattered most: an experienced team, a solid approach to its work and projects that spoke for themselves.",
+              "The challenge was to create an identity capable of communicating those qualities from the very first interaction.",
+              "A brand that reflected both the technical side of architecture and construction and the human perspective the studio brings to every space.",
+              "We didn't need to invent who they were. We needed to find the best way to show it."
+            ]
+          },
+          {
+            "id": "identidad",
+            "heading": "Every good identity starts with a clear direction.",
+            "label": "02 · The identity",
+            "text": [
+              "We developed a complete visual identity designed to work across different applications, from corporate materials to digital communication.",
+              "Every decision needed to bring consistency, recognition and character, while keeping the clarity expected from a technically focused business.",
+              "The goal was to create a visual language that felt coherent wherever it appeared.",
+              "A recognisable brand, wherever you find it."
+            ]
+          },
+          {
+            "id": "web",
+            "heading": "An identity that works on screen, too.",
+            "label": "03 · From branding to web",
+            "text": [
+              "The digital experience needed to build on the brand while making 360estudio's services and projects easier to understand.",
+              "We designed a visual experience that brought its work forward and connected the identity with the company's expertise in architecture and construction.",
+              "The website became another expression of the brand, with its own needs around navigation, content and communication."
+            ]
+          },
+          {
+            "id": "espacio",
+            "heading": "When a brand becomes part of a space.",
+            "label": "04 · Beyond graphics",
+            "text": [
+              "One of the most interesting parts of the project was taking the identity beyond traditional applications.",
+              "We also contributed to details of the office interior design, helping the visual language feel at home in the studio's physical environment.",
+              "An opportunity to bring branding and architecture together and explore how the two disciplines can complement each other.",
+              "Because an identity isn't just something you see. It's something you can experience."
+            ]
+          },
+          {
+            "id": "impacto",
+            "heading": "Good work deserves to look the part.",
+            "label": "05 · The impact and my role",
+            "text": [
+              "360estudio already had the talent, experience and commitment of its team. Our contribution was building an identity that could communicate those qualities clearly.",
+              "Today, the founders themselves recognise that the new identity has helped strengthen the studio's presence and professional image.",
+              "With projects across Spain, the brand travels with the team, maintaining a consistent personality across communications and applications.",
+              "My contribution, alongside Binōme Studio, included the visual identity, its applications, web design and selected interior design details.",
+              "A project that brought graphic design, communication and architecture together around a shared vision.",
+              "Design didn't create their professionalism. It made it visible."
+            ]
+          },
+          {
+            "id": "cierre",
+            "heading": "A brand that grows with the people behind it.",
+            "label": "Closing",
+            "text": [
+              "One of the most rewarding parts of this project is seeing how the identity we created continues to accompany 360estudio as it evolves.",
+              "Today, it travels with the team across Spain, carrying more than a logo: a way of working, a reputation and the effort of everyone behind the business.",
+              "That's what building a brand is about, too.",
+              "Have a brand that deserves to show what it's really worth?",
+              "Let's talk."
+            ]
+          }
+        ]
       },
       {
         "slug": "figy",
@@ -1601,14 +1741,84 @@
         "slug": "360estudio",
         "name": "360estudio",
         "category": "Branding · Web design · Direction artistique",
-        "context": "Architecture",
+        "context": "Architecture · Espaces de santé",
         "summary": "Créer une expérience visuelle et digitale qui laisse toute leur place aux projets, tout en révélant la personnalité du studio.",
-        "description": "J'ai construit le système visuel complet : identité, site et gestion du contenu sur les réseaux, avec un niveau de marque cohérent avec la qualité de leurs projets d'architecture.",
-        "services": "Identité · Web · Contenu social",
+        "description": "Identité visuelle, applications institutionnelles, design web et collaboration sur certains détails d'aménagement intérieur, aux côtés de Binōme Studio.",
+        "services": "Branding · Design web · Design d'intérieur",
         "tagline": "Une identité à la hauteur de son architecture.",
-        "role": "Lead Product Designer",
-        "period": "Binōme",
-        "url": "https://tomfabre.com/fr/projets/360estudio/"
+        "role": "Direction créative · Branding · Design digital",
+        "period": "2024",
+        "url": "https://tomfabre.com/fr/projets/360estudio/",
+        "story": [
+          {
+            "id": "reto",
+            "heading": "Rendre visible ce qui était déjà là.",
+            "label": "01 · Le défi",
+            "text": [
+              "[360estudio](https://www.360estudio.io/) avait déjà l'essentiel : une équipe expérimentée, une méthode de travail solide et des projets qui parlaient d'eux-mêmes.",
+              "Le défi était de créer une identité capable de transmettre ces qualités dès le premier contact.",
+              "Une marque qui reflète aussi bien la dimension technique de l'architecture et de la construction que le regard humain porté par le studio sur chaque espace.",
+              "Nous n'avions pas besoin d'inventer qui ils étaient. Il fallait trouver la meilleure manière de le montrer."
+            ]
+          },
+          {
+            "id": "identidad",
+            "heading": "Tout commence par une direction claire.",
+            "label": "02 · L'identité",
+            "text": [
+              "Nous avons développé une identité visuelle complète, pensée pour fonctionner sur différents supports, des applications institutionnelles à la communication digitale.",
+              "Chaque choix devait apporter cohérence, reconnaissance et personnalité, sans perdre la clarté nécessaire à une entreprise au métier technique.",
+              "L'objectif était de créer un langage visuel capable de rester cohérent, quel que soit le support.",
+              "Une marque reconnaissable, partout où elle s'exprime."
+            ]
+          },
+          {
+            "id": "web",
+            "heading": "Une identité qui fonctionne aussi à l'écran.",
+            "label": "03 · Du branding au web",
+            "text": [
+              "L'expérience digitale devait prolonger le travail de marque tout en aidant à comprendre les services et les projets de 360estudio.",
+              "Nous avons travaillé sur une expérience visuelle qui valorise ses réalisations et relie son identité à son expertise en architecture et en construction.",
+              "Le site est devenu une autre expression de la marque, avec ses propres enjeux de navigation, de contenu et de communication."
+            ]
+          },
+          {
+            "id": "espacio",
+            "heading": "Quand la marque prend place dans l'espace.",
+            "label": "04 · Au-delà du graphisme",
+            "text": [
+              "L'un des aspects les plus intéressants du projet a été de prolonger l'identité au-delà de ses supports habituels.",
+              "Nous avons également contribué à certains détails de l'aménagement intérieur des bureaux, pour créer une continuité entre le langage visuel de 360estudio et son environnement de travail.",
+              "Une occasion de faire dialoguer branding et architecture, deux disciplines qui gagnent à être pensées ensemble.",
+              "Parce qu'une identité ne se regarde pas seulement. Elle se vit aussi."
+            ]
+          },
+          {
+            "id": "impacto",
+            "heading": "Le savoir-faire mérite aussi de se voir.",
+            "label": "05 · L'impact et mon rôle",
+            "text": [
+              "360estudio possédait déjà le talent, l'expérience et l'engagement de son équipe. Notre contribution a été de créer une identité capable de rendre ces qualités visibles.",
+              "Aujourd'hui, les fondateurs eux-mêmes reconnaissent que la nouvelle image a contribué à renforcer la présence et la perception professionnelle du studio.",
+              "Avec des projets dans différentes régions d'Espagne, la marque accompagne l'équipe partout où elle travaille, en conservant une personnalité cohérente dans ses communications et ses applications.",
+              "Ma participation, aux côtés de Binōme Studio, a porté sur l'identité visuelle, ses déclinaisons, le design web et certains détails d'aménagement intérieur.",
+              "Un projet où design graphique, communication et architecture se sont retrouvés autour d'une même vision.",
+              "Le design n'a pas créé leur professionnalisme. Il l'a rendu visible."
+            ]
+          },
+          {
+            "id": "cierre",
+            "heading": "Une marque qui grandit avec celles et ceux qui la font vivre.",
+            "label": "Conclusion",
+            "text": [
+              "Ce qui me plaît le plus dans ce projet, c'est de voir comment l'identité que nous avons créée continue d'accompagner l'évolution de 360estudio.",
+              "Aujourd'hui, elle voyage avec l'équipe à travers l'Espagne, en portant bien plus qu'un logo : une manière de travailler, une réputation et le travail de toute une équipe.",
+              "C'est aussi ça, construire une marque.",
+              "Vous avez une marque qui mérite de montrer toute sa valeur ?",
+              "Parlons-en."
+            ]
+          }
+        ]
       },
       {
         "slug": "figy",
