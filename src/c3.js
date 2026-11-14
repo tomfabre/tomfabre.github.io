@@ -2,7 +2,7 @@
 function setMeta(sel, attr, val){ const el = document.querySelector(sel); if (el) el.setAttribute(attr, val); }
 const OGI = "%%OGI%%";   // build.py injects {lang:{fb:[url,alt,w,h], p:{projectKey:[...]}}} computed by og_for (single source of truth)
 function updateHead(r){
-{ const ll = document.getElementById("legalLink"); if (ll) ll.href = LEGAL_URL[lang] || "/legal/"; }
+{ const ll = document.getElementById("legalLink"); if (ll) ll.href = LEGAL_URL[lang] || "/legal/"; const fp = document.getElementById("formPrivLink"); if (fp) fp.href = LEGAL_URL[lang] || "/legal/"; }
   const s = SEO[lang] || SEO.es, key = r && r.page === "service" ? "svc_" + r.key : (r && r.page || "home");
   let title, desc;
   if (key === "project"){

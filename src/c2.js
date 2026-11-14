@@ -74,7 +74,7 @@ Object.assign(ART, {
   yaypegs: v => ART.apps(v + 1), figy: v => ART.healthtech(v + 1), apolo: v => ART.apps(v + 2), appy: v => ART.apps(v + 3), mood: v => ART.apps(v), molyb: v => ART.codelco(v)
 });
 const IMG = window.__IMG || {};
-const svgOf = (key, v) => { const m = IMG[key]; if (m && m[v]){ const i = PROJ.findIndex(p => p.key === key), nm = (v === 0 || i < 0) ? "" : L().projects[i][0]; return `<img src="${m[v]}" alt="${esc(nm)}" loading="lazy" decoding="async"${nm ? "" : ' aria-hidden="true"'}>`; } if (v === "cover") v = 0; return svgOld(key, v); };
+const svgOf = (key, v, hi) => { const m = IMG[key]; if (m && m[v]){ const i = PROJ.findIndex(p => p.key === key), nm = (v === 0 || i < 0) ? "" : (L().projects[i][0] + (L().projects[i][1] ? ": " + L().projects[i][1] : "")); return `<img src="${m[v]}" alt="${esc(nm)}" ${hi ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${nm ? "" : ' aria-hidden="true"'}>`; } if (v === "cover") v = 0; return svgOld(key, v); };
 const svgOld = (key, v) => `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="300" fill="var(--surface)"/>${ART[key](v)}</svg>`;
 
 /* ---------- small helpers ---------- */
@@ -228,7 +228,7 @@ function renderProject(key){
   const num = "0" + (i + 1), hr = (typeof HERO !== "undefined" && HERO[key]) || null;   // optional hero override (HERO in c1k.js)
   $("#pj").innerHTML = `<a class="back-top" href="#projects"><span aria-hidden="true">←</span> ${esc(t.back)}</a>
     <div class="pj-head"><span class="num-big" aria-hidden="true">${num}</span><h1>${esc(p[0])}</h1><p class="pj-tag">${esc(hr ? tr(hr.tag) : (p[6] || ""))}</p><p class="lead">${esc(hr ? tr(hr.lead) : p[3])}</p></div>
-    <div class="pj-cover">${hr ? svgOf(key, "cover").replace(/alt="[^"]*"/, `alt="${esc(tr(hr.alt))}"`) : svgOf(key, "cover")}</div>
+    <div class="pj-cover">${hr ? svgOf(key, "cover", true).replace(/alt="[^"]*"/, `alt="${esc(tr(hr.alt))}"`) : svgOf(key, "cover", true)}</div>
     <dl class="pj-facts"><div><dt>${esc(t.role_l2 || "Role")}</dt><dd>${esc(rl(d))}</dd></div><div><dt>${esc(t.ctx_l2 || "Context")}</dt><dd>${esc(p[2])}</dd></div><div><dt>${esc(t.serv_l2 || "Services")}</dt><dd>${esc(p[5])}</dd></div><div><dt>${esc(t.per_l2 || "Period")}</dt><dd>${esc(yl(d))}</dd></div></dl>
     ${SECTIONS[key] ? SECTIONS[key].map(renderSection).join("") : `<div class="pj-body"><h2>${esc(t.did_h2 || "What I did")}</h2><div><p>${esc(p[4])}</p></div></div>`}
     ${secHasImg(key) ? "" : `<div class="pj-gal">${svgWrap(key,1)}${svgWrap(key,2)}${svgWrap(key,3)}</div>`}
@@ -246,7 +246,7 @@ function renderBio(){
   const TOOLS = [["Figma","Fi","#F24E1E","#fff"],["Webflow","Wf","#146EF5","#fff"],["HTML / CSS","</>","#E34F26","#fff"],["Storybook","Sb","#FF4785","#fff"],["Maze","Mz","#6C5CE7","#fff"],["Hotjar","Hj","#FD3A5C","#fff"],["Notion","No","#000","#fff"],["Jira","Ji","#0052CC","#fff"]];
   $("#tools").innerHTML = TOOLS.map(([n, m, c, tt]) => `<li class="tool" tabindex="0" style="--tc:${c};--tt:${tt}"><b>${esc(m)}</b><span>${esc(n)}</span></li>`).join("");
   // portrait: abstract typographic composition from AF monogram
-  if (BENTO.photo.img) $("#portrait").innerHTML = `<img src="${BENTO.photo.img}" alt="Tom Fabre" loading="lazy" decoding="async">`; else $("#portrait").innerHTML = `<svg viewBox="0 0 400 400" aria-hidden="true"><rect width="400" height="400" fill="var(--surface)"/><circle cx="110" cy="140" r="90" fill="var(--coral)" opacity=".85"/><circle cx="260" cy="200" r="110" fill="var(--lav)" opacity=".75"/><circle cx="200" cy="320" r="85" fill="var(--mint)" opacity=".8"/><text x="50%" y="56%" text-anchor="middle" fill="var(--fg)" font-family="var(--font)" font-size="180" font-weight="600" letter-spacing="-10">AF</text></svg>`;
+  if (BENTO.photo.img) $("#portrait").innerHTML = `<img src="${BENTO.photo.img}" alt="${esc(L().portrait_alt)}" loading="lazy" decoding="async">`; else $("#portrait").innerHTML = `<svg viewBox="0 0 400 400" aria-hidden="true"><rect width="400" height="400" fill="var(--surface)"/><circle cx="110" cy="140" r="90" fill="var(--coral)" opacity=".85"/><circle cx="260" cy="200" r="110" fill="var(--lav)" opacity=".75"/><circle cx="200" cy="320" r="85" fill="var(--mint)" opacity=".8"/><text x="50%" y="56%" text-anchor="middle" fill="var(--fg)" font-family="var(--font)" font-size="180" font-weight="600" letter-spacing="-10">AF</text></svg>`;
 }
 
 /* ---------- game ---------- */
@@ -553,7 +553,7 @@ function renderBento(){
   const head = (k, s, u) => `<div class="bt-h"><b>${esc(k)}</b><span>${esc(s)}</span></div>${tag(u)}`;
   el.innerHTML =
     card("bt-map", null, `${map}<div class="bt-h"><b>${esc(t.bt_map)}</b><span>${esc(t.bt_map_s)}</span><span class="bt-geo">Madrid 40.4168 N · 3.7038 W</span></div>`) +
-    card("bt-photo", null, (soon.gallery.length ? `<div class="bt-gal" role="img" aria-label="${esc(t.bt_photo)}">${soon.gallery.map((u, i) => `<img src="${esc(u)}" alt="${esc(t.bt_photo)} ${i + 1}" class="${i ? "" : "on"}" loading="lazy" decoding="async">`).join("")}</div>` : `<div class="bt-ph" aria-hidden="true"><span>TF</span></div>`) + `<div class="bt-h"><b>${esc(t.bt_photo)}</b><span>${soon.gallery.length ? "" : esc(t.bt_photo_s)}</span></div>`) +
+    card("bt-photo", null, (soon.gallery.length ? `<div class="bt-gal" role="img" aria-label="${esc(t.bt_photo)}">${soon.gallery.map((u, i) => `<img src="${esc(u)}" alt="" class="${i ? "" : "on"}" loading="lazy" decoding="async">`).join("")}</div>` : `<div class="bt-ph" aria-hidden="true"><span>TF</span></div>`) + `<div class="bt-h"><b>${esc(t.bt_photo)}</b><span>${soon.gallery.length ? "" : esc(t.bt_photo_s)}</span></div>`) +
     card("bt-music", soon.music.url, head(t.bt_music, t.bt_music_s, soon.music.url)) +
     card("bt-binome", soon.binome.url, `<div class="bt-h"><b>${esc(t.bt_binome)}</b><span>${esc(t.bt_binome_s)}</span></div><span class="bt-arr" aria-hidden="true">↗</span>`) +
     card("bt-read", soon.read.url, head(t.bt_read, t.bt_read_s, soon.read.url)) +

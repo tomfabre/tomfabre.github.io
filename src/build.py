@@ -57,7 +57,7 @@ def faq_node(lg, items, url):
 def ld(lg, r):
     page, key = r; S = D["SEO"][lg]; t = T[lg]; url = U(lg, page, key)
     title, desc = meta_for(lg, page, key)
-    g = [site, person, org]
+    g = [site, {**person, "description": S["home_d"]}, org]
     if page == "home":
         g.append(faq_node(lg, t["hf_items"], url))
     elif page == "projects":
@@ -293,7 +293,7 @@ for _lg in ("es","en","fr"):
     _alts = "".join(f'<xhtml:link rel="alternate" hreflang="{o}" href="{SITE}/{legal.PATHS[o]}/"/>' for o in ("es","en","fr")) + f'<xhtml:link rel="alternate" hreflang="x-default" href="{SITE}/{legal.PATHS["es"]}/"/>'
     smx += f"  <url><loc>{SITE}/{legal.PATHS[_lg]}/</loc>{_alts}<priority>0.2</priority></url>\n"
 if not legal.CFG["id"]: print("WARNING: legal.json has no ID (NIE) yet: do not publish the legal pages")
-for f in ("cv-alvaro-fabre.pdf","llms.txt","portfolio.json"): smx += f"  <url><loc>{SITE}/{f}</loc><priority>0.3</priority></url>\n"
+# non-page resources (PDF, llms.txt, portfolio.json) are deliberately NOT listed: the sitemap only carries indexable HTML pages
 open(dist+"/sitemap.xml","w").write(smx + "</urlset>\n")
 open(dist+"/favicon.svg","w").write('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197 197"><style>.m{fill:#2C2C2C}@media (prefers-color-scheme:dark){.m{fill:#FDF9F0}}</style><g class="m"><path d="M74.4922 143.792L74.4922 196.043H121.542V162.007C121.542 160.627 120.704 159.366 119.375 158.749L80.1675 140.534C77.5602 139.323 74.4922 141.085 74.4922 143.792Z"/><path d="M0 0V43.7115H74.4949V87.539C74.4949 90.2459 77.5629 92.008 80.1702 90.7969L119.378 72.5815C120.706 71.9645 121.544 70.7033 121.544 69.3236V43.7115H196.039V0H0Z"/><path d="M101.893 119.741L158.398 145.993C161.658 147.507 165.493 145.305 165.493 141.92V89.416C165.493 86.0307 161.658 83.8292 158.398 85.3431L101.893 111.595C98.2806 113.273 98.2806 118.063 101.893 119.741Z"/></g></svg>')
 open(dist+"/manifest.webmanifest","w").write(json.dumps({"name":"Tom Fabre","short_name":"Tom Fabre","start_url":"/","display":"browser","background_color":"#FDF9F0","theme_color":"#FDF9F0","icons":[{"src":"/favicon.svg","sizes":"any","type":"image/svg+xml"}]},ensure_ascii=False,indent=2))
