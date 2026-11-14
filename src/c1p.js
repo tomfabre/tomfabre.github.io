@@ -1,4 +1,4 @@
-/* VERSION B · project list: 5 on home, all 12 on the Projects page */
+/* VERSION B · project list: 5 on home, all 10 on the Projects page */
 PROJ.length = 0;
 PROJ.push(
   {key:"contazara", years:"2025 – 2026",
@@ -9,11 +9,11 @@ PROJ.push(
   {key:"binome", role:{es:"Cofundador · Dirección creativa y diseño", en:"Co-founder · Creative & Product Design", fr:"Cofondateur · Direction créative et design"}, years:{es:"Estudio en activo", en:"Studio in operation", fr:"Studio en activité"}},
   {key:"yaypegs", role:"Art Direction · Motion Design", years:{es:"2022 a 2023", en:"2022 to 2023", fr:"2022 à 2023"}},
   {key:"360estudio", role:{es:"Dirección creativa · Branding · Diseño digital", en:"Creative Direction · Branding · Digital Design", fr:"Direction créative · Branding · Design digital"}, years:"2024"},
-  {key:"figy", role:"Product Designer", years:"Digital"},
+  // HIDDEN (restore this line, in its original position, to include it again): {key:"figy", role:"Product Designer", years:"Digital"}
   {key:"apolo", role:"Senior UX/UI Designer", years:"2018–2022"},
   {key:"appy", role:"Senior UX/UI Designer", years:"2018–2022"},
-  {key:"mood", role:"Senior UX/UI Designer", years:"2018–2022"},
-  {key:"molyb", role:"UX/UI Designer", years:"2015–2017"}
+  {key:"mood", role:"Senior UX/UI Designer", years:"2018–2022"}
+  // HIDDEN (restore this line, in its original position, to include it again): {key:"molyb", role:"UX/UI Designer", years:"2015–2017"}
 );
 const HOME_PROJECTS = 4;
 // [name, category, context, short, long, services, tagline]
@@ -26,11 +26,11 @@ es: (() => { const o = T.es.projects; return [
   ["Binōme Studio", "Branding · Estrategia · Web", "Estudio independiente", "Un estudio independiente nacido de unir experiencias, ideas y disciplinas para crear proyectos con personalidad.", "Cofundación del estudio, estrategia, identidad visual, web, UX/UI y relación con clientes.", "Branding · Web · UX/UI · Estrategia", "Dos caminos. Una forma de hacer las cosas."],
   ["Yaypegs", "Dirección de arte · Motion Design", "Arte digital · NFT", "Un universo de personajes digitales donde el desafío era conseguir que miles de combinaciones cobraran vida sin perder coherencia visual.", "Trabajo artístico inicial, animación modular de los elementos de los personajes y piezas audiovisuales para campañas, junto al equipo de Binōme Studio.", "Dirección de arte · Animación modular · Contenidos digitales", "10.000 personajes. Infinitas formas de moverse."],
   o[2],
-  ["Figy","Diseño digital","Proyecto digital","Diseño digital para Figy: una experiencia clara y coherente de principio a fin.","Trabajé la experiencia y la interfaz cuidando la claridad, el ritmo y la coherencia visual.","Diseño digital · UX/UI","Una idea, bien resuelta."],
+  // HIDDEN (restore this line, in its original position, to include it again): ["Figy","Diseño digital","Proyecto digital","Diseño digital para Figy: una experiencia clara y coherente de principio a fin.","Trabajé la experiencia y la interfaz cuidando la claridad, el ritmo y la coherencia visual.","Diseño digital · UX/UI","Una idea, bien resuelta."]
   ["Apolo","App · Launcher Android","Móvil · MadSeven","La interfaz de un launcher Android accesible y muy personalizable, con más de 3M de descargas.","Diseñé la interfaz de un launcher pensado para personalizarse sin perder claridad ni accesibilidad.","Producto móvil · UI · Accesibilidad","Un móvil que se siente tuyo."],
   ["Appy","App · Onboarding","Móvil · MadSeven","Un onboarding más corto que redujo el abandono en más de 500K usuarios.","Simplifiqué el onboarding apoyándome en análisis de comportamiento y pruebas A/B.","Onboarding · UX · A/B","Menos pasos, más gente que llega."],
   ["Mood Messenger","App · Mensajería","Móvil · MadSeven","Flujos de mensajería rediseñados para priorizar personalización y retención, con más de 5M de descargas.","Rediseñé los flujos de mensajería para que personalizar y volver a la app fuese más natural.","Producto móvil · Flujos · Retención","Conversar, a tu manera."],
-  ["Molyb","Plataforma educativa","Minería · INGC","Una plataforma educativa interactiva que volvía accesible contenido técnico complejo.","Creé una plataforma educativa para el sector minero: contenido técnico presentado de forma clara e interactiva.","UX/UI · Plataformas · E-learning","Hacer simple lo técnico."]
+  // HIDDEN (restore this line, in its original position, to include it again): ["Molyb","Plataforma educativa","Minería · INGC","Una plataforma educativa interactiva que volvía accesible contenido técnico complejo.","Creé una plataforma educativa para el sector minero: contenido técnico presentado de forma clara e interactiva.","UX/UI · Plataformas · E-learning","Hacer simple lo técnico."]
 ]; })(),
 en: (() => { const o = T.en.projects; return [
   o[0],
@@ -40,11 +40,11 @@ en: (() => { const o = T.en.projects; return [
   ["Binōme Studio", "Branding · Strategy · Web", "Independent design studio", "An independent studio built on combining experience, ideas and different skills to create thoughtful work.", "Studio co-founding, strategy, visual identity, web, UX/UI and client relationships.", "Branding · Web · UX/UI · Strategy", "Two paths. One way of doing things."],
   ["Yaypegs", "Art Direction · Motion Design", "Digital art · NFT", "A universe of digital characters where the challenge was bringing thousands of combinations to life while keeping visual consistency.", "Initial artwork, modular animation of the characters' elements and audiovisual pieces for campaigns, alongside the Binōme Studio team.", "Art direction · Modular animation · Digital content", "10,000 characters. Endless ways to move."],
   o[2],
-  ["Figy","Digital design","Digital project","Digital design for Figy: a clear, consistent experience from start to finish.","I worked on the experience and interface, caring for clarity, rhythm and visual consistency.","Digital design · UX/UI","One idea, well solved."],
+  // HIDDEN (restore this line, in its original position, to include it again): ["Figy","Digital design","Digital project","Digital design for Figy: a clear, consistent experience from start to finish.","I worked on the experience and interface, caring for clarity, rhythm and visual consistency.","Digital design · UX/UI","One idea, well solved."]
   ["Apolo","App · Android launcher","Mobile · MadSeven","The interface of an accessible, highly customisable Android launcher with 3M+ downloads.","I designed the interface of a launcher built to be personalised without losing clarity or accessibility.","Mobile product · UI · Accessibility","A phone that feels like yours."],
   ["Appy","App · Onboarding","Mobile · MadSeven","A shorter onboarding that reduced drop-off for 500K+ users.","I simplified the onboarding using behaviour analytics and A/B testing.","Onboarding · UX · A/B","Fewer steps, more people arriving."],
   ["Mood Messenger","App · Messaging","Mobile · MadSeven","Messaging flows redesigned to prioritise personalisation and retention, with 5M+ downloads.","I redesigned the messaging flows so personalising and coming back felt more natural.","Mobile product · Flows · Retention","Chat, your way."],
-  ["Molyb","Educational platform","Mining · INGC","An interactive educational platform that made complex technical content accessible.","I created an educational platform for the mining sector: technical content presented clearly and interactively.","UX/UI · Platforms · E-learning","Making technical simple."]
+  // HIDDEN (restore this line, in its original position, to include it again): ["Molyb","Educational platform","Mining · INGC","An interactive educational platform that made complex technical content accessible.","I created an educational platform for the mining sector: technical content presented clearly and interactively.","UX/UI · Platforms · E-learning","Making technical simple."]
 ]; })(),
 fr: (() => { const o = T.fr.projects; return [
   o[0],
@@ -54,11 +54,11 @@ fr: (() => { const o = T.fr.projects; return [
   ["Binōme Studio", "Branding · Stratégie · Web", "Studio de design indépendant", "Un studio indépendant né de la rencontre de deux parcours et de compétences complémentaires.", "Cofondation du studio, stratégie, identité visuelle, web, UX/UI et relation client.", "Branding · Web · UX/UI · Stratégie", "Deux parcours. Une même façon de faire."],
   ["Yaypegs", "Direction artistique · Motion Design", "Art numérique · NFT", "Un univers de personnages numériques où le défi consistait à donner vie à des milliers de combinaisons en gardant la cohérence visuelle.", "Travail artistique initial, animation modulaire des éléments des personnages et contenus audiovisuels pour les campagnes, aux côtés de l'équipe de Binōme Studio.", "Direction artistique · Animation modulaire · Contenus numériques", "10 000 personnages. Mille façons de bouger."],
   o[2],
-  ["Figy","Design digital","Projet digital","Design digital pour Figy : une expérience claire et cohérente de bout en bout.","J'ai travaillé l'expérience et l'interface en soignant la clarté, le rythme et la cohérence visuelle.","Design digital · UX/UI","Une idée, bien résolue."],
+  // HIDDEN (restore this line, in its original position, to include it again): ["Figy","Design digital","Projet digital","Design digital pour Figy : une expérience claire et cohérente de bout en bout.","J'ai travaillé l'expérience et l'interface en soignant la clarté, le rythme et la cohérence visuelle.","Design digital · UX/UI","Une idée, bien résolue."]
   ["Apolo","App · Launcher Android","Mobile · MadSeven","L'interface d'un launcher Android accessible et très personnalisable, avec plus de 3M de téléchargements.","J'ai conçu l'interface d'un launcher pensé pour se personnaliser sans perdre en clarté ni en accessibilité.","Produit mobile · UI · Accessibilité","Un mobile qui vous ressemble."],
   ["Appy","App · Onboarding","Mobile · MadSeven","Un onboarding plus court qui a réduit l'abandon pour plus de 500K utilisateurs.","J'ai simplifié l'onboarding à partir de l'analyse des comportements et de tests A/B.","Onboarding · UX · A/B","Moins d'étapes, plus de monde au bout."],
   ["Mood Messenger","App · Messagerie","Mobile · MadSeven","Parcours de messagerie repensés pour favoriser personnalisation et rétention, avec plus de 5M de téléchargements.","J'ai repensé les parcours de messagerie pour que personnaliser et revenir dans l'app soient plus naturels.","Produit mobile · Parcours · Rétention","Discuter, à votre manière."],
-  ["Molyb","Plateforme éducative","Mines · INGC","Une plateforme éducative interactive qui rendait accessible un contenu technique complexe.","J'ai créé une plateforme éducative pour le secteur minier : un contenu technique présenté de façon claire et interactive.","UX/UI · Plateformes · E-learning","Rendre le technique simple."]
+  // HIDDEN (restore this line, in its original position, to include it again): ["Molyb","Plateforme éducative","Mines · INGC","Une plateforme éducative interactive qui rendait accessible un contenu technique complexe.","J'ai créé une plateforme éducative pour le secteur minier : un contenu technique présenté de façon claire et interactive.","UX/UI · Plateformes · E-learning","Rendre le technique simple."]
 ]; })()
 };
 Object.keys(NP).forEach(k => { T[k].projects = NP[k]; });
