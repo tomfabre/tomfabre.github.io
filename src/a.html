@@ -784,9 +784,9 @@ html[lang="fr"] .dh-s .hm-btn .l2{padding-left:0}
 .bi-main .socials a{font-size:.85rem;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;min-height:2.25rem}
 .bi-main .socials a:hover,.bi-main .socials a:focus-visible{color:var(--bg)}
 @media (min-width:58rem){
-  .bio-intro{grid-template-columns:minmax(0,46rem) minmax(0,16rem);grid-template-areas:"id facts" "main facts";column-gap:var(--s16);row-gap:var(--s8);align-items:start;justify-content:start}
+  .bio-intro{grid-template-columns:minmax(0,46rem) minmax(0,16rem);grid-template-areas:"id id" "main facts";column-gap:var(--s16);row-gap:var(--s8);align-items:start;justify-content:space-between}
   .bi-id{grid-area:id;justify-content:flex-start}
-  .bi-main{grid-area:main}.qf{grid-area:facts}
+  .bi-main{grid-area:main}.qf{grid-area:facts;align-self:start;margin-top:calc(2.45rem + 1.02 * clamp(1.9rem,4.2vw,4rem));transform:translateY(-50%)}
 }
 @media (max-width:57.99rem){.bi-id{order:1;justify-content:flex-start}.bi-main{order:2}.qf{order:3}}
 
