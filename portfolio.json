@@ -697,19 +697,6 @@
         ]
       },
       {
-        "slug": "figy",
-        "name": "Figy",
-        "category": "Diseño digital",
-        "context": "Proyecto digital",
-        "summary": "Diseño digital para Figy: una experiencia clara y coherente de principio a fin.",
-        "description": "Trabajé la experiencia y la interfaz cuidando la claridad, el ritmo y la coherencia visual.",
-        "services": "Diseño digital · UX/UI",
-        "tagline": "Una idea, bien resuelta.",
-        "role": "Product Designer",
-        "period": "Digital",
-        "url": "https://tomfabre.com/proyectos/figy/"
-      },
-      {
         "slug": "apolo",
         "name": "Apolo",
         "category": "App · Launcher Android",
@@ -747,19 +734,6 @@
         "role": "Senior UX/UI Designer",
         "period": "2018–2022",
         "url": "https://tomfabre.com/proyectos/mood/"
-      },
-      {
-        "slug": "molyb",
-        "name": "Molyb",
-        "category": "Plataforma educativa",
-        "context": "Minería · INGC",
-        "summary": "Una plataforma educativa interactiva que volvía accesible contenido técnico complejo.",
-        "description": "Creé una plataforma educativa para el sector minero: contenido técnico presentado de forma clara e interactiva.",
-        "services": "UX/UI · Plataformas · E-learning",
-        "tagline": "Hacer simple lo técnico.",
-        "role": "UX/UI Designer",
-        "period": "2015–2017",
-        "url": "https://tomfabre.com/proyectos/molyb/"
       }
     ],
     "en": [
@@ -1259,19 +1233,6 @@
         ]
       },
       {
-        "slug": "figy",
-        "name": "Figy",
-        "category": "Digital design",
-        "context": "Digital project",
-        "summary": "Digital design for Figy: a clear, consistent experience from start to finish.",
-        "description": "I worked on the experience and interface, caring for clarity, rhythm and visual consistency.",
-        "services": "Digital design · UX/UI",
-        "tagline": "One idea, well solved.",
-        "role": "Product Designer",
-        "period": "Digital",
-        "url": "https://tomfabre.com/en/projects/figy/"
-      },
-      {
         "slug": "apolo",
         "name": "Apolo",
         "category": "App · Android launcher",
@@ -1309,19 +1270,6 @@
         "role": "Senior UX/UI Designer",
         "period": "2018–2022",
         "url": "https://tomfabre.com/en/projects/mood/"
-      },
-      {
-        "slug": "molyb",
-        "name": "Molyb",
-        "category": "Educational platform",
-        "context": "Mining · INGC",
-        "summary": "An interactive educational platform that made complex technical content accessible.",
-        "description": "I created an educational platform for the mining sector: technical content presented clearly and interactively.",
-        "services": "UX/UI · Platforms · E-learning",
-        "tagline": "Making technical simple.",
-        "role": "UX/UI Designer",
-        "period": "2015–2017",
-        "url": "https://tomfabre.com/en/projects/molyb/"
       }
     ],
     "fr": [
@@ -1821,19 +1769,6 @@
         ]
       },
       {
-        "slug": "figy",
-        "name": "Figy",
-        "category": "Design digital",
-        "context": "Projet digital",
-        "summary": "Design digital pour Figy : une expérience claire et cohérente de bout en bout.",
-        "description": "J'ai travaillé l'expérience et l'interface en soignant la clarté, le rythme et la cohérence visuelle.",
-        "services": "Design digital · UX/UI",
-        "tagline": "Une idée, bien résolue.",
-        "role": "Product Designer",
-        "period": "Digital",
-        "url": "https://tomfabre.com/fr/projets/figy/"
-      },
-      {
         "slug": "apolo",
         "name": "Apolo",
         "category": "App · Launcher Android",
@@ -1871,19 +1806,6 @@
         "role": "Senior UX/UI Designer",
         "period": "2018–2022",
         "url": "https://tomfabre.com/fr/projets/mood/"
-      },
-      {
-        "slug": "molyb",
-        "name": "Molyb",
-        "category": "Plateforme éducative",
-        "context": "Mines · INGC",
-        "summary": "Une plateforme éducative interactive qui rendait accessible un contenu technique complexe.",
-        "description": "J'ai créé une plateforme éducative pour le secteur minier : un contenu technique présenté de façon claire et interactive.",
-        "services": "UX/UI · Plateformes · E-learning",
-        "tagline": "Rendre le technique simple.",
-        "role": "UX/UI Designer",
-        "period": "2015–2017",
-        "url": "https://tomfabre.com/fr/projets/molyb/"
       }
     ]
   }

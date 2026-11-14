@@ -540,15 +540,6 @@ Have a brand that deserves to show what it's really worth?
 
 Let's talk.
 
-#### Figy — Digital design
-URL: https://tomfabre.com/en/projects/figy/
-One idea, well solved.
-
-Digital design for Figy: a clear, consistent experience from start to finish.
-
-I worked on the experience and interface, caring for clarity, rhythm and visual consistency.
-Services: Digital design · UX/UI · Role: Product Designer · Context: Digital project
-
 #### Apolo — App · Android launcher
 URL: https://tomfabre.com/en/projects/apolo/
 A phone that feels like yours.
@@ -575,15 +566,6 @@ Messaging flows redesigned to prioritise personalisation and retention, with 5M+
 
 I redesigned the messaging flows so personalising and coming back felt more natural.
 Services: Mobile product · Flows · Retention · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
-
-#### Molyb — Educational platform
-URL: https://tomfabre.com/en/projects/molyb/
-Making technical simple.
-
-An interactive educational platform that made complex technical content accessible.
-
-I created an educational platform for the mining sector: technical content presented clearly and interactively.
-Services: UX/UI · Platforms · E-learning · Role: UX/UI Designer · Context: Mining · INGC
 
 ### I don't design to impress other designers. I design for the people on the other side of the screen.
 
@@ -1123,15 +1105,6 @@ Eso también es construir marca.
 
 Hablemos.
 
-#### Figy — Diseño digital
-URL: https://tomfabre.com/proyectos/figy/
-Una idea, bien resuelta.
-
-Diseño digital para Figy: una experiencia clara y coherente de principio a fin.
-
-Trabajé la experiencia y la interfaz cuidando la claridad, el ritmo y la coherencia visual.
-Services: Diseño digital · UX/UI · Role: Product Designer · Context: Proyecto digital
-
 #### Apolo — App · Launcher Android
 URL: https://tomfabre.com/proyectos/apolo/
 Un móvil que se siente tuyo.
@@ -1158,15 +1131,6 @@ Flujos de mensajería rediseñados para priorizar personalización y retención,
 
 Rediseñé los flujos de mensajería para que personalizar y volver a la app fuese más natural.
 Services: Producto móvil · Flujos · Retención · Role: Senior UX/UI Designer · Context: Móvil · MadSeven
-
-#### Molyb — Plataforma educativa
-URL: https://tomfabre.com/proyectos/molyb/
-Hacer simple lo técnico.
-
-Una plataforma educativa interactiva que volvía accesible contenido técnico complejo.
-
-Creé una plataforma educativa para el sector minero: contenido técnico presentado de forma clara e interactiva.
-Services: UX/UI · Plataformas · E-learning · Role: UX/UI Designer · Context: Minería · INGC
 
 ### No diseño para impresionar a otros diseñadores. Diseño para las personas que están al otro lado.
 
@@ -1706,15 +1670,6 @@ Vous avez une marque qui mérite de montrer toute sa valeur ?
 
 Parlons-en.
 
-#### Figy — Design digital
-URL: https://tomfabre.com/fr/projets/figy/
-Une idée, bien résolue.
-
-Design digital pour Figy : une expérience claire et cohérente de bout en bout.
-
-J'ai travaillé l'expérience et l'interface en soignant la clarté, le rythme et la cohérence visuelle.
-Services: Design digital · UX/UI · Role: Product Designer · Context: Projet digital
-
 #### Apolo — App · Launcher Android
 URL: https://tomfabre.com/fr/projets/apolo/
 Un mobile qui vous ressemble.
@@ -1741,15 +1696,6 @@ Parcours de messagerie repensés pour favoriser personnalisation et rétention, 
 
 J'ai repensé les parcours de messagerie pour que personnaliser et revenir dans l'app soient plus naturels.
 Services: Produit mobile · Parcours · Rétention · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
-
-#### Molyb — Plateforme éducative
-URL: https://tomfabre.com/fr/projets/molyb/
-Rendre le technique simple.
-
-Une plateforme éducative interactive qui rendait accessible un contenu technique complexe.
-
-J'ai créé une plateforme éducative pour le secteur minier : un contenu technique présenté de façon claire et interactive.
-Services: UX/UI · Plateformes · E-learning · Role: UX/UI Designer · Context: Mines · INGC
 
 ### Je ne conçois pas pour impressionner d'autres designers. Je conçois pour les personnes de l'autre côté de l'écran.
 
