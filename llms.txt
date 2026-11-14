@@ -16,7 +16,7 @@ The portfolio has real URLs per language: Spanish at the root, English under /en
 - [À2pas](https://tomfabre.com/en/projects/a2pas/): Product Design · UX/UI · Branding. A participatory platform connecting audiences, artists and venues to make new performances possible.
 - [HappyLife](https://tomfabre.com/en/projects/happylife/): Product Design · UX/UI. An app bringing people together through real activities, with fewer taps, smarter filters and rewards for taking part.
 - [Binōme Studio](https://tomfabre.com/en/projects/binome/): Branding · Strategy · Web. An independent studio built on combining experience, ideas and different skills to create thoughtful work.
-- [Yaypegs](https://tomfabre.com/en/projects/yaypegs/): Digital design. Digital design for Yaypegs: a clear experience with personality that's easy to use.
+- [Yaypegs](https://tomfabre.com/en/projects/yaypegs/): Art Direction · Motion Design. A universe of digital characters where the challenge was bringing thousands of combinations to life while keeping visual consistency.
 - [360estudio](https://tomfabre.com/en/projects/360estudio/): Branding · Web design · Art direction. Creating a visual and digital experience that gives the studio's projects room to shine while expressing its distinctive personality.
 - [Figy](https://tomfabre.com/en/projects/figy/): Digital design. Digital design for Figy: a clear, consistent experience from start to finish.
 - [Apolo](https://tomfabre.com/en/projects/apolo/): App · Android launcher. The interface of an accessible, highly customisable Android launcher with 3M+ downloads.

@@ -533,15 +533,85 @@
       {
         "slug": "yaypegs",
         "name": "Yaypegs",
-        "category": "Diseño digital",
-        "context": "Proyecto digital",
-        "summary": "Diseño digital para Yaypegs: una experiencia clara, con personalidad y fácil de usar.",
-        "description": "Trabajé la experiencia y la identidad visual cuidando la claridad de uso y la coherencia entre marca y producto.",
-        "services": "Diseño digital · UX/UI",
-        "tagline": "Detalles que se notan.",
-        "role": "Product Designer",
-        "period": "Digital",
-        "url": "https://tomfabre.com/proyectos/yaypegs/"
+        "category": "Dirección de arte · Motion Design",
+        "context": "Arte digital · NFT",
+        "summary": "Un universo de personajes digitales donde el desafío era conseguir que miles de combinaciones cobraran vida sin perder coherencia visual.",
+        "description": "Trabajo artístico inicial, animación modular de los elementos de los personajes y piezas audiovisuales para campañas, junto al equipo de Binōme Studio.",
+        "services": "Dirección de arte · Animación modular · Contenidos digitales",
+        "tagline": "10.000 personajes. Infinitas formas de moverse.",
+        "role": "Art Direction · Motion Design",
+        "period": "2022 a 2023",
+        "url": "https://tomfabre.com/proyectos/yaypegs/",
+        "story": [
+          {
+            "id": "comienzo",
+            "heading": "Todo empezó con un universo de personajes.",
+            "label": "01 · El comienzo",
+            "text": [
+              "Yaypegs nació como una [colección de 10.000 personajes digitales](https://yaypegs.com/s1) construidos a partir de elementos, rasgos y accesorios combinables.",
+              "El trabajo artístico inicial sentó las bases de un lenguaje visual reconocible, con personajes que podían ser diferentes entre sí y seguir formando parte del mismo universo.",
+              "Pero el proyecto tenía una segunda ambición: llevar ese mundo mucho más lejos.",
+              "No bastaba con que los personajes se vieran bien. También tenían que cobrar vida."
+            ]
+          },
+          {
+            "id": "desafio",
+            "heading": "Animar una capa es fácil. Hacer que todas funcionen juntas es otra historia.",
+            "label": "02 · El desafío",
+            "text": [
+              "El gran reto llegó con la evolución animada de la colección.",
+              "Cada personaje podía reunir distintas combinaciones de rasgos, accesorios y elementos gráficos. Y cada uno de ellos necesitaba moverse sin generar conflictos con los demás.",
+              "No servía animar un personaje completo y repetir la fórmula. Había que trabajar los elementos individualmente, teniendo siempre en cuenta cómo se comportarían al combinarse con otras capas.",
+              "Un movimiento que funcionaba con un accesorio también debía funcionar con muchos otros.",
+              "Miles de resultados posibles. Un mismo sistema de animación."
+            ]
+          },
+          {
+            "id": "sistema",
+            "heading": "El detalle importaba. La compatibilidad, todavía más.",
+            "label": "03 · El sistema de animación",
+            "text": [
+              "El trabajo exigió animar y ajustar cientos de elementos para que pudieran combinarse manteniendo la coherencia del personaje.",
+              "Cada capa debía respetar las proporciones, los tiempos y el movimiento del conjunto.",
+              "El objetivo era que las 10.000 composiciones pudieran cobrar vida a partir de un sistema compartido, sin tener que resolver cada personaje como una animación independiente.",
+              "Un trabajo minucioso donde creatividad, paciencia y precisión tenían que funcionar juntas.",
+              "No se trataba de hacer 10.000 animaciones aisladas. Se trataba de hacer posible que 10.000 personajes se movieran."
+            ]
+          },
+          {
+            "id": "campanas",
+            "heading": "Un universo que también tenía que comunicar.",
+            "label": "04 · Más allá de los personajes",
+            "text": [
+              "El proyecto no terminaba en la colección.",
+              "También desarrollamos piezas animadas para acompañar las campañas previas al lanzamiento, generar expectación y dar continuidad a la comunicación después de la presentación.",
+              "Vídeos, animaciones y contenidos para Twitter y otras redes sociales ayudaban a trasladar el lenguaje visual de Yaypegs a diferentes formatos.",
+              "La animación no era solamente una característica de los personajes. También formaba parte de la manera en que el proyecto se presentaba y conectaba con su comunidad.",
+              "[Puedes ver una de las animaciones que creamos para las campañas de Yaypegs.](https://www.youtube.com/watch?v=n0ZUEKcHY2k)"
+            ]
+          },
+          {
+            "id": "trabajo",
+            "heading": "Creatividad, sistema y muchas horas de detalle.",
+            "label": "05 · Mi trabajo",
+            "text": [
+              "Mi participación, junto al equipo de [Binōme Studio](https://binome.xyz/), abarcó el trabajo artístico del proyecto, su evolución hacia la animación y la producción de contenidos audiovisuales para las campañas.",
+              "El mayor desafío fue construir un lenguaje de movimiento que pudiera adaptarse a cientos de elementos y miles de combinaciones, manteniendo la coherencia visual.",
+              "Un trabajo donde la dirección de arte y el motion design tuvieron que pensar más allá de una pieza individual.",
+              "Porque cuando todo puede combinarse, cada pequeño detalle cuenta."
+            ]
+          },
+          {
+            "id": "cierre",
+            "heading": "Miles de personajes. Un universo en movimiento.",
+            "label": "Cierre",
+            "text": [
+              "Yaypegs fue una experiencia de creatividad a escala, donde el verdadero logro estuvo en conseguir que todas las piezas funcionaran juntas.",
+              "¿Tienes una idea que necesita cobrar vida?",
+              "Hablemos."
+            ]
+          }
+        ]
       },
       {
         "slug": "360estudio",
@@ -955,15 +1025,85 @@
       {
         "slug": "yaypegs",
         "name": "Yaypegs",
-        "category": "Digital design",
-        "context": "Digital project",
-        "summary": "Digital design for Yaypegs: a clear experience with personality that's easy to use.",
-        "description": "I worked on the experience and visual identity, caring for ease of use and consistency between brand and product.",
-        "services": "Digital design · UX/UI",
-        "tagline": "Details you notice.",
-        "role": "Product Designer",
-        "period": "Digital",
-        "url": "https://tomfabre.com/en/projects/yaypegs/"
+        "category": "Art Direction · Motion Design",
+        "context": "Digital art · NFT",
+        "summary": "A universe of digital characters where the challenge was bringing thousands of combinations to life while keeping visual consistency.",
+        "description": "Initial artwork, modular animation of the characters' elements and audiovisual pieces for campaigns, alongside the Binōme Studio team.",
+        "services": "Art direction · Modular animation · Digital content",
+        "tagline": "10,000 characters. Endless ways to move.",
+        "role": "Art Direction · Motion Design",
+        "period": "2022 to 2023",
+        "url": "https://tomfabre.com/en/projects/yaypegs/",
+        "story": [
+          {
+            "id": "comienzo",
+            "heading": "It all started with a world of characters.",
+            "label": "01 · The beginning",
+            "text": [
+              "Yaypegs began as a [collection of 10,000 digital characters](https://yaypegs.com/s1) built from interchangeable traits, accessories and visual elements.",
+              "The initial artwork established a recognisable visual language, allowing every character to feel different while still belonging to the same universe.",
+              "But the project had another ambition: take that world even further.",
+              "Looking good was only the beginning. The characters needed to come alive."
+            ]
+          },
+          {
+            "id": "desafio",
+            "heading": "Animating one layer is easy. Making every layer work together is another story.",
+            "label": "02 · The challenge",
+            "text": [
+              "The biggest challenge came with the animated evolution of the collection.",
+              "Each character could combine different traits, accessories and graphic elements. Every element needed to move without conflicting with the others.",
+              "Animating each completed character independently wasn't the answer. We needed to work with individual elements while considering how they would behave alongside different layers.",
+              "An animation that worked with one accessory needed to work with many others.",
+              "Thousands of possible outcomes. One shared animation system."
+            ]
+          },
+          {
+            "id": "sistema",
+            "heading": "Every detail mattered. Compatibility mattered even more.",
+            "label": "03 · The animation system",
+            "text": [
+              "The process involved animating and refining hundreds of elements so they could work together while preserving each character's visual consistency.",
+              "Every layer needed to follow the proportions, timing and movement of the whole.",
+              "The goal was to bring all 10,000 characters to life through a shared system, rather than treating each one as a separate animation.",
+              "A meticulous process where creativity, patience and precision had to work together.",
+              "It wasn't about creating 10,000 isolated animations. It was about making 10,000 characters move."
+            ]
+          },
+          {
+            "id": "campanas",
+            "heading": "A universe that needed to communicate, too.",
+            "label": "04 · Beyond the characters",
+            "text": [
+              "The work didn't stop with the collection.",
+              "We also created animated content for pre-launch campaigns, building anticipation and extending the project's communication after release.",
+              "Videos, motion graphics and content for Twitter and other social platforms helped bring Yaypegs' visual language into different formats.",
+              "Animation wasn't just part of the characters. It was part of how the project presented itself and connected with its community.",
+              "[Watch one of the animations we created for the Yaypegs campaigns.](https://www.youtube.com/watch?v=n0ZUEKcHY2k)"
+            ]
+          },
+          {
+            "id": "trabajo",
+            "heading": "Creativity, consistency and a lot of attention to detail.",
+            "label": "05 · My work",
+            "text": [
+              "My contribution, alongside [Binōme Studio](https://binome.xyz/), included the project's artwork, its evolution into animation and the production of audiovisual content for its campaigns.",
+              "The biggest challenge was building a motion language that could adapt to hundreds of elements and thousands of combinations while maintaining visual consistency.",
+              "A project where art direction and motion design needed to look beyond any single piece.",
+              "Because when everything can be combined, every detail counts."
+            ]
+          },
+          {
+            "id": "cierre",
+            "heading": "Thousands of characters. One world in motion.",
+            "label": "Closing",
+            "text": [
+              "Yaypegs was an exercise in creativity at scale, where the real achievement was making every piece work together.",
+              "Have an idea that needs to come alive?",
+              "Let's talk."
+            ]
+          }
+        ]
       },
       {
         "slug": "360estudio",
@@ -1377,15 +1517,85 @@
       {
         "slug": "yaypegs",
         "name": "Yaypegs",
-        "category": "Design digital",
-        "context": "Projet digital",
-        "summary": "Design digital pour Yaypegs : une expérience claire, avec de la personnalité et facile à utiliser.",
-        "description": "J'ai travaillé l'expérience et l'identité visuelle en soignant la lisibilité d'usage et la cohérence entre marque et produit.",
-        "services": "Design digital · UX/UI",
-        "tagline": "Des détails qui se remarquent.",
-        "role": "Product Designer",
-        "period": "Digital",
-        "url": "https://tomfabre.com/fr/projets/yaypegs/"
+        "category": "Direction artistique · Motion Design",
+        "context": "Art numérique · NFT",
+        "summary": "Un univers de personnages numériques où le défi consistait à donner vie à des milliers de combinaisons en gardant la cohérence visuelle.",
+        "description": "Travail artistique initial, animation modulaire des éléments des personnages et contenus audiovisuels pour les campagnes, aux côtés de l'équipe de Binōme Studio.",
+        "services": "Direction artistique · Animation modulaire · Contenus numériques",
+        "tagline": "10 000 personnages. Mille façons de bouger.",
+        "role": "Art Direction · Motion Design",
+        "period": "2022 à 2023",
+        "url": "https://tomfabre.com/fr/projets/yaypegs/",
+        "story": [
+          {
+            "id": "comienzo",
+            "heading": "Tout a commencé avec un univers de personnages.",
+            "label": "01 · Le début",
+            "text": [
+              "Yaypegs est né comme une [collection de 10 000 personnages numériques](https://yaypegs.com/s1) composés de traits, d'accessoires et d'éléments graphiques interchangeables.",
+              "Le travail artistique initial a posé les bases d'un langage visuel reconnaissable, permettant à chaque personnage d'être différent tout en appartenant au même univers.",
+              "Mais le projet avait une autre ambition : aller encore plus loin.",
+              "Il ne suffisait pas que les personnages soient réussis visuellement. Il fallait aussi leur donner vie."
+            ]
+          },
+          {
+            "id": "desafio",
+            "heading": "Animer un calque, c'est une chose. Faire fonctionner tous les calques ensemble, c'en est une autre.",
+            "label": "02 · Le défi",
+            "text": [
+              "Le plus grand défi est arrivé avec l'évolution animée de la collection.",
+              "Chaque personnage pouvait réunir différentes combinaisons de traits, d'accessoires et d'éléments graphiques. Chaque élément devait pouvoir bouger sans entrer en conflit avec les autres.",
+              "Il ne suffisait pas d'animer un personnage complet et de reproduire le processus. Il fallait travailler chaque élément individuellement, en anticipant son comportement avec les autres calques.",
+              "Une animation compatible avec un accessoire devait aussi fonctionner avec beaucoup d'autres.",
+              "Des milliers de résultats possibles. Un seul système d'animation."
+            ]
+          },
+          {
+            "id": "sistema",
+            "heading": "Chaque détail comptait. La compatibilité encore plus.",
+            "label": "03 · Le système d'animation",
+            "text": [
+              "Le travail demandait d'animer et d'ajuster des centaines d'éléments pour qu'ils puissent se combiner tout en conservant la cohérence visuelle des personnages.",
+              "Chaque calque devait respecter les proportions, le rythme et les mouvements de l'ensemble.",
+              "L'objectif était de donner vie aux 10 000 personnages grâce à un système commun, sans devoir traiter chacun comme une animation indépendante.",
+              "Un travail minutieux où créativité, patience et précision devaient avancer ensemble.",
+              "Il ne s'agissait pas de créer 10 000 animations isolées, mais de permettre à 10 000 personnages de prendre vie."
+            ]
+          },
+          {
+            "id": "campanas",
+            "heading": "Un univers qui devait aussi communiquer.",
+            "label": "04 · Au-delà des personnages",
+            "text": [
+              "Le projet ne s'arrêtait pas à la collection.",
+              "Nous avons également réalisé des contenus animés pour accompagner les campagnes précédant le lancement, susciter l'intérêt et prolonger la communication après la sortie.",
+              "Vidéos, animations et contenus pour Twitter et d'autres réseaux sociaux permettaient d'adapter l'univers graphique de Yaypegs à différents formats.",
+              "L'animation ne faisait pas seulement partie des personnages. Elle contribuait aussi à la manière dont le projet se présentait et échangeait avec sa communauté.",
+              "[Découvrez l'une des animations que nous avons créées pour les campagnes Yaypegs.](https://www.youtube.com/watch?v=n0ZUEKcHY2k)"
+            ]
+          },
+          {
+            "id": "trabajo",
+            "heading": "Créativité, cohérence et beaucoup de précision.",
+            "label": "05 · Mon travail",
+            "text": [
+              "Ma participation, aux côtés de [Binōme Studio](https://binome.xyz/), a couvert le travail artistique du projet, son évolution vers l'animation et la production de contenus audiovisuels pour les campagnes.",
+              "Le plus grand défi était de construire un langage de mouvement capable de s'adapter à des centaines d'éléments et à des milliers de combinaisons tout en conservant une cohérence visuelle.",
+              "Un projet où la direction artistique et le motion design devaient penser bien au-delà d'une seule création.",
+              "Parce que lorsque tout peut se combiner, chaque détail compte."
+            ]
+          },
+          {
+            "id": "cierre",
+            "heading": "Des milliers de personnages. Un univers en mouvement.",
+            "label": "Conclusion",
+            "text": [
+              "Yaypegs a été une expérience de création à grande échelle, où le véritable défi consistait à faire fonctionner toutes les pièces ensemble.",
+              "Vous avez une idée à faire vivre ?",
+              "Parlons-en."
+            ]
+          }
+        ]
       },
       {
         "slug": "360estudio",
