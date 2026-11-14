@@ -948,7 +948,9 @@ ol{list-style:none;margin:0;padding:0}
 .h-intro{max-width:50ch;margin-top:var(--s8);font-size:clamp(1.05rem,.8vw + .9rem,1.4rem);line-height:1.5;color:var(--muted);font-weight:300}
 .h-cta{display:flex;flex-wrap:wrap;gap:var(--s4);margin-top:var(--s8)}
 .h-ctx{margin-top:var(--s6);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.hmin .h-intro,.hmin .h-cta,.hmin .h-ctx{animation:rise 900ms var(--ease) 300ms both}
+.hmin .h-h1,.hmin .h-intro,.hmin .h-cta,.hmin .h-ctx{animation:rise 900ms var(--ease) 300ms both}
+.h-h1{max-width:34ch;margin-top:var(--s8);font-size:clamp(1.15rem,1vw + .95rem,1.65rem);line-height:1.25;letter-spacing:-.015em;font-weight:500;color:var(--fg)}
+.h-h1+.h-intro{margin-top:var(--s3)}
 /* services rows (home + index) */
 .svc-rows h2{font-size:var(--h2);line-height:1.05;letter-spacing:-.02em}
 .svc-note{color:var(--fg)!important;font-weight:500!important}
@@ -1016,7 +1018,7 @@ ol{list-style:none;margin:0;padding:0}
 .pj-more ul a{text-decoration:underline;text-underline-offset:.25em;font-weight:500}
 .f-hint{font-size:.78rem;color:var(--muted)}
 .f-priv{font-size:.78rem;line-height:1.5;color:var(--muted);margin:0}.f-priv a{color:inherit;text-decoration:underline;text-underline-offset:.2em}.f-priv a:hover,.f-priv a:focus-visible{color:var(--fg)}
-@media (prefers-reduced-motion:reduce){.hmin .h-intro,.hmin .h-cta,.hmin .h-ctx{animation:none}}
+@media (prefers-reduced-motion:reduce){.hmin .h-h1,.hmin .h-intro,.hmin .h-cta,.hmin .h-ctx{animation:none}}
 
 /* ===== CTA = label pill + separate arrow pill (+ small accent flower); FAQ = rounded cards with chevron ===== */
 .faq{border:0}
