@@ -18,9 +18,7 @@ The portfolio has real URLs per language: Spanish at the root, English under /en
 - [Binōme Studio](https://tomfabre.com/en/projects/binome/): Branding · Strategy · Web. An independent studio built on combining experience, ideas and different skills to create thoughtful work.
 - [Yaypegs](https://tomfabre.com/en/projects/yaypegs/): Art Direction · Motion Design. A universe of digital characters where the challenge was bringing thousands of combinations to life while keeping visual consistency.
 - [360estudio](https://tomfabre.com/en/projects/360estudio/): Branding · Web design · Art direction. Creating a visual and digital experience that gives the studio's projects room to shine while expressing its distinctive personality.
-- [Apolo](https://tomfabre.com/en/projects/apolo/): App · Android launcher. The interface of an accessible, highly customisable Android launcher with 3M+ downloads.
-- [Appy](https://tomfabre.com/en/projects/appy/): App · Onboarding. A shorter onboarding that reduced drop-off for 500K+ users.
-- [Mood Messenger](https://tomfabre.com/en/projects/mood/): App · Messaging. Messaging flows redesigned to prioritise personalisation and retention, with 5M+ downloads.
+- [Mobile Experiences](https://tomfabre.com/en/projects/mobile-experiences/): Product Design · UX/UI · Mobile. Three apps. Three challenges. Far more than screens.
 
 ## Services
 

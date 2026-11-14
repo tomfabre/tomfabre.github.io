@@ -540,32 +540,84 @@ Have a brand that deserves to show what it's really worth?
 
 Let's talk.
 
-#### Apolo — App · Android launcher
-URL: https://tomfabre.com/en/projects/apolo/
-A phone that feels like yours.
+#### Mobile Experiences — Product Design · UX/UI · Mobile
+URL: https://tomfabre.com/en/projects/mobile-experiences/
+Three apps. Three challenges. Far more than screens.
 
-The interface of an accessible, highly customisable Android launcher with 3M+ downloads.
+Three apps. Three challenges. Far more than screens.
 
-I designed the interface of a launcher built to be personalised without losing clarity or accessibility.
-Services: Mobile product · UI · Accessibility · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
+End-to-end design of Apolo Launcher and Appy, and interface evolution and relaunch strategy for Mood Messenger.
+Services: Product Design · UX/UI · Mobile Apps · Strategy · Role: Product Design · UX/UI · Context: Android · iOS
 
-#### Appy — App · Onboarding
-URL: https://tomfabre.com/en/projects/appy/
-Fewer steps, more people arriving.
+##### Introduction — Designing for the real world.
 
-A shorter onboarding that reduced drop-off for 500K+ users.
+Some projects start with an idea. Others start with something that already works and could work better.
 
-I simplified the onboarding using behaviour analytics and A/B testing.
-Services: Onboarding · UX · A/B · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
+Apolo Launcher and Appy were two chances to design complete products from scratch. With Mood Messenger the challenge was different: taking part in the evolution of an established app, rethinking its interfaces and contributing to its relaunch strategy.
 
-#### Mood Messenger — App · Messaging
-URL: https://tomfabre.com/en/projects/mood/
-Chat, your way.
+Three experiences that var me explore different ways of solving problems, making decisions and designing for real people.
 
-Messaging flows redesigned to prioritise personalisation and retention, with 5M+ downloads.
+##### 01 / Apolo Launcher — Your Android. Your way.
 
-I redesigned the messaging flows so personalising and coming back felt more natural.
-Services: Mobile product · Flows · Retention · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
+The home screen is one of the spaces we use most on our phones. What if it could feel truly ours?
+
+Apolo Launcher was born to offer a more personal, intuitive and flexible Android experience.
+
+I designed the product from start to finish, from the concept and navigation experience to the final interfaces. The goal was to combine personalisation, functionality and a recognisable visual identity in an experience that was easy to use.
+
+My contribution: End-to-end product design · UX/UI · Visual design
+
+1M+ installs on Google Play (Documented figure for the product, not a result attributable to design alone.)
+
+Source of the figure (historical external reference): https://apkcombo.com/apolo-launcher-boost-theme/co.madseven.launcher
+
+##### 02 / Appy × Jojol — A little luck. A lot of design.
+
+How do you turn the relationship between a content creator and their community into a mobile experience?
+
+Appy was a contests and prizes app created with Jojol, one of the best-known tech content creators in France.
+
+I designed the whole product from scratch for iOS and Android, working on the concept, navigation, user experience and interfaces.
+
+The challenge was to make daily participation simple, appealing and accessible, connecting the community with new contests and prizes.
+
+My contribution: End-to-end product design · UX/UI · Visual design · iOS and Android
+
+Featured collaboration: Jojol, French tech content creator.
+
+Context: 2.7M+ subscribers on Jojol's YouTube channel (2026). This is a figure about the creator, not about Appy's users.
+
+Jojol's channel: https://www.youtube.com/@jojol
+
+About the collaboration: https://gensdinternet.fr/2019/10/28/le-youtubeur-jojol-a-cree-lapplication-appy-qui-propose-un-concours-par-jour/
+
+##### 03 / Mood Messenger — The messages you know. A new experience.
+
+A messaging app is part of our daily routine. That is exactly why every detail matters.
+
+Mood Messenger offered a customisable alternative to the traditional Android SMS and MMS app.
+
+I took part in the product's evolution, designing interfaces and working on its strategy and relaunch.
+
+The challenge was to renew the experience, improve how it was presented and keep building on a product that had already found its place among millions of downloads.
+
+My contribution: Product evolution · UI design · Strategy · Relaunch
+
+10M+ historical downloads worldwide (Figure for the product's global history, per the June 2020 press release, not a result attributable to my work.)
+
+Source of the figure (official press release): https://cdn.nwe.io/files/x/79/f5/cadb7736c7ee1d815c25997aea20.pdf
+
+Acquisition by Calldorado: https://www.sttinfo.fi/tiedote/69934335/calldorado-acquires-android-texting-app-mood-messenger?publisherId=58763726
+
+##### Closing — Different ideas. One way of thinking.
+
+Creating from scratch and evolving an existing product are very different challenges. Both require understanding people, questioning decisions and finding solutions that make sense.
+
+These projects are part of my path and still shape how I approach design: with curiosity, intention and attention to detail.
+
+Got something in the works?
+
+Tell me your idea.
 
 ### I don't design to impress other designers. I design for the people on the other side of the screen.
 
@@ -1105,32 +1157,84 @@ Eso también es construir marca.
 
 Hablemos.
 
-#### Apolo — App · Launcher Android
-URL: https://tomfabre.com/proyectos/apolo/
-Un móvil que se siente tuyo.
+#### Mobile Experiences — Product Design · UX/UI · Mobile
+URL: https://tomfabre.com/proyectos/mobile-experiences/
+Tres apps. Tres retos. Mucho más que pantallas.
 
-La interfaz de un launcher Android accesible y muy personalizable, con más de 3M de descargas.
+Tres apps. Tres retos. Mucho más que pantallas.
 
-Diseñé la interfaz de un launcher pensado para personalizarse sin perder claridad ni accesibilidad.
-Services: Producto móvil · UI · Accesibilidad · Role: Senior UX/UI Designer · Context: Móvil · MadSeven
+Diseño integral de Apolo Launcher y Appy, y evolución de interfaces y estrategia de relanzamiento de Mood Messenger.
+Services: Product Design · UX/UI · Mobile Apps · Strategy · Role: Product Design · UX/UI · Context: Android · iOS
 
-#### Appy — App · Onboarding
-URL: https://tomfabre.com/proyectos/appy/
-Menos pasos, más gente que llega.
+##### Introducción — Diseñar para el mundo real.
 
-Un onboarding más corto que redujo el abandono en más de 500K usuarios.
+Hay proyectos que empiezan con una idea. Otros, con algo que ya funciona y puede funcionar mejor.
 
-Simplifiqué el onboarding apoyándome en análisis de comportamiento y pruebas A/B.
-Services: Onboarding · UX · A/B · Role: Senior UX/UI Designer · Context: Móvil · MadSeven
+Apolo Launcher y Appy fueron dos oportunidades de diseñar productos completos desde cero. Con Mood Messenger, el desafío fue diferente: participar en la evolución de una aplicación consolidada, repensar sus interfaces y contribuir a su estrategia de relanzamiento.
 
-#### Mood Messenger — App · Mensajería
-URL: https://tomfabre.com/proyectos/mood/
-Conversar, a tu manera.
+Tres experiencias que me permitieron explorar distintas maneras de resolver problemas, tomar decisiones y diseñar para personas reales.
 
-Flujos de mensajería rediseñados para priorizar personalización y retención, con más de 5M de descargas.
+##### 01 / Apolo Launcher — Tu Android. A tu manera.
 
-Rediseñé los flujos de mensajería para que personalizar y volver a la app fuese más natural.
-Services: Producto móvil · Flujos · Retención · Role: Senior UX/UI Designer · Context: Móvil · MadSeven
+La pantalla de inicio es uno de los espacios que más utilizamos en nuestro teléfono. ¿Y si pudiera sentirse realmente nuestra?
+
+Apolo Launcher nació con la idea de ofrecer una experiencia Android más personal, intuitiva y flexible.
+
+Me encargué del diseño del producto de principio a fin, desde su concepto y la experiencia de navegación hasta las interfaces finales. El objetivo era combinar personalización, funcionalidad y una identidad visual reconocible en una experiencia fácil de utilizar.
+
+Mi contribución: Diseño integral de producto · UX/UI · Diseño visual
+
+1M+ instalaciones en Google Play (Cifra documentada del producto, no un resultado atribuible solo al diseño.)
+
+Fuente de la métrica (referencia externa histórica): https://apkcombo.com/apolo-launcher-boost-theme/co.madseven.launcher
+
+##### 02 / Appy × Jojol — Un poco de suerte. Mucho diseño.
+
+¿Cómo transformar la relación entre un creador de contenido y su comunidad en una experiencia móvil?
+
+Appy fue una aplicación de concursos y premios creada junto a Jojol, uno de los creadores de contenido tecnológico más reconocidos de Francia.
+
+Diseñé el producto completo desde cero para iOS y Android, trabajando en el concepto, la navegación, la experiencia de usuario y las interfaces.
+
+El reto era convertir la participación diaria en una experiencia sencilla, atractiva y accesible, conectando a la comunidad con nuevos concursos y premios.
+
+Mi contribución: Diseño integral de producto · UX/UI · Diseño visual · iOS y Android
+
+Colaboración destacada: Jojol, creador de contenido tecnológico francés.
+
+Dato contextual: 2,7M+ suscriptores en el canal de YouTube de Jojol (2026). Es un dato sobre el creador, no sobre los usuarios de Appy.
+
+Ver canal de Jojol: https://www.youtube.com/@jojol
+
+Conocer la colaboración: https://gensdinternet.fr/2019/10/28/le-youtubeur-jojol-a-cree-lapplication-appy-qui-propose-un-concours-par-jour/
+
+##### 03 / Mood Messenger — Los mensajes de siempre. Otra experiencia.
+
+Una aplicación de mensajería es parte de nuestra rutina. Precisamente por eso, cada detalle importa.
+
+Mood Messenger proponía una alternativa personalizable a la aplicación tradicional de SMS y MMS de Android.
+
+Participé en la evolución del producto, diseñando interfaces y trabajando en la estrategia y su relanzamiento.
+
+El desafío fue renovar la experiencia, mejorar su presentación y seguir construyendo sobre un producto que ya había encontrado su lugar entre millones de descargas.
+
+Mi contribución: Evolución de producto · UI Design · Estrategia · Relanzamiento
+
+10M+ descargas históricas en todo el mundo (Cifra de la trayectoria global del producto según el comunicado de junio de 2020, no un resultado atribuible a mi trabajo.)
+
+Fuente de la métrica (comunicado oficial): https://cdn.nwe.io/files/x/79/f5/cadb7736c7ee1d815c25997aea20.pdf
+
+Adquisición por Calldorado: https://www.sttinfo.fi/tiedote/69934335/calldorado-acquires-android-texting-app-mood-messenger?publisherId=58763726
+
+##### Cierre — Distintas ideas. Una misma forma de pensar.
+
+Crear desde cero y hacer evolucionar un producto existente son retos muy diferentes. Ambos exigen entender a las personas, cuestionar decisiones y encontrar soluciones que tengan sentido.
+
+Estos proyectos forman parte de mi recorrido y siguen influyendo en cómo abordo el diseño: con curiosidad, intención y atención a los detalles.
+
+¿Tienes algo entre manos?
+
+Cuéntame tu idea.
 
 ### No diseño para impresionar a otros diseñadores. Diseño para las personas que están al otro lado.
 
@@ -1670,32 +1774,84 @@ Vous avez une marque qui mérite de montrer toute sa valeur ?
 
 Parlons-en.
 
-#### Apolo — App · Launcher Android
-URL: https://tomfabre.com/fr/projets/apolo/
-Un mobile qui vous ressemble.
+#### Mobile Experiences — Product Design · UX/UI · Mobile
+URL: https://tomfabre.com/fr/projets/mobile-experiences/
+Trois apps. Trois défis. Bien plus que des écrans.
 
-L'interface d'un launcher Android accessible et très personnalisable, avec plus de 3M de téléchargements.
+Trois apps. Trois défis. Bien plus que des écrans.
 
-J'ai conçu l'interface d'un launcher pensé pour se personnaliser sans perdre en clarté ni en accessibilité.
-Services: Produit mobile · UI · Accessibilité · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
+Conception de bout en bout d'Apolo Launcher et d'Appy, évolution des interfaces et stratégie de relance de Mood Messenger.
+Services: Product Design · UX/UI · Mobile Apps · Stratégie · Role: Product Design · UX/UI · Context: Android · iOS
 
-#### Appy — App · Onboarding
-URL: https://tomfabre.com/fr/projets/appy/
-Moins d'étapes, plus de monde au bout.
+##### Introduction — Concevoir pour le monde réel.
 
-Un onboarding plus court qui a réduit l'abandon pour plus de 500K utilisateurs.
+Certains projets partent d'une idée. D'autres, de quelque chose qui fonctionne déjà et peut fonctionner mieux.
 
-J'ai simplifié l'onboarding à partir de l'analyse des comportements et de tests A/B.
-Services: Onboarding · UX · A/B · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
+Apolo Launcher et Appy ont été deux occasions de concevoir des produits complets de zéro. Avec Mood Messenger, le défi était différent : participer à l'évolution d'une application établie, repenser ses interfaces et contribuer à sa stratégie de relance.
 
-#### Mood Messenger — App · Messagerie
-URL: https://tomfabre.com/fr/projets/mood/
-Discuter, à votre manière.
+Trois expériences qui m'ont permis d'explorer différentes façons de résoudre des problèmes, de prendre des décisions et de concevoir pour de vraies personnes.
 
-Parcours de messagerie repensés pour favoriser personnalisation et rétention, avec plus de 5M de téléchargements.
+##### 01 / Apolo Launcher — Votre Android. À votre façon.
 
-J'ai repensé les parcours de messagerie pour que personnaliser et revenir dans l'app soient plus naturels.
-Services: Produit mobile · Parcours · Rétention · Role: Senior UX/UI Designer · Context: Mobile · MadSeven
+L'écran d'accueil est l'un des espaces que nous utilisons le plus sur notre téléphone. Et s'il pouvait vraiment nous ressembler ?
+
+Apolo Launcher est né pour offrir une expérience Android plus personnelle, intuitive et flexible.
+
+J'ai conçu le produit de bout en bout, du concept et de l'expérience de navigation jusqu'aux interfaces finales. L'objectif était de combiner personnalisation, fonctionnalité et identité visuelle reconnaissable dans une expérience facile à utiliser.
+
+Ma contribution: Conception produit de bout en bout · UX/UI · Design visuel
+
+1M+ installations sur Google Play (Chiffre documenté du produit, pas un résultat attribuable au seul design.)
+
+Source du chiffre (référence externe historique): https://apkcombo.com/apolo-launcher-boost-theme/co.madseven.launcher
+
+##### 02 / Appy × Jojol — Un peu de chance. Beaucoup de design.
+
+Comment transformer la relation entre un créateur de contenu et sa communauté en expérience mobile ?
+
+Appy était une application de concours et de lots créée avec Jojol, l'un des créateurs de contenu tech les plus reconnus de France.
+
+J'ai conçu le produit complet de zéro pour iOS et Android, en travaillant sur le concept, la navigation, l'expérience utilisateur et les interfaces.
+
+Le défi était de rendre la participation quotidienne simple, attrayante et accessible, en reliant la communauté à de nouveaux concours et lots.
+
+Ma contribution: Conception produit de bout en bout · UX/UI · Design visuel · iOS et Android
+
+Collaboration à retenir: Jojol, créateur de contenu tech français.
+
+Pour situer: 2,7M+ abonnés sur la chaîne YouTube de Jojol (2026). C'est un chiffre sur le créateur, pas sur les utilisateurs d'Appy.
+
+Voir la chaîne de Jojol: https://www.youtube.com/@jojol
+
+Découvrir la collaboration: https://gensdinternet.fr/2019/10/28/le-youtubeur-jojol-a-cree-lapplication-appy-qui-propose-un-concours-par-jour/
+
+##### 03 / Mood Messenger — Les messages d'hier. Une autre expérience.
+
+Une application de messagerie fait partie de notre quotidien. C'est précisément pour cela que chaque détail compte.
+
+Mood Messenger proposait une alternative personnalisable à l'application SMS et MMS traditionnelle d'Android.
+
+J'ai participé à l'évolution du produit, en concevant des interfaces et en travaillant sur sa stratégie et sa relance.
+
+Le défi était de renouveler l'expérience, d'améliorer sa présentation et de continuer à construire sur un produit qui avait déjà trouvé sa place parmi des millions de téléchargements.
+
+Ma contribution: Évolution du produit · UI design · Stratégie · Relance
+
+10M+ téléchargements historiques dans le monde (Chiffre de la trajectoire globale du produit selon le communiqué de juin 2020, pas un résultat attribuable à mon travail.)
+
+Source du chiffre (communiqué officiel): https://cdn.nwe.io/files/x/79/f5/cadb7736c7ee1d815c25997aea20.pdf
+
+Rachat par Calldorado: https://www.sttinfo.fi/tiedote/69934335/calldorado-acquires-android-texting-app-mood-messenger?publisherId=58763726
+
+##### Conclusion — Des idées différentes. Une même façon de penser.
+
+Créer de zéro et faire évoluer un produit existant sont des défis très différents. Les deux exigent de comprendre les gens, de remettre des décisions en question et de trouver des solutions qui ont du sens.
+
+Ces projets font partie de mon parcours et influencent encore ma façon d'aborder le design : avec curiosité, intention et sens du détail.
+
+Vous avez un projet en cours ?
+
+Parlez-moi de votre idée.
 
 ### Je ne conçois pas pour impressionner d'autres designers. Je conçois pour les personnes de l'autre côté de l'écran.
 
