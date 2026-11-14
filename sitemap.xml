@@ -54,7 +54,4 @@
   <url><loc>https://tomfabre.com/legal/</loc><xhtml:link rel="alternate" hreflang="es" href="https://tomfabre.com/legal/"/><xhtml:link rel="alternate" hreflang="en" href="https://tomfabre.com/en/legal/"/><xhtml:link rel="alternate" hreflang="fr" href="https://tomfabre.com/fr/mentions-legales/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tomfabre.com/legal/"/><priority>0.2</priority></url>
   <url><loc>https://tomfabre.com/en/legal/</loc><xhtml:link rel="alternate" hreflang="es" href="https://tomfabre.com/legal/"/><xhtml:link rel="alternate" hreflang="en" href="https://tomfabre.com/en/legal/"/><xhtml:link rel="alternate" hreflang="fr" href="https://tomfabre.com/fr/mentions-legales/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tomfabre.com/legal/"/><priority>0.2</priority></url>
   <url><loc>https://tomfabre.com/fr/mentions-legales/</loc><xhtml:link rel="alternate" hreflang="es" href="https://tomfabre.com/legal/"/><xhtml:link rel="alternate" hreflang="en" href="https://tomfabre.com/en/legal/"/><xhtml:link rel="alternate" hreflang="fr" href="https://tomfabre.com/fr/mentions-legales/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tomfabre.com/legal/"/><priority>0.2</priority></url>
-  <url><loc>https://tomfabre.com/cv-alvaro-fabre.pdf</loc><priority>0.3</priority></url>
-  <url><loc>https://tomfabre.com/llms.txt</loc><priority>0.3</priority></url>
-  <url><loc>https://tomfabre.com/portfolio.json</loc><priority>0.3</priority></url>
 </urlset>
