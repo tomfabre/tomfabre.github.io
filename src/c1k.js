@@ -1763,3 +1763,408 @@ HERO["360estudio"] = {
 SEO.es.proj["360estudio"] = {"t": "360estudio: Branding, diseño web e identidad visual | Tom Fabre", "d": "Branding integral y diseño web para 360estudio, una empresa de arquitectura cuya identidad también se trasladó al espacio físico."};
 SEO.en.proj["360estudio"] = {"t": "360estudio: Branding, Web & Visual Identity | Tom Fabre", "d": "Complete branding and web design for 360estudio, an architecture company whose visual identity extends into its physical spaces."};
 SEO.fr.proj["360estudio"] = {"t": "360estudio : Branding, Web & Identité visuelle | Tom Fabre", "d": "Branding et design web pour 360estudio, une entreprise d'architecture dont l'identité visuelle s'étend jusque dans ses espaces."};
+
+/* Mobile Experiences: Apolo Launcher, Appy x Jojol and Mood Messenger in one case (chapters). Images are placeholders (ph) until img/mobile-experiences-{0,cover,1..5}.webp exist. */
+SECTIONS["mobile-experiences"] = [
+ {
+  "type": "text",
+  "id": "intro",
+  "h": {
+   "es": "Introducción",
+   "en": "Introduction",
+   "fr": "Introduction"
+  },
+  "t": {
+   "es": "Diseñar para el mundo real.",
+   "en": "Designing for the real world.",
+   "fr": "Concevoir pour le monde réel."
+  },
+  "p": [
+   {
+    "es": "Hay proyectos que empiezan con una idea. Otros, con algo que ya funciona y puede funcionar mejor.",
+    "en": "Some projects start with an idea. Others start with something that already works and could work better.",
+    "fr": "Certains projets partent d'une idée. D'autres, de quelque chose qui fonctionne déjà et peut fonctionner mieux."
+   },
+   {
+    "es": "Apolo Launcher y Appy fueron dos oportunidades de diseñar productos completos desde cero. Con Mood Messenger, el desafío fue diferente: participar en la evolución de una aplicación consolidada, repensar sus interfaces y contribuir a su estrategia de relanzamiento.",
+    "en": "Apolo Launcher and Appy were two chances to design complete products from scratch. With Mood Messenger the challenge was different: taking part in the evolution of an established app, rethinking its interfaces and contributing to its relaunch strategy.",
+    "fr": "Apolo Launcher et Appy ont été deux occasions de concevoir des produits complets de zéro. Avec Mood Messenger, le défi était différent : participer à l'évolution d'une application établie, repenser ses interfaces et contribuer à sa stratégie de relance."
+   },
+   {
+    "es": "Tres experiencias que me permitieron explorar distintas maneras de resolver problemas, tomar decisiones y diseñar para personas reales.",
+    "en": "Three experiences that let me explore different ways of solving problems, making decisions and designing for real people.",
+    "fr": "Trois expériences qui m'ont permis d'explorer différentes façons de résoudre des problèmes, de prendre des décisions et de concevoir pour de vraies personnes."
+   }
+  ]
+ },
+ {
+  "type": "chapter",
+  "id": "apolo",
+  "layout": "right",
+  "h": {
+   "es": "01 / Apolo Launcher",
+   "en": "01 / Apolo Launcher",
+   "fr": "01 / Apolo Launcher"
+  },
+  "t": {
+   "es": "Tu Android. A tu manera.",
+   "en": "Your Android. Your way.",
+   "fr": "Votre Android. À votre façon."
+  },
+  "p": [
+   {
+    "es": "La pantalla de inicio es uno de los espacios que más utilizamos en nuestro teléfono. ¿Y si pudiera sentirse realmente nuestra?",
+    "en": "The home screen is one of the spaces we use most on our phones. What if it could feel truly ours?",
+    "fr": "L'écran d'accueil est l'un des espaces que nous utilisons le plus sur notre téléphone. Et s'il pouvait vraiment nous ressembler ?"
+   },
+   {
+    "es": "Apolo Launcher nació con la idea de ofrecer una experiencia Android más personal, intuitiva y flexible.",
+    "en": "Apolo Launcher was born to offer a more personal, intuitive and flexible Android experience.",
+    "fr": "Apolo Launcher est né pour offrir une expérience Android plus personnelle, intuitive et flexible."
+   },
+   {
+    "es": "Me encargué del diseño del producto de principio a fin, desde su concepto y la experiencia de navegación hasta las interfaces finales. El objetivo era combinar personalización, funcionalidad y una identidad visual reconocible en una experiencia fácil de utilizar.",
+    "en": "I designed the product from start to finish, from the concept and navigation experience to the final interfaces. The goal was to combine personalisation, functionality and a recognisable visual identity in an experience that was easy to use.",
+    "fr": "J'ai conçu le produit de bout en bout, du concept et de l'expérience de navigation jusqu'aux interfaces finales. L'objectif était de combiner personnalisation, fonctionnalité et identité visuelle reconnaissable dans une expérience facile à utiliser."
+   }
+  ],
+  "meta": [
+   {
+    "l": {
+     "es": "Mi contribución",
+     "en": "My contribution",
+     "fr": "Ma contribution"
+    },
+    "v": {
+     "es": "Diseño integral de producto · UX/UI · Diseño visual",
+     "en": "End-to-end product design · UX/UI · Visual design",
+     "fr": "Conception produit de bout en bout · UX/UI · Design visuel"
+    }
+   }
+  ],
+  "metric": {
+   "n": {
+    "es": "1M+",
+    "en": "1M+",
+    "fr": "1M+"
+   },
+   "l": {
+    "es": "instalaciones en Google Play",
+    "en": "installs on Google Play",
+    "fr": "installations sur Google Play"
+   },
+   "note": {
+    "es": "Cifra documentada del producto, no un resultado atribuible solo al diseño.",
+    "en": "Documented figure for the product, not a result attributable to design alone.",
+    "fr": "Chiffre documenté du produit, pas un résultat attribuable au seul design."
+   }
+  },
+  "links": [
+   {
+    "href": "https://apkcombo.com/apolo-launcher-boost-theme/co.madseven.launcher",
+    "l": {
+     "es": "Fuente de la métrica (referencia externa histórica)",
+     "en": "Source of the figure (historical external reference)",
+     "fr": "Source du chiffre (référence externe historique)"
+    }
+   }
+  ],
+  "media": [
+   {
+    "key": "mobile-experiences",
+    "v": "1",
+    "r": "1600/1200",
+    "ph": true,
+    "alt": {
+     "es": "Interfaz de Apolo Launcher en un teléfono Android",
+     "en": "Apolo Launcher interface on an Android phone",
+     "fr": "Interface d'Apolo Launcher sur un téléphone Android"
+    }
+   },
+   {
+    "key": "mobile-experiences",
+    "v": "2",
+    "r": "1600/1200",
+    "ph": true,
+    "alt": {
+     "es": "Distintas pantallas y elementos visuales de Apolo Launcher",
+     "en": "Different screens and visual elements of Apolo Launcher",
+     "fr": "Différents écrans et éléments visuels d'Apolo Launcher"
+    }
+   }
+  ]
+ },
+ {
+  "type": "chapter",
+  "id": "appy",
+  "layout": "left",
+  "h": {
+   "es": "02 / Appy × Jojol",
+   "en": "02 / Appy × Jojol",
+   "fr": "02 / Appy × Jojol"
+  },
+  "t": {
+   "es": "Un poco de suerte. Mucho diseño.",
+   "en": "A little luck. A lot of design.",
+   "fr": "Un peu de chance. Beaucoup de design."
+  },
+  "p": [
+   {
+    "es": "¿Cómo transformar la relación entre un creador de contenido y su comunidad en una experiencia móvil?",
+    "en": "How do you turn the relationship between a content creator and their community into a mobile experience?",
+    "fr": "Comment transformer la relation entre un créateur de contenu et sa communauté en expérience mobile ?"
+   },
+   {
+    "es": "Appy fue una aplicación de concursos y premios creada junto a Jojol, uno de los creadores de contenido tecnológico más reconocidos de Francia.",
+    "en": "Appy was a contests and prizes app created with Jojol, one of the best-known tech content creators in France.",
+    "fr": "Appy était une application de concours et de lots créée avec Jojol, l'un des créateurs de contenu tech les plus reconnus de France."
+   },
+   {
+    "es": "Diseñé el producto completo desde cero para iOS y Android, trabajando en el concepto, la navegación, la experiencia de usuario y las interfaces.",
+    "en": "I designed the whole product from scratch for iOS and Android, working on the concept, navigation, user experience and interfaces.",
+    "fr": "J'ai conçu le produit complet de zéro pour iOS et Android, en travaillant sur le concept, la navigation, l'expérience utilisateur et les interfaces."
+   },
+   {
+    "es": "El reto era convertir la participación diaria en una experiencia sencilla, atractiva y accesible, conectando a la comunidad con nuevos concursos y premios.",
+    "en": "The challenge was to make daily participation simple, appealing and accessible, connecting the community with new contests and prizes.",
+    "fr": "Le défi était de rendre la participation quotidienne simple, attrayante et accessible, en reliant la communauté à de nouveaux concours et lots."
+   }
+  ],
+  "meta": [
+   {
+    "l": {
+     "es": "Mi contribución",
+     "en": "My contribution",
+     "fr": "Ma contribution"
+    },
+    "v": {
+     "es": "Diseño integral de producto · UX/UI · Diseño visual · iOS y Android",
+     "en": "End-to-end product design · UX/UI · Visual design · iOS and Android",
+     "fr": "Conception produit de bout en bout · UX/UI · Design visuel · iOS et Android"
+    }
+   },
+   {
+    "l": {
+     "es": "Colaboración destacada",
+     "en": "Featured collaboration",
+     "fr": "Collaboration à retenir"
+    },
+    "v": {
+     "es": "Jojol, creador de contenido tecnológico francés.",
+     "en": "Jojol, French tech content creator.",
+     "fr": "Jojol, créateur de contenu tech français."
+    }
+   },
+   {
+    "l": {
+     "es": "Dato contextual",
+     "en": "Context",
+     "fr": "Pour situer"
+    },
+    "v": {
+     "es": "2,7M+ suscriptores en el canal de YouTube de Jojol (2026). Es un dato sobre el creador, no sobre los usuarios de Appy.",
+     "en": "2.7M+ subscribers on Jojol's YouTube channel (2026). This is a figure about the creator, not about Appy's users.",
+     "fr": "2,7M+ abonnés sur la chaîne YouTube de Jojol (2026). C'est un chiffre sur le créateur, pas sur les utilisateurs d'Appy."
+    }
+   }
+  ],
+  "links": [
+   {
+    "href": "https://www.youtube.com/@jojol",
+    "l": {
+     "es": "Ver canal de Jojol",
+     "en": "Jojol's channel",
+     "fr": "Voir la chaîne de Jojol"
+    }
+   },
+   {
+    "href": "https://gensdinternet.fr/2019/10/28/le-youtubeur-jojol-a-cree-lapplication-appy-qui-propose-un-concours-par-jour/",
+    "l": {
+     "es": "Conocer la colaboración",
+     "en": "About the collaboration",
+     "fr": "Découvrir la collaboration"
+    }
+   }
+  ],
+  "media": [
+   {
+    "key": "mobile-experiences",
+    "v": "3",
+    "r": "1600/1200",
+    "ph": true,
+    "alt": {
+     "es": "Pantallas de Appy para iOS y Android",
+     "en": "Appy screens for iOS and Android",
+     "fr": "Écrans d'Appy pour iOS et Android"
+    }
+   }
+  ]
+ },
+ {
+  "type": "chapter",
+  "id": "mood",
+  "layout": "wide",
+  "h": {
+   "es": "03 / Mood Messenger",
+   "en": "03 / Mood Messenger",
+   "fr": "03 / Mood Messenger"
+  },
+  "t": {
+   "es": "Los mensajes de siempre. Otra experiencia.",
+   "en": "The messages you know. A new experience.",
+   "fr": "Les messages d'hier. Une autre expérience."
+  },
+  "p": [
+   {
+    "es": "Una aplicación de mensajería es parte de nuestra rutina. Precisamente por eso, cada detalle importa.",
+    "en": "A messaging app is part of our daily routine. That is exactly why every detail matters.",
+    "fr": "Une application de messagerie fait partie de notre quotidien. C'est précisément pour cela que chaque détail compte."
+   },
+   {
+    "es": "Mood Messenger proponía una alternativa personalizable a la aplicación tradicional de SMS y MMS de Android.",
+    "en": "Mood Messenger offered a customisable alternative to the traditional Android SMS and MMS app.",
+    "fr": "Mood Messenger proposait une alternative personnalisable à l'application SMS et MMS traditionnelle d'Android."
+   },
+   {
+    "es": "Participé en la evolución del producto, diseñando interfaces y trabajando en la estrategia y su relanzamiento.",
+    "en": "I took part in the product's evolution, designing interfaces and working on its strategy and relaunch.",
+    "fr": "J'ai participé à l'évolution du produit, en concevant des interfaces et en travaillant sur sa stratégie et sa relance."
+   },
+   {
+    "es": "El desafío fue renovar la experiencia, mejorar su presentación y seguir construyendo sobre un producto que ya había encontrado su lugar entre millones de descargas.",
+    "en": "The challenge was to renew the experience, improve how it was presented and keep building on a product that had already found its place among millions of downloads.",
+    "fr": "Le défi était de renouveler l'expérience, d'améliorer sa présentation et de continuer à construire sur un produit qui avait déjà trouvé sa place parmi des millions de téléchargements."
+   }
+  ],
+  "meta": [
+   {
+    "l": {
+     "es": "Mi contribución",
+     "en": "My contribution",
+     "fr": "Ma contribution"
+    },
+    "v": {
+     "es": "Evolución de producto · UI Design · Estrategia · Relanzamiento",
+     "en": "Product evolution · UI design · Strategy · Relaunch",
+     "fr": "Évolution du produit · UI design · Stratégie · Relance"
+    }
+   }
+  ],
+  "metric": {
+   "n": {
+    "es": "10M+",
+    "en": "10M+",
+    "fr": "10M+"
+   },
+   "l": {
+    "es": "descargas históricas en todo el mundo",
+    "en": "historical downloads worldwide",
+    "fr": "téléchargements historiques dans le monde"
+   },
+   "note": {
+    "es": "Cifra de la trayectoria global del producto según el comunicado de junio de 2020, no un resultado atribuible a mi trabajo.",
+    "en": "Figure for the product's global history, per the June 2020 press release, not a result attributable to my work.",
+    "fr": "Chiffre de la trajectoire globale du produit selon le communiqué de juin 2020, pas un résultat attribuable à mon travail."
+   }
+  },
+  "links": [
+   {
+    "href": "https://cdn.nwe.io/files/x/79/f5/cadb7736c7ee1d815c25997aea20.pdf",
+    "l": {
+     "es": "Fuente de la métrica (comunicado oficial)",
+     "en": "Source of the figure (official press release)",
+     "fr": "Source du chiffre (communiqué officiel)"
+    }
+   },
+   {
+    "href": "https://www.sttinfo.fi/tiedote/69934335/calldorado-acquires-android-texting-app-mood-messenger?publisherId=58763726",
+    "l": {
+     "es": "Adquisición por Calldorado",
+     "en": "Acquisition by Calldorado",
+     "fr": "Rachat par Calldorado"
+    }
+   }
+  ],
+  "media": [
+   {
+    "key": "mobile-experiences",
+    "v": "4",
+    "r": "2400/1050",
+    "ph": true,
+    "alt": {
+     "es": "Interfaz de mensajería de Mood Messenger",
+     "en": "Mood Messenger messaging interface",
+     "fr": "Interface de messagerie de Mood Messenger"
+    }
+   },
+   {
+    "key": "mobile-experiences",
+    "v": "5",
+    "r": "2400/1050",
+    "ph": true,
+    "alt": {
+     "es": "Elementos de personalización y pantallas de Mood Messenger",
+     "en": "Mood Messenger personalisation elements and screens",
+     "fr": "Éléments de personnalisation et écrans de Mood Messenger"
+    }
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "cierre",
+  "h": {
+   "es": "Cierre",
+   "en": "Closing",
+   "fr": "Conclusion"
+  },
+  "t": {
+   "es": "Distintas ideas. Una misma forma de pensar.",
+   "en": "Different ideas. One way of thinking.",
+   "fr": "Des idées différentes. Une même façon de penser."
+  },
+  "p": [
+   {
+    "es": "Crear desde cero y hacer evolucionar un producto existente son retos muy diferentes. Ambos exigen entender a las personas, cuestionar decisiones y encontrar soluciones que tengan sentido.",
+    "en": "Creating from scratch and evolving an existing product are very different challenges. Both require understanding people, questioning decisions and finding solutions that make sense.",
+    "fr": "Créer de zéro et faire évoluer un produit existant sont des défis très différents. Les deux exigent de comprendre les gens, de remettre des décisions en question et de trouver des solutions qui ont du sens."
+   },
+   {
+    "es": "Estos proyectos forman parte de mi recorrido y siguen influyendo en cómo abordo el diseño: con curiosidad, intención y atención a los detalles.",
+    "en": "These projects are part of my path and still shape how I approach design: with curiosity, intention and attention to detail.",
+    "fr": "Ces projets font partie de mon parcours et influencent encore ma façon d'aborder le design : avec curiosité, intention et sens du détail."
+   },
+   {
+    "em": true,
+    "es": "¿Tienes algo entre manos?",
+    "en": "Got something in the works?",
+    "fr": "Vous avez un projet en cours ?"
+   },
+   {
+    "es": "Cuéntame tu idea.",
+    "en": "Tell me your idea.",
+    "fr": "Parlez-moi de votre idée."
+   }
+  ]
+ }
+];
+HERO["mobile-experiences"] = {
+ "tag": {
+  "es": "Tres apps. Tres retos. Mucho más que pantallas.",
+  "en": "Three apps. Three challenges. Far more than screens.",
+  "fr": "Trois apps. Trois défis. Bien plus que des écrans."
+ },
+ "lead": {
+  "es": "De diseñar productos desde cero a hacer evolucionar experiencias utilizadas por millones de personas. Tres proyectos móviles donde el diseño, la tecnología y la estrategia se encuentran.",
+  "en": "From designing products from scratch to evolving experiences used by millions of people. Three mobile projects where design, technology and strategy meet.",
+  "fr": "De la conception de produits de zéro à l'évolution d'expériences utilisées par des millions de personnes. Trois projets mobiles où design, technologie et stratégie se rencontrent."
+ },
+ "alt": {
+  "es": "Composición de las tres aplicaciones móviles: Apolo Launcher, Appy y Mood Messenger",
+  "en": "Composition of the three mobile apps: Apolo Launcher, Appy and Mood Messenger",
+  "fr": "Composition des trois applications mobiles : Apolo Launcher, Appy et Mood Messenger"
+ }
+};
+SEO.es.proj["mobile-experiences"] = {"t": "Mobile Experiences: Product Design y UX/UI | Tom Fabre", "d": "Tres aplicaciones móviles, tres retos de diseño. Descubre mi trabajo en Apolo Launcher, Appy × Jojol y Mood Messenger."};
+SEO.en.proj["mobile-experiences"] = {"t": "Mobile Experiences: Product Design & UX/UI | Tom Fabre", "d": "Three mobile apps, three design challenges. Explore my work on Apolo Launcher, Appy × Jojol and Mood Messenger."};
+SEO.fr.proj["mobile-experiences"] = {"t": "Mobile Experiences : Product Design & UX/UI | Tom Fabre", "d": "Trois applications mobiles, trois défis de design. Découvrez mon travail sur Apolo Launcher, Appy × Jojol et Mood Messenger."};

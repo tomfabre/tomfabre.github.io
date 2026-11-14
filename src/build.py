@@ -18,7 +18,7 @@ PUB = [i for i, p in enumerate(PROJ) if not p.get("locked")]
 import validate_sections
 _errs = validate_sections.validate(SECTIONS, {p["key"] for p in PROJ}, lambda k, v: os.path.exists(f"img/{k}-{v}.webp"), PROJ)
 _errs += validate_sections.validate_hero(HERO, {p["key"] for p in PROJ})
-_NO_DASH = ("a2pas", "happylife", "binome", "yaypegs", "360estudio")   # projects whose visible copy must not contain en/em dashes
+_NO_DASH = ("a2pas", "happylife", "binome", "yaypegs", "360estudio", "mobile-experiences")   # projects whose visible copy must not contain en/em dashes
 _errs += validate_sections.check_no_dash(_NO_DASH, SECTIONS, HERO, {lg: {q["key"]: D["T"][lg]["projects"][i] for i, q in enumerate(PROJ)} for lg in ("es", "en", "fr")})
 if _errs: sys.exit("BUILD ABORTED: invalid project sections (c1k.js / c1p.js):\n  - " + "\n  - ".join(_errs))
 rl = lambda d, lg: d["role"][lg] if isinstance(d["role"], dict) else d["role"]   # role may be a plain string or {es,en,fr}
@@ -30,7 +30,7 @@ PFX = {"es":"","en":"/en","fr":"/fr"}
 SLG = {"es":{"projects":"proyectos","services":"servicios","bio":"bio","contact":"contacto"},"en":{"projects":"projects","services":"services","bio":"bio","contact":"contact"},"fr":{"projects":"projets","services":"services","bio":"bio","contact":"contact"}}
 SSLG = {"es":{"branding":"branding","web":"diseno-web","ux":"diseno-ux-ui"},"en":{"branding":"branding","web":"web-design","ux":"ux-ui-design"},"fr":{"branding":"branding","web":"design-web","ux":"design-ux-ui"}}
 SKEYS = ["branding","web","ux"]
-PSVC = {"contazara":["branding","web"],"carceral":["web"],"a2pas":["ux","web","branding"],"happylife":["ux"],"binome":["branding","web","ux"],"yaypegs":["ux"],"360estudio":["branding","web"],"figy":["ux"],"apolo":["ux"],"appy":["ux"],"mood":["ux"],"molyb":["ux"]}
+PSVC = {"contazara":["branding","web"],"carceral":["web"],"a2pas":["ux","web","branding"],"happylife":["ux"],"binome":["branding","web","ux"],"yaypegs":["ux"],"mobile-experiences":["ux"],"360estudio":["branding","web"],"figy":["ux"],"apolo":["ux"],"appy":["ux"],"mood":["ux"],"molyb":["ux"]}
 def path(lg, page="home", key=None):
     if page == "home": return PFX[lg] + "/"
     if page == "project": return f"{PFX[lg]}/{SLG[lg]['projects']}/{key}/"

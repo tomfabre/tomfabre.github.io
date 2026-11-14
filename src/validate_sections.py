@@ -12,7 +12,9 @@ ID_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 TYPES = {
     "text":    ({"type", "id", "h", "p"},          {"t", "img", "flow"}),
     "metrics": ({"type", "id", "h", "items"},      {"t", "p", "after", "flow"}),
+    "chapter": ({"type", "id", "h", "t", "p", "layout", "media"}, {"meta", "metric", "links"}),
 }
+LAYOUTS = ("right", "left", "wide")
 
 
 def _loc(v, path, errs):
@@ -76,13 +78,14 @@ def _paras(v, path, errs, required):
 
 def _img(im, path, errs, img_exists):
     """Image {key, v, alt}; optional: r ("1440/743", exact aspect ratio, no cropping), zoom (true: opens the original in a new tab), cap (localized caption)."""
-    if not isinstance(im, dict) or not {"key", "v", "alt"} <= set(im) or set(im) - {"key", "v", "alt", "r", "zoom", "cap"}:
-        errs.append(f"{path}: must be {{key, v, alt[, r, zoom, cap]}}"); return
+    if not isinstance(im, dict) or not {"key", "v", "alt"} <= set(im) or set(im) - {"key", "v", "alt", "r", "zoom", "cap", "ph"}:
+        errs.append(f"{path}: must be {{key, v, alt[, r, zoom, cap, ph]}}"); return
+    if "ph" in im and not isinstance(im["ph"], bool): errs.append(f"{path}.ph: must be true/false")
     _loc(im["alt"], f"{path}.alt", errs)
     if "r" in im and not re.match(r"^\d{1,5}/\d{1,5}$", str(im["r"])): errs.append(f"{path}.r: must look like '1440/743'")
     if "zoom" in im and not isinstance(im["zoom"], bool): errs.append(f"{path}.zoom: must be true/false")
     if "cap" in im: _loc(im["cap"], f"{path}.cap", errs)
-    if not img_exists(str(im["key"]), str(im["v"])):
+    if not img_exists(str(im["key"]), str(im["v"])) and not im.get("ph"):   # ph: placeholder allowed until the original file is added
         errs.append(f"{path}: file img/{im['key']}-{im['v']}.webp does not exist")
 
 
@@ -145,6 +148,27 @@ def validate(sections, project_keys, img_exists, projects=None):
                                 if not re.match(r"^\d{1,2}/\d{1,2}$", str(it["fig"]["r"])): errs.append(f"{w}.fig.r: must look like '16/7'")
                                 _img(im, f"{w}.fig", errs, img_exists)
                             else: _img(it[k], f"{w}.{k}", errs, img_exists)
+            if typ == "chapter":
+                if s.get("layout") not in LAYOUTS: errs.append(f"{at}.layout: must be one of {LAYOUTS}")
+                if "p" in s: _paras(s["p"], f"{at}.p", errs, True)
+                md = s.get("media")
+                if not isinstance(md, list) or not md: errs.append(f"{at}.media: must be a non-empty list of images")
+                else:
+                    for j, im in enumerate(md):
+                        _img(im, f"{at}.media[{j}]", errs, img_exists)
+                        if isinstance(im, dict) and not re.match(r"^\d{1,5}/\d{1,5}$", str(im.get("r", ""))): errs.append(f"{at}.media[{j}].r: required, like '1600/1200'")
+                for j, m in enumerate(s.get("meta", [])):
+                    if not isinstance(m, dict) or set(m) != {"l", "v"}: errs.append(f"{at}.meta[{j}]: must be {{l, v}}"); continue
+                    _loc(m["l"], f"{at}.meta[{j}].l", errs); _loc(m["v"], f"{at}.meta[{j}].v", errs)
+                mt = s.get("metric")
+                if mt is not None:
+                    if not isinstance(mt, dict) or not {"n", "l"} <= set(mt) or set(mt) - {"n", "l", "note"}: errs.append(f"{at}.metric: must be {{n, l[, note]}}")
+                    else:
+                        for f in mt: _loc(mt[f], f"{at}.metric.{f}", errs)
+                for j, ln in enumerate(s.get("links", [])):
+                    if not isinstance(ln, dict) or set(ln) != {"href", "l"}: errs.append(f"{at}.links[{j}]: must be {{href, l}}"); continue
+                    if not _url_ok(ln["href"]): errs.append(f"{at}.links[{j}].href: must be an absolute https URL ({ln['href']!r})")
+                    _loc(ln["l"], f"{at}.links[{j}].l", errs)
             if typ == "metrics":
                 if "p" in s: _paras(s["p"], f"{at}.p", errs, False)
                 if "after" in s: _paras(s["after"], f"{at}.after", errs, False)
@@ -179,7 +203,8 @@ def flatten(secs, lg):
     """Plain-text view of a project's sections in one language (for llms-full.txt and portfolio.json)."""
     out = []
     for s in secs:
-        paras = [plain(p, lg) for p in s.get("p", [])] + [plain(p, lg) for f in s.get("flow", []) for p in f.get("p", [])] + [plain(p, lg) for p in s.get("after", [])]
+        extra = [f"{m['l'][lg]}: {m['v'][lg]}" for m in s.get("meta", [])] + ([f"{s['metric']['n'][lg]} {s['metric']['l'][lg]}" + (f" ({s['metric']['note'][lg]})" if 'note' in s['metric'] else "")] if s.get("metric") else []) + [f"{x['l'][lg]}: {x['href']}" for x in s.get("links", [])]
+        paras = [plain(p, lg) for p in s.get("p", [])] + [plain(p, lg) for f in s.get("flow", []) for p in f.get("p", [])] + [plain(p, lg) for p in s.get("after", [])] + extra
         if s["type"] == "metrics":
             paras.insert(len(s.get("p", [])), " · ".join(f"{it['n'][lg]} {it['l'][lg]}" for it in s["items"]))
         out.append({"id": s["id"], "heading": s["t"][lg] if "t" in s else s["h"][lg], "label": s["h"][lg], "text": paras})

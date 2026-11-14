@@ -120,5 +120,28 @@ class T(unittest.TestCase):
     def test_no_dash_checks_card_rows(self):
         self.assertTrue(check_no_dash(("demo",), {}, {}, {"es": {"demo": ["N", "a \u2013 b"]}}))
 
+CH = {"type": "chapter", "id": "app", "layout": "right", "h": L("01 / App"), "t": L("Titular"), "p": [L("Texto")],
+      "media": [{"key": "demo", "v": "1", "r": "1600/1200", "ph": True, "alt": L("Alt")}],
+      "meta": [{"l": L("Rol"), "v": L("Valor")}], "metric": {"n": L("1M+"), "l": L("instalaciones"), "note": L("Nota")},
+      "links": [{"href": "https://example.com/x", "l": L("Fuente")}]}
+
+
+class Chapter(unittest.TestCase):
+    def v(self, **kw):
+        import copy as c; ch = c.deepcopy(CH); ch.update(kw); return validate({"demo": [ch]}, KEYS, NOIMG)
+    def test_valid_with_placeholder(self): self.assertEqual(self.v(), [])
+    def test_missing_file_without_ph_fails(self):
+        m = [{"key": "demo", "v": "1", "r": "1600/1200", "alt": L("Alt")}]
+        self.assertTrue(any("does not exist" in e for e in self.v(media=m)))
+    def test_bad_layout(self): self.assertTrue(any("layout" in e for e in self.v(layout="top")))
+    def test_ratio_required(self):
+        m = [{"key": "demo", "v": "1", "ph": True, "alt": L("Alt")}]
+        self.assertTrue(any(".r" in e for e in self.v(media=m)))
+    def test_http_link_rejected(self): self.assertTrue(any("https" in e for e in self.v(links=[{"href": "http://x.com", "l": L("a")}])))
+    def test_missing_translation(self): self.assertTrue(self.v(t={"es": "a", "en": "b"}))
+    def test_flatten_includes_metric_and_links(self):
+        out = flatten([CH], "es")[0]["text"]
+        self.assertTrue(any("1M+" in x for x in out) and any("https://example.com/x" in x for x in out))
+
 
 if __name__ == "__main__": unittest.main()

@@ -479,6 +479,36 @@ html[lang="fr"] .hm-btn .l2{padding-left:0}
 .pj-gal .art a.zoom{display:block;width:100%;height:100%;cursor:zoom-in}
 .pj-cap{margin-top:var(--s3);font-size:var(--small);color:var(--muted);max-width:62ch;line-height:1.45}
 .pj-gal.one .art:first-child{aspect-ratio:4/3}
+/* chapters (multi-app cases): three alternating layouts, same type scale as .pj-body */
+.ch{margin-top:var(--s24)}
+.ch-in{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s8)}
+.ch-tx{font-size:1.1rem;line-height:1.55}
+.ch-tx p{max-width:58ch}.ch-tx p+p{margin-top:var(--s4)}
+.ch-eb{font-size:var(--small);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-weight:300;margin-bottom:var(--s4)}
+.ch-tx h3{font-size:var(--h3);line-height:1.1;margin-bottom:var(--s4)}
+.ch-aside{margin-top:var(--s8);display:grid;gap:var(--s6)}
+.ch-meta{display:grid;gap:var(--s4);margin:0;max-width:58ch}
+.ch-meta dt{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ch-meta dd{margin:.2rem 0 0;font-size:1rem;line-height:1.45}
+.ch-metric{display:grid;gap:.25rem;margin:0}
+.ch-metric b{font-size:clamp(2.2rem,4vw,3.4rem);line-height:1;letter-spacing:-.03em;font-weight:600}
+.ch-metric span{font-size:1rem}
+.ch-metric small{font-size:.8rem;line-height:1.45;color:var(--muted);max-width:46ch}
+.ch-links{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);margin:0;font-size:.95rem}
+.ch-tx a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line2);padding-bottom:1px}
+.ch-tx a:hover,.ch-tx a:focus-visible{border-color:var(--fg)}
+.ch-media{display:grid;gap:var(--s4);align-content:start}
+.ch-media .art{background:var(--surface);overflow:hidden}
+.ch-media .art.ph{border:1px dashed var(--line2);background:var(--surface)}
+@media (min-width:56rem){
+  .ch-right .ch-in{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s12);align-items:start}
+  .ch-left .ch-in{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s12);align-items:start}
+  .ch-left .ch-media{order:-1}
+  .ch-wide .ch-media{order:-1}
+  .ch-wide .ch-tx{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s12)}
+  .ch-wide .ch-aside{margin-top:0;align-content:start}
+}
+
 .pj-gal.duo .art:first-child{grid-column:auto;aspect-ratio:4/3}
 @media (min-width:56rem){.pj-gal{grid-template-columns:1fr 1fr}}
 .pj-next{display:block;text-decoration:none;color:inherit;margin-top:var(--s24);padding-top:var(--s8);border-top:1px solid var(--line2)}

@@ -71,7 +71,7 @@ const ART = {
 };
 Object.assign(ART, {
   carceral: v => ART["360estudio"](v), a2pas: v => ART.freethem(v + 1), happylife: v => ART.healthtech(v), binome: v => ART.codelco(v + 1),
-  yaypegs: v => ART.apps(v + 1), figy: v => ART.healthtech(v + 1), apolo: v => ART.apps(v + 2), appy: v => ART.apps(v + 3), mood: v => ART.apps(v), molyb: v => ART.codelco(v)
+  yaypegs: v => ART.apps(v + 1), figy: v => ART.healthtech(v + 1), "mobile-experiences": v => ART.apps(v), molyb: v => ART.codelco(v)
 });
 const IMG = window.__IMG || {};
 const svgOf = (key, v, hi) => { const m = IMG[key]; if (m && m[v]){ const i = PROJ.findIndex(p => p.key === key), nm = (v === 0 || i < 0) ? "" : (L().projects[i][0] + (L().projects[i][1] ? ": " + L().projects[i][1] : "")); return `<img src="${m[v]}" alt="${esc(nm)}" ${hi ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${nm ? "" : ' aria-hidden="true"'}>`; } if (v === "cover") v = 0; return svgOld(key, v); };
@@ -121,7 +121,7 @@ function wireMenu(){
 
 /* ---------- home sections ---------- */
 /* service <-> project relations come from the "services" column of each project in the repo (single source) */
-const PSVC = { contazara:["branding","web"], carceral:["web"], a2pas:["ux","web","branding"], happylife:["ux"], binome:["branding","web","ux"], yaypegs:["ux"], "360estudio":["branding","web"], figy:["ux"], apolo:["ux"], appy:["ux"], mood:["ux"], molyb:["ux"] };
+const PSVC = { contazara:["branding","web"], carceral:["web"], a2pas:["ux","web","branding"], happylife:["ux"], binome:["branding","web","ux"], yaypegs:["ux"], "mobile-experiences":["ux"], "360estudio":["branding","web"], figy:["ux"], apolo:["ux"], appy:["ux"], mood:["ux"], molyb:["ux"] };
 const sentence = x => { x = String(x).toLowerCase(); return x.charAt(0).toUpperCase() + x.slice(1); };
 const oneLine = x => String(x).replace(/\n/g, " ");
 function renderHomeServices(){
@@ -218,8 +218,13 @@ const secPair = ims => ims.every(okImg) ? `<div class="pj-gal duo">${ims.map(im 
 const secFlow = fl => (fl || []).map(f => f.img ? secImg(f.img) : f.fig ? secFig(f.fig) : f.pair ? secPair(f.pair) : `<div class="pj-body"><span aria-hidden="true"></span><div>${paras(f.p)}</div></div>`).join("");
 const secHasImg = k => !!SECTIONS[k] && SECTIONS[k].some(s => s.img || (s.flow || []).some(f => f.img || f.fig || f.pair));   // case already carries its images inline
 /* To add a type: add it here AND to TYPES in validate_sections.py (build fails on unknown types). */
+/* chapter: one app inside a multi-app case. layout "right" (text left, images right), "left" (images left, text right) or "wide" (wide image on top, text and figures below). Images that do not exist yet render as neutral placeholders with the right proportion (im.ph). */
+const chImg = im => okImg(im) ? imgTag(im, im.r) : `<div class="art ph" style="aspect-ratio:${esc(im.r || "4/3")}" aria-hidden="true"></div>`;
+const chLink = x => `<a href="${esc(x.href)}" target="_blank" rel="noopener noreferrer" data-ev="project_link_click" data-place="${esc(x.href.split("/")[2] || "")}">${esc(tr(x.l))}</a>`;
+const chapterHtml = s => `<section class="pj-sec ch ch-${s.layout}" id="s-${s.id}" aria-labelledby="s-${s.id}-h"><div class="ch-in"><div class="ch-tx"><div class="ch-main"><h2 id="s-${s.id}-h" class="ch-eb">${esc(tr(s.h))}</h2><h3>${esc(tr(s.t))}</h3>${paras(s.p)}</div><div class="ch-aside">${(s.meta || []).length ? `<dl class="ch-meta">${s.meta.map(m => `<div><dt>${esc(tr(m.l))}</dt><dd>${esc(tr(m.v))}</dd></div>`).join("")}</dl>` : ""}${s.metric ? `<p class="ch-metric"><b>${esc(tr(s.metric.n))}</b><span>${esc(tr(s.metric.l))}</span>${s.metric.note ? `<small>${esc(tr(s.metric.note))}</small>` : ""}</p>` : ""}${(s.links || []).length ? `<p class="ch-links">${s.links.map(chLink).join("")}</p>` : ""}</div></div><div class="ch-media">${(s.media || []).map(chImg).join("")}</div></div></section>`;
 const SECTION_RENDER = {
   text: s => `<section class="pj-sec" id="s-${s.id}" aria-labelledby="s-${s.id}-h">${secBody(s, paras(s.p))}${s.img ? secImg(s.img) : ""}${secFlow(s.flow)}</section>`,
+  chapter: chapterHtml,
   metrics: s => `<section class="pj-sec" id="s-${s.id}" aria-labelledby="s-${s.id}-h">${secBody(s, paras(s.p))}<ul class="stats pj-stats">${s.items.map(it => `<li class="stat"><b>${esc(tr(it.n))}</b><span>${esc(tr(it.l))}</span></li>`).join("")}</ul>${s.after ? `<div class="pj-body"><span aria-hidden="true"></span><div>${paras(s.after)}</div></div>` : ""}${secFlow(s.flow)}</section>`
 };
 const renderSection = s => { const f = SECTION_RENDER[s.type]; if (!f) throw new Error("Unknown section type: " + s.type); return f(s); };
