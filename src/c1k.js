@@ -1132,3 +1132,318 @@ HERO.binome = {
 SEO.es.proj.binome = {"t": "Binōme Studio: Branding, diseño web y estrategia | Tom Fabre", "d": "Binōme Studio es un estudio independiente de branding, diseño web y estrategia digital. Descubre cómo nació y mi trabajo como cofundador."};
 SEO.en.proj.binome = {"t": "Binōme Studio: Branding, Web Design & Strategy | Tom Fabre", "d": "Discover Binōme Studio, an independent branding and digital design studio, and my role as co-founder in building its identity and projects."};
 SEO.fr.proj.binome = {"t": "Binōme Studio : Branding, Design Web & Stratégie | Tom Fabre", "d": "Découvrez Binōme Studio, un studio indépendant de branding et de design digital, son histoire et mon rôle de cofondateur."};
+
+/* Yaypegs: case study (sections), hero override and SEO. Copy approved by Tom. Period 2022 a 2023 as given; no metrics. */
+SECTIONS.yaypegs = [
+ {
+  "type": "text",
+  "id": "comienzo",
+  "h": {
+   "es": "01 · El comienzo",
+   "en": "01 · The beginning",
+   "fr": "01 · Le début"
+  },
+  "t": {
+   "es": "Todo empezó con un universo de personajes.",
+   "en": "It all started with a world of characters.",
+   "fr": "Tout a commencé avec un univers de personnages."
+  },
+  "p": [
+   {
+    "es": "Yaypegs nació como una {coleccion} construidos a partir de elementos, rasgos y accesorios combinables.",
+    "en": "Yaypegs began as a {coleccion} built from interchangeable traits, accessories and visual elements.",
+    "fr": "Yaypegs est né comme une {coleccion} composés de traits, d'accessoires et d'éléments graphiques interchangeables.",
+    "links": {
+     "coleccion": {
+      "href": "https://yaypegs.com/s1",
+      "t": {
+       "es": "colección de 10.000 personajes digitales",
+       "en": "collection of 10,000 digital characters",
+       "fr": "collection de 10 000 personnages numériques"
+      }
+     }
+    }
+   },
+   {
+    "es": "El trabajo artístico inicial sentó las bases de un lenguaje visual reconocible, con personajes que podían ser diferentes entre sí y seguir formando parte del mismo universo.",
+    "en": "The initial artwork established a recognisable visual language, allowing every character to feel different while still belonging to the same universe.",
+    "fr": "Le travail artistique initial a posé les bases d'un langage visuel reconnaissable, permettant à chaque personnage d'être différent tout en appartenant au même univers."
+   },
+   {
+    "es": "Pero el proyecto tenía una segunda ambición: llevar ese mundo mucho más lejos.",
+    "en": "But the project had another ambition: take that world even further.",
+    "fr": "Mais le projet avait une autre ambition : aller encore plus loin."
+   },
+   {
+    "em": true,
+    "es": "No bastaba con que los personajes se vieran bien. También tenían que cobrar vida.",
+    "en": "Looking good was only the beginning. The characters needed to come alive.",
+    "fr": "Il ne suffisait pas que les personnages soient réussis visuellement. Il fallait aussi leur donner vie."
+   }
+  ],
+  "flow": [
+   {
+    "img": {
+     "key": "yaypegs",
+     "v": "1",
+     "r": "2400/1050",
+     "zoom": true,
+     "alt": {
+      "es": "Cuadrícula de personajes pixel art de Yaypegs, cada uno con un disfraz, un fondo y unos accesorios distintos",
+      "en": "Grid of Yaypegs pixel art characters, each with a different costume, background and accessories",
+      "fr": "Grille de personnages pixel art de Yaypegs, chacun avec un costume, un fond et des accessoires différents"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "desafio",
+  "h": {
+   "es": "02 · El desafío",
+   "en": "02 · The challenge",
+   "fr": "02 · Le défi"
+  },
+  "t": {
+   "es": "Animar una capa es fácil. Hacer que todas funcionen juntas es otra historia.",
+   "en": "Animating one layer is easy. Making every layer work together is another story.",
+   "fr": "Animer un calque, c'est une chose. Faire fonctionner tous les calques ensemble, c'en est une autre."
+  },
+  "p": [
+   {
+    "es": "El gran reto llegó con la evolución animada de la colección.",
+    "en": "The biggest challenge came with the animated evolution of the collection.",
+    "fr": "Le plus grand défi est arrivé avec l'évolution animée de la collection."
+   },
+   {
+    "es": "Cada personaje podía reunir distintas combinaciones de rasgos, accesorios y elementos gráficos. Y cada uno de ellos necesitaba moverse sin generar conflictos con los demás.",
+    "en": "Each character could combine different traits, accessories and graphic elements. Every element needed to move without conflicting with the others.",
+    "fr": "Chaque personnage pouvait réunir différentes combinaisons de traits, d'accessoires et d'éléments graphiques. Chaque élément devait pouvoir bouger sans entrer en conflit avec les autres."
+   },
+   {
+    "es": "No servía animar un personaje completo y repetir la fórmula. Había que trabajar los elementos individualmente, teniendo siempre en cuenta cómo se comportarían al combinarse con otras capas.",
+    "en": "Animating each completed character independently wasn't the answer. We needed to work with individual elements while considering how they would behave alongside different layers.",
+    "fr": "Il ne suffisait pas d'animer un personnage complet et de reproduire le processus. Il fallait travailler chaque élément individuellement, en anticipant son comportement avec les autres calques."
+   },
+   {
+    "es": "Un movimiento que funcionaba con un accesorio también debía funcionar con muchos otros.",
+    "en": "An animation that worked with one accessory needed to work with many others.",
+    "fr": "Une animation compatible avec un accessoire devait aussi fonctionner avec beaucoup d'autres."
+   },
+   {
+    "em": true,
+    "es": "Miles de resultados posibles. Un mismo sistema de animación.",
+    "en": "Thousands of possible outcomes. One shared animation system.",
+    "fr": "Des milliers de résultats possibles. Un seul système d'animation."
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "sistema",
+  "h": {
+   "es": "03 · El sistema de animación",
+   "en": "03 · The animation system",
+   "fr": "03 · Le système d'animation"
+  },
+  "t": {
+   "es": "El detalle importaba. La compatibilidad, todavía más.",
+   "en": "Every detail mattered. Compatibility mattered even more.",
+   "fr": "Chaque détail comptait. La compatibilité encore plus."
+  },
+  "p": [
+   {
+    "es": "El trabajo exigió animar y ajustar cientos de elementos para que pudieran combinarse manteniendo la coherencia del personaje.",
+    "en": "The process involved animating and refining hundreds of elements so they could work together while preserving each character's visual consistency.",
+    "fr": "Le travail demandait d'animer et d'ajuster des centaines d'éléments pour qu'ils puissent se combiner tout en conservant la cohérence visuelle des personnages."
+   },
+   {
+    "es": "Cada capa debía respetar las proporciones, los tiempos y el movimiento del conjunto.",
+    "en": "Every layer needed to follow the proportions, timing and movement of the whole.",
+    "fr": "Chaque calque devait respecter les proportions, le rythme et les mouvements de l'ensemble."
+   },
+   {
+    "es": "El objetivo era que las 10.000 composiciones pudieran cobrar vida a partir de un sistema compartido, sin tener que resolver cada personaje como una animación independiente.",
+    "en": "The goal was to bring all 10,000 characters to life through a shared system, rather than treating each one as a separate animation.",
+    "fr": "L'objectif était de donner vie aux 10 000 personnages grâce à un système commun, sans devoir traiter chacun comme une animation indépendante."
+   },
+   {
+    "es": "Un trabajo minucioso donde creatividad, paciencia y precisión tenían que funcionar juntas.",
+    "en": "A meticulous process where creativity, patience and precision had to work together.",
+    "fr": "Un travail minutieux où créativité, patience et précision devaient avancer ensemble."
+   },
+   {
+    "em": true,
+    "es": "No se trataba de hacer 10.000 animaciones aisladas. Se trataba de hacer posible que 10.000 personajes se movieran.",
+    "en": "It wasn't about creating 10,000 isolated animations. It was about making 10,000 characters move.",
+    "fr": "Il ne s'agissait pas de créer 10 000 animations isolées, mais de permettre à 10 000 personnages de prendre vie."
+   }
+  ],
+  "flow": [
+   {
+    "img": {
+     "key": "yaypegs",
+     "v": "2",
+     "r": "1600/1200",
+     "alt": {
+      "es": "Personaje de Yaypegs en pixel art con disfraz de gato blanco y rostro de calavera, sobre fondo gris claro",
+      "en": "Yaypegs pixel art character in a white cat costume with a skull face, on a light grey background",
+      "fr": "Personnage Yaypegs en pixel art déguisé en chat blanc, avec un visage de crâne, sur fond gris clair"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "campanas",
+  "h": {
+   "es": "04 · Más allá de los personajes",
+   "en": "04 · Beyond the characters",
+   "fr": "04 · Au-delà des personnages"
+  },
+  "t": {
+   "es": "Un universo que también tenía que comunicar.",
+   "en": "A universe that needed to communicate, too.",
+   "fr": "Un univers qui devait aussi communiquer."
+  },
+  "p": [
+   {
+    "es": "El proyecto no terminaba en la colección.",
+    "en": "The work didn't stop with the collection.",
+    "fr": "Le projet ne s'arrêtait pas à la collection."
+   },
+   {
+    "es": "También desarrollamos piezas animadas para acompañar las campañas previas al lanzamiento, generar expectación y dar continuidad a la comunicación después de la presentación.",
+    "en": "We also created animated content for pre-launch campaigns, building anticipation and extending the project's communication after release.",
+    "fr": "Nous avons également réalisé des contenus animés pour accompagner les campagnes précédant le lancement, susciter l'intérêt et prolonger la communication après la sortie."
+   },
+   {
+    "es": "Vídeos, animaciones y contenidos para Twitter y otras redes sociales ayudaban a trasladar el lenguaje visual de Yaypegs a diferentes formatos.",
+    "en": "Videos, motion graphics and content for Twitter and other social platforms helped bring Yaypegs' visual language into different formats.",
+    "fr": "Vidéos, animations et contenus pour Twitter et d'autres réseaux sociaux permettaient d'adapter l'univers graphique de Yaypegs à différents formats."
+   },
+   {
+    "es": "La animación no era solamente una característica de los personajes. También formaba parte de la manera en que el proyecto se presentaba y conectaba con su comunidad.",
+    "en": "Animation wasn't just part of the characters. It was part of how the project presented itself and connected with its community.",
+    "fr": "L'animation ne faisait pas seulement partie des personnages. Elle contribuait aussi à la manière dont le projet se présentait et échangeait avec sa communauté."
+   },
+   {
+    "em": true,
+    "es": "{video}",
+    "en": "{video}",
+    "fr": "{video}",
+    "links": {
+     "video": {
+      "href": "https://www.youtube.com/watch?v=n0ZUEKcHY2k",
+      "t": {
+       "es": "Puedes ver una de las animaciones que creamos para las campañas de Yaypegs.",
+       "en": "Watch one of the animations we created for the Yaypegs campaigns.",
+       "fr": "Découvrez l'une des animations que nous avons créées pour les campagnes Yaypegs."
+      }
+     }
+    }
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "trabajo",
+  "h": {
+   "es": "05 · Mi trabajo",
+   "en": "05 · My work",
+   "fr": "05 · Mon travail"
+  },
+  "t": {
+   "es": "Creatividad, sistema y muchas horas de detalle.",
+   "en": "Creativity, consistency and a lot of attention to detail.",
+   "fr": "Créativité, cohérence et beaucoup de précision."
+  },
+  "p": [
+   {
+    "es": "Mi participación, junto al equipo de {binome}, abarcó el trabajo artístico del proyecto, su evolución hacia la animación y la producción de contenidos audiovisuales para las campañas.",
+    "en": "My contribution, alongside {binome}, included the project's artwork, its evolution into animation and the production of audiovisual content for its campaigns.",
+    "fr": "Ma participation, aux côtés de {binome}, a couvert le travail artistique du projet, son évolution vers l'animation et la production de contenus audiovisuels pour les campagnes.",
+    "links": {
+     "binome": {
+      "href": "https://binome.xyz/",
+      "t": {
+       "es": "Binōme Studio",
+       "en": "Binōme Studio",
+       "fr": "Binōme Studio"
+      }
+     }
+    }
+   },
+   {
+    "es": "El mayor desafío fue construir un lenguaje de movimiento que pudiera adaptarse a cientos de elementos y miles de combinaciones, manteniendo la coherencia visual.",
+    "en": "The biggest challenge was building a motion language that could adapt to hundreds of elements and thousands of combinations while maintaining visual consistency.",
+    "fr": "Le plus grand défi était de construire un langage de mouvement capable de s'adapter à des centaines d'éléments et à des milliers de combinaisons tout en conservant une cohérence visuelle."
+   },
+   {
+    "es": "Un trabajo donde la dirección de arte y el motion design tuvieron que pensar más allá de una pieza individual.",
+    "en": "A project where art direction and motion design needed to look beyond any single piece.",
+    "fr": "Un projet où la direction artistique et le motion design devaient penser bien au-delà d'une seule création."
+   },
+   {
+    "em": true,
+    "es": "Porque cuando todo puede combinarse, cada pequeño detalle cuenta.",
+    "en": "Because when everything can be combined, every detail counts.",
+    "fr": "Parce que lorsque tout peut se combiner, chaque détail compte."
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "cierre",
+  "h": {
+   "es": "Cierre",
+   "en": "Closing",
+   "fr": "Conclusion"
+  },
+  "t": {
+   "es": "Miles de personajes. Un universo en movimiento.",
+   "en": "Thousands of characters. One world in motion.",
+   "fr": "Des milliers de personnages. Un univers en mouvement."
+  },
+  "p": [
+   {
+    "es": "Yaypegs fue una experiencia de creatividad a escala, donde el verdadero logro estuvo en conseguir que todas las piezas funcionaran juntas.",
+    "en": "Yaypegs was an exercise in creativity at scale, where the real achievement was making every piece work together.",
+    "fr": "Yaypegs a été une expérience de création à grande échelle, où le véritable défi consistait à faire fonctionner toutes les pièces ensemble."
+   },
+   {
+    "em": true,
+    "es": "¿Tienes una idea que necesita cobrar vida?",
+    "en": "Have an idea that needs to come alive?",
+    "fr": "Vous avez une idée à faire vivre ?"
+   },
+   {
+    "es": "Hablemos.",
+    "en": "Let's talk.",
+    "fr": "Parlons-en."
+   }
+  ]
+ }
+];
+HERO.yaypegs = {
+ "tag": {
+  "es": "10.000 personajes. Infinitas formas de moverse.",
+  "en": "10,000 characters. Endless ways to move.",
+  "fr": "10 000 personnages. Mille façons de bouger."
+ },
+ "lead": {
+  "es": "Un universo de personajes digitales donde el verdadero desafío era conseguir que miles de combinaciones cobraran vida, sin perder su personalidad ni romper la lógica visual del conjunto.",
+  "en": "A universe of digital characters where the challenge was bringing thousands of combinations to life without losing their personality or visual consistency.",
+  "fr": "Un univers de personnages numériques où le véritable défi consistait à donner vie à des milliers de combinaisons sans perdre leur personnalité ni la cohérence visuelle de l'ensemble."
+ },
+ "alt": {
+  "es": "Composición de capas de un personaje de Yaypegs: fondo, cuerpo, ojos, capucha, boca y accesorio se apilan hasta formar el personaje final",
+  "en": "Layer composition of a Yaypegs character: background, body, eyes, hood, mouth and accessory stack up into the final character",
+  "fr": "Composition en calques d'un personnage Yaypegs : fond, corps, yeux, capuche, bouche et accessoire s'empilent pour former le personnage final"
+ }
+};
+SEO.es.proj.yaypegs = {"t": "Yaypegs: Dirección de arte y Motion Design | Tom Fabre", "d": "Dirección de arte y motion design para Yaypegs, una colección de 10.000 personajes digitales desarrollada mediante un sistema de animación modular."};
+SEO.en.proj.yaypegs = {"t": "Yaypegs: Art Direction & Motion Design | Tom Fabre", "d": "Art direction and motion design for Yaypegs, a collection of 10,000 digital characters brought to life through a modular animation system."};
+SEO.fr.proj.yaypegs = {"t": "Yaypegs : Direction artistique & Motion Design | Tom Fabre", "d": "Direction artistique et motion design pour Yaypegs, une collection de 10 000 personnages numériques animés grâce à un système modulaire."};
