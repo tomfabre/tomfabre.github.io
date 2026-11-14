@@ -1447,3 +1447,319 @@ HERO.yaypegs = {
 SEO.es.proj.yaypegs = {"t": "Yaypegs: Dirección de arte y Motion Design | Tom Fabre", "d": "Dirección de arte y motion design para Yaypegs, una colección de 10.000 personajes digitales desarrollada mediante un sistema de animación modular."};
 SEO.en.proj.yaypegs = {"t": "Yaypegs: Art Direction & Motion Design | Tom Fabre", "d": "Art direction and motion design for Yaypegs, a collection of 10,000 digital characters brought to life through a modular animation system."};
 SEO.fr.proj.yaypegs = {"t": "Yaypegs : Direction artistique & Motion Design | Tom Fabre", "d": "Direction artistique et motion design pour Yaypegs, une collection de 10 000 personnages numériques animés grâce à un système modulaire."};
+
+/* 360estudio: case study (sections), hero override and SEO. Copy approved by Tom. Founders' perception only, no metrics. Period 2024 per Binome reference. */
+SECTIONS["360estudio"] = [
+ {
+  "type": "text",
+  "id": "reto",
+  "h": {
+   "es": "01 · El reto",
+   "en": "01 · The challenge",
+   "fr": "01 · Le défi"
+  },
+  "t": {
+   "es": "Hacer visible lo que ya estaba ahí.",
+   "en": "Making what was already there visible.",
+   "fr": "Rendre visible ce qui était déjà là."
+  },
+  "p": [
+   {
+    "es": "{web} ya tenía lo más importante: un equipo con experiencia, una forma de trabajar sólida y proyectos que hablaban por sí solos.",
+    "en": "{web} already had what mattered most: an experienced team, a solid approach to its work and projects that spoke for themselves.",
+    "fr": "{web} avait déjà l'essentiel : une équipe expérimentée, une méthode de travail solide et des projets qui parlaient d'eux-mêmes.",
+    "links": {
+     "web": {
+      "href": "https://www.360estudio.io/",
+      "t": {
+       "es": "360estudio",
+       "en": "360estudio",
+       "fr": "360estudio"
+      }
+     }
+    }
+   },
+   {
+    "es": "El desafío era construir una identidad capaz de transmitir esas cualidades desde el primer contacto.",
+    "en": "The challenge was to create an identity capable of communicating those qualities from the very first interaction.",
+    "fr": "Le défi était de créer une identité capable de transmettre ces qualités dès le premier contact."
+   },
+   {
+    "es": "Una marca que representara tanto la dimensión técnica de la arquitectura y la construcción como la mirada humana con la que el estudio aborda cada espacio.",
+    "en": "A brand that reflected both the technical side of architecture and construction and the human perspective the studio brings to every space.",
+    "fr": "Une marque qui reflète aussi bien la dimension technique de l'architecture et de la construction que le regard humain porté par le studio sur chaque espace."
+   },
+   {
+    "em": true,
+    "es": "No necesitábamos inventar quiénes eran. Necesitábamos encontrar la mejor manera de mostrarlo.",
+    "en": "We didn't need to invent who they were. We needed to find the best way to show it.",
+    "fr": "Nous n'avions pas besoin d'inventer qui ils étaient. Il fallait trouver la meilleure manière de le montrer."
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "identidad",
+  "h": {
+   "es": "02 · La identidad",
+   "en": "02 · The identity",
+   "fr": "02 · L'identité"
+  },
+  "t": {
+   "es": "Todo empieza por encontrar una dirección.",
+   "en": "Every good identity starts with a clear direction.",
+   "fr": "Tout commence par une direction claire."
+  },
+  "p": [
+   {
+    "es": "Desarrollamos una identidad visual completa, pensada para funcionar en distintos contextos, desde las aplicaciones corporativas hasta la comunicación digital.",
+    "en": "We developed a complete visual identity designed to work across different applications, from corporate materials to digital communication.",
+    "fr": "Nous avons développé une identité visuelle complète, pensée pour fonctionner sur différents supports, des applications institutionnelles à la communication digitale."
+   },
+   {
+    "es": "Cada decisión debía aportar coherencia, reconocimiento y personalidad, sin perder la claridad que necesita una empresa con un perfil técnico.",
+    "en": "Every decision needed to bring consistency, recognition and character, while keeping the clarity expected from a technically focused business.",
+    "fr": "Chaque choix devait apporter cohérence, reconnaissance et personnalité, sans perdre la clarté nécessaire à une entreprise au métier technique."
+   },
+   {
+    "es": "El objetivo era que todos los elementos hablaran el mismo idioma, independientemente del formato o del canal.",
+    "en": "The goal was to create a visual language that felt coherent wherever it appeared.",
+    "fr": "L'objectif était de créer un langage visuel capable de rester cohérent, quel que soit le support."
+   },
+   {
+    "em": true,
+    "es": "Una marca reconocible, sin importar dónde aparezca.",
+    "en": "A recognisable brand, wherever you find it.",
+    "fr": "Une marque reconnaissable, partout où elle s'exprime."
+   }
+  ],
+  "flow": [
+   {
+    "pair": [
+     {
+      "key": "360estudio",
+      "v": "0",
+      "alt": {
+       "es": "Logotipo de 360estudio en blanco y gris sobre fondo oscuro, con un punto amarillo sobre la «i»",
+       "en": "360estudio logo in white and grey on a dark background, with a yellow dot above the «i»",
+       "fr": "Logo de 360estudio en blanc et gris sur fond sombre, avec un point jaune sur le «i»"
+      }
+     },
+     {
+      "key": "360estudio",
+      "v": "3",
+      "alt": {
+       "es": "Papelería corporativa de 360estudio: bolsa de tela, carpeta, carta, tarjetas, sobre y perfil en un móvil, en negro, blanco y amarillo",
+       "en": "360estudio corporate stationery: tote bag, folder, letter, business cards, envelope and a phone profile, in black, white and yellow",
+       "fr": "Papeterie de 360estudio : tote bag, chemise, lettre, cartes, enveloppe et profil sur mobile, en noir, blanc et jaune"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "web",
+  "h": {
+   "es": "03 · Del branding a la web",
+   "en": "03 · From branding to web",
+   "fr": "03 · Du branding au web"
+  },
+  "t": {
+   "es": "Una identidad que también funciona en pantalla.",
+   "en": "An identity that works on screen, too.",
+   "fr": "Une identité qui fonctionne aussi à l'écran."
+  },
+  "p": [
+   {
+    "es": "La presencia digital debía continuar el trabajo de marca, pero también ayudar a explicar qué hace 360estudio y cómo aborda sus proyectos.",
+    "en": "The digital experience needed to build on the brand while making 360estudio's services and projects easier to understand.",
+    "fr": "L'expérience digitale devait prolonger le travail de marque tout en aidant à comprendre les services et les projets de 360estudio."
+   },
+   {
+    "es": "Trabajamos una experiencia visual que permitiera presentar sus servicios, dar protagonismo a sus trabajos y conectar la identidad con su especialización en arquitectura y construcción.",
+    "en": "We designed a visual experience that brought its work forward and connected the identity with the company's expertise in architecture and construction.",
+    "fr": "Nous avons travaillé sur une expérience visuelle qui valorise ses réalisations et relie son identité à son expertise en architecture et en construction."
+   },
+   {
+    "es": "La web se convirtió en otra expresión de la marca, con sus propias necesidades de navegación, contenido y comunicación.",
+    "en": "The website became another expression of the brand, with its own needs around navigation, content and communication.",
+    "fr": "Le site est devenu une autre expression de la marque, avec ses propres enjeux de navigation, de contenu et de communication."
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "espacio",
+  "h": {
+   "es": "04 · Más allá de lo gráfico",
+   "en": "04 · Beyond graphics",
+   "fr": "04 · Au-delà du graphisme"
+  },
+  "t": {
+   "es": "Cuando la marca entra en el espacio.",
+   "en": "When a brand becomes part of a space.",
+   "fr": "Quand la marque prend place dans l'espace."
+  },
+  "p": [
+   {
+    "es": "Una de las partes más interesantes del proyecto fue poder llevar la identidad más allá de los soportes habituales.",
+    "en": "One of the most interesting parts of the project was taking the identity beyond traditional applications.",
+    "fr": "L'un des aspects les plus intéressants du projet a été de prolonger l'identité au-delà de ses supports habituels."
+   },
+   {
+    "es": "También colaboramos en detalles del diseño interior de las oficinas, buscando que el lenguaje visual de 360estudio tuviera continuidad en su propio entorno de trabajo.",
+    "en": "We also contributed to details of the office interior design, helping the visual language feel at home in the studio's physical environment.",
+    "fr": "Nous avons également contribué à certains détails de l'aménagement intérieur des bureaux, pour créer une continuité entre le langage visuel de 360estudio et son environnement de travail."
+   },
+   {
+    "es": "Fue una oportunidad para conectar branding y arquitectura, dos disciplinas que pueden enriquecerse cuando se piensan juntas.",
+    "en": "An opportunity to bring branding and architecture together and explore how the two disciplines can complement each other.",
+    "fr": "Une occasion de faire dialoguer branding et architecture, deux disciplines qui gagnent à être pensées ensemble."
+   },
+   {
+    "em": true,
+    "es": "Porque una identidad no solo se ve. También se puede vivir.",
+    "en": "Because an identity isn't just something you see. It's something you can experience.",
+    "fr": "Parce qu'une identité ne se regarde pas seulement. Elle se vit aussi."
+   }
+  ],
+  "flow": [
+   {
+    "img": {
+     "key": "360estudio",
+     "v": "1",
+     "r": "2400/1050",
+     "alt": {
+      "es": "Señalética exterior de 360estudio junto a un edificio, con el logotipo y un círculo amarillo, y a su derecha el logotipo en blanco sobre fondo oscuro",
+      "en": "360estudio outdoor signage beside a building, with the logo and a yellow circle, next to the logo in white on a dark background",
+      "fr": "Signalétique extérieure de 360estudio devant un bâtiment, avec le logo et un cercle jaune, à côté du logo en blanc sur fond sombre"
+     },
+     "zoom": true
+    }
+   },
+   {
+    "img": {
+     "key": "360estudio",
+     "v": "2",
+     "r": "1600/1200",
+     "alt": {
+      "es": "Furgoneta y coche rotulados con la identidad de 360estudio en blanco, negro y amarillo, frente a un edificio de oficinas",
+      "en": "Van and car wrapped in the 360estudio identity in white, black and yellow, in front of an office building",
+      "fr": "Fourgonnette et voiture habillées de l'identité de 360estudio en blanc, noir et jaune, devant un immeuble de bureaux"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "impacto",
+  "h": {
+   "es": "05 · El impacto y mi trabajo",
+   "en": "05 · The impact and my role",
+   "fr": "05 · L'impact et mon rôle"
+  },
+  "t": {
+   "es": "El buen hacer también merece verse bien.",
+   "en": "Good work deserves to look the part.",
+   "fr": "Le savoir-faire mérite aussi de se voir."
+  },
+  "p": [
+   {
+    "es": "360estudio ya contaba con el talento, la experiencia y el compromiso de su equipo. Nuestra aportación fue construir una identidad capaz de transmitir todo eso con claridad.",
+    "en": "360estudio already had the talent, experience and commitment of its team. Our contribution was building an identity that could communicate those qualities clearly.",
+    "fr": "360estudio possédait déjà le talent, l'expérience et l'engagement de son équipe. Notre contribution a été de créer une identité capable de rendre ces qualités visibles."
+   },
+   {
+    "es": "Hoy, sus propios fundadores reconocen que la nueva imagen ha contribuido a reforzar la presencia y la percepción profesional del estudio.",
+    "en": "Today, the founders themselves recognise that the new identity has helped strengthen the studio's presence and professional image.",
+    "fr": "Aujourd'hui, les fondateurs eux-mêmes reconnaissent que la nouvelle image a contribué à renforcer la présence et la perception professionnelle du studio."
+   },
+   {
+    "es": "Con proyectos en distintos lugares de España, la marca los acompaña allí donde trabajan, manteniendo una personalidad coherente en sus comunicaciones y aplicaciones.",
+    "en": "With projects across Spain, the brand travels with the team, maintaining a consistent personality across communications and applications.",
+    "fr": "Avec des projets dans différentes régions d'Espagne, la marque accompagne l'équipe partout où elle travaille, en conservant une personnalité cohérente dans ses communications et ses applications."
+   },
+   {
+    "es": "Mi participación, junto a Binōme Studio, abarcó el desarrollo de la identidad, sus aplicaciones, el diseño web y la colaboración en detalles de interiorismo.",
+    "en": "My contribution, alongside Binōme Studio, included the visual identity, its applications, web design and selected interior design details.",
+    "fr": "Ma participation, aux côtés de Binōme Studio, a porté sur l'identité visuelle, ses déclinaisons, le design web et certains détails d'aménagement intérieur."
+   },
+   {
+    "es": "Un trabajo que conectó diseño gráfico, comunicación y arquitectura alrededor de una misma visión.",
+    "en": "A project that brought graphic design, communication and architecture together around a shared vision.",
+    "fr": "Un projet où design graphique, communication et architecture se sont retrouvés autour d'une même vision."
+   },
+   {
+    "em": true,
+    "es": "El diseño no creó su profesionalismo. Lo hizo visible.",
+    "en": "Design didn't create their professionalism. It made it visible.",
+    "fr": "Le design n'a pas créé leur professionnalisme. Il l'a rendu visible."
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "cierre",
+  "h": {
+   "es": "Cierre",
+   "en": "Closing",
+   "fr": "Conclusion"
+  },
+  "t": {
+   "es": "Una marca que crece con quienes la hacen posible.",
+   "en": "A brand that grows with the people behind it.",
+   "fr": "Une marque qui grandit avec celles et ceux qui la font vivre."
+  },
+  "p": [
+   {
+    "es": "Lo más bonito de este proyecto es ver cómo la identidad que construimos sigue acompañando a 360estudio en su evolución.",
+    "en": "One of the most rewarding parts of this project is seeing how the identity we created continues to accompany 360estudio as it evolves.",
+    "fr": "Ce qui me plaît le plus dans ce projet, c'est de voir comment l'identité que nous avons créée continue d'accompagner l'évolution de 360estudio."
+   },
+   {
+    "es": "Hoy viaja con ellos a distintos lugares de España, llevando algo más que un logotipo: una forma de trabajar, una reputación y el esfuerzo de todo un equipo.",
+    "en": "Today, it travels with the team across Spain, carrying more than a logo: a way of working, a reputation and the effort of everyone behind the business.",
+    "fr": "Aujourd'hui, elle voyage avec l'équipe à travers l'Espagne, en portant bien plus qu'un logo : une manière de travailler, une réputation et le travail de toute une équipe."
+   },
+   {
+    "em": true,
+    "es": "Eso también es construir marca.",
+    "en": "That's what building a brand is about, too.",
+    "fr": "C'est aussi ça, construire une marque."
+   },
+   {
+    "es": "¿Tienes una marca que merece mostrar todo lo que vale?",
+    "en": "Have a brand that deserves to show what it's really worth?",
+    "fr": "Vous avez une marque qui mérite de montrer toute sa valeur ?"
+   },
+   {
+    "es": "Hablemos.",
+    "en": "Let's talk.",
+    "fr": "Parlons-en."
+   }
+  ]
+ }
+];
+HERO["360estudio"] = {
+ "tag": {
+  "es": "Una identidad. Muchas formas de habitarla.",
+  "en": "One identity. Many ways to experience it.",
+  "fr": "Une identité. Plusieurs façons de la vivre."
+ },
+ "lead": {
+  "es": "Una identidad creada para un estudio de arquitectura que entiende los espacios desde una mirada integral. De la marca a la web, pasando por los detalles de sus propias oficinas.",
+  "en": "An identity created for an architecture studio that approaches spaces from every angle. From branding to digital design, with details extending into its own offices.",
+  "fr": "Une identité créée pour un studio d'architecture qui aborde les espaces dans leur ensemble. Du branding au digital, jusque dans les détails de ses propres bureaux."
+ },
+ "alt": {
+  "es": "Portada de 360estudio: la web del estudio en un portátil sobre una mesa, con el titular «Entornos que cuidan, usuarios que prosperan» y dos esferas amarillas",
+  "en": "360estudio cover: the studio website on a laptop on a table, with the headline «Entornos que cuidan, usuarios que prosperan» and two yellow spheres",
+  "fr": "Couverture de 360estudio : le site du studio sur un ordinateur portable posé sur une table, avec le titre « Entornos que cuidan, usuarios que prosperan » et deux sphères jaunes"
+ }
+};
+SEO.es.proj["360estudio"] = {"t": "360estudio: Branding, diseño web e identidad visual | Tom Fabre", "d": "Branding integral y diseño web para 360estudio, una empresa de arquitectura cuya identidad también se trasladó al espacio físico."};
+SEO.en.proj["360estudio"] = {"t": "360estudio: Branding, Web & Visual Identity | Tom Fabre", "d": "Complete branding and web design for 360estudio, an architecture company whose visual identity extends into its physical spaces."};
+SEO.fr.proj["360estudio"] = {"t": "360estudio : Branding, Web & Identité visuelle | Tom Fabre", "d": "Branding et design web pour 360estudio, une entreprise d'architecture dont l'identité visuelle s'étend jusque dans ses espaces."};

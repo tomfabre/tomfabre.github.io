@@ -8,7 +8,7 @@ PROJ.push(
   {key:"happylife", role:"Lead Product Designer", years:"2023"},
   {key:"binome", role:{es:"Cofundador · Dirección creativa y diseño", en:"Co-founder · Creative & Product Design", fr:"Cofondateur · Direction créative et design"}, years:{es:"Estudio en activo", en:"Studio in operation", fr:"Studio en activité"}},
   {key:"yaypegs", role:"Art Direction · Motion Design", years:{es:"2022 a 2023", en:"2022 to 2023", fr:"2022 à 2023"}},
-  {key:"360estudio", role:"Lead Product Designer", years:"Binōme"},
+  {key:"360estudio", role:{es:"Dirección creativa · Branding · Diseño digital", en:"Creative Direction · Branding · Digital Design", fr:"Direction créative · Branding · Design digital"}, years:"2024"},
   {key:"figy", role:"Product Designer", years:"Digital"},
   {key:"apolo", role:"Senior UX/UI Designer", years:"2018–2022"},
   {key:"appy", role:"Senior UX/UI Designer", years:"2018–2022"},
