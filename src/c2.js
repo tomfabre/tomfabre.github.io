@@ -182,7 +182,7 @@ function renderWork(){
 const R = ["I","II","III","IV","V","VI","VII","VIII","IX","X"];
 let gridWired = false;
 function renderGrid(){
-  const t = L(); const rn = t.projects.length; const pc = $("#pjcount"); if (pc) pc.textContent = rn + " · 2015 — 2026";
+  const t = L(); const rn = t.projects.length; const pc = $("#pjcount"); if (pc) pc.textContent = "2026";
   $("#grid").innerHTML = t.projects.map((p, i) => {
     const k = PROJ[i].key;
     return projCard(k, "h2");

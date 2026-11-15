@@ -1249,6 +1249,10 @@ dialog#dlg .sub{margin-bottom:var(--s4)}
 #form .f-check{margin:var(--s3) 0 var(--s4)}
 @media (max-width:40rem){dialog#dlg{padding:var(--s5)}}
 
+/* Yodis: proyectos siempre en color */
+.y-pj .art img,.y-pj .art svg{filter:none!important;transition:transform 700ms cubic-bezier(.16,1,.3,1)}
+@media (hover:hover) and (pointer:fine){.y-pj:hover .art img,.y-pj:hover .art svg{transform:scale(1.07)}}
+
 .lg-page{max-width:48rem;margin-inline:auto;padding:var(--s8) 0 var(--s16)}
 .lg-top{display:flex;justify-content:space-between;align-items:center;gap:var(--s5);padding:var(--s6) 0;flex-wrap:wrap}
 .lg-top a{text-decoration:none}.lg-top .lg-back{text-decoration:underline;text-underline-offset:.25em}
