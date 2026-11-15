@@ -618,7 +618,7 @@ function wireChars(){
       if (w === "·"){ tp.appendChild(document.createTextNode(w)); return; }
       const s = document.createElementNS("http://www.w3.org/2000/svg", "tspan"); s.setAttribute("class", "t" + (1 + (k++ % 5))); s.textContent = w; tp.appendChild(s);
     });
-    tp.appendChild(document.createTextNode(" "));
+    tp.appendChild(document.createTextNode("\u00A0"));   /* non-breaking: Safari trims a normal trailing space and then clips the last dot */
   }
   fitFoot();
   if (!footFit) { footFit = true; addEventListener("resize", fitFoot); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitFoot); }
