@@ -812,7 +812,7 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
     tx = ((e.clientX - r.left) / r.width - .5) * 40; ty = ((e.clientY - r.top) / r.height - .5) * 40;
     mag.forEach((s, b) => { const br = b.getBoundingClientRect();
       const inside = e.clientX >= br.left && e.clientX <= br.right && e.clientY >= br.top && e.clientY <= br.bottom;
-      if (inside) { s.tx = clamp((e.clientX - (br.left + br.width / 2)) * .07, 3); s.ty = clamp((e.clientY - (br.top + br.height / 2)) * .1, 2); }
+      if (inside) { s.tx = clamp((e.clientX - (br.left + br.width / 2)) * .12, 6); s.ty = clamp((e.clientY - (br.top + br.height / 2)) * .16, 4); }
       else { s.tx = 0; s.ty = 0; } });
     kick();
   }, { passive:true });
