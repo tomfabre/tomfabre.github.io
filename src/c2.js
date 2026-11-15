@@ -404,11 +404,13 @@ function parse(){
   if (h.startsWith("service-")) { const k = h.slice(8); if (SKEYS.includes(k)) return { page:"service", key:k }; }
   return ["projects","services","bio","contact"].includes(h) ? { page:h } : { page:"home" };
 }
+const PJ_AUR = { contazara:["#307fe4","#7bb4f0","#f5d90a"], "360estudio":["#c9b36a","#7ba5ca","#f3c63a"], a2pas:["#e23a3a","#f2b8b0","#c9b6e8"], binome:["#e8604c","#d9c3a5","#b8c4d6"], carceral:["#3d4a5a","#8aa0b8","#c9d3e0"], happylife:["#df9483","#89a5c7","#f2d68a"], yaypegs:["#b9215c","#526c8d","#7ec8f0"] };
+function setAur(k){ const pg = document.querySelector('.page[data-page="project"]'), c = PJ_AUR[k]; if (!pg) return; if (c) { pg.style.setProperty("--g1", c[0]); pg.style.setProperty("--g2", c[1]); pg.style.setProperty("--g3", c[2]); } else { ["--g1","--g2","--g3"].forEach(v => pg.style.removeProperty(v)); } }
 function show(r){
   route_ = r; const nav = r.page === "project" ? "projects" : r.page === "service" ? "services" : r.page;
   $$(".page").forEach(p => { p.hidden = p.dataset.page !== r.page; });
   $$("[data-r]").forEach(a => { if (a.dataset.r === nav) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
-  if (r.page === "project") renderProject(r.key); else if (r.page === "service") renderServicePage(r.key); else if (r.page === "services") renderServicesIndex(); else document.title = "Tom Fabre · Portfolio";
+  if (r.page === "project") { renderProject(r.key); setAur(r.key); } else if (r.page === "service") renderServicePage(r.key); else if (r.page === "services") renderServicesIndex(); else document.title = "Tom Fabre · Portfolio";
   if (r.page === "project") track("project_view", { project_slug:r.key });
   closeSheet(); window.scrollTo(0, 0);
 }
