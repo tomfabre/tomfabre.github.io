@@ -604,6 +604,15 @@ function wireChars(){
     [...word].forEach(ch => { const s = document.createElement("span"); s.className = "ch"; s.setAttribute("aria-hidden","true"); s.style.setProperty("--c", CHCOL[i++ % 4]); s.textContent = ch; w.appendChild(s); });
     h.appendChild(w);
   });
+  const tp = document.querySelector(".orb textPath");
+  if (tp && L().orb_txt){
+    tp.textContent = ""; let k = 0;
+    L().orb_txt.split(" ").forEach((w, j) => {
+      if (j) tp.appendChild(document.createTextNode(" "));
+      if (w === "·"){ tp.appendChild(document.createTextNode(w)); return; }
+      const s = document.createElementNS("http://www.w3.org/2000/svg", "tspan"); s.setAttribute("class", "t" + (1 + (k++ % 5))); s.textContent = w; tp.appendChild(s);
+    });
+  }
   fitFoot();
   if (!footFit) { footFit = true; addEventListener("resize", fitFoot); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitFoot); }
 }
