@@ -74,7 +74,7 @@ Object.assign(ART, {
   yaypegs: v => ART.apps(v + 1), figy: v => ART.healthtech(v + 1), "mobile-experiences": v => ART.apps(v), molyb: v => ART.codelco(v)
 });
 const IMG = window.__IMG || {};
-const svgOf = (key, v, hi) => { const m = IMG[key]; if (m && m[v]){ const i = PROJ.findIndex(p => p.key === key), nm = (v === 0 || i < 0) ? "" : (L().projects[i][0] + (L().projects[i][1] ? ": " + L().projects[i][1] : "")); return `<img src="${m[v]}" alt="${esc(nm)}" ${hi ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${nm ? "" : ' aria-hidden="true"'}>`; } if (v === "cover") v = 0; return svgOld(key, v); };
+const svgOf = (key, v, hi) => { const m = IMG[key]; if (m && m[v]){ const i = PROJ.findIndex(p => p.key === key), nm = (i < 0) ? "" : (L().projects[i][0] + (L().projects[i][1] ? ": " + L().projects[i][1] : "")); return `<img src="${m[v]}" alt="${esc(nm)}" ${hi ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async"${(!nm || v === 0) ? ' aria-hidden="true"' : ""}>`; } if (v === "cover") v = 0; return svgOld(key, v); };
 const svgOld = (key, v) => `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="300" fill="var(--surface)"/>${ART[key](v)}</svg>`;
 
 /* ---------- small helpers ---------- */
@@ -464,10 +464,12 @@ function renderMarquee(){
 }
 
 /* ---------- stickers (edit glyphs/colors/text here) ---------- */
+const STICKER_ALT = { es:"Teckels corriendo por el campo", en:"Dachshunds running through a field", fr:"Teckels courant dans un champ" }, MAIL_ALT = { es:"Buzón de correo animado", en:"Animated mailbox", fr:"Boîte aux lettres animée" };
 const STICKERS = { hero:{ glyph:"✺", key:"st_hero" }, bio:{ pic:["img/sticker/teckels-still.webp", "img/sticker/teckels.webp"] } };
 function renderStickers(){
+  const mp = $("#mailPop"); if (mp) mp.alt = MAIL_ALT[lang] || MAIL_ALT.es;
   $$("[data-sticker]").forEach(el => { const s = STICKERS[el.dataset.sticker]; if (!s) return;
-    if (s.pic) { const ab = PATHS ? "/" : ""; el.classList.add("s-pic"); el.innerHTML = `<img src="${ab}${s.pic[0]}" alt="" aria-hidden="true" draggable="false" width="400" height="225" decoding="async">`; return; }
+    if (s.pic) { const ab = PATHS ? "/" : ""; el.classList.add("s-pic"); el.innerHTML = `<img src="${ab}${s.pic[0]}" alt="${esc(STICKER_ALT[lang] || STICKER_ALT.es)}" aria-hidden="true" draggable="false" width="400" height="225" decoding="async">`; return; }
     el.innerHTML = `<div><b aria-hidden="true">${s.glyph}</b><span>${esc(L()[s.key] || "")}</span></div>`; });
 }
 function wireStickers(){
@@ -576,7 +578,7 @@ function renderBento(){
   const head = (k, s, u) => `<div class="bt-h"><b>${esc(k)}</b><span>${esc(s)}</span></div>${tag(u)}`;
   el.innerHTML =
     card("bt-map", null, `${map}<div class="bt-h"><b>${esc(t.bt_map)}</b><span>${esc(t.bt_map_s)}</span><span class="bt-geo">Madrid 40.4168 N · 3.7038 W</span></div>`) +
-    card("bt-photo", null, (soon.gallery.length ? `<div class="bt-gal" role="img" aria-label="${esc(t.bt_photo)}">${soon.gallery.map((u, i) => `<img src="${esc(u)}" alt="" class="${i ? "" : "on"}" loading="lazy" decoding="async">`).join("")}</div>` : `<div class="bt-ph" aria-hidden="true"><span>TF</span></div>`) + `<div class="bt-h"><b>${esc(t.bt_photo)}</b><span>${soon.gallery.length ? "" : esc(t.bt_photo_s)}</span></div>`) +
+    card("bt-photo", null, (soon.gallery.length ? `<div class="bt-gal" role="img" aria-label="${esc(t.bt_photo)}">${soon.gallery.map((u, i) => `<img src="${esc(u)}" alt="${esc(t.bt_photo)} ${i + 1}" class="${i ? "" : "on"}" loading="lazy" decoding="async">`).join("")}</div>` : `<div class="bt-ph" aria-hidden="true"><span>TF</span></div>`) + `<div class="bt-h"><b>${esc(t.bt_photo)}</b><span>${soon.gallery.length ? "" : esc(t.bt_photo_s)}</span></div>`) +
     card("bt-music", soon.music.url, head(t.bt_music, t.bt_music_s, soon.music.url)) +
     card("bt-binome", soon.binome.url, `<div class="bt-h"><b>${esc(t.bt_binome)}</b><span>${esc(t.bt_binome_s)}</span></div><span class="bt-arr" aria-hidden="true">↗</span>`) +
     card("bt-read", soon.read.url, head(t.bt_read, t.bt_read_s, soon.read.url)) +
