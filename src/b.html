@@ -221,7 +221,7 @@
       <h2 class="bigfoot-h" data-i="foot_mega"></h2>
       <div class="bigfoot-mailrow"><a class="bigfoot-mail cyc" href="mailto:hey@tomfabre.com" aria-label="hey@tomfabre.com">hey@tomfabre.com</a><button type="button" class="copy-txt" id="copyFoot" data-i="copy"></button><span class="sr-only" role="status" id="copiedFoot"></span></div>
     </div>
-    <a href="#contact" class="orb" data-open-form data-ev="primary_cta_click" data-place="footer_orb" aria-label="Contact">
+    <a href="#contact" class="orb" data-open-form data-quick data-ev="primary_cta_click" data-place="footer_orb" aria-label="Contact">
       <svg class="rot" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="orbp2" d="M 50 50 m -37 0 a 37 37 0 1 1 74 0 a 37 37 0 1 1 -74 0"/></defs><text><textPath href="#orbp2" textLength="232" lengthAdjust="spacing"><tspan class="t1">Say</tspan> <tspan class="t2">hello</tspan> · <tspan class="t3">Open</tspan> <tspan class="t4">to</tspan> <tspan class="t5">projects</tspan> · </textPath></text></svg>
       <span class="orb-arr" aria-hidden="true">→</span>
     </a>
@@ -276,9 +276,9 @@
   <form id="form" novalidate toolname="draft_contact_message" tooldescription="Prepare a contact message to Tom Fabre about a project, collaboration or job. It produces a draft for the visitor to send by email; nothing is sent automatically.">
     <div class="f"><label for="fn" data-i="d_name"></label><input id="fn" name="name" toolparamdescription="Sender full name." autocomplete="name" required></div>
     <div class="f"><label for="fe" data-i="d_mail"></label><input id="fe" name="email" toolparamdescription="Sender email address." type="email" autocomplete="email" required></div>
-    <div class="f"><label for="ft" data-i="d_topic"></label><select id="ft" name="topic" toolparamdescription="What the message is about."></select></div>
+    <div class="f f-extra"><label for="ft" data-i="d_topic"></label><select id="ft" name="topic" toolparamdescription="What the message is about."></select></div>
     <div class="f"><label for="fm" data-i="d_msg"></label><textarea id="fm" name="message" aria-describedby="fmh" toolparamdescription="Message for Tom." required></textarea><span class="f-hint" id="fmh" data-i="d_msg_h"></span></div>
-    <div class="f"><label for="fb" data-i="d_budget"></label><select id="fb" name="budget" toolparamdescription="Optional budget band. Never required."></select></div>
+    <div class="f f-extra"><label for="fb" data-i="d_budget"></label><select id="fb" name="budget" toolparamdescription="Optional budget band. Never required."></select></div>
     <div class="f"><label for="fq" id="fql"></label><input id="fq" name="human" inputmode="numeric" pattern="[0-9]*" autocomplete="off" required></div>
     <input type="text" name="_gotcha" id="fh" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
     <p class="err" id="ferr" role="alert"></p>

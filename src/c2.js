@@ -324,8 +324,14 @@ const dlg = () => $("#dlg"); let draft = "";
 let qa = 0, qb = 0;
 function newQ(){ qa = 1 + Math.floor(Math.random() * 9); qb = 1 + Math.floor(Math.random() * 9); $("#fq").value = ""; setQ(); }
 function setQ(){ $("#fql").textContent = `${L().d_q} ${qa} + ${qb}?`; }
-function openForm(opt){ const prize = opt === true, topic = opt && typeof opt === "object" && Number.isInteger(opt.topic) ? opt.topic : -1;
-  $("#form").hidden = false; $("#dres").hidden = true; $("#dsent").hidden = true; $("#ferr").textContent = ""; $("#fstat").textContent = ""; sending = false; newQ(); closeSheet(); closeChat();
+function setDlgHead(quick){
+  const h = $("#dlgT"), s = $("#dlg .sub"), hk = quick ? "dq_h" : "d_h", sk = quick ? "dq_sub" : "d_sub";
+  h.dataset.i = hk; h.textContent = L()[hk]; s.dataset.i = sk; s.textContent = L()[sk];
+  $("#form").classList.toggle("quick", !!quick);
+  const sl = $("#form button[type=submit] [data-i]"), bk = quick ? "dq_send" : "d_send"; sl.dataset.i = bk; sl.textContent = L()[bk];
+}
+function openForm(opt){ const prize = opt === true, quick = !!(opt && typeof opt === "object" && opt.quick), topic = opt && typeof opt === "object" && Number.isInteger(opt.topic) ? opt.topic : -1;
+  setDlgHead(quick); $("#form").hidden = false; $("#dres").hidden = true; $("#dsent").hidden = true; $("#ferr").textContent = ""; $("#fstat").textContent = ""; sending = false; newQ(); closeSheet(); closeChat();
   if (prize){ const t = L(); $("#ft").selectedIndex = 4; if (!$("#fm").value.trim()) $("#fm").value = t.prize_msg; }
   else if (topic >= 0 && topic < $("#ft").options.length) $("#ft").selectedIndex = topic;
   if (!formStarted){ formStarted = true; track("contact_form_start", { page: route_.page }); }
@@ -333,14 +339,14 @@ function openForm(opt){ const prize = opt === true, topic = opt && typeof opt ==
   if (matchMedia("(pointer:coarse)").matches){ dlg().tabIndex = -1; dlg().focus({ preventScroll:true }); }   /* touch: don't park a focus ring on the close button */ }
 let sending = false, formStarted = false;
 function wireForm(){
-  document.addEventListener("click", e => { const b = e.target.closest && e.target.closest("[data-open-form]"); if (!b) return; e.preventDefault(); openForm(b.dataset.topic ? { topic:Number(b.dataset.topic) } : undefined); });
+  document.addEventListener("click", e => { const b = e.target.closest && e.target.closest("[data-open-form]"); if (!b) return; e.preventDefault(); openForm(b.dataset.topic ? { topic:Number(b.dataset.topic) } : (b.hasAttribute("data-quick") ? { quick:true } : undefined)); });
   $("#dclose").addEventListener("click", () => dlg().close());
   dlg().addEventListener("click", e => { if (e.target === dlg()) dlg().close(); });
   dlg().addEventListener("close", () => { formStarted = false; });
   const MAIL = /^\S+@\S+\.\S+$/;
   $("#form").addEventListener("submit", e => {
     e.preventDefault(); if (sending) return;
-    const t = L(), n = $("#fn").value.trim(), m = $("#fe").value.trim(), msg = $("#fm").value.trim(), topic = $("#ft").selectedOptions[0].textContent, budget = $("#fb") && $("#fb").value ? $("#fb").selectedOptions[0].textContent : "";
+    const t = L(), n = $("#fn").value.trim(), m = $("#fe").value.trim(), msg = $("#fm").value.trim(), quick = $("#form").classList.contains("quick"), topic = quick ? t.dq_topic : $("#ft").selectedOptions[0].textContent, budget = !quick && $("#fb") && $("#fb").value ? $("#fb").selectedOptions[0].textContent : "";
     const agent = !!e.agentInvoked && typeof e.respondWith === "function";
     if (!n || !MAIL.test(m) || !msg){
       const bad = !n ? $("#fn") : (!MAIL.test(m) ? $("#fe") : $("#fm"));
@@ -612,6 +618,7 @@ function wireChars(){
       if (w === "·"){ tp.appendChild(document.createTextNode(w)); return; }
       const s = document.createElementNS("http://www.w3.org/2000/svg", "tspan"); s.setAttribute("class", "t" + (1 + (k++ % 5))); s.textContent = w; tp.appendChild(s);
     });
+    tp.appendChild(document.createTextNode(" "));
   }
   fitFoot();
   if (!footFit) { footFit = true; addEventListener("resize", fitFoot); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitFoot); }
