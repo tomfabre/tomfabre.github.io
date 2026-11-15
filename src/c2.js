@@ -649,9 +649,10 @@ function wireEggs(){
     if (n >= 3){ n = 0; toast(L().egg_logo, "#contact"); fireConfetti2(); }
   });
   // tab title when leaving
-  let saved = "";
+  let saved = "", seen = !document.hidden;   // only after the page has been visible (crawlers/headless start hidden and must keep the real title)
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden){ saved = document.title; document.title = L().away; } else if (saved){ document.title = saved; saved = ""; }
+    if (!document.hidden) seen = true;
+    if (document.hidden){ if (!seen || saved) return; saved = document.title; document.title = L().away; } else if (saved){ document.title = saved; saved = ""; }
   });
 }
 function fireConfetti2(){
