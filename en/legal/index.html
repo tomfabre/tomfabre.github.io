@@ -1239,6 +1239,16 @@ body{font-feature-settings:"kern","liga","calt";text-rendering:optimizeLegibilit
 @media (max-width:47.99rem){.page::before{height:60vh}}
 @media (prefers-reduced-motion:reduce){.page::before{transition:none}}
 
+/* formulario compacto: sin huecos vacíos */
+.err:empty{min-height:0;margin:0}
+.f-priv{margin:0}
+dialog#dlg{padding:var(--s6) var(--s8)}
+dialog#dlg .sub{margin-bottom:var(--s4)}
+#form .f{margin-bottom:var(--s3)}
+#form .f textarea{min-height:5.5rem}
+#form .f-check{margin:var(--s3) 0 var(--s4)}
+@media (max-width:40rem){dialog#dlg{padding:var(--s5)}}
+
 .lg-page{max-width:48rem;margin-inline:auto;padding:var(--s8) 0 var(--s16)}
 .lg-top{display:flex;justify-content:space-between;align-items:center;gap:var(--s5);padding:var(--s6) 0;flex-wrap:wrap}
 .lg-top a{text-decoration:none}.lg-top .lg-back{text-decoration:underline;text-underline-offset:.25em}
