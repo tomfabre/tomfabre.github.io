@@ -788,3 +788,33 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
   }, { passive:true });
   document.addEventListener("pointerout", e => { const card = e.target.closest && e.target.closest(".cta-band, .sv-cta, .sv-team"); if (card && !card.contains(e.relatedTarget)) card.classList.remove("hot"); });
 })();
+
+/* Versión B · hero: parallax suave de la aurora y botones con atracción mínima (solo ratón, sin reduced-motion) */
+(() => {
+  const hero = document.querySelector(".hmin"); if (!hero) return;
+  if (!matchMedia("(hover:hover) and (pointer:fine)").matches || matchMedia("(prefers-reduced-motion:reduce)").matches) return;
+  const aur = hero.querySelector(".aur"), btns = [...hero.querySelectorAll(".h-cta .btn")];
+  const clamp = (v, m) => Math.max(-m, Math.min(m, v));
+  let raf = 0, mx = 0, my = 0, tx = 0, ty = 0;
+  const mag = new Map(); btns.forEach(b => mag.set(b, { x:0, y:0, tx:0, ty:0 }));
+  const loop = () => {
+    raf = 0; let busy = false;
+    mx += (tx - mx) * .06; my += (ty - my) * .06;
+    if (aur) { aur.style.setProperty("--px", mx.toFixed(1)); aur.style.setProperty("--py", my.toFixed(1)); }
+    if (Math.abs(tx - mx) > .2 || Math.abs(ty - my) > .2) busy = true;
+    mag.forEach((s, b) => { s.x += (s.tx - s.x) * .14; s.y += (s.ty - s.y) * .14; b.style.translate = s.x.toFixed(2) + "px " + s.y.toFixed(2) + "px";
+      if (Math.abs(s.tx - s.x) > .05 || Math.abs(s.ty - s.y) > .05) busy = true; });
+    if (busy) raf = requestAnimationFrame(loop);
+  };
+  const kick = () => { if (!raf) raf = requestAnimationFrame(loop); };
+  hero.addEventListener("pointermove", e => {
+    const r = hero.getBoundingClientRect();
+    tx = ((e.clientX - r.left) / r.width - .5) * 40; ty = ((e.clientY - r.top) / r.height - .5) * 40;
+    mag.forEach((s, b) => { const br = b.getBoundingClientRect();
+      const inside = e.clientX >= br.left && e.clientX <= br.right && e.clientY >= br.top && e.clientY <= br.bottom;
+      if (inside) { s.tx = clamp((e.clientX - (br.left + br.width / 2)) * .07, 3); s.ty = clamp((e.clientY - (br.top + br.height / 2)) * .1, 2); }
+      else { s.tx = 0; s.ty = 0; } });
+    kick();
+  }, { passive:true });
+  hero.addEventListener("pointerleave", () => { tx = ty = 0; mag.forEach(s => { s.tx = 0; s.ty = 0; }); kick(); });
+})();
