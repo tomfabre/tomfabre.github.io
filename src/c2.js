@@ -836,3 +836,25 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
   addEventListener("scroll", () => { if (!tk) { tk = true; requestAnimationFrame(upd); } }, { passive: true });
   addEventListener("hashchange", () => setTimeout(upd, 60));
 })();
+
+/* count-up for numeric stats (visual only; real text is restored at the end and kept for AT) */
+(function(){
+  if (matchMedia("(prefers-reduced-motion:reduce)").matches || !("IntersectionObserver" in window)) return;
+  const done = new WeakSet();
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; io.unobserve(e.target);
+    const el = e.target, m = /^(\D*)(\d{1,6})(\D*)$/.exec(el.textContent.trim());
+    if (!m) return;
+    const end = +m[2], t0 = performance.now(), dur = 1400;
+    el.setAttribute("aria-label", el.textContent.trim());
+    const tick = now => {
+      const k = Math.min(1, (now - t0) / dur), v = Math.round(end * (1 - Math.pow(1 - k, 4)));
+      el.textContent = m[1] + v + m[3];
+      if (k < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }), { threshold: .6 });
+  const scan = () => document.querySelectorAll(".stat b").forEach(b => { if (!done.has(b)) { done.add(b); io.observe(b); } });
+  scan(); addEventListener("hashchange", () => setTimeout(scan, 120)); addEventListener("popstate", () => setTimeout(scan, 120));
+  new MutationObserver(() => scan()).observe(document.body, { childList: true, subtree: true });
+})();
