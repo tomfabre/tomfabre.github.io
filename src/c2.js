@@ -464,7 +464,7 @@ function renderMarquee(){
 }
 
 /* ---------- stickers (edit glyphs/colors/text here) ---------- */
-const STICKERS = { hero:{ glyph:"✺", key:"st_hero" }, bio:{ pic:["img/sticker/dog-still.webp", "img/sticker/dog.webp"] } };
+const STICKERS = { hero:{ glyph:"✺", key:"st_hero" }, bio:{ pic:["img/sticker/teckels-still.webp", "img/sticker/teckels.webp"] } };
 function renderStickers(){
   $$("[data-sticker]").forEach(el => { const s = STICKERS[el.dataset.sticker]; if (!s) return;
     if (s.pic) { const ab = PATHS ? "/" : ""; el.classList.add("s-pic"); el.innerHTML = `<img src="${ab}${s.pic[0]}" alt="" aria-hidden="true" draggable="false" width="400" height="225" decoding="async">`; return; }
