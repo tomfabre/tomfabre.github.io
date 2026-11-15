@@ -1153,6 +1153,23 @@ dialog#dlg:focus{outline:none}
   .aur{-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%),linear-gradient(transparent,#000 12%,#000 56%,transparent)}
   .aur .o1{width:76vw;right:-24%;top:0}.aur .o2{width:64vw;right:4%;top:46%}.aur .o3{width:48vw;right:-12%;bottom:0}.aur .o4{width:38vw;right:44%;top:8%}}
 @media (prefers-reduced-motion:reduce){.aur i{animation:none}}
+
+/* ---- premium polish (v-b) ---- */
+h1,h2,h3,.rh{text-wrap:balance}
+body{font-feature-settings:"kern","liga","calt";text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+.reveal{transform:translateY(20px);transition:opacity 1100ms cubic-bezier(.16,1,.3,1),transform 1100ms cubic-bezier(.16,1,.3,1)}
+.reveal-x > *{transform:translateY(16px);transition:opacity 900ms cubic-bezier(.16,1,.3,1),transform 900ms cubic-bezier(.16,1,.3,1)}
+.idx li,.svc-rows>li,.svc-list li{position:relative}
+.idx li::after,.svc-rows>li::after,.svc-list li::after{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--fg);transform:scaleX(0);transform-origin:left;transition:transform 700ms cubic-bezier(.16,1,.3,1);pointer-events:none}
+.idx .row .t,.svc-rows h3,.svc-list h3{transition:transform 600ms cubic-bezier(.16,1,.3,1)}
+.idx .row .cat{transition:color var(--fast),letter-spacing 600ms cubic-bezier(.16,1,.3,1)}
+.sec-head .lab{position:relative}
+@media (hover:hover) and (pointer:fine){
+ .idx li:hover::after,.svc-rows>li:hover::after,.svc-list li:hover::after{transform:scaleX(1)}
+ .idx .row:hover .t,.svc-rows>li:hover h3,.svc-list li:hover h3{transform:translateX(.6rem)}
+ .idx .row:hover .cat{color:var(--fg)}
+}
+@media (prefers-reduced-motion:reduce){.idx li::after,.svc-rows>li::after,.svc-list li::after{display:none}.idx .row:hover .t,.svc-rows>li:hover h3,.svc-list li:hover h3{transform:none}}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
