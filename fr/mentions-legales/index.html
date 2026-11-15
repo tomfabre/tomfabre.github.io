@@ -1253,6 +1253,10 @@ dialog#dlg .sub{margin-bottom:var(--s4)}
 .y-pj .art img,.y-pj .art svg{filter:none!important;transition:transform 700ms cubic-bezier(.16,1,.3,1)}
 @media (hover:hover) and (pointer:fine){.y-pj:hover .art img,.y-pj:hover .art svg{transform:scale(1.07)}}
 
+/* sticker con GIF: foto quieta, se anima al pasar el cursor */
+.sticker.s-pic{padding:0;overflow:hidden;width:7.25rem;background:var(--mint)}
+.sticker.s-pic img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none;border-radius:inherit}
+
 .lg-page{max-width:48rem;margin-inline:auto;padding:var(--s8) 0 var(--s16)}
 .lg-top{display:flex;justify-content:space-between;align-items:center;gap:var(--s5);padding:var(--s6) 0;flex-wrap:wrap}
 .lg-top a{text-decoration:none}.lg-top .lg-back{text-decoration:underline;text-underline-offset:.25em}

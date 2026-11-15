@@ -464,9 +464,11 @@ function renderMarquee(){
 }
 
 /* ---------- stickers (edit glyphs/colors/text here) ---------- */
-const STICKERS = { hero:{ glyph:"✺", key:"st_hero" }, bio:{ glyph:"☕", key:"st_bio" } };
+const STICKERS = { hero:{ glyph:"✺", key:"st_hero" }, bio:{ pic:["img/sticker/dog-still.webp", "img/sticker/dog.webp"] } };
 function renderStickers(){
-  $$("[data-sticker]").forEach(el => { const s = STICKERS[el.dataset.sticker]; if (!s) return; el.innerHTML = `<div><b aria-hidden="true">${s.glyph}</b><span>${esc(L()[s.key] || "")}</span></div>`; });
+  $$("[data-sticker]").forEach(el => { const s = STICKERS[el.dataset.sticker]; if (!s) return;
+    if (s.pic) { const ab = PATHS ? "/" : ""; el.classList.add("s-pic"); el.innerHTML = `<img src="${ab}${s.pic[0]}" alt="" aria-hidden="true" draggable="false" width="240" height="240" decoding="async">`; return; }
+    el.innerHTML = `<div><b aria-hidden="true">${s.glyph}</b><span>${esc(L()[s.key] || "")}</span></div>`; });
 }
 function wireStickers(){
   $$("[data-sticker]").forEach(el => {
@@ -474,6 +476,13 @@ function wireStickers(){
     el.addEventListener("pointerdown", e => { on = true; el.setPointerCapture(e.pointerId); el.classList.add("drag"); const p = el.offsetParent.getBoundingClientRect(), r = el.getBoundingClientRect(); ox = r.left - p.left; oy = r.top - p.top; sx = e.clientX; sy = e.clientY; el.style.right = "auto"; el.style.left = ox + "px"; el.style.top = oy + "px"; });
     el.addEventListener("pointermove", e => { if (!on) return; el.style.left = (ox + e.clientX - sx) + "px"; el.style.top = (oy + e.clientY - sy) + "px"; });
     const end = () => { on = false; el.classList.remove("drag"); };
+    const im = el.querySelector("img");
+    if (im && el.classList.contains("s-pic")) {
+      const [still, anim] = STICKERS[el.dataset.sticker].pic, ab = PATHS ? "/" : "";
+      let pre; const warm = () => { if (!pre) { pre = new Image(); pre.src = ab + anim; } };
+      el.addEventListener("pointerenter", e => { if (e.pointerType === "touch") return; warm(); im.src = ab + anim; });
+      el.addEventListener("pointerleave", () => { im.src = ab + still; });
+    }
     el.addEventListener("pointerup", end); el.addEventListener("pointercancel", end);
   });
 }
