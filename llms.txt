@@ -22,10 +22,10 @@ The portfolio has real URLs per language: Spanish at the root, English under /en
 
 ## Services
 
-- [Services overview](https://tomfabre.com/en/services/): Three ways to move a good idea forward.
-- [Branding & identity](https://tomfabre.com/en/services/branding/): A brand with something to say. I build and evolve brand identities that help businesses become recognizable, stand apart and connect with the right people.
-- [Web design & development](https://tomfabre.com/en/services/web-design/): A good website should do more than look good. I design and build websites that communicate clearly, work smoothly and help turn visits into opportunities.
-- [Digital product, UX/UI & digital strategy](https://tomfabre.com/en/services/ux-ui-design/): Less friction. More purpose. I design and improve digital experiences so they're intuitive, useful and easy to navigate, without losing sight of business goals.
+- [Services overview](https://tomfabre.com/en/services/): Three ways to work together.
+- [Branding & identity](https://tomfabre.com/en/services/branding/): A brand with something to say. I create and renew brand identities. People recognize you, and they understand what makes you different.
+- [Web design & development](https://tomfabre.com/en/services/web-design/): A good website should do more than look good. I design and build websites that are clear, fast and easy to use. Visitors know what to do next.
+- [Digital product, UX/UI & digital strategy](https://tomfabre.com/en/services/ux-ui-design/): Less friction. More purpose. I design and improve digital products so people understand them and use them easily. Business goals stay in focus.
 
 ## Optional
 

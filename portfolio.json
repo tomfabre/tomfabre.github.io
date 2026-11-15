@@ -35,27 +35,27 @@
     }
   ],
   "cv": "https://tomfabre.com/cv-alvaro-fabre.pdf",
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "services": {
     "es": [
       {
         "name": "Branding & identidad",
         "tagline": "Una marca que tenga algo que decir.",
-        "summary": "Creo y transformo identidades para que las marcas se reconozcan, se diferencien y conecten con las personas adecuadas.",
+        "summary": "Creo y renuevo identidades de marca para que te reconozcan y se entienda qué te hace diferente.",
         "scope": "Estrategia de marca · Identidad visual · Rebranding · Dirección de arte · Sistemas de marca.",
         "url": "https://tomfabre.com/servicios/branding/"
       },
       {
         "name": "Web & desarrollo",
         "tagline": "Una buena web tiene que hacer más que verse bien.",
-        "summary": "Diseño y desarrollo webs que comunican con claridad, funcionan sin complicaciones y ayudan a convertir visitas en oportunidades.",
+        "summary": "Diseño y desarrollo webs claras, rápidas y fáciles de usar, para que quien te visita sepa qué hacer después.",
         "scope": "Diseño web · Webflow · Shopify · WordPress · Framer · Desarrollo a medida.",
         "url": "https://tomfabre.com/servicios/diseno-web/"
       },
       {
         "name": "Producto digital, UX/UI & estrategia digital",
         "tagline": "Menos fricción. Más sentido.",
-        "summary": "Diseño y mejoro experiencias digitales para que sean intuitivas, útiles y fáciles de usar, sin perder de vista los objetivos del negocio.",
+        "summary": "Diseño y mejoro productos digitales para que se entiendan y se usen sin esfuerzo, sin perder de vista los objetivos del negocio.",
         "scope": "UX research · Interfaces · Prototipos · Design systems · Auditorías UX · Estrategia de producto.",
         "url": "https://tomfabre.com/servicios/diseno-ux-ui/"
       }
@@ -64,21 +64,21 @@
       {
         "name": "Branding & identity",
         "tagline": "A brand with something to say.",
-        "summary": "I build and evolve brand identities that help businesses become recognizable, stand apart and connect with the right people.",
+        "summary": "I create and renew brand identities. People recognize you, and they understand what makes you different.",
         "scope": "Brand strategy · Visual identity · Rebranding · Art direction · Brand systems.",
         "url": "https://tomfabre.com/en/services/branding/"
       },
       {
         "name": "Web design & development",
         "tagline": "A good website should do more than look good.",
-        "summary": "I design and build websites that communicate clearly, work smoothly and help turn visits into opportunities.",
+        "summary": "I design and build websites that are clear, fast and easy to use. Visitors know what to do next.",
         "scope": "Web design · Webflow · Shopify · WordPress · Framer · Custom development.",
         "url": "https://tomfabre.com/en/services/web-design/"
       },
       {
         "name": "Digital product, UX/UI & digital strategy",
         "tagline": "Less friction. More purpose.",
-        "summary": "I design and improve digital experiences so they're intuitive, useful and easy to navigate, without losing sight of business goals.",
+        "summary": "I design and improve digital products so people understand them and use them easily. Business goals stay in focus.",
         "scope": "UX research · Interfaces · Prototypes · Design systems · UX audits · Product strategy.",
         "url": "https://tomfabre.com/en/services/ux-ui-design/"
       }
@@ -87,21 +87,21 @@
       {
         "name": "Branding & identité",
         "tagline": "Une marque qui a quelque chose à dire.",
-        "summary": "Je crée et fais évoluer des identités qui rendent les marques reconnaissables, singulières et proches des bonnes personnes.",
+        "summary": "Je crée et je renouvelle des identités de marque pour qu'on vous reconnaisse et qu'on comprenne ce qui vous rend différent.",
         "scope": "Stratégie de marque · Identité visuelle · Rebranding · Direction artistique · Systèmes de marque.",
         "url": "https://tomfabre.com/fr/services/branding/"
       },
       {
         "name": "Web & développement",
         "tagline": "Un bon site doit faire plus qu'être beau.",
-        "summary": "Je conçois et développe des sites clairs, agréables à utiliser et pensés pour transformer les visites en opportunités.",
+        "summary": "Je conçois et je développe des sites clairs, rapides et faciles à utiliser, pour que vos visiteurs sachent quoi faire ensuite.",
         "scope": "Design web · Webflow · Shopify · WordPress · Framer · Développement sur mesure.",
         "url": "https://tomfabre.com/fr/services/design-web/"
       },
       {
         "name": "Produit digital, UX/UI & stratégie digitale",
         "tagline": "Moins de friction. Plus de sens.",
-        "summary": "Je conçois et améliore des expériences digitales intuitives et utiles, pensées pour les utilisateurs comme pour les objectifs de l'entreprise.",
+        "summary": "Je conçois et j'améliore des produits digitaux pour qu'on les comprenne et les utilise sans effort, sans perdre de vue les objectifs de l'entreprise.",
         "scope": "Recherche UX · Interfaces · Prototypes · Design systems · Audits UX · Stratégie produit.",
         "url": "https://tomfabre.com/fr/services/design-ux-ui/"
       }

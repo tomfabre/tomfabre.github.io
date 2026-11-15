@@ -348,6 +348,7 @@ function wireForm(){
       if (agent) e.respondWith(Promise.resolve({ content:[{ type:"text", text:"Missing or invalid fields: name, a valid email and a message are required." }], isError:true }));
       bad.focus(); return;
     }
+    if (!agent && !$("#fc").checked) { $("#ferr").textContent = t.d_consent_err; $("#fc").focus(); return; }
     if (!agent && parseInt($("#fq").value, 10) !== qa + qb) { $("#ferr").textContent = t.d_qerr; $("#fq").focus(); return; }
     if (agent) e.respondWith(Promise.resolve({ content:[{ type:"text", text:"Draft prepared. The visitor still has to open it in their email app or copy it; nothing was sent automatically." }] }));
     draft = `${msg}\n\n— ${n} (${m})\n${topic}${budget ? "\n" + budget : ""}`;
