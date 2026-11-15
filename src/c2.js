@@ -811,8 +811,10 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
     const r = hero.getBoundingClientRect();
     tx = ((e.clientX - r.left) / r.width - .5) * 40; ty = ((e.clientY - r.top) / r.height - .5) * 40;
     mag.forEach((s, b) => { const br = b.getBoundingClientRect();
-      const inside = e.clientX >= br.left && e.clientX <= br.right && e.clientY >= br.top && e.clientY <= br.bottom;
-      if (inside) { s.tx = clamp((e.clientX - (br.left + br.width / 2)) * .12, 6); s.ty = clamp((e.clientY - (br.top + br.height / 2)) * .16, 4); }
+      /* posición de reposo (sin el desplazamiento actual): evita parpadeos en los bordes y realimentación */
+      const l = br.left - s.x, t = br.top - s.y, r = l + br.width, bt = t + br.height;
+      const inside = e.clientX >= l && e.clientX <= r && e.clientY >= t && e.clientY <= bt;
+      if (inside) { s.tx = clamp((e.clientX - (l + br.width / 2)) * .107, 6); s.ty = clamp((e.clientY - (t + br.height / 2)) * .85, 14); }
       else { s.tx = 0; s.ty = 0; } });
     kick();
   }, { passive:true });
