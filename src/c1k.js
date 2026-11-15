@@ -97,9 +97,9 @@ const SECTIONS = {
         en:"Between September 2025 and November 2026, Contazara went from 930 to 1,648 followers on LinkedIn and from 250 to 365 on Instagram.",
         fr:"Entre septembre 2025 et novembre 2026, Contazara est passée de 930 à 1 648 abonnés sur LinkedIn et de 250 à 365 sur Instagram."
       },{
-        es:"La nueva identidad se ha extendido a la comunicación, los materiales corporativos, la web y los espacios de la empresa. Un sistema que sigue creciendo y que sus equipos han hecho suyo.",
-        en:"The new identity has spread across communications, corporate materials, the website, and the company's spaces. A system that keeps growing and that their teams have made their own.",
-        fr:"La nouvelle identité s'est étendue à la communication, aux supports corporatifs, au site web et aux espaces de l'entreprise. Un système qui continue de grandir et que les équipes se sont approprié."
+        es:"La nueva identidad ya está en la comunicación, los materiales corporativos, la web y las oficinas de la empresa. Los equipos de Contazara la usan en su día a día.",
+        en:"The new identity is now in the company's communication, corporate materials, website and offices. The Contazara teams use it every day.",
+        fr:"La nouvelle identité est déjà présente dans la communication, les supports corporate, le site web et les bureaux de l'entreprise. Les équipes de Contazara l'utilisent au quotidien."
       }],
       flow:[
         { img:{ key:"contazara", v:"1", alt:{
@@ -162,9 +162,9 @@ const SECTIONS = {
       "fr": "Comment faire se rencontrer quelqu'un qui rêve d'assister à un concert, un artiste qui cherche de nouvelles scènes et une salle avec des dates disponibles ?"
      },
      {
-      "es": "Ese era uno de los grandes retos de A2PAS: diseñar una plataforma para dos grandes ecosistemas de usuarios, cada uno con sus propias necesidades.",
-      "en": "That was one of the main challenges behind A2PAS: designing a platform for two very different user ecosystems.",
-      "fr": "C'était l'un des grands défis d'A2PAS : concevoir une plateforme réunissant deux grands univers d'utilisateurs aux besoins très différents."
+      "es": "Ese era uno de los grandes retos de À2pas: diseñar una plataforma para dos grandes ecosistemas de usuarios, cada uno con sus propias necesidades.",
+      "en": "That was one of the main challenges behind À2pas: designing a platform for two very different user ecosystems.",
+      "fr": "C'était l'un des grands défis d'À2pas : concevoir une plateforme réunissant deux grands univers d'utilisateurs aux besoins très différents."
      },
      {
       "es": "Por un lado, espectadores que querían descubrir, proponer, apoyar y comprar entradas. Por otro, artistas, productores y espacios culturales que necesitaban gestionar oportunidades, disponibilidad y eventos desde paneles con funciones y permisos específicos.",
@@ -204,9 +204,9 @@ const SECTIONS = {
       "fr": "Vous aimeriez le voir près de chez vous, mais il ne passera peut-être jamais dans votre ville."
      },
      {
-      "es": "Con A2PAS podías buscar un espacio disponible, elegir una fecha y proponer el espectáculo. Otras personas de Aix y alrededores podían apoyar la iniciativa con sus votos.",
-      "en": "With A2PAS, you could find an available venue, choose a date and propose a show. Other people in Aix and nearby towns could vote to support the idea.",
-      "fr": "Avec A2PAS, vous pouviez chercher une salle disponible, choisir une date et proposer d'y faire venir le groupe. Les habitants d'Aix et des environs pouvaient ensuite soutenir cette proposition en votant."
+      "es": "Con À2pas podías buscar un espacio disponible, elegir una fecha y proponer el espectáculo. Otras personas de Aix y alrededores podían apoyar la iniciativa con sus votos.",
+      "en": "With À2pas, you could find an available venue, choose a date and propose a show. Other people in Aix and nearby towns could vote to support the idea.",
+      "fr": "Avec À2pas, vous pouviez chercher une salle disponible, choisir une date et proposer d'y faire venir le groupe. Les habitants d'Aix et des environs pouvaient ensuite soutenir cette proposition en votant."
      },
      {
       "es": "Cuando el interés alcanzaba el umbral establecido, entre el 75 % y el 80 % de la capacidad del espacio, el evento se activaba automáticamente y comenzaba la venta de entradas.",
@@ -328,9 +328,9 @@ const SECTIONS = {
     },
     "p": [
      {
-      "es": "A2PAS proponía cambiar la manera habitual de programar espectáculos.",
-      "en": "A2PAS challenged part of the traditional approach to cultural programming.",
-      "fr": "A2PAS proposait une autre manière de penser la programmation culturelle."
+      "es": "À2pas proponía cambiar la manera habitual de programar espectáculos.",
+      "en": "À2pas challenged part of the traditional approach to cultural programming.",
+      "fr": "À2pas proposait une autre manière de penser la programmation culturelle."
      },
      {
       "es": "En lugar de depender únicamente de una programación decidida de antemano, permitía identificar el interés de una comunidad antes de activar un evento.",
@@ -510,10 +510,10 @@ SEO.fr.proj = { contazara: {
   d:"Une nouvelle identité, un site web et une communication digitale pour Contazara. Découvrez comment nous avons fait évoluer 40 ans d'histoire.",
   og:{ src:"contazara-cover", alt:"Couverture du cas Contazara : logotype et design du nouveau site web de la marque" } } };
 
-/* A2PAS: own title/description per language; the social image is its cover (automatic, see build.py og_for). */
-SEO.es.proj.a2pas = {"t": "À2pas: Diseño UX/UI y producto digital | Tom Fabre", "d": "Diseño de producto, UX/UI y branding para A2PAS, una plataforma que conecta artistas, salas y espectadores mediante programación cultural participativa."};
-SEO.en.proj.a2pas = {"t": "À2pas: UX/UI & Product Design | Tom Fabre", "d": "Product design, UX/UI and branding for A2PAS, a platform connecting artists, venues and audiences through participatory cultural programming."};
-SEO.fr.proj.a2pas = {"t": "À2pas : UX/UI & Design Produit | Tom Fabre", "d": "Design produit, UX/UI et identité visuelle pour A2PAS, une plateforme qui rapproche artistes, salles et publics grâce à une programmation participative."};
+/* À2pas: own title/description per language; the social image is its cover (automatic, see build.py og_for). */
+SEO.es.proj.a2pas = {"t": "À2pas: Diseño UX/UI y producto digital | Tom Fabre", "d": "Diseño de producto, UX/UI y branding para À2pas, una plataforma que conecta artistas, salas y espectadores mediante programación cultural participativa."};
+SEO.en.proj.a2pas = {"t": "À2pas: UX/UI & Product Design | Tom Fabre", "d": "Product design, UX/UI and branding for À2pas, a platform connecting artists, venues and audiences through participatory cultural programming."};
+SEO.fr.proj.a2pas = {"t": "À2pas : UX/UI & Design Produit | Tom Fabre", "d": "Design produit, UX/UI et identité visuelle pour À2pas, une plateforme qui rapproche artistes, salles et publics grâce à une programmation participative."};
 
 /* HappyLife: case study (sections), hero override and SEO. Copy approved by Tom; no invented metrics. */
 SECTIONS.happylife = [
@@ -1016,14 +1016,14 @@ SECTIONS.binome = [
     "fr": "Avec le temps, Binōme est devenu bien plus qu'une idée partagée à deux."
    },
    {
-    "es": "Hemos tenido la oportunidad de trabajar con empresas y startups, desarrollar proyectos de distintas escalas y colaborar con profesionales tanto del mundo del diseño como de otras disciplinas.",
-    "en": "We've worked with companies and startups, taken on projects of different sizes and collaborated with professionals both inside and outside the design industry.",
-    "fr": "Nous avons eu l'occasion de travailler avec des entreprises et des startups, de réaliser des projets de différentes tailles et de collaborer avec des professionnels du design comme d'autres univers."
+    "es": "Hemos trabajado con empresas y startups. Entre otros proyectos, con Contazara, 360estudio y Yaypegs.",
+    "en": "We've worked with companies and startups. Among other projects, with Contazara, 360estudio and Yaypegs.",
+    "fr": "Nous avons travaillé avec des entreprises et des startups. Entre autres, avec Contazara, 360estudio et Yaypegs."
    },
    {
-    "es": "Cada colaboración nos ha permitido ampliar nuestra mirada, descubrir nuevas formas de trabajar y asumir retos que difícilmente abordaríamos de la misma manera por separado.",
-    "en": "Each project has helped us broaden our perspective, explore different ways of working and take on challenges we might not have approached the same way alone.",
-    "fr": "Chaque collaboration nous a permis d'élargir notre regard, d'explorer de nouvelles façons de travailler et de relever des défis que nous n'aurions peut-être pas abordés de la même manière seuls."
+    "es": "Cada proyecto nos ha enseñado algo nuevo. Y hemos asumido retos que, por separado, no habríamos abordado igual.",
+    "en": "Each project has taught us something new. And we've taken on challenges we wouldn't have approached the same way alone.",
+    "fr": "Chaque projet nous a appris quelque chose. Et nous avons relevé des défis que nous n'aurions pas abordés de la même manière seuls."
    },
    {
     "em": true,
@@ -1099,9 +1099,9 @@ SECTIONS.binome = [
   },
   "p": [
    {
-    "es": "Binōme sigue creciendo con cada proyecto, cada cliente y cada persona que se suma al camino.",
-    "en": "Binōme keeps growing with every project, every client and every new collaboration.",
-    "fr": "Binōme continue de grandir au fil des projets, des rencontres et des collaborations."
+    "es": "Seguimos haciendo proyectos y aprendiendo con cada uno.",
+    "en": "We keep making projects and learning from each one.",
+    "fr": "Nous continuons à mener des projets et à apprendre de chacun."
    },
    {
     "em": true,
@@ -1409,9 +1409,9 @@ SECTIONS.yaypegs = [
   },
   "p": [
    {
-    "es": "Yaypegs fue una experiencia de creatividad a escala, donde el verdadero logro estuvo en conseguir que todas las piezas funcionaran juntas.",
-    "en": "Yaypegs was an exercise in creativity at scale, where the real achievement was making every piece work together.",
-    "fr": "Yaypegs a été une expérience de création à grande échelle, où le véritable défi consistait à faire fonctionner toutes les pièces ensemble."
+    "es": "En Yaypegs, lo difícil fue conseguir que todas las piezas funcionaran juntas.",
+    "en": "In Yaypegs, the hard part was making every piece work together.",
+    "fr": "Dans Yaypegs, le plus difficile était de faire fonctionner toutes les pièces ensemble."
    },
    {
     "em": true,
@@ -1429,9 +1429,9 @@ SECTIONS.yaypegs = [
 ];
 HERO.yaypegs = {
  "tag": {
-  "es": "10.000 personajes. Infinitas formas de moverse.",
-  "en": "10,000 characters. Endless ways to move.",
-  "fr": "10 000 personnages. Mille façons de bouger."
+  "es": "10.000 personajes. Un mismo sistema de animación.",
+  "en": "10,000 characters. One animation system.",
+  "fr": "10 000 personnages. Un seul système d'animation."
  },
  "lead": {
   "es": "Un universo de personajes digitales donde el verdadero desafío era conseguir que miles de combinaciones cobraran vida, sin perder su personalidad ni romper la lógica visual del conjunto.",
