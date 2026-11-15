@@ -820,3 +820,19 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
   }, { passive:true });
   hero.addEventListener("pointerleave", () => { tx = ty = 0; mag.forEach(s => { s.tx = 0; s.ty = 0; }); kick(); });
 })();
+
+/* reading progress bar on case-study pages */
+(function(){
+  if (matchMedia("(prefers-reduced-motion:reduce)").matches) return;
+  const bar = document.createElement("div"); bar.id = "pjProg"; bar.setAttribute("aria-hidden","true"); document.body.appendChild(bar);
+  let tk = false;
+  const upd = () => {
+    tk = false;
+    const on = !!document.querySelector(".pj-head");
+    const h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.opacity = on && scrollY > 80 ? "1" : "0";
+    bar.style.transform = "scaleX(" + (h > 0 ? Math.min(1, scrollY / h) : 0) + ")";
+  };
+  addEventListener("scroll", () => { if (!tk) { tk = true; requestAnimationFrame(upd); } }, { passive: true });
+  addEventListener("hashchange", () => setTimeout(upd, 60));
+})();
