@@ -184,6 +184,11 @@ def social_for(lg, page, key, title, desc):
     return s.get("t") or title, s.get("d") or desc
 def sub1(pat, rep, h): 
     n = re.subn(pat, lambda m: rep, h, count=1); assert n[1] == 1, pat; return n[0]
+# capa de movimiento: librerías autoalojadas (mismo origen, sin CDN) + motion.js; defer y orden garantizado
+import hashlib
+def _vh(f): return hashlib.sha1(open(f,"rb").read()).hexdigest()[:8]
+MOTION_FILES = ["vendor/gsap.min.js","vendor/lenis.min.js","motion.js"]
+MOTION_TAGS = "".join(f'<script defer src="/js/{os.path.basename(f)}?v={_vh(f)}"></script>' for f in MOTION_FILES) + "\n"
 def page_html(lg, page, key):
     title, desc = meta_for(lg, page, key); e = lambda x: x.replace("&","&amp;").replace('"',"&quot;").replace("<","&lt;")
     h = html.replace(IMGTOKEN, imgjs("url"))
@@ -208,6 +213,7 @@ def page_html(lg, page, key):
     hre = "".join(f'<link rel="alternate" hreflang="{o}" href="{U(o,page,key)}">' for o in ("es","en","fr")) + f'<link rel="alternate" hreflang="x-default" href="{U("es",page,key)}">'
     h = sub1(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{U(lg,page,key)}">{hre}<meta name="af-paths" content="1"><link rel="ard" href="/.well-known/ard.json">{alts}', h)
     h = h.replace('href="cv-alvaro-fabre.pdf"','href="/cv-alvaro-fabre.pdf"').replace('cvUrl:"cv-alvaro-fabre.pdf"','cvUrl:"/cv-alvaro-fabre.pdf"')
+    h = h + MOTION_TAGS
     return f'<!doctype html>\n<html lang="{lg}">\n<meta charset="utf-8">\n' + h
 npages = 0
 for lg in ("es","en","fr"):
@@ -360,6 +366,8 @@ json.dump([dict(lang=a, page=b, key=c, image_kind=d, image=e_, title=f_) for a, 
 _cnt = {}
 for r in _rep: _cnt[(r[0], r[3])] = _cnt.get((r[0], r[3]), 0) + 1
 print("social metadata OK:", len(_rep), "pages |", ", ".join(f"{l}/{k}={n}" for (l, k), n in sorted(_cnt.items())))
+os.makedirs(dist + "/js", exist_ok=True)
+for _f in MOTION_FILES: shutil.copy(_f, dist + "/js/" + os.path.basename(_f))
 shutil.copytree("fonts", dist + "/fonts"); open(dist + "/.nojekyll", "w").close()
 if not SITE.endswith("github.io"): open(dist + "/CNAME", "w").write(SITE.split("//")[-1] + "\n")   # GitHub Pages custom domain
 for f in glob.glob("extras/*"): shutil.copy(f, dist + "/" + f.split("/")[-1])

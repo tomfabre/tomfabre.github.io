@@ -412,7 +412,7 @@ function show(r){
   $$("[data-r]").forEach(a => { if (a.dataset.r === nav) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
   if (r.page === "project") { renderProject(r.key); setAur(r.key); } else if (r.page === "service") renderServicePage(r.key); else if (r.page === "services") renderServicesIndex(); else document.title = "Tom Fabre · Portfolio";
   if (r.page === "project") track("project_view", { project_slug:r.key });
-  closeSheet(); window.scrollTo(0, 0);
+  closeSheet(); if (window.__lenis) window.__lenis.scrollTo(0, { immediate:true, force:true }); else window.scrollTo(0, 0);
 }
 function route(first){
   const r = parse(), key = r.page + (r.key || ""); if (!first && key === cur) return; cur = key;
@@ -536,7 +536,7 @@ function wireHero(){
     btns.forEach(btn => { if (btn._vis && Date.now() > btn._hold){ btn.dataset.alt = btn.dataset.alt === "1" ? "0" : "1"; syncDH(btn); } });
   }, 4500);
   const sh = $("#scrollHint");
-  if (sh) sh.addEventListener("click", () => { const next = document.querySelector('[data-page="home"] .hmin').nextElementSibling; if (next) next.scrollIntoView({ behavior: rm.matches ? "auto" : "smooth", block: "start" }); });
+  if (sh) sh.addEventListener("click", () => { const next = document.querySelector('[data-page="home"] .hmin').nextElementSibling; if (next) { if (window.__lenis) window.__lenis.scrollTo(next, { duration:1.6 }); else next.scrollIntoView({ behavior: rm.matches ? "auto" : "smooth", block: "start" }); } });
 }
 
 /* ---------- bio: quick facts (one at a time) ---------- */
@@ -754,10 +754,13 @@ function openGameDialog(won){
 let revealIO;
 function armReveal(){
   if (revealIO) revealIO.disconnect();
+  /* con motion.js (Lenis + GSAP) las secciones se animan allí; el hero sigue con el IO original */
+  const M = window.__motion;
+  if (M) { M.reveal($$(".reveal, .reveal-x")); }
   revealIO = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add("in"); if (e.target.classList.contains("hero")) setTimeout(() => e.target.classList.add("done"), 1500); revealIO.unobserve(e.target); }
   }), { threshold: .15, rootMargin: "0px 0px -8% 0px" });
-  $$(".reveal, .reveal-x, .hero").forEach(el => revealIO.observe(el));
+  $$(M ? ".hero" : ".reveal, .reveal-x, .hero").forEach(el => revealIO.observe(el));
 }
 function animateStats(){
   $$("[data-stat]").forEach(el => {

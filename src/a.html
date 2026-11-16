@@ -1,3 +1,4 @@
+<script>(function(){var d=document.documentElement;if(!matchMedia("(prefers-reduced-motion: reduce)").matches){d.classList.add("js-mo");setTimeout(function(){d.classList.remove("js-mo")},2500)}})()</script>
 <script>
 /* Google Analytics 4 (G-W3V7MB7SZ7) · Consent Mode v2: everything is denied until the visitor accepts (the banner comes with the privacy/cookies step).
    Only loads on the production hostname so previews and tests don't pollute the data. Page views are sent by the router. */
@@ -1254,6 +1255,49 @@ dialog#dlg .sub{margin-bottom:var(--s4)}
 /* sticker con GIF: foto quieta, se anima al pasar el cursor */
 .sticker.s-pic{padding:0;overflow:hidden;width:16rem;aspect-ratio:16/9;border-radius:1.5rem;background:transparent}
 .sticker.s-pic img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none;border-radius:inherit}
+
+/* ===== Capa Awwwards: grano, Lenis, cursor magnético y micro-interacciones ===== */
+/* Lenis */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+html.mo{scroll-behavior:auto}
+/* grano: textura física (SVG feTurbulence), estático y sin eventos */
+body::after{content:"";position:fixed;inset:0;z-index:55;pointer-events:none;opacity:.075;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .85 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:240px 240px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::after{mix-blend-mode:screen;opacity:.06;filter:invert(1)}}
+:root[data-theme="dark"] body::after{mix-blend-mode:screen;opacity:.06;filter:invert(1)}
+@media print{body::after{display:none}}
+/* entrada coreografiada: GSAP toma el control mientras el elemento no tiene .in */
+html.mo .reveal:not(.in){transition:none}
+html.mo .reveal-x:not(.in) > *{transition:none}
+html.mo .reveal.sec-head:not(.in){opacity:1;transform:none}
+html.mo .reveal.sec-head:not(.in) > *{opacity:0}
+/* hero: oculto solo hasta que arranca GSAP (js-mo lo añade un script en <head>; se retira solo a los 2,5 s) */
+@media (prefers-reduced-motion:no-preference){
+ html.mo .hmin .avail,html.mo .hmin .hmega,html.mo .hmin .scroll-hint{animation:none}
+ html.js-mo .hmin .avail,html.js-mo .hmin .hmega,html.js-mo .hmin .scroll-hint{animation:none;opacity:0}
+ html.js-mo .hmin .h-h1,html.js-mo .hmin .h-intro,html.js-mo .hmin .h-cta .btn,html.js-mo .hmin .h-ctx{opacity:0}}
+/* botones: translate (no pisa transform) + pulsación con scale */
+.btn{will-change:auto}
+.btn.is-mag{will-change:translate}
+.btn:active{transform:none;scale:.97;transition:scale 180ms var(--ease)}
+.btn{transition:background-color var(--fast) var(--ease),color var(--fast) var(--ease),scale 500ms var(--ease)}
+/* cursor-anillo magnético (solo ratón; decorativo) */
+.mo-cur{position:fixed;left:0;top:0;width:14px;height:14px;border:1.5px solid var(--fg);border-radius:7px;pointer-events:none;z-index:95;opacity:0;mix-blend-mode:difference;border-color:#fff}
+.mo-cur.on-btn{background:rgba(255,255,255,.12)}
+@media (hover:none),(pointer:coarse){.mo-cur{display:none}}
+/* micro-interacciones al pasar el ratón (curvas exponenciales, nunca lineales) */
+@media (hover:hover) and (pointer:fine){
+ .pj-card .go{transition:background-color var(--normal) var(--ease),color var(--normal) var(--ease),rotate 700ms var(--ease),scale 700ms var(--ease)}
+ .pj-card:hover .go,.pj-card:focus-visible .go{rotate:-45deg;scale:1.08}
+ .idx .row .t{transition:transform 700ms var(--ease)}
+ .idx .row:hover .t,.idx .row:focus-visible .t{transform:translateX(.6rem)}
+ .socials a{transition:background-color var(--fast) var(--ease),color var(--fast) var(--ease),border-color var(--fast) var(--ease),translate 600ms var(--ease)}
+ .socials a:hover,.socials a:focus-visible{translate:0 -3px}
+ .pj-body a,.ch-tx a,.bt-links a,.sheet-foot a{transition:border-color 500ms var(--ease)}
+ footer a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size 600ms var(--ease);text-decoration:none}
+ footer a:hover,footer a:focus-visible{background-size:100% 1px;text-decoration:none}}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
