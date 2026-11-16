@@ -1263,11 +1263,6 @@ html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
 .lenis.lenis-stopped{overflow:hidden}
 html.mo{scroll-behavior:auto}
-/* grano: textura física (SVG feTurbulence), estático y sin eventos */
-body::after{content:"";position:fixed;inset:0;z-index:55;pointer-events:none;opacity:.1;transform:translateZ(0);background:url(/grain-light.png) 0 0/128px 128px repeat}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::after{opacity:.07;background-image:url(/grain-dark.png)}}
-:root[data-theme="dark"] body::after{opacity:.07;background-image:url(/grain-dark.png)}
-@media print{body::after{display:none}}
 /* entrada coreografiada: GSAP toma el control mientras el elemento no tiene .in */
 html.mo .reveal:not(.in){transition:none}
 html.mo .reveal-x:not(.in) > *{transition:none}
