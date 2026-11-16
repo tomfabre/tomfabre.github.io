@@ -1264,9 +1264,9 @@ html.lenis,html.lenis body{height:auto}
 .lenis.lenis-stopped{overflow:hidden}
 html.mo{scroll-behavior:auto}
 /* grano: textura física (SVG feTurbulence), estático y sin eventos */
-body::after{content:"";position:fixed;inset:0;z-index:55;pointer-events:none;opacity:.075;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .85 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:240px 240px}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::after{mix-blend-mode:screen;opacity:.06;filter:invert(1)}}
-:root[data-theme="dark"] body::after{mix-blend-mode:screen;opacity:.06;filter:invert(1)}
+body::after{content:"";position:fixed;inset:0;z-index:55;pointer-events:none;opacity:.2;transform:translateZ(0);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.4 -.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::after{opacity:.13;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}}
+:root[data-theme="dark"] body::after{opacity:.13;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 @media print{body::after{display:none}}
 /* entrada coreografiada: GSAP toma el control mientras el elemento no tiene .in */
 html.mo .reveal:not(.in){transition:none}
@@ -1283,10 +1283,6 @@ html.mo .reveal.sec-head:not(.in) > *{opacity:0}
 .btn.is-mag{will-change:translate}
 .btn:active{transform:none;scale:.97;transition:scale 180ms var(--ease)}
 .btn{transition:background-color var(--fast) var(--ease),color var(--fast) var(--ease),scale 500ms var(--ease)}
-/* cursor-anillo magnético (solo ratón; decorativo) */
-.mo-cur{position:fixed;left:0;top:0;width:14px;height:14px;border:1.5px solid var(--fg);border-radius:7px;pointer-events:none;z-index:95;opacity:0;mix-blend-mode:difference;border-color:#fff}
-.mo-cur.on-btn{background:rgba(255,255,255,.12)}
-@media (hover:none),(pointer:coarse){.mo-cur{display:none}}
 /* micro-interacciones al pasar el ratón (curvas exponenciales, nunca lineales) */
 @media (hover:hover) and (pointer:fine){
  .pj-card .go{transition:background-color var(--normal) var(--ease),color var(--normal) var(--ease),rotate 700ms var(--ease),scale 700ms var(--ease)}

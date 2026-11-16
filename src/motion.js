@@ -11,7 +11,7 @@
   root.classList.add("mo");
 
   /* ---------- Lenis: scroll suave con curva exponencial, sincronizado con el ticker de GSAP ---------- */
-  var lenis = new Lenis({ duration: 1.25, easing: function (t) { return t >= 1 ? 1 : 1 - Math.pow(2, -10 * t); }, smoothWheel: true, anchors: false });
+  var lenis = new Lenis({ lerp: 0.085, wheelMultiplier: 0.95, smoothWheel: true, anchors: false });
   window.__lenis = lenis;
   gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
   gsap.ticker.lagSmoothing(0);
@@ -70,16 +70,6 @@
     m = { qx: gsap.quickTo(s, "x", { duration: 0.9, ease: EXPO, onUpdate: apply }), qy: gsap.quickTo(s, "y", { duration: 0.9, ease: EXPO, onUpdate: apply }) };
     mags.set(el, m); return m;
   }
-  /* cursor-anillo decorativo: sigue al puntero con inercia exponencial y se adhiere al botón magnético */
-  var ring, rx, ry, rw, rh, rr, ro;
-  if (fine) {
-    ring = document.createElement("div"); ring.className = "mo-cur"; ring.setAttribute("aria-hidden", "true"); document.body.appendChild(ring);
-    gsap.set(ring, { xPercent: -50, yPercent: -50, opacity: 0 });
-    rx = gsap.quickTo(ring, "x", { duration: 0.7, ease: P3 }); ry = gsap.quickTo(ring, "y", { duration: 0.7, ease: P3 });
-    rw = gsap.quickTo(ring, "width", { duration: 0.6, ease: EXPO }); rh = gsap.quickTo(ring, "height", { duration: 0.6, ease: EXPO });
-    rr = gsap.quickTo(ring, "borderRadius", { duration: 0.6, ease: EXPO }); ro = gsap.quickTo(ring, "opacity", { duration: 0.4, ease: P3 });
-    root.classList.add("mo-cur-on");
-  }
   if (fine) {
     document.addEventListener("pointermove", function (e) {
       if (e.pointerType !== "mouse") return;
@@ -89,15 +79,9 @@
         var r = t.getBoundingClientRect(), m = magFor(t); cur = t; t.classList.add("is-mag");
         var dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
         m.qx(Math.max(-10, Math.min(10, dx * 0.22))); m.qy(Math.max(-8, Math.min(8, dy * 0.3)));
-        rx(r.left + r.width / 2 + dx * 0.12); ry(r.top + r.height / 2 + dy * 0.2); rw(r.width + 14); rh(r.height + 12); rr(r.height / 2 + 6); ro(1);
-        ring.classList.add("on-btn");
-      } else {
-        rx(e.clientX); ry(e.clientY); rw(14); rh(14); rr(7); ro(e.target.closest && e.target.closest("a,button,[role=button],summary,label,input,select,textarea") ? 1 : 0.55);
-        ring.classList.remove("on-btn");
       }
     }, { passive: true });
-    document.addEventListener("pointerleave", function () { if (ro) ro(0); }, { passive: true });
-    document.addEventListener("mouseleave", function () { if (ro) ro(0); });
+    document.addEventListener("mouseleave", function () { if (cur) { var o = magFor(cur); o.qx(0); o.qy(0); cur.classList.remove("is-mag"); cur = null; } });
   }
 
   /* ---------- Cambio de ruta: sin salto brusco ---------- */
