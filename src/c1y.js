@@ -84,4 +84,5 @@ fr:{
   w_tag:"Binōme, c'est un duo. On est deux, et ça se voit.", w_copy:"Fait main. Avec un peu d'IA et beaucoup trop de café.", w_portrait:"Promis, en vrai je suis moins abstrait.",
   egg_logo:"Tiens, un curieux. Vous me plaisez. Écrivez-moi →", away:"👀 Vous partez ? Il reste une flotte à couler"
 }};
+Object.assign(TY.es, {hg_lab:"UNA PARTIDA"}); Object.assign(TY.en, {hg_lab:"A QUICK GAME"}); Object.assign(TY.fr, {hg_lab:"UNE PARTIE"});
 Object.keys(TY).forEach(k => Object.assign(T[k], TY[k]));
