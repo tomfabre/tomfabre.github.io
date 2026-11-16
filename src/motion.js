@@ -11,15 +11,15 @@
   root.classList.add("mo");
 
   /* ---------- Lenis: scroll suave con curva exponencial, sincronizado con el ticker de GSAP ---------- */
-  var lenis = new Lenis({ lerp: 0.085, wheelMultiplier: 0.95, smoothWheel: true, anchors: false });
-  window.__lenis = lenis;
-  gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+  var lenis = !fine ? null : new Lenis({ lerp: 0.085, wheelMultiplier: 0.95, smoothWheel: true, anchors: false });
+  if (lenis) window.__lenis = lenis;
+  if (lenis) gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
   gsap.ticker.lagSmoothing(0);
   /* los diálogos y el chat tienen su propio scroll: Lenis no debe capturar la rueda dentro */
   function guard() { document.querySelectorAll("dialog, #chat, .sheet, select, textarea").forEach(function (n) { n.setAttribute("data-lenis-prevent", ""); }); }
   guard();
   document.querySelectorAll("dialog").forEach(function (d) {
-    new MutationObserver(function () { d.open ? lenis.stop() : lenis.start(); }).observe(d, { attributes: true, attributeFilter: ["open"] });
+    new MutationObserver(function () { if (lenis) d.open ? lenis.stop() : lenis.start(); }).observe(d, { attributes: true, attributeFilter: ["open"] });
   });
 
   /* ---------- Entradas coreografiadas ---------- */
@@ -85,7 +85,7 @@
   }
 
   /* ---------- Cambio de ruta: sin salto brusco ---------- */
-  window.addEventListener("pagehide", function () { lenis.destroy(); });
+  window.addEventListener("pagehide", function () { if (lenis) lenis.destroy(); });
   heroIntro();
   if (typeof armReveal === "function") armReveal();
   guard();

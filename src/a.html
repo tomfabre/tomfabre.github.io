@@ -1264,9 +1264,9 @@ html.lenis,html.lenis body{height:auto}
 .lenis.lenis-stopped{overflow:hidden}
 html.mo{scroll-behavior:auto}
 /* grano: textura física (SVG feTurbulence), estático y sin eventos */
-body::after{content:"";position:fixed;inset:0;z-index:55;pointer-events:none;opacity:.16;transform:translateZ(0);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .17 0 0 0 0 .17 0 0 0 0 .17 0 0 0 2 -.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::after{opacity:.1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .99 0 0 0 0 .98 0 0 0 0 .94 0 0 0 2 -.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}}
-:root[data-theme="dark"] body::after{opacity:.1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .99 0 0 0 0 .98 0 0 0 0 .94 0 0 0 2 -.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+body::after{content:"";position:fixed;inset:0;z-index:55;pointer-events:none;opacity:.1;transform:translateZ(0);background:url(/grain-light.png) 0 0/128px 128px repeat}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::after{opacity:.07;background-image:url(/grain-dark.png)}}
+:root[data-theme="dark"] body::after{opacity:.07;background-image:url(/grain-dark.png)}
 @media print{body::after{display:none}}
 /* entrada coreografiada: GSAP toma el control mientras el elemento no tiene .in */
 html.mo .reveal:not(.in){transition:none}
