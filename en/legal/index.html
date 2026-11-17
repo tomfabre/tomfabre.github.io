@@ -1502,6 +1502,13 @@ dialog#prizeDlg:focus{outline:none}
 .bx-an .bx-vn{margin-left:0}
 .bx-ck .bx-view .bx-vn,.bx-st .bx-view .bx-vn{display:none}
 @media (max-width:30rem){.bx-view .bx-vc{left:.4rem;right:.4rem;bottom:.4rem}.bx-view .bx-vn{display:none}}
+/* Rendimiento de scroll: los halos de color usan degradados radiales en lugar de filter:blur (el blur gigante animado hacía que la home fuera a trompicones) */
+.aur i,.blobs i{filter:none!important;scale:1.35}
+.aur .o1,.blobs .b1{background:radial-gradient(closest-side,var(--coral),transparent)}
+.aur .o2,.blobs .b2{background:radial-gradient(closest-side,var(--lav),transparent)}
+.aur .o3,.blobs .b3{background:radial-gradient(closest-side,var(--mustard),transparent)}
+.aur .o4,.blobs .b4{background:radial-gradient(closest-side,var(--mint),transparent)}
+.blobs .bm{background:radial-gradient(closest-side,var(--coral),transparent);scale:1}
 
 .lg-page{max-width:48rem;margin-inline:auto;padding:var(--s8) 0 var(--s16)}
 .lg-top{display:flex;justify-content:space-between;align-items:center;gap:var(--s5);padding:var(--s6) 0;flex-wrap:wrap}
