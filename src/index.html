@@ -1569,6 +1569,11 @@ dialog#prizeDlg:focus{outline:none}
 .aur .o3,.blobs .b3{background:radial-gradient(closest-side,var(--mustard),transparent)}
 .aur .o4,.blobs .b4{background:radial-gradient(closest-side,var(--mint),transparent)}
 .blobs .bm{background:radial-gradient(closest-side,var(--coral),transparent);scale:1}
+/* Tarjetas CTA: más ligeras al hacer scroll.
+   1) los puntos ya no son una capa del tamaño de toda la tarjeta con máscara: son un cuadrado pequeño que sigue al puntero;
+   2) las animaciones continuas (halos, estrella, aurora) se pausan mientras se hace scroll y cuando la tarjeta no está a la vista. */
+.cta-band::before,.sv-cta::before,.sv-team::before{inset:auto;width:26rem;height:26rem;left:calc(var(--mx) - 13rem);top:calc(var(--my) - 13rem);-webkit-mask-image:radial-gradient(closest-side,#000,transparent 70%);mask-image:radial-gradient(closest-side,#000,transparent 70%)}
+html.is-scrolling .blobs i,html.is-scrolling .cta-star,html.is-scrolling .aur i,.cta-off .blobs i,.cta-off .cta-star{animation-play-state:paused!important}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
@@ -8343,6 +8348,16 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
     if (!s){ s = { x, y, tx:x, ty:y }; st.set(card, s); } s.tx = x; s.ty = y; card.classList.add("hot"); if (!raf) raf = requestAnimationFrame(tick);
   }, { passive:true });
   document.addEventListener("pointerout", e => { const card = e.target.closest && e.target.closest(".cta-band, .sv-cta, .sv-team"); if (card && !card.contains(e.relatedTarget)) card.classList.remove("hot"); });
+})();
+
+/* rendimiento: pausa las animaciones continuas mientras se hace scroll y las de tarjetas CTA que no están a la vista */
+(function(){
+  const root = document.documentElement; let t = 0;
+  addEventListener("scroll", () => { if (!root.classList.contains("is-scrolling")) root.classList.add("is-scrolling"); clearTimeout(t); t = setTimeout(() => root.classList.remove("is-scrolling"), 160); }, { passive:true });
+  if (!("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle("cta-off", !e.isIntersecting)), { rootMargin:"120px 0px" });
+  const watch = () => document.querySelectorAll(".cta-band, .sv-cta, .sv-team, .pj-more").forEach(el => { if (!el.__ctaWatched) { el.__ctaWatched = 1; io.observe(el); } });
+  watch(); new MutationObserver(watch).observe(document.body, { childList:true, subtree:true });
 })();
 
 /* Versión B · hero: parallax suave de la aurora y botones con atracción mínima (solo ratón, sin reduced-motion) */

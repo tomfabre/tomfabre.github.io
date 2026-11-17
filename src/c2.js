@@ -863,6 +863,16 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
   document.addEventListener("pointerout", e => { const card = e.target.closest && e.target.closest(".cta-band, .sv-cta, .sv-team"); if (card && !card.contains(e.relatedTarget)) card.classList.remove("hot"); });
 })();
 
+/* rendimiento: pausa las animaciones continuas mientras se hace scroll y las de tarjetas CTA que no están a la vista */
+(function(){
+  const root = document.documentElement; let t = 0;
+  addEventListener("scroll", () => { if (!root.classList.contains("is-scrolling")) root.classList.add("is-scrolling"); clearTimeout(t); t = setTimeout(() => root.classList.remove("is-scrolling"), 160); }, { passive:true });
+  if (!("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle("cta-off", !e.isIntersecting)), { rootMargin:"120px 0px" });
+  const watch = () => document.querySelectorAll(".cta-band, .sv-cta, .sv-team, .pj-more").forEach(el => { if (!el.__ctaWatched) { el.__ctaWatched = 1; io.observe(el); } });
+  watch(); new MutationObserver(watch).observe(document.body, { childList:true, subtree:true });
+})();
+
 /* Versión B · hero: parallax suave de la aurora y botones con atracción mínima (solo ratón, sin reduced-motion) */
 (() => {
   const hero = document.querySelector(".hmin"); if (!hero) return;
