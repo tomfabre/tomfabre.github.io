@@ -585,15 +585,20 @@ section.ch{margin-top:var(--s24)}#form.quick .f-extra{display:none}
 .meter .n{font-size:clamp(3rem,6vw,5rem);font-weight:600;line-height:.9;font-variant-numeric:tabular-nums;letter-spacing:-.04em}
 .meter .l{color:var(--muted);font-size:var(--small);text-transform:uppercase;letter-spacing:.1em}
 .status{min-height:3em;font-weight:600;font-size:var(--h3);line-height:1.2}
-.end[hidden]{display:none}
+.end[hidden],.meter[hidden]{display:none}
 .end{border-top:1px solid var(--line2);padding-top:var(--s5);display:flex;flex-direction:column;gap:var(--s4)}
 .end h3{font-size:var(--h3);line-height:1.1}
-.end p{color:var(--muted);font-size:var(--small);max-width:46ch}
+.end p{margin:0;color:var(--muted);font-size:var(--small);max-width:46ch}
 .end .row2{display:flex;flex-wrap:wrap;gap:.5rem}
+.end .end-k{font-size:.75rem;color:var(--fg);text-transform:uppercase;letter-spacing:.18em;font-variant-numeric:tabular-nums}
+.end p.end-hl{color:var(--fg);font-size:1.15rem;font-weight:500;letter-spacing:-.01em;line-height:1.35}
+.end p.end-prize{color:var(--muted)}
+.win-p+.win-hl{margin-top:calc(var(--s2) * -1)}
+.win-hl{margin:0;color:var(--fg);font-size:1.15rem;font-weight:500;letter-spacing:-.01em;line-height:1.35;position:relative;z-index:1;max-width:38ch;text-wrap:balance}
 
 /* win dialog */
 .win-dlg{border:0;background:var(--bg);color:var(--fg);padding:0;width:min(32rem,calc(100vw - 2rem));max-height:calc(100vh - 2rem);overflow-y:auto;border-radius:1.75rem;box-shadow:0 30px 80px rgba(0,0,0,.4);margin:auto}
-.win-dlg::backdrop{background:rgba(20,20,20,.75);backdrop-filter:blur(8px)}
+.win-dlg::backdrop{background:rgba(20,20,20,.84)}
 .win-inner{padding:var(--s10) var(--s8);display:flex;flex-direction:column;gap:var(--s5);align-items:flex-start;position:relative}
 .win-confetti{position:absolute;inset:0 0 auto 0;height:7rem;overflow:hidden;pointer-events:none;border-radius:1.75rem 1.75rem 0 0}
 .win-confetti i{position:absolute;width:.55rem;height:.55rem;top:-.75rem;animation:fall 1.8s var(--ease) forwards}
@@ -710,7 +715,10 @@ footer a:hover{text-decoration:underline;text-underline-offset:3px}
 
 /* dialog form */
 dialog{background:var(--bg);color:var(--fg);border:1px solid var(--fg);padding:var(--s8);width:min(36rem,calc(100vw - 2rem));max-height:calc(100vh - 2rem);overflow-y:auto;border-radius:1.5rem}
-dialog::backdrop{background:rgba(20,20,20,.65);backdrop-filter:blur(4px)}
+dialog::backdrop{background:rgba(20,20,20,.74)}
+#prizeDlg.stacked::backdrop{background:rgba(20,20,20,.28)}
+.win-dlg.under{visibility:hidden}
+.win-dlg .dx{position:absolute;top:var(--s4);right:var(--s4);float:none;margin:0;z-index:3}
 dialog h2{font-size:var(--h2);line-height:1;margin-bottom:var(--s3)}
 dialog .sub{color:var(--muted);font-size:var(--small);margin-bottom:var(--s6)}
 .f{display:flex;flex-direction:column;gap:.3rem;margin-bottom:var(--s4)}
@@ -1435,8 +1443,7 @@ dialog.lb[open]{display:flex}
 #gamesec .sec-head{margin-bottom:var(--s8)}
 .game-intro{display:grid;gap:var(--s3);max-width:40rem;margin-bottom:var(--s4)}
 .game-intro p{margin:0;font-weight:300;color:var(--muted)}
-.game-intro .game-prize{color:var(--fg);font-size:1.15rem;font-weight:500;letter-spacing:-.01em;line-height:1.35;padding-top:var(--s3);border-top:1px solid var(--fg);margin-top:var(--s2)}
-.game-intro .game-note{font-size:.9rem}
+.game-intro .game-prize{color:var(--fg);font-size:clamp(1.15rem,1rem + .5vw,1.45rem);font-weight:500;letter-spacing:-.01em;line-height:1.35;padding-top:var(--s3);border-top:1px solid var(--fg);margin-top:var(--s2)}
 dialog#prizeDlg{padding:var(--s6) var(--s8)}
 dialog#prizeDlg .sub{margin-bottom:var(--s3)}
 dialog#prizeDlg:focus{outline:none}
@@ -1543,7 +1550,7 @@ dialog#prizeDlg:focus{outline:none}
    1) los puntos ya no son una capa del tamaño de toda la tarjeta con máscara: son un cuadrado pequeño que sigue al puntero;
    2) las animaciones continuas (halos, estrella, aurora) se pausan mientras se hace scroll y cuando la tarjeta no está a la vista. */
 .cta-band::before,.sv-cta::before,.sv-team::before{inset:auto;width:26rem;height:26rem;left:calc(var(--mx) - 13rem);top:calc(var(--my) - 13rem);-webkit-mask-image:radial-gradient(closest-side,#000,transparent 70%);mask-image:radial-gradient(closest-side,#000,transparent 70%)}
-html.is-scrolling .blobs i,html.is-scrolling .cta-star,html.is-scrolling .orb .rot-w,html.is-scrolling .aur i,.cta-off .blobs i,.cta-off .cta-star{animation-play-state:paused!important}
+html.is-scrolling .blobs i,html.is-scrolling .cta-star,html.is-scrolling .orb .rot-w,html.is-scrolling .aur i,html.dlg-open .blobs i,html.dlg-open .cta-star,html.dlg-open .orb .rot-w,html.dlg-open .aur i,html.dlg-open .av-w,.cta-off .blobs i,.cta-off .cta-star{animation-play-state:paused!important}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}

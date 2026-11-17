@@ -260,7 +260,7 @@ function renderBio(){
 /* ---------- game ---------- */
 const N = 8, MISSES = 20;
 const FLEET = [{len:4,c:"--coral"},{len:3,c:"--lav"},{len:3,c:"--mustard"},{len:2,c:"--mint"}];
-let G, msgKey = "m_start", msgArg = "", lastShot = -1;
+let G, msgKey = "m_start", msgArg = "", lastShot = -1, endT = 0;
 const coord = i => "ABCDEFGH"[i % N] + (Math.floor(i / N) + 1);
 function newGame(){
   const occ = Array(N*N).fill(-1);
@@ -272,7 +272,7 @@ function newGame(){
     cells.forEach(x => occ[x] = s); return { len:f.len, cells };
   } });
   G = { occ, ships, shot:Array(N*N).fill(0), left:MISSES, hits:FLEET.map(() => 0), over:false, won:false };
-  msgKey = "m_start"; msgArg = ""; lastShot = -1;
+  msgKey = "m_start"; msgArg = ""; lastShot = -1; clearTimeout(endT);
 }
 function buildBoard(){
   const b = $("#board"); b.textContent = ""; b.appendChild(document.createElement("span"));
@@ -298,7 +298,7 @@ function shoot(i){
   if (G.hits.every((h, k) => h === G.ships[k].len)) { G.over = true; G.won = true; msgKey = "m_win"; }
   else if (G.left <= 0) { G.over = true; msgKey = "m_lose"; }
   renderGame();
-  if (G.over) setTimeout(() => openGameDialog(G.won), 500);
+  if (G.over) { clearTimeout(endT); endT = setTimeout(() => { if (G.over) openGameDialog(G.won); }, 500); }
 }
 function renderGame(){
   const t = L(), link = {};
@@ -312,7 +312,14 @@ function renderGame(){
     btn.setAttribute("aria-label", coord(i) + ", " + (G.shot[i] ? (s < 0 ? t.cs[1] : t.cs[2]) : t.cs[0]));
     btn.disabled = G.over || !!G.shot[i];
   });
-  $("#left").textContent = G.left; { const st = $("#status"); st.textContent = t[msgKey].replace("{n}", msgArg);
+  $("#left").textContent = G.left;
+  /* partida terminada: el contador de fallos deja paso al resultado (el estado se sigue anunciando a lectores de pantalla) */
+  { const over = G.over, sunk = G.hits.filter((h, k) => h === G.ships[k].len).length;
+    $(".meter").hidden = over; $("#end").hidden = !over; $("#status").classList.toggle("sr-only", over);
+    if (over) { const w = G.won, k = w ? "win" : "lose";
+      $("#endK").textContent = (w ? "✦ " : "✕ ") + sunk + " / " + FLEET.length + " " + t.ships_n + " · " + t[w ? "kick_win" : "kick_lose"];
+      $("#endH").textContent = t[k + "_h"]; $("#endP").textContent = t[k + "_p"]; $("#endHl").textContent = t[k + "_hl"]; $("#endPrize").textContent = t[k + "_prize"]; $("#endCtaL").textContent = t[w ? "claim" : "write"]; $("#end").dataset.won = w ? "1" : ""; } }
+  { const st = $("#status"); st.textContent = t[msgKey].replace("{n}", msgArg);
     /* lectores de pantalla: coordenada disparada y, si se hunde un barco, qué forma de trabajar descubre (no se ve, ya está en la lista) */
     if (lastShot >= 0) { const pre = document.createElement("span"); pre.className = "sr-only"; pre.textContent = coord(lastShot) + ". "; st.prepend(pre); }
     if (msgArg && (msgKey === "m_sunk" || msgKey === "m_last")) { const post = document.createElement("span"); post.className = "sr-only"; post.textContent = " " + msgArg + "."; st.append(post); } }
@@ -741,11 +748,13 @@ function openPrize(won){
   ["#pzW", "#pzE"].forEach(id => $(id).removeAttribute("aria-invalid"));
   pzA = 1 + Math.floor(Math.random() * 9); pzB = 1 + Math.floor(Math.random() * 9); $("#pzQ").value = ""; pzSetQ();
   track("game_prize_open", { game_result: pzWon ? "won" : "lost" });
+  const under = $("#gameDlg").open; d.classList.toggle("stacked", under); $("#gameDlg").classList.toggle("under", under);   /* el resultado queda debajo, oculto, para no ver textos fantasma tras el formulario */
   if (d.showModal) d.showModal(); else d.setAttribute("open", "");   /* nested over the result dialog: closing it returns focus to the button that opened it */
 }
 function wirePrize(){
   const d = $("#prizeDlg"), MAIL = /^\S+@\S+\.\S+$/;
   $("#pzClose").addEventListener("click", () => d.close());
+  d.addEventListener("close", () => { d.classList.remove("stacked"); $("#gameDlg").classList.remove("under"); });
   $("#pzDone").addEventListener("click", () => d.close());
   d.addEventListener("click", e => { if (e.target === d) d.close(); });
   $("#pzForm").addEventListener("submit", e => {
@@ -770,12 +779,21 @@ function wirePrize(){
   });
 }
 
+/* ---------- html.dlg-open: pausa las animaciones decorativas mientras hay un diálogo abierto ---------- */
+(function(){
+  const root = document.documentElement, sync = () => root.classList.toggle("dlg-open", !!document.querySelector("dialog[open]"));
+  document.querySelectorAll("dialog").forEach(d => { new MutationObserver(sync).observe(d, { attributes:true, attributeFilter:["open"] }); d.addEventListener("close", sync); });
+})();
+
 /* ---------- game replay + game dialog ---------- */
 function restartGame(){ newGame(); renderGame(); try{ $("#gameDlg").close(); }catch(e){} }
 function wireGame(){
   $("#again").addEventListener("click", restartGame);
   $("#gameRetry").addEventListener("click", restartGame);
   $("#gameClose").addEventListener("click", () => $("#gameDlg").close());
+  $("#gameDlg").addEventListener("click", e => { if (e.target === $("#gameDlg")) $("#gameDlg").close(); });
+  $("#gameDlg").addEventListener("close", () => { $("#confetti").innerHTML = ""; if (G.over && !$("#prizeDlg").open) $("#endCta").focus({ preventScroll:true }); });
+  $("#endCta").addEventListener("click", () => openPrize($("#end").dataset.won === "1"));
   const hd = $("#howDlg");
   $("#howBtn").addEventListener("click", () => { if (hd.showModal) hd.showModal(); else hd.setAttribute("open", ""); });
   $("#howClose").addEventListener("click", () => hd.close());
@@ -799,13 +817,15 @@ function fireConfetti(){
 function openGameDialog(won){
   const t = L(), d = $("#gameDlg");
   d.dataset.state = won ? "win" : "lose";
-  $("#gameKicker").textContent = won ? "✦  12 / 12 · " + t.kick_win : "✕  0 / 20 · " + t.kick_lose;
+  const sunk = G.hits.filter((h, k) => h === G.ships[k].len).length;
+  $("#gameKicker").textContent = (won ? "✦ " : "✕ ") + sunk + " / " + FLEET.length + " " + t.ships_n + " · " + t[won ? "kick_win" : "kick_lose"];
   $("#gameWriteL").textContent = won ? t.claim : t.write;
   $("#gamePrize").textContent = won ? t.win_prize : t.lose_prize;
   d.dataset.won = won ? "1" : "";
   $("#gameH").textContent = won ? t.win_h : t.lose_h;
   $("#gameP").textContent = won ? t.win_p : t.lose_p;
-  if (won) fireConfetti(); else $("#confetti").innerHTML = "";
+  $("#gameHl").textContent = won ? t.win_hl : t.lose_hl;
+  if (won && !reduced) fireConfetti(); else $("#confetti").innerHTML = "";
   if (d.showModal) d.showModal(); else d.setAttribute("open","");
 }
 
