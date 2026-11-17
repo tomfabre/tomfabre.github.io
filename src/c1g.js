@@ -1,6 +1,7 @@
 /* UX writing del juego «Hundir la flota» + formulario de la revisión UX/UI gratuita (ES/EN/FR).
    Se carga después de c1m.js: pisa game_*, m_*, win_*, lose_*, claim, write y game_rules. El premio es el mismo al ganar y al perder. */
 Object.assign(T.es, {
+  game_lab: "Análisis UX/UI web gratis",
   game_h: "Una partida antes de seguir.",
   game_p: "Encuentra los cuatro barcos escondidos en el tablero. Tienes 20 fallos para hundirlos y descubrir un poco más sobre cómo trabajo.",
   game_prize: "¿El premio? Un análisis UX/UI gratuito de tu web.",
@@ -40,6 +41,7 @@ Object.assign(T.es, {
   gf_ok_b2: "Le echaré un vistazo y te enviaré mis observaciones por email. Sin compromiso y sin rodeos."
 });
 Object.assign(T.en, {
+  game_lab: "Free website UX/UI review",
   game_h: "One quick game before you go.",
   game_p: "Find the four hidden ships on the board. You have 20 misses to sink them all and learn a little about how I work along the way.",
   game_prize: "The prize? A free UX/UI review of your website.",
@@ -79,6 +81,7 @@ Object.assign(T.en, {
   gf_ok_b2: "I'll take a look and send you my feedback by email. No strings attached."
 });
 Object.assign(T.fr, {
+  game_lab: "Mini-audit UX/UI gratuit",
   game_h: "Une petite partie avant de continuer.",
   game_p: "Retrouve les quatre bateaux cachés sur la grille. Tu as droit à 20 erreurs pour tous les couler et découvrir au passage quelques petites choses sur ma façon de travailler.",
   game_prize: "Et à la clé ? Un mini-audit UX/UI gratuit de ton site.",
