@@ -891,7 +891,8 @@ a.bt:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
 .ct-hero .mail{margin-top:var(--s10)}
 .ct-body{padding-top:0}
 .ct-body .contact-lead{margin-top:0}
-.bio-dh .sticker{top:calc(var(--hh,5.75rem) + 4.5rem)}
+/* posición inicial del GIF de la Bio: junto al titular, no pegado al borde derecho (sigue siendo arrastrable) */
+.bio-dh .sticker{left:calc(64.7% - 8rem);right:auto;top:calc(var(--hh,5.75rem) + 10.1rem)}
 /* quick facts: arrows only, small */
 .qf-ctl{gap:.25rem;margin-top:var(--s3)}
 .qf-ctl button{position:relative;width:2.25rem;height:2.25rem;border:0;background:none;font-size:1.05rem;color:var(--muted)}
