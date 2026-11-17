@@ -158,13 +158,13 @@ function renderOb(){
   el.innerHTML = `<div class="ob-slide" id="obSlide" role="group" aria-roledescription="slide"></div><div class="ob-ctl"><button type="button" id="obPrev" aria-label="${esc(u.ob_prev)}"><span aria-hidden="true">←</span></button><span class="ob-n" id="obN" aria-hidden="true"></span><button type="button" id="obNext" aria-label="${esc(u.ob_next)}"><span aria-hidden="true">→</span></button></div>`;
   obPaint(false, false, true); obAutoInit();
 }
-/* pase automático cada 5 s (en escala de grises; a color con hover, foco o selección manual). Se detiene con hover/foco, fuera de vista, con diálogo abierto y con «reducir movimiento» */
+/* pase automático cada 3 s (en escala de grises; a color con hover, foco o selección manual). Se detiene con hover/foco, fuera de vista, con diálogo abierto y con «reducir movimiento» */
 const ob5 = { next: 0, hover: false, focus: false, vis: false, on: false };
-function obGo(d, auto){ const n = L().ob_items.length; obI = (obI + d + n) % n; obPaint(!auto, !auto); ob5.next = Date.now() + 5000; }
+function obGo(d, auto){ const n = L().ob_items.length; obI = (obI + d + n) % n; obPaint(!auto, !auto); ob5.next = Date.now() + 3000; }
 function obAutoInit(){
-  const el = $("#ob"); if (!el || ob5.on) return; ob5.on = true; ob5.next = Date.now() + 5000;
-  el.addEventListener("mouseenter", () => { ob5.hover = true; }); el.addEventListener("mouseleave", () => { ob5.hover = false; ob5.next = Date.now() + 5000; });
-  el.addEventListener("focusin", e => { ob5.focus = e.target.matches(":focus-visible"); }); el.addEventListener("focusout", () => { ob5.focus = false; ob5.next = Date.now() + 5000; });
+  const el = $("#ob"); if (!el || ob5.on) return; ob5.on = true; ob5.next = Date.now() + 3000;
+  el.addEventListener("mouseenter", () => { ob5.hover = true; }); el.addEventListener("mouseleave", () => { ob5.hover = false; ob5.next = Date.now() + 3000; });
+  el.addEventListener("focusin", e => { ob5.focus = e.target.matches(":focus-visible"); }); el.addEventListener("focusout", () => { ob5.focus = false; ob5.next = Date.now() + 3000; });
   new IntersectionObserver(es => { ob5.vis = es[0].isIntersecting; if (ob5.vis) ob5.next = Math.max(ob5.next, Date.now() + 1500); }, { threshold: .4 }).observe(el);
   if (!reduced) setInterval(() => {
     if (document.hidden || ob5.hover || ob5.focus || !ob5.vis || (typeof route_ !== "undefined" && route_.page !== "bio") || document.querySelector("dialog[open]")) return;
