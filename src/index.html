@@ -7930,7 +7930,7 @@ if (PATHS){
   addEventListener("popstate", () => { const pl = parseLoc(location.pathname); if (pl && pl.lg !== lang){ lang = pl.lg; applyLang(); } route(false); });
   document.addEventListener("click", e => {
     if (e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    const a = e.target.closest && e.target.closest("a"); if (!a || a.target || a.hasAttribute("download")) return;
+    const a = e.target.closest && e.target.closest("a"); if (!a || a.target || a.hasAttribute("download") || a.hasAttribute("data-open-form")) return;   /* los enlaces que abren el formulario no navegan: los gestiona wireForm */
     const dh = a.dataset.h; let pl = null;
     if (dh) pl = { lg:lang, r:parseHashStr(dh) };
     else if (a.origin === location.origin && !a.getAttribute("href").startsWith("#")) pl = parseLoc(a.pathname);
