@@ -143,22 +143,34 @@ function obMeasure(){
   L().ob_items.forEach((_, i) => { probe.innerHTML = obTx(i); m = Math.max(m, probe.getBoundingClientRect().height); });
   probe.remove(); el.style.setProperty("--obh", Math.ceil(m) + "px");
 }
-function obPaint(announce){
+function obPaint(announce, sel, measure){
   const t = L(), it = t.ob_items, n = it.length, sl = $("#obSlide"); if (!sl) return;
   const h = it[obI][0], a = BIO_ASSETS.obsessions[obI] || {}, alt = a.alt && a.alt[lang] || h, num = String(obI + 1).padStart(2, "0"), tot = String(n).padStart(2, "0");
-  sl.innerHTML = `<div class="ob-img bx-r43">${bxMedia(a, h, alt, "obsession-" + (obI + 1))}</div><div class="ob-tx">${obTx(obI)}</div>`;
+  sl.innerHTML = `<div class="ob-img bx-r43${sel ? " sel" : ""}">${bxMedia(a, h, alt, "obsession-" + (obI + 1))}</div><div class="ob-tx">${obTx(obI)}</div>`;
   $("#obN").textContent = num + " / " + tot;
   sl.setAttribute("aria-live", announce ? "polite" : "off");
-  if (!announce) obMeasure();
+  if (measure) obMeasure();
 }
 let obRz = 0; addEventListener("resize", () => { clearTimeout(obRz); obRz = setTimeout(obMeasure, 150); });
 function renderOb(){
   const t = L(), u = t.bx_ui, el = $("#ob"); if (!el) return;
   obI = Math.min(obI, t.ob_items.length - 1);
   el.innerHTML = `<div class="ob-slide" id="obSlide" role="group" aria-roledescription="slide"></div><div class="ob-ctl"><button type="button" id="obPrev" aria-label="${esc(u.ob_prev)}"><span aria-hidden="true">←</span></button><span class="ob-n" id="obN" aria-hidden="true"></span><button type="button" id="obNext" aria-label="${esc(u.ob_next)}"><span aria-hidden="true">→</span></button></div>`;
-  obPaint(false);
+  obPaint(false, false, true); obAutoInit();
 }
-function obGo(d){ const n = L().ob_items.length; obI = (obI + d + n) % n; obPaint(true); }
+/* pase automático cada 5 s (en escala de grises; a color con hover, foco o selección manual). Se detiene con hover/foco, fuera de vista, con diálogo abierto y con «reducir movimiento» */
+const ob5 = { next: 0, hover: false, focus: false, vis: false, on: false };
+function obGo(d, auto){ const n = L().ob_items.length; obI = (obI + d + n) % n; obPaint(!auto, !auto); ob5.next = Date.now() + 5000; }
+function obAutoInit(){
+  const el = $("#ob"); if (!el || ob5.on) return; ob5.on = true; ob5.next = Date.now() + 5000;
+  el.addEventListener("mouseenter", () => { ob5.hover = true; }); el.addEventListener("mouseleave", () => { ob5.hover = false; ob5.next = Date.now() + 5000; });
+  el.addEventListener("focusin", e => { ob5.focus = e.target.matches(":focus-visible"); }); el.addEventListener("focusout", () => { ob5.focus = false; ob5.next = Date.now() + 5000; });
+  new IntersectionObserver(es => { ob5.vis = es[0].isIntersecting; if (ob5.vis) ob5.next = Math.max(ob5.next, Date.now() + 1500); }, { threshold: .4 }).observe(el);
+  if (!reduced) setInterval(() => {
+    if (document.hidden || ob5.hover || ob5.focus || !ob5.vis || (typeof route_ !== "undefined" && route_.page !== "bio") || document.querySelector("dialog[open]")) return;
+    if (Date.now() >= ob5.next && $("#obSlide")) obGo(1, true);
+  }, 400);
+}
 /* ---------- memory game: 6 pairs, 12 cards ---------- */
 const MMC = ["--coral", "--lav", "--mustard", "--mint", "--coral", "--lav"];
 let MM = null, mmTimer = 0;
