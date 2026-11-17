@@ -180,12 +180,12 @@ function mmStop(){ clearTimeout(mmTimer); if (MM) { MM.open = []; MM.lock = fals
 function mmBuild(){
   const t = L(), u = t.bx_ui, el = $("#mm"); if (!el) return; if (!MM) mmNew();
   const P = t.mm_pairs;
-  el.innerHTML = `<div class="mm-board" id="mmBoard" role="group" aria-label="${esc(u.mm_board)}">${MM.deck.map((p, i) => `<button type="button" class="mm-c" data-i="${i}" style="--mc:var(${MMC[p]})"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>${String(p + 1).padStart(2, "0")}</i><b>${esc(P[p][0])}</b></span></span></button>`).join("")}</div>
+  el.innerHTML = `<div class="mm-board" id="mmBoard" role="group" aria-label="${esc(u.mm_board)}">${MM.deck.map((p, i) => `<button type="button" class="mm-c" data-i="${i}" style="--mc:var(${MMC[p]})"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f mm-fi" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-" + (p + 1) + ".webp"))}" alt="" width="200" height="200" decoding="async"></span></span></button>`).join("")}</div>
   <div class="mm-side"><dl class="mm-stats"><div><dt>${esc(u.mm_tries)}</dt><dd id="mmT">0</dd></div><div><dt>${esc(u.mm_pairs)}</dt><dd id="mmP">0 / 6</dd></div></dl>
+  <div class="mm-cur" id="mmCur" aria-live="polite"></div>
   <p class="mm-status" id="mmS" role="status" aria-live="polite"></p>
   <p><button type="button" class="btn sm ghost" id="mmReset">${esc(u.mm_reset)}</button></p>
-  <div class="mm-win" id="mmWin" hidden tabindex="-1"><h3>${esc(t.mm_win_h)}</h3>${t.mm_win_ps.map(x => `<p>${esc(x)}</p>`).join("")}<p><button type="button" class="btn sm" id="mmAgain">${esc(t.mm_again)}</button></p></div>
-  <div class="mm-found" id="mmFound" hidden><h3>${esc(u.mm_found)}</h3><ul id="mmFoundL"></ul></div></div>`;
+  <div class="mm-win" id="mmWin" hidden tabindex="-1"><h3>${esc(t.mm_win_h)}</h3>${t.mm_win_ps.map(x => `<p>${esc(x)}</p>`).join("")}<div class="mm-found" id="mmFound"><h4>${esc(u.mm_found)}</h4><ul id="mmFoundL"></ul></div><p><button type="button" class="btn sm" id="mmAgain">${esc(t.mm_again)}</button></p></div></div>`;
   mmPaint("");
 }
 function mmPaint(msg){
@@ -197,9 +197,12 @@ function mmPaint(msg){
     b.setAttribute("aria-disabled", done ? "true" : "false");
   });
   $("#mmT").textContent = MM.tries; $("#mmP").textContent = MM.found.length + " / 6";
-  const fo = $("#mmFound"); fo.hidden = !MM.found.length;
   $("#mmFoundL").innerHTML = MM.found.map(p => `<li><b>${esc(P[p][0])}</b> ${esc(P[p][1])}</li>`).join("");
   const won = MM.done.length >= 12;
+  /* curiosidad de la última pareja encontrada (solo parejas ya descubiertas); se vuelve a crear el nodo para repetir el fundido */
+  const cur = $("#mmCur"), last = MM.found.length ? MM.found[MM.found.length - 1] : -1;
+  cur.hidden = won;
+  if (!won && cur.dataset.p !== String(last)) { cur.dataset.p = String(last); cur.innerHTML = last < 0 ? `<p class="mm-cur-h">${esc(t.mm_hint)}</p>` : `<div class="mm-cur-i"><p class="mm-cur-k">${esc(P[last][0])}</p><p class="mm-cur-t">${esc(P[last][1])}</p></div>`; }
   $("#mmWin").hidden = !won;
   /* al ganar solo se ve el panel final: el aviso de estado queda solo para lectores de pantalla y se oculta el botón Reiniciar (el panel trae «Jugar otra vez») */
   $("#mmS").classList.toggle("sr-only", won); const rs = $("#mmReset"); if (rs && rs.parentElement) rs.parentElement.hidden = won;
@@ -215,7 +218,7 @@ function mmPick(i){
   if (MM.deck[a] === MM.deck[b]) {
     const p = MM.deck[a]; MM.done.push(a, b); MM.found.push(p); MM.open = []; MM.lock = false;
     if (MM.done.length === 12) { mmPaint(t.mm_win_h + " " + t.mm_win_ps.join(" ")); const w = $("#mmWin"); w.focus({ preventScroll: false }); }
-    else mmPaint(u.mm_ok + " " + P[p][0] + ". " + P[p][1]);
+    else mmPaint(u.mm_ok);
   } else {
     mmPaint(u.mm_no);
     mmTimer = setTimeout(() => { MM.open = []; MM.lock = false; mmPaint(""); }, 900);

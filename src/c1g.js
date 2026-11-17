@@ -212,3 +212,17 @@ Object.assign(T.fr, { ob_h: "Au cas où ça t'intéresse.", ob_p: "Une revue, un
   ["The Creative Act: A Way of Being", "Un livre sur la créativité qui ne te dit pas quoi faire, mais t'invite à regarder le monde autrement. Le genre où l'on a envie de tout souligner.", "Livre", "Rick Rubin · 2023 · Penguin Press / Canongate", "https://canongate.co.uk/books/4336-the-creative-act-a-way-of-being/"],
   ["The Royal Tenenbaums", "Une famille dysfonctionnelle, des personnages inoubliables et une esthétique où chaque détail compte. De l'humour, de la mélancolie et beaucoup de Wes Anderson.", "Film", "Wes Anderson · 2001", "https://www.criterion.com/films/230-the-royal-tenenbaums"],
   ["Helvetica", "Quatre-vingts minutes à parler d'une typographie. Et, curieusement, c'est bien plus intéressant qu'il n'y paraît.", "Documentaire", "Gary Hustwit · 2007", "https://www.hustwit.com/helvetica/"]] });
+
+/* ---------- BIO · «¿Nos conocemos?»: 6 parejas con imagen [nombre, curiosidad] ---------- */
+Object.assign(T.es, { mm_hint: "Encuentra una pareja y te cuento algo.", mm_pairs: [
+  ["Carlos Cruz-Diez", "Conocí personalmente a Carlos Cruz-Diez."], ["Tomate", "El tomate y yo no nos llevamos muy bien."], ["Carlos Vives", "Crecí escuchando a Carlos Vives. Y todavía lo escucho."],
+  ["Cámara de cine", "Antes de dedicarme al diseño, quería estudiar medios audiovisuales."], ["Forrest Gump", "He visto Forrest Gump ocho veces: 18 horas y 56 minutos de mi vida. Y probablemente habrá una novena."], ["Gabriel García Márquez", "Nací en 1990, ocho años después de que García Márquez recibiera el Nobel."]],
+  mm_win_h: "Bueno, ahora ya sabes un poco más de mí.", mm_win_ps: ["Aunque quedan unas cuantas historias por contar."] });
+Object.assign(T.en, { mm_hint: "Find a pair and I'll tell you something.", mm_pairs: [
+  ["Carlos Cruz-Diez", "I met Carlos Cruz-Diez in person."], ["Tomato", "Tomatoes and I don't really get along."], ["Carlos Vives", "I grew up listening to Carlos Vives. And I still do."],
+  ["Film camera", "Before getting into design, I wanted to study audiovisual media."], ["Forrest Gump", "I've seen Forrest Gump eight times: 18 hours and 56 minutes of my life. And there will probably be a ninth."], ["Gabriel García Márquez", "I was born in 1990, eight years after García Márquez won the Nobel Prize."]],
+  mm_win_h: "Well, now you know a little more about me.", mm_win_ps: ["Though there are still a few stories left to tell."] });
+Object.assign(T.fr, { mm_hint: "Trouve une paire et je te raconte quelque chose.", mm_pairs: [
+  ["Carlos Cruz-Diez", "J'ai rencontré Carlos Cruz-Diez en personne."], ["Tomate", "Les tomates et moi, on ne s'entend pas très bien."], ["Carlos Vives", "J'ai grandi en écoutant Carlos Vives. Et je l'écoute encore."],
+  ["Caméra de cinéma", "Avant de me tourner vers le design, je voulais étudier l'audiovisuel."], ["Forrest Gump", "J'ai vu Forrest Gump huit fois : 18 heures et 56 minutes de ma vie. Et il y aura probablement une neuvième."], ["Gabriel García Márquez", "Je suis né en 1990, huit ans après le prix Nobel de García Márquez."]],
+  mm_win_h: "Voilà, tu en sais un peu plus sur moi.", mm_win_ps: ["Même s'il reste encore quelques histoires à raconter."] });
