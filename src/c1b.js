@@ -21,7 +21,7 @@ Object.assign(T.fr, {
   svc_h:"Ce que je peux faire pour vous", svc_p:"Quatre façons de travailler ensemble. Si vous ne savez pas laquelle vous faut, commencez par me raconter votre cas.",
   svc:[["Site web stratégique","Des sites qui expliquent ce que vous faites et mènent à l'étape suivante. Conçus dans Figma, construits en Webflow."],["Branding","Une identité visuelle et une voix pour qu'on vous reconnaisse pareil sur le web, sur les réseaux et sur une affiche."],["Produit et apps (UX/UI)","Des parcours testés avec des gens, de la recherche au handoff avec le développement."],["Design systems","Des composants et des règles pour que votre équipe grandisse sans que tout se désorganise."]],
   bn_path:"Mon parcours", bn_now:"En ce moment", bn_now_t:"Binōme Studio", bn_now_p:"Web, branding et produit pour startups et PME, depuis Madrid.", visit:"Visiter",
-  bn_off:"Hors écran", bn_off_p:"Mes lectures, jeux et adresses préférées viendront ici.", bn_wr:"Écrits et liens", bn_wr_p:"Les articles et liens que j'ai aimés viendront ici.", soon:"Bientôt", bn_links:"Retrouvez-moi sur",
+  bn_off:"Hors écran", bn_off_p:"Mes lectures, jeux et adresses préférées viendront ici.", bn_wr:"Écrits et liens", bn_wr_p:"Les articles et liens que j'ai aimés viendront ici.", soon:"Bientôt", bn_links:"Retrouve-moi sur",
   tools_h:"Avec quoi je travaille", tools_p:"Les outils que j'utilise pour concevoir, tester et livrer.",
   set_l:"Réglages",
 });

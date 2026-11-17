@@ -7,7 +7,7 @@ const YCFG = {
   projects:{ ux:"#projects", web:"#projects", brand:"#projects", all:"#projects" },
   seriesMusicUrl:YODIS_DATA.config.seriesMusicUrl
 };
-const YCAT = { ux:["happylife","apolo","appy","mood"], web:["contazara","carceral","a2pas"], brand:["contazara","a2pas","360estudio"], all:["contazara","carceral","a2pas"] };
+const YCAT = { ux:["happylife","apolo","appy","mood"], web:["contazara","carceral-ecologies","a2pas"], brand:["contazara","a2pas","360estudio"], all:["contazara","carceral-ecologies","a2pas"] };
 const YSTAGE = ["ux_stage","web_stage","brand_stage","other_stage"];
 const YKEY = "yodis-v2", yN = YODIS_DATA.nodes;
 const yFreshState = () => ({ node:YODIS_DATA.initialNode, hist:[], seen:[], fact:null });

@@ -5,7 +5,7 @@ SITE = "https://TU-DOMINIO.com"
 if "--site" in sys.argv: SITE = sys.argv[sys.argv.index("--site")+1].rstrip("/")
 DOMAIN = re.sub(r"^https?://", "", SITE)
 HERE = os.path.dirname(os.path.abspath(__file__)); os.chdir(HERE)
-JS = ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1t.js","c1l.js","c1k.js"]
+JS = ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1t.js","c1l.js","c1k.js","c1m.js"]
 # 1) data from JS (T, PROJ, SEO)
 js = "\n".join(open(f).read() for f in JS) + "\n;globalThis.__out={T,PROJ,SEO,SECTIONS,HERO};"
 open("/tmp/_d.js","w").write("const fs=require('fs'),vm=require('vm');const ctx={console};vm.createContext(ctx);vm.runInContext(fs.readFileSync('/tmp/_src.js','utf8').replace(/\\bconst /g,'var ').replace(/\\blet /g,'var '),ctx);fs.writeFileSync('/tmp/data.json',JSON.stringify(ctx.__out));")
@@ -30,7 +30,7 @@ PFX = {"es":"","en":"/en","fr":"/fr"}
 SLG = {"es":{"projects":"proyectos","services":"servicios","bio":"bio","contact":"contacto"},"en":{"projects":"projects","services":"services","bio":"bio","contact":"contact"},"fr":{"projects":"projets","services":"services","bio":"bio","contact":"contact"}}
 SSLG = {"es":{"branding":"branding","web":"diseno-web","ux":"diseno-ux-ui"},"en":{"branding":"branding","web":"web-design","ux":"ux-ui-design"},"fr":{"branding":"branding","web":"design-web","ux":"design-ux-ui"}}
 SKEYS = ["branding","web","ux"]
-PSVC = {"contazara":["branding","web"],"carceral":["web"],"a2pas":["ux","web","branding"],"happylife":["ux"],"binome":["branding","web","ux"],"yaypegs":["ux"],"mobile-experiences":["ux"],"360estudio":["branding","web"],"figy":["ux"],"apolo":["ux"],"appy":["ux"],"mood":["ux"],"molyb":["ux"]}
+PSVC = {"contazara":["branding","web"],"carceral-ecologies":["web"],"a2pas":["ux","web","branding"],"happylife":["ux"],"binome":["branding","web","ux"],"yaypegs":["ux"],"mobile-experiences":["ux"],"360estudio":["branding","web"],"figy":["ux"],"apolo":["ux"],"appy":["ux"],"mood":["ux"],"molyb":["ux"]}
 def path(lg, page="home", key=None):
     if page == "home": return PFX[lg] + "/"
     if page == "project": return f"{PFX[lg]}/{SLG[lg]['projects']}/{key}/"
@@ -71,7 +71,7 @@ def ld(lg, r):
     elif page == "bio":
         g.append({"@type":"ProfilePage","@id":url+"#page","url":url,"name":title,"description":desc,"inLanguage":lg,"isPartOf":{"@id":SITE_ID},"mainEntity":{"@id":PERSON_ID}})
     elif page == "contact":
-        g.append({"@type":"ContactPage","@id":url+"#page","url":url,"name":title,"description":desc,"inLanguage":lg,"isPartOf":{"@id":SITE_ID},"about":{"@id":PERSON_ID}})
+        g.append({"@type":"ContactPage","@id":url+"#page","url":url,"name":title,"description":desc,"inLanguage":lg,"isPartOf":{"@id":SITE_ID},"about":{"@id":PERSON_ID}}); g.append(faq_node(lg, t["ct_faq"], url))
     elif page == "project":
         i = [q["key"] for q in PROJ].index(key); p = pj(lg,i)
         g.append({"@type":"CreativeWork","@id":url+"#work","url":url,"name":p["name"],"description":p["summary"],"genre":p["category"],"inLanguage":lg,"creator":{"@id":PERSON_ID},"isPartOf":{"@id":SITE_ID}})
@@ -89,7 +89,7 @@ a = open("a.html").read().replace("<!--JSONLD-->", ld_tag).replace("%%SITE%%", S
 b = open("b.html").read()
 # c1s.js must precede c3; c2 doesn't need SEO
 open("yodis-data.js","w").write("const YODIS_DATA = " + json.dumps(json.load(open("conversations.json")), ensure_ascii=False) + ";")
-body_js = "\n".join(open(f).read() for f in ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1q.js","c1r.js","c1t.js","c1l.js","c1k.js","yodis-data.js","c2.js","c4.js","c3.js"])
+body_js = "\n".join(open(f).read() for f in ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1q.js","c1r.js","c1t.js","c1l.js","c1k.js","c1m.js","yodis-data.js","c2b.js","c2.js","c4.js","c3.js"])
 import base64, io
 from PIL import Image
 def imgjs(mode):
@@ -147,7 +147,7 @@ def og_variant_ok(src):
     return w >= 600 and h >= 315
 def _proj_idx(key): return [q["key"] for q in PROJ].index(key)
 # Projects whose cover must NOT be used as social image (explicit exception; the visible project is untouched). Remove the key once it has a final cover.
-OG_FALLBACK_PROJECTS = {"carceral": "provisional cover (\"in progress\"): use the language fallback until a final cover exists"}
+OG_FALLBACK_PROJECTS = {"carceral-ecologies": "provisional cover (\"in progress\"): use the language fallback until a final cover exists"}
 import hashlib
 def _ver(path, salt=""):
     """Cache-busting version: content hash of the source file. It changes whenever the image changes, so platforms re-fetch it."""

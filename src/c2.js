@@ -70,7 +70,7 @@ const ART = {
   codelco: v => [0,1,2,3].map(i => `<path d="M0 ${70 + i*52 + v*8} Q100 ${40 + i*52} 200 ${70 + i*52} T400 ${60 + i*52} V300 H0Z" fill="${col(v,i)}" opacity="${.95 - i*.12}"/>`).join("")
 };
 Object.assign(ART, {
-  carceral: v => ART["360estudio"](v), a2pas: v => ART.freethem(v + 1), happylife: v => ART.healthtech(v), binome: v => ART.codelco(v + 1),
+  "carceral-ecologies": v => ART["360estudio"](v), a2pas: v => ART.freethem(v + 1), happylife: v => ART.healthtech(v), binome: v => ART.codelco(v + 1),
   yaypegs: v => ART.apps(v + 1), figy: v => ART.healthtech(v + 1), "mobile-experiences": v => ART.apps(v), molyb: v => ART.codelco(v)
 });
 const IMG = window.__IMG || {};
@@ -121,7 +121,7 @@ function wireMenu(){
 
 /* ---------- home sections ---------- */
 /* service <-> project relations come from the "services" column of each project in the repo (single source) */
-const PSVC = { contazara:["branding","web"], carceral:["web"], a2pas:["ux","web","branding"], happylife:["ux"], binome:["branding","web","ux"], yaypegs:["ux"], "mobile-experiences":["ux"], "360estudio":["branding","web"], figy:["ux"], apolo:["ux"], appy:["ux"], mood:["ux"], molyb:["ux"] };
+const PSVC = { contazara:["branding","web"], "carceral-ecologies":["web"], a2pas:["ux","web","branding"], happylife:["ux"], binome:["branding","web","ux"], yaypegs:["ux"], "mobile-experiences":["ux"], "360estudio":["branding","web"], figy:["ux"], apolo:["ux"], appy:["ux"], mood:["ux"], molyb:["ux"] };
 const sentence = x => { x = String(x).toLowerCase(); return x.charAt(0).toUpperCase() + x.slice(1); };
 const oneLine = x => String(x).replace(/\n/g, " ");
 function renderHomeServices(){
@@ -152,12 +152,12 @@ function renderServicePage(key){
   const t = L(), sp = t.sp[key], idx = SKEYS.indexOf(key), el = $("#svPage"); if (!el || !sp) return;
   const related = PROJ.filter(p => (PSVC[p.key] || []).includes(key)).map(p => p.key);
   el.innerHTML = `<article class="sv">
-  <header class="sv-hero">${crumbs([[t.n_home, "#home"], [t.n_services, "#services"], [t.hs_items[idx][0], null]])}<p class="sv-eb">${esc(sp.eb)}</p><h1 class="sv-h1">${esc(sp.h1)}</h1><p class="sv-intro">${esc(sp.intro)}</p>
-    <p class="sv-act"><button class="btn cta solid" type="button" data-open-form data-ev="service_cta_click" data-place="service_hero" data-service="${key}"><span>${esc(sp.cta_b)}</span><span class="arr" aria-hidden="true">→</span></button><a class="btn cta" href="#projects"><span>${esc(t.h_cta2)}</span><span class="arr" aria-hidden="true">→</span></a></p></header>
-  ${sp.blocks.map((b, i) => `<section class="sv-b"><span class="num" aria-hidden="true">0${i+1}</span><h2>${esc(b.h)}</h2><div>${b.t ? `<p>${esc(b.t)}</p>` : ""}${b.list ? `<ul class="sv-list">${b.list.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</div></section>`).join("")}
+  <header class="sv-hero">${crumbs([[t.n_home, "#home"], [t.n_services, "#services"], [t.hs_items[idx][0], null]])}${sp.name ? `<h1 class="sv-eb">${esc(sp.name)}</h1><p class="sv-h1">${esc(sp.h1)}</p>` : `<p class="sv-eb">${esc(sp.eb)}</p><h1 class="sv-h1">${esc(sp.h1)}</h1>`}<p class="sv-intro">${esc(sp.intro)}</p>
+    <p class="sv-act"><button class="btn cta solid" type="button" data-open-form data-ev="service_cta_click" data-place="service_hero" data-service="${key}"><span>${esc(sp.cta_b)}</span><span class="arr" aria-hidden="true">→</span></button><a class="btn cta" href="#projects"><span>${esc(sp.cta_s || t.h_cta2)}</span><span class="arr" aria-hidden="true">→</span></a></p></header>
+  ${sp.blocks.map((b, i) => `<section class="sv-b"><span class="num" aria-hidden="true">0${i+1}</span><h2>${esc(b.h)}</h2><div>${b.sub ? `<p class="sv-sub">${esc(b.sub)}</p>` : ""}${b.t ? `<p>${esc(b.t)}</p>` : ""}${b.list ? `<ul class="sv-list">${b.list.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}${b.note ? `<p>${esc(b.note)}</p>` : ""}${b.link ? `<p><a class="sv-link" href="${b.link.href}">${esc(b.link.label)} <span aria-hidden="true">→</span></a></p>` : ""}</div></section>`).join("")}
   ${related.length ? `<section class="sv-rel"><h2>${esc(sp.rel_h)}</h2><p>${esc(sp.rel_t)}</p><div class="pj-grid">${related.map(k => projCard(k, "h3")).join("")}</div></section>` : ""}
   <section class="sv-faq"><h2>${esc(sentence(t.hf_lab))}</h2><div class="faq" id="svFaq"></div></section>
-  <section class="sv-cta"><span class="blobs" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="bm"></i></span><span class="cta-star" aria-hidden="true">✱</span><h2>${esc(sp.cta_h)}</h2><p><button class="btn solid" type="button" data-open-form data-ev="service_cta_click" data-place="service_footer" data-service="${key}"><span>${esc(sp.cta_b)}</span><span class="arr" aria-hidden="true">→</span></button></p></section>
+  <section class="sv-cta"><span class="blobs" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="bm"></i></span><span class="cta-star" aria-hidden="true">✱</span><h2>${esc(sp.cta_h)}</h2>${sp.cta_t ? `<p class="sv-cta-t">${esc(sp.cta_t)}</p>` : ""}<p><button class="btn solid" type="button" data-open-form data-ev="service_cta_click" data-place="service_footer" data-service="${key}"><span>${esc(sp.cta_b2 || sp.cta_b)}</span><span class="arr" aria-hidden="true">→</span></button></p></section>
   <nav class="sv-others" aria-label="${esc(t.n_services)}"><ul>${SKEYS.map((k, i) => k === key ? "" : `<li><a href="#service-${k}">${esc(t.hs_items[i][0])} <span aria-hidden="true">→</span></a></li>`).join("")}<li><a href="#services">${esc(t.sp_back)} <span aria-hidden="true">→</span></a></li></ul></nav></article>`;
   renderFaq("#svFaq", sp.faq);
 }
@@ -245,11 +245,14 @@ const svgWrap = (k, v) => `<div class="art">${svgOf(k, v)}</div>`;
 
 /* ---------- bio ---------- */
 function renderBio(){
-  const t = L(); renderBento(); renderQF();
+  const t = L(); renderQF(); renderBio2();
+  $("#biPs").innerHTML = t.bi_ps.map(x => `<p>${esc(x)}</p>`).join("");
+  $("#workedP").innerHTML = t.ca_ps.map(x => `<p>${esc(x)}</p>`).join("");
+  $("#toolsP").innerHTML = t.to_ps.map(x => `<p>${esc(x)}</p>`).join("");
   $("#worked").innerHTML = t.worked.map(r => `<li><span class="yr">${esc(r[0])}</span><div><b>${esc(r[1])}</b><span>${esc(r[2])} · ${esc(r[3])}</span></div></li>`).join("");
-  $("#dos").innerHTML = t.dos.map(x => `<li>${esc(x)}</li>`).join("");
   const TOOLS = [["Figma","Fi","#F24E1E","#fff"],["Webflow","Wf","#146EF5","#fff"],["HTML / CSS","</>","#E34F26","#fff"],["Storybook","Sb","#FF4785","#fff"],["Maze","Mz","#6C5CE7","#fff"],["Hotjar","Hj","#FD3A5C","#fff"],["Notion","No","#000","#fff"],["Jira","Ji","#0052CC","#fff"]];
-  $("#tools").innerHTML = TOOLS.map(([n, m, c, tt]) => `<li class="tool" tabindex="0" style="--tc:${c};--tt:${tt}"><b>${esc(m)}</b><span>${esc(n)}</span></li>`).join("");
+  const TG = [["Figma"], ["Webflow", "HTML / CSS", "Storybook"], ["Notion", "Jira"], ["Maze", "Hotjar"]];   // design/prototyping · development · product/collab · experimentation (existing tools only)
+  $("#tools").innerHTML = TG.map((g, gi) => `<div class="tg"><h3 class="tg-h">${esc(t.bx_ui.tg[gi])}</h3><ul class="tools-grid">${g.map(n => TOOLS.find(x => x[0] === n)).map(([n, m, c, tt]) => `<li class="tool" tabindex="0" style="--tc:${c};--tt:${tt}"><b>${esc(m)}</b><span>${esc(n)}</span></li>`).join("")}</ul></div>`).join("");
   // portrait: abstract typographic composition from AF monogram
   if (BENTO.photo.img) $("#portrait").innerHTML = `<img src="${BENTO.photo.img}" alt="${esc(L().portrait_alt)}" loading="lazy" decoding="async">`; else $("#portrait").innerHTML = `<svg viewBox="0 0 400 400" aria-hidden="true"><rect width="400" height="400" fill="var(--surface)"/><circle cx="110" cy="140" r="90" fill="var(--coral)" opacity=".85"/><circle cx="260" cy="200" r="110" fill="var(--lav)" opacity=".75"/><circle cx="200" cy="320" r="85" fill="var(--mint)" opacity=".8"/><text x="50%" y="56%" text-anchor="middle" fill="var(--fg)" font-family="var(--font)" font-size="180" font-weight="600" letter-spacing="-10">AF</text></svg>`;
 }
@@ -332,7 +335,7 @@ function setDlgHead(quick){
 }
 function openForm(opt){ const prize = opt === true, quick = !!(opt && typeof opt === "object" && opt.quick), topic = opt && typeof opt === "object" && Number.isInteger(opt.topic) ? opt.topic : -1;
   setDlgHead(quick); $("#form").hidden = false; $("#dres").hidden = true; $("#dsent").hidden = true; $("#ferr").textContent = ""; $("#fstat").textContent = ""; sending = false; newQ(); closeSheet(); closeChat();
-  if (prize){ const t = L(); $("#ft").selectedIndex = 4; if (!$("#fm").value.trim()) $("#fm").value = t.prize_msg; }
+  if (prize){ const t = L(); $("#ft").selectedIndex = Math.max(0, TOPIC_IDS.indexOf("prize")); if (!$("#fm").value.trim()) $("#fm").value = t.prize_msg; }
   else if (topic >= 0 && topic < $("#ft").options.length) $("#ft").selectedIndex = topic;
   if (!formStarted){ formStarted = true; track("contact_form_start", { page: route_.page }); }
   if (dlg().showModal) dlg().showModal(); else dlg().setAttribute("open","");
@@ -350,10 +353,12 @@ function wireForm(){
     const agent = !!e.agentInvoked && typeof e.respondWith === "function";
     if (!n || !MAIL.test(m) || !msg){
       const bad = !n ? $("#fn") : (!MAIL.test(m) ? $("#fe") : $("#fm"));
+      ["#fn", "#fe", "#fm"].forEach(id => $(id).removeAttribute("aria-invalid")); bad.setAttribute("aria-invalid", "true");
       $("#ferr").textContent = (n && !MAIL.test(m)) ? t.d_mail_err : t.d_err;
       if (agent) e.respondWith(Promise.resolve({ content:[{ type:"text", text:"Missing or invalid fields: name, a valid email and a message are required." }], isError:true }));
       bad.focus(); return;
     }
+    ["#fn", "#fe", "#fm"].forEach(id => $(id).removeAttribute("aria-invalid"));
     if (!agent && !$("#fc").checked) { $("#ferr").textContent = t.d_consent_err; $("#fc").focus(); return; }
     if (!agent && parseInt($("#fq").value, 10) !== qa + qb) { $("#ferr").textContent = t.d_qerr; $("#fq").focus(); return; }
     if (agent) e.respondWith(Promise.resolve({ content:[{ type:"text", text:"Draft prepared. The visitor still has to open it in their email app or copy it; nothing was sent automatically." }] }));
@@ -364,8 +369,8 @@ function wireForm(){
       const sb = $("#form button[type=submit]"), lab = sb.querySelector("[data-i]"), old = lab.textContent;
       sending = true; sb.disabled = true; sb.setAttribute("aria-busy", "true"); lab.textContent = t.d_sending; $("#ferr").textContent = ""; $("#fstat").textContent = t.d_sending;
       fetch(FORM_ENDPOINT, { method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" }, body:JSON.stringify({ name:n, email:m, topic, budget: budget || undefined, message:msg, _replyto:m, _subject:topic + " · " + n + " (portfolio)" }) })
-        .then(r => { if (!r.ok) throw 0; $("#form").hidden = true; $("#dsent").hidden = false; $("#form").reset(); $("#fstat").textContent = ""; track("contact_form_submit_success", { project_type: topic, budget_band: budget || undefined }); })
-        .catch(() => { $("#ferr").textContent = t.d_fail; $("#fstat").textContent = ""; fallback(); })
+        .then(r => { if (!r.ok) throw 0; $("#form").hidden = true; $("#dsent").hidden = false; $("#form").reset(); $("#fstat").textContent = t.d_sent; track("contact_form_submit_success", { project_type: topic, budget_band: budget || undefined }); })
+        .catch(() => { $("#ferr").innerHTML = `<strong>${esc(t.d_fail_t)}</strong> ` + esc(t.d_fail_b).replace(EMAIL, `<a href="mailto:${EMAIL}">${EMAIL}</a>`); $("#fstat").textContent = ""; })
         .finally(() => { sending = false; sb.disabled = false; sb.removeAttribute("aria-busy"); lab.textContent = old; });
       return;
     }
@@ -404,7 +409,7 @@ function parse(){
   if (h.startsWith("service-")) { const k = h.slice(8); if (SKEYS.includes(k)) return { page:"service", key:k }; }
   return ["projects","services","bio","contact"].includes(h) ? { page:h } : { page:"home" };
 }
-const PJ_AUR = { contazara:["#307fe4","#7bb4f0","#f5d90a"], "360estudio":["#c9b36a","#7ba5ca","#f3c63a"], a2pas:["#e23a3a","#f2b8b0","#c9b6e8"], binome:["#e8604c","#d9c3a5","#b8c4d6"], carceral:["#3d4a5a","#8aa0b8","#c9d3e0"], happylife:["#df9483","#89a5c7","#f2d68a"], yaypegs:["#b9215c","#526c8d","#7ec8f0"] };
+const PJ_AUR = { contazara:["#307fe4","#7bb4f0","#f5d90a"], "360estudio":["#c9b36a","#7ba5ca","#f3c63a"], a2pas:["#e23a3a","#f2b8b0","#c9b6e8"], binome:["#e8604c","#d9c3a5","#b8c4d6"], "carceral-ecologies":["#3d4a5a","#8aa0b8","#c9d3e0"], happylife:["#df9483","#89a5c7","#f2d68a"], yaypegs:["#b9215c","#526c8d","#7ec8f0"] };
 function setAur(k){ const pg = document.querySelector('.page[data-page="project"]'), c = PJ_AUR[k]; if (!pg) return; if (c) { pg.style.setProperty("--g1", c[0]); pg.style.setProperty("--g2", c[1]); pg.style.setProperty("--g3", c[2]); } else { ["--g1","--g2","--g3"].forEach(v => pg.style.removeProperty(v)); } }
 function show(r){
   route_ = r; const nav = r.page === "project" ? "projects" : r.page === "service" ? "services" : r.page;
@@ -454,6 +459,7 @@ if (PATHS){
 /* ---------- language apply ---------- */
 function renderCnext(){
   const t = L(); $("#cnext").innerHTML = t.cn.map(([h, p]) => `<li><h3>${esc(h)}</h3><p>${esc(p)}</p></li>`).join("");
+  if (t.ct_faq && $("#ctFaq")) { $("#ctFaqH").textContent = sentence(t.hf_lab); renderFaq("#ctFaq", t.ct_faq); }
 }
 function renderMarquee(){
   const t = L(), txt = (t.marquee || "").trim();
@@ -543,7 +549,7 @@ function wireHero(){
 let qfI = 0, qfHold = 0, qfVis = false;
 function renderQF(){
   const t = L(), st = $("#qfStage"); if (!st) return;
-  st.innerHTML = t.qf.map(([l, v], i) => `<div class="qf-i${i === qfI ? " on" : ""}" aria-hidden="${i === qfI ? "false" : "true"}"><span class="k">${esc(l)}</span><b>${esc(v)}</b></div>`).join("");
+  st.innerHTML = t.qf.map(([l, v], i) => `<div class="qf-i${i === qfI ? " on" : ""}" aria-hidden="${i === qfI ? "false" : "true"}"><b>${esc(l)}</b><span class="k">${esc(v)}</span></div>`).join("");
   $("#qfN").textContent = String(qfI + 1).padStart(2, "0") + " / " + String(t.qf.length).padStart(2, "0");
 }
 function qfGo(d, manual){
@@ -672,8 +678,8 @@ const SOCIALS = [
 ];
 function renderSocials(){
   $("#socials").innerHTML = SOCIALS.map(([n,,u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)} <span class="arr" aria-hidden="true">↗</span></a></li>`).join("");
-  const AB = { Instagram:"IG", LinkedIn:"IN", Behance:"Bē", LottieFiles:"Lottie", GitHub:"GH" };
-  $("#socialsFoot").innerHTML = SOCIALS.map(([n,,u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener" aria-label="${esc((AB[n] && AB[n] !== n) ? AB[n] + " – " + n : n)}" data-n="${esc(n)}">${esc(AB[n] || n)}</a></li>`).join("");
+  const FOOT = [["LinkedIn","https://www.linkedin.com/in/tomfabreg/"],["Instagram","https://www.instagram.com/tomfabre/"],["Binōme","https://binome.xyz"]];
+  $("#socialsFoot").innerHTML = FOOT.map(([n,u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)} <span aria-hidden="true">↗</span></a></li>`).join("");
 }
 
 /* ---------- hide chat near footer ---------- */
@@ -691,6 +697,7 @@ function applyLang(){
   $$("[data-i]").forEach(el => { if (t[el.dataset.i] != null) el.textContent = t[el.dataset.i]; });
   $$('a[href$="cv-alvaro-fabre.pdf"], a[href$="cv-alvaro-fabre-en.pdf"], a[href$="cv-alvaro-fabre-fr.pdf"]').forEach(a => a.setAttribute("href", (PATHS ? "/" : "") + cvFile(lang)));
   $$("[data-aria]").forEach(el => el.setAttribute("aria-label", t[el.dataset.aria]));
+  $$("[data-ph]").forEach(el => { el.placeholder = t[el.dataset.ph] || ""; });
   { const lb = $("#langBtn"); if (lb) lb.setAttribute("aria-label", document.documentElement.lang.slice(0,2).toUpperCase() + " – " + t.lang_label); }   // accessible name contains the visible text (WCAG 2.5.3)
   // project meta labels
   t.role_l2 = t.role_l2 || ({es:"Rol",en:"Role",fr:"Rôle"})[lang];
@@ -788,7 +795,7 @@ function animateStats(){
 buildBoard(); newGame(); wireGame();
 applyTheme(); wireTheme(); wireLang(); wireMenu(); wireForm(); wireCopy(); 
 (function(){const h=document.querySelector("header.top");if(h){const set=()=>document.documentElement.style.setProperty("--hh",h.offsetHeight+"px");set();new ResizeObserver(set).observe(h);}})();
-applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); wireStickers(); wireHero(); wireQF();
+applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); wireStickers(); wireHero(); wireQF(); wireBio2();
 
 /* animated contact cards: a soft blob follows the pointer with easing (desktop mouse only) */
 (function(){

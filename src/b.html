@@ -138,9 +138,8 @@
       <div class="bi-main">
         <p class="bi-eyebrow" data-i="bi_eyebrow"></p>
         <h2 class="bi-h" data-i="bi_h"></h2>
-        <p data-i="bi_p1"></p>
-        <p data-i="bi_p2"></p>
         <p class="bi-name" data-i="bi_name"></p>
+        <div class="bi-ps" id="biPs"></div>
         <div class="bio-foot"><a class="btn solid" href="cv-alvaro-fabre.pdf" target="_blank" rel="noopener" data-i="cv"></a><a class="btn" href="https://binome.xyz" target="_blank" rel="noopener">Binōme Studio <span class="arr" aria-hidden="true">↗</span></a></div>
         <ul class="socials" id="socials" data-aria="bi_links"></ul>
       </div>
@@ -152,31 +151,46 @@
     </div>
   </section>
 
-  <section class="quote-sec reveal"><blockquote><p data-i="ab_quote"></p></blockquote></section>
-
-  <section class="bento-sec">
-    <div class="sec-head reveal"><h2 data-i="bt_h"></h2><p class="rh" data-i="bt_p"></p></div>
-    <div class="bento reveal" id="bento"></div>
+  <!-- 02 · bento personal (cities, Spotify, cooking, street, choir). Assets: see BIO_ASSETS in c2b.js -->
+  <section class="bento-sec bx-sec" aria-labelledby="bxH">
+    <div class="sec-head reveal"><h2 id="bxH" data-i="bx_h"></h2><p class="rh" data-i="bx_p"></p></div>
+    <div class="bx-bento reveal" id="bxBento"></div>
   </section>
 
+  <!-- 03 · pequeñas obsesiones (carousel, no autoplay) -->
+  <section class="ob-sec" aria-labelledby="obH">
+    <div class="sec-head reveal"><h2 id="obH" data-i="ob_h"></h2><p class="rh" data-i="ob_p"></p></div>
+    <div class="ob reveal" id="ob" role="group" aria-roledescription="carousel" data-aria="ob_h"></div>
+  </section>
+
+  <!-- 04 · trayectoria + 05 · herramientas -->
   <section style="padding-top:0">
     <div class="worked reveal">
-      <div><h2 data-i="worked_h"></h2><p class="worked-p" data-i="worked_p"></p></div>
+      <div><h2 data-i="worked_h"></h2><div class="worked-p" id="workedP"></div></div>
       <ul class="worked-list" id="worked"></ul>
     </div>
 
     <div class="tools-h reveal">
-      <div><h2 data-i="dos_h"></h2><p class="p" data-i="dos_p"></p></div>
-      <ul class="dos reveal-x" id="dos"></ul>
-    </div>
-
-    <div class="tools-h reveal">
-      <div><h2 data-i="tools_h"></h2><p class="p" data-i="tools_p"></p></div>
-      <ul class="tools-grid" id="tools"></ul>
+      <div><h2 data-i="tools_h"></h2><div class="p" id="toolsP"></div></div>
+      <div class="tools-groups" id="tools"></div>
     </div>
   </section>
 
-  <section id="gamesec">
+  <!-- 06 · juego de memoria -->
+  <section class="mm-sec" id="memorysec" aria-labelledby="mmH">
+    <div class="sec-head reveal"><h2 id="mmH" data-i="mm_h"></h2><p class="rh" data-i="mm_p"></p></div>
+    <div class="mm reveal" id="mm"></div>
+  </section>
+
+  <!-- 07 · cierre -->
+  <section class="bx-close reveal" aria-labelledby="clH">
+    <h2 id="clH" data-i="cl_h"></h2>
+    <p data-i="cl_p"></p>
+    <p><button class="btn cta solid" type="button" data-open-form data-ev="primary_cta_click" data-place="bio_close"><span data-i="cl_cta"></span><span class="arr" aria-hidden="true">→</span></button></p>
+  </section>
+
+  <!-- Hundir la flota: kept intact, hidden in Bio until the separate task that moves it to Home (after the "Un poco más sobre mí" section) -->
+  <section id="gamesec" hidden data-game-home-pending>
     <div class="sec-head reveal"><h2 data-i="game_h"></h2><p class="rh" data-i="game_p"></p></div>
     <div class="game-wrap">
       <div class="board reveal" id="board" role="group" data-aria="game_h"></div>
@@ -199,18 +213,20 @@
       <span class="hm-b" aria-hidden="true"><span class="ln" data-ti="ct_b1"></span> <span class="ln l2" data-ti="ct_b2"></span></span>
     </button></h1>
     <span class="sr-only" id="ctHint" data-i="hm_hint"></span>
-        <div class="mail">
+      </section>
+  <section class="ct-body">
+    <p class="contact-lead" data-i="ct_p"></p>
+    <div class="c-actions"><button class="btn cta solid" type="button" data-open-form data-ev="primary_cta_click" data-place="contact_page"><span data-i="ct_client"></span><span class="arr" aria-hidden="true">→</span></button><a class="btn ghost" href="mailto:hey@tomfabre.com" data-ev="email_click" data-place="contact_page"><span data-i="hc_mail"></span> hey@tomfabre.com</a></div>
+    <div class="mail">
       <span style="font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)" data-i="c_l"></span>
+      <p class="ct-direct" data-i="ct_direct"></p>
       <a class="ml cyc" id="mailLink" href="mailto:hey@tomfabre.com">hey@tomfabre.com</a>
       <img class="mail-pop" id="mailPop" alt="" aria-hidden="true" width="240" height="240" decoding="async" data-src="img/hover-mail.gif">
       <span class="copyline"><button id="copy" type="button" data-i="copy"></button><span class="sr" id="copied" role="status" aria-live="polite"></span></span>
     </div>
-  </section>
-  <section class="ct-body">
-    <p class="contact-lead" data-i="hc_p"></p>
-    <div class="c-actions"><button class="btn cta solid" type="button" data-open-form data-ev="primary_cta_click" data-place="contact_page"><span data-i="ct_client"></span><span class="arr" aria-hidden="true">→</span></button><a class="btn ghost" href="mailto:hey@tomfabre.com" data-ev="email_click" data-place="contact_page"><span data-i="hc_mail"></span> hey@tomfabre.com</a></div>
     <div class="cnext"><h2 data-i="cn_h"></h2><ol id="cnext"></ol></div>
   </section>
+  <section class="ct-faq" aria-labelledby="ctFaqH"><h2 id="ctFaqH"></h2><div class="faq" id="ctFaq"></div></section>
 </div></div>
 </main>
 
@@ -218,8 +234,8 @@
   <div class="meta"><span data-i="port_l"></span><span>Madrid 40.4168 N · 3.7038 W</span></div>
   <div class="bigfoot-lead">
     <div>
-      <span class="bigfoot-sub" data-i="foot_lead"></span>
       <h2 class="bigfoot-h" data-i="foot_mega"></h2>
+      <p class="bigfoot-p" data-i="foot_lead"></p>
       <div class="bigfoot-mailrow"><a class="bigfoot-mail cyc" href="mailto:hey@tomfabre.com" aria-label="hey@tomfabre.com">hey@tomfabre.com</a><button type="button" class="copy-txt" id="copyFoot" data-i="copy"></button><span class="sr-only" role="status" id="copiedFoot"></span></div>
     </div>
     <a href="#contact" class="orb" data-open-form data-quick data-ev="primary_cta_click" data-place="footer_orb" aria-label="Contact">
@@ -229,7 +245,12 @@
   </div>
   <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marq"></div></div>
 </div></section>
-<footer><div class="wrap foot-grid"><nav class="foot-nav" data-aria="nav_label"><a href="#projects" data-i="n_work"></a><a href="#services" data-i="n_services"></a><a href="#bio" data-i="n_bio"></a><a href="#contact" data-i="n_contact"></a></nav><ul class="socials-foot" id="socialsFoot"></ul><div class="foot-bottom"><span data-wi="w_copy" class="wup foot-copy" tabindex="0">© 2026 · Tom Fabre / Álvaro Fabre</span><div class="foot-legal"><a id="legalLink" href="/legal/" data-i="lg_legal"></a><button type="button" data-cookie-settings data-i="lg_cookies"></button></div></div></div></footer>
+<footer><div class="wrap foot-grid">
+  <nav class="foot-col foot-nav" aria-labelledby="fExp"><p class="foot-h" id="fExp" data-i="foot_explore"></p><ul><li><a href="#projects" data-i="n_work"></a></li><li><a href="#services" data-i="n_services"></a></li><li><a href="#bio" data-i="n_bio"></a></li><li><a href="#contact" data-i="n_contact"></a></li></ul></nav>
+  <div class="foot-col"><p class="foot-h" id="fElse" data-i="foot_else"></p><ul class="socials-foot" id="socialsFoot" aria-labelledby="fElse"></ul></div>
+  <p class="foot-sig" data-i="foot_sig"></p>
+  <div class="foot-bottom"><span data-wi="w_copy" class="wup foot-copy" tabindex="0" data-i="foot_legal"></span><div class="foot-legal"><a id="legalLink" href="/legal/" data-i="lg_legal"></a><button type="button" data-cookie-settings data-i="lg_cookies"></button></div></div>
+</div></footer>
 
 <button class="chatbtn" id="chatbtn" type="button" aria-expanded="false" aria-controls="chat" data-aria="chat_btn"><span class="spark" aria-hidden="true"></span><span class="cl" data-i="chat_btn"></span></button>
 <div class="chat" id="chat" role="dialog" aria-labelledby="chatT" aria-describedby="chatSub">
@@ -270,15 +291,21 @@
   <button class="dx" type="button" id="gameClose" aria-label="Close">×</button>
 </dialog>
 
+<dialog id="lbDlg" class="lb" aria-label="Gallery">
+  <button class="dx" type="button" id="lbClose" data-aria="lb_close"><span aria-hidden="true">×</span></button>
+  <figure class="lb-fig"><div class="lb-media" id="lbMedia"></div><figcaption id="lbCap" aria-live="polite"></figcaption></figure>
+  <div class="lb-ctl"><button type="button" id="lbPrev" data-aria="lb_prev"><span aria-hidden="true">←</span></button><span class="lb-n" id="lbN"></span><button type="button" id="lbNext" data-aria="lb_next"><span aria-hidden="true">→</span></button></div>
+</dialog>
+
 <dialog id="dlg" aria-labelledby="dlgT">
   <button class="dx" type="button" id="dclose" data-aria="close">×</button>
   <h2 id="dlgT" data-i="d_h"></h2>
   <p class="sub" data-i="d_sub"></p>
   <form id="form" novalidate toolname="draft_contact_message" tooldescription="Prepare a contact message to Tom Fabre about a project, collaboration or job. It produces a draft for the visitor to send by email; nothing is sent automatically.">
-    <div class="f"><label for="fn" data-i="d_name"></label><input id="fn" name="name" toolparamdescription="Sender full name." autocomplete="name" required></div>
-    <div class="f"><label for="fe" data-i="d_mail"></label><input id="fe" name="email" toolparamdescription="Sender email address." type="email" autocomplete="email" required></div>
+    <div class="f"><label for="fn" data-i="d_name"></label><input id="fn" name="name" data-ph="ph_name" toolparamdescription="Sender full name." autocomplete="name" required></div>
+    <div class="f"><label for="fe" data-i="d_mail"></label><input id="fe" name="email" data-ph="ph_mail" toolparamdescription="Sender email address." type="email" autocomplete="email" required></div>
     <div class="f f-extra"><label for="ft" data-i="d_topic"></label><select id="ft" name="topic" toolparamdescription="What the message is about."></select></div>
-    <div class="f"><label for="fm" data-i="d_msg"></label><textarea id="fm" name="message" aria-describedby="fmh" toolparamdescription="Message for Tom." required></textarea><span class="f-hint" id="fmh" data-i="d_msg_h"></span></div>
+    <div class="f"><label for="fm" data-i="d_msg"></label><textarea id="fm" name="message" data-ph="ph_msg" aria-describedby="fmh" toolparamdescription="Message for Tom." required></textarea><span class="f-hint" id="fmh" data-i="d_msg_h"></span></div>
     <div class="f f-extra"><label for="fb" data-i="d_budget"></label><select id="fb" name="budget" toolparamdescription="Optional budget band. Never required."></select></div>
     <div class="f"><label for="fq" id="fql"></label><input id="fq" name="human" inputmode="numeric" pattern="[0-9]*" autocomplete="off" required></div>
     <input type="text" name="_gotcha" id="fh" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
@@ -288,7 +315,7 @@
     <label class="f-check" for="fc"><input type="checkbox" id="fc" name="consent" required><span data-i="d_consent"></span></label>
     <button class="btn solid" type="submit" style="width:100%;justify-content:center"><span data-i="d_send"></span><span class="arr" aria-hidden="true">→</span></button>
   </form>
-  <div class="d-res" id="dsent" hidden><p style="font-size:var(--lead,1.15rem)" role="status" data-i="d_sent"></p></div>
+  <div class="d-res" id="dsent" hidden><p class="d-res-t" data-i="d_sent_t"></p><p class="d-res-b" data-i="d_sent_b"></p></div>
   <div class="d-res" id="dres" hidden>
     <p style="color:var(--muted);font-size:var(--small);margin-bottom:var(--s5)" data-i="d_note"></p>
     <div style="display:flex;flex-wrap:wrap;gap:.6rem"><a class="btn solid" id="mailto" href="#" target="_blank" rel="noopener" data-i="d_open"></a><button class="btn" type="button" id="dcopy" data-i="d_copy"></button></div>
