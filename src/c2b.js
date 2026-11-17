@@ -10,7 +10,7 @@
    No stock photos. Restaurants: add only validated {name, url}.
    ============================================================ */
 const BIO_ASSETS = {
-  cities: ["cucuta", "san-cristobal", "merida", "santiago", "aix-en-provence", "paris", "madrid"].map(k => ({ k, img: k === "paris" ? null : "img/bio/city-" + k + ".webp" })),   // paris: pending   // 3:2, 7 photos
+  cities: [["cucuta", "cúcuta_co", "Cúcuta, Colombia"], ["san-cristobal", "san cristóbal_ve", "San Cristóbal, Venezuela"], ["merida", "mérida_ve", "Mérida, Venezuela"], ["santiago", "santiago_cl", "Santiago, Chile"], ["aix-en-provence", "aix-en-provence_fr", "Aix-en-Provence, France"], ["madrid", "madrid_es", "Madrid, España"]].map(([k, tag, name]) => ({ k, tag, name, img: "img/bio/city-" + k + ".webp" })),   // 3:2, 6 photos; tag = lo único que se ve sobre la foto
   street: [   // 1:1, 8 photos (alt per language: descriptive of what is visible)
     ["Retrato a bolígrafo sobre una página de atlas anatómico antiguo", "Pen portrait drawn over a page of an old anatomy atlas", "Portrait au stylo sur une page d'un ancien atlas d'anatomie"],
     ["Pared cilíndrica de radios y casetes antiguos", "Cylindrical wall of old radios and cassette players", "Mur cylindrique de vieilles radios et de lecteurs de cassettes"],
@@ -37,7 +37,7 @@ function bxMedia(item, label, alt, kind){
 /* ---------- galleries (cities 3:2, street 1:1) ---------- */
 function bxGallery(kind){
   const t = L(), u = t.bx_ui;
-  if (kind === "city") return t.bx_city.items.map(([n, cap], i) => ({ img: (BIO_ASSETS.cities[i] || {}).img, label: n, alt: n, cap: n + " · " + cap, ratio: "3-2", kind: "city-" + ((BIO_ASSETS.cities[i] || {}).k || i) }));
+  if (kind === "city") return BIO_ASSETS.cities.map(c => ({ img: c.img, label: c.name, alt: c.name, cap: c.tag, ratio: "3-2", kind: "city-" + c.k }));
   if (kind === "kitchen") return BIO_ASSETS.kitchen.map((k, i) => ({ img: k.img, label: t.bx_ck.home[0] + " " + (i + 1), alt: k.alt || t.bx_ck.home[0], cap: t.bx_ck.home[0], ratio: "1-1", kind: "kitchen-" + (i + 1) }));
   return BIO_ASSETS.street.map((s, i) => ({ img: s.img, label: String(i + 1).padStart(2, "0"), alt: (s.alt && typeof s.alt === "object" ? s.alt[lang] : s.alt) || (t.bx_st.h + " " + (i + 1)), cap: s.note || t.bx_st.cap || "", ratio: "1-1", kind: "street-" + (i + 1) }));
 }
