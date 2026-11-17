@@ -146,3 +146,8 @@ Object.assign(T.fr, { bx_sp: Object.assign({}, T.fr.bx_sp, { h: "Bande-son.", p:
 Object.assign(T.es, { bx_st: Object.assign({}, T.es.bx_st, { h: "Lo que pasa desapercibido", sub: "", p: "" }) });
 Object.assign(T.en, { bx_st: Object.assign({}, T.en.bx_st, { h: "What goes unnoticed", sub: "", p: "" }) });
 Object.assign(T.fr, { bx_st: Object.assign({}, T.fr.bx_st, { h: "Ce qui passe inaperçu", sub: "", p: "" }) });
+
+/* Contacto: orden y textos de la página (descripción · email · copiar email · CTA principal · CTA secundario) */
+Object.assign(T.es, { ct_p: "Una marca, una web, un producto digital o una idea que todavía está tomando forma.\nCuéntame qué tienes en mente y vemos por dónde empezar.", ct_cta: "Cuéntame tu proyecto", ct_mail: "Escríbeme por email", copy: "Copiar email", copied: "Email copiado" });
+Object.assign(T.en, { ct_p: "A brand, a website, a digital product or an idea that is still taking shape.\nTell me what you have in mind and we'll work out where to start.", ct_cta: "Tell me about your project", ct_mail: "Email me", copy: "Copy email", copied: "Email copied" });
+Object.assign(T.fr, { ct_p: "Une marque, un site, un produit digital ou une idée qui prend encore forme.\nDis-moi ce que tu as en tête et on voit par où commencer.", ct_cta: "Raconte-moi ton projet", ct_mail: "Écris-moi par e-mail", copy: "Copier l'e-mail", copied: "E-mail copié" });
