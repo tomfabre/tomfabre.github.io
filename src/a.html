@@ -1515,6 +1515,19 @@ dialog#prizeDlg:focus{outline:none}
 .bx-sp.is-on .bx-sp-box iframe{height:auto;align-self:stretch;min-height:352px;border-radius:0}
 .bx-an .bx-vc{position:static;box-shadow:none;background:none;padding:0;margin-top:var(--s3)}
 /* bento apaisado: fila 1 = ciudades (8) + anécdotas (4); fila 2 = calle · cocina · banda sonora (4+4+4) */
+.bx-map{width:100%;border-radius:.9rem;background:var(--surface);border:1px solid var(--line);overflow:hidden}
+.bx-map svg{display:block;width:100%;height:auto}
+.bx-map .mp-land{fill:var(--line);stroke:var(--line2);stroke-width:.5;stroke-linejoin:round}
+.bx-map .mp-lead,.bx-map .mp-ring{fill:none;stroke:var(--line2);stroke-width:.5;stroke-dasharray:3 4}
+.bx-map .mp-ring{stroke-dasharray:none}
+.bx-map .mp-box{fill:var(--bg);stroke:var(--line2);stroke-width:.5}
+.bx-map .mp-zoom{font:400 14px var(--font);fill:var(--muted)}
+.bx-map .mp-base{fill:none;stroke:var(--line2);stroke-width:1;stroke-dasharray:3 5;stroke-linecap:round}
+.bx-map .mp-live path{fill:none;stroke:var(--fg);stroke-width:2;stroke-linecap:round}
+.bx-map .mp-n{fill:var(--bg);stroke:var(--fg);stroke-width:1.5;transition:fill .25s}
+.bx-map .mp-n.on{fill:var(--fg)}
+.bx-map .mp-nodes text{font:400 15px var(--font);fill:var(--muted)}
+.bx-map .mp-dot{fill:var(--accent)}
 @media (min-width:60rem){
 .bx-city{grid-column:1/9;grid-row:1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s5);align-items:center}
 .bx-city .bx-hd{align-self:start}
