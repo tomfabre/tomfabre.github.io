@@ -516,8 +516,8 @@ function placeBioSticker(){
   const l1 = ext(sec.querySelector(".hm-a .ln:not(.l2)")), l2 = ext(sec.querySelector(".hm-a .l2")), pp = ext(sec.querySelector(".dh-p"));
   if (!l1 || !l2 || !pp) return;
   const pr = sec.getBoundingClientRect(), rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16, gap = 1.25 * rem;
-  const w = el.offsetWidth, h = el.offsetHeight;
-  let left = Math.max(l2.right, pp.right) + gap - pr.left;
+  const w = el.offsetWidth, h = el.offsetHeight, dx = 80;
+  let left = Math.max(l2.right, pp.right) + gap + dx - pr.left;
   left = Math.min(left, pr.width - w);
   const top = Math.max(l1.bottom, l2.top) + .4 * rem - pr.top;
   el.style.right = "auto"; el.style.left = Math.round(left) + "px"; el.style.top = Math.round(top) + "px";
