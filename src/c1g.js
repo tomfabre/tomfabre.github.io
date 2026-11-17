@@ -236,3 +236,8 @@ Object.assign(T.fr, { bx_ck: Object.assign({}, T.fr.bx_ck, { h: "Il y a toujours
 Object.assign(T.es, { bx_ck: Object.assign({}, T.es.bx_ck, { h: "Comfort Food Club", foods: T.es.bx_ck.foods.concat(["Maracumango", "Chuzopán", "Sancocho", "Sopa de cebolla"]) }) });
 Object.assign(T.en, { bx_ck: Object.assign({}, T.en.bx_ck, { h: "Comfort Food Club", foods: T.en.bx_ck.foods.concat(["Maracumango", "Chuzopán", "Sancocho", "Onion soup"]) }) });
 Object.assign(T.fr, { bx_ck: Object.assign({}, T.fr.bx_ck, { h: "Comfort Food Club", foods: T.fr.bx_ck.foods.concat(["Maracumango", "Chuzopán", "Sancocho", "Soupe à l'oignon"]) }) });
+
+/* ---------- HOME · titular y entradilla del hero ---------- */
+Object.assign(T.es, { hm_a1: "Buenas ideas.", hm_a2: "Bien resueltas.", h_intro: "Diseño marcas, webs y productos digitales. Me involucro desde la primera idea hasta los detalles finales, combinando estrategia, diseño y tecnología." });
+Object.assign(T.en, { hm_a1: "Good ideas.", hm_a2: "Well solved.", h_intro: "I design brands, websites and digital products. I get involved from the first idea to the final details, combining strategy, design and technology." });
+Object.assign(T.fr, { hm_a1: "Bonnes idées.", hm_a2: "Bien résolues.", h_intro: "Je conçois des marques, des sites et des produits numériques. Je m'implique de la première idée jusqu'aux derniers détails, en alliant stratégie, design et technologie." });
