@@ -503,7 +503,24 @@ function wireStickers(){
       el.addEventListener("pointerleave", () => { im.src = ab + still; });
     }
     el.addEventListener("pointerup", end); el.addEventListener("pointercancel", end);
+    el.addEventListener("pointerdown", () => { el.dataset.moved = "1"; });
   });
+  if (!wireStickers.rz) { wireStickers.rz = 1; let t = 0; addEventListener("resize", () => { clearTimeout(t); t = setTimeout(placeBioSticker, 120); }); if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeBioSticker); }
+  placeBioSticker();
+}
+/* BIO hero: el GIF se coloca bajo la 1.ª línea del título, a la derecha de la 2.ª línea y del párrafo, sin taparlos (salvo que el usuario lo arrastre) */
+function placeBioSticker(){
+  const el = $("#stickerBio"); if (!el || el.dataset.moved === "1") return;
+  const sec = el.offsetParent; if (!sec || !sec.offsetWidth || matchMedia("(max-width:40rem)").matches) return;
+  const ext = n => { if (!n) return null; const r = document.createRange(); r.selectNodeContents(n); const b = r.getBoundingClientRect(); return b.width ? b : null; };
+  const l1 = ext(sec.querySelector(".hm-a .ln:not(.l2)")), l2 = ext(sec.querySelector(".hm-a .l2")), pp = ext(sec.querySelector(".dh-p"));
+  if (!l1 || !l2 || !pp) return;
+  const pr = sec.getBoundingClientRect(), rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16, gap = 1.25 * rem;
+  const w = el.offsetWidth, h = el.offsetHeight;
+  let left = Math.max(l2.right, pp.right) + gap - pr.left;
+  left = Math.min(left, pr.width - w);
+  const top = Math.max(l1.bottom, l2.top) + .4 * rem - pr.top;
+  el.style.right = "auto"; el.style.left = Math.round(left) + "px"; el.style.top = Math.round(top) + "px";
 }
 /* hero letters: magnetic stretch, no colour */
 function splitHero(){
@@ -723,7 +740,7 @@ function applyLang(){
   if (route_.page === "services") renderServicesIndex(); if (route_.page === "service") renderServicePage(route_.key);
   armReveal();
   $$("[data-wi]").forEach(el => { el.dataset.w = t[el.dataset.wi] || ""; if (el.classList.contains("wr") || el.classList.contains("wup")) el.classList.add(el.classList.contains("wr") ? "wr" : "wup"); });
-  splitHero(); renderStickers(); applyWhispers(); wireChars();
+  splitHero(); renderStickers(); placeBioSticker(); applyWhispers(); wireChars();
   // dialog topic select
   { const ft = $("#ft"), fb = $("#fb"), tv = ft.selectedIndex, bv = fb ? fb.selectedIndex : 0;
     ft.innerHTML = t.topics.map(x => `<option>${esc(x)}</option>`).join(""); if (tv > 0 && tv < t.topics.length) ft.selectedIndex = tv;
