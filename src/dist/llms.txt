@@ -1,0 +1,35 @@
+# Tom Fabre
+
+> Tom Fabre is a product and brand designer based in Madrid and co-founder of Binōme Studio. He designs brands, websites and digital products (branding, web design, UX/UI, strategy) with more than ten years of experience between Latin America and Europe. He works in Spanish, French and English and is available for new projects.
+
+The portfolio has real URLs per language: Spanish at the root, English under /en/ and French under /fr/. Each project below links to its detail page. Full text of every project in all three languages is in llms-full.txt; structured data is in portfolio.json.
+
+## About
+
+- [Bio](https://tomfabre.com/en/bio/): Background, way of working, quick facts and personal links.
+- [Contact](https://tomfabre.com/en/contact/): Email hey@tomfabre.com, contact form and profile links.
+- [CV (PDF, English)](https://tomfabre.com/cv-alvaro-fabre-en.pdf): Curriculum vitae. Also available in [Spanish](https://tomfabre.com/cv-alvaro-fabre.pdf) and [French](https://tomfabre.com/cv-alvaro-fabre-fr.pdf).
+
+## Projects
+
+- [Contazara](https://tomfabre.com/en/projects/contazara/): Branding · Web · Digital. Rebranding, website, and digital communications for Contazara. A refreshed identity that keeps what makes the brand recognisable.
+- [À2pas](https://tomfabre.com/en/projects/a2pas/): Product Design · UX/UI · Branding. A participatory platform connecting audiences, artists and venues to make new performances possible.
+- [HappyLife](https://tomfabre.com/en/projects/happylife/): Product Design · UX/UI. An app for discovering activities, meeting people, and making plans away from your phone. Designed to make finding good company feel easy.
+- [Binōme Studio](https://tomfabre.com/en/projects/binome/): Branding · Strategy · Web. The story of Binōme, an independent studio I co-founded to bring branding, digital design, and strategy together. From creating our own identity to working on real projects.
+- [Yaypegs](https://tomfabre.com/en/projects/yaypegs/): Art Direction · Motion Design. A universe of digital characters with thousands of possible combinations. The challenge: design an animation system that could bring them to life without losing their personality.
+- [360estudio](https://tomfabre.com/en/projects/360estudio/): Branding · Web design · Art direction. Branding and web design for 360estudio, an architecture studio specialising in healthcare spaces. An identity that made its way into the offices, too.
+- [Mobile Experiences](https://tomfabre.com/en/projects/mobile-experiences/): Product Design · UX/UI · Mobile Apps. From designing complete apps from scratch to helping evolve products with millions of downloads. Three mobile design experiences across iOS and Android.
+
+## Services
+
+- [Services overview](https://tomfabre.com/en/services/): Three ways to work together.
+- [Branding & identity](https://tomfabre.com/en/services/branding/): A brand with something to say. I create and renew brand identities. People recognize you, and they understand what makes you different.
+- [Web design & development](https://tomfabre.com/en/services/web-design/): A good website should do more than look good. I design and build websites that are clear, fast and easy to use. Visitors know what to do next.
+- [Digital product, UX/UI & digital strategy](https://tomfabre.com/en/services/ux-ui-design/): Less friction. More purpose. I design and improve digital products so people understand them and use them easily. Business goals stay in focus.
+
+## Optional
+
+- [Full content](https://tomfabre.com/llms-full.txt): Complete portfolio text in Spanish, English and French.
+- [Portfolio data (JSON)](https://tomfabre.com/portfolio.json): Projects, services and profile links as structured data.
+- [AI resource catalog](https://tomfabre.com/.well-known/ard.json): Machine-readable index of resources for agents.
+- [Binōme Studio](https://binome.xyz): The design studio Álvaro co-founded in Madrid.
