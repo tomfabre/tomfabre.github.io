@@ -808,3 +808,623 @@ Object.assign(SEO.fr, {
  "contact_t": "Contact | Tom Fabre — Branding, web et UX/UI",
  "contact_d": "Une marque, un site ou un produit digital en tête ? Écris-moi et voyons comment avancer ensemble. Design et développement depuis Madrid."
 });
+
+/* LOTE 2 · Bio v2 (7 blocks) */
+Object.assign(T.es, {
+ "bio_a1": "Sin fórmulas.",
+ "bio_a2": "Con intención.",
+ "bio_p": "He pasado por unas cuantas ciudades, disciplinas y buenas ideas. Algunas salieron como esperaba. Otras me enseñaron mucho más.",
+ "bi_eyebrow": "",
+ "bi_h": "Hola, soy Tom.",
+ "bi_name": "Mi nombre es Álvaro Fabre, pero casi todo el mundo me llama Tom.",
+ "bi_ps": [
+  "Nací en Colombia, crecí en Venezuela y después viví en Chile y Francia antes de llegar a Madrid.",
+  "Por el camino he trabajado en cosas bastante distintas: diseño gráfico, publicidad, tecnología, aplicaciones móviles, marcas y productos digitales.",
+  "No fue una trayectoria especialmente recta, pero cada etapa me enseñó algo que todavía utilizo.",
+  "Hoy diseño marcas, webs y productos digitales. Me gusta entender cómo funcionan las cosas, hacer preguntas y encontrar maneras de mejorarlas.",
+  "Y si hay algo que he aprendido, es que casi siempre merece la pena mirar un problema desde más de un ángulo."
+ ],
+ "qf": [
+  [
+   "+10 años",
+   "Entre diseño, tecnología y producto digital."
+  ],
+  [
+   "3 idiomas",
+   "Español, francés e inglés. A veces en la misma conversación."
+  ],
+  [
+   "Varias ciudades",
+   "Cúcuta, San Cristóbal, Mérida, Santiago, Aix-en-Provence, París y Madrid."
+  ],
+  [
+   "Una mezcla particular",
+   "Diseño, tecnología, música, cocina y curiosidad por casi todo."
+  ]
+ ],
+ "bx_h": "Fuera de la pantalla.",
+ "bx_p": "No todo son píxeles. También hay música, ciudades, recetas, fotografías y unas cuantas historias que no tenían nada que ver con el diseño. O eso pensaba.",
+ "bx_city": {
+  "h": "De aquí, de allá y de unos cuantos sitios más.",
+  "p": "Hay lugares donde nací, otros donde crecí y algunos que terminé llamando casa. Todos dejaron algo.",
+  "items": [
+   [
+    "Cúcuta",
+    "Donde empezó todo."
+   ],
+   [
+    "San Cristóbal",
+    "Donde crecí."
+   ],
+   [
+    "Mérida",
+    "Mis años de universidad."
+   ],
+   [
+    "Santiago",
+    "Una vida nueva, muchas primeras veces."
+   ],
+   [
+    "Aix-en-Provence",
+    "Un idioma nuevo y muchas historias."
+   ],
+   [
+    "París",
+    "Una ciudad a la que siempre termino volviendo."
+   ],
+   [
+    "Madrid",
+    "Otro capítulo de esta historia."
+   ]
+  ]
+ },
+ "bx_sp": {
+  "h": "Mi vida tiene banda sonora.",
+  "p": "Hay canciones que me llevan a una ciudad, a una persona o a un momento concreto. Otras simplemente me hacen querer subir el volumen.",
+  "name": "Un poco de todo. Como yo."
+ },
+ "bx_ck": {
+  "h": "A la mesa.",
+  "p": "Me gusta cocinar. Mucho más cuando hay alguien con quien compartirlo.",
+  "home": [
+   "En mi cocina",
+   "Platos, experimentos y alguna receta que salió mejor de lo esperado."
+  ],
+  "out": [
+   "Fuera de casa",
+   "Restaurantes y lugares que recomendaría sin pensarlo demasiado."
+  ]
+ },
+ "bx_st": {
+  "h": "Nunca vuelvo por la misma calle.",
+  "sub": "Bueno, casi nunca.",
+  "p": "Me gusta caminar, observar y descubrir cosas que normalmente pasan desapercibidas. Una fachada, un reflejo, una escena cotidiana o una luz que aparece durante unos segundos."
+ },
+ "bx_ch": {
+  "h": "Cosas que no estaban en el plan.",
+  "q": "Me apunté a un coro en Francia. Un día terminamos participando en una miniserie. No estaba en mis planes, pero tampoco me quejo."
+ },
+ "ob_h": "Pequeñas obsesiones.",
+ "ob_p": "Cosas a las que presto más atención de la necesaria.",
+ "ob_items": [
+  [
+   "Una buena tipografía",
+   "A veces paso más tiempo mirando letras del que debería."
+  ],
+  [
+   "Las ciudades de noche",
+   "Las mismas calles, pero con otra personalidad."
+  ],
+  [
+   "Los documentales",
+   "Empiezo con uno. Termino investigando otras cinco cosas."
+  ],
+  [
+   "Los objetos bien diseñados",
+   "Me encantan las cosas que no necesitan instrucciones."
+  ],
+  [
+   "Las conversaciones inesperadas",
+   "Las buenas historias casi nunca empiezan como uno espera."
+  ]
+ ],
+ "worked_h": "De un sitio a otro. Y de una disciplina a otra.",
+ "ca_ps": [
+  "Mi carrera empezó bastante lejos del diseño de interfaces.",
+  "Trabajé en publicidad y diseño gráfico. Después llegaron las aplicaciones para televisión, el modelado 3D, las experiencias móviles y el producto digital.",
+  "Con el tiempo, fui encontrando una manera de trabajar en la que diseño y tecnología no tenían por qué ir por separado.",
+  "Hoy sigo combinando disciplinas. Quizá porque nunca he sido muy bueno quedándome en una sola."
+ ],
+ "tools_h": "Mi caja de herramientas.",
+ "to_ps": [
+  "Las herramientas cambian. Las buenas preguntas, no tanto.",
+  "Figma para pensar y diseñar. Webflow y código para construir. Y otras herramientas para investigar, probar ideas y organizar proyectos.",
+  "No tengo especial interés en utilizar una herramienta solo porque esté de moda. Prefiero elegir la que tenga más sentido para lo que estamos haciendo."
+ ],
+ "mm_h": "¿Nos conocemos?",
+ "mm_p": "A ver cuánto tardas en encontrar las parejas. Cada una esconde una pequeña historia sobre mí.",
+ "mm_pairs": [
+  [
+   "De un lado al otro",
+   "He vivido en Latinoamérica y Europa. Me cuesta elegir un solo lugar al que llamaría casa."
+  ],
+  [
+   "Una historia musical",
+   "Canté en un coro en Aix-en-Provence que participó en una miniserie francesa."
+  ],
+  [
+   "El camino de vuelta",
+   "Intento no regresar por la misma calle por la que he ido."
+  ],
+  [
+   "Siempre hay sitio",
+   "Me encanta cocinar, especialmente si tengo con quién compartir la comida."
+  ],
+  [
+   "De la TV al móvil",
+   "Pasé de diseñar aplicaciones para televisión a trabajar en productos móviles y digitales."
+  ],
+  [
+   "Una cosa lleva a otra",
+   "Me gustan los documentales. A veces termino investigando un tema que no tenía nada que ver."
+  ]
+ ],
+ "mm_win_h": "¡Ya nos conocemos un poco más! 🎉",
+ "mm_win_ps": [
+  "Seis parejas, unas cuantas historias y algún dato que probablemente no necesitabas saber sobre mí.",
+  "Nada mal para una primera partida."
+ ],
+ "mm_again": "Jugar otra vez",
+ "cl_h": "¿Y ahora qué?",
+ "cl_p": "Ya sabes un poco más de mí. Si has llegado hasta aquí, quizá tenemos algo de qué hablar. Puede ser una marca, una web, un producto digital o simplemente una idea que todavía no tienes muy clara.",
+ "cl_cta": "Cuéntame qué tienes entre manos.",
+ "lb_close": "Cerrar galería",
+ "lb_prev": "Foto anterior",
+ "lb_next": "Foto siguiente",
+ "bx_ui": {
+  "ph": "Foto pendiente",
+  "cities_open": "Abrir galería de ciudades",
+  "street_open": "Ver foto",
+  "sp_pending": "Playlist pendiente de añadir",
+  "sp_load": "Cargar reproductor",
+  "sp_open": "Abrir en Spotify",
+  "sp_note": "El reproductor de Spotify solo se carga cuando lo activas.",
+  "places_pending": "Lugares por confirmar",
+  "lb_count": "{n} de {t}",
+  "ob_prev": "Anterior",
+  "ob_next": "Siguiente",
+  "mm_tries": "Intentos",
+  "mm_pairs": "Parejas",
+  "mm_reset": "Reiniciar",
+  "mm_card": "Carta",
+  "mm_down": "boca abajo",
+  "mm_ok": "¡Pareja!",
+  "mm_no": "No coinciden.",
+  "mm_found": "Curiosidades descubiertas",
+  "mm_board": "Tablero de cartas",
+  "street_pending": "Foto de calle pendiente",
+  "kitchen_pending": "Foto de cocina pendiente",
+  "tg": [
+   "Diseño y prototipado",
+   "Desarrollo",
+   "Producto y colaboración",
+   "Experimentación"
+  ]
+ }
+});
+Object.assign(SEO.es, {
+ "bio_t": "Sobre mí | Tom Fabre — Diseñador digital en Madrid",
+ "bio_d": "Soy Álvaro, aunque todos me llaman Tom. De Latinoamérica a Europa, llevo más de diez años entre diseño, tecnología, marcas y productos digitales."
+});
+Object.assign(T.en, {
+ "bio_a1": "No formulas.",
+ "bio_a2": "Just intention.",
+ "bio_p": "I've lived in a few cities, explored different disciplines and followed quite a few good ideas. Some worked out as planned. Others taught me a lot more.",
+ "bi_eyebrow": "",
+ "bi_h": "Hey, I'm Tom.",
+ "bi_name": "My name's Álvaro Fabre, but pretty much everyone calls me Tom.",
+ "bi_ps": [
+  "I was born in Colombia, grew up in Venezuela, then lived in Chile and France before moving to Madrid.",
+  "Along the way, I've worked in a mix of fields: graphic design, advertising, technology, mobile apps, branding and digital products.",
+  "It hasn't exactly been a straight line, but every stage taught me something I still use.",
+  "These days I design brands, websites and digital products. I like understanding how things work, asking questions and finding ways to make them better.",
+  "If there's one thing I've learned, it's that most problems are worth looking at from more than one angle."
+ ],
+ "qf": [
+  [
+   "10+ years",
+   "Across design, technology and digital products."
+  ],
+  [
+   "3 languages",
+   "Spanish, French and English. Sometimes in the same conversation."
+  ],
+  [
+   "A few cities",
+   "Cúcuta, San Cristóbal, Mérida, Santiago, Aix-en-Provence, Paris and Madrid."
+  ],
+  [
+   "A curious mix",
+   "Design, technology, music, cooking and an interest in pretty much everything."
+  ]
+ ],
+ "bx_h": "Away from the screen.",
+ "bx_p": "There's more to life than pixels. There's music, cities, recipes, photographs and a few stories that had nothing to do with design. Or so I thought.",
+ "bx_city": {
+  "h": "A bit from here. A bit from everywhere.",
+  "p": "Some places are where I was born, others where I grew up, and a few became home along the way. Each left something with me.",
+  "items": [
+   [
+    "Cúcuta",
+    "Where it all started."
+   ],
+   [
+    "San Cristóbal",
+    "Where I grew up."
+   ],
+   [
+    "Mérida",
+    "My university years."
+   ],
+   [
+    "Santiago",
+    "A fresh start and lots of firsts."
+   ],
+   [
+    "Aix-en-Provence",
+    "A new language and plenty of stories."
+   ],
+   [
+    "Paris",
+    "A city I always find my way back to."
+   ],
+   [
+    "Madrid",
+    "Another chapter in the story."
+   ]
+  ]
+ },
+ "bx_sp": {
+  "h": "Life has a soundtrack.",
+  "p": "Some songs take me back to a city, a person or a particular moment. Others just make me turn up the volume.",
+  "name": "A little bit of everything. Like me."
+ },
+ "bx_ck": {
+  "h": "Around the table.",
+  "p": "I love cooking. Even more when there's someone to share it with.",
+  "home": [
+   "In my kitchen",
+   "Food experiments and a few dishes that turned out better than expected."
+  ],
+  "out": [
+   "Eating out",
+   "Restaurants and places I'd happily recommend."
+  ]
+ },
+ "bx_st": {
+  "h": "I never take the same street home.",
+  "sub": "Well, almost never.",
+  "p": "I like walking, observing and noticing things that are easy to miss: a building front, a reflection, an everyday scene or a moment of light that lasts a few seconds."
+ },
+ "bx_ch": {
+  "h": "Not exactly part of the plan.",
+  "q": "I joined a choir in France. One day, we ended up appearing in a TV miniseries. Not what I expected, but I'm not complaining."
+ },
+ "ob_h": "Little obsessions.",
+ "ob_p": "Things I probably pay more attention to than I should.",
+ "ob_items": [
+  [
+   "Good typography",
+   "Sometimes I spend way too long looking at letters."
+  ],
+  [
+   "Cities at night",
+   "The same streets, with a completely different personality."
+  ],
+  [
+   "Documentaries",
+   "I start with one and end up researching five other things."
+  ],
+  [
+   "Well-designed objects",
+   "I love things that don't need an instruction manual."
+  ],
+  [
+   "Unexpected conversations",
+   "The best stories rarely start the way you expect."
+  ]
+ ],
+ "worked_h": "From place to place. From one discipline to another.",
+ "ca_ps": [
+  "My career started a long way from interface design.",
+  "I worked in advertising and graphic design. Then came TV apps, 3D modelling, mobile experiences and digital products.",
+  "Over time, I found my own way of working, where design and technology didn't have to live in separate worlds.",
+  "I still mix disciplines today. Maybe because I've never been particularly good at staying in just one lane."
+ ],
+ "tools_h": "My toolbox.",
+ "to_ps": [
+  "Tools change. Good questions don't change quite as much.",
+  "Figma for thinking and designing. Webflow and code for building. And other tools for researching, testing ideas and organising projects.",
+  "I'm not interested in using a tool just because it's trendy. I'd rather pick what makes sense for the job."
+ ],
+ "mm_h": "Do we know each other yet?",
+ "mm_p": "See how quickly you can find the matching pairs. Each one reveals a little story about me.",
+ "mm_pairs": [
+  [
+   "A bit of everywhere",
+   "I've lived in Latin America and Europe. Picking just one place to call home is tricky."
+  ],
+  [
+   "A musical detour",
+   "I sang in a choir in Aix-en-Provence that took part in a French TV miniseries."
+  ],
+  [
+   "The way back",
+   "I try not to walk home along the same street I took on the way out."
+  ],
+  [
+   "Always room at the table",
+   "I love cooking, especially when there's someone to share the meal with."
+  ],
+  [
+   "From TV to mobile",
+   "I went from designing TV apps to working on mobile and digital products."
+  ],
+  [
+   "One thing leads to another",
+   "I love documentaries. Sometimes I end up researching something completely unrelated."
+  ]
+ ],
+ "mm_win_h": "Now you know me a little better! 🎉",
+ "mm_win_ps": [
+  "Six pairs, a few stories and some things you probably didn't need to know about me.",
+  "Not bad for a first round."
+ ],
+ "mm_again": "Play again",
+ "cl_h": "What now?",
+ "cl_p": "Now you know a little more about me. If you've made it this far, maybe we have something to talk about: a brand, a website, a digital product or an idea that's still taking shape.",
+ "cl_cta": "Tell me what you have in mind.",
+ "lb_close": "Close gallery",
+ "lb_prev": "Previous photo",
+ "lb_next": "Next photo",
+ "bx_ui": {
+  "ph": "Photo pending",
+  "cities_open": "Open city gallery",
+  "street_open": "View photo",
+  "sp_pending": "Playlist to be added",
+  "sp_load": "Load player",
+  "sp_open": "Open in Spotify",
+  "sp_note": "The Spotify player only loads when you activate it.",
+  "places_pending": "Places to be confirmed",
+  "lb_count": "{n} of {t}",
+  "ob_prev": "Previous",
+  "ob_next": "Next",
+  "mm_tries": "Attempts",
+  "mm_pairs": "Pairs",
+  "mm_reset": "Restart",
+  "mm_card": "Card",
+  "mm_down": "face down",
+  "mm_ok": "It's a match!",
+  "mm_no": "No match.",
+  "mm_found": "Stories unlocked",
+  "mm_board": "Card board",
+  "street_pending": "Street photo pending",
+  "kitchen_pending": "Kitchen photo pending",
+  "tg": [
+   "Design & prototyping",
+   "Development",
+   "Product & collaboration",
+   "Experimentation"
+  ]
+ }
+});
+Object.assign(SEO.en, {
+ "bio_t": "About me | Tom Fabre — Digital designer in Madrid",
+ "bio_d": "I'm Álvaro, though everyone calls me Tom. From Latin America to Europe, I've spent over a decade working across design, technology and digital products."
+});
+Object.assign(T.fr, {
+ "bio_a1": "Sans recette toute faite.",
+ "bio_a2": "Avec intention.",
+ "bio_p": "J'ai traversé quelques villes, exploré plusieurs disciplines et suivi pas mal de bonnes idées. Certaines ont marché comme prévu. D'autres m'ont appris bien davantage.",
+ "bi_eyebrow": "",
+ "bi_h": "Salut, moi c'est Tom.",
+ "bi_name": "Je m'appelle Álvaro Fabre, mais presque tout le monde m'appelle Tom.",
+ "bi_ps": [
+  "Je suis né en Colombie, j'ai grandi au Venezuela, puis j'ai vécu au Chili et en France avant de m'installer à Madrid.",
+  "En chemin, j'ai travaillé dans des domaines assez différents : graphisme, publicité, technologie, applications mobiles, identités de marque et produits digitaux.",
+  "Mon parcours n'a rien d'une ligne droite, mais chaque étape m'a appris quelque chose qui me sert encore.",
+  "Aujourd'hui, je crée des identités, des sites et des produits digitaux. J'aime comprendre comment les choses fonctionnent, poser des questions et trouver comment les améliorer.",
+  "Et s'il y a une chose que j'ai apprise, c'est qu'un problème mérite presque toujours d'être regardé sous plusieurs angles."
+ ],
+ "qf": [
+  [
+   "+10 ans",
+   "Entre design, technologie et produit digital."
+  ],
+  [
+   "3 langues",
+   "Espagnol, français et anglais. Parfois dans la même conversation."
+  ],
+  [
+   "Quelques villes",
+   "Cúcuta, San Cristóbal, Mérida, Santiago, Aix-en-Provence, Paris et Madrid."
+  ],
+  [
+   "Un drôle de mélange",
+   "Design, technologie, musique, cuisine et curiosité pour à peu près tout."
+  ]
+ ],
+ "bx_h": "Loin des écrans.",
+ "bx_p": "Il n'y a pas que les pixels dans la vie. Il y a aussi la musique, les villes, les recettes, les photos et quelques histoires qui n'avaient rien à voir avec le design. Enfin, c'est ce que je croyais.",
+ "bx_city": {
+  "h": "D'ici, de là-bas et d'un peu partout.",
+  "p": "Il y a des villes où je suis né, d'autres où j'ai grandi, et quelques-unes que j'ai fini par appeler chez moi. Chacune m'a laissé quelque chose.",
+  "items": [
+   [
+    "Cúcuta",
+    "Là où tout a commencé."
+   ],
+   [
+    "San Cristóbal",
+    "Là où j'ai grandi."
+   ],
+   [
+    "Mérida",
+    "Mes années d'université."
+   ],
+   [
+    "Santiago",
+    "Une nouvelle vie et beaucoup de premières fois."
+   ],
+   [
+    "Aix-en-Provence",
+    "Une nouvelle langue et plein d'histoires."
+   ],
+   [
+    "Paris",
+    "Une ville vers laquelle je reviens toujours."
+   ],
+   [
+    "Madrid",
+    "Un nouveau chapitre de l'histoire."
+   ]
+  ]
+ },
+ "bx_sp": {
+  "h": "Ma vie a sa bande-son.",
+  "p": "Certaines chansons me ramènent à une ville, à quelqu'un ou à un moment précis. D'autres me donnent juste envie de monter le son.",
+  "name": "Un peu de tout. Comme moi."
+ },
+ "bx_ck": {
+  "h": "À table.",
+  "p": "J'adore cuisiner. Encore plus quand il y a quelqu'un avec qui partager.",
+  "home": [
+   "Dans ma cuisine",
+   "Des plats, des expériences et quelques recettes mieux réussies que prévu."
+  ],
+  "out": [
+   "À l'extérieur",
+   "Des restos et des adresses que je recommanderais sans hésiter."
+  ]
+ },
+ "bx_st": {
+  "h": "Je ne reprends jamais la même rue.",
+  "sub": "Enfin, presque jamais.",
+  "p": "J'aime marcher, observer et tomber sur des détails qu'on ne remarque pas toujours : une façade, un reflet, une scène ordinaire ou cette lumière qui ne dure que quelques secondes."
+ },
+ "bx_ch": {
+  "h": "Pas vraiment prévu au programme.",
+  "q": "Je me suis inscrit dans une chorale en France. Un jour, on s'est retrouvés dans une mini-série. Ce n'était pas prévu, mais je ne vais pas me plaindre."
+ },
+ "ob_h": "Mes petites obsessions.",
+ "ob_p": "Des choses auxquelles je fais un peu trop attention.",
+ "ob_items": [
+  [
+   "Une belle typo",
+   "Je passe parfois beaucoup trop de temps à regarder des lettres."
+  ],
+  [
+   "Les villes la nuit",
+   "Les mêmes rues, mais avec une autre personnalité."
+  ],
+  [
+   "Les documentaires",
+   "J'en lance un. Je finis par creuser cinq autres sujets."
+  ],
+  [
+   "Les objets bien pensés",
+   "J'adore les choses qui n'ont pas besoin de mode d'emploi."
+  ],
+  [
+   "Les conversations inattendues",
+   "Les meilleures histoires commencent rarement comme prévu."
+  ]
+ ],
+ "worked_h": "De ville en ville. De discipline en discipline.",
+ "ca_ps": [
+  "J'ai commencé ma carrière assez loin du design d'interfaces.",
+  "J'ai travaillé dans la publicité et le graphisme. Puis sont arrivées les applications TV, la modélisation 3D, les expériences mobiles et le produit digital.",
+  "Au fil du temps, j'ai trouvé une façon de travailler où design et technologie n'avaient pas besoin d'être séparés.",
+  "Aujourd'hui encore, je mélange les disciplines. Peut-être parce que je n'ai jamais été très doué pour rester dans une seule case."
+ ],
+ "tools_h": "Ma boîte à outils.",
+ "to_ps": [
+  "Les outils changent. Les bonnes questions, un peu moins.",
+  "Figma pour réfléchir et concevoir. Webflow et le code pour construire. Et d'autres outils pour chercher, tester et organiser.",
+  "Je n'utilise pas un outil simplement parce qu'il est à la mode. Je préfère celui qui convient vraiment au projet."
+ ],
+ "mm_h": "On se connaît ?",
+ "mm_p": "Voyons combien de temps tu mets à retrouver les paires. Chacune cache une petite histoire sur moi.",
+ "mm_pairs": [
+  [
+   "D'un continent à l'autre",
+   "J'ai vécu en Amérique latine et en Europe. Difficile de choisir un seul endroit où je me sens chez moi."
+  ],
+  [
+   "Une histoire de musique",
+   "J'ai chanté dans une chorale à Aix-en-Provence qui a participé à une mini-série française."
+  ],
+  [
+   "Le chemin du retour",
+   "J'essaie de ne jamais rentrer par la même rue qu'à l'aller."
+  ],
+  [
+   "Toujours une place à table",
+   "J'adore cuisiner, surtout quand je peux partager le repas."
+  ],
+  [
+   "De la télé au mobile",
+   "Je suis passé des applications pour télévision aux produits mobiles et digitaux."
+  ],
+  [
+   "De fil en aiguille",
+   "J'aime les documentaires. Il m'arrive de finir par creuser un sujet qui n'a plus rien à voir."
+  ]
+ ],
+ "mm_win_h": "On se connaît déjà un peu mieux ! 🎉",
+ "mm_win_ps": [
+  "Six paires, quelques histoires et deux ou trois choses que tu n'avais probablement pas besoin de savoir sur moi.",
+  "Pas mal pour une première partie."
+ ],
+ "mm_again": "Rejouer",
+ "cl_h": "Et maintenant ?",
+ "cl_p": "Tu en sais un peu plus sur moi. Si tu es arrivé jusqu'ici, on a peut-être quelque chose à se raconter : une marque, un site, un produit digital ou simplement une idée encore un peu floue.",
+ "cl_cta": "Raconte-moi ce que tu as en tête.",
+ "lb_close": "Fermer la galerie",
+ "lb_prev": "Photo précédente",
+ "lb_next": "Photo suivante",
+ "bx_ui": {
+  "ph": "Photo à venir",
+  "cities_open": "Ouvrir la galerie des villes",
+  "street_open": "Voir la photo",
+  "sp_pending": "Playlist à ajouter",
+  "sp_load": "Charger le lecteur",
+  "sp_open": "Ouvrir dans Spotify",
+  "sp_note": "Le lecteur Spotify ne se charge que si tu l'actives.",
+  "places_pending": "Adresses à confirmer",
+  "lb_count": "{n} sur {t}",
+  "ob_prev": "Précédent",
+  "ob_next": "Suivant",
+  "mm_tries": "Essais",
+  "mm_pairs": "Paires",
+  "mm_reset": "Recommencer",
+  "mm_card": "Carte",
+  "mm_down": "face cachée",
+  "mm_ok": "Une paire !",
+  "mm_no": "Pas la même paire.",
+  "mm_found": "Histoires découvertes",
+  "mm_board": "Plateau de cartes",
+  "street_pending": "Photo de rue à venir",
+  "kitchen_pending": "Photo de cuisine à venir",
+  "tg": [
+   "Design et prototypage",
+   "Développement",
+   "Produit et collaboration",
+   "Expérimentation"
+  ]
+ }
+});
+Object.assign(SEO.fr, {
+ "bio_t": "À propos | Tom Fabre — Designer digital à Madrid",
+ "bio_d": "Je m'appelle Álvaro, mais tout le monde m'appelle Tom. De l'Amérique latine à l'Europe, plus de dix ans entre design, technologie et produits digitaux."
+});

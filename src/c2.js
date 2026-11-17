@@ -245,11 +245,14 @@ const svgWrap = (k, v) => `<div class="art">${svgOf(k, v)}</div>`;
 
 /* ---------- bio ---------- */
 function renderBio(){
-  const t = L(); renderBento(); renderQF();
+  const t = L(); renderQF(); renderBio2();
+  $("#biPs").innerHTML = t.bi_ps.map(x => `<p>${esc(x)}</p>`).join("");
+  $("#workedP").innerHTML = t.ca_ps.map(x => `<p>${esc(x)}</p>`).join("");
+  $("#toolsP").innerHTML = t.to_ps.map(x => `<p>${esc(x)}</p>`).join("");
   $("#worked").innerHTML = t.worked.map(r => `<li><span class="yr">${esc(r[0])}</span><div><b>${esc(r[1])}</b><span>${esc(r[2])} · ${esc(r[3])}</span></div></li>`).join("");
-  $("#dos").innerHTML = t.dos.map(x => `<li>${esc(x)}</li>`).join("");
   const TOOLS = [["Figma","Fi","#F24E1E","#fff"],["Webflow","Wf","#146EF5","#fff"],["HTML / CSS","</>","#E34F26","#fff"],["Storybook","Sb","#FF4785","#fff"],["Maze","Mz","#6C5CE7","#fff"],["Hotjar","Hj","#FD3A5C","#fff"],["Notion","No","#000","#fff"],["Jira","Ji","#0052CC","#fff"]];
-  $("#tools").innerHTML = TOOLS.map(([n, m, c, tt]) => `<li class="tool" tabindex="0" style="--tc:${c};--tt:${tt}"><b>${esc(m)}</b><span>${esc(n)}</span></li>`).join("");
+  const TG = [["Figma"], ["Webflow", "HTML / CSS", "Storybook"], ["Notion", "Jira"], ["Maze", "Hotjar"]];   // design/prototyping · development · product/collab · experimentation (existing tools only)
+  $("#tools").innerHTML = TG.map((g, gi) => `<div class="tg"><h3 class="tg-h">${esc(t.bx_ui.tg[gi])}</h3><ul class="tools-grid">${g.map(n => TOOLS.find(x => x[0] === n)).map(([n, m, c, tt]) => `<li class="tool" tabindex="0" style="--tc:${c};--tt:${tt}"><b>${esc(m)}</b><span>${esc(n)}</span></li>`).join("")}</ul></div>`).join("");
   // portrait: abstract typographic composition from AF monogram
   if (BENTO.photo.img) $("#portrait").innerHTML = `<img src="${BENTO.photo.img}" alt="${esc(L().portrait_alt)}" loading="lazy" decoding="async">`; else $("#portrait").innerHTML = `<svg viewBox="0 0 400 400" aria-hidden="true"><rect width="400" height="400" fill="var(--surface)"/><circle cx="110" cy="140" r="90" fill="var(--coral)" opacity=".85"/><circle cx="260" cy="200" r="110" fill="var(--lav)" opacity=".75"/><circle cx="200" cy="320" r="85" fill="var(--mint)" opacity=".8"/><text x="50%" y="56%" text-anchor="middle" fill="var(--fg)" font-family="var(--font)" font-size="180" font-weight="600" letter-spacing="-10">AF</text></svg>`;
 }
@@ -546,7 +549,7 @@ function wireHero(){
 let qfI = 0, qfHold = 0, qfVis = false;
 function renderQF(){
   const t = L(), st = $("#qfStage"); if (!st) return;
-  st.innerHTML = t.qf.map(([l, v], i) => `<div class="qf-i${i === qfI ? " on" : ""}" aria-hidden="${i === qfI ? "false" : "true"}"><span class="k">${esc(l)}</span><b>${esc(v)}</b></div>`).join("");
+  st.innerHTML = t.qf.map(([l, v], i) => `<div class="qf-i${i === qfI ? " on" : ""}" aria-hidden="${i === qfI ? "false" : "true"}"><b>${esc(l)}</b><span class="k">${esc(v)}</span></div>`).join("");
   $("#qfN").textContent = String(qfI + 1).padStart(2, "0") + " / " + String(t.qf.length).padStart(2, "0");
 }
 function qfGo(d, manual){
@@ -792,7 +795,7 @@ function animateStats(){
 buildBoard(); newGame(); wireGame();
 applyTheme(); wireTheme(); wireLang(); wireMenu(); wireForm(); wireCopy(); 
 (function(){const h=document.querySelector("header.top");if(h){const set=()=>document.documentElement.style.setProperty("--hh",h.offsetHeight+"px");set();new ResizeObserver(set).observe(h);}})();
-applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); wireStickers(); wireHero(); wireQF();
+applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); wireStickers(); wireHero(); wireQF(); wireBio2();
 
 /* animated contact cards: a soft blob follows the pointer with easing (desktop mouse only) */
 (function(){

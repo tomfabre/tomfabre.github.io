@@ -89,7 +89,7 @@ a = open("a.html").read().replace("<!--JSONLD-->", ld_tag).replace("%%SITE%%", S
 b = open("b.html").read()
 # c1s.js must precede c3; c2 doesn't need SEO
 open("yodis-data.js","w").write("const YODIS_DATA = " + json.dumps(json.load(open("conversations.json")), ensure_ascii=False) + ";")
-body_js = "\n".join(open(f).read() for f in ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1q.js","c1r.js","c1t.js","c1l.js","c1k.js","c1m.js","yodis-data.js","c2.js","c4.js","c3.js"])
+body_js = "\n".join(open(f).read() for f in ["c1.js","c1b.js","c1x.js","c1y.js","c1z.js","c1w.js","c1v.js","c1p.js","c1s.js","c1q.js","c1r.js","c1t.js","c1l.js","c1k.js","c1m.js","yodis-data.js","c2b.js","c2.js","c4.js","c3.js"])
 import base64, io
 from PIL import Image
 def imgjs(mode):

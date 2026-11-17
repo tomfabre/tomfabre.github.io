@@ -138,9 +138,8 @@
       <div class="bi-main">
         <p class="bi-eyebrow" data-i="bi_eyebrow"></p>
         <h2 class="bi-h" data-i="bi_h"></h2>
-        <p data-i="bi_p1"></p>
-        <p data-i="bi_p2"></p>
         <p class="bi-name" data-i="bi_name"></p>
+        <div class="bi-ps" id="biPs"></div>
         <div class="bio-foot"><a class="btn solid" href="cv-alvaro-fabre.pdf" target="_blank" rel="noopener" data-i="cv"></a><a class="btn" href="https://binome.xyz" target="_blank" rel="noopener">Binōme Studio <span class="arr" aria-hidden="true">↗</span></a></div>
         <ul class="socials" id="socials" data-aria="bi_links"></ul>
       </div>
@@ -152,31 +151,46 @@
     </div>
   </section>
 
-  <section class="quote-sec reveal"><blockquote><p data-i="ab_quote"></p></blockquote></section>
-
-  <section class="bento-sec">
-    <div class="sec-head reveal"><h2 data-i="bt_h"></h2><p class="rh" data-i="bt_p"></p></div>
-    <div class="bento reveal" id="bento"></div>
+  <!-- 02 · bento personal (cities, Spotify, cooking, street, choir). Assets: see BIO_ASSETS in c2b.js -->
+  <section class="bento-sec bx-sec" aria-labelledby="bxH">
+    <div class="sec-head reveal"><h2 id="bxH" data-i="bx_h"></h2><p class="rh" data-i="bx_p"></p></div>
+    <div class="bx-bento reveal" id="bxBento"></div>
   </section>
 
+  <!-- 03 · pequeñas obsesiones (carousel, no autoplay) -->
+  <section class="ob-sec" aria-labelledby="obH">
+    <div class="sec-head reveal"><h2 id="obH" data-i="ob_h"></h2><p class="rh" data-i="ob_p"></p></div>
+    <div class="ob reveal" id="ob" role="group" aria-roledescription="carousel" data-aria="ob_h"></div>
+  </section>
+
+  <!-- 04 · trayectoria + 05 · herramientas -->
   <section style="padding-top:0">
     <div class="worked reveal">
-      <div><h2 data-i="worked_h"></h2><p class="worked-p" data-i="worked_p"></p></div>
+      <div><h2 data-i="worked_h"></h2><div class="worked-p" id="workedP"></div></div>
       <ul class="worked-list" id="worked"></ul>
     </div>
 
     <div class="tools-h reveal">
-      <div><h2 data-i="dos_h"></h2><p class="p" data-i="dos_p"></p></div>
-      <ul class="dos reveal-x" id="dos"></ul>
-    </div>
-
-    <div class="tools-h reveal">
-      <div><h2 data-i="tools_h"></h2><p class="p" data-i="tools_p"></p></div>
-      <ul class="tools-grid" id="tools"></ul>
+      <div><h2 data-i="tools_h"></h2><div class="p" id="toolsP"></div></div>
+      <div class="tools-groups" id="tools"></div>
     </div>
   </section>
 
-  <section id="gamesec">
+  <!-- 06 · juego de memoria -->
+  <section class="mm-sec" id="memorysec" aria-labelledby="mmH">
+    <div class="sec-head reveal"><h2 id="mmH" data-i="mm_h"></h2><p class="rh" data-i="mm_p"></p></div>
+    <div class="mm reveal" id="mm"></div>
+  </section>
+
+  <!-- 07 · cierre -->
+  <section class="bx-close reveal" aria-labelledby="clH">
+    <h2 id="clH" data-i="cl_h"></h2>
+    <p data-i="cl_p"></p>
+    <p><button class="btn cta solid" type="button" data-open-form data-ev="primary_cta_click" data-place="bio_close"><span data-i="cl_cta"></span><span class="arr" aria-hidden="true">→</span></button></p>
+  </section>
+
+  <!-- Hundir la flota: kept intact, hidden in Bio until the separate task that moves it to Home (after the "Un poco más sobre mí" section) -->
+  <section id="gamesec" hidden data-game-home-pending>
     <div class="sec-head reveal"><h2 data-i="game_h"></h2><p class="rh" data-i="game_p"></p></div>
     <div class="game-wrap">
       <div class="board reveal" id="board" role="group" data-aria="game_h"></div>
@@ -275,6 +289,12 @@
     </div>
   </div>
   <button class="dx" type="button" id="gameClose" aria-label="Close">×</button>
+</dialog>
+
+<dialog id="lbDlg" class="lb" aria-label="Gallery">
+  <button class="dx" type="button" id="lbClose" data-aria="lb_close"><span aria-hidden="true">×</span></button>
+  <figure class="lb-fig"><div class="lb-media" id="lbMedia"></div><figcaption id="lbCap" aria-live="polite"></figcaption></figure>
+  <div class="lb-ctl"><button type="button" id="lbPrev" data-aria="lb_prev"><span aria-hidden="true">←</span></button><span class="lb-n" id="lbN"></span><button type="button" id="lbNext" data-aria="lb_next"><span aria-hidden="true">→</span></button></div>
 </dialog>
 
 <dialog id="dlg" aria-labelledby="dlgT">
