@@ -124,13 +124,28 @@ function bxStart(){
 }
 /* ---------- obsessions carousel (1 image + 1 text, no autoplay) ---------- */
 let obI = 0;
+function obTx(i){
+  const t = L(), [h, p, kick, by, url] = t.ob_items[i];
+  const link = url ? `<a class="ob-lk" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(t.ob_go)} <span aria-hidden="true">↗</span><span class="sr-only"> ${esc(h)} (${esc(t.ob_tab)})</span></a>` : "";
+  return `${kick ? `<p class="ob-k">${esc(kick)}</p>` : ""}<h3>${esc(h)}</h3>${by ? `<p class="ob-by">${esc(by)}</p>` : ""}<p>${esc(p)}</p>${link}`;
+}
+/* altura fija del bloque de texto = la del slide más largo, para que al navegar no se mueva nada */
+function obMeasure(){
+  const el = $("#ob"), tx = el && el.querySelector(".ob-tx"); if (!tx) return;
+  const probe = document.createElement("div"); probe.className = "ob-tx"; probe.style.cssText = "position:absolute;visibility:hidden;pointer-events:none;min-height:0;width:" + tx.getBoundingClientRect().width + "px";
+  el.appendChild(probe); let m = 0;
+  L().ob_items.forEach((_, i) => { probe.innerHTML = obTx(i); m = Math.max(m, probe.getBoundingClientRect().height); });
+  probe.remove(); el.style.setProperty("--obh", Math.ceil(m) + "px");
+}
 function obPaint(announce){
-  const t = L(), u = t.bx_ui, it = t.ob_items, n = it.length, sl = $("#obSlide"); if (!sl) return;
-  const [h, p] = it[obI], a = BIO_ASSETS.obsessions[obI] || {}, num = String(obI + 1).padStart(2, "0"), tot = String(n).padStart(2, "0");
-  sl.innerHTML = `<div class="ob-img bx-r43">${bxMedia(a, h, a.alt || h, "obsession-" + (obI + 1))}</div><div class="ob-tx"><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`;
+  const t = L(), it = t.ob_items, n = it.length, sl = $("#obSlide"); if (!sl) return;
+  const h = it[obI][0], a = BIO_ASSETS.obsessions[obI] || {}, num = String(obI + 1).padStart(2, "0"), tot = String(n).padStart(2, "0");
+  sl.innerHTML = `<div class="ob-img bx-r43">${bxMedia(a, h, a.alt || h, "obsession-" + (obI + 1))}</div><div class="ob-tx">${obTx(obI)}</div>`;
   $("#obN").textContent = num + " / " + tot;
   sl.setAttribute("aria-live", announce ? "polite" : "off");
+  if (!announce) obMeasure();
 }
+let obRz = 0; addEventListener("resize", () => { clearTimeout(obRz); obRz = setTimeout(obMeasure, 150); });
 function renderOb(){
   const t = L(), u = t.bx_ui, el = $("#ob"); if (!el) return;
   obI = Math.min(obI, t.ob_items.length - 1);

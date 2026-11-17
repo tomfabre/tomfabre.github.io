@@ -1398,8 +1398,14 @@ dialog.lb[open]{display:flex}
 @keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .ob-img{border-radius:1.25rem;overflow:hidden;aspect-ratio:4/3;background:var(--surface)}
 .ob-img .bx-ph,.ob-img img{width:100%;height:100%}
+.ob-tx{min-height:var(--obh,0)}
 .ob-tx h3{font-size:clamp(1.6rem,2.2vw + 1rem,2.8rem);line-height:1.05;letter-spacing:-.03em;font-weight:600;margin-bottom:var(--s3)}
 .ob-tx p{color:var(--muted);font-weight:300;font-size:clamp(1.05rem,.5vw + .95rem,1.3rem);max-width:36ch}
+.ob-tx .ob-k{font-size:var(--micro);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:var(--s3);max-width:none}
+.ob-tx .ob-by{font-size:.9rem;font-weight:400;color:var(--muted);margin:calc(var(--s2) * -1) 0 var(--s3);max-width:none}
+.ob-lk{display:inline-flex;align-items:center;gap:.35rem;margin-top:var(--s4);font-size:.95rem;color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line2);padding-bottom:1px;transition:color var(--fast),border-color var(--fast)}
+.ob-lk:hover,.ob-lk:focus-visible{color:var(--accent);border-color:var(--accent)}
+.ob-lk:focus-visible{outline:2px solid var(--fg);outline-offset:4px;border-radius:2px}
 .ob-ctl{display:flex;align-items:center;gap:var(--s5)}
 .ob-ctl button{width:2.75rem;height:2.75rem;border-radius:50%;border:1px solid var(--line2);background:none;color:var(--fg);cursor:pointer;font-size:1.1rem}
 .ob-ctl button:hover,.ob-ctl button:focus-visible{background:var(--fg);color:var(--bg)}
