@@ -71,10 +71,9 @@ function renderBento2(){
   const spot = `<article class="bx bx-sp"><div class="bx-hd"><h3>${esc(sp.h)}</h3>${sp.p ? `<p>${esc(sp.p)}</p>` : ""}</div>${embed
     ? `<div class="bx-sp-box" id="spBox"><div class="bx-sp-pane"><span class="bx-sp-ico" aria-hidden="true">♪</span><p class="bx-pl">${esc(sp.name)}</p><button type="button" class="btn sm solid" data-sp-load="${esc(embed)}">${esc(u.sp_load)}</button><p class="bx-note">${esc(u.sp_note)}</p></div></div>`
     : `<span class="bx-ph bx-ph-sp" data-pending="spotify-url" role="img" aria-label="${esc(u.ph + ": Spotify")}"><span>${esc(u.ph)}</span><b>${esc(u.sp_pending)}</b></span>`}</article>`;
-  const places = A.places.length
-    ? `<ul class="bx-places">${A.places.map(p => `<li><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ul>`
-    : `<p class="bx-places-ph" data-pending="restaurants">${esc(u.places_pending)}</p>`;
-  const cook = `<article class="bx bx-ck"><div class="bx-hd"><h3>${esc(ck.h)}</h3><p>${esc(ck.p)}</p></div>${places}${bxViewer("kitchen", 5700)}</article>`;
+  /* tarjeta 4: solo tipografía (sin foto), comidas favoritas como etiquetas de distinto peso y tamaño */
+  const KST = ["a", "b", "c", "d", "e", "f", "g", "h", "c", "b", "a"];
+  const cook = `<article class="bx bx-ck bx-food"><div class="bx-hd"><h3>${esc(ck.h)}</h3></div><ul class="bx-food-l">${ck.foods.map((f, i) => `<li class="k-${KST[i % KST.length]}">${esc(f)}</li>`).join("")}</ul></article>`;
   const choir = bxAnecdotes();
   const street = `<article class="bx bx-st"><div class="bx-hd"><h3>${esc(st.h)}</h3>${st.sub ? `<p class="bx-sub">${esc(st.sub)}</p>` : ""}${st.p ? `<p>${esc(st.p)}</p>` : ""}</div>${bxViewer("street", 3600)}</article>`;
   el.innerHTML = cities + choir + cook + street + spot;

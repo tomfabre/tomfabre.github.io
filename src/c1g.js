@@ -212,3 +212,8 @@ Object.assign(T.fr, { ob_h: "Au cas où ça t'intéresse.", ob_p: "Une revue, un
   ["The Creative Act: A Way of Being", "Un livre sur la créativité qui ne te dit pas quoi faire, mais t'invite à regarder le monde autrement. Le genre où l'on a envie de tout souligner.", "Livre", "Rick Rubin · 2023 · Penguin Press / Canongate", "https://canongate.co.uk/books/4336-the-creative-act-a-way-of-being/"],
   ["The Royal Tenenbaums", "Une famille dysfonctionnelle, des personnages inoubliables et une esthétique où chaque détail compte. De l'humour, de la mélancolie et beaucoup de Wes Anderson.", "Film", "Wes Anderson · 2001", "https://www.criterion.com/films/230-the-royal-tenenbaums"],
   ["Helvetica", "Quatre-vingts minutes à parler d'une typographie. Et, curieusement, c'est bien plus intéressant qu'il n'y paraît.", "Documentaire", "Gary Hustwit · 2007", "https://www.hustwit.com/helvetica/"]] });
+
+/* ---------- BIO · bento tarjeta 4: «Siempre hay espacio para…» (solo tipografía) ---------- */
+Object.assign(T.es, { bx_ck: Object.assign({}, T.es.bx_ck, { h: "Siempre hay espacio para…", foods: ["Ajiaco", "Tacos", "Chilaquiles", "Empanadas", "Hamburguesas", "Camembert", "Bandeja paisa", "Patacones", "Arroz chino", "Pad thai", "Ramen"] }) });
+Object.assign(T.en, { bx_ck: Object.assign({}, T.en.bx_ck, { h: "There's always room for…", foods: ["Ajiaco", "Tacos", "Chilaquiles", "Empanadas", "Burgers", "Camembert", "Bandeja paisa", "Patacones", "Chinese fried rice", "Pad thai", "Ramen"] }) });
+Object.assign(T.fr, { bx_ck: Object.assign({}, T.fr.bx_ck, { h: "Il y a toujours de la place pour…", foods: ["Ajiaco", "Tacos", "Chilaquiles", "Empanadas", "Hamburgers", "Camembert", "Bandeja paisa", "Patacones", "Riz cantonais", "Pad thai", "Ramen"] }) });
