@@ -181,3 +181,14 @@ Object.assign(T.fr, { bx_st: Object.assign({}, T.fr.bx_st, { h: "Ce qui passe in
 Object.assign(T.es, { ct_p: "Una marca, una web, un producto digital o una idea que todavía está tomando forma.\nCuéntame qué tienes en mente y vemos por dónde empezar.", ct_cta: "Cuéntame tu proyecto", ct_mail: "Escríbeme por email", copy: "Copiar email", copied: "Email copiado" });
 Object.assign(T.en, { ct_p: "A brand, a website, a digital product or an idea that is still taking shape.\nTell me what you have in mind and we'll work out where to start.", ct_cta: "Tell me about your project", ct_mail: "Email me", copy: "Copy email", copied: "Email copied" });
 Object.assign(T.fr, { ct_p: "Une marque, un site, un produit digital ou une idée qui prend encore forme.\nDis-moi ce que tu as en tête et on voit par où commencer.", ct_cta: "Raconte-moi ton projet", ct_mail: "Écris-moi par e-mail", copy: "Copier l'e-mail", copied: "E-mail copié" });
+
+/* Bio · bento card 2: citas de diseño (rotan solas). Autor tal como lo indica Tom. */
+Object.assign(T.es, { bx_ch: Object.assign({}, T.es.bx_ch, { h: "Citas de diseño.",
+  items: ["«El diseño es, por naturaleza, interdisciplinario. No es lineal, y suele ser un poco caótico.»", "«La ausencia es muy importante en el diseño. Lo que no vemos también cuenta.»", "«La información solo es útil cuando se puede entender.»", "«La confianza y la libertad hacen que un proyecto funcione.»"],
+  by: ["Ji Park", "Karel Martens", "Muriel Cooper", "Irma Boom"] }) });
+Object.assign(T.en, { bx_ch: Object.assign({}, T.en.bx_ch, { h: "Design quotes.",
+  items: ["“Design is inherently interdisciplinary. It's non-linear and messy by nature.”", "“Absence in design is very important. The things you don't see matter too.”", "“Information is only useful when it can be understood.”", "“It's trust and freedom that make a project work.”"],
+  by: ["Ji Park", "Karel Martens", "Muriel Cooper", "Irma Boom"] }) });
+Object.assign(T.fr, { bx_ch: Object.assign({}, T.fr.bx_ch, { h: "Citations de design.",
+  items: ["«Le design est par nature interdisciplinaire. Il n'est pas linéaire, et souvent un peu chaotique.»", "«L'absence est essentielle en design. Ce qu'on ne voit pas compte aussi.»", "«L'information n'est utile que lorsqu'elle est compréhensible.»", "«C'est la confiance et la liberté qui font qu'un projet fonctionne.»"],
+  by: ["Ji Park", "Karel Martens", "Muriel Cooper", "Irma Boom"] }) });
