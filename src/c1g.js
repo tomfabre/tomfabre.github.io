@@ -226,3 +226,8 @@ Object.assign(T.fr, { mm_hint: "Trouve une paire et je te raconte quelque chose.
   ["Carlos Cruz-Diez", "J'ai rencontré Carlos Cruz-Diez en personne."], ["Tomate", "Les tomates et moi, on ne s'entend pas très bien."], ["Carlos Vives", "J'ai grandi en écoutant Carlos Vives. Et je l'écoute encore."],
   ["Caméra de cinéma", "Avant de me tourner vers le design, je voulais étudier l'audiovisuel."], ["Forrest Gump", "J'ai vu Forrest Gump huit fois : 18 heures et 56 minutes de ma vie. Et il y aura probablement une neuvième."], ["Gabriel García Márquez", "Je suis né en 1990, huit ans après le prix Nobel de García Márquez."]],
   mm_win_h: "Voilà, tu en sais un peu plus sur moi.", mm_win_ps: ["Même s'il reste encore quelques histoires à raconter."] });
+
+/* ---------- BIO · bento tarjeta 4: «Siempre hay espacio para…» (solo tipografía) ---------- */
+Object.assign(T.es, { bx_ck: Object.assign({}, T.es.bx_ck, { h: "Siempre hay espacio para…", foods: ["Ajiaco", "Tacos", "Chilaquiles", "Empanadas", "Hamburguesas", "Camembert", "Bandeja paisa", "Patacones", "Arroz chino", "Pad thai", "Ramen"] }) });
+Object.assign(T.en, { bx_ck: Object.assign({}, T.en.bx_ck, { h: "There's always room for…", foods: ["Ajiaco", "Tacos", "Chilaquiles", "Empanadas", "Burgers", "Camembert", "Bandeja paisa", "Patacones", "Chinese fried rice", "Pad thai", "Ramen"] }) });
+Object.assign(T.fr, { bx_ck: Object.assign({}, T.fr.bx_ck, { h: "Il y a toujours de la place pour…", foods: ["Ajiaco", "Tacos", "Chilaquiles", "Empanadas", "Hamburgers", "Camembert", "Bandeja paisa", "Patacones", "Riz cantonais", "Pad thai", "Ramen"] }) });
