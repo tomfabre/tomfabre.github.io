@@ -735,7 +735,7 @@ function pzUrl(v){   /* accepts "tuweb.com", "www.tuweb.com" or full URLs; retur
 }
 function openPrize(won){
   pzWon = !!won; pzSending = false;
-  const d = $("#prizeDlg"); $("#pzForm").hidden = false; $("#pzOk").hidden = true; $("#pzErr").textContent = ""; $("#pzStat").textContent = "";
+  const d = $("#prizeDlg"); $("#pzForm").hidden = false; $("#pzHead").hidden = false; $("#pzOk").hidden = true; d.setAttribute("aria-labelledby", "pzT"); $("#pzErr").textContent = ""; $("#pzStat").textContent = "";
   ["#pzW", "#pzE"].forEach(id => $(id).removeAttribute("aria-invalid"));
   pzA = 1 + Math.floor(Math.random() * 9); pzB = 1 + Math.floor(Math.random() * 9); $("#pzQ").value = ""; pzSetQ();
   track("game_prize_open", { game_result: pzWon ? "won" : "lost" });
@@ -744,6 +744,7 @@ function openPrize(won){
 function wirePrize(){
   const d = $("#prizeDlg"), MAIL = /^\S+@\S+\.\S+$/;
   $("#pzClose").addEventListener("click", () => d.close());
+  $("#pzDone").addEventListener("click", () => d.close());
   d.addEventListener("click", e => { if (e.target === d) d.close(); });
   $("#pzForm").addEventListener("submit", e => {
     e.preventDefault(); if (pzSending) return;
@@ -760,8 +761,8 @@ function wirePrize(){
     fetch(FORM_ENDPOINT, { method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" }, body:JSON.stringify({
       email:mail, topic, website:web, game_result:pzWon ? "won" : "lost", locale:lang, _replyto:mail, _subject:topic + " · " + web + " (portfolio)",
       message:`Web: ${web}\nResultado del juego: ${result}\nIdioma: ${lang}` + (more ? `\nQuiere mejorar: ${more}` : "") }) })
-      .then(r => { if (!r.ok) throw 0; $("#pzForm").hidden = true; $("#pzOk").hidden = false; $("#pzForm").reset(); $("#pzStat").textContent = t.gf_ok_t + " " + t.gf_ok_b1;
-        track("game_prize_submit_success", { game_result: pzWon ? "won" : "lost" }); $("#pzClose").focus(); })
+      .then(r => { if (!r.ok) throw 0; $("#pzForm").hidden = true; $("#pzHead").hidden = true; $("#pzOk").hidden = false; d.setAttribute("aria-labelledby", "pzOkT"); $("#pzForm").reset(); $("#pzStat").textContent = t.gf_ok_t + " " + t.gf_ok_b1 + " " + t.gf_ok_b2;
+        track("game_prize_submit_success", { game_result: pzWon ? "won" : "lost" }); $("#pzOkT").focus(); })
       .catch(() => { err.innerHTML = `<strong>${esc(t.d_fail_t)}</strong> ` + esc(t.d_fail_b).replace(EMAIL, `<a href="mailto:${EMAIL}">${EMAIL}</a>`); $("#pzStat").textContent = ""; })
       .finally(() => { pzSending = false; sb.disabled = false; sb.removeAttribute("aria-busy"); lab.textContent = old; });
   });

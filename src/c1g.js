@@ -36,9 +36,10 @@ Object.assign(T.es, {
   gf_more_ph: "Por ejemplo, la navegación, el diseño o la versión móvil...",
   gf_send: "Enviar mi web",
   gf_web_err: "Escribe la dirección de tu web, por ejemplo tuweb.com.",
-  gf_ok_t: "¡Recibido!",
-  gf_ok_b1: "Gracias por jugar y por compartir tu web.",
-  gf_ok_b2: "Le echaré un vistazo y te enviaré mis observaciones por email. Sin compromiso y sin rodeos."
+  gf_ok_t: "¡Tu web ya está en la lista!",
+  gf_ok_b1: "Gracias por jugar y compartir tu web conmigo.",
+  gf_ok_b2: "Le echaré un vistazo y te enviaré tres ideas para mejorar su experiencia por email.",
+  gf_close: "Cerrar"
 });
 Object.assign(T.en, {
   game_lab: "Free website UX/UI review",
@@ -76,9 +77,10 @@ Object.assign(T.en, {
   gf_more_ph: "Navigation, design, mobile experience...",
   gf_send: "Send my website",
   gf_web_err: "Enter your website address, for example yoursite.com.",
-  gf_ok_t: "Got it!",
+  gf_ok_t: "Your website is on my list!",
   gf_ok_b1: "Thanks for playing and sharing your website.",
-  gf_ok_b2: "I'll take a look and send you my feedback by email. No strings attached."
+  gf_ok_b2: "I'll take a look and email you three practical ideas to improve the experience.",
+  gf_close: "Close"
 });
 Object.assign(T.fr, {
   game_lab: "Mini-audit UX/UI gratuit",
@@ -116,7 +118,8 @@ Object.assign(T.fr, {
   gf_more_ph: "La navigation, le design, la version mobile...",
   gf_send: "Envoyer mon site",
   gf_web_err: "Indique l'adresse de ton site, par exemple tonsite.com.",
-  gf_ok_t: "Bien reçu !",
-  gf_ok_b1: "Merci d'avoir joué et de m'avoir partagé ton site.",
-  gf_ok_b2: "Je vais y jeter un œil et t'envoyer mes remarques par email. Sans engagement, et sans blabla."
+  gf_ok_t: "Ton site est bien dans ma liste !",
+  gf_ok_b1: "Merci d'avoir joué et de m'avoir envoyé ton site.",
+  gf_ok_b2: "Je vais y jeter un œil et t'envoyer trois pistes concrètes pour améliorer l'expérience par email.",
+  gf_close: "Fermer"
 });

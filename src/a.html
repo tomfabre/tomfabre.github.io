@@ -1429,17 +1429,23 @@ dialog.lb[open]{display:flex}
 .bx-ch{margin:0}
 .worked h2{font-size:clamp(2.2rem,4.6vw,4.2rem);line-height:1;letter-spacing:-.035em}
 /* Hundir la flota · UX writing: el premio se ve desde el inicio, sin badges */
-#gamesec .sec-head .rh{max-width:none;display:grid;gap:var(--s3)}
-@media (min-width:60rem){#gamesec .sec-head .rh{max-width:25rem}}
-#gamesec .sec-head .rh p{margin:0}
-#gamesec .game-prize{color:var(--fg);font-size:1.05rem;font-weight:500;letter-spacing:-.01em;line-height:1.35;padding-top:var(--s3);border-top:1px solid var(--fg)}
-#gamesec .game-note{font-size:.85rem}
+#gamesec .sec-head{margin-bottom:var(--s8)}
+.game-intro{display:grid;gap:var(--s3);max-width:40rem;margin-bottom:var(--s4)}
+.game-intro p{margin:0;font-weight:300;color:var(--muted)}
+.game-intro .game-prize{color:var(--fg);font-size:1.15rem;font-weight:500;letter-spacing:-.01em;line-height:1.35;padding-top:var(--s3);border-top:1px solid var(--fg);margin-top:var(--s2)}
+.game-intro .game-note{font-size:.9rem}
 dialog#prizeDlg{padding:var(--s6) var(--s8)}
 dialog#prizeDlg .sub{margin-bottom:var(--s3)}
 dialog#prizeDlg:focus{outline:none}
 .pz-scope{font-size:.85rem;color:var(--fg);border-left:2px solid var(--fg);padding-left:var(--s3);margin:0 0 var(--s5);line-height:1.45}
 @media (max-width:40rem){dialog#prizeDlg{padding:var(--s5)}}
 #pzForm .f-check{margin:var(--s3) 0 var(--s4)}
+.pz-done{display:grid;justify-items:start;gap:var(--s3);padding:var(--s4) 0 var(--s2)}
+.pz-done[hidden]{display:none}
+.pz-done h2{margin:0;font-size:clamp(1.6rem,2.4vw + 1rem,2.4rem);line-height:1.05;letter-spacing:-.02em;outline:none}
+.pz-done p{margin:0;color:var(--muted);font-size:var(--lead,1.1rem);line-height:1.45}
+.pz-done .btn{margin-top:var(--s4)}
+.pz-ico{display:grid;place-items:center;width:3rem;height:3rem;border-radius:50%;border:1.5px solid var(--fg);color:var(--fg);margin-bottom:var(--s2)}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
