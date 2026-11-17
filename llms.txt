@@ -12,13 +12,13 @@ The portfolio has real URLs per language: Spanish at the root, English under /en
 
 ## Projects
 
-- [Contazara](https://tomfabre.com/en/projects/contazara/): Branding · Web · Digital. Rebranding, website and digital communications for a company with 40 years of history, shaped together with its team.
+- [Contazara](https://tomfabre.com/en/projects/contazara/): Branding · Web · Digital. Rebranding, website, and digital communications for Contazara. A refreshed identity that keeps what makes the brand recognisable.
 - [À2pas](https://tomfabre.com/en/projects/a2pas/): Product Design · UX/UI · Branding. A participatory platform connecting audiences, artists and venues to make new performances possible.
-- [HappyLife](https://tomfabre.com/en/projects/happylife/): Product Design · UX/UI. An app bringing people together through real activities, with fewer taps, smarter filters and rewards for taking part.
-- [Binōme Studio](https://tomfabre.com/en/projects/binome/): Branding · Strategy · Web. An independent studio I co-founded to do branding, web and product in one team.
-- [Yaypegs](https://tomfabre.com/en/projects/yaypegs/): Art Direction · Motion Design. A universe of digital characters where the challenge was bringing thousands of combinations to life while keeping visual consistency.
-- [360estudio](https://tomfabre.com/en/projects/360estudio/): Branding · Web design · Art direction. Creating a visual and digital experience that gives the studio's projects room to shine while expressing its distinctive personality.
-- [Mobile Experiences](https://tomfabre.com/en/projects/mobile-experiences/): Product Design · UX/UI · Mobile. Three apps. Three challenges. Far more than screens.
+- [HappyLife](https://tomfabre.com/en/projects/happylife/): Product Design · UX/UI. An app for discovering activities, meeting people, and making plans away from your phone. Designed to make finding good company feel easy.
+- [Binōme Studio](https://tomfabre.com/en/projects/binome/): Branding · Strategy · Web. The story of Binōme, an independent studio I co-founded to bring branding, digital design, and strategy together. From creating our own identity to working on real projects.
+- [Yaypegs](https://tomfabre.com/en/projects/yaypegs/): Art Direction · Motion Design. A universe of digital characters with thousands of possible combinations. The challenge: design an animation system that could bring them to life without losing their personality.
+- [360estudio](https://tomfabre.com/en/projects/360estudio/): Branding · Web design · Art direction. Branding and web design for 360estudio, an architecture studio specialising in healthcare spaces. An identity that made its way into the offices, too.
+- [Mobile Experiences](https://tomfabre.com/en/projects/mobile-experiences/): Product Design · UX/UI · Mobile Apps. From designing complete apps from scratch to helping evolve products with millions of downloads. Three mobile design experiences across iOS and Android.
 
 ## Services
 
