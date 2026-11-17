@@ -30,6 +30,6 @@ fr:{
   projects_d:"Sélection de projets d'Tom Fabre : Contazara, Carceral Ecologies, À2pas, Happylife, Binōme, Yaypegs, FreeThem, Figy, Apolo, Appy, Mood Messenger et Molyb.",
   bio_t:"À propos · Tom Fabre, designer produit et marque",
   bio_d:"Designer produit et marque avec plus de dix ans d'expérience entre l'Amérique latine et l'Europe. Cofondateur de Binōme Studio à Madrid. Espagnol, français et anglais.",
-  contact_t:"Contact · Parlons de votre projet · Tom Fabre",
+  contact_t:"Contact · Parlons de ton projet · Tom Fabre",
   contact_d:"Écrivez à Tom Fabre pour parler de branding, web design, produit digital ou d'une collaboration. Réponse directe par e-mail depuis Madrid."
 }};

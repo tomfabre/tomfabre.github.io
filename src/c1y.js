@@ -70,10 +70,10 @@ fr:{
   b1:"J'ai commencé par concevoir des intranets pour la mine à Santiago, où j'ai appris que le meilleur design est celui qu'on ne remarque pas. J'ai poursuivi à Aix-en-Provence avec des apps téléchargées par des millions de personnes, et je dirige aujourd'hui Binōme Studio à Madrid avec ma partenaire.",
   b2:"Je mesure mon travail en clarté, pas en adjectifs : si quelqu'un qui ne l'a jamais vu sait quoi faire, ça marche. Et les gens avec qui je le fais comptent vraiment pour moi, parce que les meilleures idées naissent des conversations, pas des briefs.",
   b3:"Je cherche deux choses : des équipes à l'ambition produit où rejoindre un poste de Senior ou Lead Product Designer (à distance ou hybride à Madrid), et des projets qui méritent d'être bien faits via Binōme.",
-  game_h:"Une partie avant de continuer.", game_p:"Une flotte se cache sur la grille. Chaque bateau coulé vous raconte ma façon de travailler. 20 ratés ; les touches sont gratuites. Et si vous coulez toute la flotte, il y a un cadeau.",
-  win_h:"Flotte coulée !", win_p:"Joli coup d'œil. Vous avez gagné une analyse UX/UI de votre site : je l'examine à fond et je vous dis quoi améliorer en premier.",
-  prize_t:"Cadeau · Analyse UX/UI de votre site", prize_p:"Je regarde votre site en détail et je vous dis quoi améliorer en premier. Je vous l'envoie en PDF par e-mail.",
-  claim:"Réclamer mon analyse", lose_h:"Pas cette fois.", lose_p:"La flotte se cache bien. Rejouez : l'analyse UX/UI de votre site est toujours en jeu. Ou sautez le jeu et écrivez-moi.",
+  game_h:"Une partie avant de continuer.", game_p:"Une flotte se cache sur la grille. Chaque bateau coulé te raconte ma façon de travailler. 20 ratés ; les touches sont gratuites. Et si tu coules toute la flotte, il y a un cadeau.",
+  win_h:"Flotte coulée !", win_p:"Joli coup d'œil. Tu as gagné une analyse UX/UI de ton site : je l'examine à fond et je te dis quoi améliorer en premier.",
+  prize_t:"Cadeau · Analyse UX/UI de ton site", prize_p:"Je regarde ton site en détail et je te dis quoi améliorer en premier. Je te l'envoie en PDF par e-mail.",
+  claim:"Réclamer mon analyse", lose_h:"Pas cette fois.", lose_p:"La flotte se cache bien. Rejoue : l'analyse UX/UI de ton site est toujours en jeu. Ou saute le jeu et écris-moi.",
   kick_win:"Victoire", kick_lose:"Partie terminée",
   c_p:"Dites-moi ce que vous construisez et ce que vous voulez qu'il se passe quand quelqu'un arrive dessus. Je réponds moi-même, sans intermédiaire, en français, espagnol ou anglais, presque toujours sous 48 h.",
   cn:[["Vous me racontez","Via le formulaire ou par e-mail : une idée à moitié formée, un problème ou un site qui ne vous ressemble plus. Sans script."],["Je réponds, en personne","Avec des questions précises et, si ça a du sens, un court appel. Pas de modèles."],["On décide ensemble","Si on se retrouve, je propose périmètre, délais et budget. Sinon, je vous dis à qui écrire."]],
@@ -82,6 +82,6 @@ fr:{
   prize_msg:"J'ai gagné au jeu et je voudrais mon analyse UX/UI. Mon site : ",
   w_avail:"Oui, vraiment. Et je réponds moi-même.", w_port:"Oui, un portfolio de plus. Celui-ci, au moins, joue.", w_role:"Deux métiers, une obsession : que ça se comprenne.",
   w_tag:"Binōme, c'est un duo. On est deux, et ça se voit.", w_copy:"Fait main. Avec un peu d'IA et beaucoup trop de café.", w_portrait:"Promis, en vrai je suis moins abstrait.",
-  egg_logo:"Tiens, un curieux. Vous me plaisez. Écrivez-moi →", away:"👀 Vous partez ? Il reste une flotte à couler"
+  egg_logo:"Tiens, un curieux. Tu me plais. Écris-moi →", away:"👀 Tu pars ? Il reste une flotte à couler"
 }};
 Object.keys(TY).forEach(k => Object.assign(T[k], TY[k]));

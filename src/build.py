@@ -30,7 +30,7 @@ PFX = {"es":"","en":"/en","fr":"/fr"}
 SLG = {"es":{"projects":"proyectos","services":"servicios","bio":"bio","contact":"contacto"},"en":{"projects":"projects","services":"services","bio":"bio","contact":"contact"},"fr":{"projects":"projets","services":"services","bio":"bio","contact":"contact"}}
 SSLG = {"es":{"branding":"branding","web":"diseno-web","ux":"diseno-ux-ui"},"en":{"branding":"branding","web":"web-design","ux":"ux-ui-design"},"fr":{"branding":"branding","web":"design-web","ux":"design-ux-ui"}}
 SKEYS = ["branding","web","ux"]
-PSVC = {"contazara":["branding","web"],"carceral":["web"],"a2pas":["ux","web","branding"],"happylife":["ux"],"binome":["branding","web","ux"],"yaypegs":["ux"],"mobile-experiences":["ux"],"360estudio":["branding","web"],"figy":["ux"],"apolo":["ux"],"appy":["ux"],"mood":["ux"],"molyb":["ux"]}
+PSVC = {"contazara":["branding","web"],"carceral-ecologies":["web"],"a2pas":["ux","web","branding"],"happylife":["ux"],"binome":["branding","web","ux"],"yaypegs":["ux"],"mobile-experiences":["ux"],"360estudio":["branding","web"],"figy":["ux"],"apolo":["ux"],"appy":["ux"],"mood":["ux"],"molyb":["ux"]}
 def path(lg, page="home", key=None):
     if page == "home": return PFX[lg] + "/"
     if page == "project": return f"{PFX[lg]}/{SLG[lg]['projects']}/{key}/"
@@ -147,7 +147,7 @@ def og_variant_ok(src):
     return w >= 600 and h >= 315
 def _proj_idx(key): return [q["key"] for q in PROJ].index(key)
 # Projects whose cover must NOT be used as social image (explicit exception; the visible project is untouched). Remove the key once it has a final cover.
-OG_FALLBACK_PROJECTS = {"carceral": "provisional cover (\"in progress\"): use the language fallback until a final cover exists"}
+OG_FALLBACK_PROJECTS = {"carceral-ecologies": "provisional cover (\"in progress\"): use the language fallback until a final cover exists"}
 import hashlib
 def _ver(path, salt=""):
     """Cache-busting version: content hash of the source file. It changes whenever the image changes, so platforms re-fetch it."""

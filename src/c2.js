@@ -70,7 +70,7 @@ const ART = {
   codelco: v => [0,1,2,3].map(i => `<path d="M0 ${70 + i*52 + v*8} Q100 ${40 + i*52} 200 ${70 + i*52} T400 ${60 + i*52} V300 H0Z" fill="${col(v,i)}" opacity="${.95 - i*.12}"/>`).join("")
 };
 Object.assign(ART, {
-  carceral: v => ART["360estudio"](v), a2pas: v => ART.freethem(v + 1), happylife: v => ART.healthtech(v), binome: v => ART.codelco(v + 1),
+  "carceral-ecologies": v => ART["360estudio"](v), a2pas: v => ART.freethem(v + 1), happylife: v => ART.healthtech(v), binome: v => ART.codelco(v + 1),
   yaypegs: v => ART.apps(v + 1), figy: v => ART.healthtech(v + 1), "mobile-experiences": v => ART.apps(v), molyb: v => ART.codelco(v)
 });
 const IMG = window.__IMG || {};
@@ -121,7 +121,7 @@ function wireMenu(){
 
 /* ---------- home sections ---------- */
 /* service <-> project relations come from the "services" column of each project in the repo (single source) */
-const PSVC = { contazara:["branding","web"], carceral:["web"], a2pas:["ux","web","branding"], happylife:["ux"], binome:["branding","web","ux"], yaypegs:["ux"], "mobile-experiences":["ux"], "360estudio":["branding","web"], figy:["ux"], apolo:["ux"], appy:["ux"], mood:["ux"], molyb:["ux"] };
+const PSVC = { contazara:["branding","web"], "carceral-ecologies":["web"], a2pas:["ux","web","branding"], happylife:["ux"], binome:["branding","web","ux"], yaypegs:["ux"], "mobile-experiences":["ux"], "360estudio":["branding","web"], figy:["ux"], apolo:["ux"], appy:["ux"], mood:["ux"], molyb:["ux"] };
 const sentence = x => { x = String(x).toLowerCase(); return x.charAt(0).toUpperCase() + x.slice(1); };
 const oneLine = x => String(x).replace(/\n/g, " ");
 function renderHomeServices(){
@@ -409,7 +409,7 @@ function parse(){
   if (h.startsWith("service-")) { const k = h.slice(8); if (SKEYS.includes(k)) return { page:"service", key:k }; }
   return ["projects","services","bio","contact"].includes(h) ? { page:h } : { page:"home" };
 }
-const PJ_AUR = { contazara:["#307fe4","#7bb4f0","#f5d90a"], "360estudio":["#c9b36a","#7ba5ca","#f3c63a"], a2pas:["#e23a3a","#f2b8b0","#c9b6e8"], binome:["#e8604c","#d9c3a5","#b8c4d6"], carceral:["#3d4a5a","#8aa0b8","#c9d3e0"], happylife:["#df9483","#89a5c7","#f2d68a"], yaypegs:["#b9215c","#526c8d","#7ec8f0"] };
+const PJ_AUR = { contazara:["#307fe4","#7bb4f0","#f5d90a"], "360estudio":["#c9b36a","#7ba5ca","#f3c63a"], a2pas:["#e23a3a","#f2b8b0","#c9b6e8"], binome:["#e8604c","#d9c3a5","#b8c4d6"], "carceral-ecologies":["#3d4a5a","#8aa0b8","#c9d3e0"], happylife:["#df9483","#89a5c7","#f2d68a"], yaypegs:["#b9215c","#526c8d","#7ec8f0"] };
 function setAur(k){ const pg = document.querySelector('.page[data-page="project"]'), c = PJ_AUR[k]; if (!pg) return; if (c) { pg.style.setProperty("--g1", c[0]); pg.style.setProperty("--g2", c[1]); pg.style.setProperty("--g3", c[2]); } else { ["--g1","--g2","--g3"].forEach(v => pg.style.removeProperty(v)); } }
 function show(r){
   route_ = r; const nav = r.page === "project" ? "projects" : r.page === "service" ? "services" : r.page;

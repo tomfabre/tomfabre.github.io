@@ -40,12 +40,12 @@ fr:{
   band_big:"Premier échange offert. Sans PowerPoint.",
   band_h:"Votre idée mérite d'être belle.", band_p:"Dites-moi ce que vous avez en tête, même à moitié. Je vous écoute, je vous dis ce que je ferais et, si on se retrouve, on commence. La première conversation est offerte, sans engagement.",
   dos_p:"Une façon de penser, mille façons de la réaliser : du premier croquis à la dernière ligne de code.",
-  tools_p:"Figma pour penser, Webflow et code pour construire, Maze et Hotjar pour vérifier que ça marche. Survolez : chacun s'allume dans sa couleur.",
-  worked_h:"Trois villes, trois écoles.", worked_p:"Un travail, c'est une école : il vous met à l'épreuve, vous apprend et vous stresse parfois. Mais on y apprend plus que partout ailleurs.",
+  tools_p:"Figma pour penser, Webflow et code pour construire, Maze et Hotjar pour vérifier que ça marche. Survole : chacun s'allume dans sa couleur.",
+  worked_h:"Trois villes, trois écoles.", worked_p:"Un travail, c'est une école : il te met à l'épreuve, t'apprend et te stresse parfois. Mais on y apprend plus que partout ailleurs.",
   worked_w:["Ici j'apprends chaque jour combien c'est difficile de faire bien et simple.","Ici j'ai appris à concevoir pour des millions sans perdre le détail.","Ici j'ai appris à regarder vraiment ceux qui utilisent les choses."],
   bio_mega1:"Derrière chaque", bio_mega2:"écran, quelqu'un.", bio_sub:"Je conçois produits et marques avec une obsession : que ce que vous faites soit compris, retenu et fonctionne. Et que celui qui est de l'autre côté se sente bien traité.", bio_tag:"Product Designer · Brand Strategist",
   foot_lead:"Les bonnes choses commencent par une conversation.", foot_p:"Si vous êtes arrivé jusqu'ici, on a déjà quelque chose en commun : les détails nous importent. Dites-moi ce que vous voulez construire et on le fera voir.",
-  w_name:"Mon vrai nom est Álvaro, mais je suis Tom.", w_hero:"", w_sticker:"Vous pouvez me déplacer.",
+  w_name:"Mon vrai nom est Álvaro, mais je suis Tom.", w_hero:"", w_sticker:"Tu peux me déplacer.",
   st_hero:"Fait main", st_bio:"Au café"
 }};
 Object.assign(T.es, { bi_name:"Mi nombre real es Álvaro Fabre, pero mi familia y mis amigos siempre me han llamado Tom. Por eso Tom es el nombre con el que prefiero que me conozcas." });

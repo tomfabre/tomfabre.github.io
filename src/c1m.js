@@ -620,7 +620,7 @@ Object.assign(T.es, {
  "c_l": "¿Prefieres escribir directamente?",
  "ct_direct": "También puedes enviarme un email a hey@tomfabre.com. Sin formularios ni rodeos.",
  "d_h": "Cuéntame un poco más.",
- "d_sub": "No necesitas tenerlo todo definido. Con unas líneas para empezar, es suficiente.",
+ "d_sub": "No necesitas tenerlo todo definido. Con unas líneas para empezar, es suficiente. Te respondo en 24 horas.",
  "d_name": "Tu nombre",
  "d_mail": "Tu email",
  "d_topic": "¿En qué puedo ayudarte?",
@@ -647,7 +647,7 @@ Object.assign(T.es, {
  "d_sent_b": "Gracias por escribirme. Te responderé en cuanto pueda.",
  "d_fail_t": "Parece que el mensaje no ha salido.",
  "d_fail_b": "Puedes intentarlo de nuevo o escribirme directamente a hey@tomfabre.com.",
- "d_sent": "¡Mensaje enviado! Gracias por escribirme. Te responderé en cuanto pueda.",
+ "d_sent": "¡Mensaje enviado! Gracias por escribirme. Te respondo en 24 horas.",
  "d_fail": "Parece que el mensaje no ha salido. Puedes intentarlo de nuevo o escribirme directamente a hey@tomfabre.com.",
  "ct_faq": [
   [
@@ -685,7 +685,7 @@ Object.assign(T.en, {
  "c_l": "Prefer to email me directly?",
  "ct_direct": "You can also write to hey@tomfabre.com. No forms, no fuss.",
  "d_h": "Tell me a little more.",
- "d_sub": "You don't need to have everything figured out. A few lines are enough to get started.",
+ "d_sub": "You don't need to have everything figured out. A few lines are enough to get started. I reply within 24 hours.",
  "d_name": "Your name",
  "d_mail": "Your email",
  "d_topic": "What can I help with?",
@@ -712,7 +712,7 @@ Object.assign(T.en, {
  "d_sent_b": "Thanks for reaching out. I'll get back to you as soon as I can.",
  "d_fail_t": "Looks like the message didn't go through.",
  "d_fail_b": "You can try again or email me directly at hey@tomfabre.com.",
- "d_sent": "Message sent! Thanks for reaching out. I'll get back to you as soon as I can.",
+ "d_sent": "Message sent! Thanks for reaching out. I'll reply within 24 hours.",
  "d_fail": "Looks like the message didn't go through. You can try again or email me directly at hey@tomfabre.com.",
  "ct_faq": [
   [
@@ -750,7 +750,7 @@ Object.assign(T.fr, {
  "c_l": "Tu préfères écrire directement ?",
  "ct_direct": "Tu peux aussi m'envoyer un email à hey@tomfabre.com. Sans formulaire ni détour.",
  "d_h": "Raconte-moi.",
- "d_sub": "Pas besoin d'avoir tout défini. Quelques lignes suffisent pour commencer.",
+ "d_sub": "Pas besoin d'avoir tout défini. Quelques lignes suffisent pour commencer. Je réponds sous 24 heures.",
  "d_name": "Ton prénom",
  "d_mail": "Ton email",
  "d_topic": "Comment je peux t'aider ?",
@@ -777,7 +777,7 @@ Object.assign(T.fr, {
  "d_sent_b": "Merci pour ton message. Je te répondrai dès que possible.",
  "d_fail_t": "Le message n'est pas parti.",
  "d_fail_b": "Tu peux réessayer ou m'écrire directement à hey@tomfabre.com.",
- "d_sent": "Message envoyé ! Merci pour ton message. Je te répondrai dès que possible.",
+ "d_sent": "Message envoyé ! Merci pour ton message. Je te réponds sous 24 heures.",
  "d_fail": "Le message n'est pas parti. Tu peux réessayer ou m'écrire directement à hey@tomfabre.com.",
  "ct_faq": [
   [

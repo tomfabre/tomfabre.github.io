@@ -528,7 +528,7 @@ const SECTIONS = {
      "cap": {
       "es": "Recorrido del público: búsqueda, filtros, fichas de evento, identificación, pago y confirmación. Toca la imagen para ampliarla. Etiquetas en francés.",
       "en": "The audience journey: search, filters, event pages, sign-in, checkout and confirmation. Tap the image to enlarge it. Labels are in French.",
-      "fr": "Le parcours du public : recherche, filtres, fiches événements, identification, paiement et confirmation. Touchez l'image pour l'agrandir."
+      "fr": "Le parcours du public : recherche, filtres, fiches événements, identification, paiement et confirmation. Touche l'image pour l'agrandir."
      }
     }
    },
@@ -555,7 +555,7 @@ const SECTIONS = {
      "cap": {
       "es": "Recorridos de artistas y espacios: fichas, identificación, formulario, panel de control, calendario, nuevo evento y perfiles por tipo de usuario. Toca la imagen para ampliarla. Etiquetas en francés.",
       "en": "Artist and venue journeys: pages, sign-in, form, dashboard, calendar, new event and a profile for each type of user. Tap the image to enlarge it. Labels are in French.",
-      "fr": "Les parcours des artistes et des lieux : fiches, identification, formulaire, tableau de bord, calendrier, nouvel événement et un profil par type d'utilisateur. Touchez l'image pour l'agrandir."
+      "fr": "Les parcours des artistes et des lieux : fiches, identification, formulaire, tableau de bord, calendrier, nouvel événement et un profil par type d'utilisateur. Touche l'image pour l'agrandir."
      }
     }
    },
@@ -769,7 +769,7 @@ SEO.en.proj = { contazara: {
   og:{ src:"contazara-cover", alt:"Contazara case study cover: logo and design of the brand's new website" } } };
 SEO.fr.proj = { contazara: {
   t:"Contazara : Branding, Identité Visuelle & Web | Tom Fabre",
-  d:"Une nouvelle identité, un site web et une communication digitale pour Contazara. Découvrez comment nous avons fait évoluer 40 ans d'histoire.",
+  d:"Une nouvelle identité, un site web et une communication digitale pour Contazara. Découvre comment nous avons fait évoluer 40 ans d'histoire.",
   og:{ src:"contazara-cover", alt:"Couverture du cas Contazara : logotype et design du nouveau site web de la marque" } } };
 
 /* À2pas: own title/description per language; the social image is its cover (automatic, see build.py og_for). */
@@ -994,7 +994,7 @@ SECTIONS.happylife = [
      "cap": {
       "es": "Value Proposition Canvas y ficha de la app. Visualización conceptual: las valoraciones y cifras de la ficha forman parte del mockup, no son métricas reales. Toca la imagen para ampliarla.",
       "en": "Value Proposition Canvas and app listing. Conceptual visualisation: the ratings and figures in the listing are part of the mockup, not real metrics. Tap the image to enlarge it.",
-      "fr": "Value Proposition Canvas et fiche de l'application. Visualisation conceptuelle : les notes et chiffres de la fiche font partie de la maquette, ce ne sont pas des métriques réelles. Touchez l'image pour l'agrandir."
+      "fr": "Value Proposition Canvas et fiche de l'application. Visualisation conceptuelle : les notes et chiffres de la fiche font partie de la maquette, ce ne sont pas des métriques réelles. Touche l'image pour l'agrandir."
      }
     }
    }
@@ -1230,7 +1230,7 @@ SECTIONS.binome = [
    {
     "es": "¿Quiénes son? ¿Qué hacen? ¿Qué quieren transmitir?",
     "en": "Who are they? What do they do? What do they want to say?",
-    "fr": "Qui êtes-vous ? Que faites-vous ? Qu'avez-vous envie de transmettre ?"
+    "fr": "Qui es-tu ? Que fais-tu ? Qu'as-tu envie de transmettre ?"
    },
    {
     "es": "Con Binōme nos tocó responderlas a nosotros.",
@@ -2522,7 +2522,7 @@ SEO.en.proj["mobile-experiences"] = {"t": "Mobile App Design & UX/UI | Tom Fabre
 SEO.fr.proj["mobile-experiences"] = {"t": "Design d'applications mobiles et UX/UI | Tom Fabre", "d": "Trois projets de design mobile : Apolo Launcher, Appy × Jojol et Mood Messenger. UX/UI, interfaces et stratégie produit."};
 
 /* Carceral Ecologies: case page prepared, NOT published (PROJ.carceral.locked in c1p.js). Add the images (flow items) and remove `locked` to go live. */
-SECTIONS.carceral = [
+SECTIONS["carceral-ecologies"] = [
  {
   "type": "text",
   "id": "caso",
@@ -2877,7 +2877,7 @@ SECTIONS.carceral = [
   ]
  }
 ];
-HERO.carceral = {
+HERO["carceral-ecologies"] = {
  "tag": {
   "es": "Investigar es importante. Poder encontrarlo, también.",
   "en": "Research matters. Being able to find it matters, too.",
