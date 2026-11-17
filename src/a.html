@@ -1497,6 +1497,12 @@ dialog#prizeDlg:focus{outline:none}
 .bx-view .bx-b{width:1.9rem;height:1.9rem;font-size:.72rem}
 .bx-view .bx-pp{font-size:.55rem}
 .bx-view .bx-tag{right:auto;max-width:calc(100% - 1.2rem);padding:.4rem .95rem}
+/* Spotify: al cargar, el reproductor ocupa toda la tarjeta (sin título ni margen visibles) */
+.bx-sp.is-on{padding:0;gap:0;overflow:hidden;display:flex}
+.bx-sp.is-on .bx-hd{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.bx-sp.is-on .bx-sp-act{display:none}
+.bx-sp.is-on .bx-sp-box{flex:1;margin:0;min-height:352px;aspect-ratio:auto;border-radius:0}
+.bx-sp.is-on .bx-sp-box iframe{height:auto;align-self:stretch;min-height:352px;border-radius:0}
 .bx-an .bx-vc{position:static;box-shadow:none;background:none;padding:0;margin-top:var(--s3)}
 /* bento apaisado: fila 1 = ciudades (8) + anécdotas (4); fila 2 = calle · cocina · banda sonora (4+4+4) */
 @media (min-width:60rem){
