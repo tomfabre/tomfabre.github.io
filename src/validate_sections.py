@@ -10,21 +10,33 @@ LANGS = ("es", "en", "fr")
 ID_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 # type -> (required keys, optional keys)
 TYPES = {
-    "text":    ({"type", "id", "h", "p"},          {"t", "img", "flow"}),
-    "metrics": ({"type", "id", "h", "items"},      {"t", "p", "after", "flow"}),
-    "chapter": ({"type", "id", "h", "t", "p", "layout", "media"}, {"meta", "metric", "links"}),
+    "text":    ({"type", "id", "h", "p"},          {"t", "img", "flow", "langs"}),
+    "metrics": ({"type", "id", "h", "items"},      {"t", "p", "after", "flow", "langs"}),
+    "chapter": ({"type", "id", "h", "t", "p", "layout", "media"}, {"meta", "metric", "links", "langs"}),
 }
 LAYOUTS = ("right", "left", "wide")
 
 
-def _loc(v, path, errs):
-    """Localized string: exactly {es, en, fr}, all non-empty strings."""
+def _langs(v, path, errs, inherited=LANGS):
+    """Optional `langs` marker: list of languages an item is written for (default: inherited, normally all three).
+    A language-specific item is skipped by the renderer in the other languages (used when one language is rewritten on its own)."""
+    if not isinstance(v, dict) or "langs" not in v: return tuple(inherited)
+    ls = v["langs"]
+    if not isinstance(ls, list) or not ls or len(set(ls)) != len(ls) or any(l not in inherited for l in ls):
+        errs.append(f"{path}.langs: must be a non-empty list of distinct languages within {list(inherited)}"); return tuple(inherited)
+    return tuple(l for l in LANGS if l in ls)
+
+
+def _loc(v, path, errs, langs=LANGS):
+    """Localized string: exactly the declared languages (default es, en, fr), all non-empty strings."""
     if not isinstance(v, dict):
-        errs.append(f"{path}: must be an object {{es, en, fr}}"); return
+        errs.append(f"{path}: must be an object {{{', '.join(langs)}}}"); return
     for k in v:
         if k not in LANGS:
             errs.append(f"{path}: unexpected language key '{k}'")
-    for lg in LANGS:
+        elif k not in langs:
+            errs.append(f"{path}: language '{k}' is not declared in langs {list(langs)}")
+    for lg in langs:
         s = v.get(lg)
         if not isinstance(s, str) or not s.strip():
             errs.append(f"{path}.{lg}: missing or empty translation")
@@ -40,7 +52,7 @@ def _url_ok(u):
     return p.scheme == "https" and bool(p.hostname) and "@" not in p.netloc and "." in p.hostname
 
 
-def _para(v, path, errs):
+def _para(v, path, errs, inherited=LANGS):
     """Paragraph: localized dict plus optional em:true (rendered bold) and optional `links`.
     Inline links are structured data, never HTML: the text holds {name} markers and `links` maps each name to
     {href, t:{es,en,fr}}. Every marker must exist in every language exactly once, and every link must be used."""
@@ -48,7 +60,8 @@ def _para(v, path, errs):
         errs.append(f"{path}: must be an object {{es, en, fr[, em, links]}}"); return
     if "em" in v and not isinstance(v["em"], bool):
         errs.append(f"{path}.em: must be true/false")
-    _loc({k: x for k, x in v.items() if k not in ("em", "links")}, path, errs)
+    langs = _langs(v, path, errs, inherited)
+    _loc({k: x for k, x in v.items() if k not in ("em", "links", "langs")}, path, errs, langs)
     links = v.get("links", {})
     if not isinstance(links, dict):
         errs.append(f"{path}.links: must be an object {{name: {{href, t}}}}"); return
@@ -69,11 +82,11 @@ def _para(v, path, errs):
         if re.search(r"[{}]", TOKEN_RE.sub("", s)): errs.append(f"{path}.{lg}: stray '{{' or '}}' in text")
 
 
-def _paras(v, path, errs, required):
+def _paras(v, path, errs, required, inherited=LANGS):
     if not isinstance(v, list) or (required and not v):
         errs.append(f"{path}: must be a non-empty list of paragraphs" if required else f"{path}: must be a list of paragraphs"); return
     for i, p in enumerate(v):
-        _para(p, f"{path}[{i}]", errs)
+        _para(p, f"{path}[{i}]", errs, inherited)
 
 
 def _img(im, path, errs, img_exists):
@@ -121,10 +134,11 @@ def validate(sections, project_keys, img_exists, projects=None):
                 errs.append(f"{at}: duplicate id '{sid}' in project '{pk}'")
             else:
                 seen.add(sid)
-            if "h" in s: _loc(s["h"], f"{at}.h", errs)
-            if "t" in s: _loc(s["t"], f"{at}.t", errs)
+            sl = _langs(s, at, errs)          # languages this section is written for (default: all three)
+            if "h" in s: _loc(s["h"], f"{at}.h", errs, sl)
+            if "t" in s: _loc(s["t"], f"{at}.t", errs, sl)
             if typ == "text":
-                if "p" in s: _paras(s["p"], f"{at}.p", errs, True)
+                if "p" in s: _paras(s["p"], f"{at}.p", errs, True, sl)
                 if "img" in s: _img(s["img"], f"{at}.img", errs, img_exists)
             if typ in ("text", "metrics"):
                 if "flow" in s:
@@ -137,7 +151,7 @@ def validate(sections, project_keys, img_exists, projects=None):
                             if not isinstance(it, dict) or len(it) != 1 or next(iter(it)) not in ("p", "img", "fig", "pair"):
                                 errs.append(f"{w}: must be exactly one of {{p: [...]}}, {{img: {{...}}}} (wide), {{fig: {{..., r?}}}} (in the text column) or {{pair: [img, img]}}"); continue
                             k = next(iter(it))
-                            if k == "p": _paras(it["p"], f"{w}.p", errs, False)
+                            if k == "p": _paras(it["p"], f"{w}.p", errs, False, sl)
                             elif k == "pair":
                                 pr = it["pair"]
                                 if not isinstance(pr, list) or len(pr) != 2: errs.append(f"{w}.pair: must be a list of exactly 2 images")
@@ -150,7 +164,7 @@ def validate(sections, project_keys, img_exists, projects=None):
                             else: _img(it[k], f"{w}.{k}", errs, img_exists)
             if typ == "chapter":
                 if s.get("layout") not in LAYOUTS: errs.append(f"{at}.layout: must be one of {LAYOUTS}")
-                if "p" in s: _paras(s["p"], f"{at}.p", errs, True)
+                if "p" in s: _paras(s["p"], f"{at}.p", errs, True, sl)
                 md = s.get("media")
                 if not isinstance(md, list) or not md: errs.append(f"{at}.media: must be a non-empty list of images")
                 else:
@@ -170,8 +184,8 @@ def validate(sections, project_keys, img_exists, projects=None):
                     if not _url_ok(ln["href"]): errs.append(f"{at}.links[{j}].href: must be an absolute https URL ({ln['href']!r})")
                     _loc(ln["l"], f"{at}.links[{j}].l", errs)
             if typ == "metrics":
-                if "p" in s: _paras(s["p"], f"{at}.p", errs, False)
-                if "after" in s: _paras(s["after"], f"{at}.after", errs, False)
+                if "p" in s: _paras(s["p"], f"{at}.p", errs, False, sl)
+                if "after" in s: _paras(s["after"], f"{at}.after", errs, False, sl)
                 items = s.get("items")
                 if not isinstance(items, list) or not items:
                     errs.append(f"{at}.items: must be a non-empty list")
@@ -186,11 +200,11 @@ def validate(sections, project_keys, img_exists, projects=None):
         elif not isinstance(r, str) or not r.strip(): errs.append(f"PROJ[{d.get('key')}].role: missing")
         st = d.get("site")
         if st is not None:
-            if not isinstance(st, dict) or set(st) != {"href", "l"}:
-                errs.append(f"PROJ[{d.get('key')}].site: must be {{href, l}}")
+            if not isinstance(st, dict) or not {"href", "l"} <= set(st) or set(st) - {"href", "l", "langs"}:
+                errs.append(f"PROJ[{d.get('key')}].site: must be {{href, l[, langs]}}")
             else:
                 if not str(st["href"]).startswith("https://"): errs.append(f"PROJ[{d.get('key')}].site.href: must start with https://")
-                _loc(st["l"], f"PROJ[{d.get('key')}].site.l", errs)
+                _loc(st["l"], f"PROJ[{d.get('key')}].site.l", errs, _langs(st, f"PROJ[{d.get('key')}].site", errs))
     return errs
 
 
@@ -203,11 +217,12 @@ def flatten(secs, lg):
     """Plain-text view of a project's sections in one language (for llms-full.txt and portfolio.json)."""
     out = []
     for s in secs:
+        if lg not in s["h"]: continue      # section written for other languages only
         extra = [f"{m['l'][lg]}: {m['v'][lg]}" for m in s.get("meta", [])] + ([f"{s['metric']['n'][lg]} {s['metric']['l'][lg]}" + (f" ({s['metric']['note'][lg]})" if 'note' in s['metric'] else "")] if s.get("metric") else []) + [f"{x['l'][lg]}: {x['href']}" for x in s.get("links", [])]
-        paras = [plain(p, lg) for p in s.get("p", [])] + [plain(p, lg) for f in s.get("flow", []) for p in f.get("p", [])] + [plain(p, lg) for p in s.get("after", [])] + extra
+        paras = [plain(p, lg) for p in s.get("p", []) if lg in p] + [plain(p, lg) for f in s.get("flow", []) for p in f.get("p", []) if lg in p] + [plain(p, lg) for p in s.get("after", []) if lg in p] + extra
         if s["type"] == "metrics":
             paras.insert(len(s.get("p", [])), " · ".join(f"{it['n'][lg]} {it['l'][lg]}" for it in s["items"]))
-        out.append({"id": s["id"], "heading": s["t"][lg] if "t" in s else s["h"][lg], "label": s["h"][lg], "text": paras})
+        out.append({"id": s["id"], "heading": s["t"][lg] if "t" in s and lg in s["t"] else s["h"][lg], "label": s["h"][lg], "text": paras})
     return out
 
 
