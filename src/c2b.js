@@ -10,11 +10,11 @@
    No stock photos. Restaurants: add only validated {name, url}.
    ============================================================ */
 const BIO_ASSETS = {
-  cities: ["cucuta", "san-cristobal", "merida", "santiago", "aix-en-provence", "paris", "madrid"].map(k => ({ k, img: null })),   // 3:2, 7 photos
+  cities: ["cucuta", "san-cristobal", "merida", "santiago", "aix-en-provence", "paris", "madrid"].map(k => ({ k, img: k === "paris" ? null : "img/bio/city-" + k + ".webp" })),   // paris: pending   // 3:2, 7 photos
   street: Array.from({ length: 10 }, () => ({ img: null, alt: "", note: "" })),                                                   // 1:1, exactly 10 photos
   kitchen: Array.from({ length: 4 }, () => ({ img: null, alt: "" })),                                                             // 1:1, 4 photos
   places: [],                                                                                                                       // [{ name, url }] validated restaurants / places only
-  spotify: { url: null },                                                                                                          // https://open.spotify.com/playlist/<id>
+  spotify: { url: "https://open.spotify.com/playlist/3dyfLnAOgNAX2CSeAhr5bH" },                                                                                                          // https://open.spotify.com/playlist/<id>
   obsessions: Array.from({ length: 5 }, () => ({ img: null, alt: "" })),                                                           // 4:3, 5 personal photos
   choir: { img: null, alt: "" }                                                                                                    // optional, authorised frame or personal photo
 };
@@ -53,8 +53,8 @@ function renderBento2(){
   const c = t.bx_city, sp = t.bx_sp, ck = t.bx_ck, st = t.bx_st, ch = t.bx_ch, A = BIO_ASSETS;
   const cities = `<article class="bx bx-city"><div class="bx-hd"><h3>${esc(c.h)}</h3><p>${esc(c.p)}</p></div>${bxViewer("city", 4500)}</article>`;
   const embed = A.spotify.url ? spEmbed(A.spotify.url) : null;
-  const spot = `<article class="bx bx-sp"><div class="bx-hd"><h3>${esc(sp.h)}</h3><p>${esc(sp.p)}</p></div><p class="bx-pl"><span aria-hidden="true">♪</span> ${esc(sp.name)}</p>${embed
-    ? `<div class="bx-sp-box" id="spBox"><p class="bx-sp-act"><button type="button" class="btn sm" data-sp-load="${esc(embed)}">${esc(u.sp_load)}</button><a class="btn sm ghost" href="${esc(A.spotify.url)}" target="_blank" rel="noopener">${esc(u.sp_open)} <span aria-hidden="true">↗</span></a></p><p class="bx-note">${esc(u.sp_note)}</p></div>`
+  const spot = `<article class="bx bx-sp"><div class="bx-hd"><h3>${esc(sp.h)}</h3><p>${esc(sp.p)}</p></div>${embed
+    ? `<div class="bx-sp-box" id="spBox"><div class="bx-sp-pane"><span class="bx-sp-ico" aria-hidden="true">♪</span><p class="bx-pl">${esc(sp.name)}</p><button type="button" class="btn sm solid" data-sp-load="${esc(embed)}">${esc(u.sp_load)}</button><p class="bx-note">${esc(u.sp_note)}</p></div></div><p class="bx-sp-act"><a class="btn sm ghost" href="${esc(A.spotify.url)}" target="_blank" rel="noopener">${esc(u.sp_open)} <span aria-hidden="true">↗</span></a></p>`
     : `<span class="bx-ph bx-ph-sp" data-pending="spotify-url" role="img" aria-label="${esc(u.ph + ": Spotify")}"><span>${esc(u.ph)}</span><b>${esc(u.sp_pending)}</b></span>`}</article>`;
   const places = A.places.length
     ? `<ul class="bx-places">${A.places.map(p => `<li><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ul>`
@@ -188,7 +188,7 @@ function wireBio2(){
   document.addEventListener("click", e => {
     const g = e.target.closest && e.target.closest("[data-gal]"); if (g) { lbOpen(g.dataset.gal, +g.dataset.i, g); return; }
     const s = e.target.closest && e.target.closest("[data-sp-load]");
-    if (s) { const box = $("#spBox"), ifr = document.createElement("iframe"); ifr.src = s.dataset.spLoad; ifr.title = "Spotify"; ifr.loading = "lazy"; ifr.width = "100%"; ifr.height = "152"; ifr.setAttribute("allow", "encrypted-media"); ifr.style.border = "0"; box.insertBefore(ifr, box.firstChild); s.remove(); return; }
+    if (s) { const pane = $("#spBox .bx-sp-pane"), ifr = document.createElement("iframe"); ifr.src = s.dataset.spLoad; ifr.title = "Spotify"; ifr.loading = "lazy"; ifr.width = "100%"; ifr.height = "352"; ifr.setAttribute("allow", "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"); ifr.setAttribute("allowfullscreen", ""); ifr.style.border = "0"; ifr.style.borderRadius = "12px"; pane.replaceWith(ifr); ifr.focus(); return; }
     if (e.target.closest("#obPrev")) { obGo(-1); return; }
     if (e.target.closest("#obNext")) { obGo(1); return; }
     const c = e.target.closest && e.target.closest("#mmBoard .mm-c"); if (c) { mmPick(+c.dataset.i); return; }
