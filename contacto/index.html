@@ -615,15 +615,20 @@ section.ch{margin-top:var(--s24)}#form.quick .f-extra{display:none}
 .meter .n{font-size:clamp(3rem,6vw,5rem);font-weight:600;line-height:.9;font-variant-numeric:tabular-nums;letter-spacing:-.04em}
 .meter .l{color:var(--muted);font-size:var(--small);text-transform:uppercase;letter-spacing:.1em}
 .status{min-height:3em;font-weight:600;font-size:var(--h3);line-height:1.2}
-.end[hidden]{display:none}
+.end[hidden],.meter[hidden]{display:none}
 .end{border-top:1px solid var(--line2);padding-top:var(--s5);display:flex;flex-direction:column;gap:var(--s4)}
 .end h3{font-size:var(--h3);line-height:1.1}
-.end p{color:var(--muted);font-size:var(--small);max-width:46ch}
+.end p{margin:0;color:var(--muted);font-size:var(--small);max-width:46ch}
 .end .row2{display:flex;flex-wrap:wrap;gap:.5rem}
+.end .end-k{font-size:.75rem;color:var(--fg);text-transform:uppercase;letter-spacing:.18em;font-variant-numeric:tabular-nums}
+.end p.end-hl{color:var(--fg);font-size:1.15rem;font-weight:500;letter-spacing:-.01em;line-height:1.35}
+.end p.end-prize{color:var(--muted)}
+.win-p+.win-hl{margin-top:calc(var(--s2) * -1)}
+.win-hl{margin:0;color:var(--fg);font-size:1.15rem;font-weight:500;letter-spacing:-.01em;line-height:1.35;position:relative;z-index:1;max-width:38ch;text-wrap:balance}
 
 /* win dialog */
 .win-dlg{border:0;background:var(--bg);color:var(--fg);padding:0;width:min(32rem,calc(100vw - 2rem));max-height:calc(100vh - 2rem);overflow-y:auto;border-radius:1.75rem;box-shadow:0 30px 80px rgba(0,0,0,.4);margin:auto}
-.win-dlg::backdrop{background:rgba(20,20,20,.75);backdrop-filter:blur(8px)}
+.win-dlg::backdrop{background:rgba(20,20,20,.84)}
 .win-inner{padding:var(--s10) var(--s8);display:flex;flex-direction:column;gap:var(--s5);align-items:flex-start;position:relative}
 .win-confetti{position:absolute;inset:0 0 auto 0;height:7rem;overflow:hidden;pointer-events:none;border-radius:1.75rem 1.75rem 0 0}
 .win-confetti i{position:absolute;width:.55rem;height:.55rem;top:-.75rem;animation:fall 1.8s var(--ease) forwards}
@@ -740,7 +745,10 @@ footer a:hover{text-decoration:underline;text-underline-offset:3px}
 
 /* dialog form */
 dialog{background:var(--bg);color:var(--fg);border:1px solid var(--fg);padding:var(--s8);width:min(36rem,calc(100vw - 2rem));max-height:calc(100vh - 2rem);overflow-y:auto;border-radius:1.5rem}
-dialog::backdrop{background:rgba(20,20,20,.65);backdrop-filter:blur(4px)}
+dialog::backdrop{background:rgba(20,20,20,.74)}
+#prizeDlg.stacked::backdrop{background:rgba(20,20,20,.28)}
+.win-dlg.under{visibility:hidden}
+.win-dlg .dx{position:absolute;top:var(--s4);right:var(--s4);float:none;margin:0;z-index:3}
 dialog h2{font-size:var(--h2);line-height:1;margin-bottom:var(--s3)}
 dialog .sub{color:var(--muted);font-size:var(--small);margin-bottom:var(--s6)}
 .f{display:flex;flex-direction:column;gap:.3rem;margin-bottom:var(--s4)}
@@ -1465,8 +1473,7 @@ dialog.lb[open]{display:flex}
 #gamesec .sec-head{margin-bottom:var(--s8)}
 .game-intro{display:grid;gap:var(--s3);max-width:40rem;margin-bottom:var(--s4)}
 .game-intro p{margin:0;font-weight:300;color:var(--muted)}
-.game-intro .game-prize{color:var(--fg);font-size:1.15rem;font-weight:500;letter-spacing:-.01em;line-height:1.35;padding-top:var(--s3);border-top:1px solid var(--fg);margin-top:var(--s2)}
-.game-intro .game-note{font-size:.9rem}
+.game-intro .game-prize{color:var(--fg);font-size:clamp(1.15rem,1rem + .5vw,1.45rem);font-weight:500;letter-spacing:-.01em;line-height:1.35;padding-top:var(--s3);border-top:1px solid var(--fg);margin-top:var(--s2)}
 dialog#prizeDlg{padding:var(--s6) var(--s8)}
 dialog#prizeDlg .sub{margin-bottom:var(--s3)}
 dialog#prizeDlg:focus{outline:none}
@@ -1573,7 +1580,7 @@ dialog#prizeDlg:focus{outline:none}
    1) los puntos ya no son una capa del tamaño de toda la tarjeta con máscara: son un cuadrado pequeño que sigue al puntero;
    2) las animaciones continuas (halos, estrella, aurora) se pausan mientras se hace scroll y cuando la tarjeta no está a la vista. */
 .cta-band::before,.sv-cta::before,.sv-team::before{inset:auto;width:26rem;height:26rem;left:calc(var(--mx) - 13rem);top:calc(var(--my) - 13rem);-webkit-mask-image:radial-gradient(closest-side,#000,transparent 70%);mask-image:radial-gradient(closest-side,#000,transparent 70%)}
-html.is-scrolling .blobs i,html.is-scrolling .cta-star,html.is-scrolling .orb .rot-w,html.is-scrolling .aur i,.cta-off .blobs i,.cta-off .cta-star{animation-play-state:paused!important}
+html.is-scrolling .blobs i,html.is-scrolling .cta-star,html.is-scrolling .orb .rot-w,html.is-scrolling .aur i,html.dlg-open .blobs i,html.dlg-open .cta-star,html.dlg-open .orb .rot-w,html.dlg-open .aur i,html.dlg-open .av-w,.cta-off .blobs i,.cta-off .cta-star{animation-play-state:paused!important}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
@@ -1662,12 +1669,20 @@ La idea es sencilla: sumar el talento adecuado para cada proyecto, sin equipos i
   <!-- Hundir la flota: on Home, right after "Un poco más sobre mí" (moved from Bio) -->
   <section id="gamesec" aria-labelledby="hGameH">
     <div class="sec-head reveal"><span class="num">V</span><span class="lab" data-i="game_lab">Análisis UX/UI web gratis</span><h2 id="hGameH" data-i="game_h">Una partida antes de seguir.</h2></div>
-    <div class="game-intro reveal"><p data-i="game_p">Encuentra los cuatro barcos escondidos en el tablero. Tienes 20 fallos para hundirlos y descubrir un poco más sobre cómo trabajo.</p><p class="game-prize" data-i="game_prize">¿El premio? Un análisis UX/UI gratuito de tu web.</p><p class="game-note" data-i="game_note">Los aciertos no cuentan como fallos. Y si pierdes, no te preocupes: también hay premio.</p></div>
+    <div class="game-intro reveal"><p data-i="game_p">Hay cuatro barcos escondidos en el tablero. Cada uno revela algo en lo que me fijo cuando analizo una web.</p><p data-i="game_note">Tienes 20 fallos para encontrarlos. Los aciertos son gratis.</p><p class="game-prize" data-i="game_prize">¿El premio? Una revisión UX/UI gratuita de tu web. Ganes o pierdas.</p></div>
     <div class="game-wrap">
-      <div class="board reveal" id="board" role="group" data-aria="game_h" aria-label="Una partida antes de seguir."><span></span><span class="lab" aria-hidden="true">A</span><span class="lab" aria-hidden="true">B</span><span class="lab" aria-hidden="true">C</span><span class="lab" aria-hidden="true">D</span><span class="lab" aria-hidden="true">E</span><span class="lab" aria-hidden="true">F</span><span class="lab" aria-hidden="true">G</span><span class="lab" aria-hidden="true">H</span><span class="lab" aria-hidden="true">1</span><button type="button" class="c" data-i="0" tabindex="0" aria-label="A1, sin disparar"></button><button type="button" class="c" data-i="1" tabindex="-1" aria-label="B1, sin disparar"></button><button type="button" class="c" data-i="2" tabindex="-1" aria-label="C1, sin disparar"></button><button type="button" class="c" data-i="3" tabindex="-1" aria-label="D1, sin disparar"></button><button type="button" class="c" data-i="4" tabindex="-1" aria-label="E1, sin disparar" style="--col: var(--mint);"></button><button type="button" class="c" data-i="5" tabindex="-1" aria-label="F1, sin disparar"></button><button type="button" class="c" data-i="6" tabindex="-1" aria-label="G1, sin disparar"></button><button type="button" class="c" data-i="7" tabindex="-1" aria-label="H1, sin disparar"></button><span class="lab" aria-hidden="true">2</span><button type="button" class="c" data-i="8" tabindex="-1" aria-label="A2, sin disparar"></button><button type="button" class="c" data-i="9" tabindex="-1" aria-label="B2, sin disparar"></button><button type="button" class="c" data-i="10" tabindex="-1" aria-label="C2, sin disparar"></button><button type="button" class="c" data-i="11" tabindex="-1" aria-label="D2, sin disparar"></button><button type="button" class="c" data-i="12" tabindex="-1" aria-label="E2, sin disparar" style="--col: var(--mint);"></button><button type="button" class="c" data-i="13" tabindex="-1" aria-label="F2, sin disparar" style="--col: var(--mustard);"></button><button type="button" class="c" data-i="14" tabindex="-1" aria-label="G2, sin disparar"></button><button type="button" class="c" data-i="15" tabindex="-1" aria-label="H2, sin disparar"></button><span class="lab" aria-hidden="true">3</span><button type="button" class="c" data-i="16" tabindex="-1" aria-label="A3, sin disparar"></button><button type="button" class="c" data-i="17" tabindex="-1" aria-label="B3, sin disparar"></button><button type="button" class="c" data-i="18" tabindex="-1" aria-label="C3, sin disparar"></button><button type="button" class="c" data-i="19" tabindex="-1" aria-label="D3, sin disparar"></button><button type="button" class="c" data-i="20" tabindex="-1" aria-label="E3, sin disparar"></button><button type="button" class="c" data-i="21" tabindex="-1" aria-label="F3, sin disparar" style="--col: var(--mustard);"></button><button type="button" class="c" data-i="22" tabindex="-1" aria-label="G3, sin disparar"></button><button type="button" class="c" data-i="23" tabindex="-1" aria-label="H3, sin disparar"></button><span class="lab" aria-hidden="true">4</span><button type="button" class="c" data-i="24" tabindex="-1" aria-label="A4, sin disparar"></button><button type="button" class="c" data-i="25" tabindex="-1" aria-label="B4, sin disparar" style="--col: var(--coral);"></button><button type="button" class="c" data-i="26" tabindex="-1" aria-label="C4, sin disparar" style="--col: var(--coral);"></button><button type="button" class="c" data-i="27" tabindex="-1" aria-label="D4, sin disparar" style="--col: var(--coral);"></button><button type="button" class="c" data-i="28" tabindex="-1" aria-label="E4, sin disparar" style="--col: var(--coral);"></button><button type="button" class="c" data-i="29" tabindex="-1" aria-label="F4, sin disparar" style="--col: var(--mustard);"></button><button type="button" class="c" data-i="30" tabindex="-1" aria-label="G4, sin disparar"></button><button type="button" class="c" data-i="31" tabindex="-1" aria-label="H4, sin disparar"></button><span class="lab" aria-hidden="true">5</span><button type="button" class="c" data-i="32" tabindex="-1" aria-label="A5, sin disparar"></button><button type="button" class="c" data-i="33" tabindex="-1" aria-label="B5, sin disparar"></button><button type="button" class="c" data-i="34" tabindex="-1" aria-label="C5, sin disparar"></button><button type="button" class="c" data-i="35" tabindex="-1" aria-label="D5, sin disparar"></button><button type="button" class="c" data-i="36" tabindex="-1" aria-label="E5, sin disparar"></button><button type="button" class="c" data-i="37" tabindex="-1" aria-label="F5, sin disparar"></button><button type="button" class="c" data-i="38" tabindex="-1" aria-label="G5, sin disparar"></button><button type="button" class="c" data-i="39" tabindex="-1" aria-label="H5, sin disparar"></button><span class="lab" aria-hidden="true">6</span><button type="button" class="c" data-i="40" tabindex="-1" aria-label="A6, sin disparar"></button><button type="button" class="c" data-i="41" tabindex="-1" aria-label="B6, sin disparar"></button><button type="button" class="c" data-i="42" tabindex="-1" aria-label="C6, sin disparar"></button><button type="button" class="c" data-i="43" tabindex="-1" aria-label="D6, sin disparar"></button><button type="button" class="c" data-i="44" tabindex="-1" aria-label="E6, sin disparar"></button><button type="button" class="c" data-i="45" tabindex="-1" aria-label="F6, sin disparar"></button><button type="button" class="c" data-i="46" tabindex="-1" aria-label="G6, sin disparar"></button><button type="button" class="c" data-i="47" tabindex="-1" aria-label="H6, sin disparar"></button><span class="lab" aria-hidden="true">7</span><button type="button" class="c" data-i="48" tabindex="-1" aria-label="A7, sin disparar"></button><button type="button" class="c" data-i="49" tabindex="-1" aria-label="B7, sin disparar"></button><button type="button" class="c" data-i="50" tabindex="-1" aria-label="C7, sin disparar"></button><button type="button" class="c" data-i="51" tabindex="-1" aria-label="D7, sin disparar"></button><button type="button" class="c" data-i="52" tabindex="-1" aria-label="E7, sin disparar"></button><button type="button" class="c" data-i="53" tabindex="-1" aria-label="F7, sin disparar"></button><button type="button" class="c" data-i="54" tabindex="-1" aria-label="G7, sin disparar"></button><button type="button" class="c" data-i="55" tabindex="-1" aria-label="H7, sin disparar"></button><span class="lab" aria-hidden="true">8</span><button type="button" class="c" data-i="56" tabindex="-1" aria-label="A8, sin disparar" style="--col: var(--lav);"></button><button type="button" class="c" data-i="57" tabindex="-1" aria-label="B8, sin disparar" style="--col: var(--lav);"></button><button type="button" class="c" data-i="58" tabindex="-1" aria-label="C8, sin disparar" style="--col: var(--lav);"></button><button type="button" class="c" data-i="59" tabindex="-1" aria-label="D8, sin disparar"></button><button type="button" class="c" data-i="60" tabindex="-1" aria-label="E8, sin disparar"></button><button type="button" class="c" data-i="61" tabindex="-1" aria-label="F8, sin disparar"></button><button type="button" class="c" data-i="62" tabindex="-1" aria-label="G8, sin disparar"></button><button type="button" class="c" data-i="63" tabindex="-1" aria-label="H8, sin disparar"></button></div>
+      <div class="board reveal" id="board" role="group" data-aria="game_h" aria-label="Una partida antes de seguir."><span></span><span class="lab" aria-hidden="true">A</span><span class="lab" aria-hidden="true">B</span><span class="lab" aria-hidden="true">C</span><span class="lab" aria-hidden="true">D</span><span class="lab" aria-hidden="true">E</span><span class="lab" aria-hidden="true">F</span><span class="lab" aria-hidden="true">G</span><span class="lab" aria-hidden="true">H</span><span class="lab" aria-hidden="true">1</span><button type="button" class="c" data-i="0" tabindex="0" aria-label="A1, sin disparar"></button><button type="button" class="c" data-i="1" tabindex="-1" aria-label="B1, sin disparar" style="--col: var(--mint);"></button><button type="button" class="c" data-i="2" tabindex="-1" aria-label="C1, sin disparar" style="--col: var(--mint);"></button><button type="button" class="c" data-i="3" tabindex="-1" aria-label="D1, sin disparar"></button><button type="button" class="c" data-i="4" tabindex="-1" aria-label="E1, sin disparar"></button><button type="button" class="c" data-i="5" tabindex="-1" aria-label="F1, sin disparar"></button><button type="button" class="c" data-i="6" tabindex="-1" aria-label="G1, sin disparar"></button><button type="button" class="c" data-i="7" tabindex="-1" aria-label="H1, sin disparar"></button><span class="lab" aria-hidden="true">2</span><button type="button" class="c" data-i="8" tabindex="-1" aria-label="A2, sin disparar"></button><button type="button" class="c" data-i="9" tabindex="-1" aria-label="B2, sin disparar"></button><button type="button" class="c" data-i="10" tabindex="-1" aria-label="C2, sin disparar"></button><button type="button" class="c" data-i="11" tabindex="-1" aria-label="D2, sin disparar"></button><button type="button" class="c" data-i="12" tabindex="-1" aria-label="E2, sin disparar"></button><button type="button" class="c" data-i="13" tabindex="-1" aria-label="F2, sin disparar"></button><button type="button" class="c" data-i="14" tabindex="-1" aria-label="G2, sin disparar"></button><button type="button" class="c" data-i="15" tabindex="-1" aria-label="H2, sin disparar"></button><span class="lab" aria-hidden="true">3</span><button type="button" class="c" data-i="16" tabindex="-1" aria-label="A3, sin disparar"></button><button type="button" class="c" data-i="17" tabindex="-1" aria-label="B3, sin disparar"></button><button type="button" class="c" data-i="18" tabindex="-1" aria-label="C3, sin disparar"></button><button type="button" class="c" data-i="19" tabindex="-1" aria-label="D3, sin disparar"></button><button type="button" class="c" data-i="20" tabindex="-1" aria-label="E3, sin disparar"></button><button type="button" class="c" data-i="21" tabindex="-1" aria-label="F3, sin disparar"></button><button type="button" class="c" data-i="22" tabindex="-1" aria-label="G3, sin disparar"></button><button type="button" class="c" data-i="23" tabindex="-1" aria-label="H3, sin disparar"></button><span class="lab" aria-hidden="true">4</span><button type="button" class="c" data-i="24" tabindex="-1" aria-label="A4, sin disparar"></button><button type="button" class="c" data-i="25" tabindex="-1" aria-label="B4, sin disparar"></button><button type="button" class="c" data-i="26" tabindex="-1" aria-label="C4, sin disparar"></button><button type="button" class="c" data-i="27" tabindex="-1" aria-label="D4, sin disparar"></button><button type="button" class="c" data-i="28" tabindex="-1" aria-label="E4, sin disparar"></button><button type="button" class="c" data-i="29" tabindex="-1" aria-label="F4, sin disparar"></button><button type="button" class="c" data-i="30" tabindex="-1" aria-label="G4, sin disparar"></button><button type="button" class="c" data-i="31" tabindex="-1" aria-label="H4, sin disparar"></button><span class="lab" aria-hidden="true">5</span><button type="button" class="c" data-i="32" tabindex="-1" aria-label="A5, sin disparar"></button><button type="button" class="c" data-i="33" tabindex="-1" aria-label="B5, sin disparar"></button><button type="button" class="c" data-i="34" tabindex="-1" aria-label="C5, sin disparar"></button><button type="button" class="c" data-i="35" tabindex="-1" aria-label="D5, sin disparar" style="--col: var(--coral);"></button><button type="button" class="c" data-i="36" tabindex="-1" aria-label="E5, sin disparar"></button><button type="button" class="c" data-i="37" tabindex="-1" aria-label="F5, sin disparar"></button><button type="button" class="c" data-i="38" tabindex="-1" aria-label="G5, sin disparar"></button><button type="button" class="c" data-i="39" tabindex="-1" aria-label="H5, sin disparar"></button><span class="lab" aria-hidden="true">6</span><button type="button" class="c" data-i="40" tabindex="-1" aria-label="A6, sin disparar"></button><button type="button" class="c" data-i="41" tabindex="-1" aria-label="B6, sin disparar"></button><button type="button" class="c" data-i="42" tabindex="-1" aria-label="C6, sin disparar"></button><button type="button" class="c" data-i="43" tabindex="-1" aria-label="D6, sin disparar" style="--col: var(--coral);"></button><button type="button" class="c" data-i="44" tabindex="-1" aria-label="E6, sin disparar"></button><button type="button" class="c" data-i="45" tabindex="-1" aria-label="F6, sin disparar" style="--col: var(--lav);"></button><button type="button" class="c" data-i="46" tabindex="-1" aria-label="G6, sin disparar" style="--col: var(--lav);"></button><button type="button" class="c" data-i="47" tabindex="-1" aria-label="H6, sin disparar" style="--col: var(--lav);"></button><span class="lab" aria-hidden="true">7</span><button type="button" class="c" data-i="48" tabindex="-1" aria-label="A7, sin disparar"></button><button type="button" class="c" data-i="49" tabindex="-1" aria-label="B7, sin disparar"></button><button type="button" class="c" data-i="50" tabindex="-1" aria-label="C7, sin disparar"></button><button type="button" class="c" data-i="51" tabindex="-1" aria-label="D7, sin disparar" style="--col: var(--coral);"></button><button type="button" class="c" data-i="52" tabindex="-1" aria-label="E7, sin disparar"></button><button type="button" class="c" data-i="53" tabindex="-1" aria-label="F7, sin disparar"></button><button type="button" class="c" data-i="54" tabindex="-1" aria-label="G7, sin disparar"></button><button type="button" class="c" data-i="55" tabindex="-1" aria-label="H7, sin disparar"></button><span class="lab" aria-hidden="true">8</span><button type="button" class="c" data-i="56" tabindex="-1" aria-label="A8, sin disparar"></button><button type="button" class="c" data-i="57" tabindex="-1" aria-label="B8, sin disparar"></button><button type="button" class="c" data-i="58" tabindex="-1" aria-label="C8, sin disparar"></button><button type="button" class="c" data-i="59" tabindex="-1" aria-label="D8, sin disparar" style="--col: var(--coral);"></button><button type="button" class="c" data-i="60" tabindex="-1" aria-label="E8, sin disparar"></button><button type="button" class="c" data-i="61" tabindex="-1" aria-label="F8, sin disparar" style="--col: var(--mustard);"></button><button type="button" class="c" data-i="62" tabindex="-1" aria-label="G8, sin disparar" style="--col: var(--mustard);"></button><button type="button" class="c" data-i="63" tabindex="-1" aria-label="H8, sin disparar" style="--col: var(--mustard);"></button></div>
       <div class="panel reveal">
         <div class="meter"><span class="n" id="left">20</span><span class="l" data-i="left_l">fallos restantes</span></div>
         <p class="status" id="status" role="status" aria-live="polite">Elige una casilla. A ver qué encuentras.</p>
+        <div class="end" id="end" hidden="">
+          <span class="end-k" id="endK"></span>
+          <h3 id="endH"></h3>
+          <p id="endP"></p>
+          <p class="end-hl" id="endHl"></p>
+          <p class="end-prize" id="endPrize"></p>
+          <div class="row2"><button class="btn solid" type="button" id="endCta"><span id="endCtaL"></span><span class="arr" aria-hidden="true">→</span></button></div>
+        </div>
         <ul class="fleet" id="fleet"><li class="locked" style="--col: var(--coral);"><div class="segs" aria-hidden="true"><i></i><i></i><i></i><i></i></div><h3>Barco de 4 casillas · por descubrir</h3></li><li class="locked" style="--col: var(--lav);"><div class="segs" aria-hidden="true"><i></i><i></i><i></i></div><h3>Barco de 3 casillas · por descubrir</h3></li><li class="locked" style="--col: var(--mustard);"><div class="segs" aria-hidden="true"><i></i><i></i><i></i></div><h3>Barco de 3 casillas · por descubrir</h3></li><li class="locked" style="--col: var(--mint);"><div class="segs" aria-hidden="true"><i></i><i></i></div><h3>Barco de 2 casillas · por descubrir</h3></li></ul>
         <div class="gbtns"><button class="btn sm" id="again" type="button" data-i="again">Nueva partida</button><button class="btn sm ghost" id="howBtn" type="button" aria-haspopup="dialog" data-i="game_how">Cómo se juega</button></div>
       </div>
@@ -1766,8 +1781,8 @@ una conversación.</h2></div>
     <button type="button" class="bx-frame" data-gal="city" data-i="0" aria-haspopup="dialog" aria-label="Ampliar foto: Cúcuta"><span class="bx-slides"><span class="bx-sl on" data-sl="0" aria-hidden="true"><img src="/img/bio/city-cucuta.webp" alt="" loading="lazy" decoding="async"></span><span class="bx-sl" data-sl="1" aria-hidden="true"><img src="/img/bio/city-san-cristobal.webp" alt="" loading="lazy" decoding="async"></span><span class="bx-sl" data-sl="2" aria-hidden="true"><img src="/img/bio/city-merida.webp" alt="" loading="lazy" decoding="async"></span><span class="bx-sl" data-sl="3" aria-hidden="true"><img src="/img/bio/city-santiago.webp" alt="" loading="lazy" decoding="async"></span><span class="bx-sl" data-sl="4" aria-hidden="true"><img src="/img/bio/city-aix-en-provence.webp" alt="" loading="lazy" decoding="async"></span><span class="bx-sl" data-sl="5" aria-hidden="true"><span class="bx-ph" data-pending="city-paris"><span>Foto pendiente</span><b>París</b></span></span><span class="bx-sl" data-sl="6" aria-hidden="true"><img src="/img/bio/city-madrid.webp" alt="" loading="lazy" decoding="async"></span></span></button>
     <div class="bx-vc bx-tag"><span class="bx-vcap" aria-hidden="true">Cúcuta · Donde empezó todo.</span></div></div></article><figure class="bx bx-ch"><h3>Cosas que no estaban en el plan.</h3><div class="bx-view bx-an" data-view="an" data-n="1" data-period="7300"><div class="bx-slides bx-qslides"><blockquote class="bx-sl bx-qs on" data-sl="0" aria-hidden="false"><p>Me apunté a un coro en Francia. Un día terminamos participando en una miniserie. No estaba en mis planes, pero tampoco me quejo.</p></blockquote></div><p class="sr-only" data-vlive="" aria-live="off"></p></div></figure><article class="bx bx-ck"><div class="bx-hd"><h3>A la mesa.</h3><p>Me gusta cocinar. Mucho más cuando hay alguien con quien compartirlo.</p></div><p class="bx-places-ph" data-pending="restaurants">Lugares por confirmar</p><div class="bx-view bx-r1-1" data-view="kitchen" data-n="4" data-period="5700" role="group" aria-roledescription="carousel" aria-label="A la mesa. · galería automática">
     <button type="button" class="bx-frame" data-gal="kitchen" data-i="0" aria-haspopup="dialog" aria-label="Ampliar foto: En mi cocina"><span class="bx-slides"><span class="bx-sl on" data-sl="0" aria-hidden="true"><span class="bx-ph" data-pending="kitchen-1"><span>Foto pendiente</span><b>En mi cocina 1</b></span></span><span class="bx-sl" data-sl="1" aria-hidden="true"><span class="bx-ph" data-pending="kitchen-2"><span>Foto pendiente</span><b>En mi cocina 2</b></span></span><span class="bx-sl" data-sl="2" aria-hidden="true"><span class="bx-ph" data-pending="kitchen-3"><span>Foto pendiente</span><b>En mi cocina 3</b></span></span><span class="bx-sl" data-sl="3" aria-hidden="true"><span class="bx-ph" data-pending="kitchen-4"><span>Foto pendiente</span><b>En mi cocina 4</b></span></span></span></button>
-    </div></article><article class="bx bx-st"><div class="bx-hd"><h3>Lo que pasa desapercibido</h3></div><div class="bx-view bx-r1-1" data-view="street" data-n="10" data-period="3600" role="group" aria-roledescription="carousel" aria-label="Lo que pasa desapercibido · galería automática">
-    <button type="button" class="bx-frame" data-gal="street" data-i="0" aria-haspopup="dialog" aria-label="Ampliar foto: Lo que pasa desapercibido 1"><span class="bx-slides"><span class="bx-sl on" data-sl="0" aria-hidden="true"><span class="bx-ph" data-pending="street-1"><span>Foto pendiente</span><b>01</b></span></span><span class="bx-sl" data-sl="1" aria-hidden="true"><span class="bx-ph" data-pending="street-2"><span>Foto pendiente</span><b>02</b></span></span><span class="bx-sl" data-sl="2" aria-hidden="true"><span class="bx-ph" data-pending="street-3"><span>Foto pendiente</span><b>03</b></span></span><span class="bx-sl" data-sl="3" aria-hidden="true"><span class="bx-ph" data-pending="street-4"><span>Foto pendiente</span><b>04</b></span></span><span class="bx-sl" data-sl="4" aria-hidden="true"><span class="bx-ph" data-pending="street-5"><span>Foto pendiente</span><b>05</b></span></span><span class="bx-sl" data-sl="5" aria-hidden="true"><span class="bx-ph" data-pending="street-6"><span>Foto pendiente</span><b>06</b></span></span><span class="bx-sl" data-sl="6" aria-hidden="true"><span class="bx-ph" data-pending="street-7"><span>Foto pendiente</span><b>07</b></span></span><span class="bx-sl" data-sl="7" aria-hidden="true"><span class="bx-ph" data-pending="street-8"><span>Foto pendiente</span><b>08</b></span></span><span class="bx-sl" data-sl="8" aria-hidden="true"><span class="bx-ph" data-pending="street-9"><span>Foto pendiente</span><b>09</b></span></span><span class="bx-sl" data-sl="9" aria-hidden="true"><span class="bx-ph" data-pending="street-10"><span>Foto pendiente</span><b>10</b></span></span></span></button>
+    </div></article><article class="bx bx-st"><div class="bx-hd"><h3>Lo que pasa desapercibido</h3></div><div class="bx-view bx-r1-1" data-view="street" data-n="8" data-period="3600" role="group" aria-roledescription="carousel" aria-label="Lo que pasa desapercibido · galería automática">
+    <button type="button" class="bx-frame" data-gal="street" data-i="0" aria-haspopup="dialog" aria-label="Ampliar foto: Retrato a bolígrafo sobre una página de atlas anatómico antiguo"><span class="bx-slides"><span class="bx-sl on" data-sl="0" aria-hidden="true"><img src="/img/bio/look-1.webp" alt="" loading="lazy" decoding="async"></span><span class="bx-sl" data-sl="1" aria-hidden="true"><img src="/img/bio/look-2.webp" alt="" loading="lazy" decoding="async"></span><span class="bx-sl" data-sl="2" aria-hidden="true"><img src="/img/bio/look-3.webp" alt="" loading="lazy" decoding="async"></span><span class="bx-sl" data-sl="3" aria-hidden="true"><img src="/img/bio/look-4.webp" alt="" loading="lazy" decoding="async"></span><span class="bx-sl" data-sl="4" aria-hidden="true"><img src="/img/bio/look-5.webp" alt="" loading="lazy" decoding="async"></span><span class="bx-sl" data-sl="5" aria-hidden="true"><img src="/img/bio/look-6.webp" alt="" loading="lazy" decoding="async"></span><span class="bx-sl" data-sl="6" aria-hidden="true"><img src="/img/bio/look-7.webp" alt="" loading="lazy" decoding="async"></span><span class="bx-sl" data-sl="7" aria-hidden="true"><img src="/img/bio/look-8.webp" alt="" loading="lazy" decoding="async"></span></span></button>
     </div></article><article class="bx bx-sp"><div class="bx-hd"><h3>Banda sonora.</h3></div><div class="bx-sp-box" id="spBox"><div class="bx-sp-pane"><span class="bx-sp-ico" aria-hidden="true">♪</span><p class="bx-pl">Un poco de todo. Como yo.</p><button type="button" class="btn sm solid" data-sp-load="https://open.spotify.com/embed/playlist/3dyfLnAOgNAX2CSeAhr5bH?utm_source=generator&amp;theme=0&amp;si=90d9f237d1c04693">Cargar reproductor</button><p class="bx-note">El reproductor de Spotify solo se carga cuando lo activas.</p></div></div></article></div>
   </section>
 
@@ -1793,7 +1808,7 @@ una conversación.</h2></div>
   <!-- 06 · juego de memoria -->
   <section class="mm-sec" id="memorysec" aria-labelledby="mmH">
     <div class="sec-head reveal"><h2 id="mmH" data-i="mm_h">¿Nos conocemos?</h2><p class="rh" data-i="mm_p">A ver cuánto tardas en encontrar las parejas. Cada una esconde una pequeña historia sobre mí.</p></div>
-    <div class="mm reveal" id="mm"><div class="mm-board" id="mmBoard" role="group" aria-label="Tablero de cartas"><button type="button" class="mm-c" data-i="0" style="--mc:var(--coral)" aria-label="Carta 1, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>05</i><b>De la TV al móvil</b></span></span></button><button type="button" class="mm-c" data-i="1" style="--mc:var(--coral)" aria-label="Carta 2, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>05</i><b>De la TV al móvil</b></span></span></button><button type="button" class="mm-c" data-i="2" style="--mc:var(--mint)" aria-label="Carta 3, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>04</i><b>Siempre hay sitio</b></span></span></button><button type="button" class="mm-c" data-i="3" style="--mc:var(--mustard)" aria-label="Carta 4, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>03</i><b>El camino de vuelta</b></span></span></button><button type="button" class="mm-c" data-i="4" style="--mc:var(--lav)" aria-label="Carta 5, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>06</i><b>Una cosa lleva a otra</b></span></span></button><button type="button" class="mm-c" data-i="5" style="--mc:var(--lav)" aria-label="Carta 6, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>02</i><b>Una historia musical</b></span></span></button><button type="button" class="mm-c" data-i="6" style="--mc:var(--coral)" aria-label="Carta 7, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>01</i><b>De un lado al otro</b></span></span></button><button type="button" class="mm-c" data-i="7" style="--mc:var(--coral)" aria-label="Carta 8, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>01</i><b>De un lado al otro</b></span></span></button><button type="button" class="mm-c" data-i="8" style="--mc:var(--lav)" aria-label="Carta 9, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>02</i><b>Una historia musical</b></span></span></button><button type="button" class="mm-c" data-i="9" style="--mc:var(--lav)" aria-label="Carta 10, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>06</i><b>Una cosa lleva a otra</b></span></span></button><button type="button" class="mm-c" data-i="10" style="--mc:var(--mustard)" aria-label="Carta 11, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>03</i><b>El camino de vuelta</b></span></span></button><button type="button" class="mm-c" data-i="11" style="--mc:var(--mint)" aria-label="Carta 12, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>04</i><b>Siempre hay sitio</b></span></span></button></div>
+    <div class="mm reveal" id="mm"><div class="mm-board" id="mmBoard" role="group" aria-label="Tablero de cartas"><button type="button" class="mm-c" data-i="0" style="--mc:var(--coral)" aria-label="Carta 1, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>05</i><b>De la TV al móvil</b></span></span></button><button type="button" class="mm-c" data-i="1" style="--mc:var(--coral)" aria-label="Carta 2, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>01</i><b>De un lado al otro</b></span></span></button><button type="button" class="mm-c" data-i="2" style="--mc:var(--coral)" aria-label="Carta 3, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>01</i><b>De un lado al otro</b></span></span></button><button type="button" class="mm-c" data-i="3" style="--mc:var(--lav)" aria-label="Carta 4, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>02</i><b>Una historia musical</b></span></span></button><button type="button" class="mm-c" data-i="4" style="--mc:var(--lav)" aria-label="Carta 5, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>06</i><b>Una cosa lleva a otra</b></span></span></button><button type="button" class="mm-c" data-i="5" style="--mc:var(--mint)" aria-label="Carta 6, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>04</i><b>Siempre hay sitio</b></span></span></button><button type="button" class="mm-c" data-i="6" style="--mc:var(--lav)" aria-label="Carta 7, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>02</i><b>Una historia musical</b></span></span></button><button type="button" class="mm-c" data-i="7" style="--mc:var(--mustard)" aria-label="Carta 8, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>03</i><b>El camino de vuelta</b></span></span></button><button type="button" class="mm-c" data-i="8" style="--mc:var(--lav)" aria-label="Carta 9, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>06</i><b>Una cosa lleva a otra</b></span></span></button><button type="button" class="mm-c" data-i="9" style="--mc:var(--mustard)" aria-label="Carta 10, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>03</i><b>El camino de vuelta</b></span></span></button><button type="button" class="mm-c" data-i="10" style="--mc:var(--mint)" aria-label="Carta 11, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>04</i><b>Siempre hay sitio</b></span></span></button><button type="button" class="mm-c" data-i="11" style="--mc:var(--coral)" aria-label="Carta 12, boca abajo" aria-disabled="false"><span class="mm-in"><span class="mm-b" aria-hidden="true">TF</span><span class="mm-f" aria-hidden="true"><i>05</i><b>De la TV al móvil</b></span></span></button></div>
   <div class="mm-side"><dl class="mm-stats"><div><dt>Intentos</dt><dd id="mmT">0</dd></div><div><dt>Parejas</dt><dd id="mmP">0 / 6</dd></div></dl>
   <p class="mm-status" id="mmS" role="status" aria-live="polite"></p>
   <p><button type="button" class="btn sm ghost" id="mmReset">Reiniciar</button></p>
@@ -1867,7 +1882,7 @@ Cuéntame qué tienes en mente y vemos por dónde empezar.</p>
   </div>
   <div class="chat-log" id="clog"><div class="y-turn" id="yturn" tabindex="-1"><p class="y-msg">¡Hey! Soy Yodis Brownie Jr., la asistente interactiva del portfolio de Tom. No soy una IA que lo sabe todo, pero conozco unas cuantas buenas historias.</p><p class="y-q" id="yq">¿Qué te trae por aquí?</p></div><div class="y-opts" role="group" aria-labelledby="yq"><button class="y-opt go" type="button" style="--i: 0;">Tengo un proyecto ↗</button><button class="y-opt" type="button" style="--i: 1;">Ver sus proyectos</button><button class="y-opt" type="button" style="--i: 2;">¿Quién es Tom?</button><button class="y-opt" type="button" style="--i: 3;">Sorpréndeme ✳</button></div><p class="y-note" id="ynote" hidden=""></p></div>
   <div class="sr" id="ystatus" role="status" aria-live="polite"></div>
-  <div class="chat-foot"><button type="button" data-open-form="" data-i="write">Quiero mi análisis gratuito</button></div>
+  <div class="chat-foot"><button type="button" data-open-form="" data-i="write">Analizar mi web</button></div>
 </div>
 
 
@@ -1875,7 +1890,7 @@ Cuéntame qué tienes en mente y vemos por dónde empezar.</p>
   <div class="win-inner">
     <span class="win-kicker" data-i="how_k">Antes de empezar</span>
     <h2 class="win-h" id="howH" data-i="game_how">Cómo se juega</h2>
-    <ol class="how-list" id="howList"><li>Hay 4 barcos escondidos en un tablero de 8×8: miden 4, 3, 3 y 2 casillas. Están en horizontal o en vertical, nunca en diagonal.</li><li>Toca una casilla para disparar. Si hay un barco, es «Tocado»; si no, «Agua».</li><li>Cada «Agua» gasta un intento y tienes 20. Los aciertos no cuestan nada.</li><li>Cuando tocas todas las casillas de un barco, se hunde y descubre una forma de trabajar.</li><li>Ganes o pierdas, te llevas el regalo: una revisión UX/UI breve de tu web. Si pierdes, puedes empezar de nuevo.</li></ol>
+    <ol class="how-list" id="howList"><li>Hay 4 barcos escondidos en un tablero de 8×8: miden 4, 3, 3 y 2 casillas. Están en horizontal o en vertical, nunca en diagonal.</li><li>Toca una casilla para disparar. Si hay un barco, es «Tocado»; si no, «Agua».</li><li>Cada «Agua» gasta un intento y tienes 20. Los aciertos no cuestan nada.</li><li>Cuando tocas todas las casillas de un barco, se hunde y revela algo en lo que me fijo al analizar una web.</li><li>Ganes o pierdas, te llevas el regalo: una revisión UX/UI de tu home con tres ideas concretas. Puedes empezar una partida nueva cuando quieras.</li></ol>
     <div class="win-actions"><button class="btn solid" type="button" id="howClose" data-i="how_ok">Entendido</button></div>
   </div>
 </dialog>
@@ -1885,13 +1900,14 @@ Cuéntame qué tienes en mente y vemos por dónde empezar.</p>
     <span class="win-kicker" id="gameKicker"></span>
     <div class="win-h" id="gameH" role="heading" aria-level="2"></div>
     <p class="win-p" id="gameP"></p>
+    <p class="win-hl" id="gameHl"></p>
     <p class="prize" id="gamePrize"></p>
     <div class="win-actions">
       <button class="btn solid" type="button" id="gameWrite"><span id="gameWriteL"></span><span class="arr" aria-hidden="true">→</span></button>
-      <button class="btn" type="button" id="gameRetry" data-i="play_again">Jugar de nuevo</button>
+      <button class="btn" type="button" id="gameRetry" data-i="again">Nueva partida</button>
     </div>
   </div>
-  <button class="dx" type="button" id="gameClose" aria-label="Close">×</button>
+  <button class="dx" type="button" id="gameClose" data-aria="close" aria-label="Cerrar">×</button>
 </dialog>
 
 <dialog id="lbDlg" class="lb" aria-label="Gallery">
@@ -1904,7 +1920,7 @@ Cuéntame qué tienes en mente y vemos por dónde empezar.</p>
   <button class="dx" type="button" id="pzClose" data-aria="close" aria-label="Cerrar">×</button>
   <div id="pzHead"><h2 id="pzT" data-i="gf_h">Vamos a echarle un vistazo a tu web.</h2>
   <p class="sub" data-i="gf_sub">Déjame el enlace y un email para enviarte el análisis. Si hay algo que te preocupa especialmente, también puedes contármelo.</p>
-  <p class="pz-scope" data-i="gf_scope">Una revisión breve de tu home con tres oportunidades de mejora UX/UI. No es una auditoría completa.</p></div>
+  <p class="pz-scope" data-i="gf_scope">Una revisión breve de tu home con tres recomendaciones UX/UI. No es una auditoría completa.</p></div>
   <form id="pzForm" novalidate="">
     <div class="f"><label for="pzW" data-i="gf_web">Tu web</label><input id="pzW" name="website" type="text" inputmode="url" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="url" data-ph="gf_web_ph" required="" placeholder="tuweb.com"></div>
     <div class="f"><label for="pzE" data-i="gf_mail">Tu email</label><input id="pzE" name="email" type="email" autocomplete="email" data-ph="ph_mail" required="" placeholder="hola@ejemplo.com"></div>
@@ -7157,9 +7173,9 @@ Object.assign(SEO.fr, {
 Object.assign(T.es, {
   game_lab: "Análisis UX/UI web gratis",
   game_h: "Una partida antes de seguir.",
-  game_p: "Encuentra los cuatro barcos escondidos en el tablero. Tienes 20 fallos para hundirlos y descubrir un poco más sobre cómo trabajo.",
-  game_prize: "¿El premio? Un análisis UX/UI gratuito de tu web.",
-  game_note: "Los aciertos no cuentan como fallos. Y si pierdes, no te preocupes: también hay premio.",
+  game_p: "Hay cuatro barcos escondidos en el tablero. Cada uno revela algo en lo que me fijo cuando analizo una web.",
+  game_note: "Tienes 20 fallos para encontrarlos. Los aciertos son gratis.",
+  game_prize: "¿El premio? Una revisión UX/UI gratuita de tu web. Ganes o pierdas.",
   m_start: "Elige una casilla. A ver qué encuentras.",
   m_miss: "Agua. Por aquí no era.",
   m_hit: "¡Tocado! Vas bien.",
@@ -7167,23 +7183,33 @@ Object.assign(T.es, {
   m_last: "Solo queda uno. Ya casi lo tienes.",
   m_five: "Te quedan 5 fallos. Se pone interesante.",
   m_one: "Última oportunidad.",
+  m_win: "¡Flota hundida! Ya sabes en qué me fijo cuando analizo una web.",
+  m_lose: "La flota sobrevivió. No encontraste todos los barcos, pero no te quedas sin premio.",
+  kick_win: "Victoria", kick_lose: "Derrota", ships_n: "barcos",
+  ships: [
+    ["Primera impresión", "¿Se entiende qué haces nada más entrar? Me fijo en la claridad del mensaje, la jerarquía visual y lo que llama la atención primero."],
+    ["Navegación", "¿Es fácil encontrar lo que buscas? Reviso cómo se organiza la información, los menús y los recorridos principales."],
+    ["Diseño y experiencia", "¿La web resulta agradable y cómoda de utilizar? Observo la legibilidad, el diseño responsive y los pequeños detalles que hacen la diferencia."],
+    ["Pasar a la acción", "¿Está claro cuál es el siguiente paso? Miro los botones, los formularios y si la web facilita que alguien te escriba o descubra tus servicios."]],
   win_h: "¡Flota hundida!",
-  win_p: "Encontraste todos los barcos. Parece que se te da bastante bien esto.",
-  win_prize: "Ahora me toca a mí: te regalo un análisis UX/UI de tu web.",
-  claim: "Pedir mi análisis gratuito",
-  lose_h: "Se acabaron los intentos.",
-  lose_p: "La flota sobrevivió. Pero no te vas con las manos vacías.",
-  lose_prize: "Dime cuál es tu web y te regalo un análisis UX/UI. Aquí también ganan los que pierden.",
-  write: "Quiero mi análisis gratuito",
+  win_p: "Ya sabes en qué me fijo cuando analizo una web.",
+  win_hl: "Ahora me toca mirar la tuya.",
+  win_prize: "Te regalo una revisión UX/UI de tu home con tres ideas concretas para mejorarla.",
+  claim: "Analizar mi web",
+  lose_h: "La flota sobrevivió.",
+  lose_p: "No encontraste todos los barcos, pero eso no significa que te quedes sin premio.",
+  lose_hl: "Ahora me toca mirar tu web.",
+  lose_prize: "Te regalo una revisión UX/UI de tu home con tres ideas concretas para mejorarla.",
+  write: "Analizar mi web",
   game_rules: [
     "Hay 4 barcos escondidos en un tablero de 8×8: miden 4, 3, 3 y 2 casillas. Están en horizontal o en vertical, nunca en diagonal.",
     "Toca una casilla para disparar. Si hay un barco, es «Tocado»; si no, «Agua».",
     "Cada «Agua» gasta un intento y tienes 20. Los aciertos no cuestan nada.",
-    "Cuando tocas todas las casillas de un barco, se hunde y descubre una forma de trabajar.",
-    "Ganes o pierdas, te llevas el regalo: una revisión UX/UI breve de tu web. Si pierdes, puedes empezar de nuevo."],
+    "Cuando tocas todas las casillas de un barco, se hunde y revela algo en lo que me fijo al analizar una web.",
+    "Ganes o pierdas, te llevas el regalo: una revisión UX/UI de tu home con tres ideas concretas. Puedes empezar una partida nueva cuando quieras."],
   gf_h: "Vamos a echarle un vistazo a tu web.",
   gf_sub: "Déjame el enlace y un email para enviarte el análisis. Si hay algo que te preocupa especialmente, también puedes contármelo.",
-  gf_scope: "Una revisión breve de tu home con tres oportunidades de mejora UX/UI. No es una auditoría completa.",
+  gf_scope: "Una revisión breve de tu home con tres recomendaciones UX/UI. No es una auditoría completa.",
   gf_web: "Tu web", gf_web_ph: "tuweb.com",
   gf_mail: "Tu email",
   gf_more: "¿Hay algo que te gustaría mejorar? (opcional)",
@@ -7198,9 +7224,9 @@ Object.assign(T.es, {
 Object.assign(T.en, {
   game_lab: "Free website UX/UI review",
   game_h: "One quick game before you go.",
-  game_p: "Find the four hidden ships on the board. You have 20 misses to sink them all and learn a little about how I work along the way.",
-  game_prize: "The prize? A free UX/UI review of your website.",
-  game_note: "Hits don't count against you. And even if you lose, the review is still yours.",
+  game_p: "Four ships are hidden on the board. Each one reveals something I look at when reviewing a website.",
+  game_note: "You have 20 misses to find them. Hits don't count against you.",
+  game_prize: "The prize? A free UX/UI review of your website. Win or lose.",
   m_start: "Pick a square. Let's see what you find.",
   m_miss: "Miss. Not this one.",
   m_hit: "Hit! Nice one.",
@@ -7208,23 +7234,33 @@ Object.assign(T.en, {
   m_last: "Just one ship left. Almost there.",
   m_five: "5 misses left. Things are getting interesting.",
   m_one: "Last chance.",
+  m_win: "Fleet sunk! Now you know what I look for when reviewing a website.",
+  m_lose: "The fleet survived. You didn't find every ship, but you're not leaving empty-handed.",
+  kick_win: "Victory", kick_lose: "Defeat", ships_n: "ships",
+  ships: [
+    ["First impressions", "Is it clear what you do as soon as someone lands on your site? I look at your messaging, visual hierarchy and what catches the eye first."],
+    ["Navigation", "Can visitors easily find what they're looking for? I look at how content is organised, the menus and the main user journeys."],
+    ["Design & experience", "Is the site pleasant and easy to use? I look at readability, how it works on mobile and the small details that make a difference."],
+    ["Taking action", "Is the next step obvious? I look at buttons, forms and how easy it is for someone to contact you or explore your services."]],
   win_h: "Fleet sunk!",
-  win_p: "You found every ship. Looks like you're pretty good at this.",
-  win_prize: "My turn to give something back: a free UX/UI review of your website.",
-  claim: "Get my free UX/UI review",
-  lose_h: "You're out of tries.",
-  lose_p: "The fleet survived. But you're not leaving empty-handed.",
-  lose_prize: "Send me your website and I'll give you a free UX/UI review. Even losing has its perks.",
-  write: "Get my free UX/UI review",
+  win_p: "Now you know what I look for when reviewing a website.",
+  win_hl: "My turn to look at yours.",
+  win_prize: "I'll give your homepage a free UX/UI review with three practical ideas to improve it.",
+  claim: "Review my website",
+  lose_h: "The fleet survived.",
+  lose_p: "You didn't find every ship, but you're not leaving empty-handed.",
+  lose_hl: "My turn to look at your website.",
+  lose_prize: "I'll give your homepage a free UX/UI review with three practical ideas to improve it.",
+  write: "Review my website",
   game_rules: [
     "Four ships are hidden on an 8×8 board: they are 4, 3, 3 and 2 cells long. They sit horizontally or vertically, never diagonally.",
     "Tap a cell to fire. If there is a ship it's a \"Hit\"; if not, a \"Miss\".",
     "Every \"Miss\" uses up a try and you have 20. Hits cost nothing.",
-    "When you hit every cell of a ship it sinks and reveals a way of working.",
-    "Win or lose, the gift is yours: a quick UX/UI review of your website. If you lose, you can start again."],
+    "When you hit every cell of a ship it sinks and reveals something I look at when reviewing a website.",
+    "Win or lose, the gift is yours: a UX/UI review of your homepage with three practical ideas. You can start a new game whenever you like."],
   gf_h: "Let's take a look at your website.",
   gf_sub: "Share your website and email so I can send you my review. If there's something you're especially concerned about, feel free to mention it.",
-  gf_scope: "A quick review of your homepage with three practical UX/UI improvement ideas. Not a full website audit.",
+  gf_scope: "A short review of your homepage with three UX/UI recommendations. Not a full website audit.",
   gf_web: "Your website", gf_web_ph: "yoursite.com",
   gf_mail: "Your email",
   gf_more: "Anything you'd like to improve? (optional)",
@@ -7239,9 +7275,9 @@ Object.assign(T.en, {
 Object.assign(T.fr, {
   game_lab: "Mini-audit UX/UI gratuit",
   game_h: "Une petite partie avant de continuer.",
-  game_p: "Retrouve les quatre bateaux cachés sur la grille. Tu as droit à 20 erreurs pour tous les couler et découvrir au passage quelques petites choses sur ma façon de travailler.",
-  game_prize: "Et à la clé ? Un mini-audit UX/UI gratuit de ton site.",
-  game_note: "Les bonnes réponses ne comptent pas comme des erreurs. Et même si tu perds, tu repars avec ton cadeau.",
+  game_p: "Quatre bateaux sont cachés sur la grille. Chacun te révèle un aspect auquel je fais attention quand j'analyse un site web.",
+  game_note: "Tu as droit à 20 erreurs pour les trouver. Les bonnes réponses ne comptent pas.",
+  game_prize: "Et à la clé ? Un mini-audit UX/UI gratuit de ton site. Que tu gagnes ou que tu perdes.",
   m_start: "Choisis une case. Voyons ce qui se cache là-dessous.",
   m_miss: "À l'eau. Pas par ici.",
   m_hit: "Touché ! Bien joué.",
@@ -7249,23 +7285,33 @@ Object.assign(T.fr, {
   m_last: "Plus qu'un bateau. Tu y es presque.",
   m_five: "Plus que 5 erreurs possibles. Ça se corse.",
   m_one: "Dernière chance.",
+  m_win: "Toute la flotte est coulée ! Tu sais maintenant ce que je regarde quand j'analyse un site web.",
+  m_lose: "La flotte a survécu. Tu n'as pas trouvé tous les bateaux, mais tu ne repars pas les mains vides.",
+  kick_win: "Victoire", kick_lose: "Défaite", ships_n: "bateaux",
+  ships: [
+    ["Première impression", "Est-ce qu'on comprend ce que tu fais dès les premières secondes ? Je regarde si ton message est clair, si les informations sont bien hiérarchisées et ce qui attire l'œil en premier."],
+    ["Navigation", "Est-ce qu'on trouve facilement ce qu'on cherche ? Je regarde comment les contenus sont organisés, les menus et les principaux parcours."],
+    ["Design et expérience", "Est-ce que le site est agréable et facile à utiliser ? Je regarde la lisibilité, l'affichage sur mobile et les petits détails qui changent l'expérience."],
+    ["Passer à l'action", "Est-ce qu'on sait quoi faire ensuite ? Je regarde les boutons, les formulaires et si le site donne envie de te contacter ou d'en découvrir plus sur tes services."]],
   win_h: "Toute la flotte est coulée !",
-  win_p: "Tu as trouvé tous les bateaux. Pas mal du tout !",
-  win_prize: "À mon tour : je t'offre un mini-audit UX/UI de ton site.",
-  claim: "Demander mon audit gratuit",
-  lose_h: "Plus de tentatives !",
-  lose_p: "La flotte a survécu. Mais tu ne repars pas les mains vides.",
-  lose_prize: "Donne-moi l'adresse de ton site et je t'offre un mini-audit UX/UI. Même en perdant, tu gagnes quelque chose.",
-  write: "Je veux mon audit gratuit",
+  win_p: "Tu sais maintenant ce que je regarde quand j'analyse un site web.",
+  win_hl: "À mon tour de regarder le tien.",
+  win_prize: "Je t'offre un mini-audit UX/UI de ta page d'accueil, avec trois pistes concrètes pour l'améliorer.",
+  claim: "Analyser mon site",
+  lose_h: "La flotte a survécu.",
+  lose_p: "Tu n'as pas trouvé tous les bateaux, mais tu ne repars pas les mains vides.",
+  lose_hl: "À mon tour de regarder ton site.",
+  lose_prize: "Je t'offre un mini-audit UX/UI de ta page d'accueil, avec trois pistes concrètes pour l'améliorer.",
+  write: "Analyser mon site",
   game_rules: [
     "4 bateaux sont cachés sur une grille de 8×8 : ils mesurent 4, 3, 3 et 2 cases. Ils sont à l'horizontale ou à la verticale, jamais en diagonale.",
     "Touche une case pour tirer. S'il y a un bateau, c'est « Touché » ; sinon, « À l'eau ».",
     "Chaque « À l'eau » use un essai et tu en as 20. Les touches ne coûtent rien.",
-    "Quand tu touches toutes les cases d'un bateau, il coule et dévoile une façon de travailler.",
-    "Que tu gagnes ou que tu perdes, le cadeau est à toi : un mini-audit UX/UI de ton site. Si tu perds, tu peux recommencer."],
+    "Quand tu touches toutes les cases d'un bateau, il coule et te révèle un aspect auquel je fais attention quand j'analyse un site web.",
+    "Que tu gagnes ou que tu perdes, le cadeau est à toi : un mini-audit UX/UI de ta page d'accueil avec trois pistes concrètes. Tu peux relancer une partie quand tu veux."],
   gf_h: "On va jeter un œil à ton site.",
   gf_sub: "Laisse-moi son adresse et ton email pour que je puisse t'envoyer mon retour. Si quelque chose te préoccupe en particulier, dis-le-moi aussi.",
-  gf_scope: "Un premier regard sur ta page d'accueil, avec trois pistes concrètes d'amélioration UX/UI. Ce n'est pas un audit complet.",
+  gf_scope: "Un mini-audit de ta page d'accueil avec trois recommandations UX/UI. Ce n'est pas un audit complet.",
   gf_web: "Ton site", gf_web_ph: "tonsite.com",
   gf_mail: "Ton email",
   gf_more: "Quelque chose que tu aimerais améliorer ? (facultatif)",
@@ -7320,7 +7366,16 @@ const YODIS_DATA = {"schemaVersion": 3, "initialNode": "welcome", "defaultLocale
    ============================================================ */
 const BIO_ASSETS = {
   cities: ["cucuta", "san-cristobal", "merida", "santiago", "aix-en-provence", "paris", "madrid"].map(k => ({ k, img: k === "paris" ? null : "img/bio/city-" + k + ".webp" })),   // paris: pending   // 3:2, 7 photos
-  street: Array.from({ length: 10 }, () => ({ img: null, alt: "", note: "" })),                                                   // 1:1, exactly 10 photos
+  street: [   // 1:1, 8 photos (alt per language: descriptive of what is visible)
+    ["Retrato a bolígrafo sobre una página de atlas anatómico antiguo", "Pen portrait drawn over a page of an old anatomy atlas", "Portrait au stylo sur une page d'un ancien atlas d'anatomie"],
+    ["Pared cilíndrica de radios y casetes antiguos", "Cylindrical wall of old radios and cassette players", "Mur cylindrique de vieilles radios et de lecteurs de cassettes"],
+    ["Retrato de un caniche color albaricoque", "Portrait of an apricot-coloured poodle", "Portrait d'un caniche couleur abricot"],
+    ["Formas escultóricas claras bajo bóvedas industriales oscuras", "Pale sculptural forms under dark industrial vaults", "Formes sculpturales claires sous de sombres voûtes industrielles"],
+    ["Escultura negra de una figura con cabeza de perro", "Black sculpture of a figure with a dog's head", "Sculpture noire d'une figure à tête de chien"],
+    ["Escultura de una araña gigante vista desde abajo contra el cielo", "Giant spider sculpture seen from below against the sky", "Sculpture d'une araignée géante vue d'en dessous, sur fond de ciel"],
+    ["Busto de mármol con dos rostros de perfil", "Marble bust with two faces in profile", "Buste en marbre à deux visages de profil"],
+    ["Larga mesa puesta bajo lámparas de araña en un salón dorado", "Long set table under chandeliers in a gilded hall", "Longue table dressée sous des lustres dans un salon doré"]
+  ].map((a, i) => ({ img: "img/bio/look-" + (i + 1) + ".webp", alt: { es: a[0], en: a[1], fr: a[2] }, note: "" })),
   kitchen: Array.from({ length: 4 }, () => ({ img: null, alt: "" })),                                                             // 1:1, 4 photos
   places: [],                                                                                                                       // [{ name, url }] validated restaurants / places only
   spotify: { url: "https://open.spotify.com/playlist/3dyfLnAOgNAX2CSeAhr5bH", embed: "https://open.spotify.com/embed/playlist/3dyfLnAOgNAX2CSeAhr5bH?utm_source=generator&theme=0&si=90d9f237d1c04693" },                                                                                                          // https://open.spotify.com/playlist/<id>
@@ -7339,7 +7394,7 @@ function bxGallery(kind){
   const t = L(), u = t.bx_ui;
   if (kind === "city") return t.bx_city.items.map(([n, cap], i) => ({ img: (BIO_ASSETS.cities[i] || {}).img, label: n, alt: n, cap: n + " · " + cap, ratio: "3-2", kind: "city-" + ((BIO_ASSETS.cities[i] || {}).k || i) }));
   if (kind === "kitchen") return BIO_ASSETS.kitchen.map((k, i) => ({ img: k.img, label: t.bx_ck.home[0] + " " + (i + 1), alt: k.alt || t.bx_ck.home[0], cap: t.bx_ck.home[0], ratio: "1-1", kind: "kitchen-" + (i + 1) }));
-  return BIO_ASSETS.street.map((s, i) => ({ img: s.img, label: String(i + 1).padStart(2, "0"), alt: s.alt || (t.bx_st.h + " " + (i + 1)), cap: s.note || t.bx_st.cap || "", ratio: "1-1", kind: "street-" + (i + 1) }));
+  return BIO_ASSETS.street.map((s, i) => ({ img: s.img, label: String(i + 1).padStart(2, "0"), alt: (s.alt && typeof s.alt === "object" ? s.alt[lang] : s.alt) || (t.bx_st.h + " " + (i + 1)), cap: s.note || t.bx_st.cap || "", ratio: "1-1", kind: "street-" + (i + 1) }));
 }
 let LBX = { list: [], i: 0, opener: null };
 function lbShow(){
@@ -7775,7 +7830,7 @@ function renderBio(){
 /* ---------- game ---------- */
 const N = 8, MISSES = 20;
 const FLEET = [{len:4,c:"--coral"},{len:3,c:"--lav"},{len:3,c:"--mustard"},{len:2,c:"--mint"}];
-let G, msgKey = "m_start", msgArg = "", lastShot = -1;
+let G, msgKey = "m_start", msgArg = "", lastShot = -1, endT = 0;
 const coord = i => "ABCDEFGH"[i % N] + (Math.floor(i / N) + 1);
 function newGame(){
   const occ = Array(N*N).fill(-1);
@@ -7787,7 +7842,7 @@ function newGame(){
     cells.forEach(x => occ[x] = s); return { len:f.len, cells };
   } });
   G = { occ, ships, shot:Array(N*N).fill(0), left:MISSES, hits:FLEET.map(() => 0), over:false, won:false };
-  msgKey = "m_start"; msgArg = ""; lastShot = -1;
+  msgKey = "m_start"; msgArg = ""; lastShot = -1; clearTimeout(endT);
 }
 function buildBoard(){
   const b = $("#board"); b.textContent = ""; b.appendChild(document.createElement("span"));
@@ -7813,7 +7868,7 @@ function shoot(i){
   if (G.hits.every((h, k) => h === G.ships[k].len)) { G.over = true; G.won = true; msgKey = "m_win"; }
   else if (G.left <= 0) { G.over = true; msgKey = "m_lose"; }
   renderGame();
-  if (G.over) setTimeout(() => openGameDialog(G.won), 500);
+  if (G.over) { clearTimeout(endT); endT = setTimeout(() => { if (G.over) openGameDialog(G.won); }, 500); }
 }
 function renderGame(){
   const t = L(), link = {};
@@ -7827,7 +7882,14 @@ function renderGame(){
     btn.setAttribute("aria-label", coord(i) + ", " + (G.shot[i] ? (s < 0 ? t.cs[1] : t.cs[2]) : t.cs[0]));
     btn.disabled = G.over || !!G.shot[i];
   });
-  $("#left").textContent = G.left; { const st = $("#status"); st.textContent = t[msgKey].replace("{n}", msgArg);
+  $("#left").textContent = G.left;
+  /* partida terminada: el contador de fallos deja paso al resultado (el estado se sigue anunciando a lectores de pantalla) */
+  { const over = G.over, sunk = G.hits.filter((h, k) => h === G.ships[k].len).length;
+    $(".meter").hidden = over; $("#end").hidden = !over; $("#status").classList.toggle("sr-only", over);
+    if (over) { const w = G.won, k = w ? "win" : "lose";
+      $("#endK").textContent = (w ? "✦ " : "✕ ") + sunk + " / " + FLEET.length + " " + t.ships_n + " · " + t[w ? "kick_win" : "kick_lose"];
+      $("#endH").textContent = t[k + "_h"]; $("#endP").textContent = t[k + "_p"]; $("#endHl").textContent = t[k + "_hl"]; $("#endPrize").textContent = t[k + "_prize"]; $("#endCtaL").textContent = t[w ? "claim" : "write"]; $("#end").dataset.won = w ? "1" : ""; } }
+  { const st = $("#status"); st.textContent = t[msgKey].replace("{n}", msgArg);
     /* lectores de pantalla: coordenada disparada y, si se hunde un barco, qué forma de trabajar descubre (no se ve, ya está en la lista) */
     if (lastShot >= 0) { const pre = document.createElement("span"); pre.className = "sr-only"; pre.textContent = coord(lastShot) + ". "; st.prepend(pre); }
     if (msgArg && (msgKey === "m_sunk" || msgKey === "m_last")) { const post = document.createElement("span"); post.className = "sr-only"; post.textContent = " " + msgArg + "."; st.append(post); } }
@@ -8256,11 +8318,13 @@ function openPrize(won){
   ["#pzW", "#pzE"].forEach(id => $(id).removeAttribute("aria-invalid"));
   pzA = 1 + Math.floor(Math.random() * 9); pzB = 1 + Math.floor(Math.random() * 9); $("#pzQ").value = ""; pzSetQ();
   track("game_prize_open", { game_result: pzWon ? "won" : "lost" });
+  const under = $("#gameDlg").open; d.classList.toggle("stacked", under); $("#gameDlg").classList.toggle("under", under);   /* el resultado queda debajo, oculto, para no ver textos fantasma tras el formulario */
   if (d.showModal) d.showModal(); else d.setAttribute("open", "");   /* nested over the result dialog: closing it returns focus to the button that opened it */
 }
 function wirePrize(){
   const d = $("#prizeDlg"), MAIL = /^\S+@\S+\.\S+$/;
   $("#pzClose").addEventListener("click", () => d.close());
+  d.addEventListener("close", () => { d.classList.remove("stacked"); $("#gameDlg").classList.remove("under"); });
   $("#pzDone").addEventListener("click", () => d.close());
   d.addEventListener("click", e => { if (e.target === d) d.close(); });
   $("#pzForm").addEventListener("submit", e => {
@@ -8285,12 +8349,21 @@ function wirePrize(){
   });
 }
 
+/* ---------- html.dlg-open: pausa las animaciones decorativas mientras hay un diálogo abierto ---------- */
+(function(){
+  const root = document.documentElement, sync = () => root.classList.toggle("dlg-open", !!document.querySelector("dialog[open]"));
+  document.querySelectorAll("dialog").forEach(d => { new MutationObserver(sync).observe(d, { attributes:true, attributeFilter:["open"] }); d.addEventListener("close", sync); });
+})();
+
 /* ---------- game replay + game dialog ---------- */
 function restartGame(){ newGame(); renderGame(); try{ $("#gameDlg").close(); }catch(e){} }
 function wireGame(){
   $("#again").addEventListener("click", restartGame);
   $("#gameRetry").addEventListener("click", restartGame);
   $("#gameClose").addEventListener("click", () => $("#gameDlg").close());
+  $("#gameDlg").addEventListener("click", e => { if (e.target === $("#gameDlg")) $("#gameDlg").close(); });
+  $("#gameDlg").addEventListener("close", () => { $("#confetti").innerHTML = ""; if (G.over && !$("#prizeDlg").open) $("#endCta").focus({ preventScroll:true }); });
+  $("#endCta").addEventListener("click", () => openPrize($("#end").dataset.won === "1"));
   const hd = $("#howDlg");
   $("#howBtn").addEventListener("click", () => { if (hd.showModal) hd.showModal(); else hd.setAttribute("open", ""); });
   $("#howClose").addEventListener("click", () => hd.close());
@@ -8314,13 +8387,15 @@ function fireConfetti(){
 function openGameDialog(won){
   const t = L(), d = $("#gameDlg");
   d.dataset.state = won ? "win" : "lose";
-  $("#gameKicker").textContent = won ? "✦  12 / 12 · " + t.kick_win : "✕  0 / 20 · " + t.kick_lose;
+  const sunk = G.hits.filter((h, k) => h === G.ships[k].len).length;
+  $("#gameKicker").textContent = (won ? "✦ " : "✕ ") + sunk + " / " + FLEET.length + " " + t.ships_n + " · " + t[won ? "kick_win" : "kick_lose"];
   $("#gameWriteL").textContent = won ? t.claim : t.write;
   $("#gamePrize").textContent = won ? t.win_prize : t.lose_prize;
   d.dataset.won = won ? "1" : "";
   $("#gameH").textContent = won ? t.win_h : t.lose_h;
   $("#gameP").textContent = won ? t.win_p : t.lose_p;
-  if (won) fireConfetti(); else $("#confetti").innerHTML = "";
+  $("#gameHl").textContent = won ? t.win_hl : t.lose_hl;
+  if (won && !reduced) fireConfetti(); else $("#confetti").innerHTML = "";
   if (d.showModal) d.showModal(); else d.setAttribute("open","");
 }
 
