@@ -60,7 +60,7 @@ function spEmbed(url){ try { const u = new URL(url); if (u.hostname !== "open.sp
 function renderBento2(){
   const t = L(), u = t.bx_ui, el = $("#bxBento"); if (!el) return;
   const c = t.bx_city, sp = t.bx_sp, ck = t.bx_ck, st = t.bx_st, ch = t.bx_ch, A = BIO_ASSETS;
-  const cities = `<article class="bx bx-city"><div class="bx-hd"><h3>${esc(c.h)}</h3><p>${esc(c.p)}</p></div>${bxMapHTML()}</article>`;
+  const cities = `<article class="bx bx-city"><div class="bx-hd"><h3>${esc(c.h)}</h3><p>${esc(c.p)}</p></div>${bxViewer("city", 4300)}</article>`;
   const embed = A.spotify.url ? spEmbed(A.spotify.embed || A.spotify.url) : null;
   const spot = `<article class="bx bx-sp"><div class="bx-hd"><h3>${esc(sp.h)}</h3>${sp.p ? `<p>${esc(sp.p)}</p>` : ""}</div>${embed
     ? `<div class="bx-sp-box" id="spBox"><div class="bx-sp-pane"><span class="bx-sp-ico" aria-hidden="true">♪</span><p class="bx-pl">${esc(sp.name)}</p><button type="button" class="btn sm solid" data-sp-load="${esc(embed)}">${esc(u.sp_load)}</button><p class="bx-note">${esc(u.sp_note)}</p></div></div>`
@@ -72,82 +72,9 @@ function renderBento2(){
   const choir = bxAnecdotes();
   const street = `<article class="bx bx-st"><div class="bx-hd"><h3>${esc(st.h)}</h3>${st.sub ? `<p class="bx-sub">${esc(st.sub)}</p>` : ""}${st.p ? `<p>${esc(st.p)}</p>` : ""}</div>${bxViewer("street", 3600)}</article>`;
   el.innerHTML = cities + choir + cook + street + spot;
-  bxStart(); bxMapStart();
+  bxStart();
 }
 
-/* ---------- card 1: mapa esquemático animado (América → Europa), con zoom «ampliado» del clúster Colombia–Venezuela ---------- */
-const MAP_GEO = (() => {
-  const P = (lon, lat) => [30 + (lon + 100) * 5.4, 20 + (50 - lat) * 4.4];
-  const poly = a => "M" + a.map(p => { const q = P(p[0], p[1]); return q[0].toFixed(1) + " " + q[1].toFixed(1); }).join("L") + "Z";
-const NA=[[-77.5,8.7],[-80,9.2],[-82.5,9.5],[-83.5,11],[-83.2,14.8],[-84,15.8],[-88.5,16],[-87.5,18],[-87,21.5],[-90.5,21],[-91,18.7],[-94.5,18.2],[-96,19],[-97.2,21.5],[-97.5,25],[-97,27.8],[-94,29.5],[-91,29.2],[-89.5,30.2],[-87,30.4],[-84,30],[-82.8,27.8],[-81.5,25.5],[-80,25.5],[-81,29],[-80.5,32],[-76,35],[-75.5,38],[-74,40.5],[-70,41.7],[-70,43.5],[-65.5,43.5],[-60,46],[-55,50],[-125,50],[-124,46],[-124,40.5],[-122.5,37.5],[-120.5,34.5],[-117,32.5],[-114.8,31.8],[-112.5,29.5],[-109,25.5],[-106,23],[-105.5,20.5],[-102,18],[-98,16.5],[-94,16],[-91,14],[-87.5,13],[-85.7,10],[-82.5,8],[-80,7.3],[-78,7.5]];
-const SA=[[-77.3,8.7],[-75,11],[-72,12],[-70,12],[-67,10.7],[-62,10.5],[-60,8],[-57,6],[-52,5],[-50,1],[-48,-1],[-44,-2.5],[-39,-3.5],[-35,-5.5],[-35,-9],[-38,-13],[-39,-18],[-41,-22],[-45,-23.5],[-48.5,-26],[-49,-29],[-53,-33.5],[-57,-35],[-57.5,-38],[-62,-39],[-65,-41],[-64,-43],[-67,-46],[-66,-48],[-69,-51],[-68.5,-53],[-71,-54],[-74,-52],[-75,-47],[-73.5,-42],[-73.5,-37],[-71.5,-32],[-70.5,-25],[-70.2,-18],[-76,-14],[-79,-8],[-81,-5],[-80,-2],[-80,0],[-78.5,2],[-77.5,5]];
-const EU=[[-9.3,43.2],[-8,43.7],[-3,43.4],[-1.8,43.4],[-1.2,46],[-4.7,48.4],[-1.5,49.7],[1,50],[15,50],[15,40],[12.5,41.5],[10.5,43.5],[9,44.3],[7.5,43.8],[6,43.1],[3.3,43.2],[3.2,41.9],[0,40.5],[0,38.7],[-2,36.7],[-5.5,36],[-8.9,37],[-9.3,38.8]];
-const AF=[[-5.5,35.8],[-2,35.2],[3,36.8],[10,37.3],[11,33.5],[15,32.7],[15,20],[-17,20],[-16.5,24],[-13,27.7],[-9.8,31],[-6.5,34]];
-  const land = [NA, SA, EU, AF].map(poly);
-  const CL = P(-72.2, 8.2), SCt = P(-70.7, -33.4), AIX = P(5.4, 43.5), MAD = P(-3.7, 40.4);
-  const cu = [290, 128], sc = [320, 141], me = [430, 58];
-  const D = ["M" + cu[0] + " " + cu[1] + "L" + sc[0] + " " + sc[1], "M" + sc[0] + " " + sc[1] + "L" + me[0] + " " + me[1],
-    "M" + CL[0] + " " + CL[1] + "Q" + (CL[0] - 40) + " " + ((CL[1] + SCt[1]) / 2) + " " + SCt[0] + " " + SCt[1],
-    "M" + SCt[0] + " " + SCt[1] + "Q330 260 " + AIX[0] + " " + AIX[1], "M" + AIX[0] + " " + AIX[1] + "L" + MAD[0] + " " + MAD[1]];
-  const N = [[cu, "cúcuta_co", -6, -12, "start"], [sc, "san cristóbal_ve", 0, 22, "start"], [me, "mérida_ve", 0, -14, "middle"], [SCt, "santiago_cl", 12, 4, "start"], [AIX, "aix-en-provence_fr", 8, -14, "end"], [MAD, "madrid_es", -12, 4, "end"]];
-  return { land, CL, D, N };
-})();
-const MAP_TX = {
-  es: { zoom: "ampliado", alt: "Mapa esquemático del recorrido: Cúcuta, San Cristóbal y Mérida (con zoom), Santiago de Chile, Aix-en-Provence y Madrid." },
-  en: { zoom: "zoomed in", alt: "Schematic map of the route: Cúcuta, San Cristóbal and Mérida (zoomed in), Santiago de Chile, Aix-en-Provence and Madrid." },
-  fr: { zoom: "agrandi", alt: "Carte schématique du parcours : Cúcuta, San Cristóbal et Mérida (agrandi), Santiago du Chili, Aix-en-Provence et Madrid." }
-};
-function bxMapHTML(){
-  const g = MAP_GEO, tx = MAP_TX[lang] || MAP_TX.es, CL = g.CL;
-  const leads = [[270, 60], [270, 170]].map(e => `M${CL[0]} ${CL[1]}L${e[0]} ${e[1]}`).join("");
-  const nodes = g.N.map(n => `<circle class="mp-n" cx="${n[0][0]}" cy="${n[0][1]}" r="6"/><text x="${n[0][0] + n[2]}" y="${n[0][1] + n[3]}" text-anchor="${n[4]}">${esc(n[1])}</text>`).join("");
-  return `<div class="bx-map" data-map role="img" aria-label="${esc(tx.alt)}"><svg viewBox="0 0 680 470" focusable="false" aria-hidden="true">
-<defs><clipPath id="mpc"><rect width="680" height="470"/></clipPath></defs>
-<g class="mp-land" clip-path="url(#mpc)">${g.land.map(d => `<path d="${d}"/>`).join("")}</g>
-<path class="mp-lead" d="${leads}"/><circle class="mp-ring" cx="${CL[0]}" cy="${CL[1]}" r="10"/>
-<rect class="mp-box" x="270" y="24" width="220" height="150" rx="8"/><text class="mp-zoom" x="282" y="44">${esc(tx.zoom)}</text>
-<path class="mp-base" d="${g.D.join("")}"/>
-<g class="mp-live">${g.D.map(d => `<path d="${d}" pathLength="1"/>`).join("")}</g>
-<g class="mp-nodes">${nodes}</g><circle class="mp-dot" r="5" cx="0" cy="0"/></svg></div>`;
-}
-const mapS = { raf: 0, t0: 0, vis: false, io: null, el: null };
-function bxMapFrame(t){
-  const el = mapS.el; if (!el) return;
-  const segs = el.querySelectorAll(".mp-live path"), circ = el.querySelectorAll(".mp-n"), dot = el.querySelector(".mp-dot");
-  const DUR = 1400, T = 5 * DUR, ease = p => { p = Math.min(1, Math.max(0, p)); return p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2; };
-  segs.forEach((s, i) => { s.style.strokeDasharray = "1"; s.style.strokeDashoffset = String(1 - ease((t - i * DUR) / DUR)); });
-  circ.forEach((c, j) => c.classList.toggle("on", t >= (j < 5 ? j * DUR : T)));
-  const s = Math.min(4, Math.max(0, Math.floor(t / DUR))), q = ease((t - s * DUR) / DUR), len = segs[s].getTotalLength() || 1, pt = segs[s].getPointAtLength(len * q);
-  dot.setAttribute("cx", pt.x); dot.setAttribute("cy", pt.y);
-}
-function bxMapLoop(now){
-  mapS.raf = 0;
-  if (!mapS.el || !mapS.el.isConnected) return;
-  const T = 5 * 1400, HOLD = 2400, t = (now - mapS.t0) % (T + HOLD);
-  bxMapFrame(t);
-  if (mapS.vis && !document.hidden && !document.documentElement.classList.contains("dlg-open")) mapS.raf = requestAnimationFrame(bxMapLoop);
-  else mapS.paused = true;
-}
-function bxMapRun(){
-  if (reduced || mapS.raf || !mapS.vis) return;
-  if (mapS.paused) { mapS.t0 = performance.now() - (mapS.keep || 0); mapS.paused = false; }
-  mapS.raf = requestAnimationFrame(bxMapLoop);
-}
-function bxMapStart(){
-  if (mapS.io) mapS.io.disconnect();
-  cancelAnimationFrame(mapS.raf); mapS.raf = 0;
-  mapS.el = document.querySelector("#bxBento [data-map]"); if (!mapS.el) return;
-  mapS.t0 = performance.now(); mapS.paused = false;
-  bxMapFrame(5 * 1400); /* estado final (también para «reducir movimiento») */
-  if (reduced) return;
-  bxMapFrame(0);
-  mapS.io = new IntersectionObserver(es => { mapS.vis = es[0].isIntersecting; if (mapS.vis) { mapS.keep = 0; mapS.t0 = performance.now(); mapS.paused = false; bxMapRun(); } }, { threshold: .25 });
-  mapS.io.observe(mapS.el);
-  if (!mapS.bound) { mapS.bound = true;
-    const wake = () => { if (mapS.raf || !mapS.paused) return; mapS.t0 = performance.now(); bxMapRun(); };
-    document.addEventListener("visibilitychange", () => { if (!document.hidden) wake(); });
-    new MutationObserver(() => { if (!document.documentElement.classList.contains("dlg-open")) wake(); }).observe(document.documentElement, { attributes: true, attributeFilter: ["class"] }); }
-}
 /* ---------- bento: automatic one-frame galleries + rotating anecdotes ---------- */
 let bxViews = [], bxIdx = {}, bxTick = 0;
 function bxViewer(kind, period){
