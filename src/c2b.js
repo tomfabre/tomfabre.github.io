@@ -14,7 +14,7 @@ const BIO_ASSETS = {
   street: Array.from({ length: 10 }, () => ({ img: null, alt: "", note: "" })),                                                   // 1:1, exactly 10 photos
   kitchen: Array.from({ length: 4 }, () => ({ img: null, alt: "" })),                                                             // 1:1, 4 photos
   places: [],                                                                                                                       // [{ name, url }] validated restaurants / places only
-  spotify: { url: "https://open.spotify.com/playlist/3dyfLnAOgNAX2CSeAhr5bH" },                                                                                                          // https://open.spotify.com/playlist/<id>
+  spotify: { url: "https://open.spotify.com/playlist/3dyfLnAOgNAX2CSeAhr5bH", embed: "https://open.spotify.com/embed/playlist/3dyfLnAOgNAX2CSeAhr5bH?utm_source=generator&theme=0&si=301d6dd9cd624d01" },                                                                                                          // https://open.spotify.com/playlist/<id>
   obsessions: Array.from({ length: 5 }, () => ({ img: null, alt: "" })),                                                           // 4:3, 5 personal photos
   choir: { img: null, alt: "" }                                                                                                    // optional, authorised frame or personal photo
 };
@@ -52,8 +52,8 @@ function renderBento2(){
   const t = L(), u = t.bx_ui, el = $("#bxBento"); if (!el) return;
   const c = t.bx_city, sp = t.bx_sp, ck = t.bx_ck, st = t.bx_st, ch = t.bx_ch, A = BIO_ASSETS;
   const cities = `<article class="bx bx-city"><div class="bx-hd"><h3>${esc(c.h)}</h3><p>${esc(c.p)}</p></div>${bxViewer("city", 4500)}</article>`;
-  const embed = A.spotify.url ? spEmbed(A.spotify.url) : null;
-  const spot = `<article class="bx bx-sp"><div class="bx-hd"><h3>${esc(sp.h)}</h3><p>${esc(sp.p)}</p></div>${embed
+  const embed = A.spotify.url ? spEmbed(A.spotify.embed || A.spotify.url) : null;
+  const spot = `<article class="bx bx-sp"><div class="bx-hd"><h3>${esc(sp.h)}</h3>${sp.p ? `<p>${esc(sp.p)}</p>` : ""}</div>${embed
     ? `<div class="bx-sp-box" id="spBox"><div class="bx-sp-pane"><span class="bx-sp-ico" aria-hidden="true">♪</span><p class="bx-pl">${esc(sp.name)}</p><button type="button" class="btn sm solid" data-sp-load="${esc(embed)}">${esc(u.sp_load)}</button><p class="bx-note">${esc(u.sp_note)}</p></div></div><p class="bx-sp-act"><a class="btn sm ghost" href="${esc(A.spotify.url)}" target="_blank" rel="noopener">${esc(u.sp_open)} <span aria-hidden="true">↗</span></a></p>`
     : `<span class="bx-ph bx-ph-sp" data-pending="spotify-url" role="img" aria-label="${esc(u.ph + ": Spotify")}"><span>${esc(u.ph)}</span><b>${esc(u.sp_pending)}</b></span>`}</article>`;
   const places = A.places.length

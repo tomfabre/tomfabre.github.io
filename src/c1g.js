@@ -136,3 +136,8 @@ Object.assign(T.fr, { bx_ui: Object.assign({}, T.fr.bx_ui, { v_pause: "Pause", v
 Object.assign(T.es, { bx_st: Object.assign({}, T.es.bx_st, { p: "Caminar, observar y fijarme en lo que suele pasar desapercibido.", cap: "Fachadas y reflejos." }) });
 Object.assign(T.en, { bx_st: Object.assign({}, T.en.bx_st, { p: "Walking, looking, and noticing what usually goes unnoticed.", cap: "Facades and reflections." }) });
 Object.assign(T.fr, { bx_st: Object.assign({}, T.fr.bx_st, { p: "Marcher, observer et remarquer ce qui passe d'ordinaire inaperçu.", cap: "Façades et reflets." }) });
+
+/* Bio · bento: Spotify solo con título */
+Object.assign(T.es, { bx_sp: Object.assign({}, T.es.bx_sp, { h: "Banda sonora.", p: "" }) });
+Object.assign(T.en, { bx_sp: Object.assign({}, T.en.bx_sp, { h: "Soundtrack.", p: "" }) });
+Object.assign(T.fr, { bx_sp: Object.assign({}, T.fr.bx_sp, { h: "Bande-son.", p: "" }) });
