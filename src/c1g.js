@@ -1,6 +1,7 @@
 /* UX writing del juego «Hundir la flota» + formulario de la revisión UX/UI gratuita (ES/EN/FR).
    Se carga después de c1m.js: pisa game_*, m_*, win_*, lose_*, claim, write y game_rules. El premio es el mismo al ganar y al perder. */
 Object.assign(T.es, {
+  game_lab: "Análisis UX/UI web gratis",
   game_h: "Una partida antes de seguir.",
   game_p: "Encuentra los cuatro barcos escondidos en el tablero. Tienes 20 fallos para hundirlos y descubrir un poco más sobre cómo trabajo.",
   game_prize: "¿El premio? Un análisis UX/UI gratuito de tu web.",
@@ -35,11 +36,13 @@ Object.assign(T.es, {
   gf_more_ph: "Por ejemplo, la navegación, el diseño o la versión móvil...",
   gf_send: "Enviar mi web",
   gf_web_err: "Escribe la dirección de tu web, por ejemplo tuweb.com.",
-  gf_ok_t: "¡Recibido!",
-  gf_ok_b1: "Gracias por jugar y por compartir tu web.",
-  gf_ok_b2: "Le echaré un vistazo y te enviaré mis observaciones por email. Sin compromiso y sin rodeos."
+  gf_ok_t: "¡Tu web ya está en la lista!",
+  gf_ok_b1: "Gracias por jugar y compartir tu web conmigo.",
+  gf_ok_b2: "Le echaré un vistazo y te enviaré tres ideas para mejorar su experiencia por email.",
+  gf_close: "Cerrar"
 });
 Object.assign(T.en, {
+  game_lab: "Free website UX/UI review",
   game_h: "One quick game before you go.",
   game_p: "Find the four hidden ships on the board. You have 20 misses to sink them all and learn a little about how I work along the way.",
   game_prize: "The prize? A free UX/UI review of your website.",
@@ -74,11 +77,13 @@ Object.assign(T.en, {
   gf_more_ph: "Navigation, design, mobile experience...",
   gf_send: "Send my website",
   gf_web_err: "Enter your website address, for example yoursite.com.",
-  gf_ok_t: "Got it!",
+  gf_ok_t: "Your website is on my list!",
   gf_ok_b1: "Thanks for playing and sharing your website.",
-  gf_ok_b2: "I'll take a look and send you my feedback by email. No strings attached."
+  gf_ok_b2: "I'll take a look and email you three practical ideas to improve the experience.",
+  gf_close: "Close"
 });
 Object.assign(T.fr, {
+  game_lab: "Mini-audit UX/UI gratuit",
   game_h: "Une petite partie avant de continuer.",
   game_p: "Retrouve les quatre bateaux cachés sur la grille. Tu as droit à 20 erreurs pour tous les couler et découvrir au passage quelques petites choses sur ma façon de travailler.",
   game_prize: "Et à la clé ? Un mini-audit UX/UI gratuit de ton site.",
@@ -113,7 +118,8 @@ Object.assign(T.fr, {
   gf_more_ph: "La navigation, le design, la version mobile...",
   gf_send: "Envoyer mon site",
   gf_web_err: "Indique l'adresse de ton site, par exemple tonsite.com.",
-  gf_ok_t: "Bien reçu !",
-  gf_ok_b1: "Merci d'avoir joué et de m'avoir partagé ton site.",
-  gf_ok_b2: "Je vais y jeter un œil et t'envoyer mes remarques par email. Sans engagement, et sans blabla."
+  gf_ok_t: "Ton site est bien dans ma liste !",
+  gf_ok_b1: "Merci d'avoir joué et de m'avoir envoyé ton site.",
+  gf_ok_b2: "Je vais y jeter un œil et t'envoyer trois pistes concrètes pour améliorer l'expérience par email.",
+  gf_close: "Fermer"
 });
