@@ -671,7 +671,6 @@ Object.assign(T.es, {
  "foot_lead": "Si tienes algo en mente, ya sabes dónde encontrarme.",
  "foot_explore": "Explorar",
  "foot_else": "Otros lugares",
- "foot_sig": "Hecho a mano, con algo de IA, Figma y bastante café.",
  "foot_legal": "© 2026 Tom Fabre · Madrid · ES / FR / EN"
 });
 Object.assign(SEO.es, {
@@ -736,7 +735,6 @@ Object.assign(T.en, {
  "foot_lead": "If you've got something in mind, you know where to find me.",
  "foot_explore": "Explore",
  "foot_else": "Elsewhere",
- "foot_sig": "Made by hand, with a little AI, Figma and quite a lot of coffee.",
  "foot_legal": "© 2026 Tom Fabre · Madrid · ES / FR / EN"
 });
 Object.assign(SEO.en, {
@@ -801,7 +799,6 @@ Object.assign(T.fr, {
  "foot_lead": "Si tu as quelque chose en tête, tu sais où me trouver.",
  "foot_explore": "Explorer",
  "foot_else": "Ailleurs",
- "foot_sig": "Fait à la main, avec un peu d'IA, Figma et pas mal de café.",
  "foot_legal": "© 2026 Tom Fabre · Madrid · ES / FR / EN",
  "d_q": "Pour vérifier que tu es humain : combien font",
  "d_qerr": "Ce n'est pas la bonne somme. Réessaie.",
