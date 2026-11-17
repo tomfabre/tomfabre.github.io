@@ -10,7 +10,7 @@
    No stock photos. Restaurants: add only validated {name, url}.
    ============================================================ */
 const BIO_ASSETS = {
-  cities: [["cucuta", "cucuta_co", "Cúcuta, Colombia"], ["san-cristobal", "san cristobal_ve", "San Cristóbal, Venezuela"], ["merida", "merida_ve", "Mérida, Venezuela"], ["santiago", "santiago_cl", "Santiago, Chile"], ["aix-en-provence", "aix-en-provence_fr", "Aix-en-Provence, France"], ["madrid", "madrid_es", "Madrid, España"]].map(([k, tag, name]) => ({ k, tag, name, img: "img/bio/city-" + k + ".webp" })),   // 3:2, 6 photos; tag = lo único que se ve sobre la foto
+  cities: [["cucuta", "cúcuta_co", "Cúcuta, Colombia"], ["san-cristobal", "san cristóbal_ve", "San Cristóbal, Venezuela"], ["merida", "mérida_ve", "Mérida, Venezuela"], ["santiago", "santiago_cl", "Santiago, Chile"], ["aix-en-provence", "aix-en-provence_fr", "Aix-en-Provence, France"], ["madrid", "madrid_es", "Madrid, España"]].map(([k, tag, name]) => ({ k, tag, name, img: "img/bio/city-" + k + ".webp" })),   // 3:2, 6 photos; tag = lo único que se ve sobre la foto
   street: [   // 1:1, 8 photos (alt per language: descriptive of what is visible)
     ["Retrato a bolígrafo sobre una página de atlas anatómico antiguo", "Pen portrait drawn over a page of an old anatomy atlas", "Portrait au stylo sur une page d'un ancien atlas d'anatomie"],
     ["Pared cilíndrica de radios y casetes antiguos", "Cylindrical wall of old radios and cassette players", "Mur cylindrique de vieilles radios et de lecteurs de cassettes"],
