@@ -267,9 +267,9 @@ const SECTIONS = {
   "items": [
    {
     "n": {
-     "es": "+77,2 %",
-     "en": "+77.2%",
-     "fr": "+77,2 %"
+     "es": "+77,4 %",
+     "en": "+77.4%",
+     "fr": "+77,4 %"
     },
     "l": {
      "es": "Seguidores en LinkedIn",
@@ -292,9 +292,9 @@ const SECTIONS = {
   ],
   "after": [
    {
-    "es": "Entre septiembre de 2025 y noviembre de 2026, la comunidad de LinkedIn pasó de 930 a 1.648 seguidores, mientras que Instagram pasó de 250 a 365.",
-    "en": "Between September 2025 and November 2026, LinkedIn grew from 930 to 1,648 followers, while Instagram went from 250 to 365.",
-    "fr": "Entre septembre 2025 et novembre 2026, la communauté LinkedIn est passée de 930 à 1 648 abonnés, et celle d'Instagram de 250 à 365."
+    "es": "Entre septiembre de 2025 y noviembre de 2026, la comunidad de LinkedIn pasó de 930 a 1.650 seguidores, mientras que Instagram pasó de 250 a 366.",
+    "en": "Between September 2025 and November 2026, LinkedIn grew from 930 to 1,650 followers, while Instagram went from 250 to 366.",
+    "fr": "Entre septembre 2025 et novembre 2026, la communauté LinkedIn est passée de 930 à 1 650 abonnés, et celle d'Instagram de 250 à 366."
    },
    {
     "es": "Son cifras de crecimiento de audiencia durante este periodo, no resultados atribuibles únicamente al cambio de identidad.",
