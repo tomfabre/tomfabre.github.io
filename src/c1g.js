@@ -231,3 +231,8 @@ Object.assign(T.fr, { mm_hint: "Trouve une paire et je te raconte quelque chose.
 Object.assign(T.es, { bx_ck: Object.assign({}, T.es.bx_ck, { h: "Siempre hay espacio para…", foods: ["Ajiaco", "Tacos", "Chilaquiles", "Empanadas", "Hamburguesas", "Camembert", "Bandeja paisa", "Patacones", "Arroz chino", "Pad thai", "Ramen"] }) });
 Object.assign(T.en, { bx_ck: Object.assign({}, T.en.bx_ck, { h: "There's always room for…", foods: ["Ajiaco", "Tacos", "Chilaquiles", "Empanadas", "Burgers", "Camembert", "Bandeja paisa", "Patacones", "Chinese fried rice", "Pad thai", "Ramen"] }) });
 Object.assign(T.fr, { bx_ck: Object.assign({}, T.fr.bx_ck, { h: "Il y a toujours de la place pour…", foods: ["Ajiaco", "Tacos", "Chilaquiles", "Empanadas", "Hamburgers", "Camembert", "Bandeja paisa", "Patacones", "Riz cantonais", "Pad thai", "Ramen"] }) });
+
+/* ---------- HOME · titular y entradilla del hero ---------- */
+Object.assign(T.es, { hm_a1: "Buenas ideas.", hm_a2: "Bien resueltas.", h_intro: "Diseño marcas, webs y productos digitales. Me involucro desde la primera idea hasta los detalles finales, combinando estrategia, diseño y tecnología." });
+Object.assign(T.en, { hm_a1: "Good ideas.", hm_a2: "Well solved.", h_intro: "I design brands, websites and digital products. I get involved from the first idea to the final details, combining strategy, design and technology." });
+Object.assign(T.fr, { hm_a1: "Bonnes idées.", hm_a2: "Bien résolues.", h_intro: "Je conçois des marques, des sites et des produits numériques. Je m'implique de la première idée jusqu'aux derniers détails, en alliant stratégie, design et technologie." });
