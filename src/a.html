@@ -1489,6 +1489,18 @@ dialog#prizeDlg:focus{outline:none}
 .bx-ck,.bx-st,.bx-sp{gap:var(--s3)}
 /* bento de la Bio en escritorio: ancho contenido y centrado (no ocupa toda la pantalla) */
 @media (min-width:60rem){.bento-sec.bx-sec{max-width:62rem;margin-inline:auto}}
+/* leyenda, contador y controles como pill dentro de la imagen, abajo */
+.bx-view{position:relative}
+.bx-view .bx-vc{position:absolute;left:.6rem;right:.6rem;bottom:.6rem;z-index:3;min-height:0;gap:.5rem;padding:.3rem .3rem .3rem .9rem;border-radius:var(--pill);background:var(--bg);color:var(--fg);box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.bx-view .bx-vcap{font-size:.78rem;color:var(--fg)}
+.bx-view .bx-vn{font-size:.68rem;letter-spacing:.06em}
+.bx-view .bx-vb{gap:.25rem}
+.bx-view .bx-b{width:1.9rem;height:1.9rem;font-size:.72rem}
+.bx-view .bx-pp{font-size:.55rem}
+.bx-an .bx-vc{position:static;box-shadow:none;background:none;padding:0;margin-top:var(--s3)}
+.bx-an .bx-vn{margin-left:0}
+.bx-ck .bx-view .bx-vn,.bx-st .bx-view .bx-vn{display:none}
+@media (max-width:30rem){.bx-view .bx-vc{left:.4rem;right:.4rem;bottom:.4rem}.bx-view .bx-vn{display:none}}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
