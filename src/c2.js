@@ -332,7 +332,7 @@ function setDlgHead(quick){
 }
 function openForm(opt){ const prize = opt === true, quick = !!(opt && typeof opt === "object" && opt.quick), topic = opt && typeof opt === "object" && Number.isInteger(opt.topic) ? opt.topic : -1;
   setDlgHead(quick); $("#form").hidden = false; $("#dres").hidden = true; $("#dsent").hidden = true; $("#ferr").textContent = ""; $("#fstat").textContent = ""; sending = false; newQ(); closeSheet(); closeChat();
-  if (prize){ const t = L(); $("#ft").selectedIndex = 4; if (!$("#fm").value.trim()) $("#fm").value = t.prize_msg; }
+  if (prize){ const t = L(); $("#ft").selectedIndex = Math.max(0, TOPIC_IDS.indexOf("prize")); if (!$("#fm").value.trim()) $("#fm").value = t.prize_msg; }
   else if (topic >= 0 && topic < $("#ft").options.length) $("#ft").selectedIndex = topic;
   if (!formStarted){ formStarted = true; track("contact_form_start", { page: route_.page }); }
   if (dlg().showModal) dlg().showModal(); else dlg().setAttribute("open","");
@@ -350,10 +350,12 @@ function wireForm(){
     const agent = !!e.agentInvoked && typeof e.respondWith === "function";
     if (!n || !MAIL.test(m) || !msg){
       const bad = !n ? $("#fn") : (!MAIL.test(m) ? $("#fe") : $("#fm"));
+      ["#fn", "#fe", "#fm"].forEach(id => $(id).removeAttribute("aria-invalid")); bad.setAttribute("aria-invalid", "true");
       $("#ferr").textContent = (n && !MAIL.test(m)) ? t.d_mail_err : t.d_err;
       if (agent) e.respondWith(Promise.resolve({ content:[{ type:"text", text:"Missing or invalid fields: name, a valid email and a message are required." }], isError:true }));
       bad.focus(); return;
     }
+    ["#fn", "#fe", "#fm"].forEach(id => $(id).removeAttribute("aria-invalid"));
     if (!agent && !$("#fc").checked) { $("#ferr").textContent = t.d_consent_err; $("#fc").focus(); return; }
     if (!agent && parseInt($("#fq").value, 10) !== qa + qb) { $("#ferr").textContent = t.d_qerr; $("#fq").focus(); return; }
     if (agent) e.respondWith(Promise.resolve({ content:[{ type:"text", text:"Draft prepared. The visitor still has to open it in their email app or copy it; nothing was sent automatically." }] }));
@@ -364,8 +366,8 @@ function wireForm(){
       const sb = $("#form button[type=submit]"), lab = sb.querySelector("[data-i]"), old = lab.textContent;
       sending = true; sb.disabled = true; sb.setAttribute("aria-busy", "true"); lab.textContent = t.d_sending; $("#ferr").textContent = ""; $("#fstat").textContent = t.d_sending;
       fetch(FORM_ENDPOINT, { method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" }, body:JSON.stringify({ name:n, email:m, topic, budget: budget || undefined, message:msg, _replyto:m, _subject:topic + " · " + n + " (portfolio)" }) })
-        .then(r => { if (!r.ok) throw 0; $("#form").hidden = true; $("#dsent").hidden = false; $("#form").reset(); $("#fstat").textContent = ""; track("contact_form_submit_success", { project_type: topic, budget_band: budget || undefined }); })
-        .catch(() => { $("#ferr").textContent = t.d_fail; $("#fstat").textContent = ""; fallback(); })
+        .then(r => { if (!r.ok) throw 0; $("#form").hidden = true; $("#dsent").hidden = false; $("#form").reset(); $("#fstat").textContent = t.d_sent; track("contact_form_submit_success", { project_type: topic, budget_band: budget || undefined }); })
+        .catch(() => { $("#ferr").innerHTML = `<strong>${esc(t.d_fail_t)}</strong> ` + esc(t.d_fail_b).replace(EMAIL, `<a href="mailto:${EMAIL}">${EMAIL}</a>`); $("#fstat").textContent = ""; })
         .finally(() => { sending = false; sb.disabled = false; sb.removeAttribute("aria-busy"); lab.textContent = old; });
       return;
     }
@@ -454,6 +456,7 @@ if (PATHS){
 /* ---------- language apply ---------- */
 function renderCnext(){
   const t = L(); $("#cnext").innerHTML = t.cn.map(([h, p]) => `<li><h3>${esc(h)}</h3><p>${esc(p)}</p></li>`).join("");
+  if (t.ct_faq && $("#ctFaq")) { $("#ctFaqH").textContent = sentence(t.hf_lab); renderFaq("#ctFaq", t.ct_faq); }
 }
 function renderMarquee(){
   const t = L(), txt = (t.marquee || "").trim();
@@ -672,8 +675,8 @@ const SOCIALS = [
 ];
 function renderSocials(){
   $("#socials").innerHTML = SOCIALS.map(([n,,u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)} <span class="arr" aria-hidden="true">↗</span></a></li>`).join("");
-  const AB = { Instagram:"IG", LinkedIn:"IN", Behance:"Bē", LottieFiles:"Lottie", GitHub:"GH" };
-  $("#socialsFoot").innerHTML = SOCIALS.map(([n,,u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener" aria-label="${esc((AB[n] && AB[n] !== n) ? AB[n] + " – " + n : n)}" data-n="${esc(n)}">${esc(AB[n] || n)}</a></li>`).join("");
+  const FOOT = [["LinkedIn","https://www.linkedin.com/in/tomfabreg/"],["Instagram","https://www.instagram.com/tomfabre/"],["Binōme","https://binome.xyz"]];
+  $("#socialsFoot").innerHTML = FOOT.map(([n,u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)} <span aria-hidden="true">↗</span></a></li>`).join("");
 }
 
 /* ---------- hide chat near footer ---------- */
@@ -691,6 +694,7 @@ function applyLang(){
   $$("[data-i]").forEach(el => { if (t[el.dataset.i] != null) el.textContent = t[el.dataset.i]; });
   $$('a[href$="cv-alvaro-fabre.pdf"], a[href$="cv-alvaro-fabre-en.pdf"], a[href$="cv-alvaro-fabre-fr.pdf"]').forEach(a => a.setAttribute("href", (PATHS ? "/" : "") + cvFile(lang)));
   $$("[data-aria]").forEach(el => el.setAttribute("aria-label", t[el.dataset.aria]));
+  $$("[data-ph]").forEach(el => { el.placeholder = t[el.dataset.ph] || ""; });
   { const lb = $("#langBtn"); if (lb) lb.setAttribute("aria-label", document.documentElement.lang.slice(0,2).toUpperCase() + " – " + t.lang_label); }   // accessible name contains the visible text (WCAG 2.5.3)
   // project meta labels
   t.role_l2 = t.role_l2 || ({es:"Rol",en:"Role",fr:"Rôle"})[lang];

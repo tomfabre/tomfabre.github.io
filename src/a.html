@@ -1301,6 +1301,27 @@ html.mo .reveal.sec-head:not(.in) > *{opacity:0}
  .pj-body a,.ch-tx a,.bt-links a,.sheet-foot a{transition:border-color 500ms var(--ease)}
  footer a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size 600ms var(--ease);text-decoration:none}
  footer a:hover,footer a:focus-visible{background-size:100% 1px;text-decoration:none}}
+/* ---- LOTE 2: contact + footer ---- */
+.ct-body .mail{margin-top:clamp(3rem,6vw,5rem)}
+.ct-direct{max-width:44ch;margin:.5rem 0 var(--s3);color:var(--muted);font-weight:300}
+.ct-faq{margin-top:clamp(4rem,8vw,6rem);padding-bottom:var(--s12)}
+.ct-faq h2{font-size:var(--h2);line-height:1.05;letter-spacing:-.02em;margin-bottom:var(--s6)}
+.d-res-t{font-size:clamp(1.4rem,2vw + 1rem,2rem);font-weight:600;letter-spacing:-.02em;margin-bottom:var(--s3)}
+.d-res-b{color:var(--muted);font-size:var(--lead,1.15rem)}
+#form [aria-invalid="true"]{border-color:var(--coral,#e5533d);outline:2px solid var(--coral,#e5533d);outline-offset:2px}
+#ferr a{text-decoration:underline;text-underline-offset:.2em}
+.bigfoot-h{font-size:clamp(2.6rem,9vw,9rem);line-height:.95;letter-spacing:-.045em;max-width:14ch}
+.bigfoot-p{margin:var(--s6) 0 var(--s5);color:var(--muted);font-weight:300;font-size:clamp(1.05rem,.6vw + .95rem,1.35rem);max-width:40ch}
+footer .foot-grid{grid-template-columns:1fr 1fr;align-items:start;gap:var(--s8) var(--s8)}
+footer .foot-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.35rem}
+footer .foot-col .socials-foot{display:flex;flex-direction:column;flex-wrap:nowrap;gap:.35rem}
+.foot-h{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--s3)}
+.foot-nav{display:block}
+.foot-nav a{color:var(--muted);text-decoration:none;display:inline-block;transition:color var(--fast)}
+.foot-nav a:hover,.foot-nav a:focus-visible{color:var(--fg)}
+.foot-sig{grid-column:1/-1;font-size:.95rem;color:var(--muted);font-weight:300}
+.foot-bottom{grid-column:1/-1;border-top:1px solid var(--line2);padding-top:var(--s5)}
+@media (max-width:40rem){footer .foot-grid{grid-template-columns:1fr 1fr}.bigfoot-h{max-width:none}}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}

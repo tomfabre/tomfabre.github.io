@@ -611,3 +611,200 @@ Object.assign(SEO.fr, {
  "svc_ux_t": "Design UX/UI et produit digital | Tom Fabre",
  "svc_ux_d": "Design d'applications et de produits digitaux : recherche UX, interfaces, prototypes et stratégie pour des expériences plus simples à utiliser."
 });
+
+/* LOTE 2 · contact page + form + global footer */
+Object.assign(T.es, {
+ "ct_a1": "¿Qué tienes",
+ "ct_a2": "entre manos?",
+ "ct_p": "Una marca, una web, un producto digital o una idea que todavía no sabes muy bien cómo aterrizar. Cuéntame un poco y vemos qué podemos hacer.",
+ "c_l": "¿Prefieres escribir directamente?",
+ "ct_direct": "También puedes enviarme un email a hey@tomfabre.com. Sin formularios ni rodeos.",
+ "d_h": "Cuéntame un poco más.",
+ "d_sub": "No necesitas tenerlo todo definido. Con unas líneas para empezar, es suficiente.",
+ "d_name": "Tu nombre",
+ "d_mail": "Tu email",
+ "d_topic": "¿En qué puedo ayudarte?",
+ "d_msg": "Tu mensaje",
+ "d_msg_h": "",
+ "ph_name": "¿Cómo te llamas?",
+ "ph_mail": "hola@ejemplo.com",
+ "ph_msg": "Una idea, un problema o simplemente algo que te gustaría mejorar...",
+ "topics": [
+  "Branding e identidad",
+  "Diseño y desarrollo web",
+  "Producto digital",
+  "UX/UI",
+  "Otro proyecto",
+  "Todavía no lo tengo claro",
+  "Quiero colaborar",
+  "Mi análisis UX/UI (premio del juego)"
+ ],
+ "d_send": "Enviar mensaje",
+ "d_err": "Este campo se nos quedó pendiente.",
+ "d_mail_err": "Revisa tu email, creo que hay algo que no encaja.",
+ "d_sending": "Enviando tu mensaje...",
+ "d_sent_t": "¡Mensaje enviado!",
+ "d_sent_b": "Gracias por escribirme. Te responderé en cuanto pueda.",
+ "d_fail_t": "Parece que el mensaje no ha salido.",
+ "d_fail_b": "Puedes intentarlo de nuevo o escribirme directamente a hey@tomfabre.com.",
+ "d_sent": "¡Mensaje enviado! Gracias por escribirme. Te responderé en cuanto pueda.",
+ "d_fail": "Parece que el mensaje no ha salido. Puedes intentarlo de nuevo o escribirme directamente a hey@tomfabre.com.",
+ "ct_faq": [
+  [
+   "¿Necesito tener el proyecto definido?",
+   "No. Podemos empezar con una idea, un problema o una pregunta. Cuéntame lo que tienes en mente y vemos por dónde empezar."
+  ],
+  [
+   "¿Trabajas con empresas fuera de Madrid?",
+   "Sí. Trabajo en remoto con equipos y clientes de distintos lugares. Podemos comunicarnos en español, francés o inglés."
+  ],
+  [
+   "¿Puedes encargarte de todo el proyecto?",
+   "Depende de lo que necesites. Hay proyectos que desarrollo personalmente y otros en los que colaboro con profesionales de confianza para cubrir diferentes especialidades."
+  ],
+  [
+   "¿Cuánto cuesta trabajar contigo?",
+   "Depende del alcance. No cuesta lo mismo renovar una identidad que diseñar y desarrollar una web completa. Cuéntame qué necesitas y podemos valorar una propuesta."
+  ]
+ ],
+ "foot_mega": "Hasta aquí llegamos. Por ahora.",
+ "foot_lead": "Si tienes algo en mente, ya sabes dónde encontrarme.",
+ "foot_explore": "Explorar",
+ "foot_else": "Otros lugares",
+ "foot_sig": "Hecho a mano, con algo de IA, Figma y bastante café.",
+ "foot_legal": "© 2026 Tom Fabre · Madrid · ES / FR / EN"
+});
+Object.assign(SEO.es, {
+ "contact_t": "Contacto | Tom Fabre — Branding, web y UX/UI",
+ "contact_d": "¿Tienes una marca, una web o un producto digital en mente? Escríbeme y vemos cómo podemos trabajarlo juntos. Diseño y desarrollo desde Madrid."
+});
+Object.assign(T.en, {
+ "ct_a1": "What are you",
+ "ct_a2": "working on?",
+ "ct_p": "A brand, a website, a digital product or an idea you haven't quite figured out yet? Tell me a bit about it and we'll see what we can do.",
+ "c_l": "Prefer to email me directly?",
+ "ct_direct": "You can also write to hey@tomfabre.com. No forms, no fuss.",
+ "d_h": "Tell me a little more.",
+ "d_sub": "You don't need to have everything figured out. A few lines are enough to get started.",
+ "d_name": "Your name",
+ "d_mail": "Your email",
+ "d_topic": "What can I help with?",
+ "d_msg": "Your message",
+ "d_msg_h": "",
+ "ph_name": "What should I call you?",
+ "ph_mail": "hello@example.com",
+ "ph_msg": "An idea, a problem or just something you'd like to make better…",
+ "topics": [
+  "Branding & identity",
+  "Web design & development",
+  "Digital product",
+  "UX/UI",
+  "Something else",
+  "I'm not sure yet",
+  "I'd like to collaborate",
+  "My UX/UI review (game prize)"
+ ],
+ "d_send": "Send message",
+ "d_err": "Looks like this field is missing.",
+ "d_mail_err": "Double-check your email address. Something doesn't look quite right.",
+ "d_sending": "Sending your message…",
+ "d_sent_t": "Message sent!",
+ "d_sent_b": "Thanks for reaching out. I'll get back to you as soon as I can.",
+ "d_fail_t": "Looks like the message didn't go through.",
+ "d_fail_b": "You can try again or email me directly at hey@tomfabre.com.",
+ "d_sent": "Message sent! Thanks for reaching out. I'll get back to you as soon as I can.",
+ "d_fail": "Looks like the message didn't go through. You can try again or email me directly at hey@tomfabre.com.",
+ "ct_faq": [
+  [
+   "Do I need to have my project figured out?",
+   "Not at all. We can start with an idea, a problem or just a question. Tell me where you're at and we'll take it from there."
+  ],
+  [
+   "Do you work with businesses outside Madrid?",
+   "Yes. I work remotely with clients and teams in different places, in Spanish, French and English."
+  ],
+  [
+   "Can you handle the whole project?",
+   "It depends on what's needed. I work on some projects myself and bring in trusted collaborators for others."
+  ],
+  [
+   "How much does it cost to work with you?",
+   "It depends on the scope. Refreshing a brand and designing and developing a full website involve very different work. Tell me what you need and we can discuss a proposal."
+  ]
+ ],
+ "foot_mega": "That's a wrap. For now.",
+ "foot_lead": "If you've got something in mind, you know where to find me.",
+ "foot_explore": "Explore",
+ "foot_else": "Elsewhere",
+ "foot_sig": "Made by hand, with a little AI, Figma and quite a lot of coffee.",
+ "foot_legal": "© 2026 Tom Fabre · Madrid · ES / FR / EN"
+});
+Object.assign(SEO.en, {
+ "contact_t": "Contact | Tom Fabre — Branding, web & UX/UI",
+ "contact_d": "Have a brand, website or digital product in mind? Get in touch and let's see what we can build together. Design and development from Madrid."
+});
+Object.assign(T.fr, {
+ "ct_a1": "Tu as un projet",
+ "ct_a2": "en tête ?",
+ "ct_p": "Une marque, un site, un produit digital ou une idée que tu ne sais pas encore très bien comment concrétiser ? Raconte-moi un peu et voyons ce qu'on peut faire.",
+ "c_l": "Tu préfères écrire directement ?",
+ "ct_direct": "Tu peux aussi m'envoyer un email à hey@tomfabre.com. Sans formulaire ni détour.",
+ "d_h": "Raconte-moi.",
+ "d_sub": "Pas besoin d'avoir tout défini. Quelques lignes suffisent pour commencer.",
+ "d_name": "Ton prénom",
+ "d_mail": "Ton email",
+ "d_topic": "Comment je peux t'aider ?",
+ "d_msg": "Ton message",
+ "d_msg_h": "",
+ "ph_name": "Comment tu t'appelles ?",
+ "ph_mail": "bonjour@exemple.fr",
+ "ph_msg": "Une idée, un problème ou quelque chose que tu aimerais améliorer…",
+ "topics": [
+  "Branding et identité",
+  "Design et développement web",
+  "Produit digital",
+  "UX/UI",
+  "Autre projet",
+  "Je ne sais pas encore",
+  "Je souhaite collaborer",
+  "Mon analyse UX/UI (cadeau du jeu)"
+ ],
+ "d_send": "Envoyer le message",
+ "d_err": "Il manque ce champ.",
+ "d_mail_err": "Vérifie ton adresse email, il y a peut-être une petite erreur.",
+ "d_sending": "Envoi en cours…",
+ "d_sent_t": "Message envoyé !",
+ "d_sent_b": "Merci pour ton message. Je te répondrai dès que possible.",
+ "d_fail_t": "Le message n'est pas parti.",
+ "d_fail_b": "Tu peux réessayer ou m'écrire directement à hey@tomfabre.com.",
+ "d_sent": "Message envoyé ! Merci pour ton message. Je te répondrai dès que possible.",
+ "d_fail": "Le message n'est pas parti. Tu peux réessayer ou m'écrire directement à hey@tomfabre.com.",
+ "ct_faq": [
+  [
+   "Faut-il que mon projet soit déjà bien défini ?",
+   "Non. On peut partir d'une idée, d'un problème ou d'une simple question. Dis-moi où tu en es et on verra par où commencer."
+  ],
+  [
+   "Tu travailles avec des entreprises hors de Madrid ?",
+   "Oui. Je travaille à distance avec des équipes et des clients de différents pays, en espagnol, français et anglais."
+  ],
+  [
+   "Tu peux prendre en charge tout un projet ?",
+   "Ça dépend des besoins. Je réalise certains projets moi-même et je collabore sur d'autres avec des professionnels de confiance."
+  ],
+  [
+   "Combien coûte une collaboration avec toi ?",
+   "Tout dépend du périmètre. Repenser une identité et concevoir un site complet ne demandent pas le même travail. Décris-moi ton projet et nous pourrons en discuter."
+  ]
+ ],
+ "foot_mega": "C'est tout. Pour le moment.",
+ "foot_lead": "Si tu as quelque chose en tête, tu sais où me trouver.",
+ "foot_explore": "Explorer",
+ "foot_else": "Ailleurs",
+ "foot_sig": "Fait à la main, avec un peu d'IA, Figma et pas mal de café.",
+ "foot_legal": "© 2026 Tom Fabre · Madrid · ES / FR / EN"
+});
+Object.assign(SEO.fr, {
+ "contact_t": "Contact | Tom Fabre — Branding, web et UX/UI",
+ "contact_d": "Une marque, un site ou un produit digital en tête ? Écris-moi et voyons comment avancer ensemble. Design et développement depuis Madrid."
+});

@@ -71,7 +71,7 @@ def ld(lg, r):
     elif page == "bio":
         g.append({"@type":"ProfilePage","@id":url+"#page","url":url,"name":title,"description":desc,"inLanguage":lg,"isPartOf":{"@id":SITE_ID},"mainEntity":{"@id":PERSON_ID}})
     elif page == "contact":
-        g.append({"@type":"ContactPage","@id":url+"#page","url":url,"name":title,"description":desc,"inLanguage":lg,"isPartOf":{"@id":SITE_ID},"about":{"@id":PERSON_ID}})
+        g.append({"@type":"ContactPage","@id":url+"#page","url":url,"name":title,"description":desc,"inLanguage":lg,"isPartOf":{"@id":SITE_ID},"about":{"@id":PERSON_ID}}); g.append(faq_node(lg, t["ct_faq"], url))
     elif page == "project":
         i = [q["key"] for q in PROJ].index(key); p = pj(lg,i)
         g.append({"@type":"CreativeWork","@id":url+"#work","url":url,"name":p["name"],"description":p["summary"],"genre":p["category"],"inLanguage":lg,"creator":{"@id":PERSON_ID},"isPartOf":{"@id":SITE_ID}})
