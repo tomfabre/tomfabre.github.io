@@ -231,3 +231,8 @@ Object.assign(T.fr, { mm_hint: "Trouve une paire et je te raconte quelque chose.
 Object.assign(T.es, { bx_ck: Object.assign({}, T.es.bx_ck, { h: "Siempre hay espacio para…", foods: ["Ajiaco", "Tacos", "Chilaquiles", "Empanadas", "Hamburguesas", "Camembert", "Bandeja paisa", "Patacones", "Arroz chino", "Pad thai", "Ramen"] }) });
 Object.assign(T.en, { bx_ck: Object.assign({}, T.en.bx_ck, { h: "There's always room for…", foods: ["Ajiaco", "Tacos", "Chilaquiles", "Empanadas", "Burgers", "Camembert", "Bandeja paisa", "Patacones", "Chinese fried rice", "Pad thai", "Ramen"] }) });
 Object.assign(T.fr, { bx_ck: Object.assign({}, T.fr.bx_ck, { h: "Il y a toujours de la place pour…", foods: ["Ajiaco", "Tacos", "Chilaquiles", "Empanadas", "Hamburgers", "Camembert", "Bandeja paisa", "Patacones", "Riz cantonais", "Pad thai", "Ramen"] }) });
+
+/* ---------- bento tarjeta 4: «Comfort Food Club» + 4 comidas más ---------- */
+Object.assign(T.es, { bx_ck: Object.assign({}, T.es.bx_ck, { h: "Comfort Food Club", foods: T.es.bx_ck.foods.concat(["Maracumango", "Chuzopán", "Sancocho", "Sopa de cebolla"]) }) });
+Object.assign(T.en, { bx_ck: Object.assign({}, T.en.bx_ck, { h: "Comfort Food Club", foods: T.en.bx_ck.foods.concat(["Maracumango", "Chuzopán", "Sancocho", "Onion soup"]) }) });
+Object.assign(T.fr, { bx_ck: Object.assign({}, T.fr.bx_ck, { h: "Comfort Food Club", foods: T.fr.bx_ck.foods.concat(["Maracumango", "Chuzopán", "Sancocho", "Soupe à l'oignon"]) }) });
