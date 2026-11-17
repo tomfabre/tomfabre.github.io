@@ -2520,3 +2520,380 @@ HERO["mobile-experiences"] = {
 SEO.es.proj["mobile-experiences"] = {"t": "Diseño de apps móviles y UX/UI | Tom Fabre", "d": "Tres proyectos de diseño de aplicaciones móviles: Apolo Launcher, Appy × Jojol y Mood Messenger. UX/UI, interfaces y estrategia de producto."};
 SEO.en.proj["mobile-experiences"] = {"t": "Mobile App Design & UX/UI | Tom Fabre", "d": "Three mobile app design projects: Apolo Launcher, Appy × Jojol, and Mood Messenger. UX/UI, interface design, and product strategy."};
 SEO.fr.proj["mobile-experiences"] = {"t": "Design d'applications mobiles et UX/UI | Tom Fabre", "d": "Trois projets de design mobile : Apolo Launcher, Appy × Jojol et Mood Messenger. UX/UI, interfaces et stratégie produit."};
+
+/* Carceral Ecologies: case page prepared, NOT published (PROJ.carceral.locked in c1p.js). Add the images (flow items) and remove `locked` to go live. */
+SECTIONS.carceral = [
+ {
+  "type": "text",
+  "id": "caso",
+  "h": {
+   "es": "Carceral Ecologies",
+   "en": "Carceral Ecologies",
+   "fr": "Carceral Ecologies"
+  },
+  "t": {
+   "es": "Mucha investigación. Una web que necesitaba orden.",
+   "en": "Years of research. A website in need of structure.",
+   "fr": "Beaucoup de recherches. Un site qui avait besoin d'ordre."
+  },
+  "p": [
+   {
+    "es": "¿Qué ocurre cuando un proyecto de investigación crece, pero su web no consigue acompañarlo?",
+    "en": "What happens when a research project grows, but its website struggles to keep up?",
+    "fr": "Que se passe-t-il quand un projet de recherche grandit, mais que son site n'arrive plus à suivre ?"
+   },
+   {
+    "es": "Carceral Ecologies reúne estudios sobre vigilancia policial, muertes bajo custodia, condiciones ambientales en centros de detención y alternativas comunitarias de seguridad.",
+    "en": "Carceral Ecologies brings together work on police surveillance, deaths in custody, environmental conditions in detention facilities, and community-led approaches to safety.",
+    "fr": "Carceral Ecologies réunit des travaux sur la surveillance policière, les décès en détention, les conditions environnementales dans les centres de détention et les alternatives communautaires en matière de sécurité."
+   },
+   {
+    "es": "Su trabajo combina publicaciones académicas, mapas, bases de datos, entrevistas y materiales audiovisuales.",
+    "en": "Its research includes academic papers, maps, datasets, interviews, and audiovisual material.",
+    "fr": "Ses travaux mêlent publications scientifiques, cartes, jeux de données, entretiens et ressources audiovisuelles."
+   },
+   {
+    "es": "El problema era que toda esa información estaba repartida entre páginas, apartados y enlaces que no siempre resultaban fáciles de recorrer.",
+    "en": "The problem was that all this information was scattered across pages, sections, and links that weren't always easy to navigate.",
+    "fr": "Le problème : ces informations étaient réparties entre de nombreuses pages, rubriques et liens qui n'étaient pas toujours faciles à parcourir."
+   },
+   {
+    "es": "Había que encontrar una manera de organizarlo todo sin perder las relaciones entre los distintos proyectos.",
+    "en": "We needed to find a way to organise it without losing the connections between different research projects.",
+    "fr": "Il fallait trouver comment les organiser sans perdre les liens entre les différents projets."
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "reto",
+  "h": {
+   "es": "01 · El reto",
+   "en": "01 · The challenge",
+   "fr": "01 · Le défi"
+  },
+  "t": {
+   "es": "Que nada importante se quede escondido.",
+   "en": "Making sure the important work doesn't get buried.",
+   "fr": "Ne rien laisser d'important se perdre."
+  },
+  "p": [
+   {
+    "es": "La web original funcionaba con WordPress y había ido acumulando contenidos con el tiempo.",
+    "en": "The original site ran on WordPress and had grown over time as more material was added.",
+    "fr": "Le site d'origine était construit sur WordPress et avait accumulé du contenu au fil des années."
+   },
+   {
+    "es": "Antes de plantear el rediseño, realizamos una auditoría técnica para entender qué estaba pasando.",
+    "en": "Before considering the redesign, we carried out a technical audit to understand what was happening.",
+    "fr": "Avant de proposer une refonte, nous avons réalisé un audit technique pour comprendre la situation."
+   },
+   {
+    "es": "Encontramos una estructura con páginas duplicadas, contenidos difíciles de localizar y varios problemas de rendimiento y posicionamiento.",
+    "en": "We found duplicate pages, hard-to-find content, and a range of performance and search visibility issues.",
+    "fr": "Nous avons découvert des pages en double, des contenus difficiles à trouver et plusieurs problèmes de performance et de référencement."
+   },
+   {
+    "es": "De las 77 entradas de contenido inventariadas, solo 44 eran accesibles a través de enlaces internos.",
+    "en": "Of the 77 content entries we inventoried, only 44 were reachable through internal links.",
+    "fr": "Sur 77 entrées de contenu recensées, seules 44 étaient accessibles par des liens internes."
+   },
+   {
+    "es": "Pero el reto no era únicamente técnico.",
+    "en": "But it wasn't just a technical challenge.",
+    "fr": "Mais le défi n'était pas seulement technique."
+   },
+   {
+    "es": "Una misma investigación podía incluir publicaciones, conjuntos de datos, entrevistas y noticias relacionadas. Toda esa información debía ser fácil de encontrar, tanto para alguien que conoce el tema como para quien llega por primera vez.",
+    "en": "A single research project could include publications, datasets, interviews, and related news coverage. That information needed to be accessible both to people familiar with the subject and those discovering it for the first time.",
+    "fr": "Une même recherche pouvait réunir publications, jeux de données, entretiens et articles de presse. Tout devait être facile à retrouver, aussi bien pour les spécialistes que pour les personnes découvrant le sujet."
+   },
+   {
+    "es": "La pregunta era sencilla: ¿cómo organizar un archivo complejo sin convertirlo en un laberinto?",
+    "en": "The question was simple: how do you organise a complex archive without turning it into a maze?",
+    "fr": "La question était simple : comment organiser une archive complexe sans en faire un labyrinthe ?"
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "estructura",
+  "h": {
+   "es": "02 · La estructura",
+   "en": "02 · The structure",
+   "fr": "02 · La structure"
+  },
+  "t": {
+   "es": "Distintos proyectos. Un mismo lugar para explorarlos.",
+   "en": "Different projects. One place to explore them.",
+   "fr": "Plusieurs projets. Un même espace pour les explorer."
+  },
+  "p": [
+   {
+    "es": "Empezamos por replantear cómo se relacionaban los contenidos.",
+    "en": "We started by rethinking how the content connected.",
+    "fr": "Nous avons commencé par repenser les liens entre les contenus."
+   },
+   {
+    "es": "La propuesta organiza la web alrededor de cuatro líneas de investigación, un archivo común y las personas que forman parte del colectivo.",
+    "en": "The proposed site is organised around four research areas, a shared archive, and the people behind the collective.",
+    "fr": "La proposition organise le site autour de quatre axes de recherche, d'une archive commune et des personnes qui composent le collectif."
+   },
+   {
+    "es": "Cada proyecto tendría su propio espacio, pero sus publicaciones, datos, entrevistas y noticias también podrían encontrarse desde el archivo general.",
+    "en": "Each project would have its own space, while its publications, data, interviews, and news could also be found through the main archive.",
+    "fr": "Chaque projet dispose de son propre espace, mais ses publications, données, entretiens et actualités peuvent aussi être retrouvés depuis l'archive générale."
+   },
+   {
+    "es": "Así, una persona podría llegar a una investigación, descubrir sus materiales y continuar explorando otros trabajos relacionados.",
+    "en": "Someone could start with one study, explore its resources, and discover related work along the way.",
+    "fr": "On peut ainsi découvrir une recherche, consulter ses ressources et poursuivre vers d'autres travaux liés."
+   },
+   {
+    "es": "Para hacerlo posible, planteamos una estructura de contenidos conectados, con categorías y filtros que facilitaran la navegación.",
+    "en": "To make that possible, we proposed a connected content structure, with categories and filters to make navigation easier.",
+    "fr": "Pour cela, nous avons imaginé une structure de contenus connectés, avec des catégories et des filtres pour faciliter la navigation."
+   },
+   {
+    "es": "También trabajamos en plantillas compartidas para que nuevos estudios y recursos pudieran incorporarse sin tener que diseñar una página diferente cada vez.",
+    "en": "We also worked on reusable templates so new studies and resources could be added without designing a new page every time.",
+    "fr": "Nous avons également travaillé sur des modèles de pages réutilisables afin d'ajouter de nouvelles recherches sans devoir tout redessiner à chaque fois."
+   },
+   {
+    "es": "Una estructura preparada para crecer con la investigación.",
+    "en": "A structure designed to grow with the research.",
+    "fr": "Une structure conçue pour évoluer avec la recherche."
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "identidad",
+  "h": {
+   "es": "03 · La identidad y el diseño",
+   "en": "03 · Identity and design",
+   "fr": "03 · L'identité et le design"
+  },
+  "t": {
+   "es": "Una identidad que nace de su propia investigación.",
+   "en": "A visual identity shaped by the research itself.",
+   "fr": "Une identité qui puise dans la recherche elle-même."
+  },
+  "p": [
+   {
+    "es": "Carceral Ecologies ya tenía un símbolo con mucho significado: una estructura de barrotes atravesada por elementos vegetales.",
+    "en": "Carceral Ecologies already had a meaningful symbol: prison bars intertwined with plant forms.",
+    "fr": "Carceral Ecologies possédait déjà un symbole fort : des barreaux traversés par des éléments végétaux."
+   },
+   {
+    "es": "La propuesta de diseño partió de esa idea.",
+    "en": "That idea became the starting point for the design exploration.",
+    "fr": "La proposition de design est partie de cette idée."
+   },
+   {
+    "es": "En lugar de utilizar recursos gráficos decorativos, exploramos un lenguaje visual relacionado con los propios materiales del colectivo: documentos, registros, mapas, fotografías y datos.",
+    "en": "Rather than adding decorative graphics, we explored a visual language rooted in the collective's own material: documents, records, maps, photographs, and data.",
+    "fr": "Plutôt que de recourir à des éléments graphiques purement décoratifs, nous avons exploré un langage visuel inspiré des propres matériaux du collectif : documents, archives, cartes, photographies et données."
+   },
+   {
+    "es": "Líneas, puntos, retículas y variaciones de densidad se convirtieron en parte de esa exploración.",
+    "en": "Lines, dots, grids, and changes in density all became part of that exploration.",
+    "fr": "Lignes, points, grilles et variations de densité sont devenus des éléments de cette exploration."
+   },
+   {
+    "es": "También trabajamos en una evolución del símbolo, buscando una forma más sencilla y adaptable a distintos tamaños y formatos.",
+    "en": "We also explored an evolution of the symbol, looking for a simpler form that could work across different sizes and formats.",
+    "fr": "Nous avons également travaillé sur une évolution du symbole, vers une forme plus simple et adaptable à différentes tailles et différents usages."
+   },
+   {
+    "es": "La intención era construir un sistema visual capaz de acompañar contenidos muy diferentes, desde un artículo académico hasta una base de datos o una entrevista.",
+    "en": "The goal was a flexible visual system that could support very different types of content, from academic papers to datasets and interviews.",
+    "fr": "L'objectif était de construire un système visuel capable d'accompagner des contenus très différents, d'un article scientifique à un jeu de données ou à un entretien."
+   },
+   {
+    "es": "Un diseño con personalidad, pero suficientemente flexible para dejar que cada investigación ocupe su lugar.",
+    "en": "A design with its own personality, but enough restraint to let each piece of research speak for itself.",
+    "fr": "Un design avec du caractère, mais assez souple pour laisser chaque recherche prendre sa place."
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "experiencia",
+  "h": {
+   "es": "04 · La experiencia digital",
+   "en": "04 · The digital experience",
+   "fr": "04 · L'expérience digitale"
+  },
+  "t": {
+   "es": "Una manera más sencilla de recorrer la investigación.",
+   "en": "A simpler way to explore the research.",
+   "fr": "Une manière plus simple de parcourir la recherche."
+  },
+  "p": [
+   {
+    "es": "Uno de los principales objetivos era que las personas pudieran explorar el contenido sin perderse entre páginas.",
+    "en": "One of our main goals was to help people explore the material without getting lost between pages.",
+    "fr": "L'un des principaux objectifs était de permettre aux visiteurs d'explorer les contenus sans se perdre de page en page."
+   },
+   {
+    "es": "Los wireframes plantean una navegación que conecta proyectos, investigadores y recursos.",
+    "en": "The wireframes propose navigation that connects projects, researchers, and resources.",
+    "fr": "Les wireframes proposent une navigation reliant projets, chercheurs et ressources."
+   },
+   {
+    "es": "El archivo funciona como un punto de encuentro: permite filtrar contenidos y descubrir las relaciones entre distintos materiales.",
+    "en": "The archive becomes a central point of access, where visitors can filter material and discover links between different sources.",
+    "fr": "L'archive devient un point de rencontre : elle permet de filtrer les contenus et de découvrir leurs liens."
+   },
+   {
+    "es": "También propusimos que publicaciones, entrevistas y bases de datos pudieran consultarse desde una estructura común, con información adaptada a cada formato.",
+    "en": "We also proposed a shared structure for publications, interviews, and datasets, with details tailored to each format.",
+    "fr": "Nous avons également proposé une structure commune pour consulter publications, entretiens et jeux de données, avec des informations adaptées à chaque format."
+   },
+   {
+    "es": "Por ejemplo, una publicación mostraría sus referencias y el enlace al artículo original. Una entrevista podría incluir audio y transcripción. Y una base de datos tendría una explicación previa antes de acceder a los archivos alojados en UCLA Dataverse.",
+    "en": "For example, a publication would show its citation and a link to the original paper. An interview could include audio and a transcript. A dataset would have an introduction before linking to the files hosted on UCLA Dataverse.",
+    "fr": "Par exemple, une publication présenterait ses références et le lien vers l'article original. Un entretien pourrait inclure un lecteur audio et une transcription. Un jeu de données serait accompagné d'une présentation avant de renvoyer vers les fichiers hébergés sur UCLA Dataverse."
+   },
+   {
+    "es": "La accesibilidad también forma parte de las decisiones de diseño, con WCAG 2.1 AA como objetivo para la experiencia en ordenador, móvil y tablet.",
+    "en": "Accessibility is also part of the design decisions, with WCAG 2.1 AA as the target for desktop, mobile, and tablet experiences.",
+    "fr": "L'accessibilité fait aussi partie des décisions de conception, avec les WCAG 2.1 AA comme objectif sur ordinateur, mobile et tablette."
+   },
+   {
+    "es": "El principio era que cada persona pudiera llegar al contenido que buscaba sin tener que entender primero cómo estaba organizada toda la web.",
+    "en": "The guiding idea was that people should be able to find what they need without first having to understand the entire website's structure.",
+    "fr": "L'idée : permettre à chacun d'accéder au contenu recherché sans devoir d'abord comprendre toute l'organisation du site."
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "desarrollo",
+  "h": {
+   "es": "05 · El desarrollo y mi trabajo",
+   "en": "05 · Development and my role",
+   "fr": "05 · Le développement et mon rôle"
+  },
+  "t": {
+   "es": "Del archivo existente a una nueva estructura digital.",
+   "en": "From an existing archive to a new digital structure.",
+   "fr": "De l'archive existante à une nouvelle structure digitale."
+  },
+  "p": [
+   {
+    "es": "Mi participación comenzó con la auditoría técnica de la web y el análisis de su estructura en WordPress.",
+    "en": "My involvement began with the technical audit of the website and an analysis of its WordPress structure.",
+    "fr": "J'ai commencé par un audit technique du site et l'analyse de son architecture WordPress."
+   },
+   {
+    "es": "Revisé aspectos como rendimiento, enlaces, organización de páginas, SEO y contenidos duplicados para identificar los problemas que debíamos tener en cuenta durante la migración.",
+    "en": "I reviewed performance, links, page organisation, SEO, and duplicate content to identify what needed to be addressed during migration.",
+    "fr": "J'ai passé en revue les performances, les liens, la structure des pages, le SEO et les contenus dupliqués pour identifier les problèmes à prendre en compte lors de la migration."
+   },
+   {
+    "es": "A partir de ese diagnóstico, planteamos el paso a Webflow y una nueva organización de contenidos que facilitara su mantenimiento.",
+    "en": "Based on that assessment, we proposed moving to Webflow and restructuring the content to make ongoing maintenance easier.",
+    "fr": "À partir de ce diagnostic, nous avons proposé un passage à Webflow et une nouvelle organisation des contenus pour simplifier leur gestion."
+   },
+   {
+    "es": "El trabajo se desarrolla en colaboración con el equipo de diseño y con las personas responsables de Carceral Ecologies, combinando las necesidades de investigación con las decisiones técnicas y de experiencia de usuario.",
+    "en": "The project is being developed in collaboration with the design team and the people behind Carceral Ecologies, balancing research needs with technical and user experience decisions.",
+    "fr": "Le projet se construit avec l'équipe design et les responsables de Carceral Ecologies, en faisant dialoguer les besoins de la recherche, les contraintes techniques et l'expérience utilisateur."
+   },
+   {
+    "es": "El diseño UX/UI y la web completa son un trabajo compartido con {daniela}.",
+    "en": "The UX/UI design and the full website are shared work with {daniela}.",
+    "fr": "Le design UX/UI et l'ensemble du site sont un travail partagé avec {daniela}.",
+    "links": {
+     "daniela": {
+      "href": "https://danielarivillas.com/",
+      "t": {
+       "es": "Daniela Rivillas",
+       "en": "Daniela Rivillas",
+       "fr": "Daniela Rivillas"
+      }
+     }
+    }
+   },
+   {
+    "es": "Conoce al colectivo en {carceral}. © Carceral Ecologies.",
+    "en": "Learn more about the collective at {carceral}. © Carceral Ecologies.",
+    "fr": "Pour en savoir plus sur le collectif : {carceral}. © Carceral Ecologies.",
+    "links": {
+     "carceral": {
+      "href": "https://carceralecologies.org/",
+      "t": {
+       "es": "carceralecologies.org",
+       "en": "carceralecologies.org",
+       "fr": "carceralecologies.org"
+      }
+     }
+    }
+   },
+   {
+    "es": "El proyecto continúa en proceso, por lo que la nueva web y sus resultados finales todavía están pendientes.",
+    "en": "The project is still in progress, so the new website and its final outcomes are yet to come.",
+    "fr": "Le travail est toujours en cours : le nouveau site et ses résultats définitifs restent à venir."
+   }
+  ]
+ },
+ {
+  "type": "text",
+  "id": "cierre",
+  "h": {
+   "es": "Cierre",
+   "en": "Closing",
+   "fr": "Conclusion"
+  },
+  "t": {
+   "es": "Hacer que el conocimiento sea más fácil de encontrar.",
+   "en": "Making knowledge easier to find.",
+   "fr": "Rendre le savoir plus facile à trouver."
+  },
+  "p": [
+   {
+    "es": "Carceral Ecologies trabaja con investigaciones que necesitan ser consultadas, compartidas y relacionadas entre sí.",
+    "en": "Carceral Ecologies produces research that needs to be explored, shared, and connected.",
+    "fr": "Carceral Ecologies produit des recherches qui doivent pouvoir être consultées, partagées et mises en relation."
+   },
+   {
+    "es": "Nuestro trabajo consiste en darles un espacio digital donde puedan hacerlo de una manera más sencilla.",
+    "en": "Our work is about giving that research a digital home where all of this becomes easier.",
+    "fr": "Notre rôle consiste à leur donner un espace digital où tout cela devient plus simple."
+   },
+   {
+    "es": "Porque una buena web no debería complicar el acceso a lo importante.",
+    "en": "Because a good website shouldn't make important information harder to access.",
+    "fr": "Parce qu'un bon site ne devrait pas compliquer l'accès à l'essentiel."
+   },
+   {
+    "em": true,
+    "es": "¿Tienes un proyecto con mucho contenido y necesitas darle orden? Hablemos.",
+    "en": "Have a content-heavy project that needs a clearer structure? Let's talk.",
+    "fr": "Tu as un projet riche en contenus qui a besoin d'être mieux organisé ? Parlons-en."
+   }
+  ]
+ }
+];
+HERO.carceral = {
+ "tag": {
+  "es": "Investigar es importante. Poder encontrarlo, también.",
+  "en": "Research matters. Being able to find it matters, too.",
+  "fr": "Faire de la recherche, c'est essentiel. Pouvoir la retrouver aussi."
+ },
+ "lead": {
+  "es": "Carceral Ecologies es un colectivo de investigación vinculado a UCLA que estudia las consecuencias de los sistemas de encarcelamiento, la vigilancia y la injusticia ambiental. El reto era repensar su web para organizar años de investigaciones, publicaciones, testimonios y datos dentro de una experiencia más clara y fácil de explorar. Un proyecto donde el diseño tenía que ayudar a que el contenido llegara más lejos, sin quitarle protagonismo.",
+  "en": "Carceral Ecologies is a research collective connected to UCLA that studies the impacts of incarceration, surveillance, and environmental injustice. The challenge was to rethink its website and organise years of research, publications, testimonies, and data into a clearer, more accessible experience. A project where design needed to help the work reach further, without taking attention away from the research itself.",
+  "fr": "Carceral Ecologies est un collectif de recherche lié à UCLA qui étudie les conséquences de l'incarcération, de la surveillance et des injustices environnementales. Le défi consistait à repenser son site pour organiser des années de recherches, de publications, de témoignages et de données dans une expérience plus claire et plus facile à explorer. Un projet où le design devait aider les contenus à toucher davantage de monde, sans leur voler la vedette."
+ },
+ "alt": {
+  "es": "Portada del proyecto Carceral Ecologies",
+  "en": "Carceral Ecologies project cover",
+  "fr": "Couverture du projet Carceral Ecologies"
+ }
+};
+SEO.es.proj.carceral = {"t":"Carceral Ecologies: Diseño web y UX/UI | Tom Fabre","d":"Rediseño web para Carceral Ecologies, un colectivo de investigación vinculado a UCLA. Arquitectura de información, UX/UI y migración a Webflow."};
+SEO.en.proj.carceral = {"t":"Carceral Ecologies: Web Design & UX/UI | Tom Fabre","d":"Website redesign for Carceral Ecologies, a UCLA-connected research collective. Information architecture, UX/UI, and migration to Webflow."};
+SEO.fr.proj.carceral = {"t":"Carceral Ecologies : design web et UX/UI | Tom Fabre","d":"Refonte web pour Carceral Ecologies, un collectif de recherche lié à UCLA. Architecture de l'information, UX/UI et migration vers Webflow."};
