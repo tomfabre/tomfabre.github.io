@@ -1487,6 +1487,8 @@ dialog#prizeDlg:focus{outline:none}
 .bx-sp .bx-sp-box{min-height:0;aspect-ratio:4/3}
 .bx-sp .bx-sp-box iframe{height:100%}
 .bx-ck,.bx-st,.bx-sp{gap:var(--s3)}
+/* bento de la Bio en escritorio: ancho contenido y centrado (no ocupa toda la pantalla) */
+@media (min-width:60rem){.bento-sec.bx-sec{max-width:62rem;margin-inline:auto}}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
