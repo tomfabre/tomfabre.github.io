@@ -51,7 +51,7 @@ function spEmbed(url){ try { const u = new URL(url); if (u.hostname !== "open.sp
 function renderBento2(){
   const t = L(), u = t.bx_ui, el = $("#bxBento"); if (!el) return;
   const c = t.bx_city, sp = t.bx_sp, ck = t.bx_ck, st = t.bx_st, ch = t.bx_ch, A = BIO_ASSETS;
-  const cities = `<article class="bx bx-city"><div class="bx-hd"><h3>${esc(c.h)}</h3><p>${esc(c.p)}</p></div>${bxViewer("city", 4500)}</article>`;
+  const cities = `<article class="bx bx-city"><div class="bx-hd"><h3>${esc(c.h)}</h3><p>${esc(c.p)}</p></div>${bxViewer("city", 4300)}</article>`;
   const embed = A.spotify.url ? spEmbed(A.spotify.embed || A.spotify.url) : null;
   const spot = `<article class="bx bx-sp"><div class="bx-hd"><h3>${esc(sp.h)}</h3>${sp.p ? `<p>${esc(sp.p)}</p>` : ""}</div>${embed
     ? `<div class="bx-sp-box" id="spBox"><div class="bx-sp-pane"><span class="bx-sp-ico" aria-hidden="true">♪</span><p class="bx-pl">${esc(sp.name)}</p><button type="button" class="btn sm solid" data-sp-load="${esc(embed)}">${esc(u.sp_load)}</button><p class="bx-note">${esc(u.sp_note)}</p></div></div>`
@@ -59,9 +59,9 @@ function renderBento2(){
   const places = A.places.length
     ? `<ul class="bx-places">${A.places.map(p => `<li><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ul>`
     : `<p class="bx-places-ph" data-pending="restaurants">${esc(u.places_pending)}</p>`;
-  const cook = `<article class="bx bx-ck"><div class="bx-hd"><h3>${esc(ck.h)}</h3><p>${esc(ck.p)}</p></div>${places}${bxViewer("kitchen", 5200)}</article>`;
+  const cook = `<article class="bx bx-ck"><div class="bx-hd"><h3>${esc(ck.h)}</h3><p>${esc(ck.p)}</p></div>${places}${bxViewer("kitchen", 5700)}</article>`;
   const choir = bxAnecdotes();
-  const street = `<article class="bx bx-st"><div class="bx-hd"><h3>${esc(st.h)}</h3>${st.sub ? `<p class="bx-sub">${esc(st.sub)}</p>` : ""}${st.p ? `<p>${esc(st.p)}</p>` : ""}</div>${bxViewer("street", 4000)}</article>`;
+  const street = `<article class="bx bx-st"><div class="bx-hd"><h3>${esc(st.h)}</h3>${st.sub ? `<p class="bx-sub">${esc(st.sub)}</p>` : ""}${st.p ? `<p>${esc(st.p)}</p>` : ""}</div>${bxViewer("street", 3600)}</article>`;
   el.innerHTML = cities + choir + cook + street + spot;
   bxStart();
 }
@@ -80,7 +80,7 @@ function bxAnecdotes(){
   const t = L(), u = t.bx_ui, ch = t.bx_ch, items = ch.items && ch.items.length ? ch.items : [ch.q], n = items.length, i0 = Math.min(bxIdx.an || 0, n - 1);
   const slides = items.map((q, i) => `<blockquote class="bx-sl bx-qs${i === i0 ? " on" : ""}" data-sl="${i}" aria-hidden="${i === i0 ? "false" : "true"}"><p>${esc(q)}</p></blockquote>`).join("");
   const ctl = "";
-  return `<figure class="bx bx-ch"><h3>${esc(ch.h)}</h3><div class="bx-view bx-an" data-view="an" data-n="${n}" data-period="8500"${n > 1 ? ` role="group" aria-roledescription="carousel" aria-label="${esc(ch.h + " · " + u.v_auto)}"` : ""}><div class="bx-slides bx-qslides">${slides}</div>${ctl}<p class="sr-only" data-vlive aria-live="off"></p></div></figure>`;
+  return `<figure class="bx bx-ch"><h3>${esc(ch.h)}</h3><div class="bx-view bx-an" data-view="an" data-n="${n}" data-period="7300"${n > 1 ? ` role="group" aria-roledescription="carousel" aria-label="${esc(ch.h + " · " + u.v_auto)}"` : ""}><div class="bx-slides bx-qslides">${slides}</div>${ctl}<p class="sr-only" data-vlive aria-live="off"></p></div></figure>`;
 }
 function bxShow(v, i, manual){
   const kind = v.el.dataset.view, n = v.n; i = (i + n) % n; v.i = i; bxIdx[kind] = i;
@@ -95,11 +95,9 @@ function bxShow(v, i, manual){
 }
 function bxStart(){
   bxViews.forEach(v => v.io && v.io.disconnect());
-  const rm = matchMedia("(prefers-reduced-motion:reduce)").matches;
-  bxViews = [...document.querySelectorAll("#bxBento .bx-view")].map(el => {
-    const v = { el, n: +el.dataset.n, period: +el.dataset.period, i: bxIdx[el.dataset.view] || 0, paused: rm, hover: false, focus: false, vis: false, next: Date.now() + (+el.dataset.period) };
-    if (rm) { const b = el.querySelector("[data-vpp]"); if (b) { b.setAttribute("aria-pressed", "true"); b.setAttribute("aria-label", L().bx_ui.v_play); b.firstElementChild.textContent = "▶"; } }
-    el.addEventListener("pointerenter", e => { if (e.pointerType === "mouse") v.hover = true; }); el.addEventListener("pointerleave", () => { v.hover = false; v.next = Date.now() + v.period; });
+    bxViews = [...document.querySelectorAll("#bxBento .bx-view")].map(el => {
+    const v = { el, n: +el.dataset.n, period: +el.dataset.period, i: bxIdx[el.dataset.view] || 0, paused: false, hover: false, focus: false, vis: false, next: Date.now() + (+el.dataset.period) };
+    /* las galerías siguen solas también con el ratón encima y con «reducir movimiento» (en ese caso el cambio es sin fundido); solo se detienen con el foco del teclado, con un diálogo abierto o fuera de vista */
     el.addEventListener("focusin", () => { v.focus = true; }); el.addEventListener("focusout", () => { v.focus = false; v.next = Date.now() + v.period; });
     el.addEventListener("click", e => {
       const g = e.target.closest("[data-vgo]"), p = e.target.closest("[data-vpp]");
