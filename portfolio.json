@@ -35,7 +35,12 @@
     }
   ],
   "cv": "https://tomfabre.com/cv-alvaro-fabre.pdf",
-  "updated": "2026-11-16",
+  "cvByLanguage": {
+    "es": "https://tomfabre.com/cv-alvaro-fabre.pdf",
+    "en": "https://tomfabre.com/cv-alvaro-fabre-en.pdf",
+    "fr": "https://tomfabre.com/cv-alvaro-fabre-fr.pdf"
+  },
+  "updated": "2026-11-17",
   "services": {
     "es": [
       {

@@ -685,9 +685,11 @@ function wireChatHide(){
   }), { threshold: .05 });
   io.observe(bf);
 }
+function cvFile(lg){ return "cv-alvaro-fabre" + (lg && lg !== "es" ? "-" + lg : "") + ".pdf"; }   // CV por idioma: ES sin sufijo, -en, -fr
 function applyLang(){
   const t = L(); root.lang = lang; store.set("af-lang", lang);
   $$("[data-i]").forEach(el => { if (t[el.dataset.i] != null) el.textContent = t[el.dataset.i]; });
+  $$('a[href$="cv-alvaro-fabre.pdf"], a[href$="cv-alvaro-fabre-en.pdf"], a[href$="cv-alvaro-fabre-fr.pdf"]').forEach(a => a.setAttribute("href", (PATHS ? "/" : "") + cvFile(lang)));
   $$("[data-aria]").forEach(el => el.setAttribute("aria-label", t[el.dataset.aria]));
   { const lb = $("#langBtn"); if (lb) lb.setAttribute("aria-label", document.documentElement.lang.slice(0,2).toUpperCase() + " – " + t.lang_label); }   // accessible name contains the visible text (WCAG 2.5.3)
   // project meta labels

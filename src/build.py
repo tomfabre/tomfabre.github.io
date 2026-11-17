@@ -212,7 +212,8 @@ def page_html(lg, page, key):
     alts = "".join(f'<meta property="og:locale:alternate" content="{LOCALE[o]}">' for o in ("es","en","fr") if o != lg)
     hre = "".join(f'<link rel="alternate" hreflang="{o}" href="{U(o,page,key)}">' for o in ("es","en","fr")) + f'<link rel="alternate" hreflang="x-default" href="{U("es",page,key)}">'
     h = sub1(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{U(lg,page,key)}">{hre}<meta name="af-paths" content="1"><link rel="ard" href="/.well-known/ard.json">{alts}', h)
-    h = h.replace('href="cv-alvaro-fabre.pdf"','href="/cv-alvaro-fabre.pdf"').replace('cvUrl:"cv-alvaro-fabre.pdf"','cvUrl:"/cv-alvaro-fabre.pdf"')
+    cvf = {"es":"cv-alvaro-fabre.pdf","en":"cv-alvaro-fabre-en.pdf","fr":"cv-alvaro-fabre-fr.pdf"}[lg]
+    h = h.replace('href="cv-alvaro-fabre.pdf"',f'href="/{cvf}"').replace('cvUrl:"cv-alvaro-fabre.pdf"',f'cvUrl:"/{cvf}"')
     h = h + MOTION_TAGS
     return f'<!doctype html>\n<html lang="{lg}">\n<meta charset="utf-8">\n' + h
 npages = 0
@@ -221,9 +222,9 @@ for lg in ("es","en","fr"):
         out = dist + path(lg, page, key) + "index.html"; os.makedirs(os.path.dirname(out), exist_ok=True)
         open(out, "w").write(page_html(lg, page, key)); npages += 1
 open(dist+"/404.html","w").write('<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>404 · Tom Fabre</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:Outfit,system-ui,sans-serif;background:#FDF9F0;color:#2C2C2C;padding:20px;text-align:center}h1{font-size:clamp(4rem,14vw,9rem);margin:0;font-weight:600;letter-spacing:-.03em}p{font-size:1.1rem;font-weight:300}a{display:inline-block;margin:.4rem .5rem;padding:.8rem 1.4rem;border:1px solid currentColor;border-radius:999px;color:inherit;text-decoration:none}@media(prefers-color-scheme:dark){body{background:#222;color:#FDF9F0}}</style><main><h1>404</h1><p>Esta página no existe · This page does not exist · Cette page n\'existe pas</p><a href="/">Inicio</a><a href="/en/">Home</a><a href="/fr/">Accueil</a></main>')
-shutil.copy("cv-alvaro-fabre.pdf", dist+"/cv-alvaro-fabre.pdf")
+for _cv in ("cv-alvaro-fabre.pdf","cv-alvaro-fabre-en.pdf","cv-alvaro-fabre-fr.pdf"): shutil.copy(_cv, dist+"/"+_cv)
 # portfolio.json
-pf = {"name":"Tom Fabre","jobTitle":"Product & Brand Designer","location":"Madrid, Spain","studio":{"name":"Binōme Studio","url":"https://binome.xyz"},"languages":["es","fr","en"],"email":EMAIL,"profiles":[{"name":k,"url":v} for k,v in SOC.items()],"cv":f"{SITE}/cv-alvaro-fabre.pdf","updated":today,
+pf = {"name":"Tom Fabre","jobTitle":"Product & Brand Designer","location":"Madrid, Spain","studio":{"name":"Binōme Studio","url":"https://binome.xyz"},"languages":["es","fr","en"],"email":EMAIL,"profiles":[{"name":k,"url":v} for k,v in SOC.items()],"cv":f"{SITE}/cv-alvaro-fabre.pdf","cvByLanguage":{"es":f"{SITE}/cv-alvaro-fabre.pdf","en":f"{SITE}/cv-alvaro-fabre-en.pdf","fr":f"{SITE}/cv-alvaro-fabre-fr.pdf"},"updated":today,
   "services":{l:[{"name":s[0],"tagline":s[1],"summary":s[2],"scope":s[3],"url":U(l,"service",SKEYS[i])} for i,s in enumerate(T[l]["hs_items"])] for l in ("es","en","fr")},
   "faq":{l:[{"question":q,"answer":a} for q,a in T[l]["hf_items"]] for l in ("es","en","fr")},
   "projects":{l:[pj(l,i) for i in PUB] for l in ("es","en","fr")}}
@@ -235,7 +236,7 @@ L.append(""); L.append("The portfolio has real URLs per language: Spanish at the
 L.append(""); L.append("## About"); L.append("")
 L.append(f"- [Bio]({U("en","bio")}): Background, way of working, quick facts and personal links.")
 L.append(f"- [Contact]({U("en","contact")}): Email {EMAIL}, contact form and profile links.")
-L.append(f"- [CV (PDF)]({SITE}/cv-alvaro-fabre.pdf): Curriculum vitae.")
+L.append(f"- [CV (PDF, English)]({SITE}/cv-alvaro-fabre-en.pdf): Curriculum vitae. Also available in [Spanish]({SITE}/cv-alvaro-fabre.pdf) and [French]({SITE}/cv-alvaro-fabre-fr.pdf).")
 L.append(""); L.append("## Projects"); L.append("")
 for i in PUB:
     p=pj("en",i); L.append(f"- [{p['name']}]({p['url']}): {p['category']}. {p['summary']}")

@@ -132,7 +132,7 @@ function yAction(a){
       if (has && map[has.o] != null) $("#ft").selectedIndex = map[has.o]; else if (rows.length) $("#ft").selectedIndex = 4;
       break; }
     case "@copy_summary": yCopySummary(); break;
-    case "@cv": yOpenUrl(YCFG.cvUrl); yShowNote("y_cvopen"); break;
+    case "@cv": yOpenUrl((PATHS ? "/" : "") + cvFile(lang)); yShowNote("y_cvopen"); break;
     case "@series_music": yOpenUrl(YCFG.seriesMusicUrl); yShowNote("y_ytopen"); break;
     default:
       if (/^@projects_/.test(a)) { const u = YCFG.projects[a.slice(10)]; closeChat(); if (u) goHash(u); }
