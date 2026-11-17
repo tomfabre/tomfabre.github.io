@@ -70,7 +70,7 @@
 
   <!-- Hundir la flota: on Home, right after "Un poco más sobre mí" (moved from Bio) -->
   <section id="gamesec" aria-labelledby="hGameH">
-    <div class="sec-head reveal"><h2 id="hGameH" data-i="game_h"></h2><p class="rh" data-i="game_p"></p></div>
+    <div class="sec-head reveal"><h2 id="hGameH" data-i="game_h"></h2><div class="rh"><p data-i="game_p"></p><p class="game-prize" data-i="game_prize"></p><p class="game-note" data-i="game_note"></p></div></div>
     <div class="game-wrap">
       <div class="board reveal" id="board" role="group" data-aria="game_h"></div>
       <div class="panel reveal">
@@ -282,7 +282,7 @@
     <span class="win-kicker" id="gameKicker"></span>
     <div class="win-h" id="gameH" role="heading" aria-level="2"></div>
     <p class="win-p" id="gameP"></p>
-    <div class="prize"><b data-i="prize_t"></b><span data-i="prize_p"></span></div>
+    <p class="prize" id="gamePrize"></p>
     <div class="win-actions">
       <button class="btn solid" type="button" id="gameWrite"><span id="gameWriteL"></span><span class="arr" aria-hidden="true">→</span></button>
       <button class="btn" type="button" id="gameRetry" data-i="play_again"></button>
@@ -297,6 +297,25 @@
   <div class="lb-ctl"><button type="button" id="lbPrev" data-aria="lb_prev"><span aria-hidden="true">←</span></button><span class="lb-n" id="lbN"></span><button type="button" id="lbNext" data-aria="lb_next"><span aria-hidden="true">→</span></button></div>
 </dialog>
 
+<dialog id="prizeDlg" aria-labelledby="pzT">
+  <button class="dx" type="button" id="pzClose" data-aria="close">×</button>
+  <h2 id="pzT" data-i="gf_h"></h2>
+  <p class="sub" data-i="gf_sub"></p>
+  <p class="pz-scope" data-i="gf_scope"></p>
+  <form id="pzForm" novalidate>
+    <div class="f"><label for="pzW" data-i="gf_web"></label><input id="pzW" name="website" type="text" inputmode="url" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="url" data-ph="gf_web_ph" required></div>
+    <div class="f"><label for="pzE" data-i="gf_mail"></label><input id="pzE" name="email" type="email" autocomplete="email" data-ph="ph_mail" required></div>
+    <div class="f"><label for="pzM" data-i="gf_more"></label><textarea id="pzM" name="improve" data-ph="gf_more_ph"></textarea></div>
+    <div class="f"><label for="pzQ" id="pzQl"></label><input id="pzQ" name="human" inputmode="numeric" pattern="[0-9]*" autocomplete="off" required></div>
+    <input type="text" name="_gotcha" id="pzH" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
+    <p class="err" id="pzErr" role="alert"></p>
+    <p class="sr" id="pzStat" role="status" aria-live="polite"></p>
+    <p class="f-priv"><span data-i="d_priv"></span> <a class="pz-priv" href="/legal/" data-i="d_priv_l"></a>.</p>
+    <label class="f-check" for="pzC"><input type="checkbox" id="pzC" name="consent" required><span data-i="d_consent"></span></label>
+    <button class="btn solid" type="submit" id="pzSend" style="width:100%;justify-content:center"><span data-i="gf_send"></span><span class="arr" aria-hidden="true">→</span></button>
+  </form>
+  <div class="d-res" id="pzOk" hidden role="status"><p class="d-res-t" data-i="gf_ok_t"></p><p class="d-res-b" data-i="gf_ok_b1"></p><p class="d-res-b" data-i="gf_ok_b2"></p></div>
+</dialog>
 <dialog id="dlg" aria-labelledby="dlgT">
   <button class="dx" type="button" id="dclose" data-aria="close">×</button>
   <h2 id="dlgT" data-i="d_h"></h2>
