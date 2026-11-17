@@ -10,7 +10,7 @@
    No stock photos. Restaurants: add only validated {name, url}.
    ============================================================ */
 const BIO_ASSETS = {
-  cities: ["cucuta", "san-cristobal", "merida", "santiago", "aix-en-provence", "paris", "madrid"].map(k => ({ k, img: k === "paris" ? null : "img/bio/city-" + k + ".webp" })),   // paris: pending   // 16:9, 7 photos
+  cities: ["cucuta", "san-cristobal", "merida", "santiago", "aix-en-provence", "paris", "madrid"].map(k => ({ k, img: k === "paris" ? null : "img/bio/city-" + k + ".webp" })),   // paris: pending   // 3:2, 7 photos
   street: Array.from({ length: 10 }, () => ({ img: null, alt: "", note: "" })),                                                   // 1:1, exactly 10 photos
   kitchen: Array.from({ length: 4 }, () => ({ img: null, alt: "" })),                                                             // 1:1, 4 photos
   places: [],                                                                                                                       // [{ name, url }] validated restaurants / places only
@@ -28,7 +28,7 @@ function bxMedia(item, label, alt, kind){
 /* ---------- galleries (cities 3:2, street 1:1) ---------- */
 function bxGallery(kind){
   const t = L(), u = t.bx_ui;
-  if (kind === "city") return t.bx_city.items.map(([n, cap], i) => ({ img: (BIO_ASSETS.cities[i] || {}).img, label: n, alt: n, cap: n + " · " + cap, ratio: "16-9", kind: "city-" + ((BIO_ASSETS.cities[i] || {}).k || i) }));
+  if (kind === "city") return t.bx_city.items.map(([n, cap], i) => ({ img: (BIO_ASSETS.cities[i] || {}).img, label: n, alt: n, cap: n + " · " + cap, ratio: "3-2", kind: "city-" + ((BIO_ASSETS.cities[i] || {}).k || i) }));
   if (kind === "kitchen") return BIO_ASSETS.kitchen.map((k, i) => ({ img: k.img, label: t.bx_ck.home[0] + " " + (i + 1), alt: k.alt || t.bx_ck.home[0], cap: t.bx_ck.home[0], ratio: "1-1", kind: "kitchen-" + (i + 1) }));
   return BIO_ASSETS.street.map((s, i) => ({ img: s.img, label: String(i + 1).padStart(2, "0"), alt: s.alt || (t.bx_st.h + " " + (i + 1)), cap: s.note || t.bx_st.cap || "", ratio: "1-1", kind: "street-" + (i + 1) }));
 }
