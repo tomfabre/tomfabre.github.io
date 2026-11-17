@@ -682,7 +682,8 @@ section.ch{margin-top:var(--s24)}#form.quick .f-extra{display:none}
 @media (hover:hover) and (pointer:fine){.orb:hover{transform:scale(.82)}}
 .orb svg.rot text tspan{transition:fill 400ms var(--ease)}
 .orb:hover .t1,.orb:focus-visible .t1{fill:var(--mint)}.orb:hover .t2,.orb:focus-visible .t2{fill:var(--mustard)}.orb:hover .t3,.orb:focus-visible .t3{fill:var(--coral)}.orb:hover .t4,.orb:focus-visible .t4{fill:var(--lav)}.orb:hover .t5,.orb:focus-visible .t5{fill:var(--mint)}
-.orb svg.rot{position:absolute;inset:0;width:100%;height:100%;animation:spin 18s linear infinite;color:inherit;pointer-events:none}
+.orb .rot-w{position:absolute;inset:0;display:block;animation:spin 18s linear infinite;will-change:transform;pointer-events:none}
+.orb svg.rot{position:absolute;inset:0;width:100%;height:100%;color:inherit;pointer-events:none}   /* el giro se hace sobre el contenedor HTML: rotar el <svg> con texto forzaba un layout en cada fotograma */
 .orb svg.rot text{font-size:6.4px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;fill:currentColor}
 .orb .orb-arr{font-size:clamp(1.5rem,2.5vw,2.3rem);font-weight:300;line-height:1;position:relative;z-index:1;transform:rotate(-45deg);transition:transform var(--fast)}
 @media (hover:hover) and (pointer:fine){.orb:hover .orb-arr{transform:rotate(0)}}
@@ -1573,7 +1574,7 @@ dialog#prizeDlg:focus{outline:none}
    1) los puntos ya no son una capa del tamaño de toda la tarjeta con máscara: son un cuadrado pequeño que sigue al puntero;
    2) las animaciones continuas (halos, estrella, aurora) se pausan mientras se hace scroll y cuando la tarjeta no está a la vista. */
 .cta-band::before,.sv-cta::before,.sv-team::before{inset:auto;width:26rem;height:26rem;left:calc(var(--mx) - 13rem);top:calc(var(--my) - 13rem);-webkit-mask-image:radial-gradient(closest-side,#000,transparent 70%);mask-image:radial-gradient(closest-side,#000,transparent 70%)}
-html.is-scrolling .blobs i,html.is-scrolling .cta-star,html.is-scrolling .aur i,.cta-off .blobs i,.cta-off .cta-star{animation-play-state:paused!important}
+html.is-scrolling .blobs i,html.is-scrolling .cta-star,html.is-scrolling .orb .rot-w,html.is-scrolling .aur i,.cta-off .blobs i,.cta-off .cta-star{animation-play-state:paused!important}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
@@ -1820,7 +1821,7 @@ try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.d
       <div class="bigfoot-mailrow"><a class="bigfoot-mail cyc" href="mailto:hey@tomfabre.com" aria-label="hey@tomfabre.com">hey@tomfabre.com</a><button type="button" class="copy-txt" id="copyFoot" data-i="copy"></button><span class="sr-only" role="status" id="copiedFoot"></span></div>
     </div>
     <a href="#contact" class="orb" data-open-form data-quick data-ev="primary_cta_click" data-place="footer_orb" aria-label="Contact">
-      <svg class="rot" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="orbp2" d="M 50 50 m -37 0 a 37 37 0 1 1 74 0 a 37 37 0 1 1 -74 0"/></defs><text><textPath href="#orbp2" startOffset="4" textLength="224" lengthAdjust="spacing"><tspan class="t1">Say</tspan> <tspan class="t2">hello</tspan> · <tspan class="t3">Open</tspan> <tspan class="t4">to</tspan> <tspan class="t5">projects</tspan> ·</textPath></text></svg>
+      <span class="rot-w" aria-hidden="true"><svg class="rot" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="orbp2" d="M 50 50 m -37 0 a 37 37 0 1 1 74 0 a 37 37 0 1 1 -74 0"/></defs><text><textPath href="#orbp2" startOffset="4" textLength="224" lengthAdjust="spacing"><tspan class="t1">Say</tspan> <tspan class="t2">hello</tspan> · <tspan class="t3">Open</tspan> <tspan class="t4">to</tspan> <tspan class="t5">projects</tspan> ·</textPath></text></svg></span>
       <span class="orb-arr" aria-hidden="true">→</span>
     </a>
   </div>
@@ -8097,8 +8098,10 @@ let galVis = false, galHover = false;
   document.addEventListener("mouseover", e => { galHover = !!(e.target.closest && e.target.closest(".bt-photo")); });
   if ("IntersectionObserver" in window) new IntersectionObserver(es => { es.forEach(x => { galVis = x.isIntersecting; }); }).observe(document.body);
   else galVis = true;
+  let galTk = false;
   document.addEventListener("scroll", () => {
-    const g = document.querySelector(".bt-gal"); if (!g) return; const r = g.getBoundingClientRect(); galVis = r.bottom > 0 && r.top < innerHeight;
+    if (galTk) return; galTk = true;
+    requestAnimationFrame(() => { galTk = false; const g = document.querySelector(".bt-gal"); if (!g) return; const r = g.getBoundingClientRect(); galVis = r.bottom > 0 && r.top < innerHeight; });
   }, { passive:true });
 })();
 
@@ -8392,20 +8395,24 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
   hero.addEventListener("pointerleave", () => { tx = ty = 0; mag.forEach(s => { s.tx = 0; s.ty = 0; }); kick(); });
 })();
 
-/* reading progress bar on case-study pages */
+/* reading progress bar on case-study pages
+   (no lee scrollHeight en cada scroll —forzaba un layout síncrono por fotograma—: la altura se cachea con ResizeObserver) */
 (function(){
   if (matchMedia("(prefers-reduced-motion:reduce)").matches) return;
   const bar = document.createElement("div"); bar.id = "pjProg"; bar.setAttribute("aria-hidden","true"); document.body.appendChild(bar);
-  let tk = false;
+  let tk = false, H = 0, op = "0", sx = -1;
+  const meas = () => { H = document.documentElement.scrollHeight - innerHeight; };
+  if ("ResizeObserver" in window) new ResizeObserver(meas).observe(document.body); else addEventListener("resize", meas);
   const upd = () => {
     tk = false;
-    const on = !!document.querySelector(".pj-head");
-    const h = document.documentElement.scrollHeight - innerHeight;
-    bar.style.opacity = on && scrollY > 80 ? "1" : "0";
-    bar.style.transform = "scaleX(" + (h > 0 ? Math.min(1, scrollY / h) : 0) + ")";
+    if (!document.querySelector(".pj-head")) { if (op !== "0") { op = "0"; bar.style.opacity = "0"; } return; }
+    if (!H) meas();
+    const y = scrollY, o = y > 80 ? "1" : "0", s = H > 0 ? Math.min(1, y / H) : 0;
+    if (o !== op) { op = o; bar.style.opacity = o; }
+    if (Math.abs(s - sx) > .0005) { sx = s; bar.style.transform = "scaleX(" + s + ")"; }
   };
   addEventListener("scroll", () => { if (!tk) { tk = true; requestAnimationFrame(upd); } }, { passive: true });
-  addEventListener("hashchange", () => setTimeout(upd, 60));
+  addEventListener("hashchange", () => { meas(); setTimeout(upd, 60); });
 })();
 
 /* count-up for numeric stats (visual only; real text is restored at the end and kept for AT) */
