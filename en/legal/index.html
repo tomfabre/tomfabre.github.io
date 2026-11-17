@@ -1537,6 +1537,11 @@ dialog#prizeDlg:focus{outline:none}
 .aur .o3,.blobs .b3{background:radial-gradient(closest-side,var(--mustard),transparent)}
 .aur .o4,.blobs .b4{background:radial-gradient(closest-side,var(--mint),transparent)}
 .blobs .bm{background:radial-gradient(closest-side,var(--coral),transparent);scale:1}
+/* Tarjetas CTA: más ligeras al hacer scroll.
+   1) los puntos ya no son una capa del tamaño de toda la tarjeta con máscara: son un cuadrado pequeño que sigue al puntero;
+   2) las animaciones continuas (halos, estrella, aurora) se pausan mientras se hace scroll y cuando la tarjeta no está a la vista. */
+.cta-band::before,.sv-cta::before,.sv-team::before{inset:auto;width:26rem;height:26rem;left:calc(var(--mx) - 13rem);top:calc(var(--my) - 13rem);-webkit-mask-image:radial-gradient(closest-side,#000,transparent 70%);mask-image:radial-gradient(closest-side,#000,transparent 70%)}
+html.is-scrolling .blobs i,html.is-scrolling .cta-star,html.is-scrolling .aur i,.cta-off .blobs i,.cta-off .cta-star{animation-play-state:paused!important}
 
 .lg-page{max-width:48rem;margin-inline:auto;padding:var(--s8) 0 var(--s16)}
 .lg-top{display:flex;justify-content:space-between;align-items:center;gap:var(--s5);padding:var(--s6) 0;flex-wrap:wrap}
