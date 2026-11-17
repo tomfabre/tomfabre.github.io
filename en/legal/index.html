@@ -1373,6 +1373,15 @@ footer .foot-col .socials-foot{display:flex;flex-direction:column;flex-wrap:nowr
 .bx-sp-act{display:flex;flex-wrap:wrap;gap:.5rem}
 .bx-note{font-size:.8rem;color:var(--muted);margin-top:var(--s2)}
 .bx-line{color:var(--muted);font-weight:300}.bx-line b{color:var(--fg);font-weight:500}
+.bx-food-l{list-style:none;margin:0;padding:0;flex:1;display:flex;flex-wrap:wrap;align-content:center;align-items:center;gap:.5rem .65rem}
+.bx-food-l li{max-width:100%;font-weight:600;letter-spacing:-.025em;line-height:1.05;font-size:clamp(1.15rem,.7vw + 1rem,1.6rem);color:var(--fg)}
+.bx-food-l .k-a{font-size:clamp(1.9rem,1.6vw + 1.4rem,2.6rem);color:var(--accent)}
+.bx-food-l .k-d{font-size:clamp(1.7rem,1.3vw + 1.3rem,2.3rem);background:var(--fg);color:var(--bg);border-radius:var(--pill);padding:.12em .55em .17em}
+.bx-food-l .k-b,.bx-food-l .k-g,.bx-food-l .k-e{border:1px solid var(--line2);border-radius:var(--pill);padding:.15em .65em .2em;font-weight:500}
+.bx-food-l .k-g{font-size:clamp(1.5rem,1vw + 1.2rem,2rem)}
+.bx-food-l .k-e{font-size:clamp(1rem,.4vw + .95rem,1.25rem)}
+.bx-food-l .k-f{font-weight:500;color:var(--muted)}
+.bx-food-l .k-h{font-size:clamp(1rem,.4vw + .95rem,1.25rem);background:var(--fg);color:var(--bg);border-radius:var(--pill);padding:.2em .7em .25em;font-weight:500}
 .bx-places{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
 .bx-places a{display:inline-block;border:1px solid var(--line2);border-radius:var(--pill);padding:.35rem .9rem;color:var(--fg);text-decoration:none}
 .bx-places-ph{font-size:.8rem;border:1px dashed var(--line2);border-radius:var(--pill);padding:.35rem .9rem;color:var(--muted);width:max-content;max-width:100%}
@@ -1425,6 +1434,12 @@ dialog.lb[open]{display:flex}
 .mm-c.is-flip .mm-in{transform:rotateY(180deg)}
 .mm-b,.mm-f{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;border-radius:.9rem;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:.35rem;text-align:center}
 .mm-b{background:var(--fg);color:var(--bg);font-weight:700;font-size:clamp(1.2rem,3vw,1.8rem);letter-spacing:-.04em}
+.mm-b{padding:0;overflow:hidden;background:var(--fg)}
+.mm-b img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.mm-b .mm-bg{display:none}
+/* escritorio: reverso en escala de grises y a color con hover/foco; en táctil siempre a color */
+@media (hover:hover) and (pointer:fine){.mm-b .mm-bg{display:block;transition:opacity .35s var(--ease)}.mm-c:hover .mm-bg,.mm-c:focus-visible .mm-bg{opacity:0}}
+@media (prefers-reduced-motion:reduce){.mm-b .mm-bg{transition:none}}
 .mm-f{transform:rotateY(180deg);background:var(--mc,var(--coral));color:#1F1F1F;border:1px solid rgba(0,0,0,.12)}
 .mm-f i{font-style:normal;font-size:.7rem;letter-spacing:.14em;opacity:.7}
 .mm-f b{font-size:clamp(.62rem,1.6vw,.85rem);line-height:1.15;font-weight:600;overflow-wrap:anywhere}
@@ -1438,6 +1453,19 @@ dialog.lb[open]{display:flex}
 .mm-win h3{font-size:clamp(1.4rem,1.6vw + 1rem,2rem);letter-spacing:-.02em;margin-bottom:var(--s3)}
 .mm-win p{color:var(--muted);margin-bottom:var(--s3)}
 .mm-win:focus{outline:2px solid var(--fg);outline-offset:3px}
+.mm-fi{padding:0;background:var(--surface);border:0;overflow:hidden}
+.mm-fi img{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.mm-c.is-done .mm-fi{box-shadow:none}.mm-c.is-done .mm-fi::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 2px rgba(0,0,0,.35);pointer-events:none}
+.mm-cur{min-height:9.5rem;margin:0 0 var(--s4);max-width:40ch}
+.mm-cur[hidden]{display:none}
+.mm-cur-h{color:var(--muted);font-weight:300}
+.mm-cur-i{animation:mmCurIn .5s var(--ease)}
+.mm-cur-k{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:var(--s2)}
+.mm-cur-t{font-size:clamp(1.15rem,.6vw + 1rem,1.5rem);line-height:1.3;font-weight:500;letter-spacing:-.01em}
+@keyframes mmCurIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.mm-cur-i{animation:none}}
+.mm-win .mm-found{margin:var(--s4) 0}
+.mm-found h4{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:var(--s3)}
 .mm-found{margin-top:var(--s5)}
 .mm-found h3{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:var(--s3)}
 .mm-found ul{list-style:none;padding:0;margin:0;display:grid;gap:var(--s3)}
