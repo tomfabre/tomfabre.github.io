@@ -1481,6 +1481,12 @@ dialog#prizeDlg:focus{outline:none}
 .bx-sp-pane .bx-pl{margin:0;font-size:1.05rem}
 .bx-sp-pane .bx-note{margin:0;max-width:26ch}
 .bx-sp-act{margin:0}
+/* fila inferior del bento: tarjetas más compactas, misma altura, medios alineados abajo */
+.bx-ck .bx-frame,.bx-st .bx-frame{aspect-ratio:4/3}
+.bx-ck .bx-view,.bx-st .bx-view,.bx-sp .bx-sp-box{margin-top:auto}
+.bx-sp .bx-sp-box{min-height:0;aspect-ratio:4/3}
+.bx-sp .bx-sp-box iframe{height:100%}
+.bx-ck,.bx-st,.bx-sp{gap:var(--s3)}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}

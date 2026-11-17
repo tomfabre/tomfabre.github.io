@@ -131,3 +131,8 @@ Object.assign(T.en, { bx_ui: Object.assign({}, T.en.bx_ui, { v_pause: "Pause", v
   bx_ch: Object.assign({}, T.en.bx_ch, { items: [T.en.bx_ch.q] }) });
 Object.assign(T.fr, { bx_ui: Object.assign({}, T.fr.bx_ui, { v_pause: "Pause", v_play: "Reprendre", v_open: "Agrandir la photo", v_auto: "galerie automatique" }),
   bx_ch: Object.assign({}, T.fr.bx_ch, { items: [T.fr.bx_ch.q] }) });
+
+/* Bio · bento: calle con texto corto y pie de galería */
+Object.assign(T.es, { bx_st: Object.assign({}, T.es.bx_st, { p: "Caminar, observar y fijarme en lo que suele pasar desapercibido.", cap: "Fachadas y reflejos." }) });
+Object.assign(T.en, { bx_st: Object.assign({}, T.en.bx_st, { p: "Walking, looking, and noticing what usually goes unnoticed.", cap: "Facades and reflections." }) });
+Object.assign(T.fr, { bx_st: Object.assign({}, T.fr.bx_st, { p: "Marcher, observer et remarquer ce qui passe d'ordinaire inaperçu.", cap: "Façades et reflets." }) });

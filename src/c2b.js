@@ -30,7 +30,7 @@ function bxGallery(kind){
   const t = L(), u = t.bx_ui;
   if (kind === "city") return t.bx_city.items.map(([n, cap], i) => ({ img: (BIO_ASSETS.cities[i] || {}).img, label: n, alt: n, cap: n + " · " + cap, ratio: "3-2", kind: "city-" + ((BIO_ASSETS.cities[i] || {}).k || i) }));
   if (kind === "kitchen") return BIO_ASSETS.kitchen.map((k, i) => ({ img: k.img, label: t.bx_ck.home[0] + " " + (i + 1), alt: k.alt || t.bx_ck.home[0], cap: t.bx_ck.home[0], ratio: "1-1", kind: "kitchen-" + (i + 1) }));
-  return BIO_ASSETS.street.map((s, i) => ({ img: s.img, label: String(i + 1).padStart(2, "0"), alt: s.alt || (t.bx_st.h + " " + (i + 1)), cap: s.note || "", ratio: "1-1", kind: "street-" + (i + 1) }));
+  return BIO_ASSETS.street.map((s, i) => ({ img: s.img, label: String(i + 1).padStart(2, "0"), alt: s.alt || (t.bx_st.h + " " + (i + 1)), cap: s.note || t.bx_st.cap || "", ratio: "1-1", kind: "street-" + (i + 1) }));
 }
 let LBX = { list: [], i: 0, opener: null };
 function lbShow(){
@@ -59,7 +59,7 @@ function renderBento2(){
   const places = A.places.length
     ? `<ul class="bx-places">${A.places.map(p => `<li><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ul>`
     : `<p class="bx-places-ph" data-pending="restaurants">${esc(u.places_pending)}</p>`;
-  const cook = `<article class="bx bx-ck"><div class="bx-hd"><h3>${esc(ck.h)}</h3><p>${esc(ck.p)}</p></div>${bxViewer("kitchen", 5200)}${places}</article>`;
+  const cook = `<article class="bx bx-ck"><div class="bx-hd"><h3>${esc(ck.h)}</h3><p>${esc(ck.p)}</p></div>${places}${bxViewer("kitchen", 5200)}</article>`;
   const choir = bxAnecdotes();
   const street = `<article class="bx bx-st"><div class="bx-hd"><h3>${esc(st.h)}</h3><p class="bx-sub">${esc(st.sub)}</p><p>${esc(st.p)}</p></div>${bxViewer("street", 4000)}</article>`;
   el.innerHTML = cities + choir + cook + street + spot;
