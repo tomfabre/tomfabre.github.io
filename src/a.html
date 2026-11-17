@@ -391,6 +391,13 @@ html[lang="fr"] .bio-hero .mega{font-size:clamp(2rem,6vw,7rem)}
 .hmin{min-height:90vh;min-height:90svh;justify-content:center;margin-top:calc(var(--hh,5.75rem) * -1);display:flex;flex-direction:column;padding-block:calc(var(--hh,5.75rem) + clamp(1.5rem,5svh,3.5rem)) calc(var(--s8) + env(safe-area-inset-bottom,0px));position:relative}
 .avail{margin-top:0;font-size:clamp(.78rem,.3vw + .7rem,.92rem);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.5}
 .av-w{font-weight:600;color:var(--av1);animation:availc 16s ease-in-out infinite}
+.hmin .avail{position:relative;z-index:3}
+.av-tip{position:relative;display:inline-block;cursor:help;outline:none}
+.hmin .av-tip .h-greet{margin-right:0;padding-bottom:.12em;border-bottom:1px dashed var(--line2)}
+.av-tip .av-w{position:absolute;left:calc(100% + .75rem);top:50%;white-space:nowrap;z-index:5;width:max-content;max-width:min(28rem,calc(100vw - 2.5rem));padding:.6rem .85rem;border-radius:.5rem;background:var(--surface);border:1px solid var(--line);box-shadow:0 .5rem 1.5rem rgba(44,44,44,.12);opacity:0;transform:translateY(-50%) translateX(-.3rem);pointer-events:none;transition:opacity .2s var(--ease),transform .2s var(--ease)}
+.av-tip:hover .av-w,.av-tip:focus .av-w,.av-tip:focus-within .av-w{opacity:1;transform:translateY(-50%)}
+.av-tip:focus-visible .h-greet{outline:2px solid var(--av1);outline-offset:.35em;border-radius:.2em}
+
 @keyframes availc{
  0%{color:color-mix(in srgb,var(--av1) 55%,var(--muted))}12.5%{color:var(--av1)}
  25%{color:color-mix(in srgb,var(--av2) 55%,var(--muted))}37.5%{color:var(--av2)}
@@ -420,6 +427,7 @@ html[lang="fr"] .hm-btn .l2{padding-left:0}
 .hmin .scroll-hint{animation:rise 900ms var(--ease) 500ms both}
 @media (prefers-reduced-motion:reduce){
  .av-w{animation:none;color:var(--av1)}
+ .av-tip .av-w{transition:none;transform:translateY(-50%)}
  .hm-a,.hm-b{transition:opacity 150ms linear;transform:none!important}
  .scroll-hint .ar,.hmin .avail,.hmin .hmega,.hmin .scroll-hint{animation:none}}
 /* touch: no hover-only content */
