@@ -802,7 +802,28 @@ Object.assign(T.fr, {
  "foot_explore": "Explorer",
  "foot_else": "Ailleurs",
  "foot_sig": "Fait à la main, avec un peu d'IA, Figma et pas mal de café.",
- "foot_legal": "© 2026 Tom Fabre · Madrid · ES / FR / EN"
+ "foot_legal": "© 2026 Tom Fabre · Madrid · ES / FR / EN",
+ "d_q": "Pour vérifier que tu es humain : combien font",
+ "d_qerr": "Ce n'est pas la bonne somme. Réessaie.",
+ "d_consent_err": "Coche la case pour envoyer ton message.",
+ "d_budget": "As-tu un budget indicatif ? (facultatif)",
+ "d_priv": "J'utiliserai les données de ce formulaire uniquement pour répondre à ton message. Plus d'informations dans la",
+ "d_note": "Cette page ne peut pas envoyer d'e-mails seule : ouvre ta messagerie avec le message prêt, ou copie-le où tu veux.",
+ "dq_sub": "Ton nom, ton email et ton message. Je réponds sous 24 heures.",
+ "cn": [
+  [
+   "Tu me racontes",
+   "Ton idée, ton problème ou ce que tu aimerais accomplir."
+  ],
+  [
+   "On y réfléchit",
+   "Je partage mon point de vue et nous explorons les possibilités."
+  ],
+  [
+   "On passe à l'action",
+   "Si le courant passe, nous définissons le périmètre et lançons le projet."
+  ]
+ ]
 });
 Object.assign(SEO.fr, {
  "contact_t": "Contact | Tom Fabre — Branding, web et UX/UI",
