@@ -61,7 +61,7 @@ function renderBento2(){
     : `<p class="bx-places-ph" data-pending="restaurants">${esc(u.places_pending)}</p>`;
   const cook = `<article class="bx bx-ck"><div class="bx-hd"><h3>${esc(ck.h)}</h3><p>${esc(ck.p)}</p></div>${places}${bxViewer("kitchen", 5200)}</article>`;
   const choir = bxAnecdotes();
-  const street = `<article class="bx bx-st"><div class="bx-hd"><h3>${esc(st.h)}</h3><p class="bx-sub">${esc(st.sub)}</p>${st.p ? `<p>${esc(st.p)}</p>` : ""}</div>${bxViewer("street", 4000)}</article>`;
+  const street = `<article class="bx bx-st"><div class="bx-hd"><h3>${esc(st.h)}</h3>${st.sub ? `<p class="bx-sub">${esc(st.sub)}</p>` : ""}${st.p ? `<p>${esc(st.p)}</p>` : ""}</div>${bxViewer("street", 4000)}</article>`;
   el.innerHTML = cities + choir + cook + street + spot;
   bxStart();
 }
