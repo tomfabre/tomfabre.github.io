@@ -123,3 +123,11 @@ Object.assign(T.fr, {
   gf_ok_b2: "Je vais y jeter un œil et t'envoyer trois pistes concrètes pour améliorer l'expérience par email.",
   gf_close: "Fermer"
 });
+
+/* Bio · bento: galerías automáticas y anécdotas rotativas. Solo hay una anécdota real (coro); se añaden más a bx_ch.items cuando existan. */
+Object.assign(T.es, { bx_ui: Object.assign({}, T.es.bx_ui, { v_pause: "Pausar", v_play: "Reanudar", v_open: "Ampliar foto", v_auto: "galería automática" }),
+  bx_ch: Object.assign({}, T.es.bx_ch, { items: [T.es.bx_ch.q] }) });
+Object.assign(T.en, { bx_ui: Object.assign({}, T.en.bx_ui, { v_pause: "Pause", v_play: "Resume", v_open: "Enlarge photo", v_auto: "automatic gallery" }),
+  bx_ch: Object.assign({}, T.en.bx_ch, { items: [T.en.bx_ch.q] }) });
+Object.assign(T.fr, { bx_ui: Object.assign({}, T.fr.bx_ui, { v_pause: "Pause", v_play: "Reprendre", v_open: "Agrandir la photo", v_auto: "galerie automatique" }),
+  bx_ch: Object.assign({}, T.fr.bx_ch, { items: [T.fr.bx_ch.q] }) });
