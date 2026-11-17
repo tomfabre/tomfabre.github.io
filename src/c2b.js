@@ -24,7 +24,13 @@ const BIO_ASSETS = {
   kitchen: Array.from({ length: 4 }, () => ({ img: null, alt: "" })),                                                             // 1:1, 4 photos
   places: [],                                                                                                                       // [{ name, url }] validated restaurants / places only
   spotify: { url: "https://open.spotify.com/playlist/3dyfLnAOgNAX2CSeAhr5bH", embed: "https://open.spotify.com/embed/playlist/3dyfLnAOgNAX2CSeAhr5bH?utm_source=generator&theme=0&si=90d9f237d1c04693" },                                                                                                          // https://open.spotify.com/playlist/<id>
-  obsessions: Array.from({ length: 5 }, () => ({ img: null, alt: "" })),                                                           // 4:3, 5 personal photos
+  obsessions: [
+    { img: "img/bio/ob-1-eye-on-design.webp", alt: {"es": "Ilustración de portada de Eye on Design: un ojo geométrico naranja y gris sobre un fondo azul de líneas radiales", "en": "Cover artwork for Eye on Design: a geometric orange and grey eye on a blue background of radiating lines", "fr": "Illustration de couverture d'Eye on Design : un œil géométrique orange et gris sur un fond bleu de lignes rayonnantes"} },
+    { img: "img/bio/ob-2-its-nice-that.webp", alt: {"es": "Logotipo de It's Nice That: un círculo negro con la palabra NICE formando una sonrisa", "en": "It's Nice That logo: a black circle with the word NICE forming a smiley face", "fr": "Logo d'It's Nice That : un cercle noir avec le mot NICE formant un sourire"} },
+    { img: "img/bio/ob-3-the-creative-act.webp", alt: {"es": "El libro The Creative Act: A Way of Being, de Rick Rubin, con tapa de tela beige y un círculo negro con un punto en el centro", "en": "The book The Creative Act: A Way of Being by Rick Rubin, with a beige cloth cover and a black circle with a dot at its center", "fr": "Le livre The Creative Act: A Way of Being de Rick Rubin, avec une couverture en toile beige et un cercle noir au point central"} },
+    { img: "img/bio/ob-4-royal-tenenbaums.webp", alt: {"es": "Fotograma de The Royal Tenenbaums: Richie y Margot sentados en un sofá dorado frente a una pared rojiza", "en": "Still from The Royal Tenenbaums: Richie and Margot sitting on a golden sofa in front of a rust-red wall", "fr": "Photogramme de The Royal Tenenbaums : Richie et Margot assis sur un canapé doré devant un mur rouille"} },
+    { img: "img/bio/ob-5-helvetica.webp", alt: {"es": "Póster de Helvetica: el alfabeto en grandes letras negras y el título en rojo sobre fondo blanco", "en": "Helvetica poster: the alphabet in large black letters and the title in red on white", "fr": "Affiche d'Helvetica : l'alphabet en grandes lettres noires et le titre en rouge sur fond blanc"} }
+  ],                                                                                                                       // 4:3 (object-fit: cover), imágenes de las 5 referencias
   choir: { img: null, alt: "" }                                                                                                    // optional, authorised frame or personal photo
 };
 const bxUrl = p => (PATHS ? "/" : "") + String(p).replace(/^\//, "");
@@ -139,8 +145,8 @@ function obMeasure(){
 }
 function obPaint(announce){
   const t = L(), it = t.ob_items, n = it.length, sl = $("#obSlide"); if (!sl) return;
-  const h = it[obI][0], a = BIO_ASSETS.obsessions[obI] || {}, num = String(obI + 1).padStart(2, "0"), tot = String(n).padStart(2, "0");
-  sl.innerHTML = `<div class="ob-img bx-r43">${bxMedia(a, h, a.alt || h, "obsession-" + (obI + 1))}</div><div class="ob-tx">${obTx(obI)}</div>`;
+  const h = it[obI][0], a = BIO_ASSETS.obsessions[obI] || {}, alt = a.alt && a.alt[lang] || h, num = String(obI + 1).padStart(2, "0"), tot = String(n).padStart(2, "0");
+  sl.innerHTML = `<div class="ob-img bx-r43">${bxMedia(a, h, alt, "obsession-" + (obI + 1))}</div><div class="ob-tx">${obTx(obI)}</div>`;
   $("#obN").textContent = num + " / " + tot;
   sl.setAttribute("aria-live", announce ? "polite" : "off");
   if (!announce) obMeasure();
