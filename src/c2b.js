@@ -11,7 +11,16 @@
    ============================================================ */
 const BIO_ASSETS = {
   cities: ["cucuta", "san-cristobal", "merida", "santiago", "aix-en-provence", "paris", "madrid"].map(k => ({ k, img: k === "paris" ? null : "img/bio/city-" + k + ".webp" })),   // paris: pending   // 3:2, 7 photos
-  street: Array.from({ length: 10 }, () => ({ img: null, alt: "", note: "" })),                                                   // 1:1, exactly 10 photos
+  street: [   // 1:1, 8 photos (alt per language: descriptive of what is visible)
+    ["Retrato a bolígrafo sobre una página de atlas anatómico antiguo", "Pen portrait drawn over a page of an old anatomy atlas", "Portrait au stylo sur une page d'un ancien atlas d'anatomie"],
+    ["Pared cilíndrica de radios y casetes antiguos", "Cylindrical wall of old radios and cassette players", "Mur cylindrique de vieilles radios et de lecteurs de cassettes"],
+    ["Retrato de un caniche color albaricoque", "Portrait of an apricot-coloured poodle", "Portrait d'un caniche couleur abricot"],
+    ["Formas escultóricas claras bajo bóvedas industriales oscuras", "Pale sculptural forms under dark industrial vaults", "Formes sculpturales claires sous de sombres voûtes industrielles"],
+    ["Escultura negra de una figura con cabeza de perro", "Black sculpture of a figure with a dog's head", "Sculpture noire d'une figure à tête de chien"],
+    ["Escultura de una araña gigante vista desde abajo contra el cielo", "Giant spider sculpture seen from below against the sky", "Sculpture d'une araignée géante vue d'en dessous, sur fond de ciel"],
+    ["Busto de mármol con dos rostros de perfil", "Marble bust with two faces in profile", "Buste en marbre à deux visages de profil"],
+    ["Larga mesa puesta bajo lámparas de araña en un salón dorado", "Long set table under chandeliers in a gilded hall", "Longue table dressée sous des lustres dans un salon doré"]
+  ].map((a, i) => ({ img: "img/bio/look-" + (i + 1) + ".webp", alt: { es: a[0], en: a[1], fr: a[2] }, note: "" })),
   kitchen: Array.from({ length: 4 }, () => ({ img: null, alt: "" })),                                                             // 1:1, 4 photos
   places: [],                                                                                                                       // [{ name, url }] validated restaurants / places only
   spotify: { url: "https://open.spotify.com/playlist/3dyfLnAOgNAX2CSeAhr5bH", embed: "https://open.spotify.com/embed/playlist/3dyfLnAOgNAX2CSeAhr5bH?utm_source=generator&theme=0&si=90d9f237d1c04693" },                                                                                                          // https://open.spotify.com/playlist/<id>
@@ -30,7 +39,7 @@ function bxGallery(kind){
   const t = L(), u = t.bx_ui;
   if (kind === "city") return t.bx_city.items.map(([n, cap], i) => ({ img: (BIO_ASSETS.cities[i] || {}).img, label: n, alt: n, cap: n + " · " + cap, ratio: "3-2", kind: "city-" + ((BIO_ASSETS.cities[i] || {}).k || i) }));
   if (kind === "kitchen") return BIO_ASSETS.kitchen.map((k, i) => ({ img: k.img, label: t.bx_ck.home[0] + " " + (i + 1), alt: k.alt || t.bx_ck.home[0], cap: t.bx_ck.home[0], ratio: "1-1", kind: "kitchen-" + (i + 1) }));
-  return BIO_ASSETS.street.map((s, i) => ({ img: s.img, label: String(i + 1).padStart(2, "0"), alt: s.alt || (t.bx_st.h + " " + (i + 1)), cap: s.note || t.bx_st.cap || "", ratio: "1-1", kind: "street-" + (i + 1) }));
+  return BIO_ASSETS.street.map((s, i) => ({ img: s.img, label: String(i + 1).padStart(2, "0"), alt: (s.alt && typeof s.alt === "object" ? s.alt[lang] : s.alt) || (t.bx_st.h + " " + (i + 1)), cap: s.note || t.bx_st.cap || "", ratio: "1-1", kind: "street-" + (i + 1) }));
 }
 let LBX = { list: [], i: 0, opener: null };
 function lbShow(){
