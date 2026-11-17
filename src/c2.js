@@ -610,8 +610,10 @@ let galVis = false, galHover = false;
   document.addEventListener("mouseover", e => { galHover = !!(e.target.closest && e.target.closest(".bt-photo")); });
   if ("IntersectionObserver" in window) new IntersectionObserver(es => { es.forEach(x => { galVis = x.isIntersecting; }); }).observe(document.body);
   else galVis = true;
+  let galTk = false;
   document.addEventListener("scroll", () => {
-    const g = document.querySelector(".bt-gal"); if (!g) return; const r = g.getBoundingClientRect(); galVis = r.bottom > 0 && r.top < innerHeight;
+    if (galTk) return; galTk = true;
+    requestAnimationFrame(() => { galTk = false; const g = document.querySelector(".bt-gal"); if (!g) return; const r = g.getBoundingClientRect(); galVis = r.bottom > 0 && r.top < innerHeight; });
   }, { passive:true });
 })();
 
@@ -905,20 +907,24 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
   hero.addEventListener("pointerleave", () => { tx = ty = 0; mag.forEach(s => { s.tx = 0; s.ty = 0; }); kick(); });
 })();
 
-/* reading progress bar on case-study pages */
+/* reading progress bar on case-study pages
+   (no lee scrollHeight en cada scroll —forzaba un layout síncrono por fotograma—: la altura se cachea con ResizeObserver) */
 (function(){
   if (matchMedia("(prefers-reduced-motion:reduce)").matches) return;
   const bar = document.createElement("div"); bar.id = "pjProg"; bar.setAttribute("aria-hidden","true"); document.body.appendChild(bar);
-  let tk = false;
+  let tk = false, H = 0, op = "0", sx = -1;
+  const meas = () => { H = document.documentElement.scrollHeight - innerHeight; };
+  if ("ResizeObserver" in window) new ResizeObserver(meas).observe(document.body); else addEventListener("resize", meas);
   const upd = () => {
     tk = false;
-    const on = !!document.querySelector(".pj-head");
-    const h = document.documentElement.scrollHeight - innerHeight;
-    bar.style.opacity = on && scrollY > 80 ? "1" : "0";
-    bar.style.transform = "scaleX(" + (h > 0 ? Math.min(1, scrollY / h) : 0) + ")";
+    if (!document.querySelector(".pj-head")) { if (op !== "0") { op = "0"; bar.style.opacity = "0"; } return; }
+    if (!H) meas();
+    const y = scrollY, o = y > 80 ? "1" : "0", s = H > 0 ? Math.min(1, y / H) : 0;
+    if (o !== op) { op = o; bar.style.opacity = o; }
+    if (Math.abs(s - sx) > .0005) { sx = s; bar.style.transform = "scaleX(" + s + ")"; }
   };
   addEventListener("scroll", () => { if (!tk) { tk = true; requestAnimationFrame(upd); } }, { passive: true });
-  addEventListener("hashchange", () => setTimeout(upd, 60));
+  addEventListener("hashchange", () => { meas(); setTimeout(upd, 60); });
 })();
 
 /* count-up for numeric stats (visual only; real text is restored at the end and kept for AT) */

@@ -649,7 +649,8 @@ section.ch{margin-top:var(--s24)}#form.quick .f-extra{display:none}
 @media (hover:hover) and (pointer:fine){.orb:hover{transform:scale(.82)}}
 .orb svg.rot text tspan{transition:fill 400ms var(--ease)}
 .orb:hover .t1,.orb:focus-visible .t1{fill:var(--mint)}.orb:hover .t2,.orb:focus-visible .t2{fill:var(--mustard)}.orb:hover .t3,.orb:focus-visible .t3{fill:var(--coral)}.orb:hover .t4,.orb:focus-visible .t4{fill:var(--lav)}.orb:hover .t5,.orb:focus-visible .t5{fill:var(--mint)}
-.orb svg.rot{position:absolute;inset:0;width:100%;height:100%;animation:spin 18s linear infinite;color:inherit;pointer-events:none}
+.orb .rot-w{position:absolute;inset:0;display:block;animation:spin 18s linear infinite;will-change:transform;pointer-events:none}
+.orb svg.rot{position:absolute;inset:0;width:100%;height:100%;color:inherit;pointer-events:none}   /* el giro se hace sobre el contenedor HTML: rotar el <svg> con texto forzaba un layout en cada fotograma */
 .orb svg.rot text{font-size:6.4px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;fill:currentColor}
 .orb .orb-arr{font-size:clamp(1.5rem,2.5vw,2.3rem);font-weight:300;line-height:1;position:relative;z-index:1;transform:rotate(-45deg);transition:transform var(--fast)}
 @media (hover:hover) and (pointer:fine){.orb:hover .orb-arr{transform:rotate(0)}}
@@ -1540,7 +1541,7 @@ dialog#prizeDlg:focus{outline:none}
    1) los puntos ya no son una capa del tamaño de toda la tarjeta con máscara: son un cuadrado pequeño que sigue al puntero;
    2) las animaciones continuas (halos, estrella, aurora) se pausan mientras se hace scroll y cuando la tarjeta no está a la vista. */
 .cta-band::before,.sv-cta::before,.sv-team::before{inset:auto;width:26rem;height:26rem;left:calc(var(--mx) - 13rem);top:calc(var(--my) - 13rem);-webkit-mask-image:radial-gradient(closest-side,#000,transparent 70%);mask-image:radial-gradient(closest-side,#000,transparent 70%)}
-html.is-scrolling .blobs i,html.is-scrolling .cta-star,html.is-scrolling .aur i,.cta-off .blobs i,.cta-off .cta-star{animation-play-state:paused!important}
+html.is-scrolling .blobs i,html.is-scrolling .cta-star,html.is-scrolling .orb .rot-w,html.is-scrolling .aur i,.cta-off .blobs i,.cta-off .cta-star{animation-play-state:paused!important}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
