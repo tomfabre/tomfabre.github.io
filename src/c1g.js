@@ -141,3 +141,8 @@ Object.assign(T.fr, { bx_st: Object.assign({}, T.fr.bx_st, { p: "Marcher, observ
 Object.assign(T.es, { bx_sp: Object.assign({}, T.es.bx_sp, { h: "Banda sonora.", p: "" }) });
 Object.assign(T.en, { bx_sp: Object.assign({}, T.en.bx_sp, { h: "Soundtrack.", p: "" }) });
 Object.assign(T.fr, { bx_sp: Object.assign({}, T.fr.bx_sp, { h: "Bande-son.", p: "" }) });
+
+/* Bio · tarjeta de la calle: título nuevo */
+Object.assign(T.es, { bx_st: Object.assign({}, T.es.bx_st, { h: "Lo que pasa desapercibido", sub: "", p: "" }) });
+Object.assign(T.en, { bx_st: Object.assign({}, T.en.bx_st, { h: "What goes unnoticed", sub: "", p: "" }) });
+Object.assign(T.fr, { bx_st: Object.assign({}, T.fr.bx_st, { h: "Ce qui passe inaperçu", sub: "", p: "" }) });

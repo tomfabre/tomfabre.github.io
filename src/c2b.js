@@ -10,11 +10,11 @@
    No stock photos. Restaurants: add only validated {name, url}.
    ============================================================ */
 const BIO_ASSETS = {
-  cities: ["cucuta", "san-cristobal", "merida", "santiago", "aix-en-provence", "paris", "madrid"].map(k => ({ k, img: k === "paris" ? null : "img/bio/city-" + k + ".webp" })),   // paris: pending   // 16:9, 7 photos
+  cities: ["cucuta", "san-cristobal", "merida", "santiago", "aix-en-provence", "paris", "madrid"].map(k => ({ k, img: k === "paris" ? null : "img/bio/city-" + k + ".webp" })),   // paris: pending   // 3:2, 7 photos
   street: Array.from({ length: 10 }, () => ({ img: null, alt: "", note: "" })),                                                   // 1:1, exactly 10 photos
   kitchen: Array.from({ length: 4 }, () => ({ img: null, alt: "" })),                                                             // 1:1, 4 photos
   places: [],                                                                                                                       // [{ name, url }] validated restaurants / places only
-  spotify: { url: "https://open.spotify.com/playlist/3dyfLnAOgNAX2CSeAhr5bH", embed: "https://open.spotify.com/embed/playlist/3dyfLnAOgNAX2CSeAhr5bH?utm_source=generator&theme=0&si=301d6dd9cd624d01" },                                                                                                          // https://open.spotify.com/playlist/<id>
+  spotify: { url: "https://open.spotify.com/playlist/3dyfLnAOgNAX2CSeAhr5bH", embed: "https://open.spotify.com/embed/playlist/3dyfLnAOgNAX2CSeAhr5bH?utm_source=generator&theme=0&si=b01a8f4e26754bbb" },                                                                                                          // https://open.spotify.com/playlist/<id>
   obsessions: Array.from({ length: 5 }, () => ({ img: null, alt: "" })),                                                           // 4:3, 5 personal photos
   choir: { img: null, alt: "" }                                                                                                    // optional, authorised frame or personal photo
 };
@@ -28,7 +28,7 @@ function bxMedia(item, label, alt, kind){
 /* ---------- galleries (cities 3:2, street 1:1) ---------- */
 function bxGallery(kind){
   const t = L(), u = t.bx_ui;
-  if (kind === "city") return t.bx_city.items.map(([n, cap], i) => ({ img: (BIO_ASSETS.cities[i] || {}).img, label: n, alt: n, cap: n + " · " + cap, ratio: "16-9", kind: "city-" + ((BIO_ASSETS.cities[i] || {}).k || i) }));
+  if (kind === "city") return t.bx_city.items.map(([n, cap], i) => ({ img: (BIO_ASSETS.cities[i] || {}).img, label: n, alt: n, cap: n + " · " + cap, ratio: "3-2", kind: "city-" + ((BIO_ASSETS.cities[i] || {}).k || i) }));
   if (kind === "kitchen") return BIO_ASSETS.kitchen.map((k, i) => ({ img: k.img, label: t.bx_ck.home[0] + " " + (i + 1), alt: k.alt || t.bx_ck.home[0], cap: t.bx_ck.home[0], ratio: "1-1", kind: "kitchen-" + (i + 1) }));
   return BIO_ASSETS.street.map((s, i) => ({ img: s.img, label: String(i + 1).padStart(2, "0"), alt: s.alt || (t.bx_st.h + " " + (i + 1)), cap: s.note || t.bx_st.cap || "", ratio: "1-1", kind: "street-" + (i + 1) }));
 }
@@ -61,7 +61,7 @@ function renderBento2(){
     : `<p class="bx-places-ph" data-pending="restaurants">${esc(u.places_pending)}</p>`;
   const cook = `<article class="bx bx-ck"><div class="bx-hd"><h3>${esc(ck.h)}</h3><p>${esc(ck.p)}</p></div>${places}${bxViewer("kitchen", 5200)}</article>`;
   const choir = bxAnecdotes();
-  const street = `<article class="bx bx-st"><div class="bx-hd"><h3>${esc(st.h)}</h3><p class="bx-sub">${esc(st.sub)}</p><p>${esc(st.p)}</p></div>${bxViewer("street", 4000)}</article>`;
+  const street = `<article class="bx bx-st"><div class="bx-hd"><h3>${esc(st.h)}</h3>${st.sub ? `<p class="bx-sub">${esc(st.sub)}</p>` : ""}${st.p ? `<p>${esc(st.p)}</p>` : ""}</div>${bxViewer("street", 4000)}</article>`;
   el.innerHTML = cities + choir + cook + street + spot;
   bxStart();
 }
@@ -74,15 +74,12 @@ function bxViewer(kind, period){
   const slides = list.map((it, i) => `<span class="bx-sl${i === i0 ? " on" : ""}" data-sl="${i}" aria-hidden="true">${it.img ? `<img src="${esc(bxUrl(it.img))}" alt="" loading="lazy" decoding="async">` : `<span class="bx-ph" data-pending="${esc(it.kind)}"><span>${esc(u.ph)}</span><b>${esc(it.label)}</b></span>`}</span>`).join("");
   return `<div class="bx-view bx-r${ratio}" data-view="${kind}" data-n="${n}" data-period="${period}" role="group" aria-roledescription="carousel" aria-label="${esc(group + " · " + u.v_auto)}">
     <button type="button" class="bx-frame" data-gal="${kind}" data-i="${i0}" aria-haspopup="dialog" aria-label="${esc(u.v_open + ": " + list[i0].alt)}"><span class="bx-slides">${slides}</span></button>
-    <div class="bx-vc"><span class="bx-vcap" aria-hidden="true">${esc(list[i0].cap)}</span><span class="bx-vn" aria-hidden="true">${String(i0 + 1).padStart(2, "0")} / ${String(n).padStart(2, "0")}</span>
-    <span class="bx-vb"><button type="button" class="bx-b" data-vgo="-1" aria-label="${esc(u.ob_prev)}"><span aria-hidden="true">←</span></button><button type="button" class="bx-b bx-pp" data-vpp aria-pressed="false" aria-label="${esc(u.v_pause)}"><span aria-hidden="true">❚❚</span></button><button type="button" class="bx-b" data-vgo="1" aria-label="${esc(u.ob_next)}"><span aria-hidden="true">→</span></button></span></div>
-    <p class="sr-only" data-vlive aria-live="off"></p></div>`;
+    ${kind === "city" ? `<div class="bx-vc bx-tag"><span class="bx-vcap" aria-hidden="true">${esc(list[i0].cap)}</span></div>` : ""}</div>`;
 }
 function bxAnecdotes(){
   const t = L(), u = t.bx_ui, ch = t.bx_ch, items = ch.items && ch.items.length ? ch.items : [ch.q], n = items.length, i0 = Math.min(bxIdx.an || 0, n - 1);
   const slides = items.map((q, i) => `<blockquote class="bx-sl bx-qs${i === i0 ? " on" : ""}" data-sl="${i}" aria-hidden="${i === i0 ? "false" : "true"}"><p>${esc(q)}</p></blockquote>`).join("");
-  const ctl = n > 1 ? `<div class="bx-vc"><span class="bx-vn" aria-hidden="true">${String(i0 + 1).padStart(2, "0")} / ${String(n).padStart(2, "0")}</span>
-    <span class="bx-vb"><button type="button" class="bx-b" data-vgo="-1" aria-label="${esc(u.ob_prev)}"><span aria-hidden="true">←</span></button><button type="button" class="bx-b bx-pp" data-vpp aria-pressed="false" aria-label="${esc(u.v_pause)}"><span aria-hidden="true">❚❚</span></button><button type="button" class="bx-b" data-vgo="1" aria-label="${esc(u.ob_next)}"><span aria-hidden="true">→</span></button></span></div>` : "";
+  const ctl = "";
   return `<figure class="bx bx-ch"><h3>${esc(ch.h)}</h3><div class="bx-view bx-an" data-view="an" data-n="${n}" data-period="8500"${n > 1 ? ` role="group" aria-roledescription="carousel" aria-label="${esc(ch.h + " · " + u.v_auto)}"` : ""}><div class="bx-slides bx-qslides">${slides}</div>${ctl}<p class="sr-only" data-vlive aria-live="off"></p></div></figure>`;
 }
 function bxShow(v, i, manual){
