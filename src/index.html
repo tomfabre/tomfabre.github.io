@@ -7426,7 +7426,10 @@ function mmPaint(msg){
   $("#mmT").textContent = MM.tries; $("#mmP").textContent = MM.found.length + " / 6";
   const fo = $("#mmFound"); fo.hidden = !MM.found.length;
   $("#mmFoundL").innerHTML = MM.found.map(p => `<li><b>${esc(P[p][0])}</b> ${esc(P[p][1])}</li>`).join("");
-  $("#mmWin").hidden = MM.done.length < 12;
+  const won = MM.done.length >= 12;
+  $("#mmWin").hidden = !won;
+  /* al ganar solo se ve el panel final: el aviso de estado queda solo para lectores de pantalla y se oculta el botón Reiniciar (el panel trae «Jugar otra vez») */
+  $("#mmS").classList.toggle("sr-only", won); const rs = $("#mmReset"); if (rs && rs.parentElement) rs.parentElement.hidden = won;
   if (msg != null) $("#mmS").textContent = msg;
 }
 function mmPick(i){
