@@ -46,7 +46,7 @@ Figy y Molyb están ocultos. Sus líneas siguen en `c1p.js`, comentadas con el a
 ## Rendimiento (Fase 2)
 
 - **JS compartido externo con hash.** `build.py` escribe el script de la app (el mismo script clásico de siempre, mismo orden de ejecución, al final del `<body>`) en `/js/app.<hash>.js`. Todas las páginas e idiomas lo comparten, así que el navegador lo cachea entre páginas. Lo único que cambia por idioma, `cvUrl`, se pasa con un mini script en línea (`window.__CV`). `PERF_EXT_JS=0 python3 build.py …` genera el formato anterior (todo en línea) por si hiciera falta comparar.
-- **Al desplegar:** antes de `cp -r src/dist/. .` borra los `js/app.*.js` antiguos de la raíz (el nombre cambia con cada versión del código y los viejos quedarían huérfanos).
+- **Al desplegar:** `python3 build.py --site https://tomfabre.com && python3 sync_dist.py` (añade `--dry-run` para ver el plan). `sync_dist.py` copia `dist/` a la raíz y poda los `js/app.<hash>.js` antiguos de forma segura: conserva siempre la versión nueva, la que referenciaba la raíz antes de copiar y cualquiera que siga referenciada en `origin/main`; si no puede leer `origin/main`, no borra nada. Solo toca archivos con el patrón exacto `js/app.<10 hex>.js`.
 - **Caché:** GitHub Pages ignora `_headers` y sirve todo con `max-age=600`; el hash en el nombre garantiza que nunca se sirva JS obsoleto con HTML nuevo.
 - **Probado y descartado:** CSS externo (la primera visita empeora, ver informe de la Fase 2), `preload` del script en `<head>` (sin beneficio medible).
 - **Medir:** `e2e/e2e.js` comprueba que el script externo carga, que `cvUrl` es correcto por idioma y que no hay errores.

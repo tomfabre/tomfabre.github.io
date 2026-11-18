@@ -116,7 +116,7 @@ async function fresh(b, opts = {}) {
     if (!win) { await page.evaluate(() => openPrize(false)); ok("premio: openPrize bloqueado con la partida en curso", !(await page.evaluate(() => !!document.querySelector("dialog[open] #pzForm")))); }
     await page.locator("#board").scrollIntoViewIfNeeded();
     const cells = await page.evaluate(win => { const idx = []; G.occ.forEach((s, i) => { if (win ? s >= 0 : s < 0) idx.push(i); }); return idx; }, win);
-    for (const i of cells) { if (await page.evaluate(() => G.over)) break; await page.locator("#board button").nth(i).click({ force: true }); }
+    for (const i of cells) { if (await page.evaluate(() => G.over)) break; await page.locator("#board button").nth(i).evaluate(b => b.click()); }
     await page.waitForFunction(() => G.over); await page.waitForSelector("#gameDlg[open]", { timeout: 5000 });
     ok(`juego ${win ? "victoria" : "derrota"}: termina y abre diálogo`, (await page.evaluate(() => G.won)) === win);
     await page.click("#gameWrite"); await page.waitForTimeout(400);
