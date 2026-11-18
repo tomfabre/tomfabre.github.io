@@ -2071,7 +2071,7 @@ SEO.es.proj["360estudio"] = {"t": "360estudio: Branding y diseño web | Tom Fabr
 SEO.en.proj["360estudio"] = {"t": "360estudio: Branding & Web Design | Tom Fabre", "d": "Visual identity and web design for 360estudio, a healthcare architecture specialist. A branding project that extended into physical spaces."};
 SEO.fr.proj["360estudio"] = {"t": "360estudio : branding et design web | Tom Fabre", "d": "Identité visuelle et design web pour 360estudio, spécialiste de l'architecture de santé. Un projet où le branding s'est aussi invité dans les espaces physiques."};
 
-/* Mobile Experiences: Apolo Launcher, Appy x Jojol and Mood Messenger in one case (chapters). Images are placeholders (ph) until img/mobile-experiences-{0,cover,1..5}.webp exist. */
+/* Mobile Experiences: Apolo Launcher, Appy x Jojol and Mood Messenger in one case (chapters). Images: img/mobile-experiences-{0,cover,og,1..8}.webp (1-2 Apolo, 3-5 Appy, 6-8 Mood Messenger). */
 SECTIONS["mobile-experiences"] = [
  {
   "type": "text",
@@ -2195,23 +2195,27 @@ SECTIONS["mobile-experiences"] = [
    {
     "key": "mobile-experiences",
     "v": "1",
-    "r": "1600/1200",
-    "ph": true,
+    "r": "1536/1024",
+    "w": 88,
+    "a": "start",
     "alt": {
-     "es": "Interfaz de Apolo Launcher en un teléfono Android",
-     "en": "Apolo Launcher interface on an Android phone",
-     "fr": "Interface d'Apolo Launcher sur un téléphone Android"
+     "es": "Apolo Launcher: funciones reales, bocetos, pruebas e interfaz final en teléfonos Android",
+     "en": "Apolo Launcher: real features, sketches, testing and final interface on Android phones",
+     "fr": "Apolo Launcher : fonctionnalités, croquis, tests et interface finale sur des téléphones Android"
     }
    },
    {
     "key": "mobile-experiences",
     "v": "2",
-    "r": "1600/1200",
-    "ph": true,
+    "r": "1536/872",
+    "w": 72,
+    "a": "end",
+    "o": 3,
+    "m": false,
     "alt": {
-     "es": "Distintas pantallas y elementos visuales de Apolo Launcher",
-     "en": "Different screens and visual elements of Apolo Launcher",
-     "fr": "Différents écrans et éléments visuels d'Apolo Launcher"
+     "es": "Funciones de Apolo Launcher: Color Lab, modo oscuro, apps ocultas, edición de iconos, tiempo, temas y fondos, con proceso y sistema visual",
+     "en": "Apolo Launcher features: Color Lab, dark mode, hidden apps, icon editing, weather, themes and wallpapers, with process and visual system",
+     "fr": "Fonctionnalités d'Apolo Launcher : Color Lab, mode sombre, applis masquées, édition d'icônes, météo, thèmes et fonds d'écran, avec processus et système visuel"
     }
    }
   ]
@@ -2322,12 +2326,38 @@ SECTIONS["mobile-experiences"] = [
    {
     "key": "mobile-experiences",
     "v": "3",
-    "r": "1600/1200",
-    "ph": true,
+    "r": "1536/401",
+    "t": true,
+    "m": false,
     "alt": {
-     "es": "Pantallas de Appy para iOS y Android",
-     "en": "Appy screens for iOS and Android",
-     "fr": "Écrans d'Appy pour iOS et Android"
+     "es": "Identidad de Appy: logotipo, paleta de color, tipografía Galano Grotesque y gato mascota, de la marca a la experiencia de producto",
+     "en": "Appy identity: logo, colour palette, Galano Grotesque typeface and cat mascot, from brand to product experience",
+     "fr": "Identité d'Appy : logotype, palette de couleurs, typographie Galano Grotesque et chat mascotte, de la marque à l'expérience produit"
+    }
+   },
+   {
+    "key": "mobile-experiences",
+    "v": "4",
+    "r": "1536/608",
+    "w": 68,
+    "a": "end",
+    "o": 5,
+    "alt": {
+     "es": "Pantallas de Appy: cartera con tickets, concursos en curso, perfil de usuario y oportunidades de ganar",
+     "en": "Appy screens: ticket wallet, ongoing contests, user profile and chances to win",
+     "fr": "Écrans d'Appy : portefeuille de tickets, concours en cours, profil utilisateur et chances de gagner"
+    }
+   },
+   {
+    "key": "mobile-experiences",
+    "v": "5",
+    "r": "1536/1024",
+    "w": 100,
+    "m": false,
+    "alt": {
+     "es": "Proceso de diseño de Appy: descubrimiento, bocetos, prototipo y test, sistema de diseño y producto final",
+     "en": "Appy design process: discovery, sketches, prototype and testing, design system and final product",
+     "fr": "Processus de design d'Appy : découverte, croquis, prototype et test, design system et produit final"
     }
    }
   ]
@@ -2387,7 +2417,7 @@ SECTIONS["mobile-experiences"] = [
     "fr": "Une autre manière de travailler, où le design ne commence pas sur une page blanche."
    }
   ],
-  "layout": "wide",
+  "layout": "right",
   "meta": [
    {
     "l": {
@@ -2421,6 +2451,14 @@ SECTIONS["mobile-experiences"] = [
   },
   "links": [
    {
+    "href": "https://play.google.com/store/apps/details?id=com.calea.echo",
+    "l": {
+     "es": "Ver en Google Play",
+     "en": "View on Google Play",
+     "fr": "Voir sur Google Play"
+    }
+   },
+   {
     "href": "https://cdn.nwe.io/files/x/79/f5/cadb7736c7ee1d815c25997aea20.pdf",
     "l": {
      "es": "Fuente de la métrica (comunicado oficial)",
@@ -2440,24 +2478,40 @@ SECTIONS["mobile-experiences"] = [
   "media": [
    {
     "key": "mobile-experiences",
-    "v": "4",
-    "r": "2400/1050",
-    "ph": true,
+    "v": "6",
+    "r": "1448/1086",
+    "w": 80,
+    "a": "start",
     "alt": {
-     "es": "Interfaz de mensajería de Mood Messenger",
-     "en": "Mood Messenger messaging interface",
-     "fr": "Interface de messagerie de Mood Messenger"
+     "es": "Mood Messenger: lista de chats, historias y conversación con stickers en un iPhone",
+     "en": "Mood Messenger: chat list, stories and a conversation with stickers on an iPhone",
+     "fr": "Mood Messenger : liste de discussions, stories et conversation avec stickers sur un iPhone"
     }
    },
    {
     "key": "mobile-experiences",
-    "v": "5",
-    "r": "2400/1050",
-    "ph": true,
+    "v": "7",
+    "r": "1448/1930",
+    "w": 66,
+    "a": "end",
+    "o": 3,
+    "m": false,
     "alt": {
-     "es": "Elementos de personalización y pantallas de Mood Messenger",
-     "en": "Mood Messenger personalisation elements and screens",
-     "fr": "Éléments de personnalisation et écrans de Mood Messenger"
+     "es": "Proceso de diseño de Mood Messenger: investigación, arquitectura, flujo de usuario, wireframes, pruebas y sistema visual",
+     "en": "Mood Messenger design process: research, architecture, user flow, wireframes, testing and visual system",
+     "fr": "Processus de design de Mood Messenger : recherche, architecture, parcours utilisateur, wireframes, tests et système visuel"
+    }
+   },
+   {
+    "key": "mobile-experiences",
+    "v": "8",
+    "r": "1448/346",
+    "w": 100,
+    "m": false,
+    "alt": {
+     "es": "De la investigación y la arquitectura a los wireframes, las iteraciones y el diseño de interfaz de Mood Messenger",
+     "en": "From research and architecture to wireframes, iterations and interface design for Mood Messenger",
+     "fr": "De la recherche et de l'architecture aux wireframes, itérations et design d'interface de Mood Messenger"
     }
    }
   ]
@@ -2517,9 +2571,9 @@ HERO["mobile-experiences"] = {
   "fr": "Composition des trois applications mobiles : Apolo Launcher, Appy et Mood Messenger"
  }
 };
-SEO.es.proj["mobile-experiences"] = {"t": "Diseño de apps móviles y UX/UI | Tom Fabre", "d": "Tres proyectos de diseño de aplicaciones móviles: Apolo Launcher, Appy × Jojol y Mood Messenger. UX/UI, interfaces y estrategia de producto."};
-SEO.en.proj["mobile-experiences"] = {"t": "Mobile App Design & UX/UI | Tom Fabre", "d": "Three mobile app design projects: Apolo Launcher, Appy × Jojol, and Mood Messenger. UX/UI, interface design, and product strategy."};
-SEO.fr.proj["mobile-experiences"] = {"t": "Design d'applications mobiles et UX/UI | Tom Fabre", "d": "Trois projets de design mobile : Apolo Launcher, Appy × Jojol et Mood Messenger. UX/UI, interfaces et stratégie produit."};
+SEO.es.proj["mobile-experiences"] = {"t": "Diseño de apps móviles y UX/UI | Tom Fabre", "d": "Tres proyectos de diseño de aplicaciones móviles: Apolo Launcher, Appy × Jojol y Mood Messenger. UX/UI, interfaces y estrategia de producto.", "og": {"src": "mobile-experiences-og", "alt": "Tres apps móviles diseñadas por Tom Fabre: Mood Messenger, Appy y Apolo Launcher"}};
+SEO.en.proj["mobile-experiences"] = {"t": "Mobile App Design & UX/UI | Tom Fabre", "d": "Three mobile app design projects: Apolo Launcher, Appy × Jojol, and Mood Messenger. UX/UI, interface design, and product strategy.", "og": {"src": "mobile-experiences-og", "alt": "Three mobile apps designed by Tom Fabre: Mood Messenger, Appy and Apolo Launcher"}};
+SEO.fr.proj["mobile-experiences"] = {"t": "Design d'applications mobiles et UX/UI | Tom Fabre", "d": "Trois projets de design mobile : Apolo Launcher, Appy × Jojol et Mood Messenger. UX/UI, interfaces et stratégie produit.", "og": {"src": "mobile-experiences-og", "alt": "Trois applis mobiles conçues par Tom Fabre : Mood Messenger, Appy et Apolo Launcher"}};
 
 /* Carceral Ecologies: case page prepared, NOT published (PROJ.carceral.locked in c1p.js). Add the images (flow items) and remove `locked` to go live. */
 SECTIONS["carceral-ecologies"] = [

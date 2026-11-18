@@ -51,6 +51,9 @@ let LBX = { list: [], i: 0, opener: null };
 function lbShow(){
   const it = LBX.list[LBX.i], u = L().bx_ui; if (!it) return;
   $("#lbMedia").className = "lb-media r" + it.ratio;
+  const lbm = $("#lbMedia"), LB_HINT = { es:"Clic para acercar o alejar", en:"Click to zoom in or out", fr:"Cliquer pour zoomer ou dézoomer" };
+  if (it.ratio === "free") { lbm.setAttribute("tabindex", "0"); lbm.setAttribute("role", "button"); lbm.setAttribute("title", LB_HINT[lang] || LB_HINT.es); }
+  else { lbm.removeAttribute("tabindex"); lbm.removeAttribute("role"); lbm.removeAttribute("title"); }
   $("#lbMedia").innerHTML = it.img ? `<img src="${esc(bxUrl(it.img))}" alt="${esc(it.alt)}">` : `<span class="bx-ph" data-pending="${esc(it.kind)}" role="img" aria-label="${esc(u.ph + ": " + it.label)}"><span>${esc(u.ph)}</span><b>${esc(it.label)}</b></span>`;
   $("#lbCap").textContent = it.cap;
   $("#lbN").textContent = u.lb_count.replace("{n}", LBX.i + 1).replace("{t}", LBX.list.length);
@@ -243,6 +246,18 @@ function wireBio2(){
   $("#lbPrev").addEventListener("click", () => lbStep(-1)); $("#lbNext").addEventListener("click", () => lbStep(1));
   d.addEventListener("keydown", e => { if (e.key === "ArrowLeft") { e.preventDefault(); lbStep(-1); } else if (e.key === "ArrowRight") { e.preventDefault(); lbStep(1); } });
   d.addEventListener("click", e => { if (e.target === d) d.close(); });
+  /* project chapters: click an image to enlarge it in the same lightbox (all visible images of that chapter, arrows to move); click the enlarged image to zoom to full width and scroll */
+  document.addEventListener("click", e => {
+    const b = e.target.closest && e.target.closest("[data-chzoom]"); if (!b) return;
+    const sec = b.closest("section.ch"); if (!sec) return;
+    const btns = [...sec.querySelectorAll("[data-chzoom]")].filter(x => x.offsetParent !== null);
+    const list = btns.map(x => { const im = x.querySelector("img"); return { img: im.getAttribute("src"), alt: im.alt, cap: im.alt, ratio: "free", kind: "chapter" }; });
+    LBX = { list, i: Math.max(0, btns.indexOf(b)), opener: b }; lbShow();
+    if (d.showModal) d.showModal(); else d.setAttribute("open", "");
+  });
+  const lm = $("#lbMedia"), lbToggle = () => { if (lm.classList.contains("rfree")) lm.classList.toggle("zm"); };
+  lm.addEventListener("click", lbToggle);
+  lm.addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && lm.classList.contains("rfree")) { e.preventDefault(); lbToggle(); } });
   d.addEventListener("close", () => { if (LBX.opener && document.contains(LBX.opener)) LBX.opener.focus(); });
   addEventListener("hashchange", () => { if (typeof route_ !== "undefined" && route_.page !== "bio") mmStop(); });
   addEventListener("popstate", () => { if (typeof route_ !== "undefined" && route_.page !== "bio") mmStop(); });

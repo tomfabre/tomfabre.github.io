@@ -1,4 +1,4 @@
-window.__IMG={"360estudio": {"0": "/img/360estudio-0.webp", "1": "/img/360estudio-1.webp", "2": "/img/360estudio-2.webp", "3": "/img/360estudio-3.webp", "cover": "/img/360estudio-cover.webp"}, "a2pas": {"0": "/img/a2pas-0.webp", "1": "/img/a2pas-1.webp", "2": "/img/a2pas-2.webp", "3": "/img/a2pas-3.webp", "4": "/img/a2pas-4.webp", "5": "/img/a2pas-5.webp", "cover": "/img/a2pas-cover.webp"}, "binome": {"0": "/img/binome-0.webp", "1": "/img/binome-1.webp", "2": "/img/binome-2.webp", "3": "/img/binome-3.webp", "cover": "/img/binome-cover.webp"}, "carceral-ecologies": {"0": "/img/carceral-ecologies-0.webp", "1": "/img/carceral-ecologies-1.webp", "2": "/img/carceral-ecologies-2.webp", "3": "/img/carceral-ecologies-3.webp", "cover": "/img/carceral-ecologies-cover.webp"}, "contazara": {"0": "/img/contazara-0.webp", "1": "/img/contazara-1.webp", "2": "/img/contazara-2.webp", "3": "/img/contazara-3.webp", "4": "/img/contazara-4.webp", "cover": "/img/contazara-cover.webp"}, "gallery": {"1": "/img/gallery-1.webp", "2": "/img/gallery-2.webp", "3": "/img/gallery-3.webp", "4": "/img/gallery-4.webp", "5": "/img/gallery-5.webp", "6": "/img/gallery-6.webp"}, "happylife": {"0": "/img/happylife-0.webp", "1": "/img/happylife-1.webp", "2": "/img/happylife-2.webp", "3": "/img/happylife-3.webp", "cover": "/img/happylife-cover.webp"}, "hover": {"mail": "/img/hover-mail.webp"}, "profile": {"1": "/img/profile-1.webp"}, "yaypegs": {"0": "/img/yaypegs-0.webp", "1": "/img/yaypegs-1.webp", "2": "/img/yaypegs-2.webp", "3": "/img/yaypegs-3.webp", "cover": "/img/yaypegs-cover.webp"}};
+window.__IMG={"360estudio": {"0": "/img/360estudio-0.webp", "1": "/img/360estudio-1.webp", "2": "/img/360estudio-2.webp", "3": "/img/360estudio-3.webp", "cover": "/img/360estudio-cover.webp"}, "a2pas": {"0": "/img/a2pas-0.webp", "1": "/img/a2pas-1.webp", "2": "/img/a2pas-2.webp", "3": "/img/a2pas-3.webp", "4": "/img/a2pas-4.webp", "5": "/img/a2pas-5.webp", "cover": "/img/a2pas-cover.webp"}, "binome": {"0": "/img/binome-0.webp", "1": "/img/binome-1.webp", "2": "/img/binome-2.webp", "3": "/img/binome-3.webp", "cover": "/img/binome-cover.webp"}, "carceral-ecologies": {"0": "/img/carceral-ecologies-0.webp", "1": "/img/carceral-ecologies-1.webp", "2": "/img/carceral-ecologies-2.webp", "3": "/img/carceral-ecologies-3.webp", "cover": "/img/carceral-ecologies-cover.webp"}, "contazara": {"0": "/img/contazara-0.webp", "1": "/img/contazara-1.webp", "2": "/img/contazara-2.webp", "3": "/img/contazara-3.webp", "4": "/img/contazara-4.webp", "cover": "/img/contazara-cover.webp"}, "gallery": {"1": "/img/gallery-1.webp", "2": "/img/gallery-2.webp", "3": "/img/gallery-3.webp", "4": "/img/gallery-4.webp", "5": "/img/gallery-5.webp", "6": "/img/gallery-6.webp"}, "happylife": {"0": "/img/happylife-0.webp", "1": "/img/happylife-1.webp", "2": "/img/happylife-2.webp", "3": "/img/happylife-3.webp", "cover": "/img/happylife-cover.webp"}, "hover": {"mail": "/img/hover-mail.webp"}, "mobile-experiences": {"0": "/img/mobile-experiences-0.webp", "1": "/img/mobile-experiences-1.webp", "2": "/img/mobile-experiences-2.webp", "3": "/img/mobile-experiences-3.webp", "4": "/img/mobile-experiences-4.webp", "5": "/img/mobile-experiences-5.webp", "6": "/img/mobile-experiences-6.webp", "7": "/img/mobile-experiences-7.webp", "8": "/img/mobile-experiences-8.webp", "cover": "/img/mobile-experiences-cover.webp", "og": "/img/mobile-experiences-og.webp"}, "profile": {"1": "/img/profile-1.webp"}, "yaypegs": {"0": "/img/yaypegs-0.webp", "1": "/img/yaypegs-1.webp", "2": "/img/yaypegs-2.webp", "3": "/img/yaypegs-3.webp", "cover": "/img/yaypegs-cover.webp"}};
 const PROJ = [
   {key:"contazara", role:"Lead Product Designer", years:"2025 –"},
   {key:"healthtech", role:"Lead Product Designer", years:"MVP"},
@@ -2922,7 +2922,7 @@ SEO.es.proj["360estudio"] = {"t": "360estudio: Branding y diseño web | Tom Fabr
 SEO.en.proj["360estudio"] = {"t": "360estudio: Branding & Web Design | Tom Fabre", "d": "Visual identity and web design for 360estudio, a healthcare architecture specialist. A branding project that extended into physical spaces."};
 SEO.fr.proj["360estudio"] = {"t": "360estudio : branding et design web | Tom Fabre", "d": "Identité visuelle et design web pour 360estudio, spécialiste de l'architecture de santé. Un projet où le branding s'est aussi invité dans les espaces physiques."};
 
-/* Mobile Experiences: Apolo Launcher, Appy x Jojol and Mood Messenger in one case (chapters). Images are placeholders (ph) until img/mobile-experiences-{0,cover,1..5}.webp exist. */
+/* Mobile Experiences: Apolo Launcher, Appy x Jojol and Mood Messenger in one case (chapters). Images: img/mobile-experiences-{0,cover,og,1..8}.webp (1-2 Apolo, 3-5 Appy, 6-8 Mood Messenger). */
 SECTIONS["mobile-experiences"] = [
  {
   "type": "text",
@@ -3046,23 +3046,27 @@ SECTIONS["mobile-experiences"] = [
    {
     "key": "mobile-experiences",
     "v": "1",
-    "r": "1600/1200",
-    "ph": true,
+    "r": "1536/1024",
+    "w": 88,
+    "a": "start",
     "alt": {
-     "es": "Interfaz de Apolo Launcher en un teléfono Android",
-     "en": "Apolo Launcher interface on an Android phone",
-     "fr": "Interface d'Apolo Launcher sur un téléphone Android"
+     "es": "Apolo Launcher: funciones reales, bocetos, pruebas e interfaz final en teléfonos Android",
+     "en": "Apolo Launcher: real features, sketches, testing and final interface on Android phones",
+     "fr": "Apolo Launcher : fonctionnalités, croquis, tests et interface finale sur des téléphones Android"
     }
    },
    {
     "key": "mobile-experiences",
     "v": "2",
-    "r": "1600/1200",
-    "ph": true,
+    "r": "1536/872",
+    "w": 72,
+    "a": "end",
+    "o": 3,
+    "m": false,
     "alt": {
-     "es": "Distintas pantallas y elementos visuales de Apolo Launcher",
-     "en": "Different screens and visual elements of Apolo Launcher",
-     "fr": "Différents écrans et éléments visuels d'Apolo Launcher"
+     "es": "Funciones de Apolo Launcher: Color Lab, modo oscuro, apps ocultas, edición de iconos, tiempo, temas y fondos, con proceso y sistema visual",
+     "en": "Apolo Launcher features: Color Lab, dark mode, hidden apps, icon editing, weather, themes and wallpapers, with process and visual system",
+     "fr": "Fonctionnalités d'Apolo Launcher : Color Lab, mode sombre, applis masquées, édition d'icônes, météo, thèmes et fonds d'écran, avec processus et système visuel"
     }
    }
   ]
@@ -3173,12 +3177,38 @@ SECTIONS["mobile-experiences"] = [
    {
     "key": "mobile-experiences",
     "v": "3",
-    "r": "1600/1200",
-    "ph": true,
+    "r": "1536/401",
+    "t": true,
+    "m": false,
     "alt": {
-     "es": "Pantallas de Appy para iOS y Android",
-     "en": "Appy screens for iOS and Android",
-     "fr": "Écrans d'Appy pour iOS et Android"
+     "es": "Identidad de Appy: logotipo, paleta de color, tipografía Galano Grotesque y gato mascota, de la marca a la experiencia de producto",
+     "en": "Appy identity: logo, colour palette, Galano Grotesque typeface and cat mascot, from brand to product experience",
+     "fr": "Identité d'Appy : logotype, palette de couleurs, typographie Galano Grotesque et chat mascotte, de la marque à l'expérience produit"
+    }
+   },
+   {
+    "key": "mobile-experiences",
+    "v": "4",
+    "r": "1536/608",
+    "w": 68,
+    "a": "end",
+    "o": 5,
+    "alt": {
+     "es": "Pantallas de Appy: cartera con tickets, concursos en curso, perfil de usuario y oportunidades de ganar",
+     "en": "Appy screens: ticket wallet, ongoing contests, user profile and chances to win",
+     "fr": "Écrans d'Appy : portefeuille de tickets, concours en cours, profil utilisateur et chances de gagner"
+    }
+   },
+   {
+    "key": "mobile-experiences",
+    "v": "5",
+    "r": "1536/1024",
+    "w": 100,
+    "m": false,
+    "alt": {
+     "es": "Proceso de diseño de Appy: descubrimiento, bocetos, prototipo y test, sistema de diseño y producto final",
+     "en": "Appy design process: discovery, sketches, prototype and testing, design system and final product",
+     "fr": "Processus de design d'Appy : découverte, croquis, prototype et test, design system et produit final"
     }
    }
   ]
@@ -3238,7 +3268,7 @@ SECTIONS["mobile-experiences"] = [
     "fr": "Une autre manière de travailler, où le design ne commence pas sur une page blanche."
    }
   ],
-  "layout": "wide",
+  "layout": "right",
   "meta": [
    {
     "l": {
@@ -3272,6 +3302,14 @@ SECTIONS["mobile-experiences"] = [
   },
   "links": [
    {
+    "href": "https://play.google.com/store/apps/details?id=com.calea.echo",
+    "l": {
+     "es": "Ver en Google Play",
+     "en": "View on Google Play",
+     "fr": "Voir sur Google Play"
+    }
+   },
+   {
     "href": "https://cdn.nwe.io/files/x/79/f5/cadb7736c7ee1d815c25997aea20.pdf",
     "l": {
      "es": "Fuente de la métrica (comunicado oficial)",
@@ -3291,24 +3329,40 @@ SECTIONS["mobile-experiences"] = [
   "media": [
    {
     "key": "mobile-experiences",
-    "v": "4",
-    "r": "2400/1050",
-    "ph": true,
+    "v": "6",
+    "r": "1448/1086",
+    "w": 80,
+    "a": "start",
     "alt": {
-     "es": "Interfaz de mensajería de Mood Messenger",
-     "en": "Mood Messenger messaging interface",
-     "fr": "Interface de messagerie de Mood Messenger"
+     "es": "Mood Messenger: lista de chats, historias y conversación con stickers en un iPhone",
+     "en": "Mood Messenger: chat list, stories and a conversation with stickers on an iPhone",
+     "fr": "Mood Messenger : liste de discussions, stories et conversation avec stickers sur un iPhone"
     }
    },
    {
     "key": "mobile-experiences",
-    "v": "5",
-    "r": "2400/1050",
-    "ph": true,
+    "v": "7",
+    "r": "1448/1930",
+    "w": 66,
+    "a": "end",
+    "o": 3,
+    "m": false,
     "alt": {
-     "es": "Elementos de personalización y pantallas de Mood Messenger",
-     "en": "Mood Messenger personalisation elements and screens",
-     "fr": "Éléments de personnalisation et écrans de Mood Messenger"
+     "es": "Proceso de diseño de Mood Messenger: investigación, arquitectura, flujo de usuario, wireframes, pruebas y sistema visual",
+     "en": "Mood Messenger design process: research, architecture, user flow, wireframes, testing and visual system",
+     "fr": "Processus de design de Mood Messenger : recherche, architecture, parcours utilisateur, wireframes, tests et système visuel"
+    }
+   },
+   {
+    "key": "mobile-experiences",
+    "v": "8",
+    "r": "1448/346",
+    "w": 100,
+    "m": false,
+    "alt": {
+     "es": "De la investigación y la arquitectura a los wireframes, las iteraciones y el diseño de interfaz de Mood Messenger",
+     "en": "From research and architecture to wireframes, iterations and interface design for Mood Messenger",
+     "fr": "De la recherche et de l'architecture aux wireframes, itérations et design d'interface de Mood Messenger"
     }
    }
   ]
@@ -3368,9 +3422,9 @@ HERO["mobile-experiences"] = {
   "fr": "Composition des trois applications mobiles : Apolo Launcher, Appy et Mood Messenger"
  }
 };
-SEO.es.proj["mobile-experiences"] = {"t": "Diseño de apps móviles y UX/UI | Tom Fabre", "d": "Tres proyectos de diseño de aplicaciones móviles: Apolo Launcher, Appy × Jojol y Mood Messenger. UX/UI, interfaces y estrategia de producto."};
-SEO.en.proj["mobile-experiences"] = {"t": "Mobile App Design & UX/UI | Tom Fabre", "d": "Three mobile app design projects: Apolo Launcher, Appy × Jojol, and Mood Messenger. UX/UI, interface design, and product strategy."};
-SEO.fr.proj["mobile-experiences"] = {"t": "Design d'applications mobiles et UX/UI | Tom Fabre", "d": "Trois projets de design mobile : Apolo Launcher, Appy × Jojol et Mood Messenger. UX/UI, interfaces et stratégie produit."};
+SEO.es.proj["mobile-experiences"] = {"t": "Diseño de apps móviles y UX/UI | Tom Fabre", "d": "Tres proyectos de diseño de aplicaciones móviles: Apolo Launcher, Appy × Jojol y Mood Messenger. UX/UI, interfaces y estrategia de producto.", "og": {"src": "mobile-experiences-og", "alt": "Tres apps móviles diseñadas por Tom Fabre: Mood Messenger, Appy y Apolo Launcher"}};
+SEO.en.proj["mobile-experiences"] = {"t": "Mobile App Design & UX/UI | Tom Fabre", "d": "Three mobile app design projects: Apolo Launcher, Appy × Jojol, and Mood Messenger. UX/UI, interface design, and product strategy.", "og": {"src": "mobile-experiences-og", "alt": "Three mobile apps designed by Tom Fabre: Mood Messenger, Appy and Apolo Launcher"}};
+SEO.fr.proj["mobile-experiences"] = {"t": "Design d'applications mobiles et UX/UI | Tom Fabre", "d": "Trois projets de design mobile : Apolo Launcher, Appy × Jojol et Mood Messenger. UX/UI, interfaces et stratégie produit.", "og": {"src": "mobile-experiences-og", "alt": "Trois applis mobiles conçues par Tom Fabre : Mood Messenger, Appy et Apolo Launcher"}};
 
 /* Carceral Ecologies: case page prepared, NOT published (PROJ.carceral.locked in c1p.js). Add the images (flow items) and remove `locked` to go live. */
 SECTIONS["carceral-ecologies"] = [
@@ -4422,7 +4476,7 @@ Object.assign(T.es, {
  "bx_h": "Fuera de la pantalla.",
  "bx_p": "No todo son píxeles. También hay música, ciudades, recetas, fotografías y unas cuantas historias que no tenían nada que ver con el diseño. O eso pensaba.",
  "bx_city": {
-  "h": "De aquí, de allá y de unos cuantos sitios más.",
+  "h": "Historial de ubicaciones",
   "p": "Hay lugares donde nací, otros donde crecí y algunos que terminé llamando casa. Todos dejaron algo.",
   "items": [
    [
@@ -4628,7 +4682,7 @@ Object.assign(T.en, {
  "bx_h": "Away from the screen.",
  "bx_p": "There's more to life than pixels. There's music, cities, recipes, photographs and a few stories that had nothing to do with design. Or so I thought.",
  "bx_city": {
-  "h": "A bit from here. A bit from everywhere.",
+  "h": "Location history",
   "p": "Some places are where I was born, others where I grew up, and a few became home along the way. Each left something with me.",
   "items": [
    [
@@ -4834,7 +4888,7 @@ Object.assign(T.fr, {
  "bx_h": "Loin des écrans.",
  "bx_p": "Il n'y a pas que les pixels dans la vie. Il y a aussi la musique, les villes, les recettes, les photos et quelques histoires qui n'avaient rien à voir avec le design. Enfin, c'est ce que je croyais.",
  "bx_city": {
-  "h": "D'ici, de là-bas et d'un peu partout.",
+  "h": "Historique des positions",
   "p": "Il y a des villes où je suis né, d'autres où j'ai grandi, et quelques-unes que j'ai fini par appeler chez moi. Chacune m'a laissé quelque chose.",
   "items": [
    [
@@ -5408,6 +5462,9 @@ let LBX = { list: [], i: 0, opener: null };
 function lbShow(){
   const it = LBX.list[LBX.i], u = L().bx_ui; if (!it) return;
   $("#lbMedia").className = "lb-media r" + it.ratio;
+  const lbm = $("#lbMedia"), LB_HINT = { es:"Clic para acercar o alejar", en:"Click to zoom in or out", fr:"Cliquer pour zoomer ou dézoomer" };
+  if (it.ratio === "free") { lbm.setAttribute("tabindex", "0"); lbm.setAttribute("role", "button"); lbm.setAttribute("title", LB_HINT[lang] || LB_HINT.es); }
+  else { lbm.removeAttribute("tabindex"); lbm.removeAttribute("role"); lbm.removeAttribute("title"); }
   $("#lbMedia").innerHTML = it.img ? `<img src="${esc(bxUrl(it.img))}" alt="${esc(it.alt)}">` : `<span class="bx-ph" data-pending="${esc(it.kind)}" role="img" aria-label="${esc(u.ph + ": " + it.label)}"><span>${esc(u.ph)}</span><b>${esc(it.label)}</b></span>`;
   $("#lbCap").textContent = it.cap;
   $("#lbN").textContent = u.lb_count.replace("{n}", LBX.i + 1).replace("{t}", LBX.list.length);
@@ -5600,6 +5657,18 @@ function wireBio2(){
   $("#lbPrev").addEventListener("click", () => lbStep(-1)); $("#lbNext").addEventListener("click", () => lbStep(1));
   d.addEventListener("keydown", e => { if (e.key === "ArrowLeft") { e.preventDefault(); lbStep(-1); } else if (e.key === "ArrowRight") { e.preventDefault(); lbStep(1); } });
   d.addEventListener("click", e => { if (e.target === d) d.close(); });
+  /* project chapters: click an image to enlarge it in the same lightbox (all visible images of that chapter, arrows to move); click the enlarged image to zoom to full width and scroll */
+  document.addEventListener("click", e => {
+    const b = e.target.closest && e.target.closest("[data-chzoom]"); if (!b) return;
+    const sec = b.closest("section.ch"); if (!sec) return;
+    const btns = [...sec.querySelectorAll("[data-chzoom]")].filter(x => x.offsetParent !== null);
+    const list = btns.map(x => { const im = x.querySelector("img"); return { img: im.getAttribute("src"), alt: im.alt, cap: im.alt, ratio: "free", kind: "chapter" }; });
+    LBX = { list, i: Math.max(0, btns.indexOf(b)), opener: b }; lbShow();
+    if (d.showModal) d.showModal(); else d.setAttribute("open", "");
+  });
+  const lm = $("#lbMedia"), lbToggle = () => { if (lm.classList.contains("rfree")) lm.classList.toggle("zm"); };
+  lm.addEventListener("click", lbToggle);
+  lm.addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && lm.classList.contains("rfree")) { e.preventDefault(); lbToggle(); } });
   d.addEventListener("close", () => { if (LBX.opener && document.contains(LBX.opener)) LBX.opener.focus(); });
   addEventListener("hashchange", () => { if (typeof route_ !== "undefined" && route_.page !== "bio") mmStop(); });
   addEventListener("popstate", () => { if (typeof route_ !== "undefined" && route_.page !== "bio") mmStop(); });
@@ -5824,12 +5893,16 @@ const okImg = im => !!(IMG[im.key] && IMG[im.key][im.v]);
 const secFig = im => okImg(im) ? `<div class="pj-body"><span aria-hidden="true"></span><div><div class="pj-gal one">${imgTag(im, im.r)}</div></div></div>` : "";
 const secPair = ims => ims.every(okImg) ? `<div class="pj-gal duo">${ims.map(im => imgTag(im)).join("")}</div>` : "";
 const secFlow = fl => (fl || []).map(f => f.img ? secImg(f.img) : f.fig ? secFig(f.fig) : f.pair ? secPair(f.pair) : (paras(f.p) ? `<div class="pj-body"><span aria-hidden="true"></span><div>${paras(f.p)}</div></div>` : "")).join("");
-const secHasImg = k => !!SECTIONS[k] && SECTIONS[k].some(s => s.img || (s.flow || []).some(f => f.img || f.fig || f.pair));   // case already carries its images inline
+const secHasImg = k => !!SECTIONS[k] && SECTIONS[k].some(s => s.img || (s.media || []).length || (s.flow || []).some(f => f.img || f.fig || f.pair));   // case already carries its images inline
 /* To add a type: add it here AND to TYPES in validate_sections.py (build fails on unknown types). */
 /* chapter: one app inside a multi-app case. layout "right" (text left, images right), "left" (images left, text right) or "wide" (wide image on top, text and figures below). Images that do not exist yet render as neutral placeholders with the right proportion (im.ph). */
-const chImg = im => okImg(im) ? imgTag(im, im.r) : `<div class="art ph" style="aspect-ratio:${esc(im.r || "4/3")}" aria-hidden="true"></div>`;
+const CH_ZOOM = { es:"Ampliar imagen", en:"Enlarge image", fr:"Agrandir l'image" };
+const chImg = im => { let h = okImg(im) ? imgTag(im, im.r).replace(/<img [^>]*>/, m => `<button type="button" class="art-zoom" data-chzoom aria-haspopup="dialog" aria-label="${esc(tr(CH_ZOOM))}: ${esc(tr(im.alt))}">${m}</button>`) : `<div class="art ph" style="aspect-ratio:${esc(im.r || "4/3")}" aria-hidden="true"></div>`;
+  /* optional per-image composition: w = desktop width %, a = start|end alignment, m:false = hidden on mobile (lighter, simpler) */
+  const v = (im.w ? `--w:${+im.w}%;` : "") + (im.a ? `--a:${im.a === "end" ? "end" : "start"};` : "") + (im.o ? `--o:${+im.o}rem;` : "");
+  return h.replace('<div class="art', '<div class="art' + (im.m === false ? " m-off" : "")).replace('style="aspect-ratio:', 'style="' + v + 'aspect-ratio:'); };
 const chLink = x => `<a href="${esc(x.href)}" target="_blank" rel="noopener noreferrer" data-ev="project_link_click" data-place="${esc(x.href.split("/")[2] || "")}">${esc(tr(x.l))}</a>`;
-const chapterHtml = s => `<section class="pj-sec ch ch-${s.layout}" id="s-${s.id}" aria-labelledby="s-${s.id}-h"><div class="ch-in"><div class="ch-tx"><div class="ch-main"><h2 id="s-${s.id}-h" class="ch-eb">${esc(tr(s.h))}</h2><h3>${esc(tr(s.t))}</h3>${paras(s.p)}</div><div class="ch-aside">${(s.meta || []).length ? `<dl class="ch-meta">${s.meta.map(m => `<div><dt>${esc(tr(m.l))}</dt><dd>${esc(tr(m.v))}</dd></div>`).join("")}</dl>` : ""}${s.metric ? `<p class="ch-metric"><b>${esc(tr(s.metric.n))}</b><span>${esc(tr(s.metric.l))}</span>${s.metric.note ? `<small>${esc(tr(s.metric.note))}</small>` : ""}</p>` : ""}${(s.links || []).length ? `<p class="ch-links">${s.links.map(chLink).join("")}</p>` : ""}</div></div><div class="ch-media">${(s.media || []).map(chImg).join("")}</div></div></section>`;
+const chapterHtml = s => `<section class="pj-sec ch ch-${s.layout}" id="s-${s.id}" aria-labelledby="s-${s.id}-h"><div class="ch-in"><div class="ch-tx">${(s.media || []).some(im => im.t) ? `<div class="ch-top">${s.media.filter(im => im.t).map(chImg).join("")}</div>` : ""}<div class="ch-main"><h2 id="s-${s.id}-h" class="ch-eb">${esc(tr(s.h))}</h2><h3>${esc(tr(s.t))}</h3>${paras(s.p)}</div><div class="ch-aside">${(s.meta || []).length ? `<dl class="ch-meta">${s.meta.map(m => `<div><dt>${esc(tr(m.l))}</dt><dd>${esc(tr(m.v))}</dd></div>`).join("")}</dl>` : ""}${s.metric ? `<p class="ch-metric"><b>${esc(tr(s.metric.n))}</b><span>${esc(tr(s.metric.l))}</span>${s.metric.note ? `<small>${esc(tr(s.metric.note))}</small>` : ""}</p>` : ""}${(s.links || []).length ? `<p class="ch-links">${s.links.map(chLink).join("")}</p>` : ""}</div></div><div class="ch-media">${(s.media || []).filter(im => !im.t).map(chImg).join("")}</div></div></section>`;
 const SECTION_RENDER = {
   text: s => `<section class="pj-sec" id="s-${s.id}" aria-labelledby="s-${s.id}-h">${secBody(s, paras(s.p))}${s.img ? secImg(s.img) : ""}${secFlow(s.flow)}</section>`,
   chapter: chapterHtml,
@@ -6618,7 +6691,7 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
     mx += (tx - mx) * .06; my += (ty - my) * .06;
     if (aur) { aur.style.setProperty("--px", mx.toFixed(1)); aur.style.setProperty("--py", my.toFixed(1)); }
     if (Math.abs(tx - mx) > .2 || Math.abs(ty - my) > .2) busy = true;
-    mag.forEach((s, b) => { s.x += (s.tx - s.x) * .14; s.y += (s.ty - s.y) * .14; b.style.translate = s.x.toFixed(2) + "px " + s.y.toFixed(2) + "px";
+    mag.forEach((s, b) => { s.x += (s.tx - s.x) * .22; s.y += (s.ty - s.y) * .22; b.style.translate = s.x.toFixed(2) + "px " + s.y.toFixed(2) + "px";
       if (Math.abs(s.tx - s.x) > .05 || Math.abs(s.ty - s.y) > .05) busy = true; });
     if (busy) raf = requestAnimationFrame(loop);
   };
@@ -6630,7 +6703,7 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
       /* posición de reposo (sin el desplazamiento actual): evita parpadeos en los bordes y realimentación */
       const l = br.left - s.x, t = br.top - s.y, r = l + br.width, bt = t + br.height;
       const inside = e.clientX >= l && e.clientX <= r && e.clientY >= t && e.clientY <= bt;
-      if (inside) { s.tx = clamp((e.clientX - (l + br.width / 2)) * .107, 6); s.ty = clamp((e.clientY - (t + br.height / 2)) * .85, 14); }
+      if (inside) { s.tx = clamp((e.clientX - (l + br.width / 2)) * .107, 6); s.ty = clamp((e.clientY - (t + br.height / 2)) * .4, 6); }
       else { s.tx = 0; s.ty = 0; } });
     kick();
   }, { passive:true });
@@ -6918,7 +6991,7 @@ yLoad(); wireChat(); yRender(false);
 
 /* ---------- SEO: per-route head ---------- */
 function setMeta(sel, attr, val){ const el = document.querySelector(sel); if (el) el.setAttribute(attr, val); }
-const OGI = {"es":{"fb":["https://tomfabre.com/og-default-es.jpg?v=a06f34a8","Tom Fabre · Diseñador de marca y producto digital. Branding, diseño web, UX/UI y estrategia digital",1200,630],"p":{"contazara":["https://tomfabre.com/img/og/contazara-cover-1200x630.jpg?v=13ee6ed4","Portada del caso Contazara: logotipo y diseño de la nueva web de la marca",1200,630],"a2pas":["https://tomfabre.com/img/og/a2pas-cover-1200x630.jpg?v=886ecbea","Portada del proyecto À2pas · Product Design · UX/UI · Branding",1200,630],"happylife":["https://tomfabre.com/img/og/happylife-cover-1200x630.jpg?v=3b2055d7","Portada del proyecto HappyLife · Product Design · UX/UI",1200,630],"binome":["https://tomfabre.com/img/og/binome-cover-1200x630.jpg?v=56c455e1","Portada del proyecto Binōme Studio · Branding · Estrategia · Web",1200,630],"yaypegs":["https://tomfabre.com/img/og/yaypegs-cover-1200x630.jpg?v=8acad149","Portada del proyecto Yaypegs · Dirección de arte · Motion Design",1200,630],"360estudio":["https://tomfabre.com/img/og/360estudio-cover-1200x630.jpg?v=704e295c","Portada del proyecto 360estudio · Branding · Diseño web · Dirección de arte",1200,630]}},"en":{"fb":["https://tomfabre.com/og-default-en.jpg?v=766d0225","Tom Fabre · Brand & Digital Product Designer. Branding, web design, UX/UI and digital strategy",1200,630],"p":{"contazara":["https://tomfabre.com/img/og/contazara-cover-1200x630.jpg?v=13ee6ed4","Contazara case study cover: logo and design of the brand's new website",1200,630],"a2pas":["https://tomfabre.com/img/og/a2pas-cover-1200x630.jpg?v=886ecbea","Cover of the À2pas project · Product Design · UX/UI · Branding",1200,630],"happylife":["https://tomfabre.com/img/og/happylife-cover-1200x630.jpg?v=3b2055d7","Cover of the HappyLife project · Product Design · UX/UI",1200,630],"binome":["https://tomfabre.com/img/og/binome-cover-1200x630.jpg?v=56c455e1","Cover of the Binōme Studio project · Branding · Strategy · Web",1200,630],"yaypegs":["https://tomfabre.com/img/og/yaypegs-cover-1200x630.jpg?v=8acad149","Cover of the Yaypegs project · Art Direction · Motion Design",1200,630],"360estudio":["https://tomfabre.com/img/og/360estudio-cover-1200x630.jpg?v=704e295c","Cover of the 360estudio project · Branding · Web design · Art direction",1200,630]}},"fr":{"fb":["https://tomfabre.com/og-default-fr.jpg?v=72ca4785","Tom Fabre · Designer de marque et de produit digital. Branding, design web, UX/UI et stratégie digitale",1200,630],"p":{"contazara":["https://tomfabre.com/img/og/contazara-cover-1200x630.jpg?v=13ee6ed4","Couverture du cas Contazara : logotype et design du nouveau site web de la marque",1200,630],"a2pas":["https://tomfabre.com/img/og/a2pas-cover-1200x630.jpg?v=886ecbea","Couverture du projet À2pas · Product Design · UX/UI · Identité visuelle",1200,630],"happylife":["https://tomfabre.com/img/og/happylife-cover-1200x630.jpg?v=3b2055d7","Couverture du projet HappyLife · Product Design · UX/UI",1200,630],"binome":["https://tomfabre.com/img/og/binome-cover-1200x630.jpg?v=56c455e1","Couverture du projet Binōme Studio · Branding · Stratégie · Web",1200,630],"yaypegs":["https://tomfabre.com/img/og/yaypegs-cover-1200x630.jpg?v=8acad149","Couverture du projet Yaypegs · Direction artistique · Motion Design",1200,630],"360estudio":["https://tomfabre.com/img/og/360estudio-cover-1200x630.jpg?v=704e295c","Couverture du projet 360estudio · Branding · Design web · Direction artistique",1200,630]}}};   // build.py injects {lang:{fb:[url,alt,w,h], p:{projectKey:[...]}}} computed by og_for (single source of truth)
+const OGI = {"es":{"fb":["https://tomfabre.com/og-default-es.jpg?v=a06f34a8","Tom Fabre · Diseñador de marca y producto digital. Branding, diseño web, UX/UI y estrategia digital",1200,630],"p":{"contazara":["https://tomfabre.com/img/og/contazara-cover-1200x630.jpg?v=13ee6ed4","Portada del caso Contazara: logotipo y diseño de la nueva web de la marca",1200,630],"a2pas":["https://tomfabre.com/img/og/a2pas-cover-1200x630.jpg?v=886ecbea","Portada del proyecto À2pas · Product Design · UX/UI · Branding",1200,630],"happylife":["https://tomfabre.com/img/og/happylife-cover-1200x630.jpg?v=3b2055d7","Portada del proyecto HappyLife · Product Design · UX/UI",1200,630],"binome":["https://tomfabre.com/img/og/binome-cover-1200x630.jpg?v=56c455e1","Portada del proyecto Binōme Studio · Branding · Estrategia · Web",1200,630],"yaypegs":["https://tomfabre.com/img/og/yaypegs-cover-1200x630.jpg?v=8acad149","Portada del proyecto Yaypegs · Dirección de arte · Motion Design",1200,630],"360estudio":["https://tomfabre.com/img/og/360estudio-cover-1200x630.jpg?v=704e295c","Portada del proyecto 360estudio · Branding · Diseño web · Dirección de arte",1200,630],"mobile-experiences":["https://tomfabre.com/img/og/mobile-experiences-og-1200x630.jpg?v=b7caee9d","Tres apps móviles diseñadas por Tom Fabre: Mood Messenger, Appy y Apolo Launcher",1200,630]}},"en":{"fb":["https://tomfabre.com/og-default-en.jpg?v=766d0225","Tom Fabre · Brand & Digital Product Designer. Branding, web design, UX/UI and digital strategy",1200,630],"p":{"contazara":["https://tomfabre.com/img/og/contazara-cover-1200x630.jpg?v=13ee6ed4","Contazara case study cover: logo and design of the brand's new website",1200,630],"a2pas":["https://tomfabre.com/img/og/a2pas-cover-1200x630.jpg?v=886ecbea","Cover of the À2pas project · Product Design · UX/UI · Branding",1200,630],"happylife":["https://tomfabre.com/img/og/happylife-cover-1200x630.jpg?v=3b2055d7","Cover of the HappyLife project · Product Design · UX/UI",1200,630],"binome":["https://tomfabre.com/img/og/binome-cover-1200x630.jpg?v=56c455e1","Cover of the Binōme Studio project · Branding · Strategy · Web",1200,630],"yaypegs":["https://tomfabre.com/img/og/yaypegs-cover-1200x630.jpg?v=8acad149","Cover of the Yaypegs project · Art Direction · Motion Design",1200,630],"360estudio":["https://tomfabre.com/img/og/360estudio-cover-1200x630.jpg?v=704e295c","Cover of the 360estudio project · Branding · Web design · Art direction",1200,630],"mobile-experiences":["https://tomfabre.com/img/og/mobile-experiences-og-1200x630.jpg?v=b7caee9d","Three mobile apps designed by Tom Fabre: Mood Messenger, Appy and Apolo Launcher",1200,630]}},"fr":{"fb":["https://tomfabre.com/og-default-fr.jpg?v=72ca4785","Tom Fabre · Designer de marque et de produit digital. Branding, design web, UX/UI et stratégie digitale",1200,630],"p":{"contazara":["https://tomfabre.com/img/og/contazara-cover-1200x630.jpg?v=13ee6ed4","Couverture du cas Contazara : logotype et design du nouveau site web de la marque",1200,630],"a2pas":["https://tomfabre.com/img/og/a2pas-cover-1200x630.jpg?v=886ecbea","Couverture du projet À2pas · Product Design · UX/UI · Identité visuelle",1200,630],"happylife":["https://tomfabre.com/img/og/happylife-cover-1200x630.jpg?v=3b2055d7","Couverture du projet HappyLife · Product Design · UX/UI",1200,630],"binome":["https://tomfabre.com/img/og/binome-cover-1200x630.jpg?v=56c455e1","Couverture du projet Binōme Studio · Branding · Stratégie · Web",1200,630],"yaypegs":["https://tomfabre.com/img/og/yaypegs-cover-1200x630.jpg?v=8acad149","Couverture du projet Yaypegs · Direction artistique · Motion Design",1200,630],"360estudio":["https://tomfabre.com/img/og/360estudio-cover-1200x630.jpg?v=704e295c","Couverture du projet 360estudio · Branding · Design web · Direction artistique",1200,630],"mobile-experiences":["https://tomfabre.com/img/og/mobile-experiences-og-1200x630.jpg?v=b7caee9d","Trois applis mobiles conçues par Tom Fabre : Mood Messenger, Appy et Apolo Launcher",1200,630]}}};   // build.py injects {lang:{fb:[url,alt,w,h], p:{projectKey:[...]}}} computed by og_for (single source of truth)
 function updateHead(r){
 { const ll = document.getElementById("legalLink"); if (ll) ll.href = LEGAL_URL[lang] || "/legal/"; const fp = document.getElementById("formPrivLink"); if (fp) fp.href = LEGAL_URL[lang] || "/legal/"; document.querySelectorAll(".pz-priv").forEach(a => { a.href = LEGAL_URL[lang] || "/legal/"; }); }
   const s = SEO[lang] || SEO.es, key = r && r.page === "service" ? "svc_" + r.key : (r && r.page || "home");

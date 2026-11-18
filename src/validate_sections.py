@@ -90,9 +90,14 @@ def _paras(v, path, errs, required, inherited=LANGS):
 
 
 def _img(im, path, errs, img_exists):
-    """Image {key, v, alt}; optional: r ("1440/743", exact aspect ratio, no cropping), zoom (true: opens the original in a new tab), cap (localized caption)."""
-    if not isinstance(im, dict) or not {"key", "v", "alt"} <= set(im) or set(im) - {"key", "v", "alt", "r", "zoom", "cap", "ph"}:
-        errs.append(f"{path}: must be {{key, v, alt[, r, zoom, cap, ph]}}"); return
+    """Image {key, v, alt}; optional: r ("1440/743", exact aspect ratio, no cropping), w (chapter images: desktop width in %), a (start|end: alignment when w < 100), m (false: hidden on mobile), t (true: shown above the text column), o (top offset in rem, desktop), zoom (true: opens the original in a new tab), cap (localized caption)."""
+    if not isinstance(im, dict) or not {"key", "v", "alt"} <= set(im) or set(im) - {"key", "v", "alt", "r", "zoom", "cap", "ph", "w", "a", "m", "t", "o"}:
+        errs.append(f"{path}: must be {{key, v, alt[, r, zoom, cap, ph, w, a, m, t, o]}}"); return
+    if "w" in im and not (isinstance(im["w"], int) and not isinstance(im["w"], bool) and 30 <= im["w"] <= 100): errs.append(f"{path}.w: desktop width in %, integer 30-100")
+    if "a" in im and im["a"] not in ("start", "end"): errs.append(f"{path}.a: must be 'start' or 'end'")
+    if "t" in im and im["t"] is not True: errs.append(f"{path}.t: only true is allowed (image above the text column)")
+    if "o" in im and not (isinstance(im["o"], int) and not isinstance(im["o"], bool) and 0 <= im["o"] <= 16): errs.append(f"{path}.o: top offset in rem, integer 0-16")
+    if "m" in im and im["m"] is not False: errs.append(f"{path}.m: only false is allowed (hide on mobile)")
     if "ph" in im and not isinstance(im["ph"], bool): errs.append(f"{path}.ph: must be true/false")
     _loc(im["alt"], f"{path}.alt", errs)
     if "r" in im and not re.match(r"^\d{1,5}/\d{1,5}$", str(im["r"])): errs.append(f"{path}.r: must look like '1440/743'")
