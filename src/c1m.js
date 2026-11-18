@@ -671,7 +671,7 @@ Object.assign(T.es, {
  "bx_h": "Fuera de la pantalla.",
  "bx_p": "No todo son píxeles. También hay música, ciudades, recetas, fotografías y unas cuantas historias que no tenían nada que ver con el diseño. O eso pensaba.",
  "bx_city": {
-  "h": "De aquí, de allá y de unos cuantos sitios más.",
+  "h": "Historial de ubicaciones",
   "p": "Hay lugares donde nací, otros donde crecí y algunos que terminé llamando casa. Todos dejaron algo.",
   "items": [
    [
@@ -877,7 +877,7 @@ Object.assign(T.en, {
  "bx_h": "Away from the screen.",
  "bx_p": "There's more to life than pixels. There's music, cities, recipes, photographs and a few stories that had nothing to do with design. Or so I thought.",
  "bx_city": {
-  "h": "A bit from here. A bit from everywhere.",
+  "h": "Location history",
   "p": "Some places are where I was born, others where I grew up, and a few became home along the way. Each left something with me.",
   "items": [
    [
@@ -1083,7 +1083,7 @@ Object.assign(T.fr, {
  "bx_h": "Loin des écrans.",
  "bx_p": "Il n'y a pas que les pixels dans la vie. Il y a aussi la musique, les villes, les recettes, les photos et quelques histoires qui n'avaient rien à voir avec le design. Enfin, c'est ce que je croyais.",
  "bx_city": {
-  "h": "D'ici, de là-bas et d'un peu partout.",
+  "h": "Historique des positions",
   "p": "Il y a des villes où je suis né, d'autres où j'ai grandi, et quelques-unes que j'ai fini par appeler chez moi. Chacune m'a laissé quelque chose.",
   "items": [
    [
