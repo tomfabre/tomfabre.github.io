@@ -571,9 +571,10 @@ section.ch{margin-top:clamp(4rem,7vw,6rem)}#form.quick .f-extra{display:none}
 .ch-tx a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line2);padding-bottom:1px}
 .ch-tx a:hover,.ch-tx a:focus-visible{border-color:var(--fg)}
 .ch-media{display:grid;gap:var(--s4);align-content:start}
-.ch-media .art,.ch-top .art{background:var(--surface);overflow:hidden}.ch-top{margin-bottom:var(--s10)}
+.ch-media .art,.ch-top .art{background:var(--surface);overflow:hidden}
+.ch-media .art img,.ch-top .art img{filter:none!important;transform:none!important}
 .ch-media .art.ph{border:1px dashed var(--line2);background:var(--surface)}
-@media (min-width:56rem){.ch-media{gap:var(--s6)}.ch-media .art{width:var(--w,100%);justify-self:var(--a,stretch);margin-top:var(--o,0)}}
+@media (min-width:56rem){.ch-in{container-type:inline-size}.ch-top{margin-bottom:var(--s10)}.ch-media{gap:var(--s6);justify-items:center}.ch-media .art,.ch-top .art{width:var(--w,34cqw)}}   /* every chapter image: same, smaller width (about 60% of the image column) */
 @media (max-width:55.99rem){.ch-media .art.m-off,.ch-top .art.m-off{display:none}.ch-top:not(:has(.art:not(.m-off))){display:none}}   /* mobile: fewer images per app (lighter page, calmer layout) */
 @media (min-width:56rem){
   .ch-right .ch-in{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s12);align-items:start}
@@ -2080,5 +2081,5 @@ Dis-moi ce que tu as en tête et on voit par où commencer.</p>
 
 
 <script>document.querySelectorAll("template[data-stash]").forEach(function(t){t.replaceWith(t.content)})</script><script>window.__CV="/cv-alvaro-fabre-fr.pdf"</script>
-<script src="/js/app.f1122283ce.js"></script>
+<script src="/js/app.b2084b9032.js"></script>
 <script defer src="/js/gsap.min.js?v=b2cff385"></script><script defer src="/js/lenis.min.js?v=acddbf76"></script><script defer src="/js/motion.js?v=7bb4ee9d"></script>
