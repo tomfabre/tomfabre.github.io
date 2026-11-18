@@ -25,8 +25,8 @@ const BIO_ASSETS = {
   places: [],                                                                                                                       // [{ name, url }] validated restaurants / places only
   spotify: { url: "https://open.spotify.com/playlist/3dyfLnAOgNAX2CSeAhr5bH", embed: "https://open.spotify.com/embed/playlist/3dyfLnAOgNAX2CSeAhr5bH?utm_source=generator&theme=0&si=90d9f237d1c04693" },                                                                                                          // https://open.spotify.com/playlist/<id>
   obsessions: [
-    { img: "img/bio/ob-1-eye-on-design.webp", alt: {"es": "Ilustración de portada de Eye on Design: un ojo geométrico naranja y gris sobre un fondo azul de líneas radiales", "en": "Cover artwork for Eye on Design: a geometric orange and grey eye on a blue background of radiating lines", "fr": "Illustration de couverture d'Eye on Design : un œil géométrique orange et gris sur un fond bleu de lignes rayonnantes"} },
-    { img: "img/bio/ob-2-its-nice-that.webp", alt: {"es": "Logotipo de It's Nice That: un círculo negro con la palabra NICE formando una sonrisa", "en": "It's Nice That logo: a black circle with the word NICE forming a smiley face", "fr": "Logo d'It's Nice That : un cercle noir avec le mot NICE formant un sourire"} },
+    { img: "img/bio/ob-1-eye-on-design.webp", alt: {"es": "Tres ejemplares impresos con la ilustración de portada de Eye on Design: un ojo geométrico gris con el centro naranja sobre un fondo azul de líneas radiales, apoyados sobre una superficie naranja", "en": "Three printed copies with the Eye on Design cover artwork: a geometric grey eye with an orange centre on a blue background of radiating lines, resting on an orange surface", "fr": "Trois exemplaires imprimés avec l'illustration de couverture d'Eye on Design : un œil géométrique gris au centre orange sur un fond bleu de lignes rayonnantes, posés sur une surface orange"} },
+    { img: "img/bio/ob-2-its-nice-that.webp", alt: {"es": "Página de inicio de It's Nice That, con su cabecera y un titular amarillo sobre una hoja verde, junto a su logotipo: un círculo negro con la palabra NICE formando una sonrisa", "en": "The It's Nice That homepage, with its header and a yellow headline over a green leaf, next to its logo: a black circle with the word NICE forming a smiley face", "fr": "Page d'accueil d'It's Nice That, avec son en-tête et un titre jaune sur une feuille verte, à côté de son logo : un cercle noir avec le mot NICE formant un sourire"} },
     { img: "img/bio/ob-3-the-creative-act.webp", alt: {"es": "El libro The Creative Act: A Way of Being, de Rick Rubin, con tapa de tela beige y un círculo negro con un punto en el centro", "en": "The book The Creative Act: A Way of Being by Rick Rubin, with a beige cloth cover and a black circle with a dot at its center", "fr": "Le livre The Creative Act: A Way of Being de Rick Rubin, avec une couverture en toile beige et un cercle noir au point central"} },
     { img: "img/bio/ob-4-royal-tenenbaums.webp", alt: {"es": "Fotograma de The Royal Tenenbaums: Richie y Margot sentados en un sofá dorado frente a una pared rojiza", "en": "Still from The Royal Tenenbaums: Richie and Margot sitting on a golden sofa in front of a rust-red wall", "fr": "Photogramme de The Royal Tenenbaums : Richie et Margot assis sur un canapé doré devant un mur rouille"} },
     { img: "img/bio/ob-5-helvetica.webp", alt: {"es": "Póster de Helvetica: el alfabeto en grandes letras negras y el título en rojo sobre fondo blanco", "en": "Helvetica poster: the alphabet in large black letters and the title in red on white", "fr": "Affiche d'Helvetica : l'alphabet en grandes lettres noires et le titre en rouge sur fond blanc"} }
@@ -66,7 +66,7 @@ function spEmbed(url){ try { const u = new URL(url); if (u.hostname !== "open.sp
 function renderBento2(){
   const t = L(), u = t.bx_ui, el = $("#bxBento"); if (!el) return;
   const c = t.bx_city, sp = t.bx_sp, ck = t.bx_ck, st = t.bx_st, ch = t.bx_ch, A = BIO_ASSETS;
-  const cities = `<article class="bx bx-city"><div class="bx-hd"><h3>${esc(c.h)}</h3><p>${esc(c.p)}</p></div>${bxViewer("city", 4300)}</article>`;
+  const cities = `<article class="bx bx-city"><div class="bx-hd"><h3>${esc(c.h)}</h3></div>${bxViewer("city", 4300)}</article>`;
   const embed = A.spotify.url ? spEmbed(A.spotify.embed || A.spotify.url) : null;
   const spot = `<article class="bx bx-sp"><div class="bx-hd"><h3>${esc(sp.h)}</h3>${sp.p ? `<p>${esc(sp.p)}</p>` : ""}</div>${embed
     ? `<div class="bx-sp-box" id="spBox"><div class="bx-sp-pane"><span class="bx-sp-ico" aria-hidden="true">♪</span><p class="bx-pl">${esc(sp.name)}</p><button type="button" class="btn sm solid" data-sp-load="${esc(embed)}">${esc(u.sp_load)}</button><p class="bx-note">${esc(u.sp_note)}</p></div></div>`
@@ -86,7 +86,9 @@ function bxViewer(kind, period){
   const group = kind === "city" ? t.bx_city.h : kind === "kitchen" ? t.bx_ck.h : t.bx_st.h;
   const slides = list.map((it, i) => `<span class="bx-sl${i === i0 ? " on" : ""}" data-sl="${i}" aria-hidden="true">${it.img ? `<img src="${esc(bxUrl(it.img))}" alt="" loading="lazy" decoding="async">` : `<span class="bx-ph" data-pending="${esc(it.kind)}"><span>${esc(u.ph)}</span><b>${esc(it.label)}</b></span>`}</span>`).join("");
   return `<div class="bx-view bx-r${ratio}" data-view="${kind}" data-n="${n}" data-period="${period}" role="group" aria-roledescription="carousel" aria-label="${esc(group + " · " + u.v_auto)}">
-    <button type="button" class="bx-frame" data-gal="${kind}" data-i="${i0}" aria-haspopup="dialog" aria-label="${esc(u.v_open + ": " + list[i0].alt)}"><span class="bx-slides">${slides}</span></button>
+    ${kind === "city"
+      ? `<div class="bx-frame bx-nozoom" role="img" aria-label="${esc(list[i0].alt)}"><span class="bx-slides">${slides}</span></div>`   /* ciudades: sin zoom ni ventana emergente */
+      : `<button type="button" class="bx-frame" data-gal="${kind}" data-i="${i0}" aria-haspopup="dialog" aria-label="${esc(u.v_open + ": " + list[i0].alt)}"><span class="bx-slides">${slides}</span></button>`}
     ${kind === "city" ? `<div class="bx-vc bx-tag"><span class="bx-vcap" aria-hidden="true">${esc(list[i0].cap)}</span></div>` : ""}</div>`;
 }
 function bxAnecdotes(){
@@ -101,7 +103,7 @@ function bxShow(v, i, manual){
   const vn = v.el.querySelector(".bx-vn"); if (vn) vn.textContent = String(i + 1).padStart(2, "0") + " / " + String(n).padStart(2, "0");
   if (kind !== "an") {
     const it = bxGallery(kind)[i], fr = v.el.querySelector(".bx-frame"), cap = v.el.querySelector(".bx-vcap");
-    fr.dataset.i = i; fr.setAttribute("aria-label", L().bx_ui.v_open + ": " + it.alt); if (cap) cap.textContent = it.cap;
+    fr.dataset.i = i; fr.setAttribute("aria-label", kind === "city" ? it.alt : L().bx_ui.v_open + ": " + it.alt); if (cap) cap.textContent = it.cap;
   }
   const live = v.el.querySelector("[data-vlive]"); if (live) { live.setAttribute("aria-live", manual ? "polite" : "off"); live.textContent = manual ? (kind === "an" ? v.el.querySelectorAll(".bx-qs")[i].textContent : bxGallery(kind)[i].alt) : ""; }
   v.next = Date.now() + v.period;

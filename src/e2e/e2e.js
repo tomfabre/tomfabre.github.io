@@ -153,8 +153,10 @@ async function fresh(b, opts = {}) {
       const cards = page.locator("#mmBoard .mm-c"); const n = await cards.count();
       await cards.nth(0).scrollIntoViewIfNeeded(); await cards.nth(0).click(); await cards.nth(1).click(); await page.waitForTimeout(1200);
       ok("memory: 12 cartas, jugable", n === 12 && (await page.textContent("#mmT")) === "1", n);
-      await page.locator(".bx-frame").first().click(); await page.waitForSelector("dialog[open]", { timeout: 3000 }).catch(() => {});
-      ok("bento: galería abre lightbox", await page.evaluate(() => !!document.querySelector("dialog[open]")));
+      await page.locator(".bx-city .bx-frame").first().click({ force: true }); await page.waitForTimeout(300);
+      ok("bento: las ciudades no abren lightbox", await page.evaluate(() => !document.querySelector("dialog[open]") && !document.querySelector(".bx-city [data-gal], .bx-city .bx-hd p")));
+      await page.locator(".bx-st .bx-frame").first().click(); await page.waitForSelector("dialog[open]", { timeout: 3000 }).catch(() => {});
+      ok("bento: la galería de calle abre lightbox", await page.evaluate(() => !!document.querySelector("dialog[open]")));
       await page.keyboard.press("Escape");
     }
     ok(`bio[${lg}] sin errores JS`, errs.length === 0, errs); await ctx.close();
