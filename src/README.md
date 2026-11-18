@@ -64,7 +64,7 @@ Figy y Molyb están ocultos. Sus líneas siguen en `c1p.js`, comentadas con el a
 
 ### Privacidad y legal (Fase 4)
 
-- Texto legal en `legal.py` (datos de identidad en `legal.json`, que no se toca). La política refleja el comportamiento real: `af-consent`, `af-lang`, `af-theme`, `af-view` (localStorage) y `yodis-v2` (sessionStorage); Spotify solo al pulsar; el script de Google Analytics se solicita en cada visita con el consentimiento en «denegado» por defecto; datos y metadatos que envía cada formulario.
+- Texto legal en `legal.py` (datos de identidad en `legal.json`, que no se toca). La política refleja el comportamiento real: `af-consent`, `af-lang`, `af-theme`, `af-view` (localStorage) y `yodis-v2` (sessionStorage); Spotify solo al pulsar; el script de Google Analytics (`gtag.js`) solo se descarga tras aceptar las cookies de analítica (`consent.js`, solo en tomfabre.com; antes de elegir o tras rechazar no hay ninguna petición a Google); datos y metadatos que envía cada formulario.
 - `af-paths` **no** es almacenamiento: es una etiqueta `<meta name="af-paths">` que activa el enrutado por rutas reales; no se guarda nada en el navegador.
 - Si cambia el comportamiento (nuevo almacenamiento, nuevo proveedor, cambios en los formularios o en la carga de GA), hay que actualizar `legal.py` en los tres idiomas.
 

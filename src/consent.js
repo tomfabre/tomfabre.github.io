@@ -1,4 +1,5 @@
-/* Cookie consent: Google Analytics only after the visitor accepts. Choice kept in localStorage ("af-consent").
+/* Cookie consent: Google Analytics (gtag.js) is NOT downloaded until the visitor accepts: before any choice and after "Reject" nothing is requested from Google.
+   Only on the production hostname, so previews and tests don't pollute the data. Choice kept in localStorage ("af-consent").
    Accept and Reject have the same weight. Anyone can reopen it from the footer / legal page ([data-cookie-settings]). */
 (function(){
   var KEY = "af-consent";
@@ -10,7 +11,15 @@
   };
   function get(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
   function put(v){ try { localStorage.setItem(KEY, v); } catch(e){} }
-  function apply(v){ if (typeof gtag === "function") gtag("consent", "update", { analytics_storage: v === "granted" ? "granted" : "denied" }); }
+  var GA_ID = "G-W3V7MB7SZ7", gaOn = false;
+  function loadGA(){
+    if (gaOn || !/^(www\.)?tomfabre\.com$/.test(location.hostname)) return;
+    gaOn = true; var s = document.createElement("script"); s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID; document.head.appendChild(s);
+  }
+  function apply(v){
+    if (typeof gtag === "function") gtag("consent", "update", { analytics_storage: v === "granted" ? "granted" : "denied" });
+    if (v === "granted") loadGA();   /* only now is the Google script requested; consent is already "granted" in the dataLayer */
+  }
   function lang(){ var l = (document.documentElement.lang || "es").slice(0,2); return TX[l] ? l : "es"; }
   var box = null;
   function render(){
