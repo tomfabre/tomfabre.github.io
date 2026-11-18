@@ -255,6 +255,14 @@ function wireBio2(){
     LBX = { list, i: Math.max(0, btns.indexOf(b)), opener: b }; lbShow();
     if (d.showModal) d.showModal(); else d.setAttribute("open", "");
   });
+  /* project index: scroll to the chapter (links are # anchors, which the router would read as a page change) and move focus to its heading */
+  document.addEventListener("click", e => {
+    const a = e.target.closest && e.target.closest("[data-ixto]"); if (!a) return;
+    const t = document.getElementById(a.dataset.ixto); if (!t) return;
+    e.preventDefault();
+    if (window.__lenis) window.__lenis.scrollTo(Math.max(0, t.getBoundingClientRect().top + window.scrollY - 16), { duration:1.2, force:true }); else t.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    const h = t.querySelector("h2"); if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll:true }); }
+  });
   const lm = $("#lbMedia"), lbToggle = () => { if (lm.classList.contains("rfree")) lm.classList.toggle("zm"); };
   lm.addEventListener("click", lbToggle);
   lm.addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && lm.classList.contains("rfree")) { e.preventDefault(); lbToggle(); } });

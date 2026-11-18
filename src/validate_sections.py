@@ -12,7 +12,8 @@ ID_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 TYPES = {
     "text":    ({"type", "id", "h", "p"},          {"t", "img", "flow", "langs"}),
     "metrics": ({"type", "id", "h", "items"},      {"t", "p", "after", "flow", "langs"}),
-    "chapter": ({"type", "id", "h", "t", "p", "layout", "media"}, {"meta", "metric", "links", "langs"}),
+    "chapter": ({"type", "id", "h", "t", "layout"}, {"p", "media", "meta", "metric", "links", "langs", "eb", "sub", "blocks", "kit"}),
+    "index":   ({"type", "id", "h", "t", "p", "items"}, {"langs"}),
 }
 LAYOUTS = ("right", "left", "wide")
 
@@ -169,9 +170,38 @@ def validate(sections, project_keys, img_exists, projects=None):
                             else: _img(it[k], f"{w}.{k}", errs, img_exists)
             if typ == "chapter":
                 if s.get("layout") not in LAYOUTS: errs.append(f"{at}.layout: must be one of {LAYOUTS}")
+                ed = "blocks" in s     # editorial chapter: eb, sub, blocks (label/title/paragraphs) and one wide `kit` figure instead of p + media
+                if ed:
+                    for k in ("p", "media"):
+                        if k in s: errs.append(f"{at}: '{k}' is not allowed together with 'blocks'")
+                    if "eb" in s: _loc(s["eb"], f"{at}.eb", errs, sl)
+                    if "sub" in s: _loc(s["sub"], f"{at}.sub", errs, sl)
+                    bl = s.get("blocks")
+                    if not isinstance(bl, list) or not bl: errs.append(f"{at}.blocks: must be a non-empty list")
+                    else:
+                        for j, b in enumerate(bl):
+                            w = f"{at}.blocks[{j}]"
+                            if not isinstance(b, dict) or not {"l", "p"} <= set(b) or set(b) - {"l", "t", "p", "areas"}: errs.append(f"{w}: must be {{l, p[, t, areas]}}"); continue
+                            _loc(b["l"], f"{w}.l", errs, sl)
+                            if "t" in b: _loc(b["t"], f"{w}.t", errs, sl)
+                            if "areas" in b: _loc(b["areas"], f"{w}.areas", errs, sl)
+                            _paras(b["p"], f"{w}.p", errs, True, sl)
+                    kt = s.get("kit")
+                    if not isinstance(kt, dict) or not {"l", "img"} <= set(kt) or set(kt) - {"l", "note", "img"}: errs.append(f"{at}.kit: must be {{l, img[, note]}}")
+                    else:
+                        _loc(kt["l"], f"{at}.kit.l", errs, sl)
+                        if "note" in kt: _loc(kt["note"], f"{at}.kit.note", errs, sl)
+                        _img(kt["img"], f"{at}.kit.img", errs, img_exists)
+                        if isinstance(kt["img"], dict) and not re.match(r"^\d{1,5}/\d{1,5}$", str(kt["img"].get("r", ""))): errs.append(f"{at}.kit.img.r: required, like '1448/1086'")
+                else:
+                    for k in ("p", "media"):
+                        if k not in s: errs.append(f"{at} (chapter): missing required field '{k}'")
+                    for k in ("eb", "sub", "kit"):
+                        if k in s: errs.append(f"{at}: '{k}' needs 'blocks'")
                 if "p" in s: _paras(s["p"], f"{at}.p", errs, True, sl)
                 md = s.get("media")
-                if not isinstance(md, list) or not md: errs.append(f"{at}.media: must be a non-empty list of images")
+                if ed: pass
+                elif not isinstance(md, list) or not md: errs.append(f"{at}.media: must be a non-empty list of images")
                 else:
                     for j, im in enumerate(md):
                         _img(im, f"{at}.media[{j}]", errs, img_exists)
@@ -188,6 +218,18 @@ def validate(sections, project_keys, img_exists, projects=None):
                     if not isinstance(ln, dict) or set(ln) != {"href", "l"}: errs.append(f"{at}.links[{j}]: must be {{href, l}}"); continue
                     if not _url_ok(ln["href"]): errs.append(f"{at}.links[{j}].href: must be an absolute https URL ({ln['href']!r})")
                     _loc(ln["l"], f"{at}.links[{j}].l", errs)
+            if typ == "index":
+                _paras(s.get("p", []), f"{at}.p", errs, True, sl)
+                its = s.get("items")
+                if not isinstance(its, list) or not its: errs.append(f"{at}.items: must be a non-empty list")
+                else:
+                    ids = {x.get("id") for x in secs if isinstance(x, dict) and x.get("type") == "chapter"}
+                    for j, it in enumerate(its):
+                        w = f"{at}.items[{j}]"
+                        if not isinstance(it, dict) or set(it) != {"to", "n", "l", "tag"}: errs.append(f"{w}: must be {{to, n, l, tag}}"); continue
+                        if it["to"] not in ids: errs.append(f"{w}.to: '{it['to']}' is not a chapter id of this project")
+                        if not isinstance(it["n"], str) or not re.match(r"^\d{2}$", it["n"]): errs.append(f"{w}.n: two digits, like '01'")
+                        _loc(it["l"], f"{w}.l", errs, sl); _loc(it["tag"], f"{w}.tag", errs, sl)
             if typ == "metrics":
                 if "p" in s: _paras(s["p"], f"{at}.p", errs, False, sl)
                 if "after" in s: _paras(s["after"], f"{at}.after", errs, False, sl)
@@ -224,7 +266,10 @@ def flatten(secs, lg):
     for s in secs:
         if lg not in s["h"]: continue      # section written for other languages only
         extra = [f"{m['l'][lg]}: {m['v'][lg]}" for m in s.get("meta", [])] + ([f"{s['metric']['n'][lg]} {s['metric']['l'][lg]}" + (f" ({s['metric']['note'][lg]})" if 'note' in s['metric'] else "")] if s.get("metric") else []) + [f"{x['l'][lg]}: {x['href']}" for x in s.get("links", [])]
-        paras = [plain(p, lg) for p in s.get("p", []) if lg in p] + [plain(p, lg) for f in s.get("flow", []) for p in f.get("p", []) if lg in p] + [plain(p, lg) for p in s.get("after", []) if lg in p] + extra
+        blk = [x for b in s.get("blocks", []) for x in ([b["l"][lg] + (": " + b["t"][lg] if "t" in b else "")] + [plain(p, lg) for p in b["p"] if lg in p] + ([b["areas"][lg]] if "areas" in b else []))]
+        blk = ([s["sub"][lg]] if "sub" in s else []) + blk + ([f"{s['kit']['l'][lg]}" + (f" ({s['kit']['note'][lg]})" if "note" in s["kit"] else "")] if "kit" in s else [])
+        blk += [f"{it['n']} {it['l'][lg]} ({it['tag'][lg]})" for it in s.get("items", [])] if s["type"] == "index" else []
+        paras = [plain(p, lg) for p in s.get("p", []) if lg in p] + blk + [plain(p, lg) for f in s.get("flow", []) for p in f.get("p", []) if lg in p] + [plain(p, lg) for p in s.get("after", []) if lg in p] + extra
         if s["type"] == "metrics":
             paras.insert(len(s.get("p", [])), " · ".join(f"{it['n'][lg]} {it['l'][lg]}" for it in s["items"]))
         out.append({"id": s["id"], "heading": s["t"][lg] if "t" in s and lg in s["t"] else s["h"][lg], "label": s["h"][lg], "text": paras})
@@ -249,8 +294,21 @@ def validate_hero(hero, project_keys):
     if not isinstance(hero, dict): return ["HERO must be an object {projectKey: {tag, lead, alt}}"]
     for pk, h in hero.items():
         if pk not in project_keys: errs.append(f"HERO['{pk}']: unknown project key"); continue
-        if not isinstance(h, dict) or set(h) != {"tag", "lead", "alt"}: errs.append(f"HERO['{pk}']: must be {{tag, lead, alt}}"); continue
-        for f in ("tag", "lead", "alt"): _loc(h[f], f"HERO['{pk}'].{f}", errs)
+        if not isinstance(h, dict) or not {"tag", "lead", "alt"} <= set(h) or set(h) - {"tag", "lead", "alt", "eb", "h1", "lead2", "facts", "cta"}: errs.append(f"HERO['{pk}']: must be {{tag, lead, alt[, eb, h1, lead2, facts, cta]}}"); continue
+        for f in ("tag", "lead", "alt", "eb", "h1", "lead2"):
+            if f in h: _loc(h[f], f"HERO['{pk}'].{f}", errs)
+        if "cta" in h:
+            c = h["cta"]
+            if not isinstance(c, dict) or set(c) != {"h", "p", "b"}: errs.append(f"HERO['{pk}'].cta: must be {{h, p, b}}")
+            else:
+                for f in c: _loc(c[f], f"HERO['{pk}'].cta.{f}", errs)
+        if "facts" in h:
+            fc = h["facts"]
+            if not isinstance(fc, list) or len(fc) != 4: errs.append(f"HERO['{pk}'].facts: must be a list of exactly 4 {{l, v}}")
+            else:
+                for j, f in enumerate(fc):
+                    if not isinstance(f, dict) or set(f) != {"l", "v"}: errs.append(f"HERO['{pk}'].facts[{j}]: must be {{l, v}}"); continue
+                    _loc(f["l"], f"HERO['{pk}'].facts[{j}].l", errs); _loc(f["v"], f"HERO['{pk}'].facts[{j}].v", errs)
     return errs
 
 
