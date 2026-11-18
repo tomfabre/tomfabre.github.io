@@ -2275,44 +2275,36 @@ SECTIONS["mobile-experiences"] = [
      "en": "Apolo Launcher UI Kit: logo, colour palette, Inter typeface, themes, wallpapers, search and navigation components, widgets and three mobile screens",
      "fr": "UI Kit d'Apolo Launcher : logotype, palette de couleurs, typographie Inter, thèmes, fonds d'écran, composants de recherche et de navigation, widgets et trois écrans mobiles"
     }
-   },
-   "crops": [
-    {
-     "l": {
-      "es": "Pantallas",
-      "en": "Screens",
-      "fr": "Écrans"
-     },
-     "img": {
-      "key": "mobile-experiences-kit-apolo",
-      "v": "screens",
-      "r": "700/430",
-      "alt": {
-       "es": "Tres pantallas de Apolo Launcher: pantalla de inicio, panel de widgets y edición de iconos",
-       "en": "Three Apolo Launcher screens: home screen, widgets panel and icon editing",
-       "fr": "Trois écrans d'Apolo Launcher : écran d'accueil, panneau de widgets et édition d'icônes"
-      }
-     }
-    },
-    {
-     "l": {
-      "es": "Componentes",
-      "en": "Components",
-      "fr": "Composants"
-     },
-     "img": {
-      "key": "mobile-experiences-kit-apolo",
-      "v": "components",
-      "r": "685/615",
-      "alt": {
-       "es": "Componentes de Apolo Launcher: búsqueda, interruptores, dock, widgets de música y tiempo, Boost y apps ocultas",
-       "en": "Apolo Launcher components: search, switches, dock, music and weather widgets, Boost and hidden apps",
-       "fr": "Composants d'Apolo Launcher : recherche, interrupteurs, dock, widgets musique et météo, Boost et applis masquées"
-      }
+   }
+  },
+  "figs": [
+   {
+    "pos": "top",
+    "img": {
+     "key": "mobile-experiences",
+     "v": 1,
+     "r": "1536/1024",
+     "alt": {
+      "es": "Apolo Launcher: funciones, bocetos, pruebas e interfaz final",
+      "en": "Apolo Launcher: features, sketches, testing and final interface",
+      "fr": "Apolo Launcher : fonctionnalités, croquis, tests et interface finale"
      }
     }
-   ]
-  }
+   },
+   {
+    "pos": "end",
+    "img": {
+     "key": "mobile-experiences",
+     "v": 2,
+     "r": "1536/872",
+     "alt": {
+      "es": "Apolo Launcher: funciones, proceso y sistema visual",
+      "en": "Apolo Launcher: features, process and visual system",
+      "fr": "Apolo Launcher : fonctionnalités, processus et système visuel"
+     }
+    }
+   }
+  ]
  },
  {
   "type": "chapter",
@@ -2500,61 +2492,36 @@ SECTIONS["mobile-experiences"] = [
      "en": "Appy UI Kit: logo, HEX colours, Montserrat typeface, buttons, contest cards, ticket wallet, participation actions, navigation and three mobile screens",
      "fr": "UI Kit d'Appy : logotype, couleurs avec codes HEX, typographie Montserrat, boutons, cartes de concours, portefeuille de tickets, actions de participation, navigation et trois écrans mobiles"
     }
-   },
-   "crops": [
-    {
-     "l": {
-      "es": "Pantallas",
-      "en": "Screens",
-      "fr": "Écrans"
-     },
-     "img": {
-      "key": "mobile-experiences-kit-appy",
-      "v": "screens",
-      "r": "800/525",
-      "alt": {
-       "es": "Tres pantallas de Appy: lista de concursos, oportunidades de ganar y cartera de tickets",
-       "en": "Three Appy screens: contest list, chances to win and ticket wallet",
-       "fr": "Trois écrans d'Appy : liste des concours, chances de gagner et portefeuille de tickets"
-      }
-     }
-    },
-    {
-     "l": {
-      "es": "Componentes",
-      "en": "Components",
-      "fr": "Composants"
-     },
-     "img": {
-      "key": "mobile-experiences-kit-appy",
-      "v": "components",
-      "r": "640/325",
-      "alt": {
-       "es": "Componentes de Appy: botones de participar y patrocinar, pestañas de estado, contadores y avatares",
-       "en": "Appy components: participate and sponsor buttons, status tabs, timers and avatars",
-       "fr": "Composants d'Appy : boutons participer et parrainer, onglets d'état, minuteurs et avatars"
-      }
-     }
-    },
-    {
-     "l": {
-      "es": "Acciones y navegación",
-      "en": "Actions and navigation",
-      "fr": "Actions et navigation"
-     },
-     "img": {
-      "key": "mobile-experiences-kit-appy",
-      "v": "actions",
-      "r": "577/490",
-      "alt": {
-       "es": "Tarjetas de acción de Appy (ver un vídeo, responder una encuesta, completar una acción, recomendar a un amigo) y barra de navegación",
-       "en": "Appy action cards (watch a video, take a survey, complete an action, sponsor a friend) and navigation bar",
-       "fr": "Cartes d'action d'Appy (regarder une vidéo, répondre à un sondage, accomplir une action, parrainer un ami) et barre de navigation"
-      }
+   }
+  },
+  "figs": [
+   {
+    "pos": "top",
+    "img": {
+     "key": "mobile-experiences",
+     "v": 4,
+     "r": "1536/608",
+     "alt": {
+      "es": "Appy: una app de recompensas lúdica con acciones cotidianas",
+      "en": "Appy: a playful rewards app with everyday actions",
+      "fr": "Appy : une appli de récompenses ludique aux actions du quotidien"
      }
     }
-   ]
-  }
+   },
+   {
+    "pos": "end",
+    "img": {
+     "key": "mobile-experiences",
+     "v": 5,
+     "r": "1536/1024",
+     "alt": {
+      "es": "Appy: del concepto al producto, proceso y sistema de diseño",
+      "en": "Appy: from idea to product, process and design system",
+      "fr": "Appy : de l'idée au produit, processus et système de design"
+     }
+    }
+   }
+  ]
  },
  {
   "type": "chapter",
@@ -2722,44 +2689,36 @@ SECTIONS["mobile-experiences"] = [
      "en": "Mood Messenger visual exploration: logo, colour palette, Poppins typeface, chat components, icon set, stickers and three mobile screens",
      "fr": "Exploration visuelle de Mood Messenger : logotype, palette de couleurs, typographie Poppins, composants de chat, icônes, stickers et trois écrans mobiles"
     }
-   },
-   "crops": [
-    {
-     "l": {
-      "es": "Pantallas",
-      "en": "Screens",
-      "fr": "Écrans"
-     },
-     "img": {
-      "key": "mobile-experiences-kit-mood",
-      "v": "screens",
-      "r": "902/596",
-      "alt": {
-       "es": "Tres pantallas de la exploración visual de Mood Messenger: lista de chats, conversación y stickers",
-       "en": "Three screens from the Mood Messenger visual exploration: chat list, conversation and stickers",
-       "fr": "Trois écrans de l'exploration visuelle de Mood Messenger : liste de discussions, conversation et stickers"
-      }
-     }
-    },
-    {
-     "l": {
-      "es": "Logotipo, color y stickers",
-      "en": "Logo, colour and stickers",
-      "fr": "Logotype, couleurs et stickers"
-     },
-     "img": {
-      "key": "mobile-experiences-kit-mood",
-      "v": "system",
-      "r": "425/1015",
-      "alt": {
-       "es": "Logotipo, paleta, tipografía Poppins y stickers de Mood Messenger",
-       "en": "Mood Messenger logo, palette, Poppins typeface and stickers",
-       "fr": "Logotype, palette, typographie Poppins et stickers de Mood Messenger"
-      }
+   }
+  },
+  "figs": [
+   {
+    "pos": "top",
+    "img": {
+     "key": "mobile-experiences",
+     "v": 6,
+     "r": "1448/1086",
+     "alt": {
+      "es": "Mood Messenger: mensajería más expresiva",
+      "en": "Mood Messenger: more expressive messaging",
+      "fr": "Mood Messenger : une messagerie plus expressive"
      }
     }
-   ]
-  }
+   },
+   {
+    "pos": "end",
+    "img": {
+     "key": "mobile-experiences",
+     "v": 7,
+     "r": "1448/1930",
+     "alt": {
+      "es": "Mood Messenger: proceso de diseño, de la investigación al sistema visual",
+      "en": "Mood Messenger: design process, from research to visual system",
+      "fr": "Mood Messenger : processus de design, de la recherche au système visuel"
+     }
+    }
+   }
+  ]
  },
  {
   "type": "text",

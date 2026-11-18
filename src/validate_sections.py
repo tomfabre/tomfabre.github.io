@@ -12,7 +12,7 @@ ID_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 TYPES = {
     "text":    ({"type", "id", "h", "p"},          {"t", "img", "flow", "langs"}),
     "metrics": ({"type", "id", "h", "items"},      {"t", "p", "after", "flow", "langs"}),
-    "chapter": ({"type", "id", "h", "t", "layout"}, {"p", "media", "meta", "metric", "links", "langs", "eb", "sub", "blocks", "kit"}),
+    "chapter": ({"type", "id", "h", "t", "layout"}, {"p", "media", "meta", "metric", "links", "langs", "eb", "sub", "blocks", "kit", "figs"}),
     "index":   ({"type", "id", "h", "t", "p", "items"}, {"langs"}),
 }
 LAYOUTS = ("right", "left", "wide")
@@ -186,6 +186,14 @@ def validate(sections, project_keys, img_exists, projects=None):
                             if "t" in b: _loc(b["t"], f"{w}.t", errs, sl)
                             if "areas" in b: _loc(b["areas"], f"{w}.areas", errs, sl)
                             _paras(b["p"], f"{w}.p", errs, True, sl)
+                    fg = s.get("figs", [])
+                    if not isinstance(fg, list) or len(fg) > 3: errs.append(f"{at}.figs: must be a list of at most 3 {{pos, img}}")
+                    else:
+                        for j, f in enumerate(fg):
+                            w = f"{at}.figs[{j}]"
+                            if not isinstance(f, dict) or set(f) != {"pos", "img"} or f["pos"] not in ("top", "end"): errs.append(f"{w}: must be {{pos: 'top'|'end', img}}"); continue
+                            _img(f["img"], f"{w}.img", errs, img_exists)
+                            if not re.match(r"^\d{1,5}/\d{1,5}$", str(f["img"].get("r", ""))) if isinstance(f["img"], dict) else True: errs.append(f"{w}.img.r: required, like '1536/1024'")
                     kt = s.get("kit")
                     if not isinstance(kt, dict) or not {"l", "img"} <= set(kt) or set(kt) - {"l", "note", "img", "crops"}: errs.append(f"{at}.kit: must be {{l, img[, note, crops]}}")
                     else:

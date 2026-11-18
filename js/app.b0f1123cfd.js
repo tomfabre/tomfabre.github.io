@@ -1,4 +1,4 @@
-window.__IMG={"360estudio": {"0": "/img/360estudio-0.webp", "1": "/img/360estudio-1.webp", "2": "/img/360estudio-2.webp", "3": "/img/360estudio-3.webp", "cover": "/img/360estudio-cover.webp"}, "a2pas": {"0": "/img/a2pas-0.webp", "1": "/img/a2pas-1.webp", "2": "/img/a2pas-2.webp", "3": "/img/a2pas-3.webp", "4": "/img/a2pas-4.webp", "5": "/img/a2pas-5.webp", "cover": "/img/a2pas-cover.webp"}, "binome": {"0": "/img/binome-0.webp", "1": "/img/binome-1.webp", "2": "/img/binome-2.webp", "3": "/img/binome-3.webp", "cover": "/img/binome-cover.webp"}, "carceral-ecologies": {"0": "/img/carceral-ecologies-0.webp", "1": "/img/carceral-ecologies-1.webp", "2": "/img/carceral-ecologies-2.webp", "3": "/img/carceral-ecologies-3.webp", "cover": "/img/carceral-ecologies-cover.webp"}, "contazara": {"0": "/img/contazara-0.webp", "1": "/img/contazara-1.webp", "2": "/img/contazara-2.webp", "3": "/img/contazara-3.webp", "4": "/img/contazara-4.webp", "cover": "/img/contazara-cover.webp"}, "gallery": {"1": "/img/gallery-1.webp", "2": "/img/gallery-2.webp", "3": "/img/gallery-3.webp", "4": "/img/gallery-4.webp", "5": "/img/gallery-5.webp", "6": "/img/gallery-6.webp"}, "happylife": {"0": "/img/happylife-0.webp", "1": "/img/happylife-1.webp", "2": "/img/happylife-2.webp", "3": "/img/happylife-3.webp", "cover": "/img/happylife-cover.webp"}, "hover": {"mail": "/img/hover-mail.webp"}, "mobile-experiences": {"0": "/img/mobile-experiences-0.webp", "1": "/img/mobile-experiences-1.webp", "2": "/img/mobile-experiences-2.webp", "3": "/img/mobile-experiences-3.webp", "4": "/img/mobile-experiences-4.webp", "5": "/img/mobile-experiences-5.webp", "6": "/img/mobile-experiences-6.webp", "7": "/img/mobile-experiences-7.webp", "8": "/img/mobile-experiences-8.webp", "cover": "/img/mobile-experiences-cover.webp", "og": "/img/mobile-experiences-og.webp"}, "mobile-experiences-kit-apolo": {"components": "/img/mobile-experiences-kit-apolo-components.webp", "screens": "/img/mobile-experiences-kit-apolo-screens.webp"}, "mobile-experiences-kit": {"apolo": "/img/mobile-experiences-kit-apolo.webp", "appy": "/img/mobile-experiences-kit-appy.webp", "mood": "/img/mobile-experiences-kit-mood.webp"}, "mobile-experiences-kit-appy": {"actions": "/img/mobile-experiences-kit-appy-actions.webp", "components": "/img/mobile-experiences-kit-appy-components.webp", "screens": "/img/mobile-experiences-kit-appy-screens.webp"}, "mobile-experiences-kit-mood": {"screens": "/img/mobile-experiences-kit-mood-screens.webp", "system": "/img/mobile-experiences-kit-mood-system.webp"}, "profile": {"1": "/img/profile-1.webp"}, "yaypegs": {"0": "/img/yaypegs-0.webp", "1": "/img/yaypegs-1.webp", "2": "/img/yaypegs-2.webp", "3": "/img/yaypegs-3.webp", "cover": "/img/yaypegs-cover.webp"}};
+window.__IMG={"360estudio": {"0": "/img/360estudio-0.webp", "1": "/img/360estudio-1.webp", "2": "/img/360estudio-2.webp", "3": "/img/360estudio-3.webp", "cover": "/img/360estudio-cover.webp"}, "a2pas": {"0": "/img/a2pas-0.webp", "1": "/img/a2pas-1.webp", "2": "/img/a2pas-2.webp", "3": "/img/a2pas-3.webp", "4": "/img/a2pas-4.webp", "5": "/img/a2pas-5.webp", "cover": "/img/a2pas-cover.webp"}, "binome": {"0": "/img/binome-0.webp", "1": "/img/binome-1.webp", "2": "/img/binome-2.webp", "3": "/img/binome-3.webp", "cover": "/img/binome-cover.webp"}, "carceral-ecologies": {"0": "/img/carceral-ecologies-0.webp", "1": "/img/carceral-ecologies-1.webp", "2": "/img/carceral-ecologies-2.webp", "3": "/img/carceral-ecologies-3.webp", "cover": "/img/carceral-ecologies-cover.webp"}, "contazara": {"0": "/img/contazara-0.webp", "1": "/img/contazara-1.webp", "2": "/img/contazara-2.webp", "3": "/img/contazara-3.webp", "4": "/img/contazara-4.webp", "cover": "/img/contazara-cover.webp"}, "gallery": {"1": "/img/gallery-1.webp", "2": "/img/gallery-2.webp", "3": "/img/gallery-3.webp", "4": "/img/gallery-4.webp", "5": "/img/gallery-5.webp", "6": "/img/gallery-6.webp"}, "happylife": {"0": "/img/happylife-0.webp", "1": "/img/happylife-1.webp", "2": "/img/happylife-2.webp", "3": "/img/happylife-3.webp", "cover": "/img/happylife-cover.webp"}, "hover": {"mail": "/img/hover-mail.webp"}, "mobile-experiences": {"0": "/img/mobile-experiences-0.webp", "1": "/img/mobile-experiences-1.webp", "2": "/img/mobile-experiences-2.webp", "3": "/img/mobile-experiences-3.webp", "4": "/img/mobile-experiences-4.webp", "5": "/img/mobile-experiences-5.webp", "6": "/img/mobile-experiences-6.webp", "7": "/img/mobile-experiences-7.webp", "8": "/img/mobile-experiences-8.webp", "cover": "/img/mobile-experiences-cover.webp", "og": "/img/mobile-experiences-og.webp"}, "mobile-experiences-kit": {"apolo": "/img/mobile-experiences-kit-apolo.webp", "appy": "/img/mobile-experiences-kit-appy.webp", "mood": "/img/mobile-experiences-kit-mood.webp"}, "profile": {"1": "/img/profile-1.webp"}, "yaypegs": {"0": "/img/yaypegs-0.webp", "1": "/img/yaypegs-1.webp", "2": "/img/yaypegs-2.webp", "3": "/img/yaypegs-3.webp", "cover": "/img/yaypegs-cover.webp"}};
 const PROJ = [
   {key:"contazara", role:"Lead Product Designer", years:"2025 –"},
   {key:"healthtech", role:"Lead Product Designer", years:"MVP"},
@@ -3126,44 +3126,36 @@ SECTIONS["mobile-experiences"] = [
      "en": "Apolo Launcher UI Kit: logo, colour palette, Inter typeface, themes, wallpapers, search and navigation components, widgets and three mobile screens",
      "fr": "UI Kit d'Apolo Launcher : logotype, palette de couleurs, typographie Inter, thèmes, fonds d'écran, composants de recherche et de navigation, widgets et trois écrans mobiles"
     }
-   },
-   "crops": [
-    {
-     "l": {
-      "es": "Pantallas",
-      "en": "Screens",
-      "fr": "Écrans"
-     },
-     "img": {
-      "key": "mobile-experiences-kit-apolo",
-      "v": "screens",
-      "r": "700/430",
-      "alt": {
-       "es": "Tres pantallas de Apolo Launcher: pantalla de inicio, panel de widgets y edición de iconos",
-       "en": "Three Apolo Launcher screens: home screen, widgets panel and icon editing",
-       "fr": "Trois écrans d'Apolo Launcher : écran d'accueil, panneau de widgets et édition d'icônes"
-      }
-     }
-    },
-    {
-     "l": {
-      "es": "Componentes",
-      "en": "Components",
-      "fr": "Composants"
-     },
-     "img": {
-      "key": "mobile-experiences-kit-apolo",
-      "v": "components",
-      "r": "685/615",
-      "alt": {
-       "es": "Componentes de Apolo Launcher: búsqueda, interruptores, dock, widgets de música y tiempo, Boost y apps ocultas",
-       "en": "Apolo Launcher components: search, switches, dock, music and weather widgets, Boost and hidden apps",
-       "fr": "Composants d'Apolo Launcher : recherche, interrupteurs, dock, widgets musique et météo, Boost et applis masquées"
-      }
+   }
+  },
+  "figs": [
+   {
+    "pos": "top",
+    "img": {
+     "key": "mobile-experiences",
+     "v": 1,
+     "r": "1536/1024",
+     "alt": {
+      "es": "Apolo Launcher: funciones, bocetos, pruebas e interfaz final",
+      "en": "Apolo Launcher: features, sketches, testing and final interface",
+      "fr": "Apolo Launcher : fonctionnalités, croquis, tests et interface finale"
      }
     }
-   ]
-  }
+   },
+   {
+    "pos": "end",
+    "img": {
+     "key": "mobile-experiences",
+     "v": 2,
+     "r": "1536/872",
+     "alt": {
+      "es": "Apolo Launcher: funciones, proceso y sistema visual",
+      "en": "Apolo Launcher: features, process and visual system",
+      "fr": "Apolo Launcher : fonctionnalités, processus et système visuel"
+     }
+    }
+   }
+  ]
  },
  {
   "type": "chapter",
@@ -3351,61 +3343,36 @@ SECTIONS["mobile-experiences"] = [
      "en": "Appy UI Kit: logo, HEX colours, Montserrat typeface, buttons, contest cards, ticket wallet, participation actions, navigation and three mobile screens",
      "fr": "UI Kit d'Appy : logotype, couleurs avec codes HEX, typographie Montserrat, boutons, cartes de concours, portefeuille de tickets, actions de participation, navigation et trois écrans mobiles"
     }
-   },
-   "crops": [
-    {
-     "l": {
-      "es": "Pantallas",
-      "en": "Screens",
-      "fr": "Écrans"
-     },
-     "img": {
-      "key": "mobile-experiences-kit-appy",
-      "v": "screens",
-      "r": "800/525",
-      "alt": {
-       "es": "Tres pantallas de Appy: lista de concursos, oportunidades de ganar y cartera de tickets",
-       "en": "Three Appy screens: contest list, chances to win and ticket wallet",
-       "fr": "Trois écrans d'Appy : liste des concours, chances de gagner et portefeuille de tickets"
-      }
-     }
-    },
-    {
-     "l": {
-      "es": "Componentes",
-      "en": "Components",
-      "fr": "Composants"
-     },
-     "img": {
-      "key": "mobile-experiences-kit-appy",
-      "v": "components",
-      "r": "640/325",
-      "alt": {
-       "es": "Componentes de Appy: botones de participar y patrocinar, pestañas de estado, contadores y avatares",
-       "en": "Appy components: participate and sponsor buttons, status tabs, timers and avatars",
-       "fr": "Composants d'Appy : boutons participer et parrainer, onglets d'état, minuteurs et avatars"
-      }
-     }
-    },
-    {
-     "l": {
-      "es": "Acciones y navegación",
-      "en": "Actions and navigation",
-      "fr": "Actions et navigation"
-     },
-     "img": {
-      "key": "mobile-experiences-kit-appy",
-      "v": "actions",
-      "r": "577/490",
-      "alt": {
-       "es": "Tarjetas de acción de Appy (ver un vídeo, responder una encuesta, completar una acción, recomendar a un amigo) y barra de navegación",
-       "en": "Appy action cards (watch a video, take a survey, complete an action, sponsor a friend) and navigation bar",
-       "fr": "Cartes d'action d'Appy (regarder une vidéo, répondre à un sondage, accomplir une action, parrainer un ami) et barre de navigation"
-      }
+   }
+  },
+  "figs": [
+   {
+    "pos": "top",
+    "img": {
+     "key": "mobile-experiences",
+     "v": 4,
+     "r": "1536/608",
+     "alt": {
+      "es": "Appy: una app de recompensas lúdica con acciones cotidianas",
+      "en": "Appy: a playful rewards app with everyday actions",
+      "fr": "Appy : une appli de récompenses ludique aux actions du quotidien"
      }
     }
-   ]
-  }
+   },
+   {
+    "pos": "end",
+    "img": {
+     "key": "mobile-experiences",
+     "v": 5,
+     "r": "1536/1024",
+     "alt": {
+      "es": "Appy: del concepto al producto, proceso y sistema de diseño",
+      "en": "Appy: from idea to product, process and design system",
+      "fr": "Appy : de l'idée au produit, processus et système de design"
+     }
+    }
+   }
+  ]
  },
  {
   "type": "chapter",
@@ -3573,44 +3540,36 @@ SECTIONS["mobile-experiences"] = [
      "en": "Mood Messenger visual exploration: logo, colour palette, Poppins typeface, chat components, icon set, stickers and three mobile screens",
      "fr": "Exploration visuelle de Mood Messenger : logotype, palette de couleurs, typographie Poppins, composants de chat, icônes, stickers et trois écrans mobiles"
     }
-   },
-   "crops": [
-    {
-     "l": {
-      "es": "Pantallas",
-      "en": "Screens",
-      "fr": "Écrans"
-     },
-     "img": {
-      "key": "mobile-experiences-kit-mood",
-      "v": "screens",
-      "r": "902/596",
-      "alt": {
-       "es": "Tres pantallas de la exploración visual de Mood Messenger: lista de chats, conversación y stickers",
-       "en": "Three screens from the Mood Messenger visual exploration: chat list, conversation and stickers",
-       "fr": "Trois écrans de l'exploration visuelle de Mood Messenger : liste de discussions, conversation et stickers"
-      }
-     }
-    },
-    {
-     "l": {
-      "es": "Logotipo, color y stickers",
-      "en": "Logo, colour and stickers",
-      "fr": "Logotype, couleurs et stickers"
-     },
-     "img": {
-      "key": "mobile-experiences-kit-mood",
-      "v": "system",
-      "r": "425/1015",
-      "alt": {
-       "es": "Logotipo, paleta, tipografía Poppins y stickers de Mood Messenger",
-       "en": "Mood Messenger logo, palette, Poppins typeface and stickers",
-       "fr": "Logotype, palette, typographie Poppins et stickers de Mood Messenger"
-      }
+   }
+  },
+  "figs": [
+   {
+    "pos": "top",
+    "img": {
+     "key": "mobile-experiences",
+     "v": 6,
+     "r": "1448/1086",
+     "alt": {
+      "es": "Mood Messenger: mensajería más expresiva",
+      "en": "Mood Messenger: more expressive messaging",
+      "fr": "Mood Messenger : une messagerie plus expressive"
      }
     }
-   ]
-  }
+   },
+   {
+    "pos": "end",
+    "img": {
+     "key": "mobile-experiences",
+     "v": 7,
+     "r": "1448/1930",
+     "alt": {
+      "es": "Mood Messenger: proceso de diseño, de la investigación al sistema visual",
+      "en": "Mood Messenger: design process, from research to visual system",
+      "fr": "Mood Messenger : processus de design, de la recherche au système visuel"
+     }
+    }
+   }
+  ]
  },
  {
   "type": "text",
@@ -6243,7 +6202,9 @@ const chapterEd = s => { const kit = s.kit;
   const crops = kit && (kit.crops || []).filter(c => okImg(c.img));
   const fig = kit && okImg(kit.img) ? `<figure class="c2-kit"><figcaption class="c2-kl"><b>${esc(tr(kit.l))}</b>${kit.note ? `<span>${esc(tr(kit.note))}</span>` : ""}</figcaption>${kitImg(kit.img, true)}${crops.length ? `<div class="c2-crops">${crops.map(c => `<figure><figcaption class="c2-ft"><span>${esc(tr(c.l))}</span></figcaption>${kitImg(c.img)}<div class="c2-ft">${kitAct(c.img)}</div></figure>`).join("")}</div>` : ""}<div class="c2-fullft">${kitAct(kit.img, crops.length)}</div></figure>` : "";
   const body = `<div class="c2-body ch-tx"><div class="c2-blks">${blk}</div><div class="ch-aside">${aside}</div></div>`;
-  const main = s.layout === "right" ? fig + body : s.layout === "left" ? `<div class="c2-rin">${fig}${body}</div>` : body + fig;
+  const figOf = f => okImg(f.img) ? `<figure class="c2-fig">${kitImg(f.img)}<div class="c2-ft">${kitAct(f.img, false)}</div></figure>` : "";
+  const figsAt = pos => (s.figs || []).filter(f => f.pos === pos).map(figOf).join("");
+  const main = figsAt("top") + (s.layout === "right" ? fig + body : s.layout === "left" ? `<div class="c2-rin">${fig}${body}</div>` : body + fig) + figsAt("end");
   return `<section class="pj-sec ch ch2 c2-${{ right:"k", left:"r", wide:"s" }[s.layout]} c2-${s.id}" id="s-${s.id}" aria-labelledby="s-${s.id}-h"><header class="c2-head">${s.eb ? `<p class="c2-eb">${esc(tr(s.eb))}</p>` : ""}<h2 id="s-${s.id}-h">${esc(tr(s.h))}</h2><h3 class="c2-hl">${esc(tr(s.t))}</h3>${s.sub ? `<p class="c2-sub">${esc(tr(s.sub))}</p>` : ""}</header>${main}</section>`; };
 /* index: editorial list of the chapters of a case; links scroll to the chapter (handled in c2b.js, because # links belong to the router) */
 const indexHtml = s => `<section class="pj-sec ix" id="s-${s.id}" aria-labelledby="s-${s.id}-h"><div class="pj-body"><h2 id="s-${s.id}-h">${esc(tr(s.h))}</h2><div><h3>${esc(tr(s.t))}</h3>${paras(s.p)}<ol class="ix-list">${s.items.map(it => `<li><a href="#s-${esc(it.to)}" data-ixto="s-${esc(it.to)}"><span class="ix-n">${esc(it.n)}</span><b>${esc(tr(it.l))}</b><span class="ix-t">${esc(tr(it.tag))}</span><span class="ix-a" aria-hidden="true">↓</span></a></li>`).join("")}</ol></div></div></section>`;
