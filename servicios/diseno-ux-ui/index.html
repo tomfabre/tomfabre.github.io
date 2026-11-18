@@ -620,6 +620,15 @@ section.ch{margin-top:clamp(6rem,10vw,9rem)}#form.quick .f-extra{display:none}
 .c2-kl span{font-size:.85rem;color:var(--muted);line-height:1.4}
 .c2-kit .art{background:var(--surface);overflow:hidden;border-radius:1rem;width:100%}
 .c2-kit .art img{filter:none!important;transform:none!important}
+.c2-crops figure{margin:0}
+.c2-crops{display:grid;gap:var(--s6);margin-top:var(--s6)}
+.c2-crops figcaption{font-size:var(--micro);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--s2)}
+.c2-crops .art{background:var(--surface);overflow:hidden;border-radius:1rem;width:100%}
+.c2-crops .art img{filter:none!important;transform:none!important}
+.c2-crops .art-zoom{position:relative}
+.c2-crops .art-zoom::after{content:"\2922";position:absolute;right:.6rem;bottom:.6rem;width:2rem;height:2rem;display:grid;place-items:center;border-radius:50%;background:color-mix(in srgb,var(--bg) 82%,transparent);color:var(--fg);font-size:1rem;line-height:1;pointer-events:none}
+@media (min-width:36rem) and (max-width:55.99rem){.c2-crops{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}}
+@media (min-width:56rem){.c2-crops{display:none}}
 .c2-kit .art-zoom{position:relative}
 .c2-kit .art-zoom::after{content:"\2922";position:absolute;right:.7rem;bottom:.7rem;width:2.2rem;height:2.2rem;display:grid;place-items:center;border-radius:50%;background:color-mix(in srgb,var(--bg) 82%,transparent);color:var(--fg);font-size:1.05rem;line-height:1;pointer-events:none}
 @media (min-width:56rem){
@@ -2129,5 +2138,5 @@ Cuéntame qué tienes en mente y vemos por dónde empezar.</p>
 
 
 <script>document.querySelectorAll("template[data-stash]").forEach(function(t){t.replaceWith(t.content)})</script><script>window.__CV="/cv-alvaro-fabre.pdf"</script>
-<script src="/js/app.625445ca14.js"></script>
+<script src="/js/app.7d6c1a1980.js"></script>
 <script defer src="/js/gsap.min.js?v=b2cff385"></script><script defer src="/js/lenis.min.js?v=acddbf76"></script><script defer src="/js/motion.js?v=7bb4ee9d"></script>

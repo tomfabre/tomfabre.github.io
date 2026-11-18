@@ -187,11 +187,19 @@ def validate(sections, project_keys, img_exists, projects=None):
                             if "areas" in b: _loc(b["areas"], f"{w}.areas", errs, sl)
                             _paras(b["p"], f"{w}.p", errs, True, sl)
                     kt = s.get("kit")
-                    if not isinstance(kt, dict) or not {"l", "img"} <= set(kt) or set(kt) - {"l", "note", "img"}: errs.append(f"{at}.kit: must be {{l, img[, note]}}")
+                    if not isinstance(kt, dict) or not {"l", "img"} <= set(kt) or set(kt) - {"l", "note", "img", "crops"}: errs.append(f"{at}.kit: must be {{l, img[, note, crops]}}")
                     else:
                         _loc(kt["l"], f"{at}.kit.l", errs, sl)
                         if "note" in kt: _loc(kt["note"], f"{at}.kit.note", errs, sl)
                         _img(kt["img"], f"{at}.kit.img", errs, img_exists)
+                        cr = kt.get("crops", [])
+                        if not isinstance(cr, list) or len(cr) > 4: errs.append(f"{at}.kit.crops: must be a list of at most 4 {{l, img}} (mobile-only details cut from the kit)")
+                        else:
+                            for j, c in enumerate(cr):
+                                w = f"{at}.kit.crops[{j}]"
+                                if not isinstance(c, dict) or set(c) != {"l", "img"}: errs.append(f"{w}: must be {{l, img}}"); continue
+                                _loc(c["l"], f"{w}.l", errs, sl); _img(c["img"], f"{w}.img", errs, img_exists)
+                                if isinstance(c["img"], dict) and not re.match(r"^\d{1,5}/\d{1,5}$", str(c["img"].get("r", ""))): errs.append(f"{w}.img.r: required, like '700/430'")
                         if isinstance(kt["img"], dict) and not re.match(r"^\d{1,5}/\d{1,5}$", str(kt["img"].get("r", ""))): errs.append(f"{at}.kit.img.r: required, like '1448/1086'")
                 else:
                     for k in ("p", "media"):

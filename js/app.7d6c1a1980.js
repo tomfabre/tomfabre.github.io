@@ -1,4 +1,4 @@
-window.__IMG={"360estudio": {"0": "/img/360estudio-0.webp", "1": "/img/360estudio-1.webp", "2": "/img/360estudio-2.webp", "3": "/img/360estudio-3.webp", "cover": "/img/360estudio-cover.webp"}, "a2pas": {"0": "/img/a2pas-0.webp", "1": "/img/a2pas-1.webp", "2": "/img/a2pas-2.webp", "3": "/img/a2pas-3.webp", "4": "/img/a2pas-4.webp", "5": "/img/a2pas-5.webp", "cover": "/img/a2pas-cover.webp"}, "binome": {"0": "/img/binome-0.webp", "1": "/img/binome-1.webp", "2": "/img/binome-2.webp", "3": "/img/binome-3.webp", "cover": "/img/binome-cover.webp"}, "carceral-ecologies": {"0": "/img/carceral-ecologies-0.webp", "1": "/img/carceral-ecologies-1.webp", "2": "/img/carceral-ecologies-2.webp", "3": "/img/carceral-ecologies-3.webp", "cover": "/img/carceral-ecologies-cover.webp"}, "contazara": {"0": "/img/contazara-0.webp", "1": "/img/contazara-1.webp", "2": "/img/contazara-2.webp", "3": "/img/contazara-3.webp", "4": "/img/contazara-4.webp", "cover": "/img/contazara-cover.webp"}, "gallery": {"1": "/img/gallery-1.webp", "2": "/img/gallery-2.webp", "3": "/img/gallery-3.webp", "4": "/img/gallery-4.webp", "5": "/img/gallery-5.webp", "6": "/img/gallery-6.webp"}, "happylife": {"0": "/img/happylife-0.webp", "1": "/img/happylife-1.webp", "2": "/img/happylife-2.webp", "3": "/img/happylife-3.webp", "cover": "/img/happylife-cover.webp"}, "hover": {"mail": "/img/hover-mail.webp"}, "mobile-experiences": {"0": "/img/mobile-experiences-0.webp", "1": "/img/mobile-experiences-1.webp", "2": "/img/mobile-experiences-2.webp", "3": "/img/mobile-experiences-3.webp", "4": "/img/mobile-experiences-4.webp", "5": "/img/mobile-experiences-5.webp", "6": "/img/mobile-experiences-6.webp", "7": "/img/mobile-experiences-7.webp", "8": "/img/mobile-experiences-8.webp", "cover": "/img/mobile-experiences-cover.webp", "og": "/img/mobile-experiences-og.webp"}, "mobile-experiences-kit": {"apolo": "/img/mobile-experiences-kit-apolo.webp", "appy": "/img/mobile-experiences-kit-appy.webp", "mood": "/img/mobile-experiences-kit-mood.webp"}, "profile": {"1": "/img/profile-1.webp"}, "yaypegs": {"0": "/img/yaypegs-0.webp", "1": "/img/yaypegs-1.webp", "2": "/img/yaypegs-2.webp", "3": "/img/yaypegs-3.webp", "cover": "/img/yaypegs-cover.webp"}};
+window.__IMG={"360estudio": {"0": "/img/360estudio-0.webp", "1": "/img/360estudio-1.webp", "2": "/img/360estudio-2.webp", "3": "/img/360estudio-3.webp", "cover": "/img/360estudio-cover.webp"}, "a2pas": {"0": "/img/a2pas-0.webp", "1": "/img/a2pas-1.webp", "2": "/img/a2pas-2.webp", "3": "/img/a2pas-3.webp", "4": "/img/a2pas-4.webp", "5": "/img/a2pas-5.webp", "cover": "/img/a2pas-cover.webp"}, "binome": {"0": "/img/binome-0.webp", "1": "/img/binome-1.webp", "2": "/img/binome-2.webp", "3": "/img/binome-3.webp", "cover": "/img/binome-cover.webp"}, "carceral-ecologies": {"0": "/img/carceral-ecologies-0.webp", "1": "/img/carceral-ecologies-1.webp", "2": "/img/carceral-ecologies-2.webp", "3": "/img/carceral-ecologies-3.webp", "cover": "/img/carceral-ecologies-cover.webp"}, "contazara": {"0": "/img/contazara-0.webp", "1": "/img/contazara-1.webp", "2": "/img/contazara-2.webp", "3": "/img/contazara-3.webp", "4": "/img/contazara-4.webp", "cover": "/img/contazara-cover.webp"}, "gallery": {"1": "/img/gallery-1.webp", "2": "/img/gallery-2.webp", "3": "/img/gallery-3.webp", "4": "/img/gallery-4.webp", "5": "/img/gallery-5.webp", "6": "/img/gallery-6.webp"}, "happylife": {"0": "/img/happylife-0.webp", "1": "/img/happylife-1.webp", "2": "/img/happylife-2.webp", "3": "/img/happylife-3.webp", "cover": "/img/happylife-cover.webp"}, "hover": {"mail": "/img/hover-mail.webp"}, "mobile-experiences": {"0": "/img/mobile-experiences-0.webp", "1": "/img/mobile-experiences-1.webp", "2": "/img/mobile-experiences-2.webp", "3": "/img/mobile-experiences-3.webp", "4": "/img/mobile-experiences-4.webp", "5": "/img/mobile-experiences-5.webp", "6": "/img/mobile-experiences-6.webp", "7": "/img/mobile-experiences-7.webp", "8": "/img/mobile-experiences-8.webp", "cover": "/img/mobile-experiences-cover.webp", "og": "/img/mobile-experiences-og.webp"}, "mobile-experiences-kit-apolo": {"components": "/img/mobile-experiences-kit-apolo-components.webp", "screens": "/img/mobile-experiences-kit-apolo-screens.webp"}, "mobile-experiences-kit": {"apolo": "/img/mobile-experiences-kit-apolo.webp", "appy": "/img/mobile-experiences-kit-appy.webp", "mood": "/img/mobile-experiences-kit-mood.webp"}, "mobile-experiences-kit-appy": {"components": "/img/mobile-experiences-kit-appy-components.webp", "screens": "/img/mobile-experiences-kit-appy-screens.webp"}, "mobile-experiences-kit-mood": {"screens": "/img/mobile-experiences-kit-mood-screens.webp", "system": "/img/mobile-experiences-kit-mood-system.webp"}, "profile": {"1": "/img/profile-1.webp"}, "yaypegs": {"0": "/img/yaypegs-0.webp", "1": "/img/yaypegs-1.webp", "2": "/img/yaypegs-2.webp", "3": "/img/yaypegs-3.webp", "cover": "/img/yaypegs-cover.webp"}};
 const PROJ = [
   {key:"contazara", role:"Lead Product Designer", years:"2025 –"},
   {key:"healthtech", role:"Lead Product Designer", years:"MVP"},
@@ -3037,14 +3037,9 @@ SECTIONS["mobile-experiences"] = [
       "fr": "Un launcher, c'est bien plus qu'un écran d'accueil. C'est le point de départ de presque tout ce que l'on fait avec son mobile."
      },
      {
-      "es": "Apolo Launcher nació para ofrecer una experiencia Android más personalizable, sin renunciar a la claridad y facilidad de uso.",
-      "en": "Apolo Launcher was created to offer a more customisable Android experience without giving up clarity and ease of use.",
-      "fr": "Apolo Launcher est né pour offrir une expérience Android plus personnalisable, sans sacrifier la clarté ni la simplicité d'usage."
-     },
-     {
-      "es": "Mi trabajo abarcó el diseño integral del producto: desde su concepto y arquitectura hasta la navegación, las funcionalidades y las interfaces finales.",
-      "en": "My work covered the end-to-end design of the product: from its concept and architecture to navigation, features and the final interfaces.",
-      "fr": "Mon travail a couvert la conception complète du produit : du concept et de l'architecture à la navigation, aux fonctionnalités et aux interfaces finales."
+      "es": "Apolo Launcher nació para ofrecer una experiencia Android más personalizable, sin renunciar a la claridad. Mi trabajo abarcó el diseño integral del producto, del concepto y la arquitectura a las interfaces finales.",
+      "en": "Apolo Launcher was created to offer a more customisable Android experience without giving up clarity. My work covered the end-to-end design of the product, from concept and architecture to the final interfaces.",
+      "fr": "Apolo Launcher est né pour offrir une expérience Android plus personnalisable, sans sacrifier la clarté. Mon travail a couvert la conception complète du produit, du concept et de l'architecture aux interfaces finales."
      }
     ]
    },
@@ -3061,14 +3056,9 @@ SECTIONS["mobile-experiences"] = [
     },
     "p": [
      {
-      "es": "Personalizar una interfaz significa ofrecer opciones. Pero cuantas más opciones existen, más difícil puede resultar encontrar lo que buscamos.",
-      "en": "Customising an interface means offering options. But the more options there are, the harder it can be to find what you are looking for.",
-      "fr": "Personnaliser une interface, c'est proposer des options. Mais plus il y en a, plus il peut être difficile de trouver ce que l'on cherche."
-     },
-     {
-      "es": "El desafío consistía en equilibrar libertad y simplicidad: permitir que cada persona adaptara su teléfono sin complicar las interacciones cotidianas.",
-      "en": "The challenge was balancing freedom and simplicity: letting each person adapt their phone without complicating everyday interactions.",
-      "fr": "Le défi : équilibrer liberté et simplicité, pour que chacun adapte son téléphone sans compliquer les gestes du quotidien."
+      "es": "Personalizar significa ofrecer opciones, y cuantas más hay, más difícil es encontrar lo que buscamos. El reto: equilibrar libertad y simplicidad sin complicar las interacciones cotidianas.",
+      "en": "Customising means offering options, and the more there are, the harder it is to find what you need. The challenge: balancing freedom and simplicity without complicating everyday interactions.",
+      "fr": "Personnaliser, c'est proposer des options, et plus il y en a, plus il est difficile de trouver ce qu'on cherche. Le défi : équilibrer liberté et simplicité sans compliquer le quotidien."
      }
     ]
    },
@@ -3085,14 +3075,9 @@ SECTIONS["mobile-experiences"] = [
     },
     "p": [
      {
-      "es": "El diseño abarcó diferentes capas de la experiencia: organización de aplicaciones, navegación, personalización visual y acceso a funcionalidades.",
-      "en": "The design covered several layers of the experience: app organisation, navigation, visual personalisation and access to features.",
-      "fr": "Le design a couvert plusieurs couches de l'expérience : organisation des applications, navigation, personnalisation visuelle et accès aux fonctionnalités."
-     },
-     {
-      "es": "Cada elemento debía formar parte de un sistema coherente, capaz de adaptarse a las preferencias del usuario sin perder consistencia.",
-      "en": "Every element had to belong to a coherent system, able to adapt to each user's preferences without losing consistency.",
-      "fr": "Chaque élément devait s'intégrer à un système cohérent, capable de s'adapter aux préférences de chacun sans perdre en cohérence."
+      "es": "Organización de aplicaciones, navegación, personalización visual y acceso a funcionalidades, pensados como un sistema coherente que se adapta a cada preferencia.",
+      "en": "App organisation, navigation, visual personalisation and access to features, designed as a coherent system that adapts to each preference.",
+      "fr": "Organisation des applications, navigation, personnalisation visuelle et accès aux fonctionnalités, pensés comme un système cohérent qui s'adapte à chaque préférence."
      }
     ],
     "areas": {
@@ -3165,7 +3150,43 @@ SECTIONS["mobile-experiences"] = [
      "en": "Apolo Launcher UI Kit: logo, colour palette, Inter typeface, themes, wallpapers, search and navigation components, widgets and three mobile screens",
      "fr": "UI Kit d'Apolo Launcher : logotype, palette de couleurs, typographie Inter, thèmes, fonds d'écran, composants de recherche et de navigation, widgets et trois écrans mobiles"
     }
-   }
+   },
+   "crops": [
+    {
+     "l": {
+      "es": "Pantallas",
+      "en": "Screens",
+      "fr": "Écrans"
+     },
+     "img": {
+      "key": "mobile-experiences-kit-apolo",
+      "v": "screens",
+      "r": "700/430",
+      "alt": {
+       "es": "Tres pantallas de Apolo Launcher: pantalla de inicio, panel de widgets y edición de iconos",
+       "en": "Three Apolo Launcher screens: home screen, widgets panel and icon editing",
+       "fr": "Trois écrans d'Apolo Launcher : écran d'accueil, panneau de widgets et édition d'icônes"
+      }
+     }
+    },
+    {
+     "l": {
+      "es": "Componentes",
+      "en": "Components",
+      "fr": "Composants"
+     },
+     "img": {
+      "key": "mobile-experiences-kit-apolo",
+      "v": "components",
+      "r": "685/615",
+      "alt": {
+       "es": "Componentes de Apolo Launcher: búsqueda, interruptores, dock, widgets de música y tiempo, Boost y apps ocultas",
+       "en": "Apolo Launcher components: search, switches, dock, music and weather widgets, Boost and hidden apps",
+       "fr": "Composants d'Apolo Launcher : recherche, interrupteurs, dock, widgets musique et météo, Boost et applis masquées"
+      }
+     }
+    }
+   ]
   }
  },
  {
@@ -3206,14 +3227,9 @@ SECTIONS["mobile-experiences"] = [
       "fr": "Comment transformer la relation entre un créateur de contenu et des millions d'abonnés en un produit qui fonctionne ?"
      },
      {
-      "es": "Appy nació de una colaboración con Jojol, creador tecnológico francés, para acercar concursos y premios a su comunidad.",
-      "en": "Appy came out of a collaboration with Jojol, a French tech creator, to bring giveaways and prizes closer to his community.",
-      "fr": "Appy est née d'une collaboration avec Jojol, créateur tech français, pour rapprocher jeux-concours et cadeaux de sa communauté."
-     },
-     {
-      "es": "Me encargué del diseño integral de la aplicación para iOS y Android, desde su estructura y recorridos de usuario hasta su identidad visual e interfaces.",
-      "en": "I was responsible for the end-to-end design of the app for iOS and Android, from its structure and user journeys to its visual identity and interfaces.",
-      "fr": "J'ai pris en charge la conception complète de l'application sur iOS et Android, de sa structure et de ses parcours utilisateur à son identité visuelle et ses interfaces."
+      "es": "Appy nació de una colaboración con Jojol, creador tecnológico francés, para acercar concursos y premios a su comunidad. Me encargué del diseño integral para iOS y Android, de la estructura y los recorridos a la identidad visual y las interfaces.",
+      "en": "Appy came out of a collaboration with Jojol, a French tech creator, to bring giveaways and prizes closer to his community. I handled the end-to-end design for iOS and Android, from structure and journeys to visual identity and interfaces.",
+      "fr": "Appy est née d'une collaboration avec Jojol, créateur tech français, pour rapprocher jeux-concours et cadeaux de sa communauté. J'ai pris en charge la conception complète sur iOS et Android, de la structure et des parcours à l'identité visuelle et aux interfaces."
      }
     ]
    },
@@ -3230,14 +3246,9 @@ SECTIONS["mobile-experiences"] = [
     },
     "p": [
      {
-      "es": "La experiencia tenía que resolver algo fundamental: que cualquier persona pudiera descubrir un concurso, entender cómo participar y seguir sus oportunidades sin confusiones.",
-      "en": "The experience had to solve something fundamental: anyone should be able to discover a contest, understand how to take part and follow their chances without confusion.",
-      "fr": "L'expérience devait résoudre un point essentiel : permettre à chacun de découvrir un concours, de comprendre comment participer et de suivre ses chances sans se perdre."
-     },
-     {
-      "es": "No se trataba de añadir funciones, sino de organizar correctamente la información y hacer que cada interacción tuviera sentido.",
-      "en": "It was not about adding features, but about organising information properly and making every interaction make sense.",
-      "fr": "Il ne s'agissait pas d'ajouter des fonctionnalités, mais d'organiser correctement l'information et de donner du sens à chaque interaction."
+      "es": "Que cualquiera pudiera descubrir un concurso, entender cómo participar y seguir sus oportunidades sin confusiones. No se trataba de añadir funciones, sino de organizar bien la información.",
+      "en": "Anyone should be able to discover a contest, understand how to take part and follow their chances without confusion. It was less about adding features than about organising information well.",
+      "fr": "Chacun devait pouvoir découvrir un concours, comprendre comment participer et suivre ses chances sans se perdre. Il s'agissait moins d'ajouter des fonctionnalités que de bien organiser l'information."
      }
     ]
    },
@@ -3254,14 +3265,9 @@ SECTIONS["mobile-experiences"] = [
     },
     "p": [
      {
-      "es": "La experiencia se organizó alrededor de las acciones principales del usuario: descubrir concursos, consultar sus condiciones, participar y gestionar sus oportunidades.",
-      "en": "The experience was organised around the user's main actions: discovering contests, checking their conditions, taking part and managing their chances.",
-      "fr": "L'expérience s'organisait autour des actions principales de l'utilisateur : découvrir des concours, consulter leurs conditions, participer et gérer ses chances."
-     },
-     {
-      "es": "La arquitectura, los flujos y las interfaces debían trabajar juntos para construir una experiencia clara, reconocible y consistente.",
-      "en": "Architecture, flows and interfaces had to work together to build an experience that was clear, recognisable and consistent.",
-      "fr": "L'architecture, les parcours et les interfaces devaient fonctionner ensemble pour construire une expérience claire, reconnaissable et cohérente."
+      "es": "La experiencia giró en torno a las acciones principales: descubrir concursos, consultar sus condiciones, participar y gestionar las oportunidades.",
+      "en": "The experience revolved around the main actions: discovering contests, checking their conditions, taking part and managing chances.",
+      "fr": "L'expérience s'articulait autour des actions principales : découvrir des concours, consulter leurs conditions, participer et gérer ses chances."
      }
     ],
     "areas": {
@@ -3283,14 +3289,9 @@ SECTIONS["mobile-experiences"] = [
     },
     "p": [
      {
-      "es": "Appy también necesitaba personalidad.",
-      "en": "Appy needed personality too.",
-      "fr": "Appy avait aussi besoin de personnalité."
-     },
-     {
-      "es": "La identidad visual, los componentes de interfaz y los elementos gráficos formaron parte de un mismo lenguaje para conectar el universo del creador con la experiencia de la aplicación.",
-      "en": "The visual identity, interface components and graphic elements formed one language, connecting the creator's universe with the app experience.",
-      "fr": "L'identité visuelle, les composants d'interface et les éléments graphiques formaient un même langage pour relier l'univers du créateur à l'expérience de l'application."
+      "es": "Identidad visual, componentes y elementos gráficos como un mismo lenguaje, para conectar el universo del creador con la app.",
+      "en": "Visual identity, components and graphic elements as one language, connecting the creator's universe with the app.",
+      "fr": "Identité visuelle, composants et éléments graphiques comme un seul langage, pour relier l'univers du créateur à l'application."
      }
     ]
    }
@@ -3379,7 +3380,43 @@ SECTIONS["mobile-experiences"] = [
      "en": "Appy UI Kit: logo, HEX colours, Montserrat typeface, buttons, contest cards, ticket wallet, participation actions, navigation and three mobile screens",
      "fr": "UI Kit d'Appy : logotype, couleurs avec codes HEX, typographie Montserrat, boutons, cartes de concours, portefeuille de tickets, actions de participation, navigation et trois écrans mobiles"
     }
-   }
+   },
+   "crops": [
+    {
+     "l": {
+      "es": "Pantallas",
+      "en": "Screens",
+      "fr": "Écrans"
+     },
+     "img": {
+      "key": "mobile-experiences-kit-appy",
+      "v": "screens",
+      "r": "800/525",
+      "alt": {
+       "es": "Tres pantallas de Appy: lista de concursos, oportunidades de ganar y cartera de tickets",
+       "en": "Three Appy screens: contest list, chances to win and ticket wallet",
+       "fr": "Trois écrans d'Appy : liste des concours, chances de gagner et portefeuille de tickets"
+      }
+     }
+    },
+    {
+     "l": {
+      "es": "Componentes y acciones",
+      "en": "Components and actions",
+      "fr": "Composants et actions"
+     },
+     "img": {
+      "key": "mobile-experiences-kit-appy",
+      "v": "components",
+      "r": "640/845",
+      "alt": {
+       "es": "Componentes de Appy: botones, estados, contador, tarjetas de acción y navegación",
+       "en": "Appy components: buttons, states, timers, action cards and navigation",
+       "fr": "Composants d'Appy : boutons, états, minuteurs, cartes d'action et navigation"
+      }
+     }
+    }
+   ]
   }
  },
  {
@@ -3415,24 +3452,14 @@ SECTIONS["mobile-experiences"] = [
     },
     "p": [
      {
-      "es": "Mood Messenger ofrecía una alternativa a la mensajería SMS y MMS tradicional de Android, incorporando personalización y una experiencia visual diferente.",
-      "en": "Mood Messenger offered an alternative to Android's traditional SMS and MMS messaging, adding personalisation and a different visual experience.",
-      "fr": "Mood Messenger proposait une alternative à la messagerie SMS et MMS classique d'Android, avec de la personnalisation et une expérience visuelle différente."
+      "es": "Mood Messenger ofrecía una alternativa a la mensajería SMS y MMS de Android, con personalización y una experiencia visual diferente. A diferencia de Apolo y Appy, aquí no partíamos de cero: el producto ya tenía identidad y comunidad.",
+      "en": "Mood Messenger offered an alternative to Android's SMS and MMS messaging, with personalisation and a different visual experience. Unlike Apolo and Appy, this was not a blank page: the product already had an identity and a community.",
+      "fr": "Mood Messenger proposait une alternative à la messagerie SMS et MMS d'Android, avec de la personnalisation et une expérience visuelle différente. Contrairement à Apolo et Appy, on ne partait pas de zéro : le produit avait déjà une identité et une communauté."
      },
      {
-      "es": "A diferencia de Apolo y Appy, aquí no partíamos de cero.",
-      "en": "Unlike Apolo and Appy, this was not a blank page.",
-      "fr": "Contrairement à Apolo et Appy, on ne partait pas de zéro."
-     },
-     {
-      "es": "El producto ya existía, tenía una identidad reconocible y una comunidad de usuarios.",
-      "en": "The product already existed, with a recognisable identity and a community of users.",
-      "fr": "Le produit existait déjà, avec une identité reconnaissable et une communauté d'utilisateurs."
-     },
-     {
-      "es": "Mi participación se centró en la evolución de la experiencia, el diseño de nuevas interfaces y la colaboración en la estrategia y el relanzamiento de la aplicación.",
-      "en": "My involvement focused on evolving the experience, designing new interfaces and collaborating on the app's strategy and relaunch.",
-      "fr": "Ma participation s'est concentrée sur l'évolution de l'expérience, la conception de nouvelles interfaces et la collaboration à la stratégie et à la relance de l'application."
+      "es": "Mi participación se centró en la evolución de la experiencia, el diseño de nuevas interfaces y la colaboración en la estrategia y el relanzamiento.",
+      "en": "My involvement focused on evolving the experience, designing new interfaces and collaborating on strategy and relaunch.",
+      "fr": "Ma participation s'est concentrée sur l'évolution de l'expérience, la conception de nouvelles interfaces et la collaboration à la stratégie et à la relance."
      }
     ]
    },
@@ -3449,14 +3476,9 @@ SECTIONS["mobile-experiences"] = [
     },
     "p": [
      {
-      "es": "Diseñar sobre un producto existente implica trabajar con decisiones anteriores, comportamientos conocidos y expectativas que ya forman parte de la experiencia.",
-      "en": "Designing on top of an existing product means working with earlier decisions, familiar behaviours and expectations that are already part of the experience.",
-      "fr": "Concevoir à partir d'un produit existant, c'est composer avec des décisions passées, des comportements connus et des attentes déjà ancrées dans l'expérience."
-     },
-     {
-      "es": "El desafío era explorar nuevas posibilidades visuales y funcionales respetando la identidad del producto y la familiaridad de sus usuarios.",
-      "en": "The challenge was to explore new visual and functional possibilities while respecting the product's identity and its users' familiarity.",
-      "fr": "Le défi : explorer de nouvelles pistes visuelles et fonctionnelles en respectant l'identité du produit et les repères de ses utilisateurs."
+      "es": "Diseñar sobre un producto existente implica decisiones anteriores y hábitos ya aprendidos. Había que explorar nuevas posibilidades respetando la identidad del producto y la familiaridad de sus usuarios.",
+      "en": "Designing on an existing product means earlier decisions and learned habits. The task was to explore new possibilities while respecting the product's identity and its users' familiarity.",
+      "fr": "Concevoir sur un produit existant, c'est composer avec des décisions passées et des habitudes acquises. Il fallait explorer de nouvelles pistes en respectant l'identité du produit et les repères de ses utilisateurs."
      }
     ]
    },
@@ -3473,14 +3495,9 @@ SECTIONS["mobile-experiences"] = [
     },
     "p": [
      {
-      "es": "Mi trabajo incluyó la exploración de interfaces, propuestas de experiencia y colaboración en las decisiones relacionadas con la evolución del producto.",
-      "en": "My work included exploring interfaces, proposing experience ideas and collaborating on decisions about the product's evolution.",
-      "fr": "Mon travail a inclus l'exploration d'interfaces, des propositions d'expérience et la collaboration aux décisions liées à l'évolution du produit."
-     },
-     {
-      "es": "El objetivo era encontrar un equilibrio entre continuidad y renovación, aportando nuevas soluciones sin perder lo que hacía reconocible a Mood Messenger.",
-      "en": "The goal was to find a balance between continuity and renewal, bringing new solutions without losing what made Mood Messenger recognisable.",
-      "fr": "L'objectif : trouver l'équilibre entre continuité et renouveau, en apportant de nouvelles solutions sans perdre ce qui rendait Mood Messenger reconnaissable."
+      "es": "Exploración de interfaces, propuestas de experiencia y colaboración en las decisiones de evolución, buscando equilibrio entre continuidad y renovación.",
+      "en": "Exploring interfaces, proposing experience ideas and collaborating on evolution decisions, balancing continuity and renewal.",
+      "fr": "Exploration d'interfaces, propositions d'expérience et collaboration aux décisions d'évolution, entre continuité et renouveau."
      }
     ],
     "areas": {
@@ -3502,14 +3519,9 @@ SECTIONS["mobile-experiences"] = [
     },
     "p": [
      {
-      "es": "Evolucionar un producto no siempre significa reinventarlo.",
-      "en": "Evolving a product doesn't always mean reinventing it.",
-      "fr": "Faire évoluer un produit ne veut pas toujours dire le réinventer."
-     },
-     {
-      "es": "A veces consiste en identificar qué debe mantenerse, qué puede mejorar y cómo integrar nuevas propuestas dentro de una experiencia que ya existe.",
-      "en": "Sometimes it means identifying what should stay, what can improve and how to fit new ideas into an experience that already exists.",
-      "fr": "Parfois, il s'agit d'identifier ce qui doit rester, ce qui peut s'améliorer et comment intégrer de nouvelles idées dans une expérience qui existe déjà."
+      "es": "Evolucionar un producto no siempre significa reinventarlo. A veces consiste en decidir qué mantener, qué mejorar y cómo integrar lo nuevo.",
+      "en": "Evolving a product doesn't always mean reinventing it. Sometimes it means deciding what to keep, what to improve and how to fit in the new.",
+      "fr": "Faire évoluer un produit ne veut pas toujours dire le réinventer. Parfois, il s'agit de décider quoi garder, quoi améliorer et comment intégrer le nouveau."
      }
     ]
    }
@@ -3570,9 +3582,9 @@ SECTIONS["mobile-experiences"] = [
     "fr": "Exploration visuelle"
    },
    "note": {
-    "es": "Exploración visual retrospectiva. Recreación editorial a partir de materiales de diseño; no son capturas del producto original.",
-    "en": "Retrospective visual exploration. Editorial recreation based on design materials; these are not screenshots of the original product.",
-    "fr": "Exploration visuelle rétrospective. Recréation éditoriale à partir de supports de design ; ce ne sont pas des captures du produit d'origine."
+    "es": "Recreación editorial retrospectiva; no son capturas del producto original.",
+    "en": "Retrospective editorial recreation; not screenshots of the original product.",
+    "fr": "Recréation éditoriale rétrospective ; pas des captures du produit d'origine."
    },
    "img": {
     "key": "mobile-experiences-kit",
@@ -3583,7 +3595,43 @@ SECTIONS["mobile-experiences"] = [
      "en": "Mood Messenger visual exploration: logo, colour palette, Poppins typeface, chat components, icon set, stickers and three mobile screens",
      "fr": "Exploration visuelle de Mood Messenger : logotype, palette de couleurs, typographie Poppins, composants de chat, icônes, stickers et trois écrans mobiles"
     }
-   }
+   },
+   "crops": [
+    {
+     "l": {
+      "es": "Pantallas",
+      "en": "Screens",
+      "fr": "Écrans"
+     },
+     "img": {
+      "key": "mobile-experiences-kit-mood",
+      "v": "screens",
+      "r": "1005/620",
+      "alt": {
+       "es": "Tres pantallas de la exploración visual de Mood Messenger: lista de chats, conversación y stickers",
+       "en": "Three screens from the Mood Messenger visual exploration: chat list, conversation and stickers",
+       "fr": "Trois écrans de l'exploration visuelle de Mood Messenger : liste de discussions, conversation et stickers"
+      }
+     }
+    },
+    {
+     "l": {
+      "es": "Logotipo, color y stickers",
+      "en": "Logo, colour and stickers",
+      "fr": "Logotype, couleurs et stickers"
+     },
+     "img": {
+      "key": "mobile-experiences-kit-mood",
+      "v": "system",
+      "r": "425/1015",
+      "alt": {
+       "es": "Logotipo, paleta, tipografía Poppins y stickers de Mood Messenger",
+       "en": "Mood Messenger logo, palette, Poppins typeface and stickers",
+       "fr": "Logotype, palette, typographie Poppins et stickers de Mood Messenger"
+      }
+     }
+    }
+   ]
   }
  },
  {
@@ -6215,7 +6263,7 @@ const chapterHtml = s => `<section class="pj-sec ch ch-${s.layout}" id="s-${s.id
 const chapterEd = s => { const kit = s.kit, img = kit && okImg(kit.img) ? chImg(kit.img) : "";
   const blk = (s.blocks || []).map(b => `<div class="c2-blk"><p class="c2-lb">${esc(tr(b.l))}</p><div class="c2-bt">${b.t ? `<h4>${esc(tr(b.t))}</h4>` : ""}${paras(b.p)}${b.areas ? `<p class="c2-areas">${esc(tr(b.areas))}</p>` : ""}</div></div>`).join("");
   const aside = `${(s.meta || []).length ? `<dl class="ch-meta">${s.meta.map(m => `<div><dt>${esc(tr(m.l))}</dt><dd>${esc(tr(m.v))}</dd></div>`).join("")}</dl>` : ""}${s.metric ? `<p class="ch-metric"><b>${esc(tr(s.metric.n))}</b><span>${esc(tr(s.metric.l))}</span>${s.metric.note ? `<small>${esc(tr(s.metric.note))}</small>` : ""}</p>` : ""}${(s.links || []).length ? `<p class="ch-links">${s.links.map(chLink).join("")}</p>` : ""}`;
-  const fig = kit ? `<figure class="c2-kit"><figcaption class="c2-kl"><b>${esc(tr(kit.l))}</b>${kit.note ? `<span>${esc(tr(kit.note))}</span>` : ""}</figcaption>${img}</figure>` : "";
+  const fig = kit ? `<figure class="c2-kit"><figcaption class="c2-kl"><b>${esc(tr(kit.l))}</b>${kit.note ? `<span>${esc(tr(kit.note))}</span>` : ""}</figcaption>${img}${(kit.crops || []).length ? `<div class="c2-crops">${kit.crops.filter(c => okImg(c.img)).map(c => `<figure><figcaption>${esc(tr(c.l))}</figcaption>${chImg(c.img)}</figure>`).join("")}</div>` : ""}</figure>` : "";
   return `<section class="pj-sec ch ch2 c2-${{ right:"k", left:"r", wide:"s" }[s.layout]} c2-${s.id}" id="s-${s.id}" aria-labelledby="s-${s.id}-h"><header class="c2-head">${s.eb ? `<p class="c2-eb">${esc(tr(s.eb))}</p>` : ""}<h2 id="s-${s.id}-h">${esc(tr(s.h))}</h2><h3 class="c2-hl">${esc(tr(s.t))}</h3>${s.sub ? `<p class="c2-sub">${esc(tr(s.sub))}</p>` : ""}</header>${s.layout === "right" ? fig : ""}<div class="c2-body ch-tx"><div class="c2-blks">${blk}</div><div class="ch-aside">${aside}</div></div>${s.layout === "right" ? "" : fig}</section>`; };
 /* index: editorial list of the chapters of a case; links scroll to the chapter (handled in c2b.js, because # links belong to the router) */
 const indexHtml = s => `<section class="pj-sec ix" id="s-${s.id}" aria-labelledby="s-${s.id}-h"><div class="pj-body"><h2 id="s-${s.id}-h">${esc(tr(s.h))}</h2><div><h3>${esc(tr(s.t))}</h3>${paras(s.p)}<ol class="ix-list">${s.items.map(it => `<li><a href="#s-${esc(it.to)}" data-ixto="s-${esc(it.to)}"><span class="ix-n">${esc(it.n)}</span><b>${esc(tr(it.l))}</b><span class="ix-t">${esc(tr(it.tag))}</span><span class="ix-a" aria-hidden="true">↓</span></a></li>`).join("")}</ol></div></div></section>`;
