@@ -1010,7 +1010,7 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
     mx += (tx - mx) * .06; my += (ty - my) * .06;
     if (aur) { aur.style.setProperty("--px", mx.toFixed(1)); aur.style.setProperty("--py", my.toFixed(1)); }
     if (Math.abs(tx - mx) > .2 || Math.abs(ty - my) > .2) busy = true;
-    mag.forEach((s, b) => { s.x += (s.tx - s.x) * .14; s.y += (s.ty - s.y) * .14; b.style.translate = s.x.toFixed(2) + "px " + s.y.toFixed(2) + "px";
+    mag.forEach((s, b) => { s.x += (s.tx - s.x) * .22; s.y += (s.ty - s.y) * .22; b.style.translate = s.x.toFixed(2) + "px " + s.y.toFixed(2) + "px";
       if (Math.abs(s.tx - s.x) > .05 || Math.abs(s.ty - s.y) > .05) busy = true; });
     if (busy) raf = requestAnimationFrame(loop);
   };
@@ -1022,7 +1022,7 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
       /* posición de reposo (sin el desplazamiento actual): evita parpadeos en los bordes y realimentación */
       const l = br.left - s.x, t = br.top - s.y, r = l + br.width, bt = t + br.height;
       const inside = e.clientX >= l && e.clientX <= r && e.clientY >= t && e.clientY <= bt;
-      if (inside) { s.tx = clamp((e.clientX - (l + br.width / 2)) * .107, 6); s.ty = clamp((e.clientY - (t + br.height / 2)) * .85, 14); }
+      if (inside) { s.tx = clamp((e.clientX - (l + br.width / 2)) * .107, 6); s.ty = clamp((e.clientY - (t + br.height / 2)) * .4, 6); }
       else { s.tx = 0; s.ty = 0; } });
     kick();
   }, { passive:true });
