@@ -8199,9 +8199,19 @@ function wireStickers(){
     const end = () => { on = false; el.classList.remove("drag"); };
     const vid = el.querySelector("video");
     if (vid && el.classList.contains("s-pic")) {
-      /* reproduce solo mientras es visible; con prefers-reduced-motion se queda en la imagen fija */
+      /* imagen fija por defecto; se anima solo al pasar el cursor (hover) o al hacer click/tap (alterna).
+         Con prefers-reduced-motion se queda siempre en la imagen fija. Arrastrar no cuenta como click. */
       vid.muted = true;
-      if (!reduced && "IntersectionObserver" in window) new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { const p = vid.play(); if (p && p.catch) p.catch(() => {}); } else vid.pause(); }), { threshold: .25 }).observe(vid);
+      if (!reduced) {
+        const go = () => { const p = vid.play(); if (p && p.catch) p.catch(() => {}); }, stop = () => vid.pause();
+        let moved = false, down = null;
+        el.addEventListener("pointerenter", e => { if (e.pointerType === "mouse") go(); });
+        el.addEventListener("pointerleave", e => { if (e.pointerType === "mouse" && !on) stop(); });
+        el.addEventListener("pointerdown", e => { moved = false; down = [e.clientX, e.clientY]; });
+        el.addEventListener("pointermove", e => { if (down && Math.abs(e.clientX - down[0]) + Math.abs(e.clientY - down[1]) > 6) moved = true; });
+        el.addEventListener("pointerup", e => { if (!down) return; down = null; if (moved) return; if (e.pointerType === "mouse") go(); else if (vid.paused) go(); else stop(); });
+        document.addEventListener("visibilitychange", () => { if (document.hidden) stop(); });
+      }
     }
     el.addEventListener("pointerup", end); el.addEventListener("pointercancel", end);
     el.addEventListener("pointerdown", () => { el.dataset.moved = "1"; });

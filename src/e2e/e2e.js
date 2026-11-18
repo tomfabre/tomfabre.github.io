@@ -191,8 +191,14 @@ async function fresh(b, opts = {}) {
     const v = page.locator(".s-pic video").first();
     ok("sticker: <video> WebM con poster y atributos (muted/loop/playsinline, sin controles)", await v.evaluate(e => e.muted && e.loop && e.playsInline && !e.controls && !!e.poster && /webm/.test(e.querySelector("source").type)));
     await v.scrollIntoViewIfNeeded(); await page.waitForTimeout(900);
-    const playing = await v.evaluate(e => !e.paused && e.currentTime > 0);
-    ok(`sticker ${reduced ? "con movimiento reducido: no reproduce (queda el poster)" : "reproduce en bucle"}`, reduced ? !playing : playing);
+    const isPlaying = () => v.evaluate(e => !e.paused && e.currentTime > 0);
+    ok("sticker: sin interacción no se reproduce (imagen fija, sin autoplay)", !(await isPlaying()));
+    const box = await page.locator(".s-pic").first().boundingBox();
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2); await page.waitForTimeout(900);
+    const hov = await isPlaying();
+    ok(`sticker ${reduced ? "con movimiento reducido: el hover no reproduce" : "reproduce al pasar el cursor"}`, reduced ? !hov : hov);
+    await page.mouse.move(2, 2); await page.waitForTimeout(400);
+    ok("sticker: se pausa al sacar el cursor", !(await isPlaying()));
     ok("sticker: sin 404", bad.length === 0, bad); await ctx.close();
   }
   {
