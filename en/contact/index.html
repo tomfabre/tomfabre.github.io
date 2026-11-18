@@ -759,7 +759,7 @@ dialog .sub{color:var(--muted);font-size:var(--small);margin-bottom:var(--s6)}
 .f select{-webkit-appearance:none;appearance:none;--chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232C2C2C' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 9 7 7 7-7'/%3E%3C/svg%3E");padding-right:2.9rem;background-image:var(--chev);background-repeat:no-repeat;background-position:right 1.1rem center;background-size:1.1rem;text-overflow:ellipsis}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .f select{--chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FDF9F0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 9 7 7 7-7'/%3E%3C/svg%3E")}}:root[data-theme="dark"] .f select{--chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FDF9F0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 9 7 7 7-7'/%3E%3C/svg%3E")}.dx{position:absolute;top:1.1rem;right:1.1rem;background:none;border:1px solid var(--line2);border-radius:var(--pill);width:2.5rem;height:2.5rem;font-size:1.1rem;transition:background-color var(--fast)}
 .dx:hover{background:var(--surface)}
 .err{color:var(--coral);font-size:var(--small);min-height:1.5em;margin-bottom:var(--s3)}
-.d-res[hidden]{display:none}
+.d-res[hidden]{display:none}#dlgT[hidden],dialog#dlg .sub[hidden]{display:none}#dsentT:focus{outline:none}
 
 /* chat */
 .chatbtn{position:fixed;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:35;display:inline-flex;align-items:center;gap:.6rem;min-height:3rem;padding:0 1.3rem;background:var(--fg);color:var(--bg);border:0;border-radius:var(--pill);font-weight:500;font-size:.88rem;box-shadow:0 10px 30px rgba(0,0,0,.18);transition:transform var(--fast),box-shadow var(--fast)}
@@ -1988,7 +1988,7 @@ Tell me what you have in mind and we'll work out where to start.</p>
     <label class="f-check" for="fc"><input type="checkbox" id="fc" name="consent" required=""><span data-i="d_consent">I have read and accept the privacy notice.</span></label>
     <button class="btn solid" type="submit" style="width:100%;justify-content:center"><span data-i="d_send">Send message</span><span class="arr" aria-hidden="true">→</span></button>
   </form>
-  <div class="d-res" id="dsent" hidden=""><p class="d-res-t" data-i="d_sent_t">Message sent!</p><p class="d-res-b" data-i="d_sent_b">Thanks for reaching out. I'll get back to you as soon as I can.</p></div>
+  <div class="d-res" id="dsent" hidden=""><p class="d-res-t" id="dsentT" tabindex="-1" data-i="d_sent_t">Message sent!</p><p class="d-res-b" data-i="d_sent_b">Thanks for reaching out. I'll reply within 24 hours, or sooner if I can.</p></div>
   <div class="d-res" id="dres" hidden="">
     <p style="color:var(--muted);font-size:var(--small);margin-bottom:var(--s5)" data-i="d_note">This page can't send email on its own: open your mail app with the message ready, or copy it anywhere you like.</p>
     <div style="display:flex;flex-wrap:wrap;gap:.6rem"><a class="btn solid" id="mailto" href="#" target="_blank" rel="noopener" data-i="d_open">Open in my mail app</a><button class="btn" type="button" id="dcopy" data-i="d_copy">Copy message</button></div>
@@ -2819,7 +2819,7 @@ Object.assign(T.fr, { game_how:"Comment jouer", how_k:"Avant de commencer", how_
   "Chaque « À l'eau » consomme un essai sur 20. Les touches sont gratuites.",
   "Quand tu touches toutes les cases d'un bateau, il coule et révèle une façon de travailler.",
   "Tu gagnes si tu coules les 4 bateaux avant d'épuiser tes essais. Si tu perds, tu peux recommencer."] });
-Object.assign(T.es, { d_sent:"¡Mensaje enviado! Te respondo muy pronto.", d_fail:"No se pudo enviar. Usa el botón para abrirlo en tu correo." });
+Object.assign(T.es, { d_sent:"¡Mensaje enviado! Gracias por escribirme. Te respondo en 24 horas, o antes si puedo.", d_fail:"No se pudo enviar. Usa el botón para abrirlo en tu correo." });
 Object.assign(T.en, { d_sent:"Message sent! I'll get back to you very soon.", d_fail:"It couldn't be sent. Use the button to open it in your email app." });
 Object.assign(T.fr, { d_sent:"Message envoyé ! Je vous réponds très vite.", d_fail:"L'envoi a échoué. Utilisez le bouton pour l'ouvrir dans votre messagerie." });
 Object.assign(T.es, { d_q:"Para comprobar que eres persona: ¿cuánto es", d_qerr:"La suma no es correcta. Inténtalo de nuevo." });
@@ -6395,10 +6395,10 @@ Object.assign(T.es, {
  "d_mail_err": "Revisa tu email, creo que hay algo que no encaja.",
  "d_sending": "Enviando tu mensaje...",
  "d_sent_t": "¡Mensaje enviado!",
- "d_sent_b": "Gracias por escribirme. Te responderé en cuanto pueda.",
+ "d_sent_b": "Gracias por escribirme. Te respondo en 24 horas, o antes si puedo.",
  "d_fail_t": "Parece que el mensaje no ha salido.",
  "d_fail_b": "Puedes intentarlo de nuevo o escribirme directamente a hey@tomfabre.com.",
- "d_sent": "¡Mensaje enviado! Gracias por escribirme. Te respondo en 24 horas.",
+ "d_sent": "¡Mensaje enviado! Gracias por escribirme. Te respondo en 24 horas, o antes si puedo.",
  "d_fail": "Parece que el mensaje no ha salido. Puedes intentarlo de nuevo o escribirme directamente a hey@tomfabre.com.",
  "ct_faq": [
   [
@@ -6459,10 +6459,10 @@ Object.assign(T.en, {
  "d_mail_err": "Double-check your email address. Something doesn't look quite right.",
  "d_sending": "Sending your message…",
  "d_sent_t": "Message sent!",
- "d_sent_b": "Thanks for reaching out. I'll get back to you as soon as I can.",
+ "d_sent_b": "Thanks for reaching out. I'll reply within 24 hours, or sooner if I can.",
  "d_fail_t": "Looks like the message didn't go through.",
  "d_fail_b": "You can try again or email me directly at hey@tomfabre.com.",
- "d_sent": "Message sent! Thanks for reaching out. I'll reply within 24 hours.",
+ "d_sent": "Message sent! Thanks for reaching out. I'll reply within 24 hours, or sooner if I can.",
  "d_fail": "Looks like the message didn't go through. You can try again or email me directly at hey@tomfabre.com.",
  "ct_faq": [
   [
@@ -6523,10 +6523,10 @@ Object.assign(T.fr, {
  "d_mail_err": "Vérifie ton adresse email, il y a peut-être une petite erreur.",
  "d_sending": "Envoi en cours…",
  "d_sent_t": "Message envoyé !",
- "d_sent_b": "Merci pour ton message. Je te répondrai dès que possible.",
+ "d_sent_b": "Merci pour ton message. Je te réponds sous 24 heures, ou avant si possible.",
  "d_fail_t": "Le message n'est pas parti.",
  "d_fail_b": "Tu peux réessayer ou m'écrire directement à hey@tomfabre.com.",
- "d_sent": "Message envoyé ! Merci pour ton message. Je te réponds sous 24 heures.",
+ "d_sent": "Message envoyé ! Merci pour ton message. Je te réponds sous 24 heures, ou avant si possible.",
  "d_fail": "Le message n'est pas parti. Tu peux réessayer ou m'écrire directement à hey@tomfabre.com.",
  "ct_faq": [
   [
@@ -8034,7 +8034,7 @@ function newQ(){ qa = 1 + Math.floor(Math.random() * 9); qb = 1 + Math.floor(Mat
 function setQ(){ $("#fql").textContent = `${L().d_q} ${qa} + ${qb}?`; }
 function setDlgHead(quick){
   const h = $("#dlgT"), s = $("#dlg .sub"), hk = quick ? "dq_h" : "d_h", sk = quick ? "dq_sub" : "d_sub";
-  h.dataset.i = hk; h.textContent = L()[hk]; s.dataset.i = sk; s.textContent = L()[sk];
+  h.hidden = false; s.hidden = false; dlg().setAttribute("aria-labelledby", "dlgT"); h.dataset.i = hk; h.textContent = L()[hk]; s.dataset.i = sk; s.textContent = L()[sk];
   $("#form").classList.toggle("quick", !!quick);
   const sl = $("#form button[type=submit] [data-i]"), bk = quick ? "dq_send" : "d_send"; sl.dataset.i = bk; sl.textContent = L()[bk];
 }
@@ -8074,7 +8074,7 @@ function wireForm(){
       const sb = $("#form button[type=submit]"), lab = sb.querySelector("[data-i]"), old = lab.textContent;
       sending = true; sb.disabled = true; sb.setAttribute("aria-busy", "true"); lab.textContent = t.d_sending; $("#ferr").textContent = ""; $("#fstat").textContent = t.d_sending;
       fetch(FORM_ENDPOINT, { method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" }, body:JSON.stringify({ name:n, email:m, topic, budget: budget || undefined, message:msg, _replyto:m, _subject:topic + " · " + n + " (portfolio)" }) })
-        .then(r => { if (!r.ok) throw 0; $("#form").hidden = true; $("#dsent").hidden = false; $("#form").reset(); $("#fstat").textContent = t.d_sent; track("contact_form_submit_success", { project_type: topic, budget_band: budget || undefined }); })
+        .then(r => { if (!r.ok) throw 0; $("#form").hidden = true; $("#dlgT").hidden = true; $("#dlg .sub").hidden = true; $("#dsent").hidden = false; dlg().setAttribute("aria-labelledby", "dsentT"); $("#dsentT").focus({ preventScroll:true }); $("#form").reset(); $("#fstat").textContent = t.d_sent; track("contact_form_submit_success", { project_type: topic, budget_band: budget || undefined }); })
         .catch(() => { $("#ferr").innerHTML = `<strong>${esc(t.d_fail_t)}</strong> ` + esc(t.d_fail_b).replace(EMAIL, `<a href="mailto:${EMAIL}">${EMAIL}</a>`); $("#fstat").textContent = ""; })
         .finally(() => { sending = false; sb.disabled = false; sb.removeAttribute("aria-busy"); lab.textContent = old; });
       return;

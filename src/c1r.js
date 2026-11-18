@@ -17,7 +17,7 @@ Object.assign(T.fr, { game_how:"Comment jouer", how_k:"Avant de commencer", how_
   "Chaque « À l'eau » consomme un essai sur 20. Les touches sont gratuites.",
   "Quand tu touches toutes les cases d'un bateau, il coule et révèle une façon de travailler.",
   "Tu gagnes si tu coules les 4 bateaux avant d'épuiser tes essais. Si tu perds, tu peux recommencer."] });
-Object.assign(T.es, { d_sent:"¡Mensaje enviado! Te respondo muy pronto.", d_fail:"No se pudo enviar. Usa el botón para abrirlo en tu correo." });
+Object.assign(T.es, { d_sent:"¡Mensaje enviado! Gracias por escribirme. Te respondo en 24 horas, o antes si puedo.", d_fail:"No se pudo enviar. Usa el botón para abrirlo en tu correo." });
 Object.assign(T.en, { d_sent:"Message sent! I'll get back to you very soon.", d_fail:"It couldn't be sent. Use the button to open it in your email app." });
 Object.assign(T.fr, { d_sent:"Message envoyé ! Je vous réponds très vite.", d_fail:"L'envoi a échoué. Utilisez le bouton pour l'ouvrir dans votre messagerie." });
 Object.assign(T.es, { d_q:"Para comprobar que eres persona: ¿cuánto es", d_qerr:"La suma no es correcta. Inténtalo de nuevo." });

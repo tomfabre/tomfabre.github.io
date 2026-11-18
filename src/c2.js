@@ -340,7 +340,7 @@ function newQ(){ qa = 1 + Math.floor(Math.random() * 9); qb = 1 + Math.floor(Mat
 function setQ(){ $("#fql").textContent = `${L().d_q} ${qa} + ${qb}?`; }
 function setDlgHead(quick){
   const h = $("#dlgT"), s = $("#dlg .sub"), hk = quick ? "dq_h" : "d_h", sk = quick ? "dq_sub" : "d_sub";
-  h.dataset.i = hk; h.textContent = L()[hk]; s.dataset.i = sk; s.textContent = L()[sk];
+  h.hidden = false; s.hidden = false; dlg().setAttribute("aria-labelledby", "dlgT"); h.dataset.i = hk; h.textContent = L()[hk]; s.dataset.i = sk; s.textContent = L()[sk];
   $("#form").classList.toggle("quick", !!quick);
   const sl = $("#form button[type=submit] [data-i]"), bk = quick ? "dq_send" : "d_send"; sl.dataset.i = bk; sl.textContent = L()[bk];
 }
@@ -380,7 +380,7 @@ function wireForm(){
       const sb = $("#form button[type=submit]"), lab = sb.querySelector("[data-i]"), old = lab.textContent;
       sending = true; sb.disabled = true; sb.setAttribute("aria-busy", "true"); lab.textContent = t.d_sending; $("#ferr").textContent = ""; $("#fstat").textContent = t.d_sending;
       fetch(FORM_ENDPOINT, { method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" }, body:JSON.stringify({ name:n, email:m, topic, budget: budget || undefined, message:msg, _replyto:m, _subject:topic + " · " + n + " (portfolio)" }) })
-        .then(r => { if (!r.ok) throw 0; $("#form").hidden = true; $("#dsent").hidden = false; $("#form").reset(); $("#fstat").textContent = t.d_sent; track("contact_form_submit_success", { project_type: topic, budget_band: budget || undefined }); })
+        .then(r => { if (!r.ok) throw 0; $("#form").hidden = true; $("#dlgT").hidden = true; $("#dlg .sub").hidden = true; $("#dsent").hidden = false; dlg().setAttribute("aria-labelledby", "dsentT"); $("#dsentT").focus({ preventScroll:true }); $("#form").reset(); $("#fstat").textContent = t.d_sent; track("contact_form_submit_success", { project_type: topic, budget_band: budget || undefined }); })
         .catch(() => { $("#ferr").innerHTML = `<strong>${esc(t.d_fail_t)}</strong> ` + esc(t.d_fail_b).replace(EMAIL, `<a href="mailto:${EMAIL}">${EMAIL}</a>`); $("#fstat").textContent = ""; })
         .finally(() => { sending = false; sb.disabled = false; sb.removeAttribute("aria-busy"); lab.textContent = old; });
       return;

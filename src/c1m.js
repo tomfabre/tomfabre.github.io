@@ -644,10 +644,10 @@ Object.assign(T.es, {
  "d_mail_err": "Revisa tu email, creo que hay algo que no encaja.",
  "d_sending": "Enviando tu mensaje...",
  "d_sent_t": "¡Mensaje enviado!",
- "d_sent_b": "Gracias por escribirme. Te responderé en cuanto pueda.",
+ "d_sent_b": "Gracias por escribirme. Te respondo en 24 horas, o antes si puedo.",
  "d_fail_t": "Parece que el mensaje no ha salido.",
  "d_fail_b": "Puedes intentarlo de nuevo o escribirme directamente a hey@tomfabre.com.",
- "d_sent": "¡Mensaje enviado! Gracias por escribirme. Te respondo en 24 horas.",
+ "d_sent": "¡Mensaje enviado! Gracias por escribirme. Te respondo en 24 horas, o antes si puedo.",
  "d_fail": "Parece que el mensaje no ha salido. Puedes intentarlo de nuevo o escribirme directamente a hey@tomfabre.com.",
  "ct_faq": [
   [
@@ -708,10 +708,10 @@ Object.assign(T.en, {
  "d_mail_err": "Double-check your email address. Something doesn't look quite right.",
  "d_sending": "Sending your message…",
  "d_sent_t": "Message sent!",
- "d_sent_b": "Thanks for reaching out. I'll get back to you as soon as I can.",
+ "d_sent_b": "Thanks for reaching out. I'll reply within 24 hours, or sooner if I can.",
  "d_fail_t": "Looks like the message didn't go through.",
  "d_fail_b": "You can try again or email me directly at hey@tomfabre.com.",
- "d_sent": "Message sent! Thanks for reaching out. I'll reply within 24 hours.",
+ "d_sent": "Message sent! Thanks for reaching out. I'll reply within 24 hours, or sooner if I can.",
  "d_fail": "Looks like the message didn't go through. You can try again or email me directly at hey@tomfabre.com.",
  "ct_faq": [
   [
@@ -772,10 +772,10 @@ Object.assign(T.fr, {
  "d_mail_err": "Vérifie ton adresse email, il y a peut-être une petite erreur.",
  "d_sending": "Envoi en cours…",
  "d_sent_t": "Message envoyé !",
- "d_sent_b": "Merci pour ton message. Je te répondrai dès que possible.",
+ "d_sent_b": "Merci pour ton message. Je te réponds sous 24 heures, ou avant si possible.",
  "d_fail_t": "Le message n'est pas parti.",
  "d_fail_b": "Tu peux réessayer ou m'écrire directement à hey@tomfabre.com.",
- "d_sent": "Message envoyé ! Merci pour ton message. Je te réponds sous 24 heures.",
+ "d_sent": "Message envoyé ! Merci pour ton message. Je te réponds sous 24 heures, ou avant si possible.",
  "d_fail": "Le message n'est pas parti. Tu peux réessayer ou m'écrire directement à hey@tomfabre.com.",
  "ct_faq": [
   [
