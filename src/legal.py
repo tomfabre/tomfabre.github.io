@@ -26,29 +26,36 @@ def txt(lg, email, site):
           ("h3","Responsable del tratamiento"),
           ("ul",[f"{N} ({B}) · {IDL}: {ID}", f"Domicilio: {AD}", f"Contacto: {email}"]),
           ("h3","Qué datos trato, para qué y con qué base jurídica"),
-          ("ul",["Formulario de contacto: nombre, correo electrónico, tema, mensaje y, si lo indicas, un presupuesto orientativo. Finalidad: responder a tu consulta y, si lo pides, preparar una propuesta. Base jurídica: tu consentimiento al enviar el formulario (art. 6.1.a RGPD) y, cuando solicitas una propuesta, la aplicación de medidas precontractuales a petición tuya (art. 6.1.b).",
+          ("ul",["Formulario de contacto (y consulta rápida): nombre, correo electrónico, tema, mensaje y, si lo indicas, un presupuesto orientativo. Finalidad: responder a tu consulta y, si lo pides, preparar una propuesta. Base jurídica: tu consentimiento al enviar el formulario (art. 6.1.a RGPD) y, cuando solicitas una propuesta, la aplicación de medidas precontractuales a petición tuya (art. 6.1.b).",
+                 "Formulario de análisis UX/UI (premio del juego): tu correo electrónico, la dirección web que quieres que revise, el resultado de la partida (ganada o perdida) y, si lo indicas, qué te gustaría mejorar. Finalidad: revisar esa web y enviarte por correo tres ideas para mejorarla. Base jurídica: tu consentimiento al enviar el formulario (art. 6.1.a RGPD). No hace falta ganar la partida para usarlo y no se te pide ningún dato adicional.",
+                 "Datos técnicos que acompañan a ambos formularios: la página desde la que escribes, el botón o sección de origen (por ejemplo, un proyecto o servicio concreto), el idioma del sitio y el tipo de formulario. Finalidad: entender a qué te refieres, atender tu solicitud y organizar las respuestas. Base jurídica: el mismo consentimiento o, en su defecto, el interés legítimo en gestionar correctamente tu consulta (art. 6.1.f). Formspree puede registrar además la fecha, la hora y la dirección IP del envío por motivos de seguridad y control del spam.",
+                 "Reproductor de Spotify (página Bio): no se carga hasta que pulsas el botón de reproducir. En ese momento Spotify recibe tu dirección IP y datos técnicos de tu navegador, y puede usar cookies o tecnologías similares según su propia política. Base jurídica: tu consentimiento al pulsar el botón (art. 6.1.a RGPD).",
                  f"Correo directo a {email}: los datos que incluyas en tu mensaje, con la misma finalidad y base jurídica.",
-                 "Analítica web (Google Analytics 4): datos agregados de uso del sitio, solo si aceptas las cookies de analítica. Base jurídica: tu consentimiento (art. 6.1.a RGPD).",
+                 "Analítica web (Google Analytics 4): datos agregados de uso del sitio, solo si aceptas las cookies de analítica. Los eventos de los formularios (abrir, enviar, error) no incluyen tus datos ni el contenido del mensaje. Base jurídica: tu consentimiento (art. 6.1.a RGPD).",
                  "Registros técnicos: el servicio de alojamiento puede registrar tu dirección IP por motivos de seguridad y funcionamiento. Base jurídica: interés legítimo (art. 6.1.f)."]),
-          ("p","El formulario incluye una comprobación anti-spam sencilla; no se usa para crear perfiles. No tomo decisiones automatizadas sobre ti ni vendo tus datos."),
+          ("p","Facilitar tus datos es voluntario, pero sin los campos obligatorios de cada formulario no puedo atender tu solicitud. Los formularios incluyen una comprobación anti-spam sencilla; no se usa para crear perfiles. No tomo decisiones automatizadas sobre ti ni vendo tus datos."),
           ("h3","Quién más accede a los datos"),
-          ("p","Para prestar el servicio utilizo proveedores que actúan como encargados del tratamiento: Formspree, Inc. (recepción de los mensajes del formulario), Cloudflare, Inc. (DNS y reenvío de correo), Google LLC (correo y, si aceptas, Google Analytics) y GitHub, Inc. (alojamiento del sitio). No cedo tus datos a terceros salvo obligación legal."),
+          ("p","Para prestar el servicio utilizo proveedores que actúan como encargados del tratamiento: Formspree, Inc. (recepción de los mensajes del formulario), Cloudflare, Inc. (DNS y reenvío de correo), Google LLC (correo y, si aceptas, Google Analytics) y GitHub, Inc. (alojamiento del sitio). Si cargas el reproductor de Spotify, Spotify AB trata tus datos como responsable de su propio servicio. No cedo tus datos a terceros salvo obligación legal."),
           ("h3","Transferencias internacionales"),
           ("p","Algunos de estos proveedores están en Estados Unidos. Las transferencias se amparan en las garantías previstas en el RGPD, como la decisión de adecuación del Marco de Privacidad de Datos UE-EE. UU. o las cláusulas contractuales tipo, según el proveedor."),
           ("h3","Cuánto tiempo conservo los datos"),
-          ("ul",[f"Mensajes y consultas: hasta {R} meses desde el último contacto. Si se inicia una relación profesional, los conservaré durante los plazos que exijan las obligaciones legales aplicables.", f"Datos de analítica: como máximo {GR} meses."]),
+          ("ul",[f"Mensajes y consultas (incluidas las del formulario de análisis UX/UI): hasta {R} meses desde el último contacto. Si se inicia una relación profesional, los conservaré durante los plazos que exijan las obligaciones legales aplicables.", f"Datos de analítica: como máximo {GR} meses."]),
           ("h3","Tus derechos"),
           ("p",f"Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad escribiendo a {email}, indicando qué derecho quieres ejercer. Puedes retirar tu consentimiento en cualquier momento (por ejemplo, desde «Cookies» en el pie de página). Si crees que tus datos no se tratan correctamente, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (aepd.es).")]),
         ("cookies","Política de cookies",[
-          ("p","Una cookie es un pequeño archivo que el navegador guarda al visitar una web. Este sitio usa solo las siguientes:"),
+          ("p","Este sitio distingue dos tecnologías. Las cookies son pequeños archivos que el navegador guarda y envía al servidor en cada visita. El almacenamiento local (localStorage y sessionStorage) guarda datos solo en tu navegador y no se envía a ningún servidor."),
+          ("h3","Cookies"),
           ("table",["Nombre","Titular","Finalidad","Duración","Tipo"],[
-            ["af-consent","tomfabre.com","Recuerda tu elección sobre las cookies","Hasta que la borres","Técnica"],
-            ["af-lang, af-theme, af-view","tomfabre.com","Recuerdan idioma, tema claro/oscuro y vista de proyectos","Hasta que las borres","Técnica"],
-            ["(sesión del asistente)","tomfabre.com","Mantiene la conversación del asistente mientras la pestaña está abierta","Sesión","Técnica"],
             ["_ga","Google","Distingue usuarios de forma anónima","2 años","Analítica (solo si aceptas)"],
-            ["_ga_W3V7MB7SZ7","Google","Mantiene el estado de la sesión","2 años","Analítica (solo si aceptas)"]]),
-          ("p","Las técnicas son necesarias para que el sitio funcione o para recordar tus ajustes, y no requieren consentimiento. Las de analítica solo se activan si pulsas «Aceptar» en el aviso de cookies. No uso cookies de publicidad."),
-          ("p","Puedes cambiar tu elección cuando quieras con el botón «Cookies» del pie de página, o borrar las cookies desde los ajustes de tu navegador."),
+            ["_ga_W3V7MB7SZ7","Google","Mantiene el estado de la sesión","2 años","Analítica (solo si aceptas)"],
+            ["Cookies de Spotify","Spotify","Las que Spotify establezca al cargar su reproductor (solo si pulsas el botón de reproducir)","Según Spotify","De terceros (solo si lo cargas)"]]),
+          ("h3","Almacenamiento local del navegador"),
+          ("table",["Nombre","Titular","Finalidad","Duración","Tipo"],[
+            ["af-consent (localStorage)","tomfabre.com","Recuerda tu elección sobre las cookies","Hasta que la borres","Técnico"],
+            ["af-lang, af-theme, af-view (localStorage)","tomfabre.com","Recuerdan idioma, tema claro/oscuro y vista de proyectos","Hasta que las borres","Técnico"],
+            ["yodis-v2 (sessionStorage)","tomfabre.com","Mantiene la conversación del asistente mientras la pestaña está abierta","Sesión","Técnico"]]),
+          ("p","El almacenamiento técnico es necesario para que el sitio funcione o para recordar tus ajustes, y no requiere consentimiento. Las cookies de analítica solo se activan si pulsas «Aceptar» en el aviso de cookies, y el reproductor de Spotify solo si pulsas su botón. No uso cookies de publicidad."),
+          ("p","Puedes cambiar tu elección cuando quieras con el botón «Cookies» del pie de página, o borrar las cookies y los datos del sitio desde los ajustes de tu navegador."),
           ("p","Google LLC puede tratar estos datos como encargado; más información en la política de privacidad de Google.")])]
         )
     if lg == "en": return dict(
@@ -68,29 +75,36 @@ def txt(lg, email, site):
           ("h3","Data controller"),
           ("ul",[f"{N} ({B}) · {IDL}: {ID}", f"Address: {AD}", f"Contact: {email}"]),
           ("h3","What data I process, why and on what legal basis"),
-          ("ul",["Contact form: name, email, topic, message and, if you choose, an approximate budget. Purpose: to answer your enquiry and, if you ask for it, prepare a proposal. Legal basis: your consent when you submit the form (Art. 6.1.a GDPR) and, when you ask for a proposal, steps taken at your request before entering a contract (Art. 6.1.b).",
+          ("ul",["Contact form (and quick enquiry): name, email, topic, message and, if you choose, an approximate budget. Purpose: to answer your enquiry and, if you ask for it, prepare a proposal. Legal basis: your consent when you submit the form (Art. 6.1.a GDPR) and, when you ask for a proposal, steps taken at your request before entering a contract (Art. 6.1.b).",
+                 "UX/UI review form (game prize): your email, the website address you want me to review, the game result (won or lost) and, if you choose, what you would like to improve. Purpose: to review that website and email you three ideas to improve it. Legal basis: your consent when you submit the form (Art. 6.1.a GDPR). You don't need to win the game to use it and no further data is requested.",
+                 "Technical data sent with both forms: the page you are writing from, the button or section it came from (for example, a specific project or service), the site language and the form type. Purpose: to understand what you are referring to, handle your request and organise replies. Legal basis: the same consent or, failing that, my legitimate interest in handling your enquiry properly (Art. 6.1.f). Formspree may also log the date, time and IP address of the submission for security and spam control.",
+                 "Spotify player (Bio page): it is not loaded until you press the play button. At that point Spotify receives your IP address and technical data from your browser, and may use cookies or similar technologies under its own policy. Legal basis: your consent when you press the button (Art. 6.1.a GDPR).",
                  f"Direct email to {email}: the data you include in your message, for the same purpose and on the same legal basis.",
-                 "Web analytics (Google Analytics 4): aggregated data about how the site is used, only if you accept analytics cookies. Legal basis: your consent (Art. 6.1.a GDPR).",
+                 "Web analytics (Google Analytics 4): aggregated data about how the site is used, only if you accept analytics cookies. Form events (open, submit, error) do not include your data or the content of your message. Legal basis: your consent (Art. 6.1.a GDPR).",
                  "Technical logs: the hosting service may log your IP address for security and operation. Legal basis: legitimate interest (Art. 6.1.f)."]),
-          ("p","The form includes a simple anti-spam check; it is not used to build profiles. I don't make automated decisions about you and I don't sell your data."),
+          ("p","Providing your data is voluntary, but without the required fields of each form I cannot handle your request. The forms include a simple anti-spam check; it is not used to build profiles. I don't make automated decisions about you and I don't sell your data."),
           ("h3","Who else has access"),
-          ("p","To provide the service I use providers acting as data processors: Formspree, Inc. (receiving form messages), Cloudflare, Inc. (DNS and email forwarding), Google LLC (email and, if you accept, Google Analytics) and GitHub, Inc. (site hosting). I don't share your data with third parties unless required by law."),
+          ("p","To provide the service I use providers acting as data processors: Formspree, Inc. (receiving form messages), Cloudflare, Inc. (DNS and email forwarding), Google LLC (email and, if you accept, Google Analytics) and GitHub, Inc. (site hosting). If you load the Spotify player, Spotify AB processes your data as controller of its own service. I don't share your data with third parties unless required by law."),
           ("h3","International transfers"),
           ("p","Some of these providers are based in the United States. Transfers rely on the safeguards provided for in the GDPR, such as the adequacy decision for the EU-US Data Privacy Framework or standard contractual clauses, depending on the provider."),
           ("h3","How long I keep data"),
-          ("ul",[f"Messages and enquiries: up to {R} months after the last contact. If a professional relationship starts, I keep them for as long as applicable legal obligations require.", f"Analytics data: {GR} months at most."]),
+          ("ul",[f"Messages and enquiries (including those from the UX/UI review form): up to {R} months after the last contact. If a professional relationship starts, I keep them for as long as applicable legal obligations require.", f"Analytics data: {GR} months at most."]),
           ("h3","Your rights"),
           ("p",f"You can exercise your rights of access, rectification, erasure, objection, restriction and portability by writing to {email} and saying which right you want to exercise. You can withdraw your consent at any time (for example from “Cookies” in the footer). If you think your data is not being handled properly, you can lodge a complaint with the Spanish Data Protection Agency (aepd.es).")]),
         ("cookies","Cookie policy",[
-          ("p","A cookie is a small file your browser stores when you visit a website. This site uses only the following:"),
+          ("p","This site distinguishes two technologies. Cookies are small files your browser stores and sends back to the server on every visit. Local storage (localStorage and sessionStorage) keeps data only in your browser and is not sent to any server."),
+          ("h3","Cookies"),
           ("table",["Name","Owner","Purpose","Duration","Type"],[
-            ["af-consent","tomfabre.com","Remembers your cookie choice","Until you clear it","Technical"],
-            ["af-lang, af-theme, af-view","tomfabre.com","Remember language, light/dark theme and project view","Until you clear them","Technical"],
-            ["(assistant session)","tomfabre.com","Keeps the assistant conversation while the tab is open","Session","Technical"],
             ["_ga","Google","Tells users apart anonymously","2 years","Analytics (only if you accept)"],
-            ["_ga_W3V7MB7SZ7","Google","Keeps session state","2 years","Analytics (only if you accept)"]]),
-          ("p","Technical items are needed for the site to work or to remember your settings and don't require consent. Analytics ones only run if you press “Accept” in the cookie notice. I don't use advertising cookies."),
-          ("p","You can change your choice at any time with the “Cookies” button in the footer, or clear cookies from your browser settings."),
+            ["_ga_W3V7MB7SZ7","Google","Keeps session state","2 years","Analytics (only if you accept)"],
+            ["Spotify cookies","Spotify","Whatever Spotify sets when its player loads (only if you press play)","Set by Spotify","Third party (only if you load it)"]]),
+          ("h3","Browser local storage"),
+          ("table",["Name","Owner","Purpose","Duration","Type"],[
+            ["af-consent (localStorage)","tomfabre.com","Remembers your cookie choice","Until you clear it","Technical"],
+            ["af-lang, af-theme, af-view (localStorage)","tomfabre.com","Remember language, light/dark theme and project view","Until you clear them","Technical"],
+            ["yodis-v2 (sessionStorage)","tomfabre.com","Keeps the assistant conversation while the tab is open","Session","Technical"]]),
+          ("p","Technical storage is needed for the site to work or to remember your settings and doesn't require consent. Analytics cookies only run if you press “Accept” in the cookie notice, and the Spotify player only if you press its button. I don't use advertising cookies."),
+          ("p","You can change your choice at any time with the “Cookies” button in the footer, or clear cookies and site data from your browser settings."),
           ("p","Google LLC may process this data as a processor; see Google's privacy policy for more information.")])]
         )
     return dict(
@@ -110,29 +124,36 @@ def txt(lg, email, site):
           ("h3","Responsable du traitement"),
           ("ul",[f"{N} ({B}) · {IDL} : {ID}", f"Domicile : {AD}", f"Contact : {email}"]),
           ("h3","Quelles données, pourquoi et sur quelle base juridique"),
-          ("ul",["Formulaire de contact : nom, courriel, sujet, message et, si vous le souhaitez, un budget indicatif. Finalité : répondre à votre demande et, si vous le demandez, préparer une proposition. Base juridique : votre consentement lors de l'envoi du formulaire (art. 6.1.a RGPD) et, lorsque vous demandez une proposition, des mesures précontractuelles prises à votre demande (art. 6.1.b).",
+          ("ul",["Formulaire de contact (et demande rapide) : nom, courriel, sujet, message et, si vous le souhaitez, un budget indicatif. Finalité : répondre à votre demande et, si vous le demandez, préparer une proposition. Base juridique : votre consentement lors de l'envoi du formulaire (art. 6.1.a RGPD) et, lorsque vous demandez une proposition, des mesures précontractuelles prises à votre demande (art. 6.1.b).",
+                 "Formulaire d'analyse UX/UI (récompense du jeu) : votre courriel, l'adresse du site que vous voulez que j'examine, le résultat de la partie (gagnée ou perdue) et, si vous le souhaitez, ce que vous aimeriez améliorer. Finalité : examiner ce site et vous envoyer par courriel trois idées pour l'améliorer. Base juridique : votre consentement lors de l'envoi du formulaire (art. 6.1.a RGPD). Il n'est pas nécessaire de gagner la partie pour l'utiliser et aucune autre donnée n'est demandée.",
+                 "Données techniques jointes aux deux formulaires : la page depuis laquelle vous écrivez, le bouton ou la section d'origine (par exemple un projet ou un service précis), la langue du site et le type de formulaire. Finalité : comprendre de quoi il s'agit, traiter votre demande et organiser les réponses. Base juridique : le même consentement ou, à défaut, mon intérêt légitime à traiter correctement votre demande (art. 6.1.f). Formspree peut également enregistrer la date, l'heure et l'adresse IP de l'envoi pour des raisons de sécurité et de lutte contre le spam.",
+                 "Lecteur Spotify (page Bio) : il n'est chargé que lorsque vous cliquez sur le bouton de lecture. À ce moment, Spotify reçoit votre adresse IP et des données techniques de votre navigateur, et peut utiliser des cookies ou des technologies similaires selon sa propre politique. Base juridique : votre consentement en cliquant sur le bouton (art. 6.1.a RGPD).",
                  f"Courriel direct à {email} : les données incluses dans votre message, avec la même finalité et la même base juridique.",
-                 "Mesure d'audience (Google Analytics 4) : données agrégées sur l'usage du site, uniquement si vous acceptez les cookies de mesure d'audience. Base juridique : votre consentement (art. 6.1.a RGPD).",
+                 "Mesure d'audience (Google Analytics 4) : données agrégées sur l'usage du site, uniquement si vous acceptez les cookies de mesure d'audience. Les événements des formulaires (ouverture, envoi, erreur) n'incluent ni vos données ni le contenu du message. Base juridique : votre consentement (art. 6.1.a RGPD).",
                  "Journaux techniques : l'hébergeur peut enregistrer votre adresse IP pour des raisons de sécurité et de fonctionnement. Base juridique : intérêt légitime (art. 6.1.f)."]),
-          ("p","Le formulaire comporte un contrôle anti-spam simple ; il n'est pas utilisé pour établir des profils. Je ne prends aucune décision automatisée vous concernant et je ne vends pas vos données."),
+          ("p","Fournir vos données est facultatif, mais sans les champs obligatoires de chaque formulaire je ne peux pas traiter votre demande. Les formulaires comportent un contrôle anti-spam simple ; il n'est pas utilisé pour établir des profils. Je ne prends aucune décision automatisée vous concernant et je ne vends pas vos données."),
           ("h3","Qui d'autre accède aux données"),
-          ("p","Pour fournir le service, j'utilise des prestataires agissant comme sous-traitants : Formspree, Inc. (réception des messages du formulaire), Cloudflare, Inc. (DNS et redirection de courriel), Google LLC (courriel et, si vous acceptez, Google Analytics) et GitHub, Inc. (hébergement du site). Je ne transmets pas vos données à des tiers, sauf obligation légale."),
+          ("p","Pour fournir le service, j'utilise des prestataires agissant comme sous-traitants : Formspree, Inc. (réception des messages du formulaire), Cloudflare, Inc. (DNS et redirection de courriel), Google LLC (courriel et, si vous acceptez, Google Analytics) et GitHub, Inc. (hébergement du site). Si vous chargez le lecteur Spotify, Spotify AB traite vos données en tant que responsable de son propre service. Je ne transmets pas vos données à des tiers, sauf obligation légale."),
           ("h3","Transferts internationaux"),
           ("p","Certains de ces prestataires sont établis aux États-Unis. Les transferts reposent sur les garanties prévues par le RGPD, comme la décision d'adéquation du cadre de protection des données UE-États-Unis ou les clauses contractuelles types, selon le prestataire."),
           ("h3","Durée de conservation"),
-          ("ul",[f"Messages et demandes : jusqu'à {R} mois après le dernier contact. Si une relation professionnelle s'engage, je les conserve pendant la durée qu'exigent les obligations légales applicables.", f"Données de mesure d'audience : {GR} mois au maximum."]),
+          ("ul",[f"Messages et demandes (y compris ceux du formulaire d'analyse UX/UI) :  {R} mois après le dernier contact. Si une relation professionnelle s'engage, je les conserve pendant la durée qu'exigent les obligations légales applicables.", f"Données de mesure d'audience : {GR} mois au maximum."]),
           ("h3","Vos droits"),
           ("p",f"Vous pouvez exercer vos droits d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité en écrivant à {email} en précisant le droit concerné. Vous pouvez retirer votre consentement à tout moment (par exemple via « Cookies » en bas de page). Si vous estimez que vos données ne sont pas traitées correctement, vous pouvez déposer une réclamation auprès de l'Agence espagnole de protection des données (aepd.es) ou de la CNIL.")]),
         ("cookies","Politique de cookies",[
-          ("p","Un cookie est un petit fichier que votre navigateur enregistre lors de la visite d'un site. Ce site n'utilise que les éléments suivants :"),
+          ("p","Ce site distingue deux technologies. Les cookies sont de petits fichiers que votre navigateur enregistre et renvoie au serveur à chaque visite. Le stockage local (localStorage et sessionStorage) conserve des données uniquement dans votre navigateur et n'est envoyé à aucun serveur."),
+          ("h3","Cookies"),
           ("table",["Nom","Titulaire","Finalité","Durée","Type"],[
-            ["af-consent","tomfabre.com","Mémorise votre choix sur les cookies","Jusqu'à suppression","Technique"],
-            ["af-lang, af-theme, af-view","tomfabre.com","Mémorisent la langue, le thème clair/sombre et l'affichage des projets","Jusqu'à suppression","Technique"],
-            ["(session de l'assistant)","tomfabre.com","Conserve la conversation de l'assistant tant que l'onglet est ouvert","Session","Technique"],
             ["_ga","Google","Distingue les utilisateurs de manière anonyme","2 ans","Mesure d'audience (si vous acceptez)"],
-            ["_ga_W3V7MB7SZ7","Google","Conserve l'état de la session","2 ans","Mesure d'audience (si vous acceptez)"]]),
-          ("p","Les éléments techniques sont nécessaires au fonctionnement du site ou à la mémorisation de vos réglages et ne demandent pas de consentement. Ceux de mesure d'audience ne s'activent que si vous cliquez sur « Accepter » dans l'avis cookies. Je n'utilise pas de cookies publicitaires."),
-          ("p","Vous pouvez modifier votre choix à tout moment avec le bouton « Cookies » en bas de page, ou supprimer les cookies depuis les réglages de votre navigateur."),
+            ["_ga_W3V7MB7SZ7","Google","Conserve l'état de la session","2 ans","Mesure d'audience (si vous acceptez)"],
+            ["Cookies Spotify","Spotify","Ceux que Spotify dépose au chargement de son lecteur (uniquement si vous lancez la lecture)","Selon Spotify","Tiers (uniquement si vous le chargez)"]]),
+          ("h3","Stockage local du navigateur"),
+          ("table",["Nom","Titulaire","Finalité","Durée","Type"],[
+            ["af-consent (localStorage)","tomfabre.com","Mémorise votre choix sur les cookies","Jusqu'à suppression","Technique"],
+            ["af-lang, af-theme, af-view (localStorage)","tomfabre.com","Mémorisent la langue, le thème clair/sombre et l'affichage des projets","Jusqu'à suppression","Technique"],
+            ["yodis-v2 (sessionStorage)","tomfabre.com","Conserve la conversation de l'assistant tant que l'onglet est ouvert","Session","Technique"]]),
+          ("p","Le stockage technique est nécessaire au fonctionnement du site ou à la mémorisation de vos réglages et ne demande pas de consentement. Les cookies de mesure d'audience ne s'activent que si vous cliquez sur « Accepter » dans l'avis cookies, et le lecteur Spotify que si vous cliquez sur son bouton. Je n'utilise pas de cookies publicitaires."),
+          ("p","Vous pouvez modifier votre choix à tout moment avec le bouton « Cookies » en bas de page, ou supprimer les cookies et les données du site depuis les réglages de votre navigateur."),
           ("p","Google LLC peut traiter ces données en tant que sous-traitant ; voir la politique de confidentialité de Google pour plus d'informations.")])]
         )
 
@@ -142,12 +163,13 @@ def render(lg, site, email, css, consent_js, nav_extra="", og_html=""):
     out = []
     for sid, title, blocks in d["sections"]:
         out.append(f'<section id="{sid}" class="lg-sec"><h2>{e(title)}</h2>')
+        last_h3 = ""
         for b in blocks:
             if b[0] == "p": out.append(f"<p>{e(b[1])}</p>")
-            elif b[0] == "h3": out.append(f"<h3>{e(b[1])}</h3>")
+            elif b[0] == "h3": last_h3 = b[1]; out.append(f"<h3>{e(b[1])}</h3>")
             elif b[0] == "ul": out.append("<ul>" + "".join(f"<li>{e(x)}</li>" for x in b[1]) + "</ul>")
             elif b[0] == "table":
-                out.append('<div class="lg-tw" tabindex="0" role="region" aria-label="' + e(b[1][0]) + '"><table><thead><tr>' + "".join(f"<th scope='col'>{e(x)}</th>" for x in b[1]) + "</tr></thead><tbody>" + "".join("<tr>" + "".join(f"<td>{e(c)}</td>" for c in row) + "</tr>" for row in b[2]) + "</tbody></table></div>")
+                out.append('<div class="lg-tw" tabindex="0" role="region" aria-label="' + e(last_h3 or b[1][0]) + '"><table><thead><tr>' + "".join(f"<th scope='col'>{e(x)}</th>" for x in b[1]) + "</tr></thead><tbody>" + "".join("<tr>" + "".join(f"<td>{e(c)}</td>" for c in row) + "</tr>" for row in b[2]) + "</tbody></table></div>")
         out.append("</section>")
     toc = "".join(f'<a href="#{sid}">{e(t)}</a>' for sid, t, _ in d["sections"])
     cookies_btn = {"es": "Configurar cookies", "en": "Cookie settings", "fr": "Paramétrer les cookies"}[lg]

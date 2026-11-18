@@ -42,20 +42,7 @@ Object.assign(T.es.sp.branding, {
    }
   }
  ],
- "faq": [
-  [
-   "¿Necesito cambiar toda mi identidad?",
-   "No necesariamente. Primero revisamos lo que ya tienes y decidimos qué merece conservarse y qué conviene mejorar."
-  ],
-  [
-   "¿El branding incluye el diseño de mi web?",
-   "Podemos trabajar ambos en un mismo proyecto o hacerlo por etapas. Depende de tus necesidades y prioridades."
-  ],
-  [
-   "¿Qué recibiré al finalizar?",
-   "Lo definiremos antes de empezar. Según el proyecto, puede incluir archivos de identidad, aplicaciones, recursos gráficos y una guía para utilizar la marca."
-  ]
- ],
+ "faq": [["¿El diseño de la web también está incluido?", "No necesariamente. Son dos trabajos distintos, pero podemos plantearlos juntos para que todo tenga coherencia. También podemos empezar por la identidad y trabajar la web después."], ["¿Qué archivos recibiré al terminar?", "Siempre entrego los archivos originales, editables y fuente de tu identidad, además de los formatos finales necesarios para aplicarla. Antes de empezar definimos cuáles necesitas según sus usos, para que puedas trabajar con tu marca sin depender de mí para cada pequeño cambio."], ["¿Podré utilizar mi nueva identidad con otros diseñadores o proveedores?", "Sí, podemos preparar los recursos para que otras personas puedan trabajar con ella. Los formatos, archivos editables y condiciones de uso quedarán definidos en la propuesta."]],
  "cta_h": "Tu marca puede tener mucho más que contar.",
  "cta_t": "Si estás empezando, tu negocio ha cambiado o simplemente sientes que tu imagen ya no te representa, podemos hablarlo.",
  "cta_b2": "Cuéntame tu proyecto"
@@ -105,24 +92,7 @@ Object.assign(T.es.sp.web, {
    }
   }
  ],
- "faq": [
-  [
-   "¿Podré actualizar mi web por mi cuenta?",
-   "Sí, podemos elegir una plataforma con un sistema de edición que te permita gestionar los contenidos que necesites, sin tocar código cada vez."
-  ],
-  [
-   "¿Incluyes SEO?",
-   "Trabajo los fundamentos técnicos y estructurales del SEO según el alcance del proyecto. Una estrategia de posicionamiento más amplia se valora aparte."
-  ],
-  [
-   "¿También desarrollas tiendas online?",
-   "Sí. Podemos trabajar con Shopify u otras soluciones según los productos y las funcionalidades necesarias."
-  ],
-  [
-   "Ya tengo una web. ¿Puedes mejorarla?",
-   "Claro. No siempre merece la pena empezar de cero. Revisamos qué funciona, qué falla y qué conviene cambiar."
-  ]
- ],
+ "faq": [["¿Podré cambiar textos, imágenes y contenidos por mi cuenta?", "Sí, si lo tenemos en cuenta desde el principio. Podemos utilizar un CMS para que gestiones los contenidos habituales sin tocar código. También podemos definir qué partes necesitan una estructura más personalizada."], ["¿Qué gastos tendré después de publicar la web?", "Dependerá de la plataforma que utilicemos. Puede haber costes de dominio, alojamiento, CMS o herramientas externas. Los revisamos antes de empezar para que sepas qué necesitarás mantener."], ["¿El SEO está incluido?", "Trabajo los fundamentos técnicos y estructurales del SEO según el proyecto: organización del contenido, etiquetas, rendimiento y otros aspectos relevantes. Una estrategia de posicionamiento continuada sería un trabajo aparte."], ["¿Qué pasa si necesito cambios después del lanzamiento?", "Podemos acordar soporte o mejoras posteriores, pero no tienes que contratar un mantenimiento permanente por defecto. Dejaremos claro qué incluye la entrega y cómo gestionar posibles cambios después."]],
  "cta_h": "¿Tu web necesita algo más que un cambio de imagen?",
  "cta_t": "Puede que tengas una idea desde cero o una web que ya no funciona como necesitas. Cuéntame qué tienes entre manos y vemos por dónde empezar.",
  "cta_b2": "Cuéntame tu proyecto"
@@ -173,24 +143,7 @@ Object.assign(T.es.sp.ux, {
    }
   }
  ],
- "faq": [
-  [
-   "¿Necesito tener un producto desarrollado?",
-   "No. Podemos empezar con una idea, trabajar en un prototipo o mejorar una aplicación que ya funciona."
-  ],
-  [
-   "¿Puedes trabajar con mi equipo de desarrollo?",
-   "Sí. Puedo colaborar con diseñadores, desarrolladores y responsables de producto, según el proyecto."
-  ],
-  [
-   "¿Cómo sabemos qué mejorar primero?",
-   "Revisamos el producto, los problemas de uso y los objetivos del negocio. Después definimos prioridades."
-  ],
-  [
-   "¿Puedo contratarte solo para una parte?",
-   "Sí. Podemos trabajar en una auditoría, un flujo concreto, un prototipo o una colaboración más amplia."
-  ]
- ],
+ "faq": [["¿Puedes trabajar con nuestro equipo de producto o desarrollo?", "Sí. Puedo colaborar con product managers, diseñadores y desarrolladores, adaptándome a la forma de trabajar del equipo. La idea es integrar el diseño en el proceso, no crear algo que después sea difícil de implementar."], ["¿Qué pasa si no tenemos datos ni investigación de usuarios?", "No significa que tengamos que empezar a diseñar a ciegas. Podemos revisar la información disponible, identificar qué necesitamos entender y decidir qué vale la pena investigar antes de tomar decisiones."], ["¿Cómo evitamos diseñar algo que después no se pueda desarrollar?", "Involucrando las limitaciones técnicas desde el principio. Podemos revisar las soluciones con desarrollo, ajustar lo que haga falta y preparar diseños que tengan sentido tanto para los usuarios como para el equipo que los construirá."], ["¿Podemos trabajar juntos en un problema concreto sin rediseñar todo el producto?", "Sí. Podemos centrarnos en un flujo, una funcionalidad o un problema de uso. No tiene sentido rediseñar todo si lo que necesitas es resolver algo específico."]],
  "cta_h": "¿Tienes un producto que necesita funcionar mejor?",
  "cta_t": "Puede que estés empezando con una idea o intentando mejorar algo que ya existe. Cuéntame qué estás construyendo y vemos cómo puedo ayudarte.",
  "cta_b2": "Cuéntame tu proyecto"
@@ -246,20 +199,7 @@ Object.assign(T.en.sp.branding, {
    }
   }
  ],
- "faq": [
-  [
-   "Do I need to change my entire identity?",
-   "Not necessarily. First we look at what you already have and decide what to keep and what could be improved."
-  ],
-  [
-   "Does branding include my website?",
-   "We can work on both together or in stages, depending on your needs and priorities."
-  ],
-  [
-   "What will I receive at the end?",
-   "We'll agree on that before we start. Depending on the project, it may include identity files, applications, graphic assets and brand guidelines."
-  ]
- ],
+ "faq": [["Is website design included too?", "Not necessarily. They're two separate jobs, but we can plan them together so everything feels coherent. We can also start with the identity and work on the website later."], ["What files will I receive at the end?", "I always deliver the original, editable and source files of your identity, plus the final formats needed to apply it. Before we start, we define which ones you need based on how you'll use it, so you can work with your brand without relying on me for every small change."], ["Can I use my new identity with other designers or suppliers?", "Yes, we can prepare the assets so other people can work with it. Formats, editable files and terms of use will be set out in the proposal."]],
  "cta_h": "Your brand might have more to say.",
  "cta_t": "Whether you're starting out, your business has changed or your identity no longer feels right, we can talk it through.",
  "cta_b2": "Tell me about your project"
@@ -309,24 +249,7 @@ Object.assign(T.en.sp.web, {
    }
   }
  ],
- "faq": [
-  [
-   "Will I be able to update my own website?",
-   "Yes. We can choose an editing system that lets you manage your content without touching code every time."
-  ],
-  [
-   "Do you include SEO?",
-   "I cover the technical and structural foundations within the project scope. A broader SEO strategy can be discussed separately."
-  ],
-  [
-   "Do you build online stores?",
-   "Yes, using Shopify or another suitable solution depending on your products and requirements."
-  ],
-  [
-   "I already have a site. Can you improve it?",
-   "Of course. Starting over isn't always necessary. We can see what works, what doesn't and what's worth changing."
-  ]
- ],
+ "faq": [["Will I be able to change text, images and content myself?", "Yes, if we plan for it from the start. We can use a CMS so you can manage everyday content without touching code. We can also define which parts need a more custom structure."], ["What will it cost me after the site is live?", "It depends on the platform we use. There may be costs for the domain, hosting, CMS or external tools. We go through them before we start so you know what you'll need to keep paying for."], ["Is SEO included?", "I work on the technical and structural foundations of SEO depending on the project: content organization, tags, performance and other relevant aspects. An ongoing search strategy would be separate work."], ["What if I need changes after launch?", "We can agree on support or later improvements, but you don't have to sign up for permanent maintenance by default. We'll make clear what the delivery includes and how to handle changes afterwards."]],
  "cta_h": "Does your website need more than a fresh look?",
  "cta_t": "Whether you're starting with an idea or your existing site isn't doing its job anymore, tell me what you have in mind. We'll find a place to start.",
  "cta_b2": "Tell me about your project"
@@ -377,24 +300,7 @@ Object.assign(T.en.sp.ux, {
    }
   }
  ],
- "faq": [
-  [
-   "Do I need to have a product already built?",
-   "No. We can start from an idea, create a prototype or improve something that's already live."
-  ],
-  [
-   "Can you work with my development team?",
-   "Yes. I can collaborate with designers, developers and product managers, depending on what the project needs."
-  ],
-  [
-   "How do we decide what to improve first?",
-   "We review the product, its user pain points and business goals, then agree on priorities."
-  ],
-  [
-   "Can I hire you for just one part of a project?",
-   "Absolutely. That might be an audit, a particular flow, a prototype or a longer collaboration."
-  ]
- ],
+ "faq": [["Can you work with our product or development team?", "Yes. I can work with product managers, designers and developers, adapting to how the team already works. The idea is to build design into the process, not to create something that's hard to implement later."], ["What if we have no data or user research?", "It doesn't mean we have to design blind. We can review the information available, identify what we need to understand and decide what's worth researching before making decisions."], ["How do we avoid designing something that can't be built?", "By bringing technical constraints in from the start. We can review solutions with the developers, adjust what's needed and prepare designs that make sense for both users and the team building them."], ["Can we work on one specific problem without redesigning the whole product?", "Yes. We can focus on a single flow, a feature or a usage problem. There's no point redesigning everything if what you need is to solve something specific."]],
  "cta_h": "Have a product that could work better?",
  "cta_t": "Whether you're starting something new or improving what's already there, tell me what you're building and we'll see how I can help.",
  "cta_b2": "Tell me about your project"
@@ -450,20 +356,7 @@ Object.assign(T.fr.sp.branding, {
    }
   }
  ],
- "faq": [
-  [
-   "Faut-il changer toute mon identité ?",
-   "Pas forcément. On regarde d'abord ce qui existe et on décide ensemble de ce qui mérite d'être conservé ou amélioré."
-  ],
-  [
-   "Le branding comprend-il aussi mon site web ?",
-   "On peut travailler les deux dans un même projet ou avancer par étapes, selon tes besoins et tes priorités."
-  ],
-  [
-   "Qu'est-ce que je reçois à la fin ?",
-   "On le définit avant de commencer : fichiers d'identité, déclinaisons, ressources graphiques et guide d'utilisation, selon le projet."
-  ]
- ],
+ "faq": [["La conception du site web est-elle comprise ?", "Pas forcément. Ce sont deux travaux distincts, mais on peut les envisager ensemble pour que tout soit cohérent. On peut aussi commencer par l'identité et travailler le site plus tard."], ["Quels fichiers vais-je recevoir à la fin ?", "Je livre toujours les fichiers originaux, modifiables et sources de ton identité, ainsi que les formats finaux nécessaires pour l'appliquer. Avant de commencer, on définit lesquels te sont utiles selon tes usages, pour que tu puisses travailler avec ta marque sans dépendre de moi pour chaque petite modification."], ["Pourrai-je utiliser ma nouvelle identité avec d'autres designers ou prestataires ?", "Oui, on peut préparer les ressources pour que d'autres personnes puissent travailler avec. Les formats, les fichiers modifiables et les conditions d'utilisation seront précisés dans la proposition."]],
  "cta_h": "Ta marque a peut-être encore beaucoup à raconter.",
  "cta_t": "Tu te lances, ton activité a changé ou ton image ne te ressemble plus ? On peut en parler.",
  "cta_b2": "Parle-moi de ton projet"
@@ -513,24 +406,7 @@ Object.assign(T.fr.sp.web, {
    }
   }
  ],
- "faq": [
-  [
-   "Pourrai-je mettre mon site à jour moi-même ?",
-   "Oui. On peut choisir un outil d'édition qui te permet de gérer ton contenu sans toucher au code à chaque modification."
-  ],
-  [
-   "Le SEO est-il inclus ?",
-   "Je travaille les bases techniques et structurelles du SEO selon le périmètre. Une stratégie de référencement plus poussée peut être étudiée séparément."
-  ],
-  [
-   "Tu crées aussi des boutiques en ligne ?",
-   "Oui, avec Shopify ou d'autres solutions selon les produits et les fonctionnalités nécessaires."
-  ],
-  [
-   "J'ai déjà un site. Tu peux l'améliorer ?",
-   "Bien sûr. Repartir de zéro n'est pas toujours utile. On analyse ce qui fonctionne, ce qui coince et ce qu'il faudrait changer."
-  ]
- ],
+ "faq": [["Pourrai-je modifier moi-même les textes, les images et les contenus ?", "Oui, si on le prévoit dès le départ. On peut utiliser un CMS pour que tu gères les contenus courants sans toucher au code. On peut aussi définir les parties qui demandent une structure plus sur mesure."], ["Quels frais aurai-je après la mise en ligne ?", "Ça dépendra de la plateforme choisie. Il peut y avoir des frais de domaine, d'hébergement, de CMS ou d'outils externes. On les passe en revue avant de commencer pour que tu saches ce que tu devras maintenir."], ["Le SEO est-il inclus ?", "Je travaille les bases techniques et structurelles du SEO selon le projet : organisation du contenu, balises, performances et autres points utiles. Une stratégie de référencement suivie serait un travail à part."], ["Et si j'ai besoin de modifications après le lancement ?", "On peut convenir d'un suivi ou d'améliorations ultérieures, mais tu n'as pas à souscrire une maintenance permanente par défaut. On précisera ce que comprend la livraison et comment gérer d'éventuels changements ensuite."]],
  "cta_h": "Et si ton site avait besoin de plus qu'un nouveau look ?",
  "cta_t": "Que tu partes d'une idée ou d'un site qui ne répond plus à tes besoins, raconte-moi où tu en es. On verra par où commencer.",
  "cta_b2": "Parle-moi de ton projet"
@@ -581,24 +457,7 @@ Object.assign(T.fr.sp.ux, {
    }
   }
  ],
- "faq": [
-  [
-   "Dois-je déjà avoir un produit développé ?",
-   "Non. On peut partir d'une idée, créer un prototype ou améliorer une application existante."
-  ],
-  [
-   "Tu peux travailler avec mon équipe de développement ?",
-   "Oui. Je peux collaborer avec des designers, des développeurs et des product managers, selon le projet."
-  ],
-  [
-   "Comment savoir quoi améliorer en premier ?",
-   "On regarde le produit, les difficultés rencontrées et les objectifs de l'entreprise, puis on définit les priorités."
-  ],
-  [
-   "Est-ce possible de te confier seulement une partie du projet ?",
-   "Oui : audit, parcours particulier, prototype ou collaboration plus large."
-  ]
- ],
+ "faq": [["Tu peux travailler avec notre équipe produit ou développement ?", "Oui. Je peux collaborer avec des product managers, des designers et des développeurs, en m'adaptant à la façon de travailler de l'équipe. L'idée est d'intégrer le design au processus, pas de créer quelque chose de difficile à implémenter ensuite."], ["Et si on n'a ni données ni recherche utilisateur ?", "Ça ne veut pas dire qu'on doit concevoir à l'aveugle. On peut examiner les informations disponibles, identifier ce qu'il faut comprendre et décider ce qui vaut la peine d'être étudié avant de prendre des décisions."], ["Comment éviter de concevoir quelque chose qui ne pourra pas être développé ?", "En intégrant les contraintes techniques dès le départ. On peut passer les solutions en revue avec l'équipe de développement, ajuster ce qu'il faut et préparer des designs qui ont du sens à la fois pour les utilisateurs et pour ceux qui les construiront."], ["Peut-on travailler sur un problème précis sans repenser tout le produit ?", "Oui. On peut se concentrer sur un parcours, une fonctionnalité ou un problème d'usage. Inutile de tout repenser si tu as besoin de résoudre un point précis."]],
  "cta_h": "Un produit à rendre plus simple à utiliser ?",
  "cta_t": "Que tu démarres avec une idée ou que tu veuilles améliorer l'existant, raconte-moi ce que tu construis. On verra comment avancer ensemble.",
  "cta_b2": "Parle-moi de ton projet"
@@ -649,24 +508,7 @@ Object.assign(T.es, {
  "d_fail_b": "Puedes intentarlo de nuevo o escribirme directamente a hey@tomfabre.com.",
  "d_sent": "¡Mensaje enviado! Gracias por escribirme. Te respondo en 24 horas, o antes si puedo.",
  "d_fail": "Parece que el mensaje no ha salido. Puedes intentarlo de nuevo o escribirme directamente a hey@tomfabre.com.",
- "ct_faq": [
-  [
-   "¿Necesito tener el proyecto definido?",
-   "No. Podemos empezar con una idea, un problema o una pregunta. Cuéntame lo que tienes en mente y vemos por dónde empezar."
-  ],
-  [
-   "¿Trabajas con empresas fuera de Madrid?",
-   "Sí. Trabajo en remoto con equipos y clientes de distintos lugares. Podemos comunicarnos en español, francés o inglés."
-  ],
-  [
-   "¿Puedes encargarte de todo el proyecto?",
-   "Depende de lo que necesites. Hay proyectos que desarrollo personalmente y otros en los que colaboro con profesionales de confianza para cubrir diferentes especialidades."
-  ],
-  [
-   "¿Cuánto cuesta trabajar contigo?",
-   "Depende del alcance. No cuesta lo mismo renovar una identidad que diseñar y desarrollar una web completa. Cuéntame qué necesitas y podemos valorar una propuesta."
-  ]
- ],
+ "ct_faq": [["¿Qué información necesitas para empezar?", "Con saber qué tienes en mente es suficiente. Si ya tienes una web, referencias, fechas o un presupuesto aproximado, puedes compartirlos. Si no, lo hablamos después."], ["¿Qué pasa después de enviar el formulario?", "Recibiré tu mensaje y revisaré lo que me cuentas. Te responderé para aclarar dudas o proponerte el siguiente paso. No tienes que preparar una presentación ni un briefing completo."]],
  "foot_mega": "Hasta aquí llegamos. Por ahora.",
  "foot_lead": "Si tienes algo en mente, ya sabes dónde encontrarme.",
  "foot_explore": "Explorar",
@@ -713,24 +555,7 @@ Object.assign(T.en, {
  "d_fail_b": "You can try again or email me directly at hey@tomfabre.com.",
  "d_sent": "Message sent! Thanks for reaching out. I'll reply within 24 hours, or sooner if I can.",
  "d_fail": "Looks like the message didn't go through. You can try again or email me directly at hey@tomfabre.com.",
- "ct_faq": [
-  [
-   "Do I need to have my project figured out?",
-   "Not at all. We can start with an idea, a problem or just a question. Tell me where you're at and we'll take it from there."
-  ],
-  [
-   "Do you work with businesses outside Madrid?",
-   "Yes. I work remotely with clients and teams in different places, in Spanish, French and English."
-  ],
-  [
-   "Can you handle the whole project?",
-   "It depends on what's needed. I work on some projects myself and bring in trusted collaborators for others."
-  ],
-  [
-   "How much does it cost to work with you?",
-   "It depends on the scope. Refreshing a brand and designing and developing a full website involve very different work. Tell me what you need and we can discuss a proposal."
-  ]
- ],
+ "ct_faq": [["What information do you need to get started?", "Knowing what you have in mind is enough. If you already have a website, references, dates or a rough budget, feel free to share them. If not, we'll talk about it later."], ["What happens after I send the form?", "I'll receive your message and read through what you tell me. I'll reply to clear up questions or suggest the next step. You don't need to prepare a presentation or a full brief."]],
  "foot_mega": "That's a wrap. For now.",
  "foot_lead": "If you've got something in mind, you know where to find me.",
  "foot_explore": "Explore",
@@ -777,24 +602,7 @@ Object.assign(T.fr, {
  "d_fail_b": "Tu peux réessayer ou m'écrire directement à hey@tomfabre.com.",
  "d_sent": "Message envoyé ! Merci pour ton message. Je te réponds sous 24 heures, ou avant si possible.",
  "d_fail": "Le message n'est pas parti. Tu peux réessayer ou m'écrire directement à hey@tomfabre.com.",
- "ct_faq": [
-  [
-   "Faut-il que mon projet soit déjà bien défini ?",
-   "Non. On peut partir d'une idée, d'un problème ou d'une simple question. Dis-moi où tu en es et on verra par où commencer."
-  ],
-  [
-   "Tu travailles avec des entreprises hors de Madrid ?",
-   "Oui. Je travaille à distance avec des équipes et des clients de différents pays, en espagnol, français et anglais."
-  ],
-  [
-   "Tu peux prendre en charge tout un projet ?",
-   "Ça dépend des besoins. Je réalise certains projets moi-même et je collabore sur d'autres avec des professionnels de confiance."
-  ],
-  [
-   "Combien coûte une collaboration avec toi ?",
-   "Tout dépend du périmètre. Repenser une identité et concevoir un site complet ne demandent pas le même travail. Décris-moi ton projet et nous pourrons en discuter."
-  ]
- ],
+ "ct_faq": [["De quelles informations as-tu besoin pour commencer ?", "Savoir ce que tu as en tête suffit. Si tu as déjà un site, des références, des dates ou un budget approximatif, tu peux les partager. Sinon, on en parlera ensuite."], ["Que se passe-t-il après l'envoi du formulaire ?", "Je reçois ton message et je lis ce que tu me racontes. Je te réponds pour lever les doutes ou te proposer la suite. Pas besoin de préparer une présentation ni un brief complet."]],
  "foot_mega": "C'est tout. Pour le moment.",
  "foot_lead": "Si tu as quelque chose en tête, tu sais où me trouver.",
  "foot_explore": "Explorer",

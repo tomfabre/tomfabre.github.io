@@ -1,6 +1,6 @@
 /* Copy de los formularios (ES/EN/FR): contacto general, análisis UX/UI del juego y CTAs de contexto.
    Se carga el último (después de c1g.js): pisa d_*, e_*, ph_*, topics, gf_*, claim/write, pj_cta, cl_cta y dq_*.
-   Los rangos de presupuesto (T.xx.budget) NO se tocan: son una decisión comercial ya existente (c1t.js).
+   Los rangos de presupuesto (T.xx.budget) viven en c1t.js (<1.000, 1.000–2.000, 2.000–5.000, >5.000, no lo sé).
    Francés: tuteo, como el resto del sitio; espacio fino antes de ? ! : ; según la tipografía francesa. */
 Object.assign(T.es, {
   cn_h: "Así de simple.", cn: [["Tú me cuentas", "Qué tienes en mente. No hace falta tenerlo todo claro."], ["Le damos una vuelta", "Intercambiamos ideas y vemos qué podemos hacer."], ["Arrancamos", "Si encajamos, nos ponemos a trabajar."]],
@@ -14,8 +14,8 @@ Object.assign(T.es, {
   d_msg: "Tu mensaje", d_msg_h: "", ph_msg: "Una idea, un proyecto, algo que te gustaría mejorar… Cuéntame.",
   d_budget: "Presupuesto orientativo (opcional)", d_budget_ph: "Prefiero no indicarlo",
   d_send: "Enviar mensaje", d_sending: "Enviando…",
-  d_sent_t: "¡Mensaje enviado!", d_sent_b: "Gracias por escribirme. Lo leeré con calma y te responderé pronto.",
-  d_sent: "¡Mensaje enviado! Gracias por escribirme. Lo leeré con calma y te responderé pronto.",
+  d_sent_t: "¡Ya tengo tu mensaje!", d_sent_b: "Gracias por escribirme. Le echaré un vistazo y te responderé en las próximas 24 horas.", d_sent_s: "Ahora puedes seguir explorando la web.", d_sent_close: "Cerrar",
+  d_sent: "¡Ya tengo tu mensaje! Gracias por escribirme. Le echaré un vistazo y te responderé en las próximas 24 horas. Ahora puedes seguir explorando la web.",
   d_fail_t: "No pude enviar tu mensaje.", d_fail_b: "Inténtalo de nuevo en un momento o escríbeme a hey@tomfabre.com.",
   d_fail: "No pude enviar tu mensaje. Inténtalo de nuevo en un momento o escríbeme a hey@tomfabre.com.",
   e_name: "Escribe tu nombre.", e_mail_empty: "Escribe tu email.", e_mail: "Revisa tu email: parece que falta algo.",
@@ -31,7 +31,7 @@ Object.assign(T.es, {
   gf_more: "¿Algo en particular que quieras mejorar? (opcional)", gf_more_ph: "Navegación, diseño, versión móvil… o lo que quieras.",
   gf_send: "Quiero mi análisis UX/UI", gf_sending: "Enviando solicitud…",
   gf_web_empty: "Escribe la dirección de tu web.", gf_web_err: "Escribe una dirección web válida, por ejemplo tuweb.com.",
-  gf_ok_t: "Tu web ya está en mi lista.", gf_ok_b1: "Te enviaré tres recomendaciones UX/UI al email que me dejaste. Gracias por jugar.", gf_ok_b2: "",
+  gf_ok_t: "¡Ahora me toca a mí!", gf_ok_b1: "Ya tengo tu web. La revisaré y te enviaré tres ideas para mejorarla por email.", gf_ok_b2: "Gracias por jugar.",
   gf_close: "Cerrar",
   claim: "Quiero mi análisis UX/UI", write: "Quiero mi análisis UX/UI",
   /* CTAs de entrada */
@@ -48,8 +48,8 @@ Object.assign(T.en, {
   d_msg: "Your message", d_msg_h: "", ph_msg: "An idea, a project, something you'd like to improve… Tell me about it.",
   d_budget: "Rough budget (optional)", d_budget_ph: "I'd rather not say",
   d_send: "Send message", d_sending: "Sending…",
-  d_sent_t: "Message sent!", d_sent_b: "Thanks for writing. I'll read it carefully and get back to you soon.",
-  d_sent: "Message sent! Thanks for writing. I'll read it carefully and get back to you soon.",
+  d_sent_t: "Got your message!", d_sent_b: "Thanks for reaching out. I'll take a look and get back to you within 24 hours.", d_sent_s: "Feel free to keep exploring the site.", d_sent_close: "Close",
+  d_sent: "Got your message! Thanks for reaching out. I'll take a look and get back to you within 24 hours. Feel free to keep exploring the site.",
   d_fail_t: "I couldn't send your message.", d_fail_b: "Please try again in a moment, or email me at hey@tomfabre.com.",
   d_fail: "I couldn't send your message. Please try again in a moment, or email me at hey@tomfabre.com.",
   e_name: "Please enter your name.", e_mail_empty: "Please enter your email.", e_mail: "Check your email address: something seems to be missing.",
@@ -64,7 +64,7 @@ Object.assign(T.en, {
   gf_more: "Anything in particular you'd like to improve? (optional)", gf_more_ph: "Navigation, design, mobile version… or anything else.",
   gf_send: "I want my UX/UI review", gf_sending: "Sending request…",
   gf_web_empty: "Enter your website address.", gf_web_err: "Enter a valid web address, for example yoursite.com.",
-  gf_ok_t: "Your website is on my list.", gf_ok_b1: "I'll email you three UX/UI recommendations at the address you left. Thanks for playing.", gf_ok_b2: "",
+  gf_ok_t: "My turn now!", gf_ok_b1: "I've got your website. I'll review it and email you three ideas to improve it.", gf_ok_b2: "Thanks for playing.",
   gf_close: "Close",
   claim: "I want my UX/UI review", write: "I want my UX/UI review",
   pj_cta: "Shall we work on something similar?", cl_cta: "Shall we talk?", chat_write: "Write to me"
@@ -80,8 +80,8 @@ Object.assign(T.fr, {
   d_msg: "Ton message", d_msg_h: "", ph_msg: "Une idée, un projet, quelque chose à améliorer… Raconte-moi.",
   d_budget: "Budget indicatif (facultatif)", d_budget_ph: "Je préfère ne pas l'indiquer",
   d_send: "Envoyer le message", d_sending: "Envoi en cours…",
-  d_sent_t: "Message envoyé !", d_sent_b: "Merci pour ton message. Je le lirai attentivement et je te réponds vite.",
-  d_sent: "Message envoyé ! Merci pour ton message. Je le lirai attentivement et je te réponds vite.",
+  d_sent_t: "Bien reçu !", d_sent_b: "Merci pour ton message. Je vais y jeter un œil et te répondre dans les 24 heures.", d_sent_s: "Tu peux continuer à explorer le site.", d_sent_close: "Fermer",
+  d_sent: "Bien reçu ! Merci pour ton message. Je vais y jeter un œil et te répondre dans les 24 heures. Tu peux continuer à explorer le site.",
   d_fail_t: "Je n'ai pas pu envoyer ton message.", d_fail_b: "Réessaie dans un instant ou écris-moi à hey@tomfabre.com.",
   d_fail: "Je n'ai pas pu envoyer ton message. Réessaie dans un instant ou écris-moi à hey@tomfabre.com.",
   e_name: "Indique ton prénom.", e_mail_empty: "Indique ton email.", e_mail: "Vérifie ton email : il semble manquer quelque chose.",
@@ -96,7 +96,7 @@ Object.assign(T.fr, {
   gf_more: "Quelque chose en particulier à améliorer ? (facultatif)", gf_more_ph: "Navigation, design, version mobile… ou autre chose.",
   gf_send: "Je veux mon analyse UX/UI", gf_sending: "Envoi de la demande…",
   gf_web_empty: "Indique l'adresse de ton site.", gf_web_err: "Indique une adresse valide, par exemple tonsite.com.",
-  gf_ok_t: "Ton site est dans ma liste.", gf_ok_b1: "Je t'enverrai trois recommandations UX/UI à l'email que tu m'as laissé. Merci d'avoir joué.", gf_ok_b2: "",
+  gf_ok_t: "À mon tour !", gf_ok_b1: "J'ai bien reçu ton site. Je vais le regarder et t'envoyer trois idées pour l'améliorer par email.", gf_ok_b2: "Merci d'avoir joué.",
   gf_close: "Fermer",
   claim: "Je veux mon analyse UX/UI", write: "Je veux mon analyse UX/UI",
   pj_cta: "On travaille sur quelque chose de similaire ?", cl_cta: "On en parle ?", chat_write: "Écris-moi"

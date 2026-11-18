@@ -33,14 +33,14 @@ Before we talk colours or typefaces, I want to get to know your business. We'll 
 ##### A brand lives beyond its guidelines
 A brand can look brilliant in a presentation. The real test comes when it shows up on a website, in a social post, in a pitch deck or even on an office wall. That's why I think about applications from the beginning. With Contazara, we created an identity that went on to shape its website, communications and physical spaces.
 
-Q: Do I need to change my entire identity?
-A: Not necessarily. First we look at what you already have and decide what to keep and what could be improved.
+Q: Is website design included too?
+A: Not necessarily. They're two separate jobs, but we can plan them together so everything feels coherent. We can also start with the identity and work on the website later.
 
-Q: Does branding include my website?
-A: We can work on both together or in stages, depending on your needs and priorities.
+Q: What files will I receive at the end?
+A: I always deliver the original, editable and source files of your identity, plus the final formats needed to apply it. Before we start, we define which ones you need based on how you'll use it, so you can work with your brand without relying on me for every small change.
 
-Q: What will I receive at the end?
-A: We'll agree on that before we start. Depending on the project, it may include identity files, applications, graphic assets and brand guidelines.
+Q: Can I use my new identity with other designers or suppliers?
+A: Yes, we can prepare the assets so other people can work with it. Formats, editable files and terms of use will be set out in the proposal.
 
 #### Web design & development — Your website should work as hard as you do.
 URL: https://tomfabre.com/en/services/web-design/
@@ -61,17 +61,17 @@ I mainly work with Webflow and code, but I can also build with Shopify, WordPres
 ##### Designing for the people using it
 When someone visits your website, they should quickly understand what you do and find what they need. That's why I work on structure, content, navigation and calls to action as well as the visual design. With Contazara, we reorganised information to make its products and technology easier to explore. With Carceral Ecologies, we're working on a growing archive of research and resources. Two very different challenges, each needing its own approach.
 
-Q: Will I be able to update my own website?
-A: Yes. We can choose an editing system that lets you manage your content without touching code every time.
+Q: Will I be able to change text, images and content myself?
+A: Yes, if we plan for it from the start. We can use a CMS so you can manage everyday content without touching code. We can also define which parts need a more custom structure.
 
-Q: Do you include SEO?
-A: I cover the technical and structural foundations within the project scope. A broader SEO strategy can be discussed separately.
+Q: What will it cost me after the site is live?
+A: It depends on the platform we use. There may be costs for the domain, hosting, CMS or external tools. We go through them before we start so you know what you'll need to keep paying for.
 
-Q: Do you build online stores?
-A: Yes, using Shopify or another suitable solution depending on your products and requirements.
+Q: Is SEO included?
+A: I work on the technical and structural foundations of SEO depending on the project: content organization, tags, performance and other relevant aspects. An ongoing search strategy would be separate work.
 
-Q: I already have a site. Can you improve it?
-A: Of course. Starting over isn't always necessary. We can see what works, what doesn't and what's worth changing.
+Q: What if I need changes after launch?
+A: We can agree on support or later improvements, but you don't have to sign up for permanent maintenance by default. We'll make clear what the delivery includes and how to handle changes afterwards.
 
 #### Digital product, UX/UI & digital strategy — Easy to use. Not always easy to design.
 URL: https://tomfabre.com/en/services/ux-ui-design/
@@ -92,40 +92,31 @@ Before designing a screen, I want to understand what it's for: what people need 
 ##### From design to real products
 I've worked on products built from the ground up and on apps that already had millions of downloads. With À2pas, I designed a platform connecting audiences, artists and venues. With HappyLife, the goal was to help people meet and share activities offline. And on Mood Messenger, I contributed to the evolution of an existing app, its interfaces and relaunch. Different projects that taught me to think beyond the screen.
 
-Q: Do I need to have a product already built?
-A: No. We can start from an idea, create a prototype or improve something that's already live.
+Q: Can you work with our product or development team?
+A: Yes. I can work with product managers, designers and developers, adapting to how the team already works. The idea is to build design into the process, not to create something that's hard to implement later.
 
-Q: Can you work with my development team?
-A: Yes. I can collaborate with designers, developers and product managers, depending on what the project needs.
+Q: What if we have no data or user research?
+A: It doesn't mean we have to design blind. We can review the information available, identify what we need to understand and decide what's worth researching before making decisions.
 
-Q: How do we decide what to improve first?
-A: We review the product, its user pain points and business goals, then agree on priorities.
+Q: How do we avoid designing something that can't be built?
+A: By bringing technical constraints in from the start. We can review solutions with the developers, adjust what's needed and prepare designs that make sense for both users and the team building them.
 
-Q: Can I hire you for just one part of a project?
-A: Absolutely. That might be an audit, a particular flow, a prototype or a longer collaboration.
+Q: Can we work on one specific problem without redesigning the whole product?
+A: Yes. We can focus on a single flow, a feature or a usage problem. There's no point redesigning everything if what you need is to solve something specific.
 
 ### FAQ
 
-Q: What kind of projects can you help with?
-A: Branding and identity, web design and development, and digital product design. I can also help shape the strategy if you're not yet sure what you need.
+Q: Will I work directly with you?
+A: Yes. I lead the project and I'm your point of contact throughout. When other skills are needed, I can bring in Binōme Studio or trusted professionals.
 
-Q: Do you work alone or with a team?
-A: I'm your main point of contact and work directly on the project. When other skills are needed, I can bring in Binōme Studio and trusted specialists I've collaborated with before.
+Q: Do you have fixed rates, or do you quote per project?
+A: It depends on the work. A one-off need and a full project don't take the same time or resources. I'd rather understand what you need first and then put together a proposal with a clear scope and cost.
 
-Q: How much does it cost to work with you?
-A: It depends on your goals, scope and complexity. Tell me what you're planning and I'll put together a proposal around what you actually need.
+Q: Can we work together if I'm not in Madrid?
+A: Of course. I work remotely with clients and teams in other places. We can communicate in Spanish, English or French.
 
-Q: Do I need to know which platform my website should use?
-A: Not at all. We first understand the project, then choose the best fit—whether that's Webflow, Shopify, WordPress, Framer or a custom solution.
-
-Q: Can you improve an existing website or brand without starting over?
-A: Absolutely. Starting from scratch isn't always the answer. Sometimes it's better to keep what works, fix what doesn't and build from there.
-
-Q: Do you work with clients outside Spain?
-A: Yes. I'm based in Madrid and collaborate internationally in Spanish, English and French.
-
-Q: How do we get started?
-A: Tell me a little about what you need. We'll discuss your goals and scope and, if we're a good fit, decide how best to work together.
+Q: Do you also work with agencies or in-house teams?
+A: Yes. I can step in on a specific part of a project or collaborate over a longer period, depending on what the team needs.
 
 ### Projects
 
@@ -745,14 +736,14 @@ Antes de pensar en colores o tipografías, quiero conocer tu negocio. Hablamos d
 ##### Una marca también vive fuera del manual
 Una identidad puede verse muy bien en una presentación. El verdadero reto llega cuando empiezas a utilizarla: en una web, una publicación, una propuesta comercial o incluso en las paredes de una oficina. Por eso me interesa pensar desde el principio en sus aplicaciones. Contazara es un buen ejemplo: trabajamos en una nueva identidad que después llevamos a su web, su comunicación y diferentes espacios de la empresa.
 
-Q: ¿Necesito cambiar toda mi identidad?
-A: No necesariamente. Primero revisamos lo que ya tienes y decidimos qué merece conservarse y qué conviene mejorar.
+Q: ¿El diseño de la web también está incluido?
+A: No necesariamente. Son dos trabajos distintos, pero podemos plantearlos juntos para que todo tenga coherencia. También podemos empezar por la identidad y trabajar la web después.
 
-Q: ¿El branding incluye el diseño de mi web?
-A: Podemos trabajar ambos en un mismo proyecto o hacerlo por etapas. Depende de tus necesidades y prioridades.
+Q: ¿Qué archivos recibiré al terminar?
+A: Siempre entrego los archivos originales, editables y fuente de tu identidad, además de los formatos finales necesarios para aplicarla. Antes de empezar definimos cuáles necesitas según sus usos, para que puedas trabajar con tu marca sin depender de mí para cada pequeño cambio.
 
-Q: ¿Qué recibiré al finalizar?
-A: Lo definiremos antes de empezar. Según el proyecto, puede incluir archivos de identidad, aplicaciones, recursos gráficos y una guía para utilizar la marca.
+Q: ¿Podré utilizar mi nueva identidad con otros diseñadores o proveedores?
+A: Sí, podemos preparar los recursos para que otras personas puedan trabajar con ella. Los formatos, archivos editables y condiciones de uso quedarán definidos en la propuesta.
 
 #### Web & desarrollo — Tu web debería trabajar tan bien como tú.
 URL: https://tomfabre.com/servicios/diseno-web/
@@ -773,17 +764,17 @@ Trabajo principalmente con Webflow y código, pero también puedo desarrollar pr
 ##### Diseñar para quien está al otro lado
 Cuando alguien entra en tu web, debería poder entender qué haces y encontrar lo que necesita sin demasiado esfuerzo. Por eso trabajo tanto el diseño como la estructura, los contenidos, la navegación y las llamadas a la acción. En Contazara reorganizamos la información para presentar mejor sus productos y tecnología. En Carceral Ecologies estamos trabajando en dar orden a un archivo de investigaciones y recursos que sigue creciendo. Dos retos distintos; cada uno necesitaba su solución.
 
-Q: ¿Podré actualizar mi web por mi cuenta?
-A: Sí, podemos elegir una plataforma con un sistema de edición que te permita gestionar los contenidos que necesites, sin tocar código cada vez.
+Q: ¿Podré cambiar textos, imágenes y contenidos por mi cuenta?
+A: Sí, si lo tenemos en cuenta desde el principio. Podemos utilizar un CMS para que gestiones los contenidos habituales sin tocar código. También podemos definir qué partes necesitan una estructura más personalizada.
 
-Q: ¿Incluyes SEO?
-A: Trabajo los fundamentos técnicos y estructurales del SEO según el alcance del proyecto. Una estrategia de posicionamiento más amplia se valora aparte.
+Q: ¿Qué gastos tendré después de publicar la web?
+A: Dependerá de la plataforma que utilicemos. Puede haber costes de dominio, alojamiento, CMS o herramientas externas. Los revisamos antes de empezar para que sepas qué necesitarás mantener.
 
-Q: ¿También desarrollas tiendas online?
-A: Sí. Podemos trabajar con Shopify u otras soluciones según los productos y las funcionalidades necesarias.
+Q: ¿El SEO está incluido?
+A: Trabajo los fundamentos técnicos y estructurales del SEO según el proyecto: organización del contenido, etiquetas, rendimiento y otros aspectos relevantes. Una estrategia de posicionamiento continuada sería un trabajo aparte.
 
-Q: Ya tengo una web. ¿Puedes mejorarla?
-A: Claro. No siempre merece la pena empezar de cero. Revisamos qué funciona, qué falla y qué conviene cambiar.
+Q: ¿Qué pasa si necesito cambios después del lanzamiento?
+A: Podemos acordar soporte o mejoras posteriores, pero no tienes que contratar un mantenimiento permanente por defecto. Dejaremos claro qué incluye la entrega y cómo gestionar posibles cambios después.
 
 #### Producto digital, UX/UI & estrategia digital — Que sea fácil de usar no debería ser complicado.
 URL: https://tomfabre.com/servicios/diseno-ux-ui/
@@ -804,40 +795,31 @@ Antes de diseñar una pantalla, quiero entender para qué sirve: qué necesita h
 ##### Del diseño al producto real
 He trabajado en productos que empezaron desde cero y en aplicaciones que ya tenían millones de descargas. En À2pas diseñé una plataforma que conectaba espectadores, artistas y espacios culturales. En HappyLife, el reto fue crear una app para ayudar a las personas a conocerse fuera del móvil. Y en Mood Messenger participé en la evolución de un producto existente, sus interfaces y su relanzamiento. Experiencias diferentes que me enseñaron a pensar más allá de una pantalla.
 
-Q: ¿Necesito tener un producto desarrollado?
-A: No. Podemos empezar con una idea, trabajar en un prototipo o mejorar una aplicación que ya funciona.
+Q: ¿Puedes trabajar con nuestro equipo de producto o desarrollo?
+A: Sí. Puedo colaborar con product managers, diseñadores y desarrolladores, adaptándome a la forma de trabajar del equipo. La idea es integrar el diseño en el proceso, no crear algo que después sea difícil de implementar.
 
-Q: ¿Puedes trabajar con mi equipo de desarrollo?
-A: Sí. Puedo colaborar con diseñadores, desarrolladores y responsables de producto, según el proyecto.
+Q: ¿Qué pasa si no tenemos datos ni investigación de usuarios?
+A: No significa que tengamos que empezar a diseñar a ciegas. Podemos revisar la información disponible, identificar qué necesitamos entender y decidir qué vale la pena investigar antes de tomar decisiones.
 
-Q: ¿Cómo sabemos qué mejorar primero?
-A: Revisamos el producto, los problemas de uso y los objetivos del negocio. Después definimos prioridades.
+Q: ¿Cómo evitamos diseñar algo que después no se pueda desarrollar?
+A: Involucrando las limitaciones técnicas desde el principio. Podemos revisar las soluciones con desarrollo, ajustar lo que haga falta y preparar diseños que tengan sentido tanto para los usuarios como para el equipo que los construirá.
 
-Q: ¿Puedo contratarte solo para una parte?
-A: Sí. Podemos trabajar en una auditoría, un flujo concreto, un prototipo o una colaboración más amplia.
+Q: ¿Podemos trabajar juntos en un problema concreto sin rediseñar todo el producto?
+A: Sí. Podemos centrarnos en un flujo, una funcionalidad o un problema de uso. No tiene sentido rediseñar todo si lo que necesitas es resolver algo específico.
 
 ### FAQ
 
-Q: ¿En qué tipo de proyectos puedes ayudarme?
-A: En branding e identidad, diseño y desarrollo web y producto digital. También puedo ayudarte a definir la estrategia antes de comenzar, si todavía no tienes claro qué necesitas.
+Q: ¿Trabajaré directamente contigo?
+A: Sí. Soy quien lleva el proyecto y tu contacto durante el proceso. Cuando hace falta sumar otras especialidades, puedo colaborar con Binōme Studio o con profesionales de confianza.
 
-Q: ¿Trabajas solo o con un equipo?
-A: Soy tu interlocutor principal y participo directamente en el trabajo. Si el proyecto necesita otras especialidades, puedo sumar a Binōme Studio y a profesionales de confianza con los que ya he colaborado.
+Q: ¿Tienes tarifas fijas o preparas presupuestos a medida?
+A: Depende del trabajo. Una necesidad puntual y un proyecto completo no requieren el mismo tiempo ni los mismos recursos. Prefiero entender primero qué necesitas y preparar una propuesta con el alcance y el coste claros.
 
-Q: ¿Cuánto cuesta trabajar contigo?
-A: Depende de los objetivos, el alcance y la complejidad del proyecto. Cuéntame lo que tienes en mente y prepararé una propuesta adaptada a lo que realmente necesitas.
+Q: ¿Podemos trabajar juntos si no estoy en Madrid?
+A: Claro. Trabajo a distancia con clientes y equipos de otros lugares. Podemos comunicarnos en español, inglés o francés.
 
-Q: ¿Tengo que saber qué plataforma necesita mi web?
-A: Para nada. Primero entendemos el proyecto y después elegimos la tecnología que mejor encaje, ya sea Webflow, Shopify, WordPress, Framer o una solución a medida.
-
-Q: ¿Puedes mejorar una web o una marca que ya existe?
-A: Claro. No todo necesita empezar de cero. A veces la mejor solución es identificar qué funciona, corregir lo que falla y construir a partir de ahí.
-
-Q: ¿Trabajas con clientes fuera de España?
-A: Sí. Trabajo desde Madrid con clientes de distintos lugares y puedo colaborar en español, inglés y francés.
-
-Q: ¿Cómo empezamos a trabajar juntos?
-A: Me cuentas brevemente qué necesitas. Hablamos del proyecto, valoramos su alcance y, si encajamos, definimos la mejor manera de trabajar juntos.
+Q: ¿También colaboras con agencias o equipos internos?
+A: Sí. Puedo incorporarme para trabajar en una parte concreta del proyecto o colaborar durante más tiempo, según lo que necesite el equipo.
 
 ### Proyectos
 
@@ -1457,14 +1439,14 @@ Avant de parler couleurs ou typographies, j'ai envie de comprendre ton activité
 ##### Une marque vit aussi en dehors d'un guide
 Une identité peut être magnifique dans une présentation. Le vrai test arrive quand elle prend vie : sur un site, un post, une proposition commerciale ou même dans les bureaux. C'est pour ça que je pense à ses applications dès le départ. Avec Contazara, nous avons créé une identité ensuite déployée sur le site, la communication et plusieurs espaces de l'entreprise.
 
-Q: Faut-il changer toute mon identité ?
-A: Pas forcément. On regarde d'abord ce qui existe et on décide ensemble de ce qui mérite d'être conservé ou amélioré.
+Q: La conception du site web est-elle comprise ?
+A: Pas forcément. Ce sont deux travaux distincts, mais on peut les envisager ensemble pour que tout soit cohérent. On peut aussi commencer par l'identité et travailler le site plus tard.
 
-Q: Le branding comprend-il aussi mon site web ?
-A: On peut travailler les deux dans un même projet ou avancer par étapes, selon tes besoins et tes priorités.
+Q: Quels fichiers vais-je recevoir à la fin ?
+A: Je livre toujours les fichiers originaux, modifiables et sources de ton identité, ainsi que les formats finaux nécessaires pour l'appliquer. Avant de commencer, on définit lesquels te sont utiles selon tes usages, pour que tu puisses travailler avec ta marque sans dépendre de moi pour chaque petite modification.
 
-Q: Qu'est-ce que je reçois à la fin ?
-A: On le définit avant de commencer : fichiers d'identité, déclinaisons, ressources graphiques et guide d'utilisation, selon le projet.
+Q: Pourrai-je utiliser ma nouvelle identité avec d'autres designers ou prestataires ?
+A: Oui, on peut préparer les ressources pour que d'autres personnes puissent travailler avec. Les formats, les fichiers modifiables et les conditions d'utilisation seront précisés dans la proposition.
 
 #### Web & développement — Ton site devrait travailler aussi bien que toi.
 URL: https://tomfabre.com/fr/services/design-web/
@@ -1485,17 +1467,17 @@ Je travaille principalement avec Webflow et le code, mais aussi avec Shopify, Wo
 ##### Penser à ceux qui visitent ton site
 Quand quelqu'un arrive sur ton site, il doit comprendre rapidement ce que tu fais et trouver facilement ce dont il a besoin. Je travaille donc autant la structure, le contenu, la navigation et les appels à l'action que le visuel. Pour Contazara, nous avons clarifié l'accès aux produits et à la technologie. Pour Carceral Ecologies, nous travaillons sur l'organisation d'archives de recherche en constante évolution. Deux besoins, deux approches.
 
-Q: Pourrai-je mettre mon site à jour moi-même ?
-A: Oui. On peut choisir un outil d'édition qui te permet de gérer ton contenu sans toucher au code à chaque modification.
+Q: Pourrai-je modifier moi-même les textes, les images et les contenus ?
+A: Oui, si on le prévoit dès le départ. On peut utiliser un CMS pour que tu gères les contenus courants sans toucher au code. On peut aussi définir les parties qui demandent une structure plus sur mesure.
+
+Q: Quels frais aurai-je après la mise en ligne ?
+A: Ça dépendra de la plateforme choisie. Il peut y avoir des frais de domaine, d'hébergement, de CMS ou d'outils externes. On les passe en revue avant de commencer pour que tu saches ce que tu devras maintenir.
 
 Q: Le SEO est-il inclus ?
-A: Je travaille les bases techniques et structurelles du SEO selon le périmètre. Une stratégie de référencement plus poussée peut être étudiée séparément.
+A: Je travaille les bases techniques et structurelles du SEO selon le projet : organisation du contenu, balises, performances et autres points utiles. Une stratégie de référencement suivie serait un travail à part.
 
-Q: Tu crées aussi des boutiques en ligne ?
-A: Oui, avec Shopify ou d'autres solutions selon les produits et les fonctionnalités nécessaires.
-
-Q: J'ai déjà un site. Tu peux l'améliorer ?
-A: Bien sûr. Repartir de zéro n'est pas toujours utile. On analyse ce qui fonctionne, ce qui coince et ce qu'il faudrait changer.
+Q: Et si j'ai besoin de modifications après le lancement ?
+A: On peut convenir d'un suivi ou d'améliorations ultérieures, mais tu n'as pas à souscrire une maintenance permanente par défaut. On précisera ce que comprend la livraison et comment gérer d'éventuels changements ensuite.
 
 #### Produit digital, UX/UI & stratégie digitale — Facile à utiliser. Plus compliqué à concevoir.
 URL: https://tomfabre.com/fr/services/design-ux-ui/
@@ -1516,40 +1498,31 @@ Avant de dessiner un écran, je cherche à comprendre son rôle : ce que l'utili
 ##### Du design au vrai produit
 J'ai travaillé sur des produits créés de zéro et sur des applications déjà téléchargées des millions de fois. Pour À2pas, j'ai conçu une plateforme reliant public, artistes et salles de spectacle. Pour HappyLife, l'enjeu était de favoriser des rencontres dans la vraie vie. Et pour Mood Messenger, j'ai contribué à l'évolution de l'application, à ses interfaces et à sa relance. Des expériences différentes qui m'ont appris à penser au-delà de l'écran.
 
-Q: Dois-je déjà avoir un produit développé ?
-A: Non. On peut partir d'une idée, créer un prototype ou améliorer une application existante.
+Q: Tu peux travailler avec notre équipe produit ou développement ?
+A: Oui. Je peux collaborer avec des product managers, des designers et des développeurs, en m'adaptant à la façon de travailler de l'équipe. L'idée est d'intégrer le design au processus, pas de créer quelque chose de difficile à implémenter ensuite.
 
-Q: Tu peux travailler avec mon équipe de développement ?
-A: Oui. Je peux collaborer avec des designers, des développeurs et des product managers, selon le projet.
+Q: Et si on n'a ni données ni recherche utilisateur ?
+A: Ça ne veut pas dire qu'on doit concevoir à l'aveugle. On peut examiner les informations disponibles, identifier ce qu'il faut comprendre et décider ce qui vaut la peine d'être étudié avant de prendre des décisions.
 
-Q: Comment savoir quoi améliorer en premier ?
-A: On regarde le produit, les difficultés rencontrées et les objectifs de l'entreprise, puis on définit les priorités.
+Q: Comment éviter de concevoir quelque chose qui ne pourra pas être développé ?
+A: En intégrant les contraintes techniques dès le départ. On peut passer les solutions en revue avec l'équipe de développement, ajuster ce qu'il faut et préparer des designs qui ont du sens à la fois pour les utilisateurs et pour ceux qui les construiront.
 
-Q: Est-ce possible de te confier seulement une partie du projet ?
-A: Oui : audit, parcours particulier, prototype ou collaboration plus large.
+Q: Peut-on travailler sur un problème précis sans repenser tout le produit ?
+A: Oui. On peut se concentrer sur un parcours, une fonctionnalité ou un problème d'usage. Inutile de tout repenser si tu as besoin de résoudre un point précis.
 
 ### FAQ
 
-Q: Sur quels types de projets peux-tu m'aider ?
-A: Sur le branding et l'identité, le design et le développement web, ainsi que les produits digitaux. Je peux aussi t'aider à clarifier la stratégie si tu ne sais pas encore exactement ce qu'il te faut.
+Q: Je travaillerai directement avec toi ?
+A: Oui. C'est moi qui mène le projet et je reste ton interlocuteur tout au long du processus. Quand il faut ajouter d'autres compétences, je peux m'appuyer sur Binōme Studio ou sur des professionnels de confiance.
 
-Q: Travailles-tu seul ou en équipe ?
-A: Je reste ton interlocuteur principal et je participe directement au projet. Si d'autres compétences sont nécessaires, je peux réunir Binōme Studio et des spécialistes de confiance avec lesquels j'ai déjà travaillé.
+Q: Tu as des tarifs fixes ou tu fais des devis sur mesure ?
+A: Ça dépend du travail. Un besoin ponctuel et un projet complet ne demandent ni le même temps ni les mêmes ressources. Je préfère d'abord comprendre ce dont tu as besoin, puis préparer une proposition avec un périmètre et un coût clairs.
 
-Q: Combien coûte un projet avec moi ?
-A: Cela dépend de tes objectifs, du périmètre et de la complexité. Raconte-moi ce que tu as en tête et je préparerai une proposition adaptée à tes besoins réels.
+Q: On peut travailler ensemble si je ne suis pas à Madrid ?
+A: Bien sûr. Je travaille à distance avec des clients et des équipes d'autres endroits. On peut échanger en espagnol, en anglais ou en français.
 
-Q: Dois-je savoir quelle technologie choisir pour mon site ?
-A: Pas du tout. On commence par comprendre le projet, puis on choisit la solution la plus adaptée : Webflow, Shopify, WordPress, Framer ou un développement sur mesure.
-
-Q: Peux-tu améliorer une marque ou un site existant sans tout refaire ?
-A: Bien sûr. Repartir de zéro n'est pas toujours nécessaire. Parfois, il vaut mieux conserver ce qui fonctionne, corriger ce qui coince et avancer à partir de là.
-
-Q: Travailles-tu avec des clients hors d'Espagne ?
-A: Oui. Je suis basé à Madrid et je collabore à l'international en espagnol, anglais et français.
-
-Q: Comment commencer à travailler ensemble ?
-A: Tu m'expliques brièvement ton besoin. Nous échangeons sur les objectifs et le périmètre puis, si le courant passe, nous définissons la meilleure façon de collaborer.
+Q: Tu collabores aussi avec des agences ou des équipes internes ?
+A: Oui. Je peux intervenir sur une partie précise du projet ou collaborer plus longtemps, selon les besoins de l'équipe.
 
 ### Projects
 

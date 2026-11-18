@@ -227,7 +227,7 @@
     <p class="contact-lead" data-i="ct_p"></p>
     <div class="mail">
       <a class="ml cyc" id="mailLink" href="mailto:hey@tomfabre.com">hey@tomfabre.com</a>
-      <img class="mail-pop" id="mailPop" alt="" aria-hidden="true" width="240" height="240" decoding="async" data-src="img/hover-mail.gif">
+      <img class="mail-pop" id="mailPop" alt="" aria-hidden="true" width="240" height="240" decoding="async" data-src="img/hover-mail.webp">
       <span class="copyline"><button id="copy" type="button" data-i="copy"></button><span class="sr" id="copied" role="status" aria-live="polite"></span></span>
     </div>
     <div class="c-actions"><button class="btn cta solid" type="button" data-open-form data-ev="primary_cta_click" data-place="contact_page"><span data-i="ct_cta"></span><span class="arr" aria-hidden="true">→</span></button><a class="btn ghost" href="mailto:hey@tomfabre.com" data-ev="email_click" data-place="contact_page"><span data-i="ct_mail"></span></a></div>
@@ -325,6 +325,7 @@
     <span class="pz-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
     <h2 id="pzOkT" tabindex="-1" data-i="gf_ok_t"></h2>
     <p data-i="gf_ok_b1"></p>
+    <p class="pz-sec" data-i="gf_ok_b2"></p>
     <button class="btn solid" type="button" id="pzDone"><span data-i="gf_close"></span></button>
   </div>
 </dialog>
@@ -346,7 +347,13 @@
     <label class="f-check" for="fc"><input type="checkbox" id="fc" name="consent" required aria-required="true" aria-describedby="fcE"><span data-i="d_consent"></span></label><span class="f-err f-err-check" id="fcE"></span>
     <button class="btn solid" type="submit" style="width:100%;justify-content:center"><span data-i="d_send"></span><span class="arr" aria-hidden="true">→</span></button>
   </form>
-  <div class="d-res" id="dsent" hidden><p class="d-res-t" id="dsentT" tabindex="-1" data-i="d_sent_t"></p><p class="d-res-b" data-i="d_sent_b"></p></div>
+  <div class="pz-done" id="dsent" hidden>
+    <span class="pz-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+    <h2 id="dsentT" tabindex="-1" data-i="d_sent_t"></h2>
+    <p data-i="d_sent_b"></p>
+    <p class="pz-sec" data-i="d_sent_s"></p>
+    <button class="btn solid" type="button" id="dDone"><span data-i="d_sent_close"></span></button>
+  </div>
   <div class="d-res" id="dres" hidden>
     <p style="color:var(--muted);font-size:var(--small);margin-bottom:var(--s5)" data-i="d_note"></p>
     <div style="display:flex;flex-wrap:wrap;gap:.6rem"><a class="btn solid" id="mailto" href="#" target="_blank" rel="noopener" data-i="d_open"></a><button class="btn" type="button" id="dcopy" data-i="d_copy"></button></div>

@@ -396,7 +396,7 @@ function showSent(){
 function wireForm(){
   document.addEventListener("click", e => { const b = e.target.closest && e.target.closest("[data-open-form]"); if (!b) return; e.preventDefault(); openForm(ctxFrom(b)); });
   const closeDlg = () => { if (!sending) dlg().close(); };
-  $("#dclose").addEventListener("click", closeDlg);
+  $("#dclose").addEventListener("click", closeDlg); $("#dDone").addEventListener("click", closeDlg);
   dlg().addEventListener("click", e => { if (e.target === dlg()) closeDlg(); });
   dlg().addEventListener("cancel", e => { if (sending) e.preventDefault(); });   /* Escape no cierra mientras se envía */
   $("#ft").addEventListener("change", () => { fieldErr($("#ft"), ""); syncBudget(); });
@@ -531,11 +531,13 @@ function renderMarquee(){
 
 /* ---------- stickers (edit glyphs/colors/text here) ---------- */
 const STICKER_ALT = { es:"Teckels corriendo por el campo", en:"Dachshunds running through a field", fr:"Teckels courant dans un champ" }, MAIL_ALT = { es:"Buzón de correo animado", en:"Animated mailbox", fr:"Boîte aux lettres animée" };
-const STICKERS = { hero:{ glyph:"✺", key:"st_hero" }, bio:{ pic:["img/sticker/teckels-still.webp", "img/sticker/teckels.webp"] } };
+const STICKERS = { hero:{ glyph:"✺", key:"st_hero" }, bio:{ pic:["img/sticker/teckels-still.webp", "img/sticker/teckel-hills.webm"] } };
 function renderStickers(){
   const mp = $("#mailPop"); if (mp) mp.alt = MAIL_ALT[lang] || MAIL_ALT.es;
   $$("[data-sticker]").forEach(el => { const s = STICKERS[el.dataset.sticker]; if (!s) return;
-    if (s.pic) { const ab = PATHS ? "/" : ""; el.classList.add("s-pic"); el.innerHTML = `<img src="${ab}${s.pic[0]}" alt="${esc(STICKER_ALT[lang] || STICKER_ALT.es)}" aria-hidden="true" draggable="false" width="400" height="225" decoding="async">`; return; }
+    if (s.pic) { const ab = PATHS ? "/" : ""; el.classList.add("s-pic"); const alt = esc(STICKER_ALT[lang] || STICKER_ALT.es);
+      /* WebM real (VP9) con imagen de reserva: el <img> interior se ve si el navegador no reproduce WebM */
+      el.innerHTML = `<video muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback tabindex="-1" aria-hidden="true" width="480" height="270" poster="${ab}${s.pic[0]}"><source src="${ab}${s.pic[1]}" type="video/webm"><img src="${ab}${s.pic[0]}" alt="${alt}" draggable="false" width="400" height="225" decoding="async"></video>`; return; }
     el.innerHTML = `<div><b aria-hidden="true">${s.glyph}</b><span>${esc(L()[s.key] || "")}</span></div>`; });
 }
 function wireStickers(){
@@ -544,12 +546,11 @@ function wireStickers(){
     el.addEventListener("pointerdown", e => { on = true; el.setPointerCapture(e.pointerId); el.classList.add("drag"); const p = el.offsetParent.getBoundingClientRect(), r = el.getBoundingClientRect(); ox = r.left - p.left; oy = r.top - p.top; sx = e.clientX; sy = e.clientY; el.style.right = "auto"; el.style.left = ox + "px"; el.style.top = oy + "px"; });
     el.addEventListener("pointermove", e => { if (!on) return; el.style.left = (ox + e.clientX - sx) + "px"; el.style.top = (oy + e.clientY - sy) + "px"; });
     const end = () => { on = false; el.classList.remove("drag"); };
-    const im = el.querySelector("img");
-    if (im && el.classList.contains("s-pic")) {
-      const [still, anim] = STICKERS[el.dataset.sticker].pic, ab = PATHS ? "/" : "";
-      let pre; const warm = () => { if (!pre) { pre = new Image(); pre.src = ab + anim; } };
-      el.addEventListener("pointerenter", e => { if (e.pointerType === "touch") return; warm(); im.src = ab + anim; });
-      el.addEventListener("pointerleave", () => { im.src = ab + still; });
+    const vid = el.querySelector("video");
+    if (vid && el.classList.contains("s-pic")) {
+      /* reproduce solo mientras es visible; con prefers-reduced-motion se queda en la imagen fija */
+      vid.muted = true;
+      if (!reduced && "IntersectionObserver" in window) new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { const p = vid.play(); if (p && p.catch) p.catch(() => {}); } else vid.pause(); }), { threshold: .25 }).observe(vid);
     }
     el.addEventListener("pointerup", end); el.addEventListener("pointercancel", end);
     el.addEventListener("pointerdown", () => { el.dataset.moved = "1"; });
@@ -784,7 +785,7 @@ function applyLang(){
   t.serv_l2 = ({es:"Servicios",en:"Services",fr:"Services"})[lang];
   t.per_l2 = ({es:"Periodo",en:"Period",fr:"Période"})[lang];
   t.did_h2 = ({es:"Qué hice",en:"What I did",fr:"Ce que j'ai fait"})[lang];
-  renderHomeServices(); renderSvc("#how", t.hp_steps); renderAboutHome(); renderFaq("#faqHome", t.hf_items, [["services", t.sp_back], ["bio", t.ha_cta1], ["form", t.h_cta1], ["services", t.sp_back], ["form", t.h_cta1], ["form", t.h_cta1], ["form", t.h_cta1]]); renderWork(); renderGrid(); renderBio(); renderCnext(); renderGame(); renderMarquee(); renderSocials();
+  renderHomeServices(); renderSvc("#how", t.hp_steps); renderAboutHome(); renderFaq("#faqHome", t.hf_items, [["bio", t.ha_cta1], ["form", t.h_cta1]]); renderWork(); renderGrid(); renderBio(); renderCnext(); renderGame(); renderMarquee(); renderSocials();
   $$("[data-ti]").forEach(el => el.setAttribute("data-t", t[el.dataset.ti] || ""));
   if (route_.page === "services") renderServicesIndex(); if (route_.page === "service") renderServicePage(route_.key);
   armReveal();
@@ -863,7 +864,7 @@ function wirePrize(){
       email:mail, topic, form_type:"ux_review", website:web, game_result:pzWon ? "won" : "lost", locale:lang, _replyto:mail, _subject:topic + " · " + web + " (portfolio)",
       message:`Web: ${web}\nResultado del juego: ${result}\nIdioma: ${lang}` + (more ? `\nQuiere mejorar: ${more}` : "") }) })
       .then(r => { if (!r.ok){ fail("http_" + r.status); return; }
-        pzSig = sig; pzAt = Date.now(); $("#pzForm").hidden = true; $("#pzHead").hidden = true; $("#pzOk").hidden = false; d.setAttribute("aria-labelledby", "pzOkT"); $("#pzForm").reset(); $("#pzStat").textContent = t.gf_ok_t + " " + t.gf_ok_b1;
+        pzSig = sig; pzAt = Date.now(); $("#pzForm").hidden = true; $("#pzHead").hidden = true; $("#pzOk").hidden = false; d.setAttribute("aria-labelledby", "pzOkT"); $("#pzForm").reset(); $("#pzStat").textContent = t.gf_ok_t + " " + t.gf_ok_b1 + " " + t.gf_ok_b2;
         track("ux_review_form_success", evp); $("#pzOkT").focus(); })
       .catch(() => fail("network"))
       .finally(() => { pzSending = false; sb.disabled = false; sb.removeAttribute("aria-busy"); lab.textContent = old; });

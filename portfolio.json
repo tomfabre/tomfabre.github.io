@@ -115,92 +115,56 @@
   "faq": {
     "es": [
       {
-        "question": "¿En qué tipo de proyectos puedes ayudarme?",
-        "answer": "En branding e identidad, diseño y desarrollo web y producto digital. También puedo ayudarte a definir la estrategia antes de comenzar, si todavía no tienes claro qué necesitas."
+        "question": "¿Trabajaré directamente contigo?",
+        "answer": "Sí. Soy quien lleva el proyecto y tu contacto durante el proceso. Cuando hace falta sumar otras especialidades, puedo colaborar con Binōme Studio o con profesionales de confianza."
       },
       {
-        "question": "¿Trabajas solo o con un equipo?",
-        "answer": "Soy tu interlocutor principal y participo directamente en el trabajo. Si el proyecto necesita otras especialidades, puedo sumar a Binōme Studio y a profesionales de confianza con los que ya he colaborado."
+        "question": "¿Tienes tarifas fijas o preparas presupuestos a medida?",
+        "answer": "Depende del trabajo. Una necesidad puntual y un proyecto completo no requieren el mismo tiempo ni los mismos recursos. Prefiero entender primero qué necesitas y preparar una propuesta con el alcance y el coste claros."
       },
       {
-        "question": "¿Cuánto cuesta trabajar contigo?",
-        "answer": "Depende de los objetivos, el alcance y la complejidad del proyecto. Cuéntame lo que tienes en mente y prepararé una propuesta adaptada a lo que realmente necesitas."
+        "question": "¿Podemos trabajar juntos si no estoy en Madrid?",
+        "answer": "Claro. Trabajo a distancia con clientes y equipos de otros lugares. Podemos comunicarnos en español, inglés o francés."
       },
       {
-        "question": "¿Tengo que saber qué plataforma necesita mi web?",
-        "answer": "Para nada. Primero entendemos el proyecto y después elegimos la tecnología que mejor encaje, ya sea Webflow, Shopify, WordPress, Framer o una solución a medida."
-      },
-      {
-        "question": "¿Puedes mejorar una web o una marca que ya existe?",
-        "answer": "Claro. No todo necesita empezar de cero. A veces la mejor solución es identificar qué funciona, corregir lo que falla y construir a partir de ahí."
-      },
-      {
-        "question": "¿Trabajas con clientes fuera de España?",
-        "answer": "Sí. Trabajo desde Madrid con clientes de distintos lugares y puedo colaborar en español, inglés y francés."
-      },
-      {
-        "question": "¿Cómo empezamos a trabajar juntos?",
-        "answer": "Me cuentas brevemente qué necesitas. Hablamos del proyecto, valoramos su alcance y, si encajamos, definimos la mejor manera de trabajar juntos."
+        "question": "¿También colaboras con agencias o equipos internos?",
+        "answer": "Sí. Puedo incorporarme para trabajar en una parte concreta del proyecto o colaborar durante más tiempo, según lo que necesite el equipo."
       }
     ],
     "en": [
       {
-        "question": "What kind of projects can you help with?",
-        "answer": "Branding and identity, web design and development, and digital product design. I can also help shape the strategy if you're not yet sure what you need."
+        "question": "Will I work directly with you?",
+        "answer": "Yes. I lead the project and I'm your point of contact throughout. When other skills are needed, I can bring in Binōme Studio or trusted professionals."
       },
       {
-        "question": "Do you work alone or with a team?",
-        "answer": "I'm your main point of contact and work directly on the project. When other skills are needed, I can bring in Binōme Studio and trusted specialists I've collaborated with before."
+        "question": "Do you have fixed rates, or do you quote per project?",
+        "answer": "It depends on the work. A one-off need and a full project don't take the same time or resources. I'd rather understand what you need first and then put together a proposal with a clear scope and cost."
       },
       {
-        "question": "How much does it cost to work with you?",
-        "answer": "It depends on your goals, scope and complexity. Tell me what you're planning and I'll put together a proposal around what you actually need."
+        "question": "Can we work together if I'm not in Madrid?",
+        "answer": "Of course. I work remotely with clients and teams in other places. We can communicate in Spanish, English or French."
       },
       {
-        "question": "Do I need to know which platform my website should use?",
-        "answer": "Not at all. We first understand the project, then choose the best fit—whether that's Webflow, Shopify, WordPress, Framer or a custom solution."
-      },
-      {
-        "question": "Can you improve an existing website or brand without starting over?",
-        "answer": "Absolutely. Starting from scratch isn't always the answer. Sometimes it's better to keep what works, fix what doesn't and build from there."
-      },
-      {
-        "question": "Do you work with clients outside Spain?",
-        "answer": "Yes. I'm based in Madrid and collaborate internationally in Spanish, English and French."
-      },
-      {
-        "question": "How do we get started?",
-        "answer": "Tell me a little about what you need. We'll discuss your goals and scope and, if we're a good fit, decide how best to work together."
+        "question": "Do you also work with agencies or in-house teams?",
+        "answer": "Yes. I can step in on a specific part of a project or collaborate over a longer period, depending on what the team needs."
       }
     ],
     "fr": [
       {
-        "question": "Sur quels types de projets peux-tu m'aider ?",
-        "answer": "Sur le branding et l'identité, le design et le développement web, ainsi que les produits digitaux. Je peux aussi t'aider à clarifier la stratégie si tu ne sais pas encore exactement ce qu'il te faut."
+        "question": "Je travaillerai directement avec toi ?",
+        "answer": "Oui. C'est moi qui mène le projet et je reste ton interlocuteur tout au long du processus. Quand il faut ajouter d'autres compétences, je peux m'appuyer sur Binōme Studio ou sur des professionnels de confiance."
       },
       {
-        "question": "Travailles-tu seul ou en équipe ?",
-        "answer": "Je reste ton interlocuteur principal et je participe directement au projet. Si d'autres compétences sont nécessaires, je peux réunir Binōme Studio et des spécialistes de confiance avec lesquels j'ai déjà travaillé."
+        "question": "Tu as des tarifs fixes ou tu fais des devis sur mesure ?",
+        "answer": "Ça dépend du travail. Un besoin ponctuel et un projet complet ne demandent ni le même temps ni les mêmes ressources. Je préfère d'abord comprendre ce dont tu as besoin, puis préparer une proposition avec un périmètre et un coût clairs."
       },
       {
-        "question": "Combien coûte un projet avec moi ?",
-        "answer": "Cela dépend de tes objectifs, du périmètre et de la complexité. Raconte-moi ce que tu as en tête et je préparerai une proposition adaptée à tes besoins réels."
+        "question": "On peut travailler ensemble si je ne suis pas à Madrid ?",
+        "answer": "Bien sûr. Je travaille à distance avec des clients et des équipes d'autres endroits. On peut échanger en espagnol, en anglais ou en français."
       },
       {
-        "question": "Dois-je savoir quelle technologie choisir pour mon site ?",
-        "answer": "Pas du tout. On commence par comprendre le projet, puis on choisit la solution la plus adaptée : Webflow, Shopify, WordPress, Framer ou un développement sur mesure."
-      },
-      {
-        "question": "Peux-tu améliorer une marque ou un site existant sans tout refaire ?",
-        "answer": "Bien sûr. Repartir de zéro n'est pas toujours nécessaire. Parfois, il vaut mieux conserver ce qui fonctionne, corriger ce qui coince et avancer à partir de là."
-      },
-      {
-        "question": "Travailles-tu avec des clients hors d'Espagne ?",
-        "answer": "Oui. Je suis basé à Madrid et je collabore à l'international en espagnol, anglais et français."
-      },
-      {
-        "question": "Comment commencer à travailler ensemble ?",
-        "answer": "Tu m'expliques brièvement ton besoin. Nous échangeons sur les objectifs et le périmètre puis, si le courant passe, nous définissons la meilleure façon de collaborer."
+        "question": "Tu collabores aussi avec des agences ou des équipes internes ?",
+        "answer": "Oui. Je peux intervenir sur une partie précise du projet ou collaborer plus longtemps, selon les besoins de l'équipe."
       }
     ]
   },
