@@ -213,7 +213,10 @@ def render(lg, site, email, css, consent_js, nav_extra="", og_html=""):
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="{url(lg)}">{hre}
 <meta property="og:title" content="{e(d['title'])}"><meta property="og:description" content="{e(d['desc'])}"><meta property="og:type" content="website"><meta property="og:url" content="{url(lg)}"><meta property="og:locale" content="{LOC[lg]}"><meta property="og:site_name" content="Tom Fabre">{og_html}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{e(d['title'])}"><meta name="twitter:description" content="{e(d['desc'])}">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <script>try{{var t=localStorage.getItem("af-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}}catch(e){{}}</script>
 <script>
 {consent_js}
