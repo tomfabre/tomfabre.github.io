@@ -197,6 +197,17 @@ async function fresh(b, opts = {}) {
     const r = await (await b.newContext()).request.get(BASE + "/img/hover-mail.webp"); ok("hover-mail.webp existe (image/webp)", r.status() === 200 && /webp/.test(r.headers()["content-type"] || ""), r.status());
     const t = await (await b.newContext()).request.get(BASE + "/img/sticker/teckel-hills.webm"); ok("teckel-hills.webm existe", t.status() === 200, t.status());
   }
+  /* 9b · JS compartido externo con hash (Fase 2): un solo <script src> clásico, sin script grande en línea, cvUrl por idioma */
+  for (const [lg, u, cv] of [["es", "/", "/cv-alvaro-fabre.pdf"], ["en", "/en/", "/cv-alvaro-fabre-en.pdf"], ["fr", "/fr/", "/cv-alvaro-fabre-fr.pdf"]]) {
+    const { ctx, page, errs, bad } = await fresh(b);
+    await page.goto(BASE + u, { waitUntil: "networkidle" });
+    const m = await page.evaluate(() => ({ ext: [...document.scripts].filter(s => /\/js\/app\.[0-9a-f]{10}\.js$/.test(s.src)).length, bigInline: [...document.scripts].filter(s => !s.src && s.textContent.length > 50000).length, cv: window.__CV, cvUrl: typeof YCFG !== "undefined" && YCFG.cvUrl, defer: [...document.scripts].filter(s => s.defer).length }));
+    ok(`[${lg}] app.js externo con hash, sin script grande en línea`, m.ext === 1 && m.bigInline === 0, m);
+    ok(`[${lg}] cvUrl por idioma (${cv})`, m.cv === cv && m.cvUrl === cv, [m.cv, m.cvUrl]);
+    ok(`[${lg}] gsap/lenis/motion siguen con defer y sin errores`, m.defer === 3 && errs.length === 0 && bad.length === 0, [m.defer, errs, bad]);
+    await ctx.close();
+  }
+
   /* 10 · Presupuesto orientativo y páginas legales */
   {
     const { ctx, page } = await fresh(b);

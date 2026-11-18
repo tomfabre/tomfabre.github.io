@@ -112,7 +112,8 @@ a = re.sub(r"(<style>)(.*?)(</style>)", lambda m: m.group(1) + _min(m.group(2), 
 body_js = _min(body_js, "js")
 CONSENT_JS = _min(open("consent.js", encoding="utf8").read(), "js")
 a = a.replace("/*CONSENT*/", CONSENT_JS)
-html = a + "<!--BODY-->" + b + "<!--/BODY-->" + "<script>\n" + IMGTOKEN + body_js + "\n</script>\n"
+html_core = a + "<!--BODY-->" + b + "<!--/BODY-->"
+html = html_core + "<script>\n" + IMGTOKEN + body_js + "\n</script>\n"   # versión con todo en línea (src/index.html y fallback PERF_EXT_JS=0)
 open("index.html","w").write(html.replace(IMGTOKEN, imgjs("data")).replace("<!--BODY-->","").replace("<!--/BODY-->",""))
 # 4) deploy pack
 dist = "dist"; shutil.rmtree(dist, ignore_errors=True); os.makedirs(dist+"/.well-known")
@@ -189,9 +190,22 @@ import hashlib
 def _vh(f): return hashlib.sha1(open(f,"rb").read()).hexdigest()[:8]
 MOTION_FILES = ["vendor/gsap.min.js","vendor/lenis.min.js","motion.js"]
 MOTION_TAGS = "".join(f'<script defer src="/js/{os.path.basename(f)}?v={_vh(f)}"></script>' for f in MOTION_FILES) + "\n"
+# JS compartido en un único archivo externo con hash de contenido (caché entre páginas e idiomas). Es el mismo script clásico, en el mismo
+# sitio del documento (final del body) y con el mismo orden de ejecución; solo cvUrl (que cambia por idioma) se pasa con un mini script en línea.
+EXT_JS = os.environ.get("PERF_EXT_JS", "1") != "0"
+APP_TAG = ""
+if EXT_JS:
+    _m = re.search(r"<script>\n" + re.escape(IMGTOKEN) + r"(.*)\n</script>\n$", html, re.S); assert _m, "script block not found at end of html"
+    html_core = html[:_m.start()]   # html final (con las sustituciones globales, p. ej. OGI) sin el script de la app
+    _app = imgjs("url") + _m.group(1)
+    _cv_src = 'cvUrl:"cv-alvaro-fabre.pdf"'; assert _cv_src in _app
+    _app = _app.replace(_cv_src, 'cvUrl:(window.__CV||"/cv-alvaro-fabre.pdf")')
+    _ah = hashlib.sha1(_app.encode("utf8")).hexdigest()[:10]; APP_FILE = f"app.{_ah}.js"
+    os.makedirs(dist + "/js", exist_ok=True); open(dist + "/js/" + APP_FILE, "w", encoding="utf8").write(_app)
+    APP_TAG = f'<script src="/js/{APP_FILE}"></script>\n'
 def page_html(lg, page, key):
     title, desc = meta_for(lg, page, key); e = lambda x: x.replace("&","&amp;").replace('"',"&quot;").replace("<","&lt;")
-    h = html.replace(IMGTOKEN, imgjs("url"))
+    h = (html_core if EXT_JS else html.replace(IMGTOKEN, imgjs("url")))
     h = re.sub(r'<script type="application/ld\+json">.*?</script>', lambda m: ld(lg,(page,key)), h, count=1, flags=re.S)
     h = sub1(r"<title>.*?</title>", f"<title>{e(title)}</title>", h)
     h = sub1(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{e(desc)}">', h)
@@ -214,6 +228,7 @@ def page_html(lg, page, key):
     h = sub1(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{U(lg,page,key)}">{hre}<meta name="af-paths" content="1"><link rel="ard" href="/.well-known/ard.json">{alts}', h)
     cvf = {"es":"cv-alvaro-fabre.pdf","en":"cv-alvaro-fabre-en.pdf","fr":"cv-alvaro-fabre-fr.pdf"}[lg]
     h = h.replace('href="cv-alvaro-fabre.pdf"',f'href="/{cvf}"').replace('cvUrl:"cv-alvaro-fabre.pdf"',f'cvUrl:"/{cvf}"')
+    if EXT_JS: h = h + f'<script>window.__CV="/{cvf}"</script>\n' + APP_TAG
     h = h + MOTION_TAGS
     return f'<!doctype html>\n<html lang="{lg}">\n<meta charset="utf-8">\n' + h
 npages = 0

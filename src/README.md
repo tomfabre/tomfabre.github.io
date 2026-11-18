@@ -42,3 +42,11 @@ Figy y Molyb están ocultos. Sus líneas siguen en `c1p.js`, comentadas con el a
 - **Assets pendientes**: se rellenan en `BIO_ASSETS` (`c2b.js`): 7 fotos de ciudades (3:2), 10 de calle (1:1), 4 de cocina (1:1), 5 de obsesiones (4:3), foto opcional del coro, URL de Spotify (`spotify.url`) y restaurantes validados (`places: [{name,url}]`). Mientras `img` sea `null` se pinta un placeholder identificado (`data-pending="..."`). Sin fotos de stock.
 - **Hundir la flota** vive en la Home (`#gamesec`), justo después de «Un poco más sobre mí» y antes de las preguntas frecuentes. La lógica (`renderGame`, `newGame`…) no cambió.
 - Formulario: ver la sección «Formularios». `TOPIC_IDS` vive ahora en `c2.js` (6 categorías; el premio ya no está en el selector).
+
+## Rendimiento (Fase 2)
+
+- **JS compartido externo con hash.** `build.py` escribe el script de la app (el mismo script clásico de siempre, mismo orden de ejecución, al final del `<body>`) en `/js/app.<hash>.js`. Todas las páginas e idiomas lo comparten, así que el navegador lo cachea entre páginas. Lo único que cambia por idioma, `cvUrl`, se pasa con un mini script en línea (`window.__CV`). `PERF_EXT_JS=0 python3 build.py …` genera el formato anterior (todo en línea) por si hiciera falta comparar.
+- **Al desplegar:** antes de `cp -r src/dist/. .` borra los `js/app.*.js` antiguos de la raíz (el nombre cambia con cada versión del código y los viejos quedarían huérfanos).
+- **Caché:** GitHub Pages ignora `_headers` y sirve todo con `max-age=600`; el hash en el nombre garantiza que nunca se sirva JS obsoleto con HTML nuevo.
+- **Probado y descartado:** CSS externo (la primera visita empeora, ver informe de la Fase 2), `preload` del script en `<head>` (sin beneficio medible).
+- **Medir:** `e2e/e2e.js` comprueba que el script externo carga, que `cvUrl` es correcto por idioma y que no hay errores.
