@@ -18,6 +18,9 @@ const NOJS = '<noscript><style>.reveal,.reveal-x,.hero{opacity:1!important;trans
 (async () => {
   await new Promise(r => server.listen(0, "127.0.0.1", r)); const port = server.address().port;
   const browser = await chromium.launch(); const ctx = await browser.newContext({ viewport:{ width:1280, height:900 }, colorScheme:"light", reducedMotion:"reduce" });
+  /* Build reproducible: solo durante el prerender, Math.random es determinista (mulberry32, semilla fija). El HTML estático deja de cambiar
+     en cada build (tablero de la flota, orden de preguntas…). En el navegador del visitante Math.random sigue siendo el nativo. */
+  await ctx.addInitScript(() => { let a = 0x9E3779B9; Math.random = () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; });
   await ctx.route("**/*", route => { const u = route.request().url(); if (u.startsWith("http://127.0.0.1:" + port)) route.continue(); else route.abort(); });
   const report = []; let bad = 0;
   for (const file of pages){
