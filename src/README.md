@@ -50,3 +50,9 @@ Figy y Molyb están ocultos. Sus líneas siguen en `c1p.js`, comentadas con el a
 - **Caché:** GitHub Pages ignora `_headers` y sirve todo con `max-age=600`; el hash en el nombre garantiza que nunca se sirva JS obsoleto con HTML nuevo.
 - **Probado y descartado:** CSS externo (la primera visita empeora, ver informe de la Fase 2), `preload` del script en `<head>` (sin beneficio medible).
 - **Medir:** `e2e/e2e.js` comprueba que el script externo carga, que `cvUrl` es correcto por idioma y que no hay errores.
+
+### Notas para futuras mejoras (no aplicadas en la Fase 2)
+
+- **Lighthouse en Bio (móvil, simulado).** Lighthouse siempre hace una primera visita sin `af-consent`, así que el elemento LCP es el párrafo del aviso de cookies (`div.cc > p`, creado por `consent.js` en `DOMContentLoaded`) con ~100 % de retraso de renderizado. La simulación (Lantern) penaliza la cadena serie HTML → `app.<hash>.js` → ejecución → GSAP → revelado del hero; con throttling real de red/CPU el resultado es igual o mejor que con el JS en línea. Decisión: conservar el JS externo y versionado; no se vuelve al formato en línea por una puntuación simulada.
+- **Posible mejora futura:** revisar cuándo y cómo se inserta el aviso de cookies (p. ej. reservar su espacio, o no ser el candidato a LCP en la primera visita). Requiere tocar `consent.js`, por lo que queda fuera de esta fase y no debe cambiar diseño ni comportamiento sin aprobación.
+- **Cloudflare (fase independiente, NO configurado).** Si el dominio pasa por el proxy de Cloudflare, una Cache Rule sobre `^/js/app\.[0-9a-f]{10}\.js$` con Edge y Browser TTL largos ("Override origin") permitiría caché inmutable, porque el hash cambia con cada versión. Antes hay que decidir el modo SSL (Full) y valorar la renovación del certificado de GitHub Pages con el proxy activo. No se ha cambiado DNS, hosting ni reglas.

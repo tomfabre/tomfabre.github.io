@@ -56,9 +56,9 @@ def plan_prune(existing, keep):
     return sorted(n for n in existing if HASHED.match(n) and n not in keep)
 
 
-def main(argv):
+def main(argv, here=None):
     dry = "--dry-run" in argv
-    here = os.path.dirname(os.path.abspath(__file__))
+    here = here or os.path.dirname(os.path.abspath(__file__))
     repo = os.path.dirname(here)
     dist = os.path.join(here, "dist")
     if not os.path.isdir(os.path.join(dist, "js")):
