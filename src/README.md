@@ -61,3 +61,13 @@ Figy y Molyb están ocultos. Sus líneas siguen en `c1p.js`, comentadas con el a
 
 - **Build reproducible:** `prerender.js` fija una semilla para `Math.random` solo durante el prerender (el HTML estático ya no cambia en cada build: tablero de la flota, orden de cartas). En el navegador del visitante `Math.random` es el nativo, así que el juego sigue siendo aleatorio. Dos builds seguidos producen HTML idéntico.
 - **El HTML de la raíz es generado:** nunca se edita a mano. `sync_dist.py` solo escribe lo que sale de `src/dist` y nunca modifica `src/`. Si otra rama (FAQ, formularios, mensajes de éxito) toca `src/`, el orden seguro es: fusionar primero el código fuente, y **después** ejecutar `build.py` + `sync_dist.py` sobre el resultado. Si hay conflictos en los `index.html` de la raíz, se resuelven regenerando (no a mano). Un cambio en el JS de la app produce un hash nuevo y el anterior publicado se conserva una generación.
+
+### Privacidad y legal (Fase 4)
+
+- Texto legal en `legal.py` (datos de identidad en `legal.json`, que no se toca). La política refleja el comportamiento real: `af-consent`, `af-lang`, `af-theme`, `af-view` (localStorage) y `yodis-v2` (sessionStorage); Spotify solo al pulsar; el script de Google Analytics se solicita en cada visita con el consentimiento en «denegado» por defecto; datos y metadatos que envía cada formulario.
+- `af-paths` **no** es almacenamiento: es una etiqueta `<meta name="af-paths">` que activa el enrutado por rutas reales; no se guarda nada en el navegador.
+- Si cambia el comportamiento (nuevo almacenamiento, nuevo proveedor, cambios en los formularios o en la carga de GA), hay que actualizar `legal.py` en los tres idiomas.
+
+### Deuda técnica de traducciones (documentada, sin cambios)
+
+Las claves de `T` se definen en capas (`c1.js` … `c1f.js`, la última gana). Hay claves antiguas pisadas por archivos posteriores y claves sin referencia en el código (algunas pueden construirse dinámicamente, p. ej. `t[k + "_h"]`). Ninguna es visible hoy: el francés efectivo no contiene «vous/votre» fuera de las páginas legales. No se ha eliminado nada porque formularios y componentes comparten claves; la limpieza queda para una fase posterior con pruebas visuales. Detalle y método en el documento del proyecto (no se sube al repo).
