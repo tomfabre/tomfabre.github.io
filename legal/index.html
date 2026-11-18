@@ -715,7 +715,7 @@ footer a:hover{text-decoration:underline;text-underline-offset:3px}
 .chatbtn{transition:transform var(--normal) var(--ease),opacity var(--normal) var(--ease),box-shadow var(--fast)}
 
 /* dialog form */
-dialog{background:var(--bg);color:var(--fg);border:1px solid var(--fg);padding:var(--s8);width:min(36rem,calc(100vw - 2rem));max-height:calc(100vh - 2rem);overflow-y:auto;border-radius:1.5rem}
+dialog{background:var(--bg);color:var(--fg);border:1px solid var(--fg);padding:var(--s8);width:min(36rem,calc(100vw - 2rem));max-height:calc(100vh - 2rem);max-height:calc(100dvh - 2rem);overflow-y:auto;border-radius:1.5rem}
 dialog::backdrop{background:rgba(20,20,20,.74)}
 #prizeDlg.stacked::backdrop{background:rgba(20,20,20,.28)}
 .win-dlg.under{visibility:hidden}
@@ -729,7 +729,7 @@ dialog .sub{color:var(--muted);font-size:var(--small);margin-bottom:var(--s6)}
 .f input:focus-visible,.f select:focus-visible,.f textarea:focus-visible{outline:2px solid var(--fg);outline-offset:2px;border-color:var(--fg)}
 .f select{-webkit-appearance:none;appearance:none;--chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232C2C2C' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 9 7 7 7-7'/%3E%3C/svg%3E");padding-right:2.9rem;background-image:var(--chev);background-repeat:no-repeat;background-position:right 1.1rem center;background-size:1.1rem;text-overflow:ellipsis}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .f select{--chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FDF9F0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 9 7 7 7-7'/%3E%3C/svg%3E")}}:root[data-theme="dark"] .f select{--chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FDF9F0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 9 7 7 7-7'/%3E%3C/svg%3E")}.dx{position:absolute;top:1.1rem;right:1.1rem;background:none;border:1px solid var(--line2);border-radius:var(--pill);width:2.5rem;height:2.5rem;font-size:1.1rem;transition:background-color var(--fast)}
 .dx:hover{background:var(--surface)}
-.err{color:var(--coral);font-size:var(--small);min-height:1.5em;margin-bottom:var(--s3)}
+.err{color:var(--err,var(--coral));font-size:var(--small);min-height:1.5em;margin-bottom:var(--s3)}
 .d-res[hidden]{display:none}#dlgT[hidden],dialog#dlg .sub[hidden]{display:none}#dsentT:focus{outline:none}
 
 /* chat */
@@ -1152,7 +1152,7 @@ footer .foot-grid{display:grid;grid-template-columns:1fr auto;gap:var(--s5) var(
 }
 dialog .dx{position:sticky;top:0;float:right;margin:-.3rem -.3rem .6rem 1rem;z-index:2;background:var(--bg)}
 dialog .dx{display:grid;place-items:center;padding:0;line-height:1;-webkit-appearance:none;appearance:none;box-sizing:border-box}
-dialog .dx:focus-visible{outline:2px solid var(--fg);outline-offset:2px;border-color:var(--fg)}
+dialog .dx:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
 dialog#dlg:focus{outline:none}
 
 /* ===== Versión B · aurora suave en el hero ===== */
@@ -1319,7 +1319,6 @@ html.mo .reveal.sec-head:not(.in) > *{opacity:0}
 .ct-faq h2{font-size:var(--h2);line-height:1.05;letter-spacing:-.02em;margin-bottom:var(--s6)}
 .d-res-t{font-size:clamp(1.4rem,2vw + 1rem,2rem);font-weight:600;letter-spacing:-.02em;margin-bottom:var(--s3)}
 .d-res-b{color:var(--muted);font-size:var(--lead,1.15rem)}
-#form [aria-invalid="true"]{border-color:var(--coral,#e5533d);outline:2px solid var(--coral,#e5533d);outline-offset:2px}
 #ferr a{text-decoration:underline;text-underline-offset:.2em}
 .bigfoot-h{font-size:clamp(2.6rem,9vw,9rem);line-height:.95;letter-spacing:-.045em;max-width:14ch}
 .bigfoot-p{margin:var(--s6) 0 var(--s5);color:var(--muted);font-weight:300;font-size:clamp(1.05rem,.6vw + .95rem,1.35rem);max-width:40ch}
@@ -1479,9 +1478,27 @@ dialog.lb[open]{display:flex}
 dialog#prizeDlg{padding:var(--s6) var(--s8)}
 dialog#prizeDlg .sub{margin-bottom:var(--s3)}
 dialog#prizeDlg:focus{outline:none}
-.pz-scope{font-size:.85rem;color:var(--fg);border-left:2px solid var(--fg);padding-left:var(--s3);margin:0 0 var(--s5);line-height:1.45}
+.pz-scope{font-size:.8rem;color:var(--muted);margin:0 0 var(--s4);line-height:1.45}
 @media (max-width:40rem){dialog#prizeDlg{padding:var(--s5)}}
 #pzForm .f-check{margin:var(--s3) 0 var(--s4)}
+/* formularios: sistema visual compartido (contacto general + análisis UX/UI) */
+:root{--err:#B3261E}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--err:#FF8F80}}
+:root[data-theme="dark"]{--err:#FF8F80}
+dialog .f{margin-bottom:var(--s3)}
+.f[hidden]{display:none}
+.f input,.f select,.f textarea{font-size:max(1rem,16px);min-height:3.1rem;scroll-margin-block:6rem}
+.f textarea{min-height:5.5rem}
+.f input::placeholder,.f textarea::placeholder{color:var(--muted);opacity:1}
+.f-err{display:none;color:var(--err);font-size:.82rem;line-height:1.4}
+.f-err:not(:empty){display:block}
+.f-err-check{margin:-.6rem 0 var(--s3) 2.15rem}
+.f [aria-invalid="true"]{border-color:var(--err);box-shadow:0 0 0 1px var(--err)}
+.f-check input[aria-invalid="true"]{border-color:var(--err);box-shadow:0 0 0 1px var(--err)}
+dialog .sub{color:var(--muted)}
+@media (max-height:44rem){dialog#dlg,dialog#prizeDlg{padding:var(--s4) var(--s6)}dialog h2{font-size:clamp(1.5rem,5vw,var(--h2))}dialog .sub{margin-bottom:var(--s3)}}
+@media (max-width:40rem){dialog#dlg,dialog#prizeDlg{padding:var(--s4)}}
+@media (prefers-reduced-motion:reduce){.f input,.f select,.f textarea,.f label{transition:none}}
 .pz-done{display:grid;justify-items:start;gap:var(--s3);padding:var(--s4) 0 var(--s2)}
 .pz-done[hidden]{display:none}
 .pz-done h2{margin:0;font-size:clamp(1.6rem,2.4vw + 1rem,2.4rem);line-height:1.05;letter-spacing:-.02em;outline:none}

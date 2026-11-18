@@ -22,8 +22,15 @@ El sitio construido se copia a la raíz del repositorio `tomfabre/tomfabre.githu
 - `legal.py` / `legal.json` páginas legales · `consent.js` consentimiento de analítica
 - `cv/` CV en HTML/PDF · `extras/` og-image, LEEME y script de dominio
 
-## Formulario de contacto
-Envía los datos por `POST` a Formspree (`FORM_ENDPOINT` en `c2.js`, ya configurado) con comprobación anti-spam sencilla (campo trampa y suma). Si el envío falla, ofrece abrir el correo (`mailto:`) o copiar el mensaje. Bajo los campos hay un aviso con enlace a la política de privacidad; no hay casilla de consentimiento.
+## Formularios (contacto general y análisis UX/UI del juego)
+Textos ES/EN/FR en `c1f.js` (se carga el último y pisa a `c1m.js`/`c1g.js`; los rangos de presupuesto siguen en `c1t.js`). Lógica en `c2.js` (`openForm`, `wireForm`, `openPrize`, `wirePrize`); marcado en `b.html`; estilos compartidos al final del bloque de diálogos de `a.html`.
+
+- **Un solo componente con variantes.** `openForm(ctx)` recibe el contexto desde los `data-*` del botón que lo abre (`data-service`, `data-project`, `data-place`), nunca desde parámetros de la URL: caso de estudio (preselecciona categoría solo si el caso tiene un único servicio), página de servicio (preselecciona ese servicio), Bio/Home/chat (sin preselección). El origen viaja en el envío (`source`, `project`, `service`, `page`, `locale`, `form_type`, `topic_id`).
+- **Premio del juego.** `openPrize(won)` abre directamente su formulario (web + email + opcional) y solo si la partida ha terminado. No cambia ninguna regla del juego.
+- **Antispam.** Formspree + campo trampa + suma («Una última comprobación: ¿cuánto es X + Y?») + bloqueo de doble envío. Turnstile no se ha integrado: este sitio es estático y no hay servidor donde verificar el token (ver más abajo).
+- **Presupuesto.** Rangos existentes (c1t.js). Solo se muestra para Branding, Web, Producto/UX/UI y Otro; oculto y deshabilitado para Colaboración y «Todavía no lo tengo claro», así que nunca bloquea ni se envía.
+- **Analítica** (`track`, sin datos personales ni contenido de campos): `contact_form_open|submit|success|error` y `ux_review_form_open|submit|success|error`, con `form_type`, `variant`, `source`, `category`, `locale` y `error_type`/`field` en los errores.
+- Si el envío falla, el modal sigue abierto con los datos y un aviso con el correo directo. El modo `mailto:`/copiar solo se usa para el borrador de agentes WebMCP.
 
 ## Proyectos ocultos
 Figy y Molyb están ocultos. Sus líneas siguen en `c1p.js`, comentadas con el aviso `HIDDEN`; basta descomentarlas en su posición original para volver a incluirlos.
@@ -34,4 +41,4 @@ Figy y Molyb están ocultos. Sus líneas siguen en `c1p.js`, comentadas con el a
 - `c2b.js`: componentes de la Bio (bento, galería accesible, carrusel de obsesiones, juego de memoria). Va **antes** de `c2.js` en `build.py` (el init de `c2.js` ya los usa).
 - **Assets pendientes**: se rellenan en `BIO_ASSETS` (`c2b.js`): 7 fotos de ciudades (3:2), 10 de calle (1:1), 4 de cocina (1:1), 5 de obsesiones (4:3), foto opcional del coro, URL de Spotify (`spotify.url`) y restaurantes validados (`places: [{name,url}]`). Mientras `img` sea `null` se pinta un placeholder identificado (`data-pending="..."`). Sin fotos de stock.
 - **Hundir la flota** vive en la Home (`#gamesec`), justo después de «Un poco más sobre mí» y antes de las preguntas frecuentes. La lógica (`renderGame`, `newGame`…) no cambió.
-- Formulario: mismo Formspree + honeypot + suma antispam; el selector tiene 8 opciones (las 6 del plan + «Quiero colaborar» + premio del juego). `TOPIC_IDS` (c3.js) sigue el mismo orden.
+- Formulario: ver la sección «Formularios». `TOPIC_IDS` vive ahora en `c2.js` (6 categorías; el premio ya no está en el selector).

@@ -36,7 +36,6 @@ const _applyLang = applyLang; applyLang = function(){ _applyLang.apply(this, arg
 updateHead(route_ || parse());
 
 /* ---------- WebMCP: imperative tools ---------- */
-const TOPIC_IDS = ["brand","web","product","ux","other","unsure","collab","prize"];
 const LANGS = ["es","en","fr"];
 const textOut = o => ({ content:[{ type:"text", text: typeof o === "string" ? o : JSON.stringify(o, null, 2) }] });
 const pjOut = (i, lg) => { const p = T[lg].projects[i], d = PROJ[i]; return { slug:d.key, url: PATHS ? location.origin + urlFor({page:"project",key:d.key}, lg) : location.origin + location.pathname + "#project-" + d.key, name:p[0], category:p[1], context:p[2], summary:p[3], description:p[4], services:p[5], tagline:p[6] || "", role:rl(d), period:(d.years && typeof d.years === "object" ? d.years[lg] : d.years) }; };
@@ -76,8 +75,8 @@ const WEBMCP_TOOLS = [
     execute: a => { if (!a || !["light","dark","system"].includes(a.theme)) return { content:[{ type:"text", text:"Unsupported theme." }], isError:true }; themePref = a.theme; store.set("af-theme", themePref); applyTheme(); return textOut("Theme set to " + a.theme); } },
   { name:"prepare_contact_message",
     description:"Open the contact form pre-filled with a message for Tom. The visitor reviews it and sends it themselves; nothing is sent automatically.",
-    inputSchema:{ type:"object", properties:{ name:{ type:"string", description:"Sender name." }, email:{ type:"string", description:"Sender email address." }, topic:{ type:"string", enum:TOPIC_IDS, description:"brand = branding & identity, web = web design & development, product = digital product, ux = UX/UI, other = another kind of project, unsure = not sure yet, collab = collaboration between studios/agencies/teams." }, message:{ type:"string", description:"Message for Tom." } }, required:["message"], additionalProperties:false },
-    execute: a => { openForm(); a = a || {}; if (a.name) $("#fn").value = String(a.name).slice(0,120); if (a.email) $("#fe").value = String(a.email).slice(0,160); const ti = TOPIC_IDS.indexOf(a.topic); if (ti >= 0) $("#ft").selectedIndex = ti; if (a.message) $("#fm").value = String(a.message).slice(0,1500); return textOut("Contact form opened with the draft. The visitor must review and send it."); } }
+    inputSchema:{ type:"object", properties:{ name:{ type:"string", description:"Sender name." }, email:{ type:"string", description:"Sender email address." }, topic:{ type:"string", enum:TOPIC_IDS, description:"brand = branding & identity, web = web design & development, product = digital product / UX/UI, collab = a collaboration, other = another kind of project, unsure = not sure yet." }, message:{ type:"string", description:"Message for Tom." } }, required:["message"], additionalProperties:false },
+    execute: a => { openForm(); a = a || {}; if (a.name) $("#fn").value = String(a.name).slice(0,120); if (a.email) $("#fe").value = String(a.email).slice(0,160); if (TOPIC_IDS.includes(a.topic)) { $("#ft").value = a.topic; syncBudget(); } if (a.message) $("#fm").value = String(a.message).slice(0,4000); return textOut("Contact form opened with the draft. The visitor must review and send it."); } }
 ];
 function registerWebMCP(){
   const mc = navigator.modelContext; if (!mc || typeof mc.registerTool !== "function") return;

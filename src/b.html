@@ -270,7 +270,7 @@
   </div>
   <div class="chat-log" id="clog"></div>
   <div class="sr" id="ystatus" role="status" aria-live="polite"></div>
-  <div class="chat-foot"><button type="button" data-open-form data-i="write"></button></div>
+  <div class="chat-foot"><button type="button" data-open-form data-place="chat" data-i="chat_write"></button></div>
 </div>
 </div>
 
@@ -310,21 +310,21 @@
   <p class="sub" data-i="gf_sub"></p>
   <p class="pz-scope" data-i="gf_scope"></p></div>
   <form id="pzForm" novalidate>
-    <div class="f"><label for="pzW" data-i="gf_web"></label><input id="pzW" name="website" type="text" inputmode="url" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="url" data-ph="gf_web_ph" required></div>
-    <div class="f"><label for="pzE" data-i="gf_mail"></label><input id="pzE" name="email" type="email" autocomplete="email" data-ph="ph_mail" required></div>
-    <div class="f"><label for="pzM" data-i="gf_more"></label><textarea id="pzM" name="improve" data-ph="gf_more_ph"></textarea></div>
-    <div class="f"><label for="pzQ" id="pzQl"></label><input id="pzQ" name="human" inputmode="numeric" pattern="[0-9]*" autocomplete="off" required></div>
+    <div class="f"><label for="pzW" data-i="gf_web"></label><input id="pzW" name="website" type="text" inputmode="url" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="url" maxlength="2048" data-ph="gf_web_ph" required aria-required="true" aria-describedby="pzWE"><span class="f-err" id="pzWE"></span></div>
+    <div class="f"><label for="pzE" data-i="gf_mail"></label><input id="pzE" name="email" type="email" inputmode="email" autocapitalize="off" spellcheck="false" autocomplete="email" maxlength="254" data-ph="ph_mail" required aria-required="true" aria-describedby="pzEE"><span class="f-err" id="pzEE"></span></div>
+    <div class="f"><label for="pzM" data-i="gf_more"></label><textarea id="pzM" name="improve" maxlength="1000" rows="3" data-ph="gf_more_ph"></textarea></div>
+    <div class="f"><label for="pzQ" id="pzQl"></label><input id="pzQ" name="human" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="3" required aria-required="true" aria-describedby="pzQE"><span class="f-err" id="pzQE"></span></div>
     <input type="text" name="_gotcha" id="pzH" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
     <p class="err" id="pzErr" role="alert"></p>
     <p class="sr" id="pzStat" role="status" aria-live="polite"></p>
     <p class="f-priv"><span data-i="d_priv"></span> <a class="pz-priv" href="/legal/" data-i="d_priv_l"></a>.</p>
-    <label class="f-check" for="pzC"><input type="checkbox" id="pzC" name="consent" required><span data-i="d_consent"></span></label>
+    <label class="f-check" for="pzC"><input type="checkbox" id="pzC" name="consent" required aria-required="true" aria-describedby="pzCE"><span data-i="d_consent"></span></label><span class="f-err f-err-check" id="pzCE"></span>
     <button class="btn solid" type="submit" id="pzSend" style="width:100%;justify-content:center"><span data-i="gf_send"></span><span class="arr" aria-hidden="true">→</span></button>
   </form>
   <div class="pz-done" id="pzOk" hidden>
     <span class="pz-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
     <h2 id="pzOkT" tabindex="-1" data-i="gf_ok_t"></h2>
-    <p data-i="gf_ok_b1"></p><p data-i="gf_ok_b2"></p>
+    <p data-i="gf_ok_b1"></p>
     <button class="btn solid" type="button" id="pzDone"><span data-i="gf_close"></span></button>
   </div>
 </dialog>
@@ -333,17 +333,17 @@
   <h2 id="dlgT" data-i="d_h"></h2>
   <p class="sub" data-i="d_sub"></p>
   <form id="form" novalidate toolname="draft_contact_message" tooldescription="Prepare a contact message to Tom Fabre about a project, collaboration or job. It produces a draft for the visitor to send by email; nothing is sent automatically.">
-    <div class="f"><label for="fn" data-i="d_name"></label><input id="fn" name="name" data-ph="ph_name" toolparamdescription="Sender full name." autocomplete="name" required></div>
-    <div class="f"><label for="fe" data-i="d_mail"></label><input id="fe" name="email" data-ph="ph_mail" toolparamdescription="Sender email address." type="email" autocomplete="email" required></div>
-    <div class="f f-extra"><label for="ft" data-i="d_topic"></label><select id="ft" name="topic" toolparamdescription="What the message is about."></select></div>
-    <div class="f"><label for="fm" data-i="d_msg"></label><textarea id="fm" name="message" data-ph="ph_msg" aria-describedby="fmh" toolparamdescription="Message for Tom." required></textarea><span class="f-hint" id="fmh" data-i="d_msg_h"></span></div>
-    <div class="f f-extra"><label for="fb" data-i="d_budget"></label><select id="fb" name="budget" toolparamdescription="Optional budget band. Never required."></select></div>
-    <div class="f"><label for="fq" id="fql"></label><input id="fq" name="human" inputmode="numeric" pattern="[0-9]*" autocomplete="off" required></div>
+    <div class="f"><label for="fn" data-i="d_name"></label><input id="fn" name="name" data-ph="ph_name" toolparamdescription="Sender full name." autocomplete="name" maxlength="100" required aria-required="true" aria-describedby="fnE"><span class="f-err" id="fnE"></span></div>
+    <div class="f"><label for="fe" data-i="d_mail"></label><input id="fe" name="email" data-ph="ph_mail" toolparamdescription="Sender email address." type="email" inputmode="email" autocapitalize="off" spellcheck="false" autocomplete="email" maxlength="254" required aria-required="true" aria-describedby="feE"><span class="f-err" id="feE"></span></div>
+    <div class="f f-extra"><label for="ft" data-i="d_topic"></label><select id="ft" name="topic" toolparamdescription="What the message is about." required aria-required="true" aria-describedby="ftE"></select><span class="f-err" id="ftE"></span></div>
+    <div class="f"><label for="fm" data-i="d_msg"></label><textarea id="fm" name="message" data-ph="ph_msg" rows="4" maxlength="4000" toolparamdescription="Message for Tom." required aria-required="true" aria-describedby="fmE"></textarea><span class="f-err" id="fmE"></span></div>
+    <div class="f f-extra" id="fbWrap" hidden><label for="fb" data-i="d_budget"></label><select id="fb" name="budget" toolparamdescription="Optional budget band. Never required." disabled></select></div>
+    <div class="f"><label for="fq" id="fql"></label><input id="fq" name="human" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="3" required aria-required="true" aria-describedby="fqE"><span class="f-err" id="fqE"></span></div>
     <input type="text" name="_gotcha" id="fh" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
     <p class="err" id="ferr" role="alert"></p>
     <p class="sr" id="fstat" role="status" aria-live="polite"></p>
     <p class="f-priv"><span data-i="d_priv"></span> <a id="formPrivLink" href="/legal/" data-i="d_priv_l"></a>.</p>
-    <label class="f-check" for="fc"><input type="checkbox" id="fc" name="consent" required><span data-i="d_consent"></span></label>
+    <label class="f-check" for="fc"><input type="checkbox" id="fc" name="consent" required aria-required="true" aria-describedby="fcE"><span data-i="d_consent"></span></label><span class="f-err f-err-check" id="fcE"></span>
     <button class="btn solid" type="submit" style="width:100%;justify-content:center"><span data-i="d_send"></span><span class="arr" aria-hidden="true">→</span></button>
   </form>
   <div class="d-res" id="dsent" hidden><p class="d-res-t" id="dsentT" tabindex="-1" data-i="d_sent_t"></p><p class="d-res-b" data-i="d_sent_b"></p></div>

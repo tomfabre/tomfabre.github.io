@@ -333,55 +333,104 @@ function renderGame(){
   });
 }
 
-/* ---------- form dialog ---------- */
+/* ---------- form dialog: un solo componente con variantes de contexto (general · caso de estudio · servicio · bio · chat) ---------- */
+const TOPIC_IDS = ["brand","web","product","collab","other","unsure"];   /* mismo orden que T.xx.topics */
+const BUDGET_TOPICS = ["brand","web","product","other"];                  /* el presupuesto solo se ofrece en solicitudes de servicio */
+const SERVICE_TOPIC = { branding:"brand", web:"web", ux:"product" };
+const MAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const dlg = () => $("#dlg"); let draft = "";
-let qa = 0, qb = 0;
+let qa = 0, qb = 0, sending = false, formCtx = { source:"direct" }, sentSig = "", sentAt = 0;
+const qLabel = (a, b) => `${L().d_q} ${a} + ${b}${lang === "fr" ? " ?" : "?"}`;
 function newQ(){ qa = 1 + Math.floor(Math.random() * 9); qb = 1 + Math.floor(Math.random() * 9); $("#fq").value = ""; setQ(); }
-function setQ(){ $("#fql").textContent = `${L().d_q} ${qa} + ${qb}?`; }
+function setQ(){ $("#fql").textContent = qLabel(qa, qb); }
+/* errores en línea: cada campo tiene su <span id="<id>E"> enlazado con aria-describedby */
+function fieldErr(el, msg){ const out = document.getElementById(el.id + "E"); if (msg){ el.setAttribute("aria-invalid", "true"); if (out) out.textContent = msg; } else { el.removeAttribute("aria-invalid"); if (out) out.textContent = ""; } }
+function clearErrs(ids){ ids.forEach(id => fieldErr($(id), "")); }
+const FORM_FIELDS = ["#fn", "#fe", "#ft", "#fm", "#fq", "#fc"], PRIZE_FIELDS = ["#pzW", "#pzE", "#pzQ", "#pzC"];
+const FIELD_KEY = { fn:"name", fe:"email", ft:"topic", fm:"message", fq:"check", fc:"consent", pzW:"website", pzE:"email", pzQ:"check", pzC:"consent" };
 function setDlgHead(quick){
   const h = $("#dlgT"), s = $("#dlg .sub"), hk = quick ? "dq_h" : "d_h", sk = quick ? "dq_sub" : "d_sub";
   h.hidden = false; s.hidden = false; dlg().setAttribute("aria-labelledby", "dlgT"); h.dataset.i = hk; h.textContent = L()[hk]; s.dataset.i = sk; s.textContent = L()[sk];
   $("#form").classList.toggle("quick", !!quick);
   const sl = $("#form button[type=submit] [data-i]"), bk = quick ? "dq_send" : "d_send"; sl.dataset.i = bk; sl.textContent = L()[bk];
 }
-function openForm(opt){ const prize = opt === true, quick = !!(opt && typeof opt === "object" && opt.quick), topic = opt && typeof opt === "object" && Number.isInteger(opt.topic) ? opt.topic : -1;
-  setDlgHead(quick); $("#form").hidden = false; $("#dres").hidden = true; $("#dsent").hidden = true; $("#ferr").textContent = ""; $("#fstat").textContent = ""; sending = false; newQ(); closeSheet(); closeChat();
-  if (prize){ const t = L(); $("#ft").selectedIndex = Math.max(0, TOPIC_IDS.indexOf("prize")); if (!$("#fm").value.trim()) $("#fm").value = t.prize_msg; }
-  else if (topic >= 0 && topic < $("#ft").options.length) $("#ft").selectedIndex = topic;
-  if (!formStarted){ formStarted = true; track("contact_form_start", { page: route_.page }); }
+/* presupuesto: visible solo con una categoría de servicio; oculto = deshabilitado y sin valor, así nunca bloquea ni se envía */
+function syncBudget(){
+  const w = $("#fbWrap"), fb = $("#fb"), show = !$("#form").classList.contains("quick") && BUDGET_TOPICS.includes($("#ft").value);
+  w.hidden = !show; fb.disabled = !show; if (!show) fb.selectedIndex = 0;
+}
+/* contexto de entrada: lo deduce el servidor de la propia página (data-*), nunca un parámetro editable de la URL */
+function ctxFrom(el){
+  const d = el && el.dataset ? el.dataset : {}, place = d.place || "", service = d.service || "", project = d.project || "";
+  let topicId = SERVICE_TOPIC[service] || "";
+  if (!topicId && project){ const s = (PSVC[project] || []); if (s.length === 1) topicId = SERVICE_TOPIC[s[0]] || ""; }   /* solo si el caso tiene un único servicio: así es seguro */
+  const source = project ? "case_study" : service ? "service_page" : place === "bio_close" ? "about" : (place || "direct");
+  return { source, place, service, project, topicId, quick: !!(el && el.hasAttribute && el.hasAttribute("data-quick")) };
+}
+function openForm(c){
+  c = Object.assign({ source:"direct", place:"", service:"", project:"", topicId:"", quick:false }, c || {}); formCtx = c;
+  setDlgHead(c.quick); $("#form").hidden = false; $("#dres").hidden = true; $("#dsent").hidden = true; $("#ferr").textContent = ""; $("#fstat").textContent = ""; sending = false; clearErrs(FORM_FIELDS); newQ(); closeSheet(); closeChat();
+  if (c.topicId && TOPIC_IDS.includes(c.topicId)) $("#ft").value = c.topicId;   /* se puede cambiar; nunca se pisa lo que el visitante ya eligió al reabrir sin contexto */
+  syncBudget();
+  track("contact_form_open", { form_type:"contact", variant:c.quick ? "quick" : "full", source:c.source, category:$("#ft").value || undefined });
   if (dlg().showModal) dlg().showModal(); else dlg().setAttribute("open","");
-  if (matchMedia("(pointer:coarse)").matches){ dlg().tabIndex = -1; dlg().focus({ preventScroll:true }); }   /* touch: don't park a focus ring on the close button */ }
-let sending = false, formStarted = false;
+  if (matchMedia("(pointer:coarse)").matches){ dlg().tabIndex = -1; dlg().focus({ preventScroll:true }); }   /* touch: sin teclado virtual ni foco parado en el botón de cierre */
+  else { const first = FORM_FIELDS.map(s => $(s)).find(el => el && !el.closest("[hidden]") && !el.value && el.type !== "checkbox") || $("#fn"); first.focus({ preventScroll:true }); }   /* escritorio: el foco entra en el primer campo pendiente, no en la ×, así no se pinta su anillo al abrir */
+}
+function validateContact(t, quick, agent){
+  const bad = [], put = (id, msg) => { fieldErr($(id), msg); if (msg) bad.push(id); };
+  const n = $("#fn").value.trim(), m = $("#fe").value.trim(), msg = $("#fm").value.trim();
+  put("#fn", n ? "" : t.e_name);
+  put("#fe", !m ? t.e_mail_empty : (m.length > 254 || !MAIL_RE.test(m) ? t.e_mail : ""));
+  put("#ft", quick || $("#ft").value ? "" : t.e_topic);
+  put("#fm", !msg ? t.e_msg : (msg.length < 10 ? t.e_msg_short : ""));
+  if (!agent){
+    put("#fq", !$("#fq").value.trim() ? t.e_q_empty : (parseInt($("#fq").value, 10) !== qa + qb ? t.d_qerr : ""));
+    put("#fc", $("#fc").checked ? "" : t.e_consent);
+  } else { fieldErr($("#fq"), ""); fieldErr($("#fc"), ""); }
+  return bad;
+}
+function showSent(){
+  const t = L(); $("#form").hidden = true; $("#dlgT").hidden = true; $("#dlg .sub").hidden = true; $("#dsent").hidden = false; dlg().setAttribute("aria-labelledby", "dsentT"); $("#dsentT").focus({ preventScroll:true }); $("#fstat").textContent = t.d_sent;
+}
 function wireForm(){
-  document.addEventListener("click", e => { const b = e.target.closest && e.target.closest("[data-open-form]"); if (!b) return; e.preventDefault(); openForm(b.dataset.topic ? { topic:Number(b.dataset.topic) } : (b.hasAttribute("data-quick") ? { quick:true } : undefined)); });
-  $("#dclose").addEventListener("click", () => dlg().close());
-  dlg().addEventListener("click", e => { if (e.target === dlg()) dlg().close(); });
-  dlg().addEventListener("close", () => { formStarted = false; });
-  const MAIL = /^\S+@\S+\.\S+$/;
+  document.addEventListener("click", e => { const b = e.target.closest && e.target.closest("[data-open-form]"); if (!b) return; e.preventDefault(); openForm(ctxFrom(b)); });
+  const closeDlg = () => { if (!sending) dlg().close(); };
+  $("#dclose").addEventListener("click", closeDlg);
+  dlg().addEventListener("click", e => { if (e.target === dlg()) closeDlg(); });
+  dlg().addEventListener("cancel", e => { if (sending) e.preventDefault(); });   /* Escape no cierra mientras se envía */
+  $("#ft").addEventListener("change", () => { fieldErr($("#ft"), ""); syncBudget(); });
+  [["#fn", v => v.trim()], ["#fe", v => MAIL_RE.test(v.trim())], ["#fm", v => v.trim().length >= 10], ["#fq", v => parseInt(v, 10) === qa + qb]].forEach(([id, ok]) => $(id).addEventListener("input", () => { if ($(id).getAttribute("aria-invalid") && ok($(id).value)) fieldErr($(id), ""); }));
+  $("#fc").addEventListener("change", () => { if ($("#fc").checked) fieldErr($("#fc"), ""); });
   $("#form").addEventListener("submit", e => {
     e.preventDefault(); if (sending) return;
-    const t = L(), n = $("#fn").value.trim(), m = $("#fe").value.trim(), msg = $("#fm").value.trim(), quick = $("#form").classList.contains("quick"), topic = quick ? t.dq_topic : $("#ft").selectedOptions[0].textContent, budget = !quick && $("#fb") && $("#fb").value ? $("#fb").selectedOptions[0].textContent : "";
-    const agent = !!e.agentInvoked && typeof e.respondWith === "function";
-    if (!n || !MAIL.test(m) || !msg){
-      const bad = !n ? $("#fn") : (!MAIL.test(m) ? $("#fe") : $("#fm"));
-      ["#fn", "#fe", "#fm"].forEach(id => $(id).removeAttribute("aria-invalid")); bad.setAttribute("aria-invalid", "true");
-      $("#ferr").textContent = (n && !MAIL.test(m)) ? t.d_mail_err : t.d_err;
-      if (agent) e.respondWith(Promise.resolve({ content:[{ type:"text", text:"Missing or invalid fields: name, a valid email and a message are required." }], isError:true }));
-      bad.focus(); return;
+    const t = L(), quick = $("#form").classList.contains("quick"), agent = !!e.agentInvoked && typeof e.respondWith === "function";
+    $("#ferr").textContent = "";
+    const bad = validateContact(t, quick, agent);
+    if (bad.length){
+      track("contact_form_error", { form_type:"contact", source:formCtx.source, error_type:"validation", field:FIELD_KEY[bad[0].slice(1)] });
+      if (agent) e.respondWith(Promise.resolve({ content:[{ type:"text", text:"Missing or invalid fields: name, a valid email, a topic and a message of at least 10 characters are required." }], isError:true }));
+      $(bad[0]).focus(); return;
     }
-    ["#fn", "#fe", "#fm"].forEach(id => $(id).removeAttribute("aria-invalid"));
-    if (!agent && !$("#fc").checked) { $("#ferr").textContent = t.d_consent_err; $("#fc").focus(); return; }
-    if (!agent && parseInt($("#fq").value, 10) !== qa + qb) { $("#ferr").textContent = t.d_qerr; $("#fq").focus(); return; }
+    const n = $("#fn").value.trim(), m = $("#fe").value.trim(), msg = $("#fm").value.trim(), topicId = quick ? "quick" : $("#ft").value, topic = quick ? t.dq_topic : $("#ft").selectedOptions[0].textContent, budget = !$("#fb").disabled && $("#fb").value ? $("#fb").selectedOptions[0].textContent : "";
     if (agent) e.respondWith(Promise.resolve({ content:[{ type:"text", text:"Draft prepared. The visitor still has to open it in their email app or copy it; nothing was sent automatically." }] }));
     draft = `${msg}\n\n— ${n} (${m})\n${topic}${budget ? "\n" + budget : ""}`;
     const fallback = () => { $("#mailto").href = `mailto:${EMAIL}?subject=${encodeURIComponent(topic + " · " + n)}&body=${encodeURIComponent(draft)}`; $("#form").hidden = true; $("#dres").hidden = false; $("#dcopied").textContent = ""; };
     if (FORM_ENDPOINT && !agent){
       if ($("#fh").value) return;   /* honeypot */
+      const sig = m + "|" + msg;
+      if (sig === sentSig && Date.now() - sentAt < 600000){ showSent(); return; }   /* mismo mensaje enviado hace un momento: no se duplica */
       const sb = $("#form button[type=submit]"), lab = sb.querySelector("[data-i]"), old = lab.textContent;
-      sending = true; sb.disabled = true; sb.setAttribute("aria-busy", "true"); lab.textContent = t.d_sending; $("#ferr").textContent = ""; $("#fstat").textContent = t.d_sending;
-      fetch(FORM_ENDPOINT, { method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" }, body:JSON.stringify({ name:n, email:m, topic, budget: budget || undefined, message:msg, _replyto:m, _subject:topic + " · " + n + " (portfolio)" }) })
-        .then(r => { if (!r.ok) throw 0; $("#form").hidden = true; $("#dlgT").hidden = true; $("#dlg .sub").hidden = true; $("#dsent").hidden = false; dlg().setAttribute("aria-labelledby", "dsentT"); $("#dsentT").focus({ preventScroll:true }); $("#form").reset(); $("#fstat").textContent = t.d_sent; track("contact_form_submit_success", { project_type: topic, budget_band: budget || undefined }); })
-        .catch(() => { $("#ferr").innerHTML = `<strong>${esc(t.d_fail_t)}</strong> ` + esc(t.d_fail_b).replace(EMAIL, `<a href="mailto:${EMAIL}">${EMAIL}</a>`); $("#fstat").textContent = ""; })
+      sending = true; sb.disabled = true; sb.setAttribute("aria-busy", "true"); lab.textContent = t.d_sending; $("#fstat").textContent = t.d_sending;
+      const evp = { form_type:"contact", variant:quick ? "quick" : "full", source:formCtx.source, category:topicId };
+      track("contact_form_submit", evp);
+      const fail = kind => { track("contact_form_error", Object.assign({ error_type:kind }, evp)); $("#ferr").innerHTML = `<strong>${esc(t.d_fail_t)}</strong> ` + esc(t.d_fail_b).replace(EMAIL, `<a href="mailto:${EMAIL}">${EMAIL}</a>`); $("#fstat").textContent = ""; };
+      fetch(FORM_ENDPOINT, { method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" }, body:JSON.stringify({
+        name:n, email:m, topic, topic_id:topicId, budget: budget || undefined, message:msg, form_type:"contact", source:formCtx.source, project:formCtx.project || undefined, service:formCtx.service || undefined, page:location.pathname, locale:lang,
+        _replyto:m, _subject:topic + " · " + n + " (portfolio)" }) })
+        .then(r => { if (!r.ok){ fail("http_" + r.status); return; }   /* solo se confirma con la respuesta correcta del servidor; si no, el modal sigue abierto con los datos */
+          sentSig = sig; sentAt = Date.now(); showSent(); $("#form").reset(); syncBudget(); newQ(); track("contact_form_success", evp); })
+        .catch(() => fail("network"))
         .finally(() => { sending = false; sb.disabled = false; sb.removeAttribute("aria-busy"); lab.textContent = old; });
       return;
     }
@@ -742,9 +791,10 @@ function applyLang(){
   $$("[data-wi]").forEach(el => { el.dataset.w = t[el.dataset.wi] || ""; if (el.classList.contains("wr") || el.classList.contains("wup")) el.classList.add(el.classList.contains("wr") ? "wr" : "wup"); });
   splitHero(); renderStickers(); placeBioSticker(); applyWhispers(); wireChars();
   // dialog topic select
-  { const ft = $("#ft"), fb = $("#fb"), tv = ft.selectedIndex, bv = fb ? fb.selectedIndex : 0;
-    ft.innerHTML = t.topics.map(x => `<option>${esc(x)}</option>`).join(""); if (tv > 0 && tv < t.topics.length) ft.selectedIndex = tv;
-    if (fb){ fb.innerHTML = `<option value="">—</option>` + t.budget.map(x => `<option>${esc(x)}</option>`).join(""); if (bv > 0) fb.selectedIndex = bv; } }
+  { const ft = $("#ft"), fb = $("#fb"), tv = ft.value, bv = fb ? fb.selectedIndex : 0;
+    ft.innerHTML = `<option value="" disabled selected>${esc(t.d_topic_ph)}</option>` + t.topics.map((x, i) => `<option value="${TOPIC_IDS[i]}">${esc(x)}</option>`).join(""); if (tv) ft.value = tv;
+    if (fb){ fb.innerHTML = `<option value="">${esc(t.d_budget_ph)}</option>` + t.budget.map(x => `<option>${esc(x)}</option>`).join(""); if (bv > 0) fb.selectedIndex = bv; }
+    syncBudget(); clearErrs(FORM_FIELDS); clearErrs(PRIZE_FIELDS); }
   // language code
   $("#langCode").textContent = lang.toUpperCase();
   $("#howList").innerHTML = (t.game_rules || []).map(x => `<li>${esc(x)}</li>`).join("");
@@ -752,46 +802,70 @@ function applyLang(){
   if (route_.page === "project") renderProject(route_.key);
 }
 
-/* ---------- prize form (free UX/UI review): same Formspree endpoint, honeypot, sum check and consent as the contact form ---------- */
-let pzA = 0, pzB = 0, pzSending = false, pzWon = false;
-function pzSetQ(){ $("#pzQl").textContent = `${L().d_q} ${pzA} + ${pzB}?`; }
-function pzUrl(v){   /* accepts "tuweb.com", "www.tuweb.com" or full URLs; returns a normalised https URL or "" */
-  v = v.trim(); if (!v || /\s/.test(v)) return ""; if (!/^https?:\/\//i.test(v)) v = "https://" + v;
-  try { const u = new URL(v); return /^[a-z0-9-]+(\.[a-z0-9-]+)+$/i.test(u.hostname) ? u.href : ""; } catch(e){ return ""; }
+/* ---------- análisis UX/UI (premio del juego): formulario propio, mismo Formspree, honeypot, suma y aviso de privacidad ---------- */
+let pzA = 0, pzB = 0, pzSending = false, pzWon = false, pzSig = "", pzAt = 0;
+function pzSetQ(){ $("#pzQl").textContent = qLabel(pzA, pzB); }
+/* admite "tuweb.com", "www.tuweb.com" o URL completas y devuelve una URL https/http normalizada, o "" si no es segura ni válida:
+   rechaza otros protocolos (javascript:, data:, file:, mailto:…), credenciales, localhost, IPs y hosts internos */
+function pzUrl(v){
+  v = (v || "").trim(); if (!v || v.length > 2048 || /[\s<>"'`\\]/.test(v)) return "";
+  const scheme = v.match(/^([a-z][a-z0-9+.-]*):/i);
+  if (scheme && !/^https?$/i.test(scheme[1]) && !/^[a-z0-9.-]+:\d+(\/|$)/i.test(v)) return "";   /* "host:puerto" no es un protocolo, pero "javascript:" sí */
+  if (!/^https?:\/\//i.test(v)) v = "https://" + v;
+  try {
+    const u = new URL(v), h = u.hostname.toLowerCase();
+    if (!/^https?:$/.test(u.protocol) || u.username || u.password) return "";
+    if (h === "localhost" || /\.(local|localhost|internal|lan|home|corp)$/.test(h) || /^\d+(\.\d+){3}$/.test(h) || h.includes(":") || /^\[/.test(h)) return "";
+    if (!/^(?=.{4,253}$)([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}$/i.test(h.replace(/\.$/, ""))) return "";
+    u.hash = ""; return u.href;
+  } catch(e){ return ""; }
 }
 function openPrize(won){
-  pzWon = !!won; pzSending = false;
-  const d = $("#prizeDlg"); $("#pzForm").hidden = false; $("#pzHead").hidden = false; $("#pzOk").hidden = true; d.setAttribute("aria-labelledby", "pzT"); $("#pzErr").textContent = ""; $("#pzStat").textContent = "";
-  ["#pzW", "#pzE"].forEach(id => $(id).removeAttribute("aria-invalid"));
+  if (typeof G === "object" && G && G.over === false) return;   /* el premio solo se abre desde el final de la partida; la regla del juego no cambia */
+  pzWon = !!won; pzSending = false; formCtx = { source:"game" };
+  const d = $("#prizeDlg"); $("#pzForm").hidden = false; $("#pzHead").hidden = false; $("#pzOk").hidden = true; d.setAttribute("aria-labelledby", "pzT"); $("#pzErr").textContent = ""; $("#pzStat").textContent = ""; clearErrs(PRIZE_FIELDS);
   pzA = 1 + Math.floor(Math.random() * 9); pzB = 1 + Math.floor(Math.random() * 9); $("#pzQ").value = ""; pzSetQ();
-  track("game_prize_open", { game_result: pzWon ? "won" : "lost" });
+  track("ux_review_form_open", { form_type:"ux_review", source:"game", game_result: pzWon ? "won" : "lost" });
   const under = $("#gameDlg").open; d.classList.toggle("stacked", under); $("#gameDlg").classList.toggle("under", under);   /* el resultado queda debajo, oculto, para no ver textos fantasma tras el formulario */
-  if (d.showModal) d.showModal(); else d.setAttribute("open", "");   /* nested over the result dialog: closing it returns focus to the button that opened it */
+  if (d.showModal) d.showModal(); else d.setAttribute("open", "");   /* encima del diálogo del resultado: al cerrarlo, el foco vuelve al botón que lo abrió */
+  if (!matchMedia("(pointer:coarse)").matches) (($("#pzW").value ? ($("#pzE").value ? $("#pzM") : $("#pzE")) : $("#pzW"))).focus({ preventScroll:true });
 }
 function wirePrize(){
-  const d = $("#prizeDlg"), MAIL = /^\S+@\S+\.\S+$/;
-  $("#pzClose").addEventListener("click", () => d.close());
+  const d = $("#prizeDlg"), closeP = () => { if (!pzSending) d.close(); };
+  $("#pzClose").addEventListener("click", closeP);
   d.addEventListener("close", () => { d.classList.remove("stacked"); $("#gameDlg").classList.remove("under"); });
-  $("#pzDone").addEventListener("click", () => d.close());
-  d.addEventListener("click", e => { if (e.target === d) d.close(); });
+  d.addEventListener("cancel", e => { if (pzSending) e.preventDefault(); });
+  $("#pzDone").addEventListener("click", closeP);
+  d.addEventListener("click", e => { if (e.target === d) closeP(); });
+  $("#pzW").addEventListener("input", () => { if ($("#pzW").getAttribute("aria-invalid") && pzUrl($("#pzW").value)) fieldErr($("#pzW"), ""); });
+  $("#pzE").addEventListener("input", () => { if ($("#pzE").getAttribute("aria-invalid") && MAIL_RE.test($("#pzE").value.trim())) fieldErr($("#pzE"), ""); });
+  $("#pzQ").addEventListener("input", () => { if ($("#pzQ").getAttribute("aria-invalid") && parseInt($("#pzQ").value, 10) === pzA + pzB) fieldErr($("#pzQ"), ""); });
+  $("#pzC").addEventListener("change", () => { if ($("#pzC").checked) fieldErr($("#pzC"), ""); });
   $("#pzForm").addEventListener("submit", e => {
     e.preventDefault(); if (pzSending) return;
-    const t = L(), web = pzUrl($("#pzW").value), mail = $("#pzE").value.trim(), more = $("#pzM").value.trim(), err = $("#pzErr");
-    ["#pzW", "#pzE"].forEach(id => $(id).removeAttribute("aria-invalid"));
-    if (!web) { $("#pzW").setAttribute("aria-invalid", "true"); err.textContent = t.gf_web_err; $("#pzW").focus(); return; }
-    if (!MAIL.test(mail)) { $("#pzE").setAttribute("aria-invalid", "true"); err.textContent = t.d_mail_err; $("#pzE").focus(); return; }
-    if (!$("#pzC").checked) { err.textContent = t.d_consent_err; $("#pzC").focus(); return; }
-    if (parseInt($("#pzQ").value, 10) !== pzA + pzB) { err.textContent = t.d_qerr; $("#pzQ").focus(); return; }
+    const t = L(), raw = $("#pzW").value.trim(), web = pzUrl(raw), mail = $("#pzE").value.trim(), more = $("#pzM").value.trim(), err = $("#pzErr"), bad = [];
+    err.textContent = "";
+    const put = (id, msg) => { fieldErr($(id), msg); if (msg) bad.push(id); };
+    put("#pzW", !raw ? t.gf_web_empty : (web ? "" : t.gf_web_err));
+    put("#pzE", !mail ? t.e_mail_empty : (mail.length > 254 || !MAIL_RE.test(mail) ? t.e_mail : ""));
+    put("#pzQ", !$("#pzQ").value.trim() ? t.e_q_empty : (parseInt($("#pzQ").value, 10) !== pzA + pzB ? t.d_qerr : ""));
+    put("#pzC", $("#pzC").checked ? "" : t.e_consent);
+    if (bad.length){ track("ux_review_form_error", { form_type:"ux_review", source:"game", error_type:"validation", field:FIELD_KEY[bad[0].slice(1)] }); $(bad[0]).focus(); return; }
     if ($("#pzH").value) return;   /* honeypot */
-    const sb = $("#pzSend"), lab = sb.querySelector("[data-i]"), old = lab.textContent, result = pzWon ? "ganó la partida" : "perdió la partida";
-    pzSending = true; sb.disabled = true; sb.setAttribute("aria-busy", "true"); lab.textContent = t.d_sending; err.textContent = ""; $("#pzStat").textContent = t.d_sending;
+    const sig = web + "|" + mail;
+    if (sig === pzSig && Date.now() - pzAt < 600000){ $("#pzForm").hidden = true; $("#pzHead").hidden = true; $("#pzOk").hidden = false; d.setAttribute("aria-labelledby", "pzOkT"); $("#pzOkT").focus(); return; }   /* misma solicitud ya registrada: no se duplica */
+    const sb = $("#pzSend"), lab = sb.querySelector("[data-i]"), old = lab.textContent, result = pzWon ? "ganó la partida" : "perdió la partida", evp = { form_type:"ux_review", source:"game", game_result: pzWon ? "won" : "lost" };
+    pzSending = true; sb.disabled = true; sb.setAttribute("aria-busy", "true"); lab.textContent = t.gf_sending; $("#pzStat").textContent = t.gf_sending;
+    track("ux_review_form_submit", evp);
     const topic = "Análisis UX/UI gratuito (juego)";
+    const fail = kind => { track("ux_review_form_error", Object.assign({ error_type:kind }, evp)); err.innerHTML = `<strong>${esc(t.d_fail_t)}</strong> ` + esc(t.d_fail_b).replace(EMAIL, `<a href="mailto:${EMAIL}">${EMAIL}</a>`); $("#pzStat").textContent = ""; };
     fetch(FORM_ENDPOINT, { method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" }, body:JSON.stringify({
-      email:mail, topic, website:web, game_result:pzWon ? "won" : "lost", locale:lang, _replyto:mail, _subject:topic + " · " + web + " (portfolio)",
+      email:mail, topic, form_type:"ux_review", website:web, game_result:pzWon ? "won" : "lost", locale:lang, _replyto:mail, _subject:topic + " · " + web + " (portfolio)",
       message:`Web: ${web}\nResultado del juego: ${result}\nIdioma: ${lang}` + (more ? `\nQuiere mejorar: ${more}` : "") }) })
-      .then(r => { if (!r.ok) throw 0; $("#pzForm").hidden = true; $("#pzHead").hidden = true; $("#pzOk").hidden = false; d.setAttribute("aria-labelledby", "pzOkT"); $("#pzForm").reset(); $("#pzStat").textContent = t.gf_ok_t + " " + t.gf_ok_b1 + " " + t.gf_ok_b2;
-        track("game_prize_submit_success", { game_result: pzWon ? "won" : "lost" }); $("#pzOkT").focus(); })
-      .catch(() => { err.innerHTML = `<strong>${esc(t.d_fail_t)}</strong> ` + esc(t.d_fail_b).replace(EMAIL, `<a href="mailto:${EMAIL}">${EMAIL}</a>`); $("#pzStat").textContent = ""; })
+      .then(r => { if (!r.ok){ fail("http_" + r.status); return; }
+        pzSig = sig; pzAt = Date.now(); $("#pzForm").hidden = true; $("#pzHead").hidden = true; $("#pzOk").hidden = false; d.setAttribute("aria-labelledby", "pzOkT"); $("#pzForm").reset(); $("#pzStat").textContent = t.gf_ok_t + " " + t.gf_ok_b1;
+        track("ux_review_form_success", evp); $("#pzOkT").focus(); })
+      .catch(() => fail("network"))
       .finally(() => { pzSending = false; sb.disabled = false; sb.removeAttribute("aria-busy"); lab.textContent = old; });
   });
 }
