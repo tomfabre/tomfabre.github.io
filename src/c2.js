@@ -975,14 +975,14 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
   const tick = () => { raf = 0; let more = false;
     document.querySelectorAll(".cta-band, .sv-cta, .sv-team").forEach(card => { const s = st.get(card); if (!s) return; const bm = card.querySelector(".bm"); if (!bm) return;
       s.x += (s.tx - s.x) * .12; s.y += (s.ty - s.y) * .12;
-      bm.style.transform = `translate3d(${s.x}px,${s.y}px,0) translate(-50%,-50%)`; card.style.setProperty("--mx", s.x + "px"); card.style.setProperty("--my", s.y + "px");
+      bm.style.transform = `translate3d(${s.x}px,${s.y}px,0) translate(-50%,-50%)`; card.style.setProperty("--mx", s.x + "px"); card.style.setProperty("--my", s.y + "px"); card.style.setProperty("--dx", (s.x - .72 * s.w) + "px"); card.style.setProperty("--dy", (s.y - .35 * s.h) + "px");
       if (Math.abs(s.tx - s.x) + Math.abs(s.ty - s.y) > .4) more = true; });
     if (more) raf = requestAnimationFrame(tick); };
   document.addEventListener("pointermove", e => {
     if (e.pointerType !== "mouse" || reduced) return;
     const card = e.target.closest && e.target.closest(".cta-band, .sv-cta, .sv-team"); if (!card) return;
     const r = card.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top; let s = st.get(card);
-    if (!s){ s = { x, y, tx:x, ty:y }; st.set(card, s); } s.tx = x; s.ty = y; card.classList.add("hot"); if (!raf) raf = requestAnimationFrame(tick);
+    if (!s){ s = { x, y, tx:x, ty:y, w:r.width, h:r.height }; st.set(card, s); } s.tx = x; s.ty = y; s.w = r.width; s.h = r.height; card.classList.add("hot"); if (!raf) raf = requestAnimationFrame(tick);
   }, { passive:true });
   document.addEventListener("pointerout", e => { const card = e.target.closest && e.target.closest(".cta-band, .sv-cta, .sv-team"); if (card && !card.contains(e.relatedTarget)) card.classList.remove("hot"); });
 })();

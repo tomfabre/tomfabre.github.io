@@ -473,7 +473,7 @@ html[lang="fr"] .hmega{font-size:clamp(2.2rem,9.8vw,3.5rem)}
 @media (min-width:48rem){.hmega{font-size:clamp(3.8rem,8vw,9.5rem)}html[lang="fr"] .hmega{font-size:clamp(3.5rem,6.4vw,8rem)}}
 .hm-btn{display:grid;width:100%;background:none;border:0;padding:0;margin:0;text-align:left;color:inherit;font:inherit;letter-spacing:inherit;line-height:inherit;cursor:default;-webkit-tap-highlight-color:transparent;touch-action:manipulation;border-radius:.4rem}
 .hm-btn:focus-visible{outline:2px solid var(--fg);outline-offset:.25em}
-.hm-a,.hm-b{grid-area:1/1;display:block;transition:transform 560ms cubic-bezier(.22,.7,.2,1),opacity 560ms cubic-bezier(.22,.7,.2,1);will-change:transform,opacity}
+.hm-a,.hm-b{grid-area:1/1;display:block;transition:transform 300ms cubic-bezier(.2,.8,.2,1),opacity 220ms cubic-bezier(.2,.8,.2,1);will-change:transform,opacity}
 .hm-b{opacity:0;transform:translate3d(0,.22em,0)}
 .hm-btn .ln{display:block;text-wrap:balance}
 .hm-btn .l2{color:var(--muted);padding-left:clamp(0rem,8vw,10rem)}
@@ -1135,7 +1135,7 @@ ol{list-style:none;margin:0;padding:0}
 .sv-cta h2{margin-bottom:var(--s6)}
 .cta-band::before,.sv-cta::before,.sv-team::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle,var(--fg) 1px,transparent 1.3px);background-size:18px 18px;opacity:.22;-webkit-mask-image:radial-gradient(circle 13rem at var(--mx) var(--my),#000,transparent 70%);mask-image:radial-gradient(circle 13rem at var(--mx) var(--my),#000,transparent 70%);mix-blend-mode:normal}
 .cta-band::after,.sv-cta::after,.sv-team::after{content:"";position:absolute;inset:-12%;z-index:-2;pointer-events:none;opacity:1;mix-blend-mode:normal;
-  background:radial-gradient(circle 15rem at var(--mx) var(--my),color-mix(in srgb,var(--coral) 20%,transparent),transparent 70%),radial-gradient(circle at 12% 88%,color-mix(in srgb,var(--lav) 22%,transparent),transparent 42%),radial-gradient(circle at 88% 12%,color-mix(in srgb,var(--mint) 24%,transparent),transparent 42%),radial-gradient(circle at 60% 90%,color-mix(in srgb,var(--mustard) 16%,transparent),transparent 40%);
+  background:radial-gradient(circle at 12% 88%,color-mix(in srgb,var(--lav) 22%,transparent),transparent 42%),radial-gradient(circle at 88% 12%,color-mix(in srgb,var(--mint) 24%,transparent),transparent 42%),radial-gradient(circle at 60% 90%,color-mix(in srgb,var(--mustard) 16%,transparent),transparent 40%);
   animation:ctaDrift 14s ease-in-out infinite alternate}
 .cta-band:hover::after,.cta-band:focus-within::after{opacity:1}
 @keyframes ctaDrift{0%{transform:translate3d(-2%,1%,0) scale(1)}100%{transform:translate3d(3%,-3%,0) scale(1.1)}}
@@ -1231,14 +1231,14 @@ dialog#dlg:focus{outline:none}
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 24%),linear-gradient(transparent,#000 14%,#000 60%,transparent);-webkit-mask-composite:source-in;
   mask-image:linear-gradient(90deg,transparent,#000 24%),linear-gradient(transparent,#000 14%,#000 60%,transparent);mask-composite:intersect}
 .aur i{position:absolute;border-radius:50%;aspect-ratio:1;filter:blur(clamp(48px,8vw,120px)) saturate(.85);opacity:var(--aur-o);will-change:transform;
-  animation:aurf 44s ease-in-out infinite alternate}
+  translate:calc(var(--px)*var(--f)*1px) calc(var(--py)*var(--f)*1px);animation:aurf 44s ease-in-out infinite alternate}
 .aur .o1{width:min(52vw,720px);right:-12%;top:-6%;background:var(--coral)}
 .aur .o2{width:min(44vw,600px);right:14%;top:32%;background:var(--lav);animation-duration:52s;animation-delay:-9s}
 .aur .o3{width:min(34vw,460px);right:-8%;bottom:-4%;background:var(--mustard);animation-duration:58s;animation-delay:-16s}
 .aur .o4{width:min(26vw,340px);right:40%;top:2%;background:var(--mint);animation-duration:48s;animation-delay:-4s}
 @keyframes aurf{
-  0%{transform:translate3d(calc(var(--px)*var(--f)*1px),calc(var(--py)*var(--f)*1px),0) scale(1)}
-  100%{transform:translate3d(calc(var(--px)*var(--f)*1px - 3vw),calc(var(--py)*var(--f)*1px + 2.5vw),0) scale(1.12)}}
+  0%{transform:translate3d(0,0,0) scale(1)}
+  100%{transform:translate3d(-3vw,2.5vw,0) scale(1.12)}}
 .aur .gr{position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 @media (max-width:47.99rem){.hmin{--aur-o:.26}:root[data-theme="dark"] .hmin{--aur-o:.22}
   .aur{-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%),linear-gradient(transparent,#000 12%,#000 56%,transparent)}
@@ -1669,7 +1669,7 @@ dialog .sub{color:var(--muted)}
 /* Tarjetas CTA: más ligeras al hacer scroll.
    1) los puntos ya no son una capa del tamaño de toda la tarjeta con máscara: son un cuadrado pequeño que sigue al puntero;
    2) las animaciones continuas (halos, estrella, aurora) se pausan mientras se hace scroll y cuando la tarjeta no está a la vista. */
-.cta-band::before,.sv-cta::before,.sv-team::before{inset:auto;width:26rem;height:26rem;left:calc(var(--mx) - 13rem);top:calc(var(--my) - 13rem);-webkit-mask-image:radial-gradient(closest-side,#000,transparent 70%);mask-image:radial-gradient(closest-side,#000,transparent 70%)}
+.cta-band::before,.sv-cta::before,.sv-team::before{inset:auto;width:26rem;height:26rem;left:calc(72% - 13rem);top:calc(35% - 13rem);transform:translate3d(var(--dx,0px),var(--dy,0px),0);will-change:transform;-webkit-mask-image:radial-gradient(closest-side,#000,transparent 70%);mask-image:radial-gradient(closest-side,#000,transparent 70%)}
 html.is-scrolling .blobs i,html.is-scrolling .cta-star,html.is-scrolling .orb .rot-w,html.is-scrolling .aur i,html.dlg-open .blobs i,html.dlg-open .cta-star,html.dlg-open .orb .rot-w,html.dlg-open .aur i,html.dlg-open .av-w,.cta-off .blobs i,.cta-off .cta-star{animation-play-state:paused!important}
 </style>
 <script>
@@ -2066,5 +2066,5 @@ Dis-moi ce que tu as en tête et on voit par où commencer.</p>
 
 
 <script>document.querySelectorAll("template[data-stash]").forEach(function(t){t.replaceWith(t.content)})</script><script>window.__CV="/cv-alvaro-fabre-fr.pdf"</script>
-<script src="/js/app.e1fafd7b44.js"></script>
+<script src="/js/app.7f1f039621.js"></script>
 <script defer src="/js/gsap.min.js?v=b2cff385"></script><script defer src="/js/lenis.min.js?v=acddbf76"></script><script defer src="/js/motion.js?v=7bb4ee9d"></script>

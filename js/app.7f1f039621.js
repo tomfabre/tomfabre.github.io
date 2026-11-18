@@ -6156,9 +6156,19 @@ function wireStickers(){
     const end = () => { on = false; el.classList.remove("drag"); };
     const vid = el.querySelector("video");
     if (vid && el.classList.contains("s-pic")) {
-      /* reproduce solo mientras es visible; con prefers-reduced-motion se queda en la imagen fija */
+      /* imagen fija por defecto; se anima solo al pasar el cursor (hover) o al hacer click/tap (alterna).
+         Con prefers-reduced-motion se queda siempre en la imagen fija. Arrastrar no cuenta como click. */
       vid.muted = true;
-      if (!reduced && "IntersectionObserver" in window) new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { const p = vid.play(); if (p && p.catch) p.catch(() => {}); } else vid.pause(); }), { threshold: .25 }).observe(vid);
+      if (!reduced) {
+        const go = () => { const p = vid.play(); if (p && p.catch) p.catch(() => {}); }, stop = () => vid.pause();
+        let moved = false, down = null;
+        el.addEventListener("pointerenter", e => { if (e.pointerType === "mouse") go(); });
+        el.addEventListener("pointerleave", e => { if (e.pointerType === "mouse" && !on) stop(); });
+        el.addEventListener("pointerdown", e => { moved = false; down = [e.clientX, e.clientY]; });
+        el.addEventListener("pointermove", e => { if (down && Math.abs(e.clientX - down[0]) + Math.abs(e.clientY - down[1]) > 6) moved = true; });
+        el.addEventListener("pointerup", e => { if (!down) return; down = null; if (moved) return; if (e.pointerType === "mouse") go(); else if (vid.paused) go(); else stop(); });
+        document.addEventListener("visibilitychange", () => { if (document.hidden) stop(); });
+      }
     }
     el.addEventListener("pointerup", end); el.addEventListener("pointercancel", end);
     el.addEventListener("pointerdown", () => { el.dataset.moved = "1"; });
@@ -6573,14 +6583,14 @@ applyLang(); route(true); wireChatHide(); wireEggs(); wireCyc(); wireHeroFx(); w
   const tick = () => { raf = 0; let more = false;
     document.querySelectorAll(".cta-band, .sv-cta, .sv-team").forEach(card => { const s = st.get(card); if (!s) return; const bm = card.querySelector(".bm"); if (!bm) return;
       s.x += (s.tx - s.x) * .12; s.y += (s.ty - s.y) * .12;
-      bm.style.transform = `translate3d(${s.x}px,${s.y}px,0) translate(-50%,-50%)`; card.style.setProperty("--mx", s.x + "px"); card.style.setProperty("--my", s.y + "px");
+      bm.style.transform = `translate3d(${s.x}px,${s.y}px,0) translate(-50%,-50%)`; card.style.setProperty("--mx", s.x + "px"); card.style.setProperty("--my", s.y + "px"); card.style.setProperty("--dx", (s.x - .72 * s.w) + "px"); card.style.setProperty("--dy", (s.y - .35 * s.h) + "px");
       if (Math.abs(s.tx - s.x) + Math.abs(s.ty - s.y) > .4) more = true; });
     if (more) raf = requestAnimationFrame(tick); };
   document.addEventListener("pointermove", e => {
     if (e.pointerType !== "mouse" || reduced) return;
     const card = e.target.closest && e.target.closest(".cta-band, .sv-cta, .sv-team"); if (!card) return;
     const r = card.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top; let s = st.get(card);
-    if (!s){ s = { x, y, tx:x, ty:y }; st.set(card, s); } s.tx = x; s.ty = y; card.classList.add("hot"); if (!raf) raf = requestAnimationFrame(tick);
+    if (!s){ s = { x, y, tx:x, ty:y, w:r.width, h:r.height }; st.set(card, s); } s.tx = x; s.ty = y; s.w = r.width; s.h = r.height; card.classList.add("hot"); if (!raf) raf = requestAnimationFrame(tick);
   }, { passive:true });
   document.addEventListener("pointerout", e => { const card = e.target.closest && e.target.closest(".cta-band, .sv-cta, .sv-team"); if (card && !card.contains(e.relatedTarget)) card.classList.remove("hot"); });
 })();
