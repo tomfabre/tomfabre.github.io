@@ -643,7 +643,7 @@ My contribution: End-to-End Product Design · UX/UI · Visual Design
 
 1M+ installs on Google Play (Historical product figure. It is not an outcome attributable solely to my design work.)
 
-Source of the figure (historical external reference): https://apkcombo.com/apolo-launcher-boost-theme/co.madseven.launcher
+Source of the figure (historical external reference): https://apolo-launcher.softonic.com/android
 
 ##### 02 · Appy × Jojol — A little luck. A lot of design.
 
@@ -692,8 +692,6 @@ My contribution: Product Evolution · UI Design · Strategy · Relaunch
 10M+ historical downloads (Figure for Mood Messenger's overall history, reported in a 2020 press release. It is not a result generated solely by my involvement.)
 
 View on Google Play: https://play.google.com/store/apps/details?id=com.calea.echo
-
-Source of the figure (official press release): https://cdn.nwe.io/files/x/79/f5/cadb7736c7ee1d815c25997aea20.pdf
 
 Acquisition by Calldorado: https://www.sttinfo.fi/tiedote/69934335/calldorado-acquires-android-texting-app-mood-messenger?publisherId=58763726
 
@@ -1348,7 +1346,7 @@ Mi contribución: Diseño integral de producto · UX/UI · Diseño visual
 
 +1 millón de instalaciones en Google Play (Cifra histórica del producto. No representa un resultado atribuible exclusivamente a mi trabajo de diseño.)
 
-Fuente de la métrica (referencia externa histórica): https://apkcombo.com/apolo-launcher-boost-theme/co.madseven.launcher
+Fuente de la métrica (referencia externa histórica): https://apolo-launcher.softonic.com/android
 
 ##### 02 · Appy × Jojol — Un poco de suerte. Mucho diseño.
 
@@ -1397,8 +1395,6 @@ Mi contribución: Evolución de producto · Diseño UI · Estrategia · Relanzam
 +10 millones de descargas históricas (Cifra de la trayectoria global de Mood Messenger, recogida en un comunicado de 2020. No corresponde a un resultado generado únicamente por mi participación.)
 
 Ver en Google Play: https://play.google.com/store/apps/details?id=com.calea.echo
-
-Fuente de la métrica (comunicado oficial): https://cdn.nwe.io/files/x/79/f5/cadb7736c7ee1d815c25997aea20.pdf
 
 Adquisición por Calldorado: https://www.sttinfo.fi/tiedote/69934335/calldorado-acquires-android-texting-app-mood-messenger?publisherId=58763726
 
@@ -2053,7 +2049,7 @@ Ma contribution: Conception complète du produit · UX/UI · Design visuel
 
 +1 million d'installations sur Google Play (Chiffre historique du produit. Il ne constitue pas un résultat attribuable exclusivement à mon travail de design.)
 
-Source du chiffre (référence externe historique): https://apkcombo.com/apolo-launcher-boost-theme/co.madseven.launcher
+Source du chiffre (référence externe historique): https://apolo-launcher.softonic.com/android
 
 ##### 02 · Appy × Jojol — Un peu de chance. Beaucoup de design.
 
@@ -2102,8 +2098,6 @@ Ma contribution: Évolution du produit · Design UI · Stratégie · Relancement
 +10 millions de téléchargements historiques (Chiffre lié à l'histoire globale de Mood Messenger, mentionné dans un communiqué de 2020. Il ne correspond pas à un résultat généré par ma seule contribution.)
 
 Voir sur Google Play: https://play.google.com/store/apps/details?id=com.calea.echo
-
-Source du chiffre (communiqué officiel): https://cdn.nwe.io/files/x/79/f5/cadb7736c7ee1d815c25997aea20.pdf
 
 Rachat par Calldorado: https://www.sttinfo.fi/tiedote/69934335/calldorado-acquires-android-texting-app-mood-messenger?publisherId=58763726
 

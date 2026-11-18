@@ -477,7 +477,7 @@ html[lang="fr"] .hm-btn .l2{padding-left:0}
 .pj-cap{margin-top:var(--s3);font-size:var(--small);color:var(--muted);max-width:62ch;line-height:1.45}
 .pj-gal.one .art:first-child{aspect-ratio:4/3}
 /* chapters (multi-app cases): three alternating layouts, same type scale as .pj-body */
-section.ch{margin-top:clamp(4rem,7vw,6rem)}#form.quick .f-extra{display:none}
+section.ch{margin-top:clamp(6rem,10vw,9rem)}#form.quick .f-extra{display:none}
 .ch-in{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s8)}
 .ch-tx{font-size:1.1rem;line-height:1.55}
 .ch-tx p{max-width:58ch}.ch-tx p+p{margin-top:var(--s4)}
@@ -495,7 +495,8 @@ section.ch{margin-top:clamp(4rem,7vw,6rem)}#form.quick .f-extra{display:none}
 .ch-tx a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line2);padding-bottom:1px}
 .ch-tx a:hover,.ch-tx a:focus-visible{border-color:var(--fg)}
 .ch-media{display:grid;gap:var(--s4);align-content:start}
-.ch-media .art,.ch-top .art{background:var(--surface);overflow:hidden}
+.ch-media .art,.ch-top .art{background:var(--surface);overflow:hidden;border-radius:1rem}   /* rounded corners (same radius as the site cards) */
+.ch+.pj-sec:not(.ch){margin-top:clamp(7rem,12vw,11rem)}   /* more air between the last chapter and the closing section */
 .ch-media .art img,.ch-top .art img{filter:none!important;transform:none!important}
 .ch-media .art.ph{border:1px dashed var(--line2);background:var(--surface)}
 @media (min-width:56rem){.ch-in{container-type:inline-size}.ch-top{margin-bottom:var(--s10)}.ch-media{gap:var(--s6);justify-items:center}.ch-media .art,.ch-top .art{width:var(--w,34cqw)}}   /* every chapter image: same, smaller width (about 60% of the image column) */

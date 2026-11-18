@@ -2183,7 +2183,7 @@ SECTIONS["mobile-experiences"] = [
   },
   "links": [
    {
-    "href": "https://apkcombo.com/apolo-launcher-boost-theme/co.madseven.launcher",
+    "href": "https://apolo-launcher.softonic.com/android",
     "l": {
      "es": "Fuente de la métrica (referencia externa histórica)",
      "en": "Source of the figure (historical external reference)",
@@ -2447,14 +2447,6 @@ SECTIONS["mobile-experiences"] = [
      "es": "Ver en Google Play",
      "en": "View on Google Play",
      "fr": "Voir sur Google Play"
-    }
-   },
-   {
-    "href": "https://cdn.nwe.io/files/x/79/f5/cadb7736c7ee1d815c25997aea20.pdf",
-    "l": {
-     "es": "Fuente de la métrica (comunicado oficial)",
-     "en": "Source of the figure (official press release)",
-     "fr": "Source du chiffre (communiqué officiel)"
     }
    },
    {

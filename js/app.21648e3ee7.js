@@ -3034,7 +3034,7 @@ SECTIONS["mobile-experiences"] = [
   },
   "links": [
    {
-    "href": "https://apkcombo.com/apolo-launcher-boost-theme/co.madseven.launcher",
+    "href": "https://apolo-launcher.softonic.com/android",
     "l": {
      "es": "Fuente de la métrica (referencia externa histórica)",
      "en": "Source of the figure (historical external reference)",
@@ -3047,8 +3047,6 @@ SECTIONS["mobile-experiences"] = [
     "key": "mobile-experiences",
     "v": "1",
     "r": "1536/1024",
-    "w": 88,
-    "a": "start",
     "alt": {
      "es": "Apolo Launcher: funciones reales, bocetos, pruebas e interfaz final en teléfonos Android",
      "en": "Apolo Launcher: real features, sketches, testing and final interface on Android phones",
@@ -3059,9 +3057,6 @@ SECTIONS["mobile-experiences"] = [
     "key": "mobile-experiences",
     "v": "2",
     "r": "1536/872",
-    "w": 72,
-    "a": "end",
-    "o": 3,
     "m": false,
     "alt": {
      "es": "Funciones de Apolo Launcher: Color Lab, modo oscuro, apps ocultas, edición de iconos, tiempo, temas y fondos, con proceso y sistema visual",
@@ -3190,9 +3185,6 @@ SECTIONS["mobile-experiences"] = [
     "key": "mobile-experiences",
     "v": "4",
     "r": "1536/608",
-    "w": 68,
-    "a": "end",
-    "o": 5,
     "alt": {
      "es": "Pantallas de Appy: cartera con tickets, concursos en curso, perfil de usuario y oportunidades de ganar",
      "en": "Appy screens: ticket wallet, ongoing contests, user profile and chances to win",
@@ -3203,7 +3195,6 @@ SECTIONS["mobile-experiences"] = [
     "key": "mobile-experiences",
     "v": "5",
     "r": "1536/1024",
-    "w": 100,
     "m": false,
     "alt": {
      "es": "Proceso de diseño de Appy: descubrimiento, bocetos, prototipo y test, sistema de diseño y producto final",
@@ -3310,14 +3301,6 @@ SECTIONS["mobile-experiences"] = [
     }
    },
    {
-    "href": "https://cdn.nwe.io/files/x/79/f5/cadb7736c7ee1d815c25997aea20.pdf",
-    "l": {
-     "es": "Fuente de la métrica (comunicado oficial)",
-     "en": "Source of the figure (official press release)",
-     "fr": "Source du chiffre (communiqué officiel)"
-    }
-   },
-   {
     "href": "https://www.sttinfo.fi/tiedote/69934335/calldorado-acquires-android-texting-app-mood-messenger?publisherId=58763726",
     "l": {
      "es": "Adquisición por Calldorado",
@@ -3331,8 +3314,6 @@ SECTIONS["mobile-experiences"] = [
     "key": "mobile-experiences",
     "v": "6",
     "r": "1448/1086",
-    "w": 80,
-    "a": "start",
     "alt": {
      "es": "Mood Messenger: lista de chats, historias y conversación con stickers en un iPhone",
      "en": "Mood Messenger: chat list, stories and a conversation with stickers on an iPhone",
@@ -3343,9 +3324,6 @@ SECTIONS["mobile-experiences"] = [
     "key": "mobile-experiences",
     "v": "7",
     "r": "1448/1930",
-    "w": 66,
-    "a": "end",
-    "o": 3,
     "m": false,
     "alt": {
      "es": "Proceso de diseño de Mood Messenger: investigación, arquitectura, flujo de usuario, wireframes, pruebas y sistema visual",
@@ -3357,7 +3335,7 @@ SECTIONS["mobile-experiences"] = [
     "key": "mobile-experiences",
     "v": "8",
     "r": "1448/346",
-    "w": 100,
+    "t": true,
     "m": false,
     "alt": {
      "es": "De la investigación y la arquitectura a los wireframes, las iteraciones y el diseño de interfaz de Mood Messenger",
