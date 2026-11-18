@@ -620,23 +620,26 @@ section.ch{margin-top:clamp(6rem,10vw,9rem)}#form.quick .f-extra{display:none}
 .c2-kl span{font-size:.85rem;color:var(--muted);line-height:1.4}
 .c2-kit .art{background:var(--surface);overflow:hidden;border-radius:1rem;width:100%}
 .c2-kit .art img{filter:none!important;transform:none!important}
-.c2-crops figure{margin:0}
-.c2-crops{display:grid;gap:var(--s6);margin-top:var(--s6)}
-.c2-crops figcaption{font-size:var(--micro);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--s2)}
+.c2-kit figure,.c2-crops figure{margin:0}
+.c2-kit .art-zoom{position:relative}
+.c2-crops{display:grid;gap:var(--s6);margin-top:var(--s4)}
 .c2-crops .art{background:var(--surface);overflow:hidden;border-radius:1rem;width:100%}
 .c2-crops .art img{filter:none!important;transform:none!important}
-.c2-crops .art-zoom{position:relative}
-.c2-crops .art-zoom::after{content:"\2922";position:absolute;right:.6rem;bottom:.6rem;width:2rem;height:2rem;display:grid;place-items:center;border-radius:50%;background:color-mix(in srgb,var(--bg) 82%,transparent);color:var(--fg);font-size:1rem;line-height:1;pointer-events:none}
-@media (min-width:36rem) and (max-width:55.99rem){.c2-crops{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}}
-@media (min-width:56rem){.c2-crops{display:none}}
-.c2-kit .art-zoom{position:relative}
-.c2-kit .art-zoom::after{content:"\2922";position:absolute;right:.7rem;bottom:.7rem;width:2.2rem;height:2.2rem;display:grid;place-items:center;border-radius:50%;background:color-mix(in srgb,var(--bg) 82%,transparent);color:var(--fg);font-size:1.05rem;line-height:1;pointer-events:none}
+.c2-ft{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s4);margin-top:var(--s2);font-size:var(--micro);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.c2-act{display:inline-flex;align-items:center;gap:.45rem;padding:.35rem 0;border:0;background:none;color:var(--fg);font:inherit;letter-spacing:.1em;text-transform:uppercase;cursor:zoom-in;border-bottom:1px solid var(--line2)}
+.c2-act:hover,.c2-act:focus-visible{border-color:var(--fg)}
+.c2-act:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.c2-fullft{display:flex;justify-content:flex-end;margin-top:var(--s2)}
+.c2-act .t-m{display:none}
+@media (max-width:47.99rem){.c2-kit>.art{display:none}.c2-act .t-d{display:none}.c2-act .t-m{display:inline}.c2-fullft{justify-content:flex-start;margin-top:var(--s5)}}
+@media (min-width:36rem) and (max-width:47.99rem){.c2-crops{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}}
+@media (min-width:48rem){.c2-crops{display:none}}
 @media (min-width:56rem){
-  .c2-k .c2-blks{grid-template-columns:1fr 1fr;gap:var(--s10) var(--s12)}
-  .c2-k .ch-aside{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s8)}
-  .c2-r .c2-blk{display:grid;grid-template-columns:minmax(9rem,1fr) minmax(0,4fr);gap:var(--s8)}
-  .c2-r .c2-lb{margin:0;padding-top:.35rem}
-  .c2-r .ch-aside{margin-left:calc((100% - var(--s8)) / 5 + var(--s8))}
+  .c2-k .c2-body{grid-template-columns:1fr 1fr;gap:var(--s10) var(--s12)}
+  .c2-k .c2-blks{display:contents}
+  .c2-r .c2-rin{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s12);align-items:start;margin-top:var(--s10)}
+  .c2-r .c2-rin .c2-kit{position:sticky;top:6rem;margin:0;max-width:none}
+  .c2-r .c2-rin .c2-body{margin-top:0;gap:var(--s8)}
   .c2-s .c2-body{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:var(--s12);align-items:start}
   .c2-s .ch-aside{position:sticky;top:6rem}
 }
@@ -2131,5 +2134,5 @@ Dis-moi ce que tu as en tête et on voit par où commencer.</p>
 
 
 <script>document.querySelectorAll("template[data-stash]").forEach(function(t){t.replaceWith(t.content)})</script><script>window.__CV="/cv-alvaro-fabre-fr.pdf"</script>
-<script src="/js/app.7d6c1a1980.js"></script>
+<script src="/js/app.23a685982e.js"></script>
 <script defer src="/js/gsap.min.js?v=b2cff385"></script><script defer src="/js/lenis.min.js?v=acddbf76"></script><script defer src="/js/motion.js?v=7bb4ee9d"></script>

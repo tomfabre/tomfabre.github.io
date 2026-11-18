@@ -2186,9 +2186,9 @@ SECTIONS["mobile-experiences"] = [
       "fr": "Un launcher, c'est bien plus qu'un écran d'accueil. C'est le point de départ de presque tout ce que l'on fait avec son mobile."
      },
      {
-      "es": "Apolo Launcher nació para ofrecer una experiencia Android más personalizable, sin renunciar a la claridad. Mi trabajo abarcó el diseño integral del producto, del concepto y la arquitectura a las interfaces finales.",
-      "en": "Apolo Launcher was created to offer a more customisable Android experience without giving up clarity. My work covered the end-to-end design of the product, from concept and architecture to the final interfaces.",
-      "fr": "Apolo Launcher est né pour offrir une expérience Android plus personnalisable, sans sacrifier la clarté. Mon travail a couvert la conception complète du produit, du concept et de l'architecture aux interfaces finales."
+      "es": "Apolo Launcher nació para ofrecer una experiencia Android más personalizable, sin renunciar a la claridad.",
+      "en": "Apolo Launcher was created to offer a more customisable Android experience without giving up clarity.",
+      "fr": "Apolo Launcher est né pour offrir une expérience Android plus personnalisable, sans sacrifier la clarté."
      }
     ]
    },
@@ -2228,30 +2228,6 @@ SECTIONS["mobile-experiences"] = [
       "en": "App organisation, navigation, visual personalisation and access to features, designed as a coherent system that adapts to each preference.",
       "fr": "Organisation des applications, navigation, personnalisation visuelle et accès aux fonctionnalités, pensés comme un système cohérent qui s'adapte à chaque préférence."
      }
-    ],
-    "areas": {
-     "es": "Arquitectura de información · User flows · UX/UI · Visual design · Personalización",
-     "en": "Information architecture · User flows · UX/UI · Visual design · Personalisation",
-     "fr": "Architecture de l'information · User flows · UX/UI · Design visuel · Personnalisation"
-    }
-   },
-   {
-    "l": {
-     "es": "Resultado",
-     "en": "Result",
-     "fr": "Résultat"
-    },
-    "t": {
-     "es": "Una experiencia que se adapta a ti.",
-     "en": "An experience that adapts to you.",
-     "fr": "Une expérience qui s'adapte à toi."
-    },
-    "p": [
-     {
-      "es": "Una experiencia Android que combina herramientas de personalización con una interfaz pensada para el uso diario.",
-      "en": "An Android experience that pairs personalisation tools with an interface designed for everyday use.",
-      "fr": "Une expérience Android qui associe outils de personnalisation et interface pensée pour l'usage quotidien."
-     }
     ]
    }
   ],
@@ -2263,9 +2239,9 @@ SECTIONS["mobile-experiences"] = [
      "fr": "Ma contribution"
     },
     "v": {
-     "es": "Diseño integral de producto · UX/UI · Diseño visual",
-     "en": "End-to-end product design · UX/UI · Visual design",
-     "fr": "Conception complète du produit · UX/UI · Design visuel"
+     "es": "Diseño integral de producto: concepto, arquitectura de información, user flows, UX/UI y diseño visual",
+     "en": "End-to-end product design: concept, information architecture, user flows, UX/UI and visual design",
+     "fr": "Conception complète du produit : concept, architecture de l'information, user flows, UX/UI et design visuel"
     }
    }
   ],
@@ -2376,9 +2352,9 @@ SECTIONS["mobile-experiences"] = [
       "fr": "Comment transformer la relation entre un créateur de contenu et des millions d'abonnés en un produit qui fonctionne ?"
      },
      {
-      "es": "Appy nació de una colaboración con Jojol, creador tecnológico francés, para acercar concursos y premios a su comunidad. Me encargué del diseño integral para iOS y Android, de la estructura y los recorridos a la identidad visual y las interfaces.",
-      "en": "Appy came out of a collaboration with Jojol, a French tech creator, to bring giveaways and prizes closer to his community. I handled the end-to-end design for iOS and Android, from structure and journeys to visual identity and interfaces.",
-      "fr": "Appy est née d'une collaboration avec Jojol, créateur tech français, pour rapprocher jeux-concours et cadeaux de sa communauté. J'ai pris en charge la conception complète sur iOS et Android, de la structure et des parcours à l'identité visuelle et aux interfaces."
+      "es": "Appy nació de una colaboración con Jojol, creador tecnológico francés, para acercar concursos y premios a su comunidad.",
+      "en": "Appy came out of a collaboration with Jojol, a French tech creator, to bring giveaways and prizes closer to his community.",
+      "fr": "Appy est née d'une collaboration avec Jojol, créateur tech français, pour rapprocher jeux-concours et cadeaux de sa communauté."
      }
     ]
    },
@@ -2418,12 +2394,7 @@ SECTIONS["mobile-experiences"] = [
       "en": "The experience revolved around the main actions: discovering contests, checking their conditions, taking part and managing chances.",
       "fr": "L'expérience s'articulait autour des actions principales : découvrir des concours, consulter leurs conditions, participer et gérer ses chances."
      }
-    ],
-    "areas": {
-     "es": "Arquitectura de información · User flows · Wireframes · UX/UI · Identidad visual · iOS y Android",
-     "en": "Information architecture · User flows · Wireframes · UX/UI · Visual identity · iOS and Android",
-     "fr": "Architecture de l'information · User flows · Wireframes · UX/UI · Identité visuelle · iOS et Android"
-    }
+    ]
    },
    {
     "l": {
@@ -2453,9 +2424,9 @@ SECTIONS["mobile-experiences"] = [
      "fr": "Ma contribution"
     },
     "v": {
-     "es": "Diseño integral de producto · UX/UI · Identidad visual · iOS y Android",
-     "en": "End-to-end product design · UX/UI · Visual identity · iOS and Android",
-     "fr": "Conception complète du produit · UX/UI · Identité visuelle · iOS et Android"
+     "es": "Diseño integral de producto para iOS y Android: arquitectura de información, user flows, wireframes, UX/UI e identidad visual",
+     "en": "End-to-end product design for iOS and Android: information architecture, user flows, wireframes, UX/UI and visual identity",
+     "fr": "Conception complète du produit sur iOS et Android : architecture de l'information, user flows, wireframes, UX/UI et identité visuelle"
     }
    },
    {
@@ -2550,18 +2521,35 @@ SECTIONS["mobile-experiences"] = [
     },
     {
      "l": {
-      "es": "Componentes y acciones",
-      "en": "Components and actions",
-      "fr": "Composants et actions"
+      "es": "Componentes",
+      "en": "Components",
+      "fr": "Composants"
      },
      "img": {
       "key": "mobile-experiences-kit-appy",
       "v": "components",
-      "r": "640/845",
+      "r": "640/325",
       "alt": {
-       "es": "Componentes de Appy: botones, estados, contador, tarjetas de acción y navegación",
-       "en": "Appy components: buttons, states, timers, action cards and navigation",
-       "fr": "Composants d'Appy : boutons, états, minuteurs, cartes d'action et navigation"
+       "es": "Componentes de Appy: botones de participar y patrocinar, pestañas de estado, contadores y avatares",
+       "en": "Appy components: participate and sponsor buttons, status tabs, timers and avatars",
+       "fr": "Composants d'Appy : boutons participer et parrainer, onglets d'état, minuteurs et avatars"
+      }
+     }
+    },
+    {
+     "l": {
+      "es": "Acciones y navegación",
+      "en": "Actions and navigation",
+      "fr": "Actions et navigation"
+     },
+     "img": {
+      "key": "mobile-experiences-kit-appy",
+      "v": "actions",
+      "r": "577/490",
+      "alt": {
+       "es": "Tarjetas de acción de Appy (ver un vídeo, responder una encuesta, completar una acción, recomendar a un amigo) y barra de navegación",
+       "en": "Appy action cards (watch a video, take a survey, complete an action, sponsor a friend) and navigation bar",
+       "fr": "Cartes d'action d'Appy (regarder une vidéo, répondre à un sondage, accomplir une action, parrainer un ami) et barre de navigation"
       }
      }
     }
@@ -2604,11 +2592,6 @@ SECTIONS["mobile-experiences"] = [
       "es": "Mood Messenger ofrecía una alternativa a la mensajería SMS y MMS de Android, con personalización y una experiencia visual diferente. A diferencia de Apolo y Appy, aquí no partíamos de cero: el producto ya tenía identidad y comunidad.",
       "en": "Mood Messenger offered an alternative to Android's SMS and MMS messaging, with personalisation and a different visual experience. Unlike Apolo and Appy, this was not a blank page: the product already had an identity and a community.",
       "fr": "Mood Messenger proposait une alternative à la messagerie SMS et MMS d'Android, avec de la personnalisation et une expérience visuelle différente. Contrairement à Apolo et Appy, on ne partait pas de zéro : le produit avait déjà une identité et une communauté."
-     },
-     {
-      "es": "Mi participación se centró en la evolución de la experiencia, el diseño de nuevas interfaces y la colaboración en la estrategia y el relanzamiento.",
-      "en": "My involvement focused on evolving the experience, designing new interfaces and collaborating on strategy and relaunch.",
-      "fr": "Ma participation s'est concentrée sur l'évolution de l'expérience, la conception de nouvelles interfaces et la collaboration à la stratégie et à la relance."
      }
     ]
    },
@@ -2644,16 +2627,11 @@ SECTIONS["mobile-experiences"] = [
     },
     "p": [
      {
-      "es": "Exploración de interfaces, propuestas de experiencia y colaboración en las decisiones de evolución, buscando equilibrio entre continuidad y renovación.",
-      "en": "Exploring interfaces, proposing experience ideas and collaborating on evolution decisions, balancing continuity and renewal.",
-      "fr": "Exploration d'interfaces, propositions d'expérience et collaboration aux décisions d'évolution, entre continuité et renouveau."
+      "es": "Exploración de interfaces, propuestas de experiencia y colaboración en las decisiones de evolución del producto.",
+      "en": "Exploring interfaces, proposing experience ideas and collaborating on decisions about the product's evolution.",
+      "fr": "Exploration d'interfaces, propositions d'expérience et collaboration aux décisions d'évolution du produit."
      }
-    ],
-    "areas": {
-     "es": "Evolución de producto · Diseño UI · UX · Exploración visual · Estrategia de producto",
-     "en": "Product evolution · UI design · UX · Visual exploration · Product strategy",
-     "fr": "Évolution produit · Design UI · UX · Exploration visuelle · Stratégie produit"
-    }
+    ]
    },
    {
     "l": {
@@ -2668,9 +2646,9 @@ SECTIONS["mobile-experiences"] = [
     },
     "p": [
      {
-      "es": "Evolucionar un producto no siempre significa reinventarlo. A veces consiste en decidir qué mantener, qué mejorar y cómo integrar lo nuevo.",
-      "en": "Evolving a product doesn't always mean reinventing it. Sometimes it means deciding what to keep, what to improve and how to fit in the new.",
-      "fr": "Faire évoluer un produit ne veut pas toujours dire le réinventer. Parfois, il s'agit de décider quoi garder, quoi améliorer et comment intégrer le nouveau."
+      "es": "Evolucionar un producto no siempre significa reinventarlo: a veces consiste en decidir qué mantener, qué mejorar y cómo integrar lo nuevo.",
+      "en": "Evolving a product doesn't always mean reinventing it: sometimes it means deciding what to keep, what to improve and how to fit in the new.",
+      "fr": "Faire évoluer un produit ne veut pas toujours dire le réinventer : parfois, il s'agit de décider quoi garder, quoi améliorer et comment intégrer le nouveau."
      }
     ]
    }
@@ -2755,7 +2733,7 @@ SECTIONS["mobile-experiences"] = [
      "img": {
       "key": "mobile-experiences-kit-mood",
       "v": "screens",
-      "r": "1005/620",
+      "r": "902/596",
       "alt": {
        "es": "Tres pantallas de la exploración visual de Mood Messenger: lista de chats, conversación y stickers",
        "en": "Three screens from the Mood Messenger visual exploration: chat list, conversation and stickers",
@@ -2840,11 +2818,6 @@ HERO["mobile-experiences"] = {
   "es": "Diseñar un launcher Android desde cero. Convertir una comunidad digital en una aplicación. Evolucionar un producto de mensajería con millones de descargas.",
   "en": "Designing an Android launcher from scratch. Turning a digital community into an app. Evolving a messaging product with millions of downloads.",
   "fr": "Concevoir un launcher Android de zéro. Transformer une communauté en ligne en application. Faire évoluer un produit de messagerie qui compte des millions de téléchargements."
- },
- "lead2": {
-  "es": "Tres proyectos, diferentes retos y una misma idea: diseñar tecnología que tenga sentido para quienes la utilizan.",
-  "en": "Three projects, different challenges and one idea: designing technology that makes sense to the people who use it.",
-  "fr": "Trois projets, des défis différents et une même idée : concevoir une technologie qui a du sens pour celles et ceux qui l'utilisent."
  },
  "facts": [
   {

@@ -1,4 +1,4 @@
-window.__IMG={"360estudio": {"0": "/img/360estudio-0.webp", "1": "/img/360estudio-1.webp", "2": "/img/360estudio-2.webp", "3": "/img/360estudio-3.webp", "cover": "/img/360estudio-cover.webp"}, "a2pas": {"0": "/img/a2pas-0.webp", "1": "/img/a2pas-1.webp", "2": "/img/a2pas-2.webp", "3": "/img/a2pas-3.webp", "4": "/img/a2pas-4.webp", "5": "/img/a2pas-5.webp", "cover": "/img/a2pas-cover.webp"}, "binome": {"0": "/img/binome-0.webp", "1": "/img/binome-1.webp", "2": "/img/binome-2.webp", "3": "/img/binome-3.webp", "cover": "/img/binome-cover.webp"}, "carceral-ecologies": {"0": "/img/carceral-ecologies-0.webp", "1": "/img/carceral-ecologies-1.webp", "2": "/img/carceral-ecologies-2.webp", "3": "/img/carceral-ecologies-3.webp", "cover": "/img/carceral-ecologies-cover.webp"}, "contazara": {"0": "/img/contazara-0.webp", "1": "/img/contazara-1.webp", "2": "/img/contazara-2.webp", "3": "/img/contazara-3.webp", "4": "/img/contazara-4.webp", "cover": "/img/contazara-cover.webp"}, "gallery": {"1": "/img/gallery-1.webp", "2": "/img/gallery-2.webp", "3": "/img/gallery-3.webp", "4": "/img/gallery-4.webp", "5": "/img/gallery-5.webp", "6": "/img/gallery-6.webp"}, "happylife": {"0": "/img/happylife-0.webp", "1": "/img/happylife-1.webp", "2": "/img/happylife-2.webp", "3": "/img/happylife-3.webp", "cover": "/img/happylife-cover.webp"}, "hover": {"mail": "/img/hover-mail.webp"}, "mobile-experiences": {"0": "/img/mobile-experiences-0.webp", "1": "/img/mobile-experiences-1.webp", "2": "/img/mobile-experiences-2.webp", "3": "/img/mobile-experiences-3.webp", "4": "/img/mobile-experiences-4.webp", "5": "/img/mobile-experiences-5.webp", "6": "/img/mobile-experiences-6.webp", "7": "/img/mobile-experiences-7.webp", "8": "/img/mobile-experiences-8.webp", "cover": "/img/mobile-experiences-cover.webp", "og": "/img/mobile-experiences-og.webp"}, "mobile-experiences-kit-apolo": {"components": "/img/mobile-experiences-kit-apolo-components.webp", "screens": "/img/mobile-experiences-kit-apolo-screens.webp"}, "mobile-experiences-kit": {"apolo": "/img/mobile-experiences-kit-apolo.webp", "appy": "/img/mobile-experiences-kit-appy.webp", "mood": "/img/mobile-experiences-kit-mood.webp"}, "mobile-experiences-kit-appy": {"components": "/img/mobile-experiences-kit-appy-components.webp", "screens": "/img/mobile-experiences-kit-appy-screens.webp"}, "mobile-experiences-kit-mood": {"screens": "/img/mobile-experiences-kit-mood-screens.webp", "system": "/img/mobile-experiences-kit-mood-system.webp"}, "profile": {"1": "/img/profile-1.webp"}, "yaypegs": {"0": "/img/yaypegs-0.webp", "1": "/img/yaypegs-1.webp", "2": "/img/yaypegs-2.webp", "3": "/img/yaypegs-3.webp", "cover": "/img/yaypegs-cover.webp"}};
+window.__IMG={"360estudio": {"0": "/img/360estudio-0.webp", "1": "/img/360estudio-1.webp", "2": "/img/360estudio-2.webp", "3": "/img/360estudio-3.webp", "cover": "/img/360estudio-cover.webp"}, "a2pas": {"0": "/img/a2pas-0.webp", "1": "/img/a2pas-1.webp", "2": "/img/a2pas-2.webp", "3": "/img/a2pas-3.webp", "4": "/img/a2pas-4.webp", "5": "/img/a2pas-5.webp", "cover": "/img/a2pas-cover.webp"}, "binome": {"0": "/img/binome-0.webp", "1": "/img/binome-1.webp", "2": "/img/binome-2.webp", "3": "/img/binome-3.webp", "cover": "/img/binome-cover.webp"}, "carceral-ecologies": {"0": "/img/carceral-ecologies-0.webp", "1": "/img/carceral-ecologies-1.webp", "2": "/img/carceral-ecologies-2.webp", "3": "/img/carceral-ecologies-3.webp", "cover": "/img/carceral-ecologies-cover.webp"}, "contazara": {"0": "/img/contazara-0.webp", "1": "/img/contazara-1.webp", "2": "/img/contazara-2.webp", "3": "/img/contazara-3.webp", "4": "/img/contazara-4.webp", "cover": "/img/contazara-cover.webp"}, "gallery": {"1": "/img/gallery-1.webp", "2": "/img/gallery-2.webp", "3": "/img/gallery-3.webp", "4": "/img/gallery-4.webp", "5": "/img/gallery-5.webp", "6": "/img/gallery-6.webp"}, "happylife": {"0": "/img/happylife-0.webp", "1": "/img/happylife-1.webp", "2": "/img/happylife-2.webp", "3": "/img/happylife-3.webp", "cover": "/img/happylife-cover.webp"}, "hover": {"mail": "/img/hover-mail.webp"}, "mobile-experiences": {"0": "/img/mobile-experiences-0.webp", "1": "/img/mobile-experiences-1.webp", "2": "/img/mobile-experiences-2.webp", "3": "/img/mobile-experiences-3.webp", "4": "/img/mobile-experiences-4.webp", "5": "/img/mobile-experiences-5.webp", "6": "/img/mobile-experiences-6.webp", "7": "/img/mobile-experiences-7.webp", "8": "/img/mobile-experiences-8.webp", "cover": "/img/mobile-experiences-cover.webp", "og": "/img/mobile-experiences-og.webp"}, "mobile-experiences-kit-apolo": {"components": "/img/mobile-experiences-kit-apolo-components.webp", "screens": "/img/mobile-experiences-kit-apolo-screens.webp"}, "mobile-experiences-kit": {"apolo": "/img/mobile-experiences-kit-apolo.webp", "appy": "/img/mobile-experiences-kit-appy.webp", "mood": "/img/mobile-experiences-kit-mood.webp"}, "mobile-experiences-kit-appy": {"actions": "/img/mobile-experiences-kit-appy-actions.webp", "components": "/img/mobile-experiences-kit-appy-components.webp", "screens": "/img/mobile-experiences-kit-appy-screens.webp"}, "mobile-experiences-kit-mood": {"screens": "/img/mobile-experiences-kit-mood-screens.webp", "system": "/img/mobile-experiences-kit-mood-system.webp"}, "profile": {"1": "/img/profile-1.webp"}, "yaypegs": {"0": "/img/yaypegs-0.webp", "1": "/img/yaypegs-1.webp", "2": "/img/yaypegs-2.webp", "3": "/img/yaypegs-3.webp", "cover": "/img/yaypegs-cover.webp"}};
 const PROJ = [
   {key:"contazara", role:"Lead Product Designer", years:"2025 –"},
   {key:"healthtech", role:"Lead Product Designer", years:"MVP"},
@@ -3037,9 +3037,9 @@ SECTIONS["mobile-experiences"] = [
       "fr": "Un launcher, c'est bien plus qu'un écran d'accueil. C'est le point de départ de presque tout ce que l'on fait avec son mobile."
      },
      {
-      "es": "Apolo Launcher nació para ofrecer una experiencia Android más personalizable, sin renunciar a la claridad. Mi trabajo abarcó el diseño integral del producto, del concepto y la arquitectura a las interfaces finales.",
-      "en": "Apolo Launcher was created to offer a more customisable Android experience without giving up clarity. My work covered the end-to-end design of the product, from concept and architecture to the final interfaces.",
-      "fr": "Apolo Launcher est né pour offrir une expérience Android plus personnalisable, sans sacrifier la clarté. Mon travail a couvert la conception complète du produit, du concept et de l'architecture aux interfaces finales."
+      "es": "Apolo Launcher nació para ofrecer una experiencia Android más personalizable, sin renunciar a la claridad.",
+      "en": "Apolo Launcher was created to offer a more customisable Android experience without giving up clarity.",
+      "fr": "Apolo Launcher est né pour offrir une expérience Android plus personnalisable, sans sacrifier la clarté."
      }
     ]
    },
@@ -3079,30 +3079,6 @@ SECTIONS["mobile-experiences"] = [
       "en": "App organisation, navigation, visual personalisation and access to features, designed as a coherent system that adapts to each preference.",
       "fr": "Organisation des applications, navigation, personnalisation visuelle et accès aux fonctionnalités, pensés comme un système cohérent qui s'adapte à chaque préférence."
      }
-    ],
-    "areas": {
-     "es": "Arquitectura de información · User flows · UX/UI · Visual design · Personalización",
-     "en": "Information architecture · User flows · UX/UI · Visual design · Personalisation",
-     "fr": "Architecture de l'information · User flows · UX/UI · Design visuel · Personnalisation"
-    }
-   },
-   {
-    "l": {
-     "es": "Resultado",
-     "en": "Result",
-     "fr": "Résultat"
-    },
-    "t": {
-     "es": "Una experiencia que se adapta a ti.",
-     "en": "An experience that adapts to you.",
-     "fr": "Une expérience qui s'adapte à toi."
-    },
-    "p": [
-     {
-      "es": "Una experiencia Android que combina herramientas de personalización con una interfaz pensada para el uso diario.",
-      "en": "An Android experience that pairs personalisation tools with an interface designed for everyday use.",
-      "fr": "Une expérience Android qui associe outils de personnalisation et interface pensée pour l'usage quotidien."
-     }
     ]
    }
   ],
@@ -3114,9 +3090,9 @@ SECTIONS["mobile-experiences"] = [
      "fr": "Ma contribution"
     },
     "v": {
-     "es": "Diseño integral de producto · UX/UI · Diseño visual",
-     "en": "End-to-end product design · UX/UI · Visual design",
-     "fr": "Conception complète du produit · UX/UI · Design visuel"
+     "es": "Diseño integral de producto: concepto, arquitectura de información, user flows, UX/UI y diseño visual",
+     "en": "End-to-end product design: concept, information architecture, user flows, UX/UI and visual design",
+     "fr": "Conception complète du produit : concept, architecture de l'information, user flows, UX/UI et design visuel"
     }
    }
   ],
@@ -3227,9 +3203,9 @@ SECTIONS["mobile-experiences"] = [
       "fr": "Comment transformer la relation entre un créateur de contenu et des millions d'abonnés en un produit qui fonctionne ?"
      },
      {
-      "es": "Appy nació de una colaboración con Jojol, creador tecnológico francés, para acercar concursos y premios a su comunidad. Me encargué del diseño integral para iOS y Android, de la estructura y los recorridos a la identidad visual y las interfaces.",
-      "en": "Appy came out of a collaboration with Jojol, a French tech creator, to bring giveaways and prizes closer to his community. I handled the end-to-end design for iOS and Android, from structure and journeys to visual identity and interfaces.",
-      "fr": "Appy est née d'une collaboration avec Jojol, créateur tech français, pour rapprocher jeux-concours et cadeaux de sa communauté. J'ai pris en charge la conception complète sur iOS et Android, de la structure et des parcours à l'identité visuelle et aux interfaces."
+      "es": "Appy nació de una colaboración con Jojol, creador tecnológico francés, para acercar concursos y premios a su comunidad.",
+      "en": "Appy came out of a collaboration with Jojol, a French tech creator, to bring giveaways and prizes closer to his community.",
+      "fr": "Appy est née d'une collaboration avec Jojol, créateur tech français, pour rapprocher jeux-concours et cadeaux de sa communauté."
      }
     ]
    },
@@ -3269,12 +3245,7 @@ SECTIONS["mobile-experiences"] = [
       "en": "The experience revolved around the main actions: discovering contests, checking their conditions, taking part and managing chances.",
       "fr": "L'expérience s'articulait autour des actions principales : découvrir des concours, consulter leurs conditions, participer et gérer ses chances."
      }
-    ],
-    "areas": {
-     "es": "Arquitectura de información · User flows · Wireframes · UX/UI · Identidad visual · iOS y Android",
-     "en": "Information architecture · User flows · Wireframes · UX/UI · Visual identity · iOS and Android",
-     "fr": "Architecture de l'information · User flows · Wireframes · UX/UI · Identité visuelle · iOS et Android"
-    }
+    ]
    },
    {
     "l": {
@@ -3304,9 +3275,9 @@ SECTIONS["mobile-experiences"] = [
      "fr": "Ma contribution"
     },
     "v": {
-     "es": "Diseño integral de producto · UX/UI · Identidad visual · iOS y Android",
-     "en": "End-to-end product design · UX/UI · Visual identity · iOS and Android",
-     "fr": "Conception complète du produit · UX/UI · Identité visuelle · iOS et Android"
+     "es": "Diseño integral de producto para iOS y Android: arquitectura de información, user flows, wireframes, UX/UI e identidad visual",
+     "en": "End-to-end product design for iOS and Android: information architecture, user flows, wireframes, UX/UI and visual identity",
+     "fr": "Conception complète du produit sur iOS et Android : architecture de l'information, user flows, wireframes, UX/UI et identité visuelle"
     }
    },
    {
@@ -3401,18 +3372,35 @@ SECTIONS["mobile-experiences"] = [
     },
     {
      "l": {
-      "es": "Componentes y acciones",
-      "en": "Components and actions",
-      "fr": "Composants et actions"
+      "es": "Componentes",
+      "en": "Components",
+      "fr": "Composants"
      },
      "img": {
       "key": "mobile-experiences-kit-appy",
       "v": "components",
-      "r": "640/845",
+      "r": "640/325",
       "alt": {
-       "es": "Componentes de Appy: botones, estados, contador, tarjetas de acción y navegación",
-       "en": "Appy components: buttons, states, timers, action cards and navigation",
-       "fr": "Composants d'Appy : boutons, états, minuteurs, cartes d'action et navigation"
+       "es": "Componentes de Appy: botones de participar y patrocinar, pestañas de estado, contadores y avatares",
+       "en": "Appy components: participate and sponsor buttons, status tabs, timers and avatars",
+       "fr": "Composants d'Appy : boutons participer et parrainer, onglets d'état, minuteurs et avatars"
+      }
+     }
+    },
+    {
+     "l": {
+      "es": "Acciones y navegación",
+      "en": "Actions and navigation",
+      "fr": "Actions et navigation"
+     },
+     "img": {
+      "key": "mobile-experiences-kit-appy",
+      "v": "actions",
+      "r": "577/490",
+      "alt": {
+       "es": "Tarjetas de acción de Appy (ver un vídeo, responder una encuesta, completar una acción, recomendar a un amigo) y barra de navegación",
+       "en": "Appy action cards (watch a video, take a survey, complete an action, sponsor a friend) and navigation bar",
+       "fr": "Cartes d'action d'Appy (regarder une vidéo, répondre à un sondage, accomplir une action, parrainer un ami) et barre de navigation"
       }
      }
     }
@@ -3455,11 +3443,6 @@ SECTIONS["mobile-experiences"] = [
       "es": "Mood Messenger ofrecía una alternativa a la mensajería SMS y MMS de Android, con personalización y una experiencia visual diferente. A diferencia de Apolo y Appy, aquí no partíamos de cero: el producto ya tenía identidad y comunidad.",
       "en": "Mood Messenger offered an alternative to Android's SMS and MMS messaging, with personalisation and a different visual experience. Unlike Apolo and Appy, this was not a blank page: the product already had an identity and a community.",
       "fr": "Mood Messenger proposait une alternative à la messagerie SMS et MMS d'Android, avec de la personnalisation et une expérience visuelle différente. Contrairement à Apolo et Appy, on ne partait pas de zéro : le produit avait déjà une identité et une communauté."
-     },
-     {
-      "es": "Mi participación se centró en la evolución de la experiencia, el diseño de nuevas interfaces y la colaboración en la estrategia y el relanzamiento.",
-      "en": "My involvement focused on evolving the experience, designing new interfaces and collaborating on strategy and relaunch.",
-      "fr": "Ma participation s'est concentrée sur l'évolution de l'expérience, la conception de nouvelles interfaces et la collaboration à la stratégie et à la relance."
      }
     ]
    },
@@ -3495,16 +3478,11 @@ SECTIONS["mobile-experiences"] = [
     },
     "p": [
      {
-      "es": "Exploración de interfaces, propuestas de experiencia y colaboración en las decisiones de evolución, buscando equilibrio entre continuidad y renovación.",
-      "en": "Exploring interfaces, proposing experience ideas and collaborating on evolution decisions, balancing continuity and renewal.",
-      "fr": "Exploration d'interfaces, propositions d'expérience et collaboration aux décisions d'évolution, entre continuité et renouveau."
+      "es": "Exploración de interfaces, propuestas de experiencia y colaboración en las decisiones de evolución del producto.",
+      "en": "Exploring interfaces, proposing experience ideas and collaborating on decisions about the product's evolution.",
+      "fr": "Exploration d'interfaces, propositions d'expérience et collaboration aux décisions d'évolution du produit."
      }
-    ],
-    "areas": {
-     "es": "Evolución de producto · Diseño UI · UX · Exploración visual · Estrategia de producto",
-     "en": "Product evolution · UI design · UX · Visual exploration · Product strategy",
-     "fr": "Évolution produit · Design UI · UX · Exploration visuelle · Stratégie produit"
-    }
+    ]
    },
    {
     "l": {
@@ -3519,9 +3497,9 @@ SECTIONS["mobile-experiences"] = [
     },
     "p": [
      {
-      "es": "Evolucionar un producto no siempre significa reinventarlo. A veces consiste en decidir qué mantener, qué mejorar y cómo integrar lo nuevo.",
-      "en": "Evolving a product doesn't always mean reinventing it. Sometimes it means deciding what to keep, what to improve and how to fit in the new.",
-      "fr": "Faire évoluer un produit ne veut pas toujours dire le réinventer. Parfois, il s'agit de décider quoi garder, quoi améliorer et comment intégrer le nouveau."
+      "es": "Evolucionar un producto no siempre significa reinventarlo: a veces consiste en decidir qué mantener, qué mejorar y cómo integrar lo nuevo.",
+      "en": "Evolving a product doesn't always mean reinventing it: sometimes it means deciding what to keep, what to improve and how to fit in the new.",
+      "fr": "Faire évoluer un produit ne veut pas toujours dire le réinventer : parfois, il s'agit de décider quoi garder, quoi améliorer et comment intégrer le nouveau."
      }
     ]
    }
@@ -3606,7 +3584,7 @@ SECTIONS["mobile-experiences"] = [
      "img": {
       "key": "mobile-experiences-kit-mood",
       "v": "screens",
-      "r": "1005/620",
+      "r": "902/596",
       "alt": {
        "es": "Tres pantallas de la exploración visual de Mood Messenger: lista de chats, conversación y stickers",
        "en": "Three screens from the Mood Messenger visual exploration: chat list, conversation and stickers",
@@ -3691,11 +3669,6 @@ HERO["mobile-experiences"] = {
   "es": "Diseñar un launcher Android desde cero. Convertir una comunidad digital en una aplicación. Evolucionar un producto de mensajería con millones de descargas.",
   "en": "Designing an Android launcher from scratch. Turning a digital community into an app. Evolving a messaging product with millions of downloads.",
   "fr": "Concevoir un launcher Android de zéro. Transformer une communauté en ligne en application. Faire évoluer un produit de messagerie qui compte des millions de téléchargements."
- },
- "lead2": {
-  "es": "Tres proyectos, diferentes retos y una misma idea: diseñar tecnología que tenga sentido para quienes la utilizan.",
-  "en": "Three projects, different challenges and one idea: designing technology that makes sense to the people who use it.",
-  "fr": "Trois projets, des défis différents et une même idée : concevoir une technologie qui a du sens pour celles et ceux qui l'utilisent."
  },
  "facts": [
   {
@@ -6007,11 +5980,12 @@ function wireBio2(){
   d.addEventListener("click", e => { if (e.target === d) d.close(); });
   /* project chapters: click an image to enlarge it in the same lightbox (all visible images of that chapter, arrows to move); click the enlarged image to zoom to full width and scroll */
   document.addEventListener("click", e => {
-    const b = e.target.closest && e.target.closest("[data-chzoom]"); if (!b) return;
+    const trg = e.target.closest && e.target.closest("[data-chzoom],[data-chact]"); if (!trg) return;
+    const b = trg.hasAttribute("data-chact") ? (trg.closest(".c2-fullft") ? trg.closest("figure.c2-kit") : trg.closest("figure")).querySelector("[data-chzoom]") : trg;   // footer actions open the picture they belong to (the full kit for the page-level action)
     const sec = b.closest("section.ch"); if (!sec) return;
-    const btns = [...sec.querySelectorAll("[data-chzoom]")].filter(x => x.offsetParent !== null);
+    const btns = [...sec.querySelectorAll("[data-chzoom]")].filter(x => x.offsetParent !== null || x.hasAttribute("data-chfull"));   // the full kit is always reachable, even when only its crops are shown
     const list = btns.map(x => { const im = x.querySelector("img"); return { img: im.getAttribute("src"), alt: im.alt, cap: im.alt, ratio: "free", kind: "chapter" }; });
-    LBX = { list, i: Math.max(0, btns.indexOf(b)), opener: b }; lbShow();
+    LBX = { list, i: Math.max(0, btns.indexOf(b)), opener: trg }; lbShow();
     if (d.showModal) d.showModal(); else d.setAttribute("open", "");
   });
   /* project index: scroll to the chapter (links are # anchors, which the router would read as a page change) and move focus to its heading */
@@ -6260,11 +6234,17 @@ const chImg = im => { let h = okImg(im) ? imgTag(im, im.r).replace(/<img [^>]*>/
 const chLink = x => `<a href="${esc(x.href)}" target="_blank" rel="noopener noreferrer" data-ev="project_link_click" data-place="${esc(x.href.split("/")[2] || "")}">${esc(tr(x.l))}</a>`;
 const chapterHtml = s => `<section class="pj-sec ch ch-${s.layout}" id="s-${s.id}" aria-labelledby="s-${s.id}-h"><div class="ch-in"><div class="ch-tx">${(s.media || []).some(im => im.t) ? `<div class="ch-top">${s.media.filter(im => im.t).map(chImg).join("")}</div>` : ""}<div class="ch-main"><h2 id="s-${s.id}-h" class="ch-eb">${esc(tr(s.h))}</h2><h3>${esc(tr(s.t))}</h3>${paras(s.p)}</div><div class="ch-aside">${(s.meta || []).length ? `<dl class="ch-meta">${s.meta.map(m => `<div><dt>${esc(tr(m.l))}</dt><dd>${esc(tr(m.v))}</dd></div>`).join("")}</dl>` : ""}${s.metric ? `<p class="ch-metric"><b>${esc(tr(s.metric.n))}</b><span>${esc(tr(s.metric.l))}</span>${s.metric.note ? `<small>${esc(tr(s.metric.note))}</small>` : ""}</p>` : ""}${(s.links || []).length ? `<p class="ch-links">${s.links.map(chLink).join("")}</p>` : ""}</div></div><div class="ch-media">${(s.media || []).filter(im => !im.t).map(chImg).join("")}</div></div></section>`;
 /* chapter with `blocks` (editorial case): header (eb, name, headline, sub), labelled blocks (context, challenge, design, result), side facts and ONE wide, zoomable kit figure with an honest label/note. layout: right = kit first, left = rows, wide = split. */
-const chapterEd = s => { const kit = s.kit, img = kit && okImg(kit.img) ? chImg(kit.img) : "";
+const KIT_L = { amp:{ es:"Ampliar", en:"Enlarge", fr:"Agrandir" }, full:{ es:"Ver composición completa", en:"View full composition", fr:"Voir la composition complète" } };
+const kitImg = (im, full) => chImg(im).replace('class="art-zoom" data-chzoom', 'class="art-zoom" tabindex="-1" data-chzoom' + (full ? " data-chfull" : ""));   // the image stays clickable; the keyboard action lives in the footer (outside the picture)
+const kitAct = (im, mobileLabel) => `<button type="button" class="c2-act" data-chact aria-haspopup="dialog" aria-label="${esc(tr(mobileLabel ? KIT_L.full : KIT_L.amp))}: ${esc(tr(im.alt))}"><span class="t-d">${esc(tr(KIT_L.amp))}</span>${mobileLabel ? `<span class="t-m">${esc(tr(KIT_L.full))}</span>` : ""}<span aria-hidden="true">⤢</span></button>`;
+const chapterEd = s => { const kit = s.kit;
   const blk = (s.blocks || []).map(b => `<div class="c2-blk"><p class="c2-lb">${esc(tr(b.l))}</p><div class="c2-bt">${b.t ? `<h4>${esc(tr(b.t))}</h4>` : ""}${paras(b.p)}${b.areas ? `<p class="c2-areas">${esc(tr(b.areas))}</p>` : ""}</div></div>`).join("");
   const aside = `${(s.meta || []).length ? `<dl class="ch-meta">${s.meta.map(m => `<div><dt>${esc(tr(m.l))}</dt><dd>${esc(tr(m.v))}</dd></div>`).join("")}</dl>` : ""}${s.metric ? `<p class="ch-metric"><b>${esc(tr(s.metric.n))}</b><span>${esc(tr(s.metric.l))}</span>${s.metric.note ? `<small>${esc(tr(s.metric.note))}</small>` : ""}</p>` : ""}${(s.links || []).length ? `<p class="ch-links">${s.links.map(chLink).join("")}</p>` : ""}`;
-  const fig = kit ? `<figure class="c2-kit"><figcaption class="c2-kl"><b>${esc(tr(kit.l))}</b>${kit.note ? `<span>${esc(tr(kit.note))}</span>` : ""}</figcaption>${img}${(kit.crops || []).length ? `<div class="c2-crops">${kit.crops.filter(c => okImg(c.img)).map(c => `<figure><figcaption>${esc(tr(c.l))}</figcaption>${chImg(c.img)}</figure>`).join("")}</div>` : ""}</figure>` : "";
-  return `<section class="pj-sec ch ch2 c2-${{ right:"k", left:"r", wide:"s" }[s.layout]} c2-${s.id}" id="s-${s.id}" aria-labelledby="s-${s.id}-h"><header class="c2-head">${s.eb ? `<p class="c2-eb">${esc(tr(s.eb))}</p>` : ""}<h2 id="s-${s.id}-h">${esc(tr(s.h))}</h2><h3 class="c2-hl">${esc(tr(s.t))}</h3>${s.sub ? `<p class="c2-sub">${esc(tr(s.sub))}</p>` : ""}</header>${s.layout === "right" ? fig : ""}<div class="c2-body ch-tx"><div class="c2-blks">${blk}</div><div class="ch-aside">${aside}</div></div>${s.layout === "right" ? "" : fig}</section>`; };
+  const crops = kit && (kit.crops || []).filter(c => okImg(c.img));
+  const fig = kit && okImg(kit.img) ? `<figure class="c2-kit"><figcaption class="c2-kl"><b>${esc(tr(kit.l))}</b>${kit.note ? `<span>${esc(tr(kit.note))}</span>` : ""}</figcaption>${kitImg(kit.img, true)}${crops.length ? `<div class="c2-crops">${crops.map(c => `<figure><figcaption class="c2-ft"><span>${esc(tr(c.l))}</span></figcaption>${kitImg(c.img)}<div class="c2-ft">${kitAct(c.img)}</div></figure>`).join("")}</div>` : ""}<div class="c2-fullft">${kitAct(kit.img, crops.length)}</div></figure>` : "";
+  const body = `<div class="c2-body ch-tx"><div class="c2-blks">${blk}</div><div class="ch-aside">${aside}</div></div>`;
+  const main = s.layout === "right" ? fig + body : s.layout === "left" ? `<div class="c2-rin">${fig}${body}</div>` : body + fig;
+  return `<section class="pj-sec ch ch2 c2-${{ right:"k", left:"r", wide:"s" }[s.layout]} c2-${s.id}" id="s-${s.id}" aria-labelledby="s-${s.id}-h"><header class="c2-head">${s.eb ? `<p class="c2-eb">${esc(tr(s.eb))}</p>` : ""}<h2 id="s-${s.id}-h">${esc(tr(s.h))}</h2><h3 class="c2-hl">${esc(tr(s.t))}</h3>${s.sub ? `<p class="c2-sub">${esc(tr(s.sub))}</p>` : ""}</header>${main}</section>`; };
 /* index: editorial list of the chapters of a case; links scroll to the chapter (handled in c2b.js, because # links belong to the router) */
 const indexHtml = s => `<section class="pj-sec ix" id="s-${s.id}" aria-labelledby="s-${s.id}-h"><div class="pj-body"><h2 id="s-${s.id}-h">${esc(tr(s.h))}</h2><div><h3>${esc(tr(s.t))}</h3>${paras(s.p)}<ol class="ix-list">${s.items.map(it => `<li><a href="#s-${esc(it.to)}" data-ixto="s-${esc(it.to)}"><span class="ix-n">${esc(it.n)}</span><b>${esc(tr(it.l))}</b><span class="ix-t">${esc(tr(it.tag))}</span><span class="ix-a" aria-hidden="true">↓</span></a></li>`).join("")}</ol></div></div></section>`;
 const SECTION_RENDER = {

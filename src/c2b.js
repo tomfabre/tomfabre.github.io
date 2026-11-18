@@ -248,11 +248,12 @@ function wireBio2(){
   d.addEventListener("click", e => { if (e.target === d) d.close(); });
   /* project chapters: click an image to enlarge it in the same lightbox (all visible images of that chapter, arrows to move); click the enlarged image to zoom to full width and scroll */
   document.addEventListener("click", e => {
-    const b = e.target.closest && e.target.closest("[data-chzoom]"); if (!b) return;
+    const trg = e.target.closest && e.target.closest("[data-chzoom],[data-chact]"); if (!trg) return;
+    const b = trg.hasAttribute("data-chact") ? (trg.closest(".c2-fullft") ? trg.closest("figure.c2-kit") : trg.closest("figure")).querySelector("[data-chzoom]") : trg;   // footer actions open the picture they belong to (the full kit for the page-level action)
     const sec = b.closest("section.ch"); if (!sec) return;
-    const btns = [...sec.querySelectorAll("[data-chzoom]")].filter(x => x.offsetParent !== null);
+    const btns = [...sec.querySelectorAll("[data-chzoom]")].filter(x => x.offsetParent !== null || x.hasAttribute("data-chfull"));   // the full kit is always reachable, even when only its crops are shown
     const list = btns.map(x => { const im = x.querySelector("img"); return { img: im.getAttribute("src"), alt: im.alt, cap: im.alt, ratio: "free", kind: "chapter" }; });
-    LBX = { list, i: Math.max(0, btns.indexOf(b)), opener: b }; lbShow();
+    LBX = { list, i: Math.max(0, btns.indexOf(b)), opener: trg }; lbShow();
     if (d.showModal) d.showModal(); else d.setAttribute("open", "");
   });
   /* project index: scroll to the chapter (links are # anchors, which the router would read as a page change) and move focus to its heading */
