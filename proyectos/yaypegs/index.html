@@ -1700,6 +1700,13 @@ html.is-scrolling .blobs i,html.is-scrolling .cta-star,html.is-scrolling .orb .r
 html.theme-sw :where(*,*::before,*::after):not(.theme-toggle,.theme-toggle *){transition:background-color var(--normal) var(--ease),color var(--normal) var(--ease),border-color var(--normal) var(--ease),fill var(--normal) var(--ease),stroke var(--normal) var(--ease),--aur-bg var(--normal) var(--ease)!important}
 html.theme-sw .aur i{transition:opacity var(--normal) var(--ease)!important}
 @media (prefers-reduced-motion:reduce){html.theme-sw :where(*,*::before,*::after){transition:none!important}}
+/* View Transitions (cambio de tema): durante la captura no animamos nada por elemento; el fundido lo hace el navegador entre las dos instantáneas */
+html.theme-vt *,html.theme-vt *::before,html.theme-vt *::after{transition:none!important}
+/* fundido simple: la captura nueva aparece sobre la vieja (sin mezcla plus-lighter, más barato y sin saltos de brillo); los halos del hero se pausan durante el fundido */
+::view-transition-old(root){animation:none;mix-blend-mode:normal}
+::view-transition-new(root){mix-blend-mode:normal;animation:vt-in 520ms cubic-bezier(.4,0,.2,1) both}
+@keyframes vt-in{from{opacity:0}to{opacity:1}}
+html.theme-vt .aur i,html.theme-vt .blobs i,html.theme-vt .cta-star,html.theme-vt .orb .rot-w{animation-play-state:paused!important}
 /* menos aire entre «¿Tienes algo en mente?» y el pie (antes ~350 px en desktop: padding de la sección + padding de main + margen del pie) */
 main:has(#contact-cta){padding-bottom:0}
 #contact-cta{padding-bottom:clamp(3rem,5vw,4.5rem)}
@@ -2104,5 +2111,5 @@ Cuéntame qué tienes en mente y vemos por dónde empezar.</p>
 
 
 <script>document.querySelectorAll("template[data-stash]").forEach(function(t){t.replaceWith(t.content)})</script><script>window.__CV="/cv-alvaro-fabre.pdf"</script>
-<script src="/js/app.e0f554f0ea.js"></script>
+<script src="/js/app.c998e8668a.js"></script>
 <script defer src="/js/gsap.min.js?v=b2cff385"></script><script defer src="/js/lenis.min.js?v=acddbf76"></script><script defer src="/js/motion.js?v=7bb4ee9d"></script>
