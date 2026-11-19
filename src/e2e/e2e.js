@@ -162,6 +162,66 @@ async function fresh(b, opts = {}) {
     ok(`bio[${lg}] sin errores JS`, errs.length === 0, errs); await ctx.close();
   }
 
+  /* 7b · Memory: 12 historias, 6 por partida, rotación dentro de la visita (solo en memoria) */
+  {
+    const ids = pg => pg.$$eval("#mmBoard .mm-c .mm-fi img", im => im.map(i => +/memo-(\d+)\.webp/.exec(i.getAttribute("src"))[1]));
+    const play = async (pg, n) => { const a = await ids(pg), g = {}; a.forEach((id, i) => (g[id] ||= []).push(i)); const cards = pg.locator("#mmBoard .mm-c"); const ks = Object.keys(g).slice(0, n); for (const k of ks) { await cards.nth(g[k][0]).click(); await cards.nth(g[k][1]).click(); } return ks.map(Number); };
+    const setOf = a => [...new Set(a)];
+    const { ctx, page, errs } = await fresh(b);
+    await page.goto(BASE + "/bio/", { waitUntil: "networkidle" });
+    const txt = await page.evaluate(() => ({ p: L().mm_pairs, mid: L().mm_hint, win: L().mm_win_h, again: L().mm_again }));
+    ok("memory: 12 curiosidades en es con título y texto", txt.p.length === 12 && txt.p.every(x => x[0] && x[1]), txt.p.length);
+    await page.locator("#mmBoard").scrollIntoViewIfNeeded();
+    const A = await ids(page);
+    ok("memory: 12 cartas, 6 imágenes distintas, cada una exactamente dos veces", A.length === 12 && setOf(A).length === 6 && setOf(A).every(i => A.filter(x => x === i).length === 2 && i >= 1 && i <= 12), A);
+    const sec0 = await page.innerText("#memorysec");
+    ok("memory: antes de acertar no aparece ninguna curiosidad", txt.p.every(x => !sec0.includes(x[1].slice(0, 30))));
+    const first = await play(page, 1); await page.waitForTimeout(150);
+    const sec1 = await page.innerText("#memorysec");
+    ok("memory: al acertar solo se revela la curiosidad de esa pareja (con su título) y la línea de la partida", sec1.includes(txt.p[first[0] - 1][1]) && sec1.includes(txt.p[first[0] - 1][0]) && txt.p.filter((x, i) => i !== first[0] - 1).every(x => !sec1.includes(x[1].slice(0, 30))) && sec1.includes("Cada vez sabes un poquito más de mí."), sec1.slice(0, 200));
+    const keyOk = await (async () => { const c = page.locator("#mmBoard .mm-c:not(.is-done)").first(); await c.focus(); await page.keyboard.press("Enter"); return c.evaluate(e => e.classList.contains("is-flip")); })();
+    ok("memory: las cartas se giran con el teclado (Enter)", keyOk);
+    await page.click("#mmReset"); await page.waitForTimeout(100);
+    const seen = [];   /* ids de partidas completadas, en orden */
+    for (let g = 0; g < 4; g++) {
+      const cur = setOf(await ids(page)); seen.push(cur);
+      ok(`memory: partida ${g + 1} con exactamente 6 parejas (${cur.join(",")})`, cur.length === 6);
+      await play(page, 6); await page.waitForTimeout(200);
+      const st = await page.evaluate(() => ({ t: document.getElementById("mmT").textContent, p: document.getElementById("mmP").textContent, win: !document.getElementById("mmWin").hidden, h: document.querySelector("#mmWin h3").textContent, btn: document.getElementById("mmAgain").textContent, li: document.querySelectorAll("#mmFoundL li").length }));
+      ok(`memory: partida ${g + 1} completada: 6 intentos, 6 / 6, panel final con las 6 historias`, st.t === "6" && st.p === "6 / 6" && st.win && st.li === 6 && st.h === txt.win && st.btn === txt.again, st);
+      if (g === 0) ok("memory: textos finales «Ya conoces 6 de mis 12 historias. ¿Otra partida?» y «Descubrir otras historias»", st.h === "Ya conoces 6 de mis 12 historias. ¿Otra partida?" && st.btn === "Descubrir otras historias", st);
+      await page.click("#mmAgain"); await page.waitForTimeout(100);
+      const st2 = await page.evaluate(() => ({ t: document.getElementById("mmT").textContent, p: document.getElementById("mmP").textContent, win: !document.getElementById("mmWin").hidden }));
+      ok(`memory: nueva partida ${g + 2} reinicia contadores y oculta el panel final`, st2.t === "0" && st2.p === "0 / 6" && !st2.win, st2);
+    }
+    ok("memory: la 2.ª partida prioriza las 6 historias no descubiertas (disjunta de la 1.ª; entre ambas, las 12)", seen[1].every(i => !seen[0].includes(i)) && setOf([...seen[0], ...seen[1]]).length === 12, seen.slice(0, 2));
+    ok("memory: con las 12 descubiertas la 3.ª parte de cero y la 4.ª vuelve a priorizar las no vistas", seen[3].every(i => !seen[2].includes(i)), seen.slice(2));
+    ok("memory: sin errores JS en la rotación", errs.length === 0, errs);
+    /* abandonar a medias NO marca las historias como descubiertas: si se marcaran, la 2.ª partida nunca repetiría ninguna de la 1.ª (prob. de acertar por azar ≈ (1/924)^8) */
+    let overlaps = 0, distinct = true;
+    for (let k = 0; k < 8; k++) {
+      await page.reload({ waitUntil: "networkidle" }); await page.locator("#mmBoard").scrollIntoViewIfNeeded();
+      const a1 = setOf(await ids(page)); await play(page, 2); await page.click("#mmReset"); await page.waitForTimeout(80);
+      const b1 = setOf(await ids(page)); distinct = distinct && b1.length === 6; if (a1.some(i => b1.includes(i))) overlaps++;
+    }
+    ok("memory: abandonar una partida no marca sus historias como descubiertas", overlaps >= 1 && distinct, { overlaps });
+    ok("memory: sin errores JS tras abandonar", errs.length === 0, errs); await ctx.close();
+    for (const lg of ["en", "fr"]) {
+      const c2 = await fresh(b); await c2.page.goto(BASE + "/" + lg + "/bio/", { waitUntil: "networkidle" });
+      const r = await c2.page.evaluate(() => ({ n: L().mm_pairs.length, ok: L().mm_pairs.every(x => x[0] && x[1]), win: L().mm_win_h, ps: L().mm_win_ps.length, mid: L().mm_mid, p: L().mm_p }));
+      ok(`memory[${lg}]: 12 curiosidades traducidas y textos de interfaz`, r.n === 12 && r.ok && /6/.test(r.win) && /12/.test(r.win) && r.ps === 0 && r.mid && /12/.test(r.p) && /6/.test(r.p), r);
+      await play(c2.page, 6); await c2.page.waitForTimeout(150);
+      ok(`memory[${lg}]: partida completa y panel final`, await c2.page.evaluate(() => !document.getElementById("mmWin").hidden && document.querySelectorAll("#mmFoundL li").length === 6));
+      ok(`memory[${lg}] sin errores JS`, c2.errs.length === 0, c2.errs); await c2.ctx.close();
+    }
+    /* móvil táctil + movimiento reducido: partida completa sin errores y sin desbordamiento horizontal */
+    const mob = await fresh(b, { vp: { width: 390, height: 844 }, reduced: true, touch: true });
+    await mob.page.goto(BASE + "/bio/", { waitUntil: "networkidle" }); await mob.page.locator("#mmBoard").scrollIntoViewIfNeeded();
+    await play(mob.page, 6); await mob.page.waitForTimeout(200);
+    ok("memory[móvil 390, reduced-motion]: partida completa", await mob.page.evaluate(() => !document.getElementById("mmWin").hidden && document.documentElement.scrollWidth <= innerWidth));
+    ok("memory[móvil] sin errores JS", mob.errs.length === 0, mob.errs); await mob.ctx.close();
+  }
+
   /* 8 · Accesibilidad básica */
   {
     const { ctx, page } = await fresh(b);

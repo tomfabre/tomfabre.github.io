@@ -213,19 +213,59 @@ Object.assign(T.fr, { ob_h: "Au cas où ça t'intéresse.", ob_p: "Une revue, un
   ["The Royal Tenenbaums", "Une famille dysfonctionnelle, des personnages inoubliables et une esthétique où chaque détail compte. De l'humour, de la mélancolie et beaucoup de Wes Anderson.", "Film", "Wes Anderson · 2001", "https://www.criterion.com/films/230-the-royal-tenenbaums"],
   ["Helvetica", "Quatre-vingts minutes à parler d'une typographie. Et, curieusement, c'est bien plus intéressant qu'il n'y paraît.", "Documentaire", "Gary Hustwit · 2007", "https://www.hustwit.com/helvetica/"]] });
 
-/* ---------- BIO · «¿Nos conocemos?»: 6 parejas con imagen [nombre, curiosidad] ---------- */
-Object.assign(T.es, { mm_hint: "Encuentra una pareja y te cuento algo.", mm_pairs: [
-  ["Carlos Cruz-Diez", "Conocí a Carlos Cruz-Diez en una conferencia. De esos encuentros que no se olvidan."], ["Tomate", "El tomate y yo nunca hemos tenido buena relación."], ["Carlos Vives", "Crecí escuchando a Carlos Vives. Fue mi primer concierto y ya van unos diez."],
-  ["Cámara de cine", "Antes del diseño, mi plan era estudiar cine y audiovisuales."], ["Forrest Gump", "He visto Forrest Gump ocho veces: 18 horas y 56 minutos de mi vida. Y no descarto la novena."], ["Gabriel García Márquez", "Nací el mismo año en que García Márquez ganó el Nobel de Literatura."]],
-  mm_win_h: "Bueno, ahora ya sabes un poco más de mí.", mm_win_ps: ["Aunque quedan unas cuantas historias por contar."] });
-Object.assign(T.en, { mm_hint: "Find a pair and I'll tell you something.", mm_pairs: [
-  ["Carlos Cruz-Diez", "I met Carlos Cruz-Diez at a talk. One of those encounters you don't forget."], ["Tomato", "Tomatoes and I have never really gotten along."], ["Carlos Vives", "I grew up listening to Carlos Vives. He was my first concert, and I've been to about ten since."],
-  ["Film camera", "Before design, my plan was to study film and audiovisual media."], ["Forrest Gump", "I've seen Forrest Gump eight times: 18 hours and 56 minutes of my life. And I'm not ruling out a ninth."], ["Gabriel García Márquez", "I was born the same year García Márquez won the Nobel Prize in Literature."]],
-  mm_win_h: "Well, now you know a little more about me.", mm_win_ps: ["Though there are still a few stories left to tell."] });
-Object.assign(T.fr, { mm_hint: "Trouve une paire et je te raconte quelque chose.", mm_pairs: [
-  ["Carlos Cruz-Diez", "J'ai rencontré Carlos Cruz-Diez lors d'une conférence. Le genre de rencontre qu'on n'oublie pas."], ["Tomate", "Les tomates et moi, on ne s'est jamais bien entendus."], ["Carlos Vives", "J'ai grandi en écoutant Carlos Vives. C'était mon premier concert, et j'en suis à une dizaine depuis."],
-  ["Caméra de cinéma", "Avant le design, je comptais étudier le cinéma et l'audiovisuel."], ["Forrest Gump", "J'ai vu Forrest Gump huit fois : 18 heures et 56 minutes de ma vie. Et je n'exclus pas une neuvième."], ["Gabriel García Márquez", "Je suis né l'année où García Márquez a reçu le prix Nobel de littérature."]],
-  mm_win_h: "Voilà, tu en sais un peu plus sur moi.", mm_win_ps: ["Même s'il reste encore quelques histoires à raconter."] });
+/* ---------- BIO · «¿Nos conocemos?»: 12 curiosidades [título, texto], 6 por partida ----------
+   El orden es el de las imágenes: la entrada N usa img/bio/memo-N.webp (img-memo-N). Esta capa pisa a c1m.js (mm_p, mm_again, mm_win_*). */
+Object.assign(T.es, {
+  mm_p: "Tengo 12 historias escondidas. En cada partida te cuento 6. Las otras tendrán que esperar a la próxima.",
+  mm_hint: "Encuentra una pareja y te cuento algo.", mm_mid: "Cada vez sabes un poquito más de mí.",
+  mm_pairs: [
+    ["Gabriel García Márquez", "El año en que García Márquez ganó el Nobel de Literatura, yo nací. Cada uno tuvo su momento."],
+    ["El tomate", "El tomate y yo llevamos décadas sin entendernos. A estas alturas, no espero una reconciliación."],
+    ["Cámara de cine", "Antes de dedicarme al diseño, quería estudiar cine y audiovisuales. Al final cambié de planes, pero no de obsesión por las imágenes."],
+    ["Carlos Vives", "Fue mi primer concierto. Desde entonces lo he visto unas nueve veces. Y si anuncia otro, seguro ahí estaré."],
+    ["Carlos Cruz-Diez", "Conocí a Carlos Cruz-Diez en una conferencia. No todos los días te cruzas con alguien que cambió la forma de ver el color."],
+    ["Forrest Gump", "He visto Forrest Gump ocho veces. Son 18 horas y 56 minutos de mi vida. La novena es cuestión de tiempo."],
+    ["Malta", "Tomé un barco de Malta a Gozo con un amigo. El mar estaba bastante agitado. Digamos que terminamos con recuerdos de otros pasajeros que preferiríamos no tener."],
+    ["Grogu", "Grogu es mi personaje favorito. Tanto que terminó inspirando a Yodis Brownie Jr., la asistente de esta web. Ahora todo tiene un poco más de sentido."],
+    ["El cuchillo", "Me fijo en cómo la gente agarra el cuchillo. Si la sierra está al revés, ya no puedo concentrarme en la conversación."],
+    ["Gaspar Noé", "Fui a un festival de cine a ver Enter the Void. Al terminar apareció Gaspar Noé, uno de mis directores favoritos. No esperaba conocerlo esa noche, pero pasó."],
+    ["La piña", "Me gusta la pizza con piña. Y también en el perro caliente. No voy a disculparme por ninguna de las dos."],
+    ["Conversaciones ajenas", "Me encanta escuchar conversaciones ajenas en los cafés. No es que sea metido, es que algunas historias son demasiado buenas para ignorarlas."]],
+  mm_win_h: "Ya conoces 6 de mis 12 historias. ¿Otra partida?", mm_win_ps: [], mm_again: "Descubrir otras historias" });
+Object.assign(T.en, {
+  mm_p: "I have 12 hidden stories. Each game I tell you 6. The rest will have to wait for next time.",
+  mm_hint: "Find a pair and I'll tell you something.", mm_mid: "Every time, you know a little more about me.",
+  mm_pairs: [
+    ["Gabriel García Márquez", "The year García Márquez won the Nobel Prize in Literature, I was born. Each of us had our moment."],
+    ["The tomato", "The tomato and I haven't understood each other in decades. By now, I'm not expecting a reconciliation."],
+    ["Film camera", "Before design, I wanted to study film and audiovisual media. In the end I changed plans, but not my obsession with images."],
+    ["Carlos Vives", "It was my first concert. Since then I've seen him about nine times. And if he announces another one, I'll surely be there."],
+    ["Carlos Cruz-Diez", "I met Carlos Cruz-Diez at a talk. It's not every day you cross paths with someone who changed the way we see colour."],
+    ["Forrest Gump", "I've seen Forrest Gump eight times. That's 18 hours and 56 minutes of my life. The ninth is only a matter of time."],
+    ["Malta", "I took a boat from Malta to Gozo with a friend. The sea was pretty rough. Let's just say we ended up with memories of other passengers that we'd rather not have."],
+    ["Grogu", "Grogu is my favourite character. So much so that he ended up inspiring Yodis Brownie Jr., this site's assistant. Now everything makes a bit more sense."],
+    ["The knife", "I notice how people hold their knife. If the serrated edge is facing the wrong way, I can no longer focus on the conversation."],
+    ["Gaspar Noé", "I went to a film festival to see Enter the Void. When it ended, Gaspar Noé showed up, one of my favourite directors. I didn't expect to meet him that night, but it happened."],
+    ["The pineapple", "I like pineapple on pizza. And on hot dogs too. I won't apologise for either."],
+    ["Other people's conversations", "I love listening to other people's conversations in cafés. It's not that I'm nosy, it's that some stories are too good to ignore."]],
+  mm_win_h: "You now know 6 of my 12 stories. Another round?", mm_win_ps: [], mm_again: "Discover other stories" });
+Object.assign(T.fr, {
+  mm_p: "J'ai 12 histoires cachées. À chaque partie, je t'en raconte 6. Les autres devront attendre la prochaine.",
+  mm_hint: "Trouve une paire et je te raconte quelque chose.", mm_mid: "À chaque fois, tu en sais un peu plus sur moi.",
+  mm_pairs: [
+    ["Gabriel García Márquez", "L'année où García Márquez a reçu le prix Nobel de littérature, je suis né. Chacun son moment."],
+    ["La tomate", "La tomate et moi, ça fait des décennies qu'on ne se comprend pas. À ce stade, je n'attends plus de réconciliation."],
+    ["Caméra de cinéma", "Avant le design, je voulais étudier le cinéma et l'audiovisuel. Finalement j'ai changé de plan, mais pas d'obsession pour les images."],
+    ["Carlos Vives", "C'était mon premier concert. Depuis, je l'ai vu environ neuf fois. Et s'il en annonce un autre, j'y serai sûrement."],
+    ["Carlos Cruz-Diez", "J'ai rencontré Carlos Cruz-Diez lors d'une conférence. On ne croise pas tous les jours quelqu'un qui a changé notre façon de voir la couleur."],
+    ["Forrest Gump", "J'ai vu Forrest Gump huit fois. Ça fait 18 heures et 56 minutes de ma vie. La neuvième n'est qu'une question de temps."],
+    ["Malte", "J'ai pris un bateau de Malte à Gozo avec un ami. La mer était plutôt agitée. Disons qu'on a fini avec des souvenirs d'autres passagers dont on se serait bien passés."],
+    ["Grogu", "Grogu est mon personnage préféré. À tel point qu'il a fini par inspirer Yodis Brownie Jr., l'assistante de ce site. Maintenant tout a un peu plus de sens."],
+    ["Le couteau", "Je remarque comment les gens tiennent leur couteau. Si la lame dentelée est à l'envers, je n'arrive plus à me concentrer sur la conversation."],
+    ["Gaspar Noé", "Je suis allé à un festival de cinéma voir Enter the Void. À la fin, Gaspar Noé est apparu, l'un de mes réalisateurs préférés. Je ne m'attendais pas à le rencontrer ce soir-là, mais c'est arrivé."],
+    ["L'ananas", "J'aime la pizza à l'ananas. Et aussi dans le hot-dog. Je ne m'excuserai pour aucun des deux."],
+    ["Les conversations des autres", "J'adore écouter les conversations des autres dans les cafés. Ce n'est pas que je sois fouineur, c'est que certaines histoires sont trop belles pour être ignorées."]],
+  mm_win_h: "Tu connais maintenant 6 de mes 12 histoires. Une autre partie ?", mm_win_ps: [], mm_again: "Découvrir d'autres histoires" });
 
 /* ---------- BIO · bento tarjeta 4: «Siempre hay espacio para…» (solo tipografía) ---------- */
 Object.assign(T.es, { bx_ck: Object.assign({}, T.es.bx_ck, { h: "Siempre hay espacio para…", foods: ["Ajiaco", "Tacos", "Chilaquiles", "Empanadas", "Hamburguesas", "Camembert", "Bandeja paisa", "Patacones", "Arroz chino", "Pad thai", "Ramen"] }) });
