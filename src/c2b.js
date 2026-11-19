@@ -177,6 +177,7 @@ function obAutoInit(){
 /* ---------- memory game: 12 stories, 6 pairs (12 cards) per game ---------- */
 const MMC = ["--coral", "--lav", "--mustard", "--mint", "--coral", "--lav"];   /* color por posición del par dentro de la partida */
 const MM_ALL = 12, MM_PAIRS = 6;
+const MM_IMG_V = "?v=2";   /* versión de las imágenes memo-N.webp: súbela si se cambia su contenido sin cambiar el nombre (evita que el navegador reutilice la caché antigua) */
 let MM = null, mmTimer = 0;
 const mmSeen = new Set();    /* ciclo de rotación: historias de partidas COMPLETADAS desde el último reinicio del ciclo; solo en memoria, no se guarda nada ni se envía */
 const mmKnown = new Set();   /* historias distintas descubiertas en toda la visita (no se reinicia con el ciclo): decide el mensaje final */
@@ -194,7 +195,7 @@ function mmStop(){ clearTimeout(mmTimer); if (MM) { MM.open = []; MM.lock = fals
 function mmBuild(){
   const t = L(), u = t.bx_ui, el = $("#mm"); if (!el) return; if (!MM) mmNew();
   const P = t.mm_pairs;
-  el.innerHTML = `<div class="mm-board" id="mmBoard" role="group" aria-label="${esc(u.mm_board)}">${MM.deck.map((p, i) => `<button type="button" class="mm-c" data-i="${i}" style="--mc:var(${MMC[MM.sel.indexOf(p)]})"><span class="mm-in"><span class="mm-b" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-reverse.webp"))}" alt="" width="200" height="200" decoding="async"><img class="mm-bg" src="${esc(bxUrl("img/bio/memo-reverse-gris.webp"))}" alt="" width="200" height="200" decoding="async"></span><span class="mm-f mm-fi" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-" + (p + 1) + ".webp"))}" alt="" width="200" height="200" decoding="async"></span></span></button>`).join("")}</div>
+  el.innerHTML = `<div class="mm-board" id="mmBoard" role="group" aria-label="${esc(u.mm_board)}">${MM.deck.map((p, i) => `<button type="button" class="mm-c" data-i="${i}" style="--mc:var(${MMC[MM.sel.indexOf(p)]})"><span class="mm-in"><span class="mm-b" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-reverse.webp"))}" alt="" width="200" height="200" decoding="async"><img class="mm-bg" src="${esc(bxUrl("img/bio/memo-reverse-gris.webp"))}" alt="" width="200" height="200" decoding="async"></span><span class="mm-f mm-fi" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-" + (p + 1) + ".webp") + MM_IMG_V)}" alt="" width="200" height="200" decoding="async"></span></span></button>`).join("")}</div>
   <div class="mm-side"><dl class="mm-stats"><div><dt>${esc(u.mm_tries)}</dt><dd id="mmT">0</dd></div><div><dt>${esc(u.mm_pairs)}</dt><dd id="mmP">0 / ${MM_PAIRS}</dd></div></dl>
   <div class="mm-cur" id="mmCur" aria-live="polite"></div>
   <p class="mm-status" id="mmS" role="status" aria-live="polite"></p>
