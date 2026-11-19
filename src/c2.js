@@ -91,9 +91,16 @@ matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => them
 function wireTheme(){
   $("#themeT").addEventListener("click", () => {
     const dark = root.hasAttribute("data-theme") ? root.getAttribute("data-theme") === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-    /* durante el cambio todo lo que cambia de color lo hace a la vez (clase .theme-sw, ver CSS); si no, bloques como la cabecera, la tarjeta de contacto o el círculo del pie cambian de golpe mientras el fondo se funde */
+    const flip = () => { themePref = dark ? "light" : "dark"; store.set("af-theme", themePref); applyTheme(); };
+    /* cambio de tema fluido: View Transitions hace un fundido entre la captura de antes y la de después (en la GPU), en vez de animar el color de cientos de elementos a la vez (daba tirones). Sin soporte o con movimiento reducido: la clase .theme-sw (ver CSS) o cambio directo. */
+    if (document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      root.classList.add("theme-vt");
+      let vt; try { vt = document.startViewTransition(flip); } catch (e) { root.classList.remove("theme-vt"); flip(); return; }
+      vt.finished.then(() => root.classList.remove("theme-vt"), () => root.classList.remove("theme-vt"));
+      return;
+    }
     root.classList.add("theme-sw"); clearTimeout(wireTheme.t); wireTheme.t = setTimeout(() => root.classList.remove("theme-sw"), 520);
-    themePref = dark ? "light" : "dark"; store.set("af-theme", themePref); applyTheme();
+    flip();
   });
 }
 function wireLang(){
