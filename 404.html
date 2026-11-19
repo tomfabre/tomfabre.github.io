@@ -1,1 +1,158 @@
-<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>404 · Tom Fabre</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:Outfit,system-ui,sans-serif;background:#FDF9F0;color:#2C2C2C;padding:20px;text-align:center}h1{font-size:clamp(4rem,14vw,9rem);margin:0;font-weight:600;letter-spacing:-.03em}p{font-size:1.1rem;font-weight:300}a{display:inline-block;margin:.4rem .5rem;padding:.8rem 1.4rem;border:1px solid currentColor;border-radius:999px;color:inherit;text-decoration:none}@media(prefers-color-scheme:dark){body{background:#222;color:#FDF9F0}}</style><main><h1>404</h1><p>Esta página no existe · This page does not exist · Cette page n'existe pas</p><a href="/">Inicio</a><a href="/en/">Home</a><a href="/fr/">Accueil</a></main>
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FDF9F0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1F1F1F" media="(prefers-color-scheme: dark)">
+<title>404 · Tom Fabre</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="preload" href="/fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+@font-face{font-family:"Outfit";font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/outfit-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Outfit";font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/outfit-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{
+  --bg:#FDF9F0;--fg:#2C2C2C;--muted:#6A6663;--line2:rgba(44,44,44,.3);
+  --coral:#F36654;--lav:#A49BF6;--mustard:#E2A70D;--mint:#72CEA7;
+  --font:"Galano Grotesque","Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);--fast:200ms;--blob:.2
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1F1F1F;--fg:#FDF9F0;--muted:#A6A6A6;--line2:rgba(253,249,240,.3);--blob:.13;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1F1F1F;--fg:#FDF9F0;--muted:#A6A6A6;--line2:rgba(253,249,240,.3);--blob:.13;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;background:var(--bg);color:var(--fg);font-family:var(--font);font-weight:300;overflow-x:hidden;position:relative}
+.blobs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.blobs i{position:absolute;width:42vmax;height:42vmax;border-radius:50%;filter:blur(70px);opacity:var(--blob);animation:drift 22s ease-in-out infinite alternate}
+.blobs i:nth-child(1){background:var(--coral);left:-12vmax;top:-10vmax}
+.blobs i:nth-child(2){background:var(--lav);right:-14vmax;top:8vmax;animation-delay:-6s;animation-duration:26s}
+.blobs i:nth-child(3){background:var(--mustard);left:12vmax;bottom:-18vmax;animation-delay:-11s}
+.blobs i:nth-child(4){background:var(--mint);right:6vmax;bottom:-14vmax;animation-delay:-3s;animation-duration:30s}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(6vmax,-4vmax,0) scale(1.15)}}
+header,main,footer{position:relative;z-index:1}
+header{padding:clamp(1.25rem,3vw,2rem) clamp(1.25rem,4vw,3rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{display:inline-flex;color:var(--fg);width:2.4rem;height:2.4rem;transition:transform 380ms var(--ease)}
+.logo:hover,.logo:focus-visible{transform:rotate(-8deg) scale(1.08)}
+.logo svg{width:100%;height:100%;fill:currentColor}
+.lang{display:flex;gap:.25rem;font-size:.82rem;font-weight:500}
+.lang button{font:inherit;color:var(--muted);background:none;border:1px solid transparent;border-radius:999px;padding:.35rem .75rem;cursor:pointer;transition:background-color var(--fast) var(--ease),color var(--fast) var(--ease),border-color var(--fast) var(--ease)}
+.lang button:hover,.lang button:focus-visible{border-color:var(--line2);color:var(--fg)}
+.lang button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1rem clamp(1.25rem,4vw,3rem) 3rem}
+.err{margin:0 0 .5rem;font-size:.78rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.mega{display:flex;align-items:center;justify-content:center;margin:0;font-size:clamp(5.5rem,26vw,18rem);font-weight:600;line-height:.8;letter-spacing:-.04em;gap:.02em;user-select:none}
+.mega>span{display:block;padding-block:.06em;animation:rise 700ms var(--ease) both}
+.mega>span:last-child{animation-delay:120ms}
+.eye{padding:0!important;position:relative;width:.74em;height:.74em;flex:none;animation:rise 700ms var(--ease) 60ms both}
+.ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(var(--coral),var(--lav),var(--mustard),var(--mint),var(--coral));-webkit-mask:radial-gradient(circle,transparent 57%,#000 58%);mask:radial-gradient(circle,transparent 57%,#000 58%);animation:spin 14s linear infinite}
+.pupil{position:absolute;left:50%;top:50%;width:.22em;height:.22em;margin:-.11em 0 0 -.11em;border-radius:50%;background:var(--fg);transform:translate(var(--px,0),var(--py,0));transition:transform 140ms var(--ease)}
+.pupil::after{content:"";position:absolute;left:18%;top:16%;width:30%;height:30%;border-radius:50%;background:var(--bg);opacity:.9}
+.eye.idle .pupil{animation:look 9s ease-in-out infinite;transition:none}
+.eye .lid{position:absolute;inset:0;border-radius:50%;background:var(--bg);transform:scaleY(0);transform-origin:50% 0;pointer-events:none;-webkit-mask:radial-gradient(circle,#000 56%,transparent 57%);mask:radial-gradient(circle,#000 56%,transparent 57%);animation:blink 6s infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes look{0%,100%{transform:translate(0,0)}20%{transform:translate(.13em,-.05em)}45%{transform:translate(-.12em,.06em)}70%{transform:translate(.06em,.12em)}}
+@keyframes blink{0%,94%,100%{transform:scaleY(0)}97%{transform:scaleY(1)}}
+@keyframes rise{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:none}}
+h1.t{margin:clamp(1.5rem,4vw,2.5rem) 0 .6rem;font-size:clamp(1.5rem,2.6vw + .5rem,2.75rem);font-weight:500;letter-spacing:-.015em;line-height:1.15;animation:rise 600ms var(--ease) 240ms both}
+p.d{margin:0 auto;max-width:34rem;font-size:clamp(1rem,.3vw + .95rem,1.2rem);color:var(--muted);line-height:1.5;animation:rise 600ms var(--ease) 320ms both}
+nav.go{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:clamp(1.5rem,3vw,2.25rem);animation:rise 600ms var(--ease) 400ms both}
+.btn{display:inline-flex;align-items:center;gap:.55rem;min-height:3rem;padding:0 1.5rem;border:1px solid var(--fg);border-radius:999px;background:none;color:var(--fg);font-weight:500;font-size:.95rem;text-decoration:none;transition:background-color var(--fast) var(--ease),color var(--fast) var(--ease),transform var(--fast) var(--ease)}
+.btn:hover,.btn:focus-visible{background:var(--fg);color:var(--bg)}
+.btn:active{transform:translateY(1px)}
+.btn.solid{background:var(--fg);color:var(--bg)}
+.btn.solid:hover,.btn.solid:focus-visible{background:transparent;color:var(--fg)}
+.btn:focus-visible,.lang button:focus-visible,.logo:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+footer{padding:1.25rem clamp(1.25rem,4vw,3rem) calc(1.5rem + env(safe-area-inset-bottom,0px));text-align:center;font-size:.82rem;color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){
+  .blobs i,.ring,.eye.idle .pupil,.eye .lid,.mega>span,.eye,h1.t,p.d,nav.go{animation:none!important}
+  .pupil{transition:none}
+}
+</style>
+
+<div class="blobs" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<header>
+  <a class="logo" href="/" id="home" aria-label="Tom Fabre">
+    <svg viewBox="0 0 197 197" aria-hidden="true"><path d="M74.4922 143.792L74.4922 196.043H121.542V162.007C121.542 160.627 120.704 159.366 119.375 158.749L80.1675 140.534C77.5602 139.323 74.4922 141.085 74.4922 143.792Z"/><path d="M0 0V43.7115H74.4949V87.539C74.4949 90.2459 77.5629 92.008 80.1702 90.7969L119.378 72.5815C120.706 71.9645 121.544 70.7033 121.544 69.3236V43.7115H196.039V0H0Z"/><path d="M101.893 119.741L158.398 145.993C161.658 147.507 165.493 145.305 165.493 141.92V89.416C165.493 86.0307 161.658 83.8292 158.398 85.3431L101.893 111.595C98.2806 113.273 98.2806 118.063 101.893 119.741Z"/></svg>
+  </a>
+  <div class="lang" role="group" aria-label="Idioma · Language · Langue">
+    <button type="button" data-l="es" aria-pressed="true">ES</button>
+    <button type="button" data-l="en" aria-pressed="false">EN</button>
+    <button type="button" data-l="fr" aria-pressed="false">FR</button>
+  </div>
+</header>
+
+<main>
+  <p class="err" id="err">Error 404</p>
+  <div class="mega" aria-hidden="true">
+    <span>4</span>
+    <span class="eye idle" id="eye"><span class="ring"></span><span class="pupil" id="pupil"></span><span class="lid"></span></span>
+    <span>4</span>
+  </div>
+  <h1 class="t" id="t"><span class="sr">404. </span><span id="tt">Aquí no hay nada. Pero hay mucho por ver.</span></h1>
+  <p class="d" id="d">La página que buscas no existe o ha cambiado de sitio.</p>
+  <nav class="go" id="go" aria-label="Navegación">
+    <a class="btn solid" href="/">Inicio</a>
+    <a class="btn" href="/proyectos/">Proyectos</a>
+    <a class="btn" href="/servicios/">Servicios</a>
+    <a class="btn" href="/contacto/">Contacto</a>
+  </nav>
+</main>
+
+<footer>Tom Fabre · Product &amp; Brand Designer · Madrid</footer>
+
+<noscript><p style="position:relative;z-index:1;text-align:center;margin:0 0 2rem;font-size:.9rem">This page does not exist · Cette page n’existe pas · <a href="/en/" style="color:inherit">EN</a> · <a href="/fr/" style="color:inherit">FR</a></p></noscript>
+
+<script>
+(function(){
+  var L={
+    es:{h:"es",title:"404 · Página no encontrada · Tom Fabre",err:"Error 404",t:"Aquí no hay nada. Pero hay mucho por ver.",d:"La página que buscas no existe o ha cambiado de sitio.",nav:"Navegación",
+        l:[["Inicio","/"],["Proyectos","/proyectos/"],["Servicios","/servicios/"],["Contacto","/contacto/"]]},
+    en:{h:"en",title:"404 · Page not found · Tom Fabre",err:"Error 404",t:"Nothing here. Plenty more to see.",d:"The page you’re looking for doesn’t exist or has moved.",nav:"Navigation",
+        l:[["Home","/en/"],["Projects","/en/projects/"],["Services","/en/services/"],["Contact","/en/contact/"]]},
+    fr:{h:"fr",title:"404 · Page introuvable · Tom Fabre",err:"Erreur 404",t:"Rien ici. Mais il y a beaucoup à voir.",d:"La page que vous cherchez n’existe pas ou a changé d’adresse.",nav:"Navigation",
+        l:[["Accueil","/fr/"],["Projets","/fr/projets/"],["Services","/fr/services/"],["Contact","/fr/contact/"]]}
+  };
+  var $=function(i){return document.getElementById(i)};
+  function pick(){
+    var p=location.pathname;
+    if(/^\/en(\/|$)/.test(p))return"en";
+    if(/^\/fr(\/|$)/.test(p))return"fr";
+    var n=((navigator.languages&&navigator.languages[0])||navigator.language||"es").slice(0,2).toLowerCase();
+    return L[n]?n:"es";
+  }
+  function set(k){
+    var c=L[k];
+    document.documentElement.lang=c.h;document.title=c.title;
+    $("err").textContent=c.err;$("tt").textContent=c.t;$("d").textContent=c.d;
+    $("go").setAttribute("aria-label",c.nav);
+    $("go").innerHTML=c.l.map(function(x,i){return'<a class="btn'+(i?'':' solid')+'" href="'+x[1]+'">'+x[0]+'</a>'}).join("");
+    $("home").setAttribute("href",c.l[0][1]);
+    var b=document.querySelectorAll(".lang button");
+    for(var i=0;i<b.length;i++)b[i].setAttribute("aria-pressed",b[i].getAttribute("data-l")===k?"true":"false");
+  }
+  var cur=pick();set(cur);
+  var bs=document.querySelectorAll(".lang button");
+  for(var i=0;i<bs.length;i++)bs[i].addEventListener("click",function(){set(this.getAttribute("data-l"))});
+
+  /* el "0" es un ojo que sigue al puntero */
+  var eye=$("eye"),pu=$("pupil");
+  if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  var raf=0,lx=0,ly=0;
+  function move(){
+    raf=0;
+    var r=eye.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+    var dx=lx-cx,dy=ly-cy,d=Math.sqrt(dx*dx+dy*dy)||1,m=Math.min(d,r.width*.9)/(r.width*.9),k=r.width*.17*m;
+    pu.style.setProperty("--px",(dx/d*k)+"px");pu.style.setProperty("--py",(dy/d*k)+"px");
+  }
+  function onp(e){
+    if(eye.classList.contains("idle"))eye.classList.remove("idle");
+    lx=e.clientX;ly=e.clientY;if(!raf)raf=requestAnimationFrame(move);
+  }
+  window.addEventListener("pointermove",onp,{passive:true});
+  window.addEventListener("pointerdown",onp,{passive:true});
+})();
+</script>
