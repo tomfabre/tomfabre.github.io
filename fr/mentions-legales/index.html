@@ -1212,9 +1212,11 @@ dialog#dlg:focus{outline:none}
 .hmin{isolation:isolate;--aur-o:.3}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hmin{--aur-o:.24}}
 :root[data-theme="dark"] .hmin{--aur-o:.24}
-.aur{position:absolute;top:0;bottom:0;left:0;right:calc(50% - 50vw);z-index:-1;pointer-events:none;overflow:hidden;--px:0;--py:0}
+/* color de los degradados de borde del hero: propiedad registrada para que pueda animarse al cambiar de tema (un degradado con var(--bg) cambia de golpe y se veía una banda oscura a la izquierda, arriba y abajo) */
+@property --aur-bg{syntax:"<color>";inherits:true;initial-value:#FDF9F0}
+.aur{position:absolute;top:0;bottom:0;left:0;right:calc(50% - 50vw);z-index:-1;pointer-events:none;overflow:hidden;--px:0;--py:0;--aur-bg:var(--bg)}
 /* desvanecido de bordes: capa estática del color de fondo (equivale a la máscara anterior, pero sin enmascarar el grupo animado en cada fotograma) */
-.aur::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,var(--bg),transparent 24%),linear-gradient(var(--bg),transparent 14%,transparent 60%,var(--bg))}
+.aur::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,var(--aur-bg),transparent 24%),linear-gradient(var(--aur-bg),transparent 14%,transparent 60%,var(--aur-bg))}
 .aur i{position:absolute;border-radius:50%;aspect-ratio:1;filter:blur(clamp(48px,8vw,120px)) saturate(.85);opacity:var(--aur-o);will-change:transform;
   translate:calc(var(--px)*var(--f)*1px) calc(var(--py)*var(--f)*1px);animation:aurf 44s ease-in-out infinite alternate}
 .aur .o1{width:min(52vw,720px);right:-12%;top:-6%;background:var(--coral)}
@@ -1226,7 +1228,7 @@ dialog#dlg:focus{outline:none}
   100%{transform:translate3d(-3vw,2.5vw,0) scale(1.12)}}
 .aur .gr{position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 @media (max-width:47.99rem){.hmin{--aur-o:.26}:root[data-theme="dark"] .hmin{--aur-o:.22}
-  .aur::after{background:linear-gradient(90deg,var(--bg),transparent 14%),linear-gradient(var(--bg),transparent 12%,transparent 56%,var(--bg))}
+  .aur::after{background:linear-gradient(90deg,var(--aur-bg),transparent 14%),linear-gradient(var(--aur-bg),transparent 12%,transparent 56%,var(--aur-bg))}
   .aur .o1{width:76vw;right:-24%;top:0}.aur .o2{width:64vw;right:4%;top:46%}.aur .o3{width:48vw;right:-12%;bottom:0}.aur .o4{width:38vw;right:44%;top:8%}}
 @media (prefers-reduced-motion:reduce){.aur i{animation:none}}
 
@@ -1671,7 +1673,8 @@ dialog .sub{color:var(--muted)}
 html.is-scrolling .blobs i,html.is-scrolling .cta-star,html.is-scrolling .orb .rot-w,html.is-scrolling .aur i,html.dlg-open .blobs i,html.dlg-open .cta-star,html.dlg-open .orb .rot-w,html.dlg-open .aur i,html.dlg-open .av-w,.cta-off .blobs i,.cta-off .cta-star{animation-play-state:paused!important}
 
 /* cambio claro/oscuro: todo se funde a la vez (antes unos bloques cambiaban de golpe y otros se fundían, y se veían bandas); el interruptor conserva su propia animación */
-html.theme-sw :where(*,*::before,*::after):not(.theme-toggle,.theme-toggle *){transition:background-color var(--normal) var(--ease),color var(--normal) var(--ease),border-color var(--normal) var(--ease),fill var(--normal) var(--ease),stroke var(--normal) var(--ease)!important}
+html.theme-sw :where(*,*::before,*::after):not(.theme-toggle,.theme-toggle *){transition:background-color var(--normal) var(--ease),color var(--normal) var(--ease),border-color var(--normal) var(--ease),fill var(--normal) var(--ease),stroke var(--normal) var(--ease),--aur-bg var(--normal) var(--ease)!important}
+html.theme-sw .aur i{transition:opacity var(--normal) var(--ease)!important}
 @media (prefers-reduced-motion:reduce){html.theme-sw :where(*,*::before,*::after){transition:none!important}}
 /* menos aire entre «¿Tienes algo en mente?» y el pie (antes ~350 px en desktop: padding de la sección + padding de main + margen del pie) */
 main:has(#contact-cta){padding-bottom:0}
