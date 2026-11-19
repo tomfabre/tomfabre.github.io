@@ -452,14 +452,16 @@ html[lang="fr"] .hmega{font-size:clamp(2.2rem,9.8vw,3.5rem)}
 @media (min-width:48rem){.hmega{font-size:clamp(3.8rem,8vw,9.5rem)}html[lang="fr"] .hmega{font-size:clamp(3.5rem,6.4vw,8rem)}}
 .hm-btn{display:grid;width:100%;background:none;border:0;padding:0;margin:0;text-align:left;color:inherit;font:inherit;letter-spacing:inherit;line-height:inherit;cursor:default;-webkit-tap-highlight-color:transparent;touch-action:manipulation;border-radius:.4rem}
 .hm-btn:focus-visible{outline:2px solid var(--fg);outline-offset:.25em}
-.hm-a,.hm-b{grid-area:1/1;display:block;transition:transform 240ms cubic-bezier(.2,.8,.2,1),opacity 160ms cubic-bezier(.2,.8,.2,1);will-change:transform,opacity}
-.hm-b{opacity:0;transform:translate3d(0,.12em,0)}
+/* cambio de titular en hover/tap: fundido largo y suave con un desenfoque leve y un desplazamiento mínimo; el titular que entra espera 90 ms a que el que sale ya haya bajado, para que no se vean los dos a medias a la vez */
+.hm-a,.hm-b{grid-area:1/1;display:block;transition:transform 640ms var(--ease),opacity 460ms cubic-bezier(.4,0,.2,1),filter 460ms cubic-bezier(.4,0,.2,1);will-change:transform,opacity,filter}
+.hm-a{transition-delay:90ms}
+.hm-b{opacity:0;transform:translate3d(0,.04em,0);filter:blur(3px)}
 .hm-btn .ln{display:block;text-wrap:balance}
 .hm-btn .l2{color:var(--muted);padding-left:clamp(0rem,8vw,10rem)}
 html[lang="fr"] .hm-btn .l2{padding-left:0}
-.hm-btn[data-alt="1"] .hm-a{opacity:0;transform:translate3d(0,-.12em,0)}
-.hm-btn[data-alt="1"] .hm-b{opacity:1;transform:none}
-@media (hover:hover){.hm-btn:hover .hm-a{opacity:0;transform:translate3d(0,-.12em,0)}.hm-btn:hover .hm-b{opacity:1;transform:none}}
+.hm-btn[data-alt="1"] .hm-a{opacity:0;transform:translate3d(0,-.04em,0);filter:blur(3px);transition-delay:0ms}
+.hm-btn[data-alt="1"] .hm-b{opacity:1;transform:none;filter:none;transition-delay:90ms}
+@media (hover:hover){.hm-btn:hover .hm-a{opacity:0;transform:translate3d(0,-.04em,0);filter:blur(3px);transition-delay:0ms}.hm-btn:hover .hm-b{opacity:1;transform:none;filter:none;transition-delay:90ms}}
 .scroll-hint{position:absolute;left:0;bottom:calc(var(--s6) + env(safe-area-inset-bottom,0px));margin:0;padding-top:0;align-self:flex-start;display:inline-flex;align-items:center;gap:.6rem;background:none;border:0;color:var(--muted);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;min-height:2.75rem;cursor:pointer;transition:color var(--fast)}
 .scroll-hint:hover{color:var(--fg)}
 .scroll-hint .ar{display:inline-block;animation:nudge 2.6s ease-in-out infinite}
@@ -471,7 +473,7 @@ html[lang="fr"] .hm-btn .l2{padding-left:0}
 @media (prefers-reduced-motion:reduce){
  .av-w{animation:none;color:var(--av1)}
  .av-tip .av-w{transition:none;transform:translateY(-50%)}
- .hm-a,.hm-b{transition:opacity 150ms linear;transform:none!important}
+ .hm-a,.hm-b{transition:opacity 150ms linear;transform:none!important;filter:none!important;transition-delay:0ms!important}
  .scroll-hint .ar,.hmin .avail,.hmin .hmega,.hmin .scroll-hint{animation:none}}
 /* touch: no hover-only content */
 @media (hover:none){.pj-card .art svg,.idx .px-ims .art svg,.pj-cover svg,.pj-gal .art svg{filter:none}[data-w]::after{display:none}.stat:hover span .w{opacity:0}.stat:hover span .l{opacity:1}}
