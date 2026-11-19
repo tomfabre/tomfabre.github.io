@@ -162,6 +162,87 @@ async function fresh(b, opts = {}) {
     ok(`bio[${lg}] sin errores JS`, errs.length === 0, errs); await ctx.close();
   }
 
+  /* 7b · Memory: 12 historias, 6 por partida, rotación y mensajes finales según el progreso de la visita */
+  {
+    const ids = pg => pg.$$eval("#mmBoard .mm-c .mm-fi img", im => im.map(i => +/memo-(\d+)\.webp/.exec(i.getAttribute("src"))[1]));
+    const play = async (pg, n) => { const a = await ids(pg), g = {}; a.forEach((id, i) => (g[id] ||= []).push(i)); const cards = pg.locator("#mmBoard .mm-c"); const ks = Object.keys(g).slice(0, n); for (const k of ks) { await cards.nth(g[k][0]).click(); await cards.nth(g[k][1]).click(); } return ks.map(Number); };
+    const setOf = a => [...new Set(a)];
+    const WIN = {   /* mensaje y botón tras la 1.ª partida (6 de 12) y cuando ya se conocen las 12 */
+      es: { h6: "Ya conoces 6 de mis 12 historias. ¿Quieres descubrir las otras?", b6: "Descubrir otras historias", h12: "¡Ya conoces mis 12 historias! Aunque todavía me quedan unas cuantas por contar.", b12: "Volver a jugar", hint: "Encuentra una pareja y te cuento algo." },
+      en: { h6: "You now know 6 of my 12 stories. Want to discover the others?", b6: "Discover other stories", h12: "You know all 12 of my stories! Though I still have a few more to tell.", b12: "Play again", hint: "Find a pair and I'll tell you something." },
+      fr: { h6: "Tu connais déjà 6 de mes 12 histoires. Tu veux découvrir les autres ?", b6: "Découvrir d'autres histoires", h12: "Tu connais mes 12 histoires ! Mais il m'en reste encore quelques-unes à raconter.", b12: "Rejouer", hint: "Trouve une paire et je te raconte quelque chose." }
+    };
+    const winState = pg => pg.evaluate(() => ({ t: document.getElementById("mmT").textContent, p: document.getElementById("mmP").textContent, win: !document.getElementById("mmWin").hidden, h: document.getElementById("mmWinH").textContent, btn: document.getElementById("mmAgain").textContent, li: document.querySelectorAll("#mmFoundL li").length, focus: document.activeElement && document.activeElement.id, status: document.getElementById("mmS").textContent, mid: document.getElementById("mmWin").parentElement.querySelectorAll(".mm-cur-n").length }));
+    const { ctx, page, errs } = await fresh(b);
+    await page.goto(BASE + "/bio/", { waitUntil: "networkidle" });
+    const txt = await page.evaluate(() => ({ p: L().mm_pairs }));
+    ok("memory: 12 curiosidades en es con título y texto", txt.p.length === 12 && txt.p.every(x => x[0] && x[1]), txt.p.length);
+    await page.locator("#mmBoard").scrollIntoViewIfNeeded();
+    const A = await ids(page);
+    ok("memory: 12 cartas, 6 imágenes distintas, cada una exactamente dos veces", A.length === 12 && setOf(A).length === 6 && setOf(A).every(i => A.filter(x => x === i).length === 2 && i >= 1 && i <= 12), A);
+    ok("memory: mensaje inicial «Encuentra una pareja y te cuento algo.»", (await page.innerText("#mmCur")).trim() === WIN.es.hint);
+    const sec0 = await page.innerText("#memorysec");
+    ok("memory: antes de acertar no aparece ninguna curiosidad", txt.p.every(x => !sec0.includes(x[1].slice(0, 30))));
+    const first = await play(page, 1); await page.waitForTimeout(150);
+    const sec1 = await page.innerText("#memorysec"), cur1 = (await page.innerText("#mmCur")).trim();
+    ok("memory: al acertar solo se revela la curiosidad de esa pareja, con su título", sec1.includes(txt.p[first[0] - 1][1]) && sec1.toLowerCase().includes(txt.p[first[0] - 1][0].toLowerCase()) && txt.p.filter((x, i) => i !== first[0] - 1).every(x => !sec1.includes(x[1].slice(0, 30))), sec1.slice(0, 200));
+    ok("memory: bajo la curiosidad no hay frases añadidas (solo título e historia)", !sec1.includes("Cada vez sabes") && cur1.split("\n").map(x => x.trim()).filter(Boolean).length === 2, cur1);
+    const keyOk = await (async () => { const c = page.locator("#mmBoard .mm-c:not(.is-done)").first(); await c.focus(); await page.keyboard.press("Enter"); return c.evaluate(e => e.classList.contains("is-flip")); })();
+    ok("memory: las cartas se giran con el teclado (Enter)", keyOk);
+    await page.click("#mmReset"); await page.waitForTimeout(100);
+    const seen = [];   /* ids de partidas completadas, en orden */
+    for (let g = 0; g < 4; g++) {
+      const cur = setOf(await ids(page)); seen.push(cur);
+      ok(`memory[es] partida ${g + 1}: exactamente 6 parejas (${cur.join(",")})`, cur.length === 6);
+      await play(page, 6); await page.waitForTimeout(200);
+      const st = await winState(page), W = WIN.es, e = g === 0 ? [W.h6, W.b6] : [W.h12, W.b12];
+      ok(`memory[es] partida ${g + 1} completada: 6 intentos, 6 / 6, 6 historias en el panel`, st.t === "6" && st.p === "6 / 6" && st.win && st.li === 6, st);
+      ok(`memory[es] partida ${g + 1}: mensaje «${e[0].slice(0, 28)}…» y botón «${e[1]}»${g === 2 ? " (el ciclo se reinició, la visita ya conoce las 12)" : ""}`, st.h === e[0] && st.btn === e[1], st);
+      ok(`memory[es] partida ${g + 1}: el foco pasa al panel final y el aviso de estado lleva el mensaje`, st.focus === "mmWin" && st.status === e[0], { focus: st.focus, status: st.status });
+      await page.click("#mmAgain"); await page.waitForTimeout(100);
+      const st2 = await winState(page);
+      ok(`memory[es] nueva partida ${g + 2}: contadores a 0, panel final oculto, mensaje inicial`, st2.t === "0" && st2.p === "0 / 6" && !st2.win && (await page.innerText("#mmCur")).trim() === WIN.es.hint, st2);
+    }
+    ok("memory: la 2.ª partida prioriza las 6 historias no descubiertas (disjunta de la 1.ª; entre ambas, las 12)", seen[1].every(i => !seen[0].includes(i)) && setOf([...seen[0], ...seen[1]]).length === 12, seen.slice(0, 2));
+    ok("memory: con las 12 descubiertas la 3.ª parte de cero y la 4.ª vuelve a priorizar las no vistas", seen[3].every(i => !seen[2].includes(i)), seen.slice(2));
+    ok("memory: sin errores JS en la rotación", errs.length === 0, errs);
+    /* accesibilidad del juego: nombres accesibles, ids únicos, botones con texto */
+    const a11y = await page.evaluate(() => ({ unnamed: [...document.querySelectorAll("#memorysec button")].filter(x => !x.closest("[hidden]") && !(x.getAttribute("aria-label") || x.textContent).trim()).length, dupIds: [...document.querySelectorAll("#memorysec [id]")].map(x => x.id).filter((x, i, a) => a.indexOf(x) !== i), live: !!document.querySelector("#mmCur[aria-live], #mmS[role=status]"), h3: document.querySelector("#mmWin h3") && document.querySelector("#mmWin h3").id }));
+    ok("memory: botones con nombre accesible, ids únicos, regiones aria-live y encabezado del panel final", a11y.unnamed === 0 && a11y.dupIds.length === 0 && a11y.live && a11y.h3 === "mmWinH", a11y);
+    /* abandonar a medias NO marca las historias como descubiertas: si se marcaran, la 2.ª partida nunca repetiría ninguna de la 1.ª (prob. de acertar por azar ≈ (1/924)^8) */
+    let overlaps = 0, distinct = true;
+    for (let k = 0; k < 8; k++) {
+      await page.reload({ waitUntil: "networkidle" }); await page.locator("#mmBoard").scrollIntoViewIfNeeded();
+      const a1 = setOf(await ids(page)); await play(page, 2); await page.click("#mmReset"); await page.waitForTimeout(80);
+      const b1 = setOf(await ids(page)); distinct = distinct && b1.length === 6; if (a1.some(i => b1.includes(i))) overlaps++;
+    }
+    ok("memory: abandonar una partida no marca sus historias como descubiertas", overlaps >= 1 && distinct, { overlaps });
+    ok("memory: sin errores JS tras abandonar", errs.length === 0, errs); await ctx.close();
+    /* progreso en EN y FR: mensaje inicial, 1.ª partida (6/12), 2.ª (12/12) y 3.ª (sigue 12/12) */
+    for (const lg of ["en", "fr"]) {
+      const c2 = await fresh(b), W = WIN[lg]; await c2.page.goto(BASE + "/" + lg + "/bio/", { waitUntil: "networkidle" }); await c2.page.locator("#mmBoard").scrollIntoViewIfNeeded();
+      const r = await c2.page.evaluate(() => ({ n: L().mm_pairs.length, ok: L().mm_pairs.every(x => x[0] && x[1]), p: L().mm_p, old: [L().mm_mid, L().mm_win_ps] }));
+      ok(`memory[${lg}]: 12 curiosidades traducidas, descripción con 12 y 6 y sin claves obsoletas`, r.n === 12 && r.ok && /12/.test(r.p) && /6/.test(r.p) && r.old.every(x => x === undefined), r);
+      ok(`memory[${lg}]: mensaje inicial`, (await c2.page.innerText("#mmCur")).trim() === W.hint);
+      for (let g = 0; g < 3; g++) {
+        await play(c2.page, 6); await c2.page.waitForTimeout(150);
+        const st = await winState(c2.page), e = g === 0 ? [W.h6, W.b6] : [W.h12, W.b12];
+        ok(`memory[${lg}] partida ${g + 1}: mensaje y botón según progreso`, st.win && st.h === e[0] && st.btn === e[1] && st.li === 6 && st.status === e[0], st);
+        await c2.page.click("#mmAgain"); await c2.page.waitForTimeout(100);
+      }
+      ok(`memory[${lg}] sin errores JS`, c2.errs.length === 0, c2.errs); await c2.ctx.close();
+    }
+    /* móvil táctil + movimiento reducido: dos partidas completas, mensajes y sin desbordamiento horizontal */
+    const mob = await fresh(b, { vp: { width: 390, height: 844 }, reduced: true, touch: true });
+    await mob.page.goto(BASE + "/bio/", { waitUntil: "networkidle" }); await mob.page.locator("#mmBoard").scrollIntoViewIfNeeded();
+    for (let g = 0; g < 2; g++) {
+      await play(mob.page, 6); await mob.page.waitForTimeout(200); const st = await winState(mob.page), e = g === 0 ? [WIN.es.h6, WIN.es.b6] : [WIN.es.h12, WIN.es.b12];
+      ok(`memory[móvil 390, reduced-motion] partida ${g + 1}: mensaje correcto, sin desbordamiento horizontal`, st.win && st.h === e[0] && st.btn === e[1] && await mob.page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), st);
+      await mob.page.click("#mmAgain"); await mob.page.waitForTimeout(100);
+    }
+    ok("memory[móvil] sin errores JS", mob.errs.length === 0, mob.errs); await mob.ctx.close();
+  }
+
   /* 8 · Accesibilidad básica */
   {
     const { ctx, page } = await fresh(b);

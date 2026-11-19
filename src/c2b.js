@@ -1,7 +1,7 @@
 /* ============================================================
    LOTE 2 · Bio v2 components
    bento (cities, Spotify, cooking, street: auto-galleries; anecdotes: auto-rotating) · accessible lightbox ·
-   "pequeñas obsesiones" carousel · memory game (6 pairs)
+   "pequeñas obsesiones" carousel · memory game (6 pairs out of 12 stories)
    Depends on helpers from c2.js ($, $$, esc, L, PATHS, reduced, route_).
    ------------------------------------------------------------
    PENDING ASSETS: fill the `img` fields below with real paths (relative to the
@@ -174,23 +174,36 @@ function obAutoInit(){
     if (Date.now() >= ob5.next && $("#obSlide")) obGo(1, true);
   }, 400);
 }
-/* ---------- memory game: 6 pairs, 12 cards ---------- */
-const MMC = ["--coral", "--lav", "--mustard", "--mint", "--coral", "--lav"];
+/* ---------- memory game: 12 stories, 6 pairs (12 cards) per game ---------- */
+const MMC = ["--coral", "--lav", "--mustard", "--mint", "--coral", "--lav"];   /* color por posición del par dentro de la partida */
+const MM_ALL = 12, MM_PAIRS = 6;
 let MM = null, mmTimer = 0;
+const mmSeen = new Set();    /* ciclo de rotación: historias de partidas COMPLETADAS desde el último reinicio del ciclo; solo en memoria, no se guarda nada ni se envía */
+const mmKnown = new Set();   /* historias distintas descubiertas en toda la visita (no se reinicia con el ciclo): decide el mensaje final */
 function mmShuffle(a){ for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }   /* Fisher-Yates */
-function mmNew(){ clearTimeout(mmTimer); MM = { deck: mmShuffle([0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]), open: [], done: [], found: [], tries: 0, lock: false }; }
+/* 6 de las 12 historias al azar, priorizando las que aún no se han descubierto; con las 12 descubiertas se empieza de cero */
+function mmSelect(){
+  let free = []; for (let i = 0; i < MM_ALL; i++) if (!mmSeen.has(i)) free.push(i);
+  if (!free.length) { mmSeen.clear(); for (let i = 0; i < MM_ALL; i++) free.push(i); }
+  let sel = mmShuffle(free).slice(0, MM_PAIRS);
+  if (sel.length < MM_PAIRS) sel = sel.concat(mmShuffle([...mmSeen]).slice(0, MM_PAIRS - sel.length));   /* defensa: no ocurre con partidas de 6 */
+  return sel;
+}
+function mmNew(){ clearTimeout(mmTimer); const sel = mmSelect(); MM = { sel, deck: mmShuffle([...sel, ...sel]), open: [], done: [], found: [], tries: 0, lock: false, known: 0 }; }
 function mmStop(){ clearTimeout(mmTimer); if (MM) { MM.open = []; MM.lock = false; } if ($("#mmBoard")) mmPaint(""); }
 function mmBuild(){
   const t = L(), u = t.bx_ui, el = $("#mm"); if (!el) return; if (!MM) mmNew();
   const P = t.mm_pairs;
-  el.innerHTML = `<div class="mm-board" id="mmBoard" role="group" aria-label="${esc(u.mm_board)}">${MM.deck.map((p, i) => `<button type="button" class="mm-c" data-i="${i}" style="--mc:var(${MMC[p]})"><span class="mm-in"><span class="mm-b" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-reverse.webp"))}" alt="" width="200" height="200" decoding="async"><img class="mm-bg" src="${esc(bxUrl("img/bio/memo-reverse-gris.webp"))}" alt="" width="200" height="200" decoding="async"></span><span class="mm-f mm-fi" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-" + (p + 1) + ".webp"))}" alt="" width="200" height="200" decoding="async"></span></span></button>`).join("")}</div>
-  <div class="mm-side"><dl class="mm-stats"><div><dt>${esc(u.mm_tries)}</dt><dd id="mmT">0</dd></div><div><dt>${esc(u.mm_pairs)}</dt><dd id="mmP">0 / 6</dd></div></dl>
+  el.innerHTML = `<div class="mm-board" id="mmBoard" role="group" aria-label="${esc(u.mm_board)}">${MM.deck.map((p, i) => `<button type="button" class="mm-c" data-i="${i}" style="--mc:var(${MMC[MM.sel.indexOf(p)]})"><span class="mm-in"><span class="mm-b" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-reverse.webp"))}" alt="" width="200" height="200" decoding="async"><img class="mm-bg" src="${esc(bxUrl("img/bio/memo-reverse-gris.webp"))}" alt="" width="200" height="200" decoding="async"></span><span class="mm-f mm-fi" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-" + (p + 1) + ".webp"))}" alt="" width="200" height="200" decoding="async"></span></span></button>`).join("")}</div>
+  <div class="mm-side"><dl class="mm-stats"><div><dt>${esc(u.mm_tries)}</dt><dd id="mmT">0</dd></div><div><dt>${esc(u.mm_pairs)}</dt><dd id="mmP">0 / ${MM_PAIRS}</dd></div></dl>
   <div class="mm-cur" id="mmCur" aria-live="polite"></div>
   <p class="mm-status" id="mmS" role="status" aria-live="polite"></p>
   <p><button type="button" class="btn sm ghost" id="mmReset">${esc(u.mm_reset)}</button></p>
-  <div class="mm-win" id="mmWin" hidden tabindex="-1"><h3>${esc(t.mm_win_h)}</h3>${t.mm_win_ps.map(x => `<p>${esc(x)}</p>`).join("")}<div class="mm-found" id="mmFound"><h4>${esc(u.mm_found)}</h4><ul id="mmFoundL"></ul></div><p><button type="button" class="btn sm" id="mmAgain">${esc(t.mm_again)}</button></p></div></div>`;
+  <div class="mm-win" id="mmWin" hidden tabindex="-1"><h3 id="mmWinH"></h3><div class="mm-found" id="mmFound"><h4>${esc(u.mm_found)}</h4><ul id="mmFoundL"></ul></div><p><button type="button" class="btn sm" id="mmAgain"></button></p></div></div>`;
   mmPaint("");
 }
+/* mensaje y botón finales según las historias distintas descubiertas en la visita: 12 → «ya conoces las 12»; si no, «{n} de 12» */
+function mmWinMsg(t){ const all = MM.known >= MM_ALL; return { h: all ? t.mm_win_all : t.mm_win_h.replace("{n}", MM.known), b: all ? t.mm_again_all : t.mm_again }; }
 function mmPaint(msg){
   const t = L(), u = t.bx_ui, P = t.mm_pairs; if (!MM || !$("#mmBoard")) return;
   $$("#mmBoard .mm-c").forEach(b => {
@@ -199,14 +212,15 @@ function mmPaint(msg){
     b.setAttribute("aria-label", open ? P[MM.deck[i]][0] : u.mm_card + " " + (i + 1) + ", " + u.mm_down);
     b.setAttribute("aria-disabled", done ? "true" : "false");
   });
-  $("#mmT").textContent = MM.tries; $("#mmP").textContent = MM.found.length + " / 6";
+  $("#mmT").textContent = MM.tries; $("#mmP").textContent = MM.found.length + " / " + MM_PAIRS;
   $("#mmFoundL").innerHTML = MM.found.map(p => `<li><b>${esc(P[p][0])}</b> ${esc(P[p][1])}</li>`).join("");
-  const won = MM.done.length >= 12;
+  const won = MM.done.length >= MM_PAIRS * 2;
   /* curiosidad de la última pareja encontrada (solo parejas ya descubiertas); se vuelve a crear el nodo para repetir el fundido */
   const cur = $("#mmCur"), last = MM.found.length ? MM.found[MM.found.length - 1] : -1;
   cur.hidden = won;
   if (!won && cur.dataset.p !== String(last)) { cur.dataset.p = String(last); cur.innerHTML = last < 0 ? `<p class="mm-cur-h">${esc(t.mm_hint)}</p>` : `<div class="mm-cur-i"><p class="mm-cur-k">${esc(P[last][0])}</p><p class="mm-cur-t">${esc(P[last][1])}</p></div>`; }
   $("#mmWin").hidden = !won;
+  if (won) { const w = mmWinMsg(t); $("#mmWinH").textContent = w.h; $("#mmAgain").textContent = w.b; }
   /* al ganar solo se ve el panel final: el aviso de estado queda solo para lectores de pantalla y se oculta el botón Reiniciar (el panel trae «Jugar otra vez») */
   $("#mmS").classList.toggle("sr-only", won); const rs = $("#mmReset"); if (rs && rs.parentElement) rs.parentElement.hidden = won;
   if (msg != null) $("#mmS").textContent = msg;
@@ -220,7 +234,7 @@ function mmPick(i){
   const [a, b] = MM.open;
   if (MM.deck[a] === MM.deck[b]) {
     const p = MM.deck[a]; MM.done.push(a, b); MM.found.push(p); MM.open = []; MM.lock = false;
-    if (MM.done.length === 12) { mmPaint(t.mm_win_h + " " + t.mm_win_ps.join(" ")); const w = $("#mmWin"); w.focus({ preventScroll: false }); }
+    if (MM.done.length === MM_PAIRS * 2) { MM.sel.forEach(x => { mmSeen.add(x); mmKnown.add(x); }); MM.known = mmKnown.size; mmPaint(mmWinMsg(t).h); const w = $("#mmWin"); w.focus({ preventScroll: false }); }   /* solo una partida completa marca sus historias como descubiertas */
     else mmPaint(u.mm_ok);
   } else {
     mmPaint(u.mm_no);

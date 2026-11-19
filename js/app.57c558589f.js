@@ -3034,7 +3034,7 @@ SECTIONS["mobile-experiences"] = [
   },
   "links": [
    {
-    "href": "https://apkcombo.com/apolo-launcher-boost-theme/co.madseven.launcher",
+    "href": "https://apolo-launcher.softonic.com/android",
     "l": {
      "es": "Fuente de la métrica (referencia externa histórica)",
      "en": "Source of the figure (historical external reference)",
@@ -3298,14 +3298,6 @@ SECTIONS["mobile-experiences"] = [
      "es": "Ver en Google Play",
      "en": "View on Google Play",
      "fr": "Voir sur Google Play"
-    }
-   },
-   {
-    "href": "https://cdn.nwe.io/files/x/79/f5/cadb7736c7ee1d815c25997aea20.pdf",
-    "l": {
-     "es": "Fuente de la métrica (comunicado oficial)",
-     "en": "Source of the figure (official press release)",
-     "fr": "Source du chiffre (communiqué officiel)"
     }
    },
    {
@@ -4559,39 +4551,6 @@ Object.assign(T.es, {
   "No tengo especial interés en utilizar una herramienta solo porque esté de moda. Prefiero elegir la que tenga más sentido para lo que estamos haciendo."
  ],
  "mm_h": "¿Nos conocemos?",
- "mm_p": "A ver cuánto tardas en encontrar las parejas. Cada una esconde una pequeña historia sobre mí.",
- "mm_pairs": [
-  [
-   "De un lado al otro",
-   "He vivido en Latinoamérica y Europa. Me cuesta elegir un solo lugar al que llamaría casa."
-  ],
-  [
-   "Una historia musical",
-   "Canté en un coro en Aix-en-Provence que participó en una miniserie francesa."
-  ],
-  [
-   "El camino de vuelta",
-   "Intento no regresar por la misma calle por la que he ido."
-  ],
-  [
-   "Siempre hay sitio",
-   "Me encanta cocinar, especialmente si tengo con quién compartir la comida."
-  ],
-  [
-   "De la TV al móvil",
-   "Pasé de diseñar aplicaciones para televisión a trabajar en productos móviles y digitales."
-  ],
-  [
-   "Una cosa lleva a otra",
-   "Me gustan los documentales. A veces termino investigando un tema que no tenía nada que ver."
-  ]
- ],
- "mm_win_h": "¡Ya nos conocemos un poco más! 🎉",
- "mm_win_ps": [
-  "Seis parejas, unas cuantas historias y algún dato que probablemente no necesitabas saber sobre mí.",
-  "Nada mal para una primera partida."
- ],
- "mm_again": "Jugar otra vez",
  "cl_h": "¿Y ahora qué?",
  "cl_p": "Ya sabes un poco más de mí. Si has llegado hasta aquí, quizá tenemos algo de qué hablar. Puede ser una marca, una web, un producto digital o simplemente una idea que todavía no tienes muy clara.",
  "cl_cta": "Cuéntame qué tienes entre manos.",
@@ -4765,39 +4724,6 @@ Object.assign(T.en, {
   "I'm not interested in using a tool just because it's trendy. I'd rather pick what makes sense for the job."
  ],
  "mm_h": "Do we know each other yet?",
- "mm_p": "See how quickly you can find the matching pairs. Each one reveals a little story about me.",
- "mm_pairs": [
-  [
-   "A bit of everywhere",
-   "I've lived in Latin America and Europe. Picking just one place to call home is tricky."
-  ],
-  [
-   "A musical detour",
-   "I sang in a choir in Aix-en-Provence that took part in a French TV miniseries."
-  ],
-  [
-   "The way back",
-   "I try not to walk home along the same street I took on the way out."
-  ],
-  [
-   "Always room at the table",
-   "I love cooking, especially when there's someone to share the meal with."
-  ],
-  [
-   "From TV to mobile",
-   "I went from designing TV apps to working on mobile and digital products."
-  ],
-  [
-   "One thing leads to another",
-   "I love documentaries. Sometimes I end up researching something completely unrelated."
-  ]
- ],
- "mm_win_h": "Now you know me a little better! 🎉",
- "mm_win_ps": [
-  "Six pairs, a few stories and some things you probably didn't need to know about me.",
-  "Not bad for a first round."
- ],
- "mm_again": "Play again",
  "cl_h": "What now?",
  "cl_p": "Now you know a little more about me. If you've made it this far, maybe we have something to talk about: a brand, a website, a digital product or an idea that's still taking shape.",
  "cl_cta": "Tell me what you have in mind.",
@@ -4971,39 +4897,6 @@ Object.assign(T.fr, {
   "Je n'utilise pas un outil simplement parce qu'il est à la mode. Je préfère celui qui convient vraiment au projet."
  ],
  "mm_h": "On se connaît ?",
- "mm_p": "Voyons combien de temps tu mets à retrouver les paires. Chacune cache une petite histoire sur moi.",
- "mm_pairs": [
-  [
-   "D'un continent à l'autre",
-   "J'ai vécu en Amérique latine et en Europe. Difficile de choisir un seul endroit où je me sens chez moi."
-  ],
-  [
-   "Une histoire de musique",
-   "J'ai chanté dans une chorale à Aix-en-Provence qui a participé à une mini-série française."
-  ],
-  [
-   "Le chemin du retour",
-   "J'essaie de ne jamais rentrer par la même rue qu'à l'aller."
-  ],
-  [
-   "Toujours une place à table",
-   "J'adore cuisiner, surtout quand je peux partager le repas."
-  ],
-  [
-   "De la télé au mobile",
-   "Je suis passé des applications pour télévision aux produits mobiles et digitaux."
-  ],
-  [
-   "De fil en aiguille",
-   "J'aime les documentaires. Il m'arrive de finir par creuser un sujet qui n'a plus rien à voir."
-  ]
- ],
- "mm_win_h": "On se connaît déjà un peu mieux ! 🎉",
- "mm_win_ps": [
-  "Six paires, quelques histoires et deux ou trois choses que tu n'avais probablement pas besoin de savoir sur moi.",
-  "Pas mal pour une première partie."
- ],
- "mm_again": "Rejouer",
  "cl_h": "Et maintenant ?",
  "cl_p": "Tu en sais un peu plus sur moi. Si tu es arrivé jusqu'ici, on a peut-être quelque chose à se raconter : une marque, un site, un produit digital ou simplement une idée encore un peu floue.",
  "cl_cta": "Raconte-moi ce que tu as en tête.",
@@ -5261,19 +5154,63 @@ Object.assign(T.fr, { ob_h: "Au cas où ça t'intéresse.", ob_p: "Une revue, un
   ["The Royal Tenenbaums", "Une famille dysfonctionnelle, des personnages inoubliables et une esthétique où chaque détail compte. De l'humour, de la mélancolie et beaucoup de Wes Anderson.", "Film", "Wes Anderson · 2001", "https://www.criterion.com/films/230-the-royal-tenenbaums"],
   ["Helvetica", "Quatre-vingts minutes à parler d'une typographie. Et, curieusement, c'est bien plus intéressant qu'il n'y paraît.", "Documentaire", "Gary Hustwit · 2007", "https://www.hustwit.com/helvetica/"]] });
 
-/* ---------- BIO · «¿Nos conocemos?»: 6 parejas con imagen [nombre, curiosidad] ---------- */
-Object.assign(T.es, { mm_hint: "Encuentra una pareja y te cuento algo.", mm_pairs: [
-  ["Carlos Cruz-Diez", "Conocí a Carlos Cruz-Diez en una conferencia. De esos encuentros que no se olvidan."], ["Tomate", "El tomate y yo nunca hemos tenido buena relación."], ["Carlos Vives", "Crecí escuchando a Carlos Vives. Fue mi primer concierto y ya van unos diez."],
-  ["Cámara de cine", "Antes del diseño, mi plan era estudiar cine y audiovisuales."], ["Forrest Gump", "He visto Forrest Gump ocho veces: 18 horas y 56 minutos de mi vida. Y no descarto la novena."], ["Gabriel García Márquez", "Nací el mismo año en que García Márquez ganó el Nobel de Literatura."]],
-  mm_win_h: "Bueno, ahora ya sabes un poco más de mí.", mm_win_ps: ["Aunque quedan unas cuantas historias por contar."] });
-Object.assign(T.en, { mm_hint: "Find a pair and I'll tell you something.", mm_pairs: [
-  ["Carlos Cruz-Diez", "I met Carlos Cruz-Diez at a talk. One of those encounters you don't forget."], ["Tomato", "Tomatoes and I have never really gotten along."], ["Carlos Vives", "I grew up listening to Carlos Vives. He was my first concert, and I've been to about ten since."],
-  ["Film camera", "Before design, my plan was to study film and audiovisual media."], ["Forrest Gump", "I've seen Forrest Gump eight times: 18 hours and 56 minutes of my life. And I'm not ruling out a ninth."], ["Gabriel García Márquez", "I was born the same year García Márquez won the Nobel Prize in Literature."]],
-  mm_win_h: "Well, now you know a little more about me.", mm_win_ps: ["Though there are still a few stories left to tell."] });
-Object.assign(T.fr, { mm_hint: "Trouve une paire et je te raconte quelque chose.", mm_pairs: [
-  ["Carlos Cruz-Diez", "J'ai rencontré Carlos Cruz-Diez lors d'une conférence. Le genre de rencontre qu'on n'oublie pas."], ["Tomate", "Les tomates et moi, on ne s'est jamais bien entendus."], ["Carlos Vives", "J'ai grandi en écoutant Carlos Vives. C'était mon premier concert, et j'en suis à une dizaine depuis."],
-  ["Caméra de cinéma", "Avant le design, je comptais étudier le cinéma et l'audiovisuel."], ["Forrest Gump", "J'ai vu Forrest Gump huit fois : 18 heures et 56 minutes de ma vie. Et je n'exclus pas une neuvième."], ["Gabriel García Márquez", "Je suis né l'année où García Márquez a reçu le prix Nobel de littérature."]],
-  mm_win_h: "Voilà, tu en sais un peu plus sur moi.", mm_win_ps: ["Même s'il reste encore quelques histoires à raconter."] });
+/* ---------- BIO · «¿Nos conocemos?»: 12 curiosidades [título, texto], 6 por partida ----------
+   El orden es el de las imágenes: la entrada N usa img/bio/memo-N.webp (img-memo-N). Esta capa define todos los textos del juego salvo el título (mm_h, en c1m.js) y bx_ui.mm_*.
+   Mensaje final: mm_win_h («{n}» = historias distintas descubiertas en la visita) o mm_win_all si ya son las 12; el botón es mm_again o mm_again_all. */
+Object.assign(T.es, {
+  mm_p: "Tengo 12 historias escondidas. En cada partida te cuento 6. Las otras tendrán que esperar a la próxima.",
+  mm_hint: "Encuentra una pareja y te cuento algo.",
+  mm_pairs: [
+    ["Gabriel García Márquez", "El año en que García Márquez ganó el Nobel de Literatura, yo nací. Cada uno tuvo su momento."],
+    ["El tomate", "El tomate y yo llevamos décadas sin entendernos. A estas alturas, no espero una reconciliación."],
+    ["Cámara de cine", "Antes de dedicarme al diseño, quería estudiar cine y audiovisuales. Al final cambié de planes, pero no de obsesión por las imágenes."],
+    ["Carlos Vives", "Fue mi primer concierto. Desde entonces lo he visto unas nueve veces. Y si anuncia otro, seguro ahí estaré."],
+    ["Carlos Cruz-Diez", "Conocí a Carlos Cruz-Diez en una conferencia. No todos los días te cruzas con alguien que cambió la forma de ver el color."],
+    ["Forrest Gump", "He visto Forrest Gump ocho veces. Son 18 horas y 56 minutos de mi vida. La novena es cuestión de tiempo."],
+    ["Malta", "Tomé un barco de Malta a Gozo con un amigo. El mar estaba bastante agitado. Digamos que terminamos con recuerdos de otros pasajeros que preferiríamos no tener."],
+    ["Grogu", "Grogu es mi personaje favorito. Tanto que terminó inspirando a Yodis Brownie Jr., la asistente de esta web. Ahora todo tiene un poco más de sentido."],
+    ["El cuchillo", "Me fijo en cómo la gente agarra el cuchillo. Si la sierra está al revés, ya no puedo concentrarme en la conversación."],
+    ["Gaspar Noé", "Fui a un festival de cine a ver Enter the Void. Al terminar apareció Gaspar Noé, uno de mis directores favoritos. No esperaba conocerlo esa noche, pero pasó."],
+    ["La piña", "Me gusta la pizza con piña. Y también en el perro caliente. No voy a disculparme por ninguna de las dos."],
+    ["Conversaciones ajenas", "Me encanta escuchar conversaciones ajenas en los cafés. No es que sea metido, es que algunas historias son demasiado buenas para ignorarlas."]],
+  mm_win_h: "Ya conoces {n} de mis 12 historias. ¿Quieres descubrir las otras?", mm_again: "Descubrir otras historias",
+  mm_win_all: "¡Ya conoces mis 12 historias! Aunque todavía me quedan unas cuantas por contar.", mm_again_all: "Volver a jugar" });
+Object.assign(T.en, {
+  mm_p: "I have 12 hidden stories. Each round, I tell you 6. The other 6 will have to wait for next time.",
+  mm_hint: "Find a pair and I'll tell you something.",
+  mm_pairs: [
+    ["Gabriel García Márquez", "The year García Márquez won the Nobel Prize in Literature, I was born. We each had our moment."],
+    ["The tomato", "The tomato and I have been at odds for decades. At this point, I'm not holding out for a reconciliation."],
+    ["Film camera", "Before design, I wanted to study film and audiovisual media. Plans changed. The obsession with images didn't."],
+    ["Carlos Vives", "It was my first concert. Since then I've seen him about nine times. And if he announces another one, you can bet I'll be there."],
+    ["Carlos Cruz-Diez", "I met Carlos Cruz-Diez at a talk. It's not every day you meet someone who changed the way we see colour."],
+    ["Forrest Gump", "I've watched Forrest Gump eight times. That's 18 hours and 56 minutes of my life. The ninth is just a matter of time."],
+    ["Malta", "I took a boat from Malta to Gozo with a friend. The sea was pretty rough. Let's just say we came home with souvenirs from other passengers that we'd rather not have."],
+    ["Grogu", "Grogu is my favourite character. So much so that he ended up inspiring Yodis Brownie Jr., this site's assistant. Now it all makes a bit more sense."],
+    ["The knife", "I notice how people hold their knife. If the serrated edge is facing the wrong way, I can't focus on the conversation anymore."],
+    ["Gaspar Noé", "I went to a film festival to see Enter the Void. When it ended, Gaspar Noé showed up, one of my favourite directors. I wasn't expecting to meet him that night, but it happened."],
+    ["The pineapple", "I like pineapple on pizza. And on hot dogs too. I won't apologise for either."],
+    ["Other people's conversations", "I love eavesdropping on conversations in cafés. I'm not nosy, it's just that some stories are too good to ignore."]],
+  mm_win_h: "You now know {n} of my 12 stories. Want to discover the others?", mm_again: "Discover other stories",
+  mm_win_all: "You know all 12 of my stories! Though I still have a few more to tell.", mm_again_all: "Play again" });
+Object.assign(T.fr, {
+  mm_p: "J'ai 12 histoires cachées. À chaque partie, je t'en raconte 6. Les 6 autres devront attendre la prochaine.",
+  mm_hint: "Trouve une paire et je te raconte quelque chose.",
+  mm_pairs: [
+    ["Gabriel García Márquez", "L'année où García Márquez a reçu le prix Nobel de littérature, je suis né. Chacun son heure de gloire."],
+    ["La tomate", "La tomate et moi, on est fâchés depuis des décennies. À ce stade, je n'attends plus de réconciliation."],
+    ["Caméra de cinéma", "Avant le design, je voulais étudier le cinéma et l'audiovisuel. Les plans ont changé, pas l'obsession des images."],
+    ["Carlos Vives", "C'était mon premier concert. Depuis, je l'ai vu environ neuf fois. Et s'il en annonce un autre, j'y serai, c'est sûr."],
+    ["Carlos Cruz-Diez", "J'ai rencontré Carlos Cruz-Diez lors d'une conférence. On ne croise pas tous les jours quelqu'un qui a changé notre façon de voir la couleur."],
+    ["Forrest Gump", "J'ai vu Forrest Gump huit fois. Ça fait 18 heures et 56 minutes de ma vie. La neuvième n'est qu'une question de temps."],
+    ["Malte", "J'ai pris un bateau de Malte à Gozo avec un ami. La mer était plutôt agitée. Disons qu'on est repartis avec des souvenirs de nos voisins de traversée dont on se serait bien passés."],
+    ["Grogu", "Grogu est mon personnage préféré. Au point d'avoir fini par inspirer Yodis Brownie Jr., l'assistante de ce site. Du coup, tout s'explique un peu mieux."],
+    ["Le couteau", "Je regarde comment les gens tiennent leur couteau. Si la partie dentée est à l'envers, impossible de me concentrer sur la conversation."],
+    ["Gaspar Noé", "Je suis allé à un festival de cinéma voir Enter the Void. À la fin, Gaspar Noé est apparu, l'un de mes réalisateurs préférés. Je ne m'attendais pas à le rencontrer ce soir-là, mais c'est arrivé."],
+    ["L'ananas", "J'aime la pizza à l'ananas. Et aussi dans le hot-dog. Je ne m'excuserai pour aucun des deux."],
+    ["Les conversations des autres", "J'adore écouter les conversations des autres dans les cafés. Je ne suis pas indiscret, c'est juste que certaines histoires sont trop bonnes pour être ignorées."]],
+  mm_win_h: "Tu connais déjà {n} de mes 12 histoires. Tu veux découvrir les autres ?", mm_again: "Découvrir d'autres histoires",
+  mm_win_all: "Tu connais mes 12 histoires ! Mais il m'en reste encore quelques-unes à raconter.", mm_again_all: "Rejouer" });
 
 /* ---------- BIO · bento tarjeta 4: «Siempre hay espacio para…» (solo tipografía) ---------- */
 Object.assign(T.es, { bx_ck: Object.assign({}, T.es.bx_ck, { h: "Siempre hay espacio para…", foods: ["Ajiaco", "Tacos", "Chilaquiles", "Empanadas", "Hamburguesas", "Camembert", "Bandeja paisa", "Patacones", "Arroz chino", "Pad thai", "Ramen"] }) });
@@ -5398,7 +5335,7 @@ const YODIS_DATA = {"schemaVersion": 3, "initialNode": "welcome", "defaultLocale
 /* ============================================================
    LOTE 2 · Bio v2 components
    bento (cities, Spotify, cooking, street: auto-galleries; anecdotes: auto-rotating) · accessible lightbox ·
-   "pequeñas obsesiones" carousel · memory game (6 pairs)
+   "pequeñas obsesiones" carousel · memory game (6 pairs out of 12 stories)
    Depends on helpers from c2.js ($, $$, esc, L, PATHS, reduced, route_).
    ------------------------------------------------------------
    PENDING ASSETS: fill the `img` fields below with real paths (relative to the
@@ -5571,23 +5508,36 @@ function obAutoInit(){
     if (Date.now() >= ob5.next && $("#obSlide")) obGo(1, true);
   }, 400);
 }
-/* ---------- memory game: 6 pairs, 12 cards ---------- */
-const MMC = ["--coral", "--lav", "--mustard", "--mint", "--coral", "--lav"];
+/* ---------- memory game: 12 stories, 6 pairs (12 cards) per game ---------- */
+const MMC = ["--coral", "--lav", "--mustard", "--mint", "--coral", "--lav"];   /* color por posición del par dentro de la partida */
+const MM_ALL = 12, MM_PAIRS = 6;
 let MM = null, mmTimer = 0;
+const mmSeen = new Set();    /* ciclo de rotación: historias de partidas COMPLETADAS desde el último reinicio del ciclo; solo en memoria, no se guarda nada ni se envía */
+const mmKnown = new Set();   /* historias distintas descubiertas en toda la visita (no se reinicia con el ciclo): decide el mensaje final */
 function mmShuffle(a){ for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }   /* Fisher-Yates */
-function mmNew(){ clearTimeout(mmTimer); MM = { deck: mmShuffle([0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]), open: [], done: [], found: [], tries: 0, lock: false }; }
+/* 6 de las 12 historias al azar, priorizando las que aún no se han descubierto; con las 12 descubiertas se empieza de cero */
+function mmSelect(){
+  let free = []; for (let i = 0; i < MM_ALL; i++) if (!mmSeen.has(i)) free.push(i);
+  if (!free.length) { mmSeen.clear(); for (let i = 0; i < MM_ALL; i++) free.push(i); }
+  let sel = mmShuffle(free).slice(0, MM_PAIRS);
+  if (sel.length < MM_PAIRS) sel = sel.concat(mmShuffle([...mmSeen]).slice(0, MM_PAIRS - sel.length));   /* defensa: no ocurre con partidas de 6 */
+  return sel;
+}
+function mmNew(){ clearTimeout(mmTimer); const sel = mmSelect(); MM = { sel, deck: mmShuffle([...sel, ...sel]), open: [], done: [], found: [], tries: 0, lock: false, known: 0 }; }
 function mmStop(){ clearTimeout(mmTimer); if (MM) { MM.open = []; MM.lock = false; } if ($("#mmBoard")) mmPaint(""); }
 function mmBuild(){
   const t = L(), u = t.bx_ui, el = $("#mm"); if (!el) return; if (!MM) mmNew();
   const P = t.mm_pairs;
-  el.innerHTML = `<div class="mm-board" id="mmBoard" role="group" aria-label="${esc(u.mm_board)}">${MM.deck.map((p, i) => `<button type="button" class="mm-c" data-i="${i}" style="--mc:var(${MMC[p]})"><span class="mm-in"><span class="mm-b" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-reverse.webp"))}" alt="" width="200" height="200" decoding="async"><img class="mm-bg" src="${esc(bxUrl("img/bio/memo-reverse-gris.webp"))}" alt="" width="200" height="200" decoding="async"></span><span class="mm-f mm-fi" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-" + (p + 1) + ".webp"))}" alt="" width="200" height="200" decoding="async"></span></span></button>`).join("")}</div>
-  <div class="mm-side"><dl class="mm-stats"><div><dt>${esc(u.mm_tries)}</dt><dd id="mmT">0</dd></div><div><dt>${esc(u.mm_pairs)}</dt><dd id="mmP">0 / 6</dd></div></dl>
+  el.innerHTML = `<div class="mm-board" id="mmBoard" role="group" aria-label="${esc(u.mm_board)}">${MM.deck.map((p, i) => `<button type="button" class="mm-c" data-i="${i}" style="--mc:var(${MMC[MM.sel.indexOf(p)]})"><span class="mm-in"><span class="mm-b" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-reverse.webp"))}" alt="" width="200" height="200" decoding="async"><img class="mm-bg" src="${esc(bxUrl("img/bio/memo-reverse-gris.webp"))}" alt="" width="200" height="200" decoding="async"></span><span class="mm-f mm-fi" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-" + (p + 1) + ".webp"))}" alt="" width="200" height="200" decoding="async"></span></span></button>`).join("")}</div>
+  <div class="mm-side"><dl class="mm-stats"><div><dt>${esc(u.mm_tries)}</dt><dd id="mmT">0</dd></div><div><dt>${esc(u.mm_pairs)}</dt><dd id="mmP">0 / ${MM_PAIRS}</dd></div></dl>
   <div class="mm-cur" id="mmCur" aria-live="polite"></div>
   <p class="mm-status" id="mmS" role="status" aria-live="polite"></p>
   <p><button type="button" class="btn sm ghost" id="mmReset">${esc(u.mm_reset)}</button></p>
-  <div class="mm-win" id="mmWin" hidden tabindex="-1"><h3>${esc(t.mm_win_h)}</h3>${t.mm_win_ps.map(x => `<p>${esc(x)}</p>`).join("")}<div class="mm-found" id="mmFound"><h4>${esc(u.mm_found)}</h4><ul id="mmFoundL"></ul></div><p><button type="button" class="btn sm" id="mmAgain">${esc(t.mm_again)}</button></p></div></div>`;
+  <div class="mm-win" id="mmWin" hidden tabindex="-1"><h3 id="mmWinH"></h3><div class="mm-found" id="mmFound"><h4>${esc(u.mm_found)}</h4><ul id="mmFoundL"></ul></div><p><button type="button" class="btn sm" id="mmAgain"></button></p></div></div>`;
   mmPaint("");
 }
+/* mensaje y botón finales según las historias distintas descubiertas en la visita: 12 → «ya conoces las 12»; si no, «{n} de 12» */
+function mmWinMsg(t){ const all = MM.known >= MM_ALL; return { h: all ? t.mm_win_all : t.mm_win_h.replace("{n}", MM.known), b: all ? t.mm_again_all : t.mm_again }; }
 function mmPaint(msg){
   const t = L(), u = t.bx_ui, P = t.mm_pairs; if (!MM || !$("#mmBoard")) return;
   $$("#mmBoard .mm-c").forEach(b => {
@@ -5596,14 +5546,15 @@ function mmPaint(msg){
     b.setAttribute("aria-label", open ? P[MM.deck[i]][0] : u.mm_card + " " + (i + 1) + ", " + u.mm_down);
     b.setAttribute("aria-disabled", done ? "true" : "false");
   });
-  $("#mmT").textContent = MM.tries; $("#mmP").textContent = MM.found.length + " / 6";
+  $("#mmT").textContent = MM.tries; $("#mmP").textContent = MM.found.length + " / " + MM_PAIRS;
   $("#mmFoundL").innerHTML = MM.found.map(p => `<li><b>${esc(P[p][0])}</b> ${esc(P[p][1])}</li>`).join("");
-  const won = MM.done.length >= 12;
+  const won = MM.done.length >= MM_PAIRS * 2;
   /* curiosidad de la última pareja encontrada (solo parejas ya descubiertas); se vuelve a crear el nodo para repetir el fundido */
   const cur = $("#mmCur"), last = MM.found.length ? MM.found[MM.found.length - 1] : -1;
   cur.hidden = won;
   if (!won && cur.dataset.p !== String(last)) { cur.dataset.p = String(last); cur.innerHTML = last < 0 ? `<p class="mm-cur-h">${esc(t.mm_hint)}</p>` : `<div class="mm-cur-i"><p class="mm-cur-k">${esc(P[last][0])}</p><p class="mm-cur-t">${esc(P[last][1])}</p></div>`; }
   $("#mmWin").hidden = !won;
+  if (won) { const w = mmWinMsg(t); $("#mmWinH").textContent = w.h; $("#mmAgain").textContent = w.b; }
   /* al ganar solo se ve el panel final: el aviso de estado queda solo para lectores de pantalla y se oculta el botón Reiniciar (el panel trae «Jugar otra vez») */
   $("#mmS").classList.toggle("sr-only", won); const rs = $("#mmReset"); if (rs && rs.parentElement) rs.parentElement.hidden = won;
   if (msg != null) $("#mmS").textContent = msg;
@@ -5617,7 +5568,7 @@ function mmPick(i){
   const [a, b] = MM.open;
   if (MM.deck[a] === MM.deck[b]) {
     const p = MM.deck[a]; MM.done.push(a, b); MM.found.push(p); MM.open = []; MM.lock = false;
-    if (MM.done.length === 12) { mmPaint(t.mm_win_h + " " + t.mm_win_ps.join(" ")); const w = $("#mmWin"); w.focus({ preventScroll: false }); }
+    if (MM.done.length === MM_PAIRS * 2) { MM.sel.forEach(x => { mmSeen.add(x); mmKnown.add(x); }); MM.known = mmKnown.size; mmPaint(mmWinMsg(t).h); const w = $("#mmWin"); w.focus({ preventScroll: false }); }   /* solo una partida completa marca sus historias como descubiertas */
     else mmPaint(u.mm_ok);
   } else {
     mmPaint(u.mm_no);

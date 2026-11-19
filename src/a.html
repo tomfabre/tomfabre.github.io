@@ -1456,6 +1456,12 @@ dialog.lb[open]{display:flex}
 .mm-fi img{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
 .mm-c.is-done .mm-fi{box-shadow:none}.mm-c.is-done .mm-fi::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 2px rgba(0,0,0,.35);pointer-events:none}
 .mm-cur{min-height:9.5rem;margin:0 0 var(--s4);max-width:40ch}
+/* reserva el alto de la curiosidad más larga (ES/EN/FR, medido en cada ancho) para que revelarla no mueva el layout */
+@media (max-width:22.25rem){.mm-cur{min-height:10.75rem}}
+@media (max-width:19.25rem){.mm-cur{min-height:12.5rem}}
+@media (min-width:56rem){.mm-cur{min-height:14rem}}
+@media (min-width:62rem){.mm-cur{min-height:11rem}}
+@media (min-width:68rem){.mm-cur{min-height:9.5rem}}
 .mm-cur[hidden]{display:none}
 .mm-cur-h{color:var(--muted);font-weight:300}
 .mm-cur-i{animation:mmCurIn .5s var(--ease)}
