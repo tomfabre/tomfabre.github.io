@@ -91,6 +91,8 @@ matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => them
 function wireTheme(){
   $("#themeT").addEventListener("click", () => {
     const dark = root.hasAttribute("data-theme") ? root.getAttribute("data-theme") === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    /* durante el cambio todo lo que cambia de color lo hace a la vez (clase .theme-sw, ver CSS); si no, bloques como la cabecera, la tarjeta de contacto o el círculo del pie cambian de golpe mientras el fondo se funde */
+    root.classList.add("theme-sw"); clearTimeout(wireTheme.t); wireTheme.t = setTimeout(() => root.classList.remove("theme-sw"), 520);
     themePref = dark ? "light" : "dark"; store.set("af-theme", themePref); applyTheme();
   });
 }

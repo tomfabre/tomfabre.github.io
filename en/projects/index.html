@@ -1691,6 +1691,14 @@ dialog .sub{color:var(--muted)}
    2) las animaciones continuas (halos, estrella, aurora) se pausan mientras se hace scroll y cuando la tarjeta no está a la vista. */
 .cta-band::before,.sv-cta::before,.sv-team::before{inset:auto;width:26rem;height:26rem;left:calc(72% - 13rem);top:calc(35% - 13rem);transform:translate3d(var(--dx,0px),var(--dy,0px),0);will-change:transform;-webkit-mask-image:radial-gradient(closest-side,#000,transparent 70%);mask-image:radial-gradient(closest-side,#000,transparent 70%)}
 html.is-scrolling .blobs i,html.is-scrolling .cta-star,html.is-scrolling .orb .rot-w,html.is-scrolling .aur i,html.dlg-open .blobs i,html.dlg-open .cta-star,html.dlg-open .orb .rot-w,html.dlg-open .aur i,html.dlg-open .av-w,.cta-off .blobs i,.cta-off .cta-star{animation-play-state:paused!important}
+
+/* cambio claro/oscuro: todo se funde a la vez (antes unos bloques cambiaban de golpe y otros se fundían, y se veían bandas); el interruptor conserva su propia animación */
+html.theme-sw :where(*,*::before,*::after):not(.theme-toggle,.theme-toggle *){transition:background-color var(--normal) var(--ease),color var(--normal) var(--ease),border-color var(--normal) var(--ease),fill var(--normal) var(--ease),stroke var(--normal) var(--ease)!important}
+@media (prefers-reduced-motion:reduce){html.theme-sw :where(*,*::before,*::after){transition:none!important}}
+/* menos aire entre «¿Tienes algo en mente?» y el pie (antes ~350 px en desktop: padding de la sección + padding de main + margen del pie) */
+main:has(#contact-cta){padding-bottom:0}
+#contact-cta{padding-bottom:clamp(3rem,5vw,4.5rem)}
+main:has(#contact-cta)+.bigfoot{margin-top:clamp(2rem,3.5vw,3.5rem);padding-top:clamp(3rem,6vw,5.5rem)}
 </style>
 <script>
 try{var t=localStorage.getItem("af-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
@@ -2084,5 +2092,5 @@ Tell me what you have in mind and we'll work out where to start.</p>
 
 
 <script>document.querySelectorAll("template[data-stash]").forEach(function(t){t.replaceWith(t.content)})</script><script>window.__CV="/cv-alvaro-fabre-en.pdf"</script>
-<script src="/js/app.513a88ffdf.js"></script>
+<script src="/js/app.e0f554f0ea.js"></script>
 <script defer src="/js/gsap.min.js?v=b2cff385"></script><script defer src="/js/lenis.min.js?v=acddbf76"></script><script defer src="/js/motion.js?v=7bb4ee9d"></script>
