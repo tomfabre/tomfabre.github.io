@@ -5168,9 +5168,9 @@ Object.assign(T.es, {
     ["Carlos Cruz-Diez", "Conocí a Carlos Cruz-Diez en una conferencia. No todos los días te cruzas con alguien que cambió la forma de ver el color."],
     ["Forrest Gump", "He visto Forrest Gump ocho veces. Son 18 horas y 56 minutos de mi vida. La novena es cuestión de tiempo."],
     ["Malta", "Tomé un barco de Malta a Gozo con un amigo. El mar estaba bastante agitado. Digamos que terminamos con recuerdos de otros pasajeros que preferiríamos no tener."],
-    ["Grogu", "Grogu es mi personaje favorito. Tanto que terminó inspirando a Yodis Brownie Jr., la asistente de esta web. Ahora todo tiene un poco más de sentido."],
-    ["El cuchillo", "Me fijo en cómo la gente agarra el cuchillo. Si la sierra está al revés, ya no puedo concentrarme en la conversación."],
-    ["Gaspar Noé", "Fui a un festival de cine a ver Enter the Void. Al terminar apareció Gaspar Noé, uno de mis directores favoritos. No esperaba conocerlo esa noche, pero pasó."],
+    ["Grogu", "Grogu es mi personaje favorito. En mi cabeza tiene un alter ego llamado Yodis Brownie Jr. Y, por alguna razón, ahora también trabaja como asistente en esta web."],
+    ["El cuchillo", "Tengo una manía: fijarme en cómo la gente usa el cuchillo. Si ponen el filo al revés, me cuesta mucho ignorarlo."],
+    ["Anthony Burgess", "Una de mis citas favoritas de La naranja mecánica: «Es curioso cómo los colores del mundo real parecen más reales cuando los vemos en una pantalla»."],
     ["La piña", "Me gusta la pizza con piña. Y también en el perro caliente. No voy a disculparme por ninguna de las dos."],
     ["Conversaciones ajenas", "Me encanta escuchar conversaciones ajenas en los cafés. No es que sea metido, es que algunas historias son demasiado buenas para ignorarlas."]],
   mm_win_h: "Ya conoces {n} de mis 12 historias. ¿Quieres descubrir las otras?", mm_again: "Descubrir otras historias",
@@ -5186,9 +5186,9 @@ Object.assign(T.en, {
     ["Carlos Cruz-Diez", "I met Carlos Cruz-Diez at a talk. It's not every day you meet someone who changed the way we see colour."],
     ["Forrest Gump", "I've watched Forrest Gump eight times. That's 18 hours and 56 minutes of my life. The ninth is just a matter of time."],
     ["Malta", "I took a boat from Malta to Gozo with a friend. The sea was pretty rough. Let's just say we came home with souvenirs from other passengers that we'd rather not have."],
-    ["Grogu", "Grogu is my favourite character. So much so that he ended up inspiring Yodis Brownie Jr., this site's assistant. Now it all makes a bit more sense."],
-    ["The knife", "I notice how people hold their knife. If the serrated edge is facing the wrong way, I can't focus on the conversation anymore."],
-    ["Gaspar Noé", "I went to a film festival to see Enter the Void. When it ended, Gaspar Noé showed up, one of my favourite directors. I wasn't expecting to meet him that night, but it happened."],
+    ["Grogu", "Grogu is my favourite character. In my head he has an alter ego called Yodis Brownie Jr. And, for some reason, Yodis now also works as an assistant on this site."],
+    ["The knife", "I have a quirk: I notice how people use their knife. If they put the blade the wrong way round, I find it very hard to ignore."],
+    ["Anthony Burgess", "One of my favourite quotes from A Clockwork Orange: “It's funny how the colors of the real world only seem really real when you watch them on a screen.”"],
     ["The pineapple", "I like pineapple on pizza. And on hot dogs too. I won't apologise for either."],
     ["Other people's conversations", "I love eavesdropping on conversations in cafés. I'm not nosy, it's just that some stories are too good to ignore."]],
   mm_win_h: "You now know {n} of my 12 stories. Want to discover the others?", mm_again: "Discover other stories",
@@ -5204,9 +5204,9 @@ Object.assign(T.fr, {
     ["Carlos Cruz-Diez", "J'ai rencontré Carlos Cruz-Diez lors d'une conférence. On ne croise pas tous les jours quelqu'un qui a changé notre façon de voir la couleur."],
     ["Forrest Gump", "J'ai vu Forrest Gump huit fois. Ça fait 18 heures et 56 minutes de ma vie. La neuvième n'est qu'une question de temps."],
     ["Malte", "J'ai pris un bateau de Malte à Gozo avec un ami. La mer était plutôt agitée. Disons qu'on est repartis avec des souvenirs de nos voisins de traversée dont on se serait bien passés."],
-    ["Grogu", "Grogu est mon personnage préféré. Au point d'avoir fini par inspirer Yodis Brownie Jr., l'assistante de ce site. Du coup, tout s'explique un peu mieux."],
-    ["Le couteau", "Je regarde comment les gens tiennent leur couteau. Si la partie dentée est à l'envers, impossible de me concentrer sur la conversation."],
-    ["Gaspar Noé", "Je suis allé à un festival de cinéma voir Enter the Void. À la fin, Gaspar Noé est apparu, l'un de mes réalisateurs préférés. Je ne m'attendais pas à le rencontrer ce soir-là, mais c'est arrivé."],
+    ["Grogu", "Grogu est mon personnage préféré. Dans ma tête, il a un alter ego qui s'appelle Yodis Brownie Jr. Et, allez savoir pourquoi, Yodis fait maintenant aussi office d'assistante sur ce site."],
+    ["Le couteau", "J'ai une manie : regarder comment les gens utilisent leur couteau. S'ils mettent le tranchant à l'envers, j'ai beaucoup de mal à ne pas le remarquer."],
+    ["Anthony Burgess", "Une de mes citations préférées d'Orange mécanique : « C'est drôle comme les couleurs du monde réel ne semblent vraiment réelles que lorsqu'on les regarde sur un écran. »"],
     ["L'ananas", "J'aime la pizza à l'ananas. Et aussi dans le hot-dog. Je ne m'excuserai pour aucun des deux."],
     ["Les conversations des autres", "J'adore écouter les conversations des autres dans les cafés. Je ne suis pas indiscret, c'est juste que certaines histoires sont trop bonnes pour être ignorées."]],
   mm_win_h: "Tu connais déjà {n} de mes 12 histoires. Tu veux découvrir les autres ?", mm_again: "Découvrir d'autres histoires",
@@ -5511,6 +5511,7 @@ function obAutoInit(){
 /* ---------- memory game: 12 stories, 6 pairs (12 cards) per game ---------- */
 const MMC = ["--coral", "--lav", "--mustard", "--mint", "--coral", "--lav"];   /* color por posición del par dentro de la partida */
 const MM_ALL = 12, MM_PAIRS = 6;
+const MM_IMG_V = "?v=2";   /* versión de las imágenes memo-N.webp: súbela si se cambia su contenido sin cambiar el nombre (evita que el navegador reutilice la caché antigua) */
 let MM = null, mmTimer = 0;
 const mmSeen = new Set();    /* ciclo de rotación: historias de partidas COMPLETADAS desde el último reinicio del ciclo; solo en memoria, no se guarda nada ni se envía */
 const mmKnown = new Set();   /* historias distintas descubiertas en toda la visita (no se reinicia con el ciclo): decide el mensaje final */
@@ -5528,7 +5529,7 @@ function mmStop(){ clearTimeout(mmTimer); if (MM) { MM.open = []; MM.lock = fals
 function mmBuild(){
   const t = L(), u = t.bx_ui, el = $("#mm"); if (!el) return; if (!MM) mmNew();
   const P = t.mm_pairs;
-  el.innerHTML = `<div class="mm-board" id="mmBoard" role="group" aria-label="${esc(u.mm_board)}">${MM.deck.map((p, i) => `<button type="button" class="mm-c" data-i="${i}" style="--mc:var(${MMC[MM.sel.indexOf(p)]})"><span class="mm-in"><span class="mm-b" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-reverse.webp"))}" alt="" width="200" height="200" decoding="async"><img class="mm-bg" src="${esc(bxUrl("img/bio/memo-reverse-gris.webp"))}" alt="" width="200" height="200" decoding="async"></span><span class="mm-f mm-fi" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-" + (p + 1) + ".webp"))}" alt="" width="200" height="200" decoding="async"></span></span></button>`).join("")}</div>
+  el.innerHTML = `<div class="mm-board" id="mmBoard" role="group" aria-label="${esc(u.mm_board)}">${MM.deck.map((p, i) => `<button type="button" class="mm-c" data-i="${i}" style="--mc:var(${MMC[MM.sel.indexOf(p)]})"><span class="mm-in"><span class="mm-b" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-reverse.webp"))}" alt="" width="200" height="200" decoding="async"><img class="mm-bg" src="${esc(bxUrl("img/bio/memo-reverse-gris.webp"))}" alt="" width="200" height="200" decoding="async"></span><span class="mm-f mm-fi" aria-hidden="true"><img src="${esc(bxUrl("img/bio/memo-" + (p + 1) + ".webp") + MM_IMG_V)}" alt="" width="200" height="200" decoding="async"></span></span></button>`).join("")}</div>
   <div class="mm-side"><dl class="mm-stats"><div><dt>${esc(u.mm_tries)}</dt><dd id="mmT">0</dd></div><div><dt>${esc(u.mm_pairs)}</dt><dd id="mmP">0 / ${MM_PAIRS}</dd></div></dl>
   <div class="mm-cur" id="mmCur" aria-live="polite"></div>
   <p class="mm-status" id="mmS" role="status" aria-live="polite"></p>
