@@ -47,7 +47,7 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;justify-conten
 .mega>span:last-child{animation-delay:120ms}
 .eye{padding:0!important;position:relative;width:.74em;height:.74em;flex:none;animation:rise 700ms var(--ease) 60ms both}
 .ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(var(--coral),var(--lav),var(--mustard),var(--mint),var(--coral));-webkit-mask:radial-gradient(circle,transparent 57%,#000 58%);mask:radial-gradient(circle,transparent 57%,#000 58%);animation:spin 14s linear infinite}
-.pupil{position:absolute;left:50%;top:50%;width:.22em;height:.22em;margin:-.11em 0 0 -.11em;border-radius:50%;background:var(--fg);transform:translate(var(--px,0),var(--py,0));transition:transform 140ms var(--ease)}
+.pupil{position:absolute;left:50%;top:50%;width:.22em;height:.22em;margin:-.11em 0 0 -.11em;border-radius:50%;background:var(--fg);transform:rotate(var(--a,0deg)) translateX(var(--d,0em)) rotate(calc(var(--a,0deg) * -1));transition:transform 260ms var(--ease)}
 .pupil::after{content:"";position:absolute;left:18%;top:16%;width:30%;height:30%;border-radius:50%;background:var(--bg);opacity:.9}
 .eye.idle .pupil{animation:look 9s ease-in-out infinite;transition:none}
 .eye .lid{position:absolute;inset:0;border-radius:50%;background:var(--bg);transform:scaleY(0);transform-origin:50% 0;pointer-events:none;-webkit-mask:radial-gradient(circle,#000 56%,transparent 57%);mask:radial-gradient(circle,#000 56%,transparent 57%);animation:blink 6s infinite}
@@ -141,12 +141,15 @@ footer{padding:1.25rem clamp(1.25rem,4vw,3rem) calc(1.5rem + env(safe-area-inset
   /* el "0" es un ojo que sigue al puntero */
   var eye=$("eye"),pu=$("pupil");
   if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;
-  var raf=0,lx=0,ly=0;
+  var raf=0,lx=0,ly=0,ang=0;
   function move(){
     raf=0;
     var r=eye.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
-    var dx=lx-cx,dy=ly-cy,d=Math.sqrt(dx*dx+dy*dy)||1,m=Math.min(d,r.width*.9)/(r.width*.9),k=r.width*.17*m;
-    pu.style.setProperty("--px",(dx/d*k)+"px");pu.style.setProperty("--py",(dy/d*k)+"px");
+    var dx=lx-cx,dy=ly-cy,dist=Math.sqrt(dx*dx+dy*dy);
+    var a=Math.atan2(dy,dx)*180/Math.PI;
+    ang+=((a-ang+540)%360)-180; /* giro por el camino corto, sin vueltas bruscas */
+    var m=Math.min(1,dist/(r.width*.45)); /* cerca del centro se queda; lejos, orbita pegada al aro */
+    pu.style.setProperty("--a",ang+"deg");pu.style.setProperty("--d",(.2*m)+"em");
   }
   function onp(e){
     if(eye.classList.contains("idle"))eye.classList.remove("idle");
