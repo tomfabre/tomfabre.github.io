@@ -47,8 +47,8 @@ main{flex:1;display:flex;flex-direction:column;align-items:center;justify-conten
 .mega>span:last-child{animation-delay:120ms}
 .eye{padding:0!important;position:relative;width:.74em;height:.74em;flex:none;animation:rise 700ms var(--ease) 60ms both}
 .ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(var(--coral),var(--lav),var(--mustard),var(--mint),var(--coral));-webkit-mask:radial-gradient(circle,transparent 57%,#000 58%);mask:radial-gradient(circle,transparent 57%,#000 58%);animation:spin 14s linear infinite}
-.pupil{position:absolute;left:50%;top:50%;width:.22em;height:.22em;margin:-.11em 0 0 -.11em;border-radius:50%;background:var(--fg);transform:rotate(var(--a,0deg)) translateX(var(--d,0em)) rotate(calc(var(--a,0deg) * -1));transition:transform 260ms var(--ease)}
-.pupil::after{content:"";position:absolute;left:18%;top:16%;width:30%;height:30%;border-radius:50%;background:var(--bg);opacity:.9}
+.pupil{position:absolute;left:50%;top:50%;width:.22em;height:.22em;margin:-.11em 0 0 -.11em;border-radius:50%;background:var(--fg);transform:rotate(var(--a,0deg)) translateX(var(--d,0em));transition:transform 260ms var(--ease)}
+.pupil::after{content:"";position:absolute;left:63%;top:35%;width:30%;height:30%;border-radius:50%;background:var(--bg);opacity:.9}
 .eye.idle .pupil{animation:look 9s ease-in-out infinite;transition:none}
 .eye .lid{position:absolute;inset:0;border-radius:50%;background:var(--bg);transform:scaleY(0);transform-origin:50% 0;pointer-events:none;-webkit-mask:radial-gradient(circle,#000 56%,transparent 57%);mask:radial-gradient(circle,#000 56%,transparent 57%);animation:blink 6s infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
