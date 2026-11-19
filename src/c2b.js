@@ -178,7 +178,8 @@ function obAutoInit(){
 const MMC = ["--coral", "--lav", "--mustard", "--mint", "--coral", "--lav"];   /* color por posición del par dentro de la partida */
 const MM_ALL = 12, MM_PAIRS = 6;
 let MM = null, mmTimer = 0;
-const mmSeen = new Set();   /* historias de partidas COMPLETADAS en esta visita; solo en memoria, no se guarda nada ni se envía */
+const mmSeen = new Set();    /* ciclo de rotación: historias de partidas COMPLETADAS desde el último reinicio del ciclo; solo en memoria, no se guarda nada ni se envía */
+const mmKnown = new Set();   /* historias distintas descubiertas en toda la visita (no se reinicia con el ciclo): decide el mensaje final */
 function mmShuffle(a){ for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }   /* Fisher-Yates */
 /* 6 de las 12 historias al azar, priorizando las que aún no se han descubierto; con las 12 descubiertas se empieza de cero */
 function mmSelect(){
@@ -188,7 +189,7 @@ function mmSelect(){
   if (sel.length < MM_PAIRS) sel = sel.concat(mmShuffle([...mmSeen]).slice(0, MM_PAIRS - sel.length));   /* defensa: no ocurre con partidas de 6 */
   return sel;
 }
-function mmNew(){ clearTimeout(mmTimer); const sel = mmSelect(); MM = { sel, deck: mmShuffle([...sel, ...sel]), open: [], done: [], found: [], tries: 0, lock: false }; }
+function mmNew(){ clearTimeout(mmTimer); const sel = mmSelect(); MM = { sel, deck: mmShuffle([...sel, ...sel]), open: [], done: [], found: [], tries: 0, lock: false, known: 0 }; }
 function mmStop(){ clearTimeout(mmTimer); if (MM) { MM.open = []; MM.lock = false; } if ($("#mmBoard")) mmPaint(""); }
 function mmBuild(){
   const t = L(), u = t.bx_ui, el = $("#mm"); if (!el) return; if (!MM) mmNew();
@@ -198,9 +199,11 @@ function mmBuild(){
   <div class="mm-cur" id="mmCur" aria-live="polite"></div>
   <p class="mm-status" id="mmS" role="status" aria-live="polite"></p>
   <p><button type="button" class="btn sm ghost" id="mmReset">${esc(u.mm_reset)}</button></p>
-  <div class="mm-win" id="mmWin" hidden tabindex="-1"><h3>${esc(t.mm_win_h)}</h3>${t.mm_win_ps.map(x => `<p>${esc(x)}</p>`).join("")}<div class="mm-found" id="mmFound"><h4>${esc(u.mm_found)}</h4><ul id="mmFoundL"></ul></div><p><button type="button" class="btn sm" id="mmAgain">${esc(t.mm_again)}</button></p></div></div>`;
+  <div class="mm-win" id="mmWin" hidden tabindex="-1"><h3 id="mmWinH"></h3><div class="mm-found" id="mmFound"><h4>${esc(u.mm_found)}</h4><ul id="mmFoundL"></ul></div><p><button type="button" class="btn sm" id="mmAgain"></button></p></div></div>`;
   mmPaint("");
 }
+/* mensaje y botón finales según las historias distintas descubiertas en la visita: 12 → «ya conoces las 12»; si no, «{n} de 12» */
+function mmWinMsg(t){ const all = MM.known >= MM_ALL; return { h: all ? t.mm_win_all : t.mm_win_h.replace("{n}", MM.known), b: all ? t.mm_again_all : t.mm_again }; }
 function mmPaint(msg){
   const t = L(), u = t.bx_ui, P = t.mm_pairs; if (!MM || !$("#mmBoard")) return;
   $$("#mmBoard .mm-c").forEach(b => {
@@ -215,8 +218,9 @@ function mmPaint(msg){
   /* curiosidad de la última pareja encontrada (solo parejas ya descubiertas); se vuelve a crear el nodo para repetir el fundido */
   const cur = $("#mmCur"), last = MM.found.length ? MM.found[MM.found.length - 1] : -1;
   cur.hidden = won;
-  if (!won && cur.dataset.p !== String(last)) { cur.dataset.p = String(last); cur.innerHTML = last < 0 ? `<p class="mm-cur-h">${esc(t.mm_hint)}</p>` : `<div class="mm-cur-i"><p class="mm-cur-k">${esc(P[last][0])}</p><p class="mm-cur-t">${esc(P[last][1])}</p><p class="mm-cur-n">${esc(t.mm_mid)}</p></div>`; }
+  if (!won && cur.dataset.p !== String(last)) { cur.dataset.p = String(last); cur.innerHTML = last < 0 ? `<p class="mm-cur-h">${esc(t.mm_hint)}</p>` : `<div class="mm-cur-i"><p class="mm-cur-k">${esc(P[last][0])}</p><p class="mm-cur-t">${esc(P[last][1])}</p></div>`; }
   $("#mmWin").hidden = !won;
+  if (won) { const w = mmWinMsg(t); $("#mmWinH").textContent = w.h; $("#mmAgain").textContent = w.b; }
   /* al ganar solo se ve el panel final: el aviso de estado queda solo para lectores de pantalla y se oculta el botón Reiniciar (el panel trae «Jugar otra vez») */
   $("#mmS").classList.toggle("sr-only", won); const rs = $("#mmReset"); if (rs && rs.parentElement) rs.parentElement.hidden = won;
   if (msg != null) $("#mmS").textContent = msg;
@@ -230,7 +234,7 @@ function mmPick(i){
   const [a, b] = MM.open;
   if (MM.deck[a] === MM.deck[b]) {
     const p = MM.deck[a]; MM.done.push(a, b); MM.found.push(p); MM.open = []; MM.lock = false;
-    if (MM.done.length === MM_PAIRS * 2) { MM.sel.forEach(x => mmSeen.add(x)); mmPaint((t.mm_win_h + " " + t.mm_win_ps.join(" ")).trim()); const w = $("#mmWin"); w.focus({ preventScroll: false }); }   /* solo una partida completa marca sus historias como descubiertas */
+    if (MM.done.length === MM_PAIRS * 2) { MM.sel.forEach(x => { mmSeen.add(x); mmKnown.add(x); }); MM.known = mmKnown.size; mmPaint(mmWinMsg(t).h); const w = $("#mmWin"); w.focus({ preventScroll: false }); }   /* solo una partida completa marca sus historias como descubiertas */
     else mmPaint(u.mm_ok);
   } else {
     mmPaint(u.mm_no);

@@ -768,39 +768,6 @@ Object.assign(T.es, {
   "No tengo especial interés en utilizar una herramienta solo porque esté de moda. Prefiero elegir la que tenga más sentido para lo que estamos haciendo."
  ],
  "mm_h": "¿Nos conocemos?",
- "mm_p": "A ver cuánto tardas en encontrar las parejas. Cada una esconde una pequeña historia sobre mí.",
- "mm_pairs": [
-  [
-   "De un lado al otro",
-   "He vivido en Latinoamérica y Europa. Me cuesta elegir un solo lugar al que llamaría casa."
-  ],
-  [
-   "Una historia musical",
-   "Canté en un coro en Aix-en-Provence que participó en una miniserie francesa."
-  ],
-  [
-   "El camino de vuelta",
-   "Intento no regresar por la misma calle por la que he ido."
-  ],
-  [
-   "Siempre hay sitio",
-   "Me encanta cocinar, especialmente si tengo con quién compartir la comida."
-  ],
-  [
-   "De la TV al móvil",
-   "Pasé de diseñar aplicaciones para televisión a trabajar en productos móviles y digitales."
-  ],
-  [
-   "Una cosa lleva a otra",
-   "Me gustan los documentales. A veces termino investigando un tema que no tenía nada que ver."
-  ]
- ],
- "mm_win_h": "¡Ya nos conocemos un poco más! 🎉",
- "mm_win_ps": [
-  "Seis parejas, unas cuantas historias y algún dato que probablemente no necesitabas saber sobre mí.",
-  "Nada mal para una primera partida."
- ],
- "mm_again": "Jugar otra vez",
  "cl_h": "¿Y ahora qué?",
  "cl_p": "Ya sabes un poco más de mí. Si has llegado hasta aquí, quizá tenemos algo de qué hablar. Puede ser una marca, una web, un producto digital o simplemente una idea que todavía no tienes muy clara.",
  "cl_cta": "Cuéntame qué tienes entre manos.",
@@ -974,39 +941,6 @@ Object.assign(T.en, {
   "I'm not interested in using a tool just because it's trendy. I'd rather pick what makes sense for the job."
  ],
  "mm_h": "Do we know each other yet?",
- "mm_p": "See how quickly you can find the matching pairs. Each one reveals a little story about me.",
- "mm_pairs": [
-  [
-   "A bit of everywhere",
-   "I've lived in Latin America and Europe. Picking just one place to call home is tricky."
-  ],
-  [
-   "A musical detour",
-   "I sang in a choir in Aix-en-Provence that took part in a French TV miniseries."
-  ],
-  [
-   "The way back",
-   "I try not to walk home along the same street I took on the way out."
-  ],
-  [
-   "Always room at the table",
-   "I love cooking, especially when there's someone to share the meal with."
-  ],
-  [
-   "From TV to mobile",
-   "I went from designing TV apps to working on mobile and digital products."
-  ],
-  [
-   "One thing leads to another",
-   "I love documentaries. Sometimes I end up researching something completely unrelated."
-  ]
- ],
- "mm_win_h": "Now you know me a little better! 🎉",
- "mm_win_ps": [
-  "Six pairs, a few stories and some things you probably didn't need to know about me.",
-  "Not bad for a first round."
- ],
- "mm_again": "Play again",
  "cl_h": "What now?",
  "cl_p": "Now you know a little more about me. If you've made it this far, maybe we have something to talk about: a brand, a website, a digital product or an idea that's still taking shape.",
  "cl_cta": "Tell me what you have in mind.",
@@ -1180,39 +1114,6 @@ Object.assign(T.fr, {
   "Je n'utilise pas un outil simplement parce qu'il est à la mode. Je préfère celui qui convient vraiment au projet."
  ],
  "mm_h": "On se connaît ?",
- "mm_p": "Voyons combien de temps tu mets à retrouver les paires. Chacune cache une petite histoire sur moi.",
- "mm_pairs": [
-  [
-   "D'un continent à l'autre",
-   "J'ai vécu en Amérique latine et en Europe. Difficile de choisir un seul endroit où je me sens chez moi."
-  ],
-  [
-   "Une histoire de musique",
-   "J'ai chanté dans une chorale à Aix-en-Provence qui a participé à une mini-série française."
-  ],
-  [
-   "Le chemin du retour",
-   "J'essaie de ne jamais rentrer par la même rue qu'à l'aller."
-  ],
-  [
-   "Toujours une place à table",
-   "J'adore cuisiner, surtout quand je peux partager le repas."
-  ],
-  [
-   "De la télé au mobile",
-   "Je suis passé des applications pour télévision aux produits mobiles et digitaux."
-  ],
-  [
-   "De fil en aiguille",
-   "J'aime les documentaires. Il m'arrive de finir par creuser un sujet qui n'a plus rien à voir."
-  ]
- ],
- "mm_win_h": "On se connaît déjà un peu mieux ! 🎉",
- "mm_win_ps": [
-  "Six paires, quelques histoires et deux ou trois choses que tu n'avais probablement pas besoin de savoir sur moi.",
-  "Pas mal pour une première partie."
- ],
- "mm_again": "Rejouer",
  "cl_h": "Et maintenant ?",
  "cl_p": "Tu en sais un peu plus sur moi. Si tu es arrivé jusqu'ici, on a peut-être quelque chose à se raconter : une marque, un site, un produit digital ou simplement une idée encore un peu floue.",
  "cl_cta": "Raconte-moi ce que tu as en tête.",
