@@ -35,7 +35,8 @@ Object.assign(T.es, {
   gf_close: "Cerrar",
   claim: "Quiero mi análisis UX/UI", write: "Quiero mi análisis UX/UI",
   /* CTAs de entrada */
-  pj_cta: "¿Trabajamos en algo parecido?", cl_cta: "¿Hablamos?", chat_write: "Escríbeme"
+  pj_cta: "¿Trabajamos en algo parecido?", cl_cta: "¿Hablamos?", chat_write: "Escríbeme",
+  pj_bb: "Ver brandbook", pj_bb_n: "Versión resumida para web, con lo que puedo mostrar.", pj_bb_sr: "PDF, se abre en una pestaña nueva"
 });
 Object.assign(T.en, {
   cn_h: "Simple as that.", cn: [["You tell me", "What you have in mind. It doesn't have to be fully figured out."], ["We think it through", "We swap ideas and see what we can do."], ["We get started", "If we're a good fit, we get to work."]],
@@ -67,7 +68,8 @@ Object.assign(T.en, {
   gf_ok_t: "My turn now!", gf_ok_b1: "I've got your website. I'll review it and email you three ideas to improve it.", gf_ok_b2: "Thanks for playing.",
   gf_close: "Close",
   claim: "I want my UX/UI review", write: "I want my UX/UI review",
-  pj_cta: "Shall we work on something similar?", cl_cta: "Shall we talk?", chat_write: "Write to me"
+  pj_cta: "Shall we work on something similar?", cl_cta: "Shall we talk?", chat_write: "Write to me",
+  pj_bb: "View brandbook", pj_bb_n: "A short version adapted for the web, with what I can show.", pj_bb_sr: "PDF, opens in a new tab"
 });
 Object.assign(T.fr, {
   cn_h: "C'est aussi simple que ça.", cn: [["Tu me racontes", "Ce que tu as en tête. Pas besoin d'avoir tout défini."], ["On y réfléchit", "On échange des idées et on voit ce qu'on peut faire."], ["On démarre", "Si le courant passe, on se met au travail."]],
@@ -99,5 +101,6 @@ Object.assign(T.fr, {
   gf_ok_t: "À mon tour !", gf_ok_b1: "J'ai bien reçu ton site. Je vais le regarder et t'envoyer trois idées pour l'améliorer par email.", gf_ok_b2: "Merci d'avoir joué.",
   gf_close: "Fermer",
   claim: "Je veux mon analyse UX/UI", write: "Je veux mon analyse UX/UI",
-  pj_cta: "On travaille sur quelque chose de similaire ?", cl_cta: "On en parle ?", chat_write: "Écris-moi"
+  pj_cta: "On travaille sur quelque chose de similaire ?", cl_cta: "On en parle ?", chat_write: "Écris-moi",
+  pj_bb: "Voir le brandbook", pj_bb_n: "Version résumée pour le web, avec ce que je peux montrer.", pj_bb_sr: "PDF, s'ouvre dans un nouvel onglet"
 });

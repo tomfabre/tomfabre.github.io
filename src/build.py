@@ -238,6 +238,7 @@ for lg in ("es","en","fr"):
         open(out, "w").write(page_html(lg, page, key)); npages += 1
 shutil.copy("404.html", dist+"/404.html")  # página 404 con carácter (fuente: src/404.html)
 for _cv in ("cv-alvaro-fabre.pdf","cv-alvaro-fabre-en.pdf","cv-alvaro-fabre-fr.pdf"): shutil.copy(_cv, dist+"/"+_cv)
+shutil.copytree("brandbooks", dist+"/brandbooks")   # brandbooks resumidos para web (casos 360estudio y Contazara)
 # portfolio.json
 pf = {"name":"Tom Fabre","jobTitle":"Product & Brand Designer","location":"Madrid, Spain","studio":{"name":"Binōme Studio","url":"https://binome.xyz"},"languages":["es","fr","en"],"email":EMAIL,"profiles":[{"name":k,"url":v} for k,v in SOC.items()],"cv":f"{SITE}/cv-alvaro-fabre.pdf","cvByLanguage":{"es":f"{SITE}/cv-alvaro-fabre.pdf","en":f"{SITE}/cv-alvaro-fabre-en.pdf","fr":f"{SITE}/cv-alvaro-fabre-fr.pdf"},"updated":today,
   "services":{l:[{"name":s[0],"tagline":s[1],"summary":s[2],"scope":s[3],"url":U(l,"service",SKEYS[i])} for i,s in enumerate(T[l]["hs_items"])] for l in ("es","en","fr")},
