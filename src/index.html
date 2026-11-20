@@ -1223,9 +1223,8 @@ footer .foot-grid{display:grid;grid-template-columns:1fr auto;gap:var(--s5) var(
 .pj-more .blobs .b4,.pj-more .blobs .bm{display:none}
 .pj-more ul a{text-underline-offset:.3em}
 @media (max-width:40rem){.pj-more{padding:var(--s8) var(--s6);border-radius:1.5rem;margin-top:calc(var(--s24) + var(--s8))}}
-.pj-bb{font-size:var(--small);display:flex;flex-wrap:wrap;align-items:baseline;gap:.25rem .9rem;margin:0}
-.pj-bb a{font-weight:500;text-decoration:underline;text-underline-offset:.3em}
-.pj-bb-n{color:var(--muted)}
+.pj-bb a{font-weight:500}
+.pj-bb-n{color:var(--muted);font-size:var(--small);margin-left:.9rem}
 @media (min-width:60rem){.hmin{padding-bottom:calc(var(--s8) + 2.25rem + env(safe-area-inset-bottom,0px))}.hmin .scroll-hint{bottom:env(safe-area-inset-bottom,0px)}}
 /* mobile fixes: hero hint flows below the text instead of overlapping; square bento gallery; form close button */
 @media (max-width:59.99rem){
@@ -7955,7 +7954,8 @@ function renderProject(key){
     <dl class="pj-facts"><div><dt>${esc(t.role_l2 || "Role")}</dt><dd>${esc(rl(d))}</dd></div><div><dt>${esc(t.ctx_l2 || "Context")}</dt><dd>${esc(p[2])}</dd></div><div><dt>${esc(t.serv_l2 || "Services")}</dt><dd>${esc(p[5])}</dd></div><div><dt>${esc(t.per_l2 || "Period")}</dt><dd>${esc(yl(d))}</dd></div></dl>
     ${SECTIONS[key] ? SECTIONS[key].map(renderSection).join("") : `<div class="pj-body"><h2>${esc(t.did_h2 || "What I did")}</h2><div><p>${esc(p[4])}</p></div></div>`}
     ${secHasImg(key) ? "" : `<div class="pj-gal">${svgWrap(key,1)}${svgWrap(key,2)}${svgWrap(key,3)}</div>`}
-    <aside class="pj-more"><span class="blobs" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></span><h2>${esc(t.pj_sim_h)}</h2><p><button class="btn solid" type="button" data-open-form data-ev="case_to_contact_click" data-place="project" data-project="${key}"><span>${esc(t.pj_cta || t.cta_talk)}</span><span class="arr" aria-hidden="true">→</span></button>${d.site && tr(d.site.l) ? ` <a class="btn" href="${esc(d.site.href)}" target="_blank" rel="noopener" data-ev="project_cta_click" data-place="project_site"><span>${esc(tr(d.site.l))}</span><span class="arr" aria-hidden="true">↗</span></a>` : ""}</p>${BRANDBOOK[key] ? `<p class="pj-bb"><a href="${PATHS ? "/" : ""}brandbooks/${BRANDBOOK[key]}" target="_blank" rel="noopener" type="application/pdf" data-ev="brandbook_click" data-place="project_brandbook" data-project="${key}">${esc(t.pj_bb)} <span class="arr" aria-hidden="true">↗</span><span class="sr"> (${esc(t.pj_bb_sr)})</span></a> <span class="pj-bb-n">${esc(t.pj_bb_n)}</span></p>` : ""}<ul>${(PSVC[key] || []).map(k => `<li><a href="#service-${k}">${esc(t.hs_items[SKEYS.indexOf(k)][0])} <span aria-hidden="true">→</span></a></li>`).join("")}</ul></aside>
+    ${BRANDBOOK[key] ? `<div class="pj-body pj-bb"><span aria-hidden="true"></span><div><p><a href="${PATHS ? "/" : ""}brandbooks/${BRANDBOOK[key]}" target="_blank" rel="noopener" type="application/pdf" data-ev="brandbook_click" data-place="project_brandbook" data-project="${key}">${esc(t.pj_bb)} <span class="arr" aria-hidden="true">↗</span><span class="sr"> (${esc(t.pj_bb_sr)})</span></a> <span class="pj-bb-n">${esc(t.pj_bb_n)}</span></p></div></div>` : ""}
+    <aside class="pj-more"><span class="blobs" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></span><h2>${esc(t.pj_sim_h)}</h2><p><button class="btn solid" type="button" data-open-form data-ev="case_to_contact_click" data-place="project" data-project="${key}"><span>${esc(t.pj_cta || t.cta_talk)}</span><span class="arr" aria-hidden="true">→</span></button>${d.site && tr(d.site.l) ? ` <a class="btn" href="${esc(d.site.href)}" target="_blank" rel="noopener" data-ev="project_cta_click" data-place="project_site"><span>${esc(tr(d.site.l))}</span><span class="arr" aria-hidden="true">↗</span></a>` : ""}</p><ul>${(PSVC[key] || []).map(k => `<li><a href="#service-${k}">${esc(t.hs_items[SKEYS.indexOf(k)][0])} <span aria-hidden="true">→</span></a></li>`).join("")}</ul></aside>
     <a class="pj-next" href="#project-${PROJ[nx].key}"><span class="k"><span>${esc(t.next)}</span><span aria-hidden="true">→</span></span><b>${esc(t.projects[nx][0])}</b></a>`;
   document.title = ((SEO[lang] || {}).proj || {})[key]?.t || (p[0] + " · Tom Fabre");
 }
