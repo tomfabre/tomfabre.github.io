@@ -13,7 +13,7 @@ function track(name, props){
   try { if (typeof gtag === "function") gtag("event", name, detail); } catch(e){}   // GA4 events (no personal data)
   try { if (window.AF_ANALYTICS && typeof window.AF_ANALYTICS.track === "function") window.AF_ANALYTICS.track(name, detail); } catch(e){}
 }
-document.addEventListener("click", e => { const el = e.target.closest && e.target.closest("[data-ev]"); if (el) track(el.dataset.ev, { page: (typeof route_ === "object" && route_.page) || "home", placement: el.dataset.place || "", service: el.dataset.service || undefined }); });
+document.addEventListener("click", e => { const el = e.target.closest && e.target.closest("[data-ev]"); if (el) track(el.dataset.ev, { page: (typeof route_ === "object" && route_.page) || "home", placement: el.dataset.place || "", service: el.dataset.service || undefined, project: el.dataset.ev === "brandbook_click" ? el.dataset.project : undefined }); });
 /* ---------- path routing (real URLs per language) · hash mode in the artifact preview ---------- */
 const PATHS = !!document.querySelector('meta[name="af-paths"]');
 const SLUG = { es:{projects:"proyectos",services:"servicios",bio:"bio",contact:"contacto"}, en:{projects:"projects",services:"services",bio:"bio",contact:"contact"}, fr:{projects:"projets",services:"services",bio:"bio",contact:"contact"} };
@@ -130,6 +130,7 @@ function wireMenu(){
 
 /* ---------- home sections ---------- */
 /* service <-> project relations come from the "services" column of each project in the repo (single source) */
+const BRANDBOOK = { contazara:"brandbook-contazara.pdf", "360estudio":"brandbook-360estudio.pdf" };   // brandbook resumido para web (src/brandbooks/)
 const PSVC = { contazara:["branding","web"], "carceral-ecologies":["web"], a2pas:["ux","web","branding"], happylife:["ux"], binome:["branding","web","ux"], yaypegs:["ux"], "mobile-experiences":["ux"], "360estudio":["branding","web"], figy:["ux"], apolo:["ux"], appy:["ux"], mood:["ux"], molyb:["ux"] };
 const sentence = x => { x = String(x).toLowerCase(); return x.charAt(0).toUpperCase() + x.slice(1); };
 const oneLine = x => String(x).replace(/\n/g, " ");
@@ -250,7 +251,7 @@ function renderProject(key){
     <dl class="pj-facts"><div><dt>${esc(t.role_l2 || "Role")}</dt><dd>${esc(rl(d))}</dd></div><div><dt>${esc(t.ctx_l2 || "Context")}</dt><dd>${esc(p[2])}</dd></div><div><dt>${esc(t.serv_l2 || "Services")}</dt><dd>${esc(p[5])}</dd></div><div><dt>${esc(t.per_l2 || "Period")}</dt><dd>${esc(yl(d))}</dd></div></dl>
     ${SECTIONS[key] ? SECTIONS[key].map(renderSection).join("") : `<div class="pj-body"><h2>${esc(t.did_h2 || "What I did")}</h2><div><p>${esc(p[4])}</p></div></div>`}
     ${secHasImg(key) ? "" : `<div class="pj-gal">${svgWrap(key,1)}${svgWrap(key,2)}${svgWrap(key,3)}</div>`}
-    <aside class="pj-more"><span class="blobs" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></span><h2>${esc(t.pj_sim_h)}</h2><p><button class="btn solid" type="button" data-open-form data-ev="case_to_contact_click" data-place="project" data-project="${key}"><span>${esc(t.pj_cta || t.cta_talk)}</span><span class="arr" aria-hidden="true">→</span></button>${d.site && tr(d.site.l) ? ` <a class="btn" href="${esc(d.site.href)}" target="_blank" rel="noopener" data-ev="project_cta_click" data-place="project_site"><span>${esc(tr(d.site.l))}</span><span class="arr" aria-hidden="true">↗</span></a>` : ""}</p><ul>${(PSVC[key] || []).map(k => `<li><a href="#service-${k}">${esc(t.hs_items[SKEYS.indexOf(k)][0])} <span aria-hidden="true">→</span></a></li>`).join("")}</ul></aside>
+    <aside class="pj-more"><span class="blobs" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></span><h2>${esc(t.pj_sim_h)}</h2><p><button class="btn solid" type="button" data-open-form data-ev="case_to_contact_click" data-place="project" data-project="${key}"><span>${esc(t.pj_cta || t.cta_talk)}</span><span class="arr" aria-hidden="true">→</span></button>${d.site && tr(d.site.l) ? ` <a class="btn" href="${esc(d.site.href)}" target="_blank" rel="noopener" data-ev="project_cta_click" data-place="project_site"><span>${esc(tr(d.site.l))}</span><span class="arr" aria-hidden="true">↗</span></a>` : ""}</p>${BRANDBOOK[key] ? `<p class="pj-bb"><a href="${PATHS ? "/" : ""}brandbooks/${BRANDBOOK[key]}" target="_blank" rel="noopener" type="application/pdf" data-ev="brandbook_click" data-place="project_brandbook" data-project="${key}">${esc(t.pj_bb)} <span class="arr" aria-hidden="true">↗</span><span class="sr"> (${esc(t.pj_bb_sr)})</span></a> <span class="pj-bb-n">${esc(t.pj_bb_n)}</span></p>` : ""}<ul>${(PSVC[key] || []).map(k => `<li><a href="#service-${k}">${esc(t.hs_items[SKEYS.indexOf(k)][0])} <span aria-hidden="true">→</span></a></li>`).join("")}</ul></aside>
     <a class="pj-next" href="#project-${PROJ[nx].key}"><span class="k"><span>${esc(t.next)}</span><span aria-hidden="true">→</span></span><b>${esc(t.projects[nx][0])}</b></a>`;
   document.title = ((SEO[lang] || {}).proj || {})[key]?.t || (p[0] + " · Tom Fabre");
 }
