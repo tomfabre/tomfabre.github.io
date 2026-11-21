@@ -1517,9 +1517,9 @@ dialog.lb[open]{display:flex}
 .mm-b{background:var(--fg);color:var(--bg);font-weight:700;font-size:clamp(1.2rem,3vw,1.8rem);letter-spacing:-.04em}
 .mm-b{padding:0;overflow:hidden;background:var(--fg)}
 .mm-b img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
-.mm-b .mm-bg{display:none}
-/* escritorio: reverso en escala de grises y a color con hover/foco; en táctil siempre a color */
-@media (hover:hover) and (pointer:fine){.mm-b .mm-bg{display:block;transition:opacity .35s var(--ease)}.mm-c:hover .mm-bg,.mm-c:focus-visible .mm-bg{opacity:0}}
+.mm-b .mm-bg{display:block;transition:opacity .35s var(--ease)}
+/* reverso siempre en escala de grises (también en táctil); solo en escritorio pasa a color con hover/foco */
+@media (hover:hover) and (pointer:fine){.mm-c:hover .mm-bg,.mm-c:focus-visible .mm-bg{opacity:0}}
 @media (prefers-reduced-motion:reduce){.mm-b .mm-bg{transition:none}}
 .mm-f{transform:rotateY(180deg);background:var(--mc,var(--coral));color:#1F1F1F;border:1px solid rgba(0,0,0,.12)}
 .mm-f i{font-style:normal;font-size:.7rem;letter-spacing:.14em;opacity:.7}
@@ -2114,5 +2114,5 @@ Tell me what you have in mind and we'll work out where to start.</p>
 
 
 <script>document.querySelectorAll("template[data-stash]").forEach(function(t){t.replaceWith(t.content)})</script><script>window.__CV="/cv-alvaro-fabre-en.pdf"</script>
-<script src="/js/app.6ce0b097d6.js"></script>
+<script src="/js/app.6072865982.js"></script>
 <script defer src="/js/gsap.min.js?v=b2cff385"></script><script defer src="/js/lenis.min.js?v=acddbf76"></script><script defer src="/js/motion.js?v=7bb4ee9d"></script>

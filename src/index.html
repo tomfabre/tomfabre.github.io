@@ -1520,9 +1520,9 @@ dialog.lb[open]{display:flex}
 .mm-b{background:var(--fg);color:var(--bg);font-weight:700;font-size:clamp(1.2rem,3vw,1.8rem);letter-spacing:-.04em}
 .mm-b{padding:0;overflow:hidden;background:var(--fg)}
 .mm-b img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
-.mm-b .mm-bg{display:none}
-/* escritorio: reverso en escala de grises y a color con hover/foco; en táctil siempre a color */
-@media (hover:hover) and (pointer:fine){.mm-b .mm-bg{display:block;transition:opacity .35s var(--ease)}.mm-c:hover .mm-bg,.mm-c:focus-visible .mm-bg{opacity:0}}
+.mm-b .mm-bg{display:block;transition:opacity .35s var(--ease)}
+/* reverso siempre en escala de grises (también en táctil); solo en escritorio pasa a color con hover/foco */
+@media (hover:hover) and (pointer:fine){.mm-c:hover .mm-bg,.mm-c:focus-visible .mm-bg{opacity:0}}
 @media (prefers-reduced-motion:reduce){.mm-b .mm-bg{transition:none}}
 .mm-f{transform:rotateY(180deg);background:var(--mc,var(--coral));color:#1F1F1F;border:1px solid rgba(0,0,0,.12)}
 .mm-f i{font-style:normal;font-size:.7rem;letter-spacing:.14em;opacity:.7}
@@ -7612,7 +7612,7 @@ function mmSelect(){
   if (sel.length < MM_PAIRS) sel = sel.concat(mmShuffle([...mmSeen]).slice(0, MM_PAIRS - sel.length));   /* defensa: no ocurre con partidas de 6 */
   return sel;
 }
-function mmNew(){ clearTimeout(mmTimer); const sel = mmSelect(); MM = { sel, deck: mmShuffle([...sel, ...sel]), open: [], done: [], found: [], tries: 0, lock: false, known: 0 }; }
+function mmNew(){ clearTimeout(mmTimer); const sel = mmSelect(); MM = { sel, deck: mmShuffle([...sel, ...sel]), open: [], done: [], found: [], tries: 0, lock: false, known: 0, started: false }; }
 function mmStop(){ clearTimeout(mmTimer); if (MM) { MM.open = []; MM.lock = false; } if ($("#mmBoard")) mmPaint(""); }
 function mmBuild(){
   const t = L(), u = t.bx_ui, el = $("#mm"); if (!el) return; if (!MM) mmNew();
@@ -7652,12 +7652,13 @@ function mmPick(i){
   if (!MM || MM.lock || MM.open.includes(i) || MM.done.includes(i)) return;
   const t = L(), u = t.bx_ui, P = t.mm_pairs;
   MM.open.push(i);
+  if (!MM.started) { MM.started = true; track("memory_start"); }
   if (MM.open.length < 2) { mmPaint(""); return; }
   MM.tries++; MM.lock = true;
   const [a, b] = MM.open;
   if (MM.deck[a] === MM.deck[b]) {
     const p = MM.deck[a]; MM.done.push(a, b); MM.found.push(p); MM.open = []; MM.lock = false;
-    if (MM.done.length === MM_PAIRS * 2) { MM.sel.forEach(x => { mmSeen.add(x); mmKnown.add(x); }); MM.known = mmKnown.size; mmPaint(mmWinMsg(t).h); const w = $("#mmWin"); w.focus({ preventScroll: false }); }   /* solo una partida completa marca sus historias como descubiertas */
+    if (MM.done.length === MM_PAIRS * 2) { MM.sel.forEach(x => { mmSeen.add(x); mmKnown.add(x); }); MM.known = mmKnown.size; track("memory_complete", { tries: MM.tries }); mmPaint(mmWinMsg(t).h); const w = $("#mmWin"); w.focus({ preventScroll: false }); }   /* solo una partida completa marca sus historias como descubiertas */
     else mmPaint(u.mm_ok);
   } else {
     mmPaint(u.mm_no);
@@ -8010,12 +8011,14 @@ function buildBoard(){
 }
 function shoot(i){
   if (G.over || G.shot[i]) return; G.shot[i] = 1; const s = G.occ[i];
+  if (!G.started) { G.started = true; track("game_start"); }
   lastShot = i; msgArg = "";
   if (s < 0) { G.left--; msgKey = G.left === 1 ? "m_one" : G.left === 5 ? "m_five" : "m_miss"; }
   else { G.hits[s]++; if (G.hits[s] === G.ships[s].len) { const remaining = G.hits.filter((h, k) => h !== G.ships[k].len).length; msgKey = remaining === 1 ? "m_last" : "m_sunk"; msgArg = L().ships[s][0]; } else msgKey = "m_hit"; }
   if (G.hits.every((h, k) => h === G.ships[k].len)) { G.over = true; G.won = true; msgKey = "m_win"; }
   else if (G.left <= 0) { G.over = true; msgKey = "m_lose"; }
   renderGame();
+  if (G.over) track("game_complete", { result: G.won ? "won" : "lost", misses_left: G.left });
   if (G.over) { clearTimeout(endT); endT = setTimeout(() => { if (G.over) openGameDialog(G.won); }, 500); }
 }
 function renderGame(){
@@ -8884,6 +8887,7 @@ function yOptions(id){
 function yGo(optId){
   const n = yN[Y.node], o = yOptions(Y.node).find(x => x.id === optId); if (!o) return;
   if (o.next.startsWith("@")) return yAction(o.next);
+  track("yodis_option", { node: Y.node, option: o.id });
   Y.hist.push({ nodeId:Y.node, optionId:o.id, timestamp:Date.now() });
   Y.node = o.next; if (yN[Y.node].requires && !yEligible()) { Y.node = "contact_choice"; yNote = yT("y_wablock"); } yNote = ""; if (yN[Y.node].kind === "random_fact") Y.fact = null;
   ySave(); yRender(true);
@@ -9014,7 +9018,7 @@ window.yodisRender = () => yRender(false);
 
 /* open / close / wiring */
 const chatEl = () => $("#chat"), cbtn = () => $("#chatbtn");
-function openChat(){ chatEl().classList.add("open"); cbtn().setAttribute("aria-expanded", "true"); setTimeout(() => { const t = $("#yturn"); if (t) t.focus({ preventScroll:true }); }, 180); }
+function openChat(){ if (!chatEl().classList.contains("open")) track("yodis_open"); chatEl().classList.add("open"); cbtn().setAttribute("aria-expanded", "true"); setTimeout(() => { const t = $("#yturn"); if (t) t.focus({ preventScroll:true }); }, 180); }
 function closeChat(){ const was = chatEl().classList.contains("open"); chatEl().classList.remove("open"); cbtn().setAttribute("aria-expanded", "false"); if (was && chatEl().contains(document.activeElement)) { try { cbtn().focus({ preventScroll:true }); } catch(e){} } }
 function wireChat(){
   cbtn().addEventListener("click", () => chatEl().classList.contains("open") ? closeChat() : openChat());

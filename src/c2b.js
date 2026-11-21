@@ -190,7 +190,7 @@ function mmSelect(){
   if (sel.length < MM_PAIRS) sel = sel.concat(mmShuffle([...mmSeen]).slice(0, MM_PAIRS - sel.length));   /* defensa: no ocurre con partidas de 6 */
   return sel;
 }
-function mmNew(){ clearTimeout(mmTimer); const sel = mmSelect(); MM = { sel, deck: mmShuffle([...sel, ...sel]), open: [], done: [], found: [], tries: 0, lock: false, known: 0 }; }
+function mmNew(){ clearTimeout(mmTimer); const sel = mmSelect(); MM = { sel, deck: mmShuffle([...sel, ...sel]), open: [], done: [], found: [], tries: 0, lock: false, known: 0, started: false }; }
 function mmStop(){ clearTimeout(mmTimer); if (MM) { MM.open = []; MM.lock = false; } if ($("#mmBoard")) mmPaint(""); }
 function mmBuild(){
   const t = L(), u = t.bx_ui, el = $("#mm"); if (!el) return; if (!MM) mmNew();
@@ -230,12 +230,13 @@ function mmPick(i){
   if (!MM || MM.lock || MM.open.includes(i) || MM.done.includes(i)) return;
   const t = L(), u = t.bx_ui, P = t.mm_pairs;
   MM.open.push(i);
+  if (!MM.started) { MM.started = true; track("memory_start"); }
   if (MM.open.length < 2) { mmPaint(""); return; }
   MM.tries++; MM.lock = true;
   const [a, b] = MM.open;
   if (MM.deck[a] === MM.deck[b]) {
     const p = MM.deck[a]; MM.done.push(a, b); MM.found.push(p); MM.open = []; MM.lock = false;
-    if (MM.done.length === MM_PAIRS * 2) { MM.sel.forEach(x => { mmSeen.add(x); mmKnown.add(x); }); MM.known = mmKnown.size; mmPaint(mmWinMsg(t).h); const w = $("#mmWin"); w.focus({ preventScroll: false }); }   /* solo una partida completa marca sus historias como descubiertas */
+    if (MM.done.length === MM_PAIRS * 2) { MM.sel.forEach(x => { mmSeen.add(x); mmKnown.add(x); }); MM.known = mmKnown.size; track("memory_complete", { tries: MM.tries }); mmPaint(mmWinMsg(t).h); const w = $("#mmWin"); w.focus({ preventScroll: false }); }   /* solo una partida completa marca sus historias como descubiertas */
     else mmPaint(u.mm_ok);
   } else {
     mmPaint(u.mm_no);

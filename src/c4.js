@@ -93,6 +93,7 @@ function yOptions(id){
 function yGo(optId){
   const n = yN[Y.node], o = yOptions(Y.node).find(x => x.id === optId); if (!o) return;
   if (o.next.startsWith("@")) return yAction(o.next);
+  track("yodis_option", { node: Y.node, option: o.id });
   Y.hist.push({ nodeId:Y.node, optionId:o.id, timestamp:Date.now() });
   Y.node = o.next; if (yN[Y.node].requires && !yEligible()) { Y.node = "contact_choice"; yNote = yT("y_wablock"); } yNote = ""; if (yN[Y.node].kind === "random_fact") Y.fact = null;
   ySave(); yRender(true);
@@ -223,7 +224,7 @@ window.yodisRender = () => yRender(false);
 
 /* open / close / wiring */
 const chatEl = () => $("#chat"), cbtn = () => $("#chatbtn");
-function openChat(){ chatEl().classList.add("open"); cbtn().setAttribute("aria-expanded", "true"); setTimeout(() => { const t = $("#yturn"); if (t) t.focus({ preventScroll:true }); }, 180); }
+function openChat(){ if (!chatEl().classList.contains("open")) track("yodis_open"); chatEl().classList.add("open"); cbtn().setAttribute("aria-expanded", "true"); setTimeout(() => { const t = $("#yturn"); if (t) t.focus({ preventScroll:true }); }, 180); }
 function closeChat(){ const was = chatEl().classList.contains("open"); chatEl().classList.remove("open"); cbtn().setAttribute("aria-expanded", "false"); if (was && chatEl().contains(document.activeElement)) { try { cbtn().focus({ preventScroll:true }); } catch(e){} } }
 function wireChat(){
   cbtn().addEventListener("click", () => chatEl().classList.contains("open") ? closeChat() : openChat());

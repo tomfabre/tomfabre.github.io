@@ -307,12 +307,14 @@ function buildBoard(){
 }
 function shoot(i){
   if (G.over || G.shot[i]) return; G.shot[i] = 1; const s = G.occ[i];
+  if (!G.started) { G.started = true; track("game_start"); }
   lastShot = i; msgArg = "";
   if (s < 0) { G.left--; msgKey = G.left === 1 ? "m_one" : G.left === 5 ? "m_five" : "m_miss"; }
   else { G.hits[s]++; if (G.hits[s] === G.ships[s].len) { const remaining = G.hits.filter((h, k) => h !== G.ships[k].len).length; msgKey = remaining === 1 ? "m_last" : "m_sunk"; msgArg = L().ships[s][0]; } else msgKey = "m_hit"; }
   if (G.hits.every((h, k) => h === G.ships[k].len)) { G.over = true; G.won = true; msgKey = "m_win"; }
   else if (G.left <= 0) { G.over = true; msgKey = "m_lose"; }
   renderGame();
+  if (G.over) track("game_complete", { result: G.won ? "won" : "lost", misses_left: G.left });
   if (G.over) { clearTimeout(endT); endT = setTimeout(() => { if (G.over) openGameDialog(G.won); }, 500); }
 }
 function renderGame(){
