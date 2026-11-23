@@ -156,23 +156,66 @@ import hashlib
 def _ver(path, salt=""):
     """Cache-busting version: content hash of the source file. It changes whenever the image changes, so platforms re-fetch it."""
     return hashlib.md5(open(path, "rb").read() + salt.encode()).hexdigest()[:8]
+# Non-project pages that get their own social image instead of the language fallback. Pages not listed here (home, services index, bio,
+# contact, legal) keep og-default-{lg}.jpg. Every dedicated image is a minimal card rendered by og_render.py (cream background, Outfit, brand stripe)
+# with the page's own title and the project cover(s) inside; one file per language because the text is translated.
+COLLAGE_SRCS = ["contazara-cover", "a2pas-cover", "happylife-cover", "binome-cover", "yaypegs-cover", "360estudio-cover"]
+OG_BRAND, OG_URL = "Tom Fabre", "tomfabre.com"
+PAGE_OG = {
+    ("service", "branding"): dict(src="contazara-cover",
+        title={"es": "Branding", "en": "Branding", "fr": "Branding"},
+        kicker={"es": "Identidad visual y sistemas de marca", "en": "Visual identity and brand systems", "fr": "Identité visuelle et systèmes de marque"},
+        alt={"es": "Branding por Tom Fabre: identidad visual y logotipo del caso Contazara",
+             "en": "Branding by Tom Fabre: visual identity and logo from the Contazara case",
+             "fr": "Branding par Tom Fabre : identité visuelle et logotype du cas Contazara"}),
+    ("service", "web"): dict(src="360estudio-cover",
+        title={"es": "Diseño web", "en": "Web design", "fr": "Design web"},
+        kicker={"es": "Diseño y desarrollo de sitios web", "en": "Website design and development", "fr": "Conception et développement de sites web"},
+        alt={"es": "Diseño web por Tom Fabre: la web de 360estudio en un portátil",
+             "en": "Web design by Tom Fabre: the 360estudio website on a laptop",
+             "fr": "Design web par Tom Fabre : le site de 360estudio sur un ordinateur portable"}),
+    ("service", "ux"): dict(src="happylife-cover",
+        title={"es": "Diseño UX/UI", "en": "UX/UI design", "fr": "Design UX/UI"},
+        kicker={"es": "Producto digital, apps e interfaces", "en": "Digital product, apps and interfaces", "fr": "Produit digital, apps et interfaces"},
+        alt={"es": "Diseño UX/UI por Tom Fabre: pantallas móviles del proyecto HappyLife",
+             "en": "UX/UI design by Tom Fabre: mobile screens from the HappyLife project",
+             "fr": "Design UX/UI par Tom Fabre : écrans mobiles du projet HappyLife"}),
+    ("projects", None): dict(src="projects-collage", gen=True,
+        title={"es": "Proyectos", "en": "Projects", "fr": "Projets"},
+        kicker={"es": "Contazara, À2pas, HappyLife, Binōme, Yaypegs y 360estudio", "en": "Contazara, À2pas, HappyLife, Binōme, Yaypegs and 360estudio", "fr": "Contazara, À2pas, HappyLife, Binōme, Yaypegs et 360estudio"},
+        alt={"es": "Proyectos de Tom Fabre: Contazara, À2pas, HappyLife, Binōme, Yaypegs y 360estudio",
+             "en": "Projects by Tom Fabre: Contazara, À2pas, HappyLife, Binōme, Yaypegs and 360estudio",
+             "fr": "Projets de Tom Fabre : Contazara, À2pas, HappyLife, Binōme, Yaypegs et 360estudio"}),
+}
+OG_DESIGN = "og2"   # bump to force a re-render/cache-bust of every card after a design change
+import og_render
+def _ver_files(paths, salt=""):
+    h = hashlib.md5(salt.encode())
+    for q in list(paths) + [og_render.__file__, og_render.FONT_LATIN, og_render.FONT_EXT]: h.update(open(q, "rb").read())
+    return h.hexdigest()[:8]
+def _card(lg, slug, srcs, title, kicker, alt, kind, **extra):
+    imgs = [f"img/{x}.webp" for x in srcs]; f = f"img/og/{slug}-{lg}-{OG_W}x{OG_H}.jpg"
+    return dict(kind=kind, url=f"{SITE}/{f}?v={_ver_files(imgs, OG_DESIGN + '|' + title + '|' + kicker)}", file=f, alt=alt, w=OG_W, h=OG_H,
+                render=dict(title=title, kicker=kicker, images=imgs[0] if len(imgs) == 1 else imgs), **extra)
 def og_for(lg, page, key=None):
-    """-> dict(kind, url, file, alt, w, h). kind: explicit | cover | fallback. url carries ?v=<content hash>."""
+    """-> dict(kind, url, file, alt, w, h[, render]). kind: explicit | cover | fallback. url carries ?v=<content hash>."""
+    pg = PAGE_OG.get((page, key))
+    if pg:
+        return _card(lg, pg["src"], COLLAGE_SRCS if pg.get("gen") else [pg["src"]], pg["title"][lg], pg["kicker"][lg], pg["alt"][lg], "explicit")
     if page == "project":
+        p = T[lg]["projects"][_proj_idx(key)]
         o = (D["SEO"][lg].get("proj", {}).get(key) or {}).get("og")
-        if o:
-            f = f"img/og/{o['src']}-{OG_W}x{OG_H}.jpg"
-            return dict(kind="explicit", url=f"{SITE}/{f}?v={_ver('img/' + o['src'] + '.webp', 'og1')}", file=f, alt=o["alt"], w=OG_W, h=OG_H, src=o["src"])
+        if o: return _card(lg, o["src"], [o["src"]], p[0], p[1], o["alt"], "explicit")
         if key not in OG_FALLBACK_PROJECTS and og_variant_ok(key + "-cover"):
-            p = T[lg]["projects"][_proj_idx(key)]; f = f"img/og/{key}-cover-{OG_W}x{OG_H}.jpg"
-            return dict(kind="cover", url=f"{SITE}/{f}?v={_ver('img/' + key + '-cover.webp', 'og1')}", file=f,
-                        alt=OG_ALT_COVER[lg].format(n=p[0], c=p[1]), w=OG_W, h=OG_H, src=key + "-cover")
+            return _card(lg, key + "-cover", [key + "-cover"], p[0], p[1], OG_ALT_COVER[lg].format(n=p[0], c=p[1]), "cover")
     fn = f"og-default-{lg}.jpg"; w, h = _size("extras/" + fn)
     return dict(kind="fallback", url=f"{SITE}/{fn}?v={_ver('extras/' + fn)}", file=fn, alt=OG_ALT_DEFAULT[lg], w=w, h=h)
 # Runtime sync (c3.js updateHead): only the data comes from og_for, so the logic stays in one place.
 _ogi = {lg: {"fb": [(lambda o: [o["url"], o["alt"], o["w"], o["h"]])(og_for(lg, "home"))],
              "p": {q["key"]: [o["url"], o["alt"], o["w"], o["h"]] for q in PROJ for o in [og_for(lg, "project", q["key"])] if o["kind"] != "fallback"}} for lg in ("es","en","fr")}
-for _lg in _ogi: _ogi[_lg]["fb"] = _ogi[_lg]["fb"][0]
+for _lg in _ogi:
+    _ogi[_lg]["fb"] = _ogi[_lg]["fb"][0]
+    _ogi[_lg]["pg"] = {_pg + (":" + _k if _k else ""): [o["url"], o["alt"], o["w"], o["h"]] for (_pg, _k) in PAGE_OG for o in [og_for(_lg, _pg, _k)]}
 _n = 0
 for _q in ('"%%OGI%%"', "'%%OGI%%'"):
     _n += html.count(_q); html = html.replace(_q, json.dumps(_ogi, ensure_ascii=False, separators=(",", ":")))
@@ -327,14 +370,11 @@ open(dist+"/_headers","w").write("/*\n  X-Content-Type-Options: nosniff\n  Refer
 print("built", SITE, len(html), npages, "pages")
 
 shutil.copytree("img", dist + "/img");
-# social images derived from covers / explicit sources: centre-crop to 1200x630 (no stretching), regenerated every build so they cannot drift from the cover
+# social images: minimal cards rendered by og_render.py from the covers; regenerated every build so they cannot drift from the covers
 os.makedirs(dist + "/img/og", exist_ok=True)
-_srcs = sorted({o["src"] for _lg in ("es","en","fr") for _pg, _k in ROUTES for o in [og_for(_lg, _pg, _k)] if o["kind"] != "fallback"})
-for _s in _srcs:
-    _im = Image.open(f"img/{_s}.webp").convert("RGB"); _w, _h = _im.size; _r = OG_W / OG_H
-    _cw, _ch = (int(round(_h * _r)), _h) if _w / _h > _r else (_w, int(round(_w / _r)))
-    _x, _y = (_w - _cw) // 2, (_h - _ch) // 2
-    _im.crop((_x, _y, _x + _cw, _y + _ch)).resize((OG_W, OG_H), Image.LANCZOS).save(f"{dist}/img/og/{_s}-{OG_W}x{OG_H}.jpg", "JPEG", quality=88, optimize=True, progressive=True)
+_cards = {o["file"]: o for _lg in ("es","en","fr") for _pg, _k in ROUTES for o in [og_for(_lg, _pg, _k)] if o["kind"] != "fallback"}
+for _f, _o in sorted(_cards.items()):
+    _r = _o["render"]; og_render.render(f"{dist}/{_f}", _r["title"], _r["kicker"], OG_BRAND, OG_URL, _r["images"])
 for _lg in ("es","en","fr"): shutil.copy(f"extras/og-default-{_lg}.jpg", f"{dist}/og-default-{_lg}.jpg")   # official files, byte-identical
 
 # post-build social-metadata check on EVERY page (app pages + legal): abort (never ship silently) on any mismatch; prints a report
