@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Generados por src/build.py (no versionar)
+/src/index.html
+/src/yodis-data.js
+/src/dist/
