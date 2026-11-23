@@ -48,6 +48,9 @@ person = {"@type":"Person","@id":PERSON_ID,"name":"Tom Fabre","alternateName":"�
 person.pop("owns")
 org = {"@type":"Organization","@id":ORG_ID,"name":"Binōme Studio","url":"https://binome.xyz","founder":{"@id":PERSON_ID}}
 site = {"@type":"WebSite","@id":SITE_ID,"url":f"{SITE}/","name":"Tom Fabre","inLanguage":["es","en","fr"],"publisher":{"@id":PERSON_ID}}
+prof = {"@type":"ProfessionalService","@id":f"{SITE}/#professional-service","name":"Tom Fabre — Branding, web and product design","url":f"{SITE}/","email":EMAIL,
+  "address":{"@type":"PostalAddress","addressLocality":"Madrid","addressCountry":"ES"},"areaServed":["Madrid","Spain","Remote worldwide"],
+  "serviceType":[HS("en")[i][0] for i in range(len(SKEYS))],"knowsLanguage":["es","en","fr"],"founder":{"@id":PERSON_ID},"sameAs":list(SOC.values())}
 def svc_node(lg, k):
     i = SKEYS.index(k); n = HS(lg)[i]
     return {"@type":"Service","@id":f"{SITE}/#service-{k}-{lg}","name":n[0],"serviceType":HS("en")[i][0],"description":n[2],"url":U(lg,"service",k),"inLanguage":lg,
@@ -59,7 +62,7 @@ def ld(lg, r):
     title, desc = meta_for(lg, page, key)
     g = [site, {**person, "description": S["home_d"]}, org]
     if page == "home":
-        g.append(faq_node(lg, t["hf_items"], url))
+        g.append({**prof, "description": S["home_d"], "inLanguage": lg}); g.append(faq_node(lg, t["hf_items"], url))
     elif page == "projects":
         its = [{"@type":"ListItem","position":n+1,"url":U(lg,"project",PROJ[i]["key"]),"name":pj(lg,i)["name"]} for n, i in enumerate(PUB)]
         g.append({"@type":"CollectionPage","@id":url+"#page","url":url,"name":title,"description":desc,"inLanguage":lg,"isPartOf":{"@id":SITE_ID},"mainEntity":{"@type":"ItemList","numberOfItems":len(its),"itemListElement":its}})
