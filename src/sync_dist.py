@@ -18,6 +18,7 @@ Seguridad
   - --dry-run muestra el plan sin copiar ni borrar.
 """
 import os, re, shutil, subprocess, sys
+import lastmod
 
 HASHED = re.compile(r"^app\.[0-9a-f]{10}\.js$")
 REF = re.compile(r"/js/(app\.[0-9a-f]{10}\.js)")
@@ -72,6 +73,14 @@ def main(argv, here=None):
     print("nueva versión      :", sorted(new))
     print("raíz antes de copiar:", sorted(before) or "-")
     print("origin/main        :", "no disponible (no se borrará nada)" if published is None else (sorted(published) or "-"))
+    # <lastmod> honesto: solo cambia la fecha de las URL cuyo HTML cambió (ver lastmod.py)
+    sm_path, lm_path = os.path.join(dist, "sitemap.xml"), os.path.join(here, "lastmod.json")
+    if os.path.isfile(sm_path):
+        site = re.search(r"<loc>(https?://[^/<]+)/", open(sm_path, encoding="utf8").read()).group(1)
+        sm, store = lastmod.apply(open(sm_path, encoding="utf8").read(), site, dist, repo, lastmod.load(lm_path))
+        print("lastmod            :", sm.count("<lastmod>"), "URL con fecha")
+        if not dry:
+            open(sm_path, "w", encoding="utf8").write(sm); lastmod.save(lm_path, store)
     if not dry:
         for item in os.listdir(dist):
             if item == "poner-dominio.py":
