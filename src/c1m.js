@@ -152,9 +152,9 @@ Object.assign(SEO.es, {
  "svc_branding_t": "Branding e identidad visual en Madrid | Tom Fabre",
  "svc_branding_d": "Diseño y renovación de marcas para empresas que quieren comunicar mejor. Estrategia, identidad visual y aplicaciones, desde Madrid.",
  "svc_web_t": "Diseño y desarrollo web en Madrid | Tom Fabre",
- "svc_web_d": "Diseño y desarrollo webs a medida con Webflow, código y otras plataformas. Webs claras, funcionales y pensadas para tu negocio.",
+ "svc_web_d": "Diseño y desarrollo web a medida en Madrid con Webflow, código y otras plataformas. Webs claras, funcionales y pensadas para tu negocio.",
  "svc_ux_t": "Diseño UX/UI y producto digital | Tom Fabre",
- "svc_ux_d": "Diseño de aplicaciones y productos digitales. Investigación UX, interfaces, prototipos y estrategia para crear experiencias más fáciles de usar."
+ "svc_ux_d": "Diseño de aplicaciones y productos digitales desde Madrid. Investigación UX, interfaces, prototipos y estrategia para experiencias más fáciles de usar."
 });
 Object.assign(T.en.sp.branding, {
  "name": "Branding & visual identity",
@@ -309,9 +309,9 @@ Object.assign(SEO.en, {
  "svc_branding_t": "Branding & visual identity in Madrid | Tom Fabre",
  "svc_branding_d": "Brand identity and rebranding for businesses ready to communicate more clearly. Strategy, visual design and practical brand applications from Madrid.",
  "svc_web_t": "Web design & development in Madrid | Tom Fabre",
- "svc_web_d": "Custom web design and development with Webflow, code and other platforms. Clear, practical websites built around your business.",
+ "svc_web_d": "Custom web design and development in Madrid with Webflow, code and other platforms. Clear, practical websites built around your business.",
  "svc_ux_t": "UX/UI & digital product design | Tom Fabre",
- "svc_ux_d": "Design for apps and digital products: UX research, interfaces, prototypes and strategy to make experiences easier to use."
+ "svc_ux_d": "Design for apps and digital products from Madrid: UX research, interfaces, prototypes and strategy to make experiences easier to use."
 });
 Object.assign(T.fr.sp.branding, {
  "name": "Branding et identité visuelle",
@@ -466,9 +466,9 @@ Object.assign(SEO.fr, {
  "svc_branding_t": "Branding et identité visuelle à Madrid | Tom Fabre",
  "svc_branding_d": "Création et refonte d'identités de marque. Stratégie, univers visuel et déclinaisons, avec un accompagnement direct depuis Madrid.",
  "svc_web_t": "Design et développement web à Madrid | Tom Fabre",
- "svc_web_d": "Sites web sur mesure avec Webflow, code et autres plateformes. Un design clair, une expérience soignée et un site pensé pour ton activité.",
+ "svc_web_d": "Sites web sur mesure à Madrid avec Webflow, code et autres plateformes. Un design clair, une expérience soignée et un site pensé pour ton activité.",
  "svc_ux_t": "Design UX/UI et produit digital | Tom Fabre",
- "svc_ux_d": "Design d'applications et de produits digitaux : recherche UX, interfaces, prototypes et stratégie pour des expériences plus simples à utiliser."
+ "svc_ux_d": "Design d'applications et de produits digitaux depuis Madrid : recherche UX, interfaces, prototypes et stratégie pour des expériences plus simples à utiliser."
 });
 
 /* LOTE 2 · contact page + form + global footer */
@@ -807,7 +807,7 @@ Object.assign(T.es, {
 });
 Object.assign(SEO.es, {
  "bio_t": "Sobre mí | Tom Fabre — Diseñador digital en Madrid",
- "bio_d": "Soy Álvaro, aunque todos me llaman Tom. De Latinoamérica a Europa, llevo más de diez años entre diseño, tecnología, marcas y productos digitales."
+ "bio_d": "Soy Álvaro, aunque todos me llaman Tom. Diseñador en Madrid: de Latinoamérica a Europa, más de diez años entre diseño, tecnología y productos digitales."
 });
 Object.assign(T.en, {
  "bio_a1": "No formulas.",
@@ -980,7 +980,7 @@ Object.assign(T.en, {
 });
 Object.assign(SEO.en, {
  "bio_t": "About me | Tom Fabre — Digital designer in Madrid",
- "bio_d": "I'm Álvaro, though everyone calls me Tom. From Latin America to Europe, I've spent over a decade working across design, technology and digital products."
+ "bio_d": "I'm Álvaro, though everyone calls me Tom. Designer in Madrid, from Latin America to Europe: over a decade in design, technology and digital products."
 });
 Object.assign(T.fr, {
  "bio_a1": "Sans recette toute faite.",
@@ -1153,5 +1153,5 @@ Object.assign(T.fr, {
 });
 Object.assign(SEO.fr, {
  "bio_t": "À propos | Tom Fabre — Designer digital à Madrid",
- "bio_d": "Je m'appelle Álvaro, mais tout le monde m'appelle Tom. De l'Amérique latine à l'Europe, plus de dix ans entre design, technologie et produits digitaux."
+ "bio_d": "Je m'appelle Álvaro, mais tout le monde m'appelle Tom. Designer à Madrid, plus de dix ans entre design, technologie et produits digitaux."
 });
