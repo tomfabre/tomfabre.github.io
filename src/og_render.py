@@ -8,7 +8,7 @@ BG, FG, MUTED, LINE = (253, 249, 240), (44, 44, 44), (122, 119, 111), (230, 224,
 STRIPE = [(194, 194, 194), (163, 163, 163), (243, 102, 84), (164, 155, 246), (221, 166, 19), (114, 203, 166)]   # same six colours as og-default-*.jpg
 _A = os.path.join(os.path.dirname(os.path.abspath(__file__)), "og-assets")
 FONT_LATIN, FONT_EXT = os.path.join(_A, "outfit-latin-wght.ttf"), os.path.join(_A, "outfit-latin-ext-wght.ttf")   # same split as the site's woff2 subsets: U+0000-00FF / U+0100+
-PAD = 64
+PAD = 56
 SS = 4   # supersampling for rounded corners
 
 class _F:
@@ -39,10 +39,10 @@ def _wrap(draw, text, font, maxw):
     if cur: lines.append(cur)
     return lines
 
-def _cover(path, w, h):
+def _cover(path, w, h, zoom=1.0):
     im = Image.open(path).convert("RGB"); iw, ih = im.size; r = w / h
     cw, ch = (int(round(ih * r)), ih) if iw / ih > r else (iw, int(round(iw / r)))
-    x, y = (iw - cw) // 2, (ih - ch) // 2
+    cw, ch = int(cw / zoom), int(ch / zoom); x, y = (iw - cw) // 2, (ih - ch) // 2
     return im.crop((x, y, x + cw, y + ch)).resize((w, h), Image.LANCZOS)
 
 def _rounded(im, radius):
@@ -52,13 +52,13 @@ def _rounded(im, radius):
 
 def _list_card(items, cw, quote=False):
     """Text block on the page background, no box. Default: coloured dot + 32px text (list). quote=True: no dots, 52px semibold lines (a short phrase)."""
-    f = _font(52, 600) if quote else _font(32, 500); pad, gap, line = 0, (6 if quote else 26), (64 if quote else 40); ind = 0 if quote else 36
+    f = _font(72, 600) if quote else _font(44, 500); pad, gap, line = 0, (8 if quote else 30), (84 if quote else 54); ind = 0 if quote else 50
     tmp = ImageDraw.Draw(Image.new("RGB", (4, 4))); tw = cw - 2 * pad - ind
     rows = [_wrap(tmp, t, f, tw) for t in items]; vpad = 0
     ch = 2 * vpad + sum(len(r) * line for r in rows) + gap * (len(rows) - 1)
     card = Image.new("RGB", (cw, ch), BG); d = ImageDraw.Draw(card); y = vpad
     for i, r in enumerate(rows):
-        if not quote: d.ellipse((pad, y + 11, pad + 18, y + 29), fill=STRIPE[2:][i % 4])
+        if not quote: d.ellipse((pad, y + 15, pad + 26, y + 41), fill=STRIPE[2:][i % 4])
         for l in r: f.draw(d, (pad + ind, y), l, FG); y += line
         y += gap
     return card, ch
@@ -67,13 +67,13 @@ def render(out, title, kicker, brand, url, images=None, items=None, layout="cove
     """layout: cover (one image shown whole, 2:1, or a list of 6 paths as a 3x2 grid) | portrait (one square image) | list (card with `items`) | quote (card with a short phrase, one line per item).
     Title/kicker text is wrapped to the left column."""
     cv = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(cv)
-    if layout in ("list", "quote"): cw = 520; card, ch = _list_card(items, cw, quote=(layout == "quote"))
+    if layout in ("list", "quote"): cw = 580; card, ch = _list_card(items, cw, quote=(layout == "quote"))
     elif layout == "portrait": cw = ch = 380; card = _cover(images, cw, ch)
-    elif isinstance(images, str): cw, ch = 616, 308; card = _cover(images, cw, ch)
+    elif isinstance(images, str): cw, ch = 660, 380; card = _cover(images, cw, ch)
     else:
-        cw, ch = 616, 308; gap = 6; cell_w, cell_h = (cw - 2 * gap) // 3, (ch - gap) // 2
+        cw, ch = 660, 380; gap = 8; cell_w, cell_h = (cw - gap) // 2, (ch - 2 * gap) // 3
         card = Image.new("RGB", (cw, ch), BG)
-        for i, p in enumerate(images): card.paste(_cover(p, cell_w, cell_h), ((i % 3) * (cell_w + gap), (i // 3) * (cell_h + gap)))
+        for i, p in enumerate(images): card.paste(_cover(p, cell_w, cell_h), ((i % 2) * (cell_w + gap), (i // 2) * (cell_h + gap)))
     cx, cy = W - PAD - cw, (H - 8 - ch) // 2
     if layout not in ("list", "quote"):   # text-only layouts have no box/border; their block is placed after the title, to share its vertical centre
         card = _rounded(card, 22)
@@ -81,22 +81,22 @@ def render(out, title, kicker, brand, url, images=None, items=None, layout="cove
         ring = Image.new("L", (cw * SS, ch * SS), 0); rd = ImageDraw.Draw(ring)
         rd.rounded_rectangle((0, 0, cw * SS - 1, ch * SS - 1), 22 * SS, outline=255, width=SS)
         cv.paste(Image.new("RGB", (cw, ch), LINE), (cx, cy), ring.resize((cw, ch), Image.LANCZOS))   # hairline border
-    colw = cx - PAD - 40
-    _font(28, 500).draw(d, (PAD, PAD - 4), brand, FG)
-    size = 84
+    colw = cx - PAD - 36
+    _font(36, 600).draw(d, (PAD, PAD - 6), brand, FG)
+    size = 104
     while True:
         tf = _font(size, 600); lines = _wrap(d, title, tf, colw)
         if (len(lines) <= 3 and all(tf.length(l) <= colw for l in lines)) or size <= 48: break
         size -= 4
-    lh = int(size * 1.06); kf = _font(26, 400); kl = _wrap(d, kicker, kf, colw) if kicker else []
-    block = len(lines) * lh + (len(kl) * 34 + 18 if kl else 0)
+    lh = int(size * 1.06); kf = _font(36, 400); kl = _wrap(d, kicker, kf, colw) if kicker else []
+    block = len(lines) * lh + (len(kl) * 46 + 22 if kl else 0)
     y = (H - 8 - block) // 2 + 4
     if layout in ("list", "quote"): cv.paste(card, (cx, y + (block - ch) // 2))
     for l in lines: tf.draw(d, (PAD, y), l, FG); y += lh
-    y += 18 - 4
-    for l in kl: kf.draw(d, (PAD, y), l, MUTED); y += 34
-    _font(24, 400).draw(d, (PAD, H - 8 - PAD - 18), url, MUTED)
+    y += 22 - 4
+    for l in kl: kf.draw(d, (PAD, y), l, MUTED); y += 46
+    _font(30, 500).draw(d, (PAD, H - 8 - PAD - 20), url, MUTED)
     seg = W // len(STRIPE)
     for i, c in enumerate(STRIPE): d.rectangle((i * seg, H - 8, W if i == len(STRIPE) - 1 else (i + 1) * seg, H), fill=c)
     os.makedirs(os.path.dirname(out), exist_ok=True)
-    cv.save(out, "JPEG", quality=90, optimize=True, progressive=True)
+    cv.save(out, "JPEG", quality=95, subsampling=0, optimize=True, progressive=True)
