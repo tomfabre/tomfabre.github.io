@@ -83,7 +83,7 @@ def render(out, title, kicker, brand, url, images=None, items=None, layout="cove
         rd.rounded_rectangle((0, 0, cw * SS - 1, ch * SS - 1), 22 * SS, outline=255, width=SS)
         cv.paste(Image.new("RGB", (cw, ch), LINE), (cx, cy), ring.resize((cw, ch), Image.LANCZOS))   # hairline border
     colw = (cx - PAD - 36) if layout != "text" else W - 2 * PAD
-    _font(36, 600).draw(d, (PAD, PAD - 6), brand, FG)
+    if brand: _font(36, 600).draw(d, (PAD, PAD - 6), brand, FG)
     size = 104
     while True:
         tf = _font(size, 600); lines = _wrap(d, title, tf, colw)

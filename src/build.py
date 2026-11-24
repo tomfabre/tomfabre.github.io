@@ -170,17 +170,17 @@ def _ver(path, salt=""):
 # contact, legal) keep og-default-{lg}.jpg. Every dedicated image is a minimal card rendered by og_render.py (cream background, Outfit, brand stripe)
 # with the page's own title and the project cover(s) inside; one file per language because the text is translated.
 COLLAGE_SRCS = ["contazara-cover", "a2pas-cover", "happylife-cover", "binome-cover", "yaypegs-cover", "360estudio-cover"]
-OG_BRAND, OG_URL = "Tom Fabre", "tomfabre.com"
+OG_BRAND, OG_URL = "", "tomfabre.com"
 PAGE_OG = {
-    ("service", "branding"): dict(slug="svc-branding", src="contazara-cover",
+    ("service", "branding"): dict(slug="svc-branding", src="contazara-cover", layout="text",
         title={"es": "Branding & identidad", "en": "Branding & identity", "fr": "Branding & identité"},
         kicker={"es": "Que te reconozcan. Incluso antes de leer tu nombre.", "en": "Be recognised. Before they even read your name.", "fr": "Être reconnu. Avant même qu'on lise ton nom."},
         alt={"es": "Branding por Tom Fabre: identidad visual y logotipo del caso Contazara", "en": "Branding by Tom Fabre: visual identity and logo from the Contazara case", "fr": "Branding par Tom Fabre : identité visuelle et logotype du cas Contazara"}),
-    ("service", "web"): dict(slug="svc-web", src="360estudio-cover",
+    ("service", "web"): dict(slug="svc-web", src="360estudio-cover", layout="text",
         title={"es": "Web & desarrollo", "en": "Web & development", "fr": "Web & développement"},
         kicker={"es": "Tu web debería trabajar tanto como tú.", "en": "Your website should work as hard as you do.", "fr": "Ton site devrait travailler autant que toi."},
         alt={"es": "Web y desarrollo por Tom Fabre: la web de 360estudio en un portátil", "en": "Web and development by Tom Fabre: the 360estudio website on a laptop", "fr": "Web et développement par Tom Fabre : le site de 360estudio sur un ordinateur portable"}),
-    ("service", "ux"): dict(slug="svc-ux", src="happylife-cover",
+    ("service", "ux"): dict(slug="svc-ux", src="happylife-cover", layout="text",
         title={"es": "Producto digital, UX/UI & estrategia digital", "en": "Digital product, UX/UI & digital strategy", "fr": "Produit digital, UX/UI & stratégie digitale"},
         kicker={"es": "Menos fricción. Más ganas de volver.", "en": "Less friction. More reasons to come back.", "fr": "Moins de friction. Plus de plaisir à revenir."},
         alt={"es": "Producto digital y UX/UI por Tom Fabre: pantallas móviles del proyecto HappyLife", "en": "Digital product and UX/UI by Tom Fabre: mobile screens from the HappyLife project", "fr": "Produit digital et UX/UI par Tom Fabre : écrans mobiles du projet HappyLife"}),
