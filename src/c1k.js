@@ -2549,9 +2549,9 @@ HERO["mobile-experiences"] = {
   "fr": "Composition des trois applications mobiles : Apolo Launcher, Appy et Mood Messenger"
  }
 };
-SEO.es.proj["mobile-experiences"] = {"t": "Diseño de apps móviles y UX/UI | Tom Fabre", "d": "Tres proyectos de diseño de aplicaciones móviles: Apolo Launcher, Appy × Jojol y Mood Messenger. UX/UI, interfaces y estrategia de producto.", "og": {"src": "mobile-experiences-og", "alt": "Tres apps móviles diseñadas por Tom Fabre: Mood Messenger, Appy y Apolo Launcher"}};
-SEO.en.proj["mobile-experiences"] = {"t": "Mobile App Design & UX/UI | Tom Fabre", "d": "Three mobile app design projects: Apolo Launcher, Appy × Jojol, and Mood Messenger. UX/UI, interface design, and product strategy.", "og": {"src": "mobile-experiences-og", "alt": "Three mobile apps designed by Tom Fabre: Mood Messenger, Appy and Apolo Launcher"}};
-SEO.fr.proj["mobile-experiences"] = {"t": "Design d'applications mobiles et UX/UI | Tom Fabre", "d": "Trois projets de design mobile : Apolo Launcher, Appy × Jojol et Mood Messenger. UX/UI, interfaces et stratégie produit.", "og": {"src": "mobile-experiences-og", "alt": "Trois applis mobiles conçues par Tom Fabre : Mood Messenger, Appy et Apolo Launcher"}};
+SEO.es.proj["mobile-experiences"] = {"t": "Diseño de apps móviles y UX/UI | Tom Fabre", "d": "Tres proyectos de diseño de aplicaciones móviles: Apolo Launcher, Appy × Jojol y Mood Messenger. UX/UI, interfaces y estrategia de producto.", "og": {"src": "mobile-experiences-cover", "alt": "Tres apps móviles diseñadas por Tom Fabre: Mood Messenger, Appy y Apolo Launcher"}};
+SEO.en.proj["mobile-experiences"] = {"t": "Mobile App Design & UX/UI | Tom Fabre", "d": "Three mobile app design projects: Apolo Launcher, Appy × Jojol, and Mood Messenger. UX/UI, interface design, and product strategy.", "og": {"src": "mobile-experiences-cover", "alt": "Three mobile apps designed by Tom Fabre: Mood Messenger, Appy and Apolo Launcher"}};
+SEO.fr.proj["mobile-experiences"] = {"t": "Design d'applications mobiles et UX/UI | Tom Fabre", "d": "Trois projets de design mobile : Apolo Launcher, Appy × Jojol et Mood Messenger. UX/UI, interfaces et stratégie produit.", "og": {"src": "mobile-experiences-cover", "alt": "Trois applis mobiles conçues par Tom Fabre : Mood Messenger, Appy et Apolo Launcher"}};
 
 /* Carceral Ecologies: case page prepared, NOT published (PROJ.carceral.locked in c1p.js). Add the images (flow items) and remove `locked` to go live. */
 SECTIONS["carceral-ecologies"] = [

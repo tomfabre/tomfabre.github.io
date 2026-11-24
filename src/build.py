@@ -140,7 +140,7 @@ def meta_for(lg, page, key):
         return p[0] + " · " + S["name"] + " · " + p[1], p[3]
     if page == "service": return S["svc_"+key+"_t"], S["svc_"+key+"_d"]
     return S[page+"_t"], S[page+"_d"]
-OG_W, OG_H = 1200, 630
+OG_W, OG_H = 2400, 1260   # 2x of the 1200x630 design; same 1.91:1 ratio
 # ---- Social images (single source of truth) -------------------------------------------------------------------------
 # Priority: 1) explicit image of the page (SEO[lg].proj[key].og = {src, alt})  2) the project's own cover (img/<key>-cover.webp,
 # derived to 1200x630 without distortion)  3) language fallback og-default-{lg}.jpg (official files, served untouched from extras/).
@@ -202,6 +202,10 @@ PAGE_OG = {
         kicker={"es": "Branding · Web · Producto digital", "en": "Branding · Web · Digital product", "fr": "Branding · Web · Produit digital"},
         alt={"es": "Proyectos de Tom Fabre: Contazara, À2pas, HappyLife, Binōme, Yaypegs y 360estudio", "en": "Projects by Tom Fabre: Contazara, À2pas, HappyLife, Binōme, Yaypegs and 360estudio", "fr": "Projets de Tom Fabre : Contazara, À2pas, HappyLife, Binōme, Yaypegs et 360estudio"}),
 }
+OG_DEFAULT = {   # home, legal and any page without its own card: same minimal design, rendered at 2x (replaces the old 1200x630 extras/og-default-*.jpg)
+    "es": ("Diseñador de marca y producto digital", "Branding · Diseño web · UX/UI · Estrategia digital"),
+    "en": ("Brand & Digital Product Designer", "Branding · Web Design · UX/UI · Digital Strategy"),
+    "fr": ("Designer de marque et de produit digital", "Branding · Design web · UX/UI · Stratégie digitale")}
 OG_DESIGN = "og2"   # bump to force a re-render/cache-bust of every card after a design change
 import og_render
 def _ver_files(paths, salt=""):
@@ -224,8 +228,8 @@ def og_for(lg, page, key=None):
         if o: return _card(lg, o["src"], [o["src"]], p[0], p[1], o["alt"], "explicit")
         if key not in OG_FALLBACK_PROJECTS and og_variant_ok(key + "-cover"):
             return _card(lg, key + "-cover", [key + "-cover"], p[0], p[1], OG_ALT_COVER[lg].format(n=p[0], c=p[1]), "cover")
-    fn = f"og-default-{lg}.jpg"; w, h = _size("extras/" + fn)
-    return dict(kind="fallback", url=f"{SITE}/{fn}?v={_ver('extras/' + fn)}", file=fn, alt=OG_ALT_DEFAULT[lg], w=w, h=h)
+    fn = f"og-default-{lg}.jpg"
+    return dict(kind="fallback", url=f"{SITE}/{fn}?v={_ver_files([], OG_DESIGN + '|default|' + '|'.join(OG_DEFAULT[lg]))}", file=fn, alt=OG_ALT_DEFAULT[lg], w=OG_W, h=OG_H)
 # Runtime sync (c3.js updateHead): only the data comes from og_for, so the logic stays in one place.
 _ogi = {lg: {"fb": [(lambda o: [o["url"], o["alt"], o["w"], o["h"]])(og_for(lg, "home"))],
              "p": {q["key"]: [o["url"], o["alt"], o["w"], o["h"]] for q in PROJ for o in [og_for(lg, "project", q["key"])] if o["kind"] != "fallback"}} for lg in ("es","en","fr")}
@@ -391,9 +395,9 @@ shutil.copytree("img", dist + "/img");
 # social images: minimal cards rendered by og_render.py from the covers; regenerated every build so they cannot drift from the covers
 os.makedirs(dist + "/img/og", exist_ok=True)
 _cards = {o["file"]: o for _lg in ("es","en","fr") for _pg, _k in ROUTES for o in [og_for(_lg, _pg, _k)] if o["kind"] != "fallback"}
+for _lg, (_t, _k) in OG_DEFAULT.items(): og_render.render(f"{dist}/og-default-{_lg}.jpg", _t, _k, OG_BRAND, OG_URL, None, None, "text")
 for _f, _o in sorted(_cards.items()):
     _r = _o["render"]; og_render.render(f"{dist}/{_f}", _r["title"], _r["kicker"], OG_BRAND, OG_URL, _r["images"], _r["items"], _r["layout"])
-for _lg in ("es","en","fr"): shutil.copy(f"extras/og-default-{_lg}.jpg", f"{dist}/og-default-{_lg}.jpg")   # official files, byte-identical
 
 # post-build social-metadata check on EVERY page (app pages + legal): abort (never ship silently) on any mismatch; prints a report
 import html as _H
@@ -411,7 +415,7 @@ for _lg, _pg, _k, _f, _can_u, _og in _pages:
         try: _real = Image.open(_fp).size
         except Exception as _x: _bad.append(f"{_f}: image unreadable {_fp}: {_x}"); _real = None
         if _real and _real != (_og["w"], _og["h"]): _bad.append(f"{_f}: declared {_og['w']}x{_og['h']} but file is {_real}")
-        if _real and _real != (OG_W, OG_H): _bad.append(f"{_f}: social image must be {OG_W}x{OG_H}, file is {_real}")
+        if _real and _og["kind"] != "fallback" and _real != (OG_W, OG_H): _bad.append(f"{_f}: social image must be {OG_W}x{OG_H}, file is {_real}")
     def _one(attr, name):
         m = re.findall(r'<meta %s="%s" content="([^"]*)">' % (attr, re.escape(name)), _head)
         if len(m) != 1: _bad.append(f"{_f}: {name} appears {len(m)} times (expected 1)"); return None
@@ -448,7 +452,8 @@ os.makedirs(dist + "/js", exist_ok=True)
 for _f in MOTION_FILES: shutil.copy(_f, dist + "/js/" + os.path.basename(_f))
 shutil.copytree("fonts", dist + "/fonts"); open(dist + "/.nojekyll", "w").close()
 if not SITE.endswith("github.io"): open(dist + "/CNAME", "w").write(SITE.split("//")[-1] + "\n")   # GitHub Pages custom domain
-for f in glob.glob("extras/*"): shutil.copy(f, dist + "/" + f.split("/")[-1])
+for f in glob.glob("extras/*"):
+    if not os.path.basename(f).startswith("og-default-"): shutil.copy(f, dist + "/" + os.path.basename(f))   # og-default-*.jpg are rendered below (2x), not copied
 
 # 5) prerender (needs node + playwright). Skip with --no-prerender for quick previews; never deploy a dist without it.
 if "--no-prerender" not in sys.argv:
