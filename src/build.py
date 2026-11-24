@@ -188,19 +188,18 @@ PAGE_OG = {
         title={"es": "Servicios", "en": "Services", "fr": "Services"}, kicker={"es": "", "en": "", "fr": ""},
         items={"es": ["Branding & identidad", "Web & desarrollo", "Producto digital, UX/UI & estrategia digital"], "en": ["Branding & identity", "Web & development", "Digital product, UX/UI & digital strategy"], "fr": ["Branding & identité", "Web & développement", "Produit digital, UX/UI & stratégie digitale"]},
         alt={"es": "Servicios de Tom Fabre: Branding & identidad, Web & desarrollo, Producto digital, UX/UI & estrategia digital", "en": "Services by Tom Fabre: Branding & identity, Web & development, Digital product, UX/UI & digital strategy", "fr": "Services de Tom Fabre : Branding & identité, Web & développement, Produit digital, UX/UI & stratégie digitale"}),
-    ("bio", None): dict(slug="bio", src="bio", layout="quote",
+    ("bio", None): dict(slug="bio", src="bio", layout="text",
         title={"es": "Sobre mí", "en": "About me", "fr": "À propos"},
         kicker={"es": "Diseñador digital en Madrid", "en": "Digital designer in Madrid", "fr": "Designer digital à Madrid"},
-        items={"es": ["Pensar primero.", "Crear después."], "en": ["Think first.", "Create next."], "fr": ["Penser d'abord.", "Créer ensuite."]},
         alt={"es": "Tom Fabre, diseñador digital en Madrid: «Pensar primero. Crear después.»", "en": "Tom Fabre, digital designer in Madrid: “Think first. Create next.”", "fr": "Tom Fabre, designer digital à Madrid : « Penser d'abord. Créer ensuite. »"}),
     ("contact", None): dict(slug="contact", src="contact", layout="list",
         title={"es": "Contacto", "en": "Contact", "fr": "Contact"},
         kicker={"es": "Empecemos por una conversación", "en": "Let's start with a conversation", "fr": "Commençons par une conversation"},
         items={"es": ["hey@tomfabre.com"], "en": ["hey@tomfabre.com"], "fr": ["hey@tomfabre.com"]},
         alt={"es": "Contacto con Tom Fabre: hey@tomfabre.com", "en": "Contact Tom Fabre: hey@tomfabre.com", "fr": "Contacter Tom Fabre : hey@tomfabre.com"}),
-    ("projects", None): dict(slug="projects-collage", src="projects-collage", gen=True,
+    ("projects", None): dict(slug="projects-text", src="projects", layout="text",
         title={"es": "Proyectos", "en": "Projects", "fr": "Projets"},
-        kicker={"es": "Contazara, À2pas, HappyLife, Binōme, Yaypegs y 360estudio", "en": "Contazara, À2pas, HappyLife, Binōme, Yaypegs and 360estudio", "fr": "Contazara, À2pas, HappyLife, Binōme, Yaypegs et 360estudio"},
+        kicker={"es": "Branding · Web · Producto digital", "en": "Branding · Web · Digital product", "fr": "Branding · Web · Produit digital"},
         alt={"es": "Proyectos de Tom Fabre: Contazara, À2pas, HappyLife, Binōme, Yaypegs y 360estudio", "en": "Projects by Tom Fabre: Contazara, À2pas, HappyLife, Binōme, Yaypegs and 360estudio", "fr": "Projets de Tom Fabre : Contazara, À2pas, HappyLife, Binōme, Yaypegs et 360estudio"}),
 }
 OG_DESIGN = "og2"   # bump to force a re-render/cache-bust of every card after a design change
@@ -210,7 +209,7 @@ def _ver_files(paths, salt=""):
     for q in list(paths) + [og_render.__file__, og_render.FONT_LATIN, og_render.FONT_EXT]: h.update(open(q, "rb").read())
     return h.hexdigest()[:8]
 def _card(lg, slug, srcs, title, kicker, alt, kind, layout="cover", items=None, **extra):
-    imgs = [f"img/{x}.webp" for x in srcs if x not in ("services", "contact", "bio")]; f = f"img/og/{slug}-{lg}-{OG_W}x{OG_H}.jpg"
+    imgs = [f"img/{x}.webp" for x in srcs if x not in ("services", "contact", "bio", "projects")]; f = f"img/og/{slug}-{lg}-{OG_W}x{OG_H}.jpg"
     return dict(kind=kind, url=f"{SITE}/{f}?v={_ver_files(imgs, OG_DESIGN + '|' + layout + '|' + title + '|' + kicker + '|' + '|'.join(items or []))}", file=f, alt=alt, w=OG_W, h=OG_H,
                 render=dict(title=title, kicker=kicker, images=(imgs[0] if len(imgs) == 1 else imgs) if imgs else None, items=items, layout=layout), **extra)
 def og_for(lg, page, key=None):

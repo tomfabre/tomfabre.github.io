@@ -52,13 +52,13 @@ def _rounded(im, radius):
 
 def _list_card(items, cw, quote=False):
     """Text block on the page background, no box. Default: coloured dot + 32px text (list). quote=True: no dots, 52px semibold lines (a short phrase)."""
-    f = _font(72, 600) if quote else _font(44, 500); pad, gap, line = 0, (8 if quote else 30), (84 if quote else 54); ind = 0 if quote else 50
+    many = len(items) > 4; f = _font(72, 600) if quote else _font(40 if many else 44, 500); pad, gap, line = 0, (8 if quote else 16 if many else 30), (84 if quote else 50 if many else 54); ind = 0 if quote else 50
     tmp = ImageDraw.Draw(Image.new("RGB", (4, 4))); tw = cw - 2 * pad - ind
     rows = [_wrap(tmp, t, f, tw) for t in items]; vpad = 0
     ch = 2 * vpad + sum(len(r) * line for r in rows) + gap * (len(rows) - 1)
     card = Image.new("RGB", (cw, ch), BG); d = ImageDraw.Draw(card); y = vpad
     for i, r in enumerate(rows):
-        if not quote: d.ellipse((pad, y + 15, pad + 26, y + 41), fill=STRIPE[2:][i % 4])
+        if not quote: d.ellipse((pad, y + (13 if many else 15), pad + 26, y + (39 if many else 41)), fill=STRIPE[2:][i % 4])
         for l in r: f.draw(d, (pad + ind, y), l, FG); y += line
         y += gap
     return card, ch
@@ -67,7 +67,8 @@ def render(out, title, kicker, brand, url, images=None, items=None, layout="cove
     """layout: cover (one image shown whole, 2:1, or a list of 6 paths as a 3x2 grid) | portrait (one square image) | list (card with `items`) | quote (card with a short phrase, one line per item).
     Title/kicker text is wrapped to the left column."""
     cv = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(cv)
-    if layout in ("list", "quote"): cw = 580; card, ch = _list_card(items, cw, quote=(layout == "quote"))
+    if layout == "text": cw = ch = 0; card = None
+    elif layout in ("list", "quote"): cw = 580; card, ch = _list_card(items, cw, quote=(layout == "quote"))
     elif layout == "portrait": cw = ch = 380; card = _cover(images, cw, ch)
     elif isinstance(images, str): cw, ch = 660, 380; card = _cover(images, cw, ch)
     else:
@@ -75,13 +76,13 @@ def render(out, title, kicker, brand, url, images=None, items=None, layout="cove
         card = Image.new("RGB", (cw, ch), BG)
         for i, p in enumerate(images): card.paste(_cover(p, cell_w, cell_h), ((i % 2) * (cell_w + gap), (i // 2) * (cell_h + gap)))
     cx, cy = W - PAD - cw, (H - 8 - ch) // 2
-    if layout not in ("list", "quote"):   # text-only layouts have no box/border; their block is placed after the title, to share its vertical centre
+    if layout not in ("list", "quote", "text"):   # text-only layouts have no box/border; their block is placed after the title, to share its vertical centre
         card = _rounded(card, 22)
         cv.paste(card, (cx, cy), card)
         ring = Image.new("L", (cw * SS, ch * SS), 0); rd = ImageDraw.Draw(ring)
         rd.rounded_rectangle((0, 0, cw * SS - 1, ch * SS - 1), 22 * SS, outline=255, width=SS)
         cv.paste(Image.new("RGB", (cw, ch), LINE), (cx, cy), ring.resize((cw, ch), Image.LANCZOS))   # hairline border
-    colw = cx - PAD - 36
+    colw = (cx - PAD - 36) if layout != "text" else W - 2 * PAD
     _font(36, 600).draw(d, (PAD, PAD - 6), brand, FG)
     size = 104
     while True:
