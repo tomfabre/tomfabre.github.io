@@ -14,6 +14,15 @@ D = json.load(open("/tmp/data.json")); T, PROJ = D["T"], D["PROJ"]
 SECTIONS = D["SECTIONS"]; HERO = D["HERO"]
 # Projects flagged `locked` (c1p.js) stay visible but disabled in the UI: no page, no sitemap/llms/JSON-LD entry; their old URLs get a redirect stub.
 PUB = [i for i, p in enumerate(PROJ) if not p.get("locked")]
+# datePublished per project (language-independent), persisted in published.json. First run: every project already live gets the site creation
+# date (2026-11-13). Afterwards, a project that has no entry yet is stamped with the build date the first time it appears, i.e. when it is published.
+_PUB_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "published.json")
+_first = not os.path.exists(_PUB_FILE)
+PUBLISHED = {} if _first else json.load(open(_PUB_FILE, encoding="utf8"))
+for _i in PUB:
+    _k = PROJ[_i]["key"]
+    if _k not in PUBLISHED: PUBLISHED[_k] = "2026-11-13" if _first else datetime.date.today().isoformat(); print("published.json: nuevo proyecto", _k, PUBLISHED[_k])
+json.dump(PUBLISHED, open(_PUB_FILE, "w", encoding="utf8"), ensure_ascii=False, indent=1, sort_keys=True); open(_PUB_FILE, "a").write("\n")
 # strict validation of case-study sections / localized role / site link: any problem aborts the build before anything is written
 import validate_sections
 _errs = validate_sections.validate(SECTIONS, {p["key"] for p in PROJ}, lambda k, v: os.path.exists(f"img/{k}-{v}.webp"), PROJ)
@@ -47,7 +56,8 @@ person = {"@type":"Person","@id":PERSON_ID,"name":"Tom Fabre","alternateName":"�
   "sameAs":list(SOC.values()),"owns":{"@id":ORG_ID}}
 person.pop("owns")
 org = {"@type":"Organization","@id":ORG_ID,"name":"Binōme Studio","url":"https://binome.xyz","founder":{"@id":PERSON_ID}}
-site = {"@type":"WebSite","@id":SITE_ID,"url":f"{SITE}/","name":"Tom Fabre","inLanguage":["es","en","fr"],"publisher":{"@id":PERSON_ID}}
+SITE_CREATED = "2026-11-13"   # real date: first commit and creation of the GitHub repository
+site = {"@type":"WebSite","@id":SITE_ID,"url":f"{SITE}/","name":"Tom Fabre","inLanguage":["es","en","fr"],"datePublished":SITE_CREATED,"publisher":{"@id":PERSON_ID}}
 prof = {"@type":"ProfessionalService","@id":f"{SITE}/#professional-service","name":"Tom Fabre — Branding, web and product design","url":f"{SITE}/","email":EMAIL,
   "address":{"@type":"PostalAddress","addressLocality":"Madrid","addressCountry":"ES"},"areaServed":["Madrid","Spain","Remote worldwide"],
   "serviceType":[HS("en")[i][0] for i in range(len(SKEYS))],"knowsLanguage":["es","en","fr"],"founder":{"@id":PERSON_ID},"sameAs":list(SOC.values())}
@@ -77,7 +87,7 @@ def ld(lg, r):
         g.append({"@type":"ContactPage","@id":url+"#page","url":url,"name":title,"description":desc,"inLanguage":lg,"isPartOf":{"@id":SITE_ID},"about":{"@id":PERSON_ID}}); g.append(faq_node(lg, t["ct_faq"], url))
     elif page == "project":
         i = [q["key"] for q in PROJ].index(key); p = pj(lg,i)
-        g.append({"@type":"CreativeWork","@id":url+"#work","url":url,"name":p["name"],"description":p["summary"],"genre":p["category"],"inLanguage":lg,"creator":{"@id":PERSON_ID},"isPartOf":{"@id":SITE_ID}})
+        g.append({"@type":"CreativeWork","@id":url+"#work","url":url,"name":p["name"],"description":p["summary"],"genre":p["category"],"inLanguage":lg,"datePublished":PUBLISHED[key],"creator":{"@id":PERSON_ID},"isPartOf":{"@id":SITE_ID}})
     if page != "home":
         home = ("Inicio" if lg=="es" else ("Accueil" if lg=="fr" else "Home"))
         crumbs = [(home, U(lg))]
@@ -162,30 +172,36 @@ def _ver(path, salt=""):
 COLLAGE_SRCS = ["contazara-cover", "a2pas-cover", "happylife-cover", "binome-cover", "yaypegs-cover", "360estudio-cover"]
 OG_BRAND, OG_URL = "Tom Fabre", "tomfabre.com"
 PAGE_OG = {
-    ("service", "branding"): dict(src="contazara-cover",
-        title={"es": "Branding", "en": "Branding", "fr": "Branding"},
-        kicker={"es": "Identidad visual y sistemas de marca", "en": "Visual identity and brand systems", "fr": "Identité visuelle et systèmes de marque"},
-        alt={"es": "Branding por Tom Fabre: identidad visual y logotipo del caso Contazara",
-             "en": "Branding by Tom Fabre: visual identity and logo from the Contazara case",
-             "fr": "Branding par Tom Fabre : identité visuelle et logotype du cas Contazara"}),
-    ("service", "web"): dict(src="360estudio-cover",
-        title={"es": "Diseño web", "en": "Web design", "fr": "Design web"},
-        kicker={"es": "Diseño y desarrollo de sitios web", "en": "Website design and development", "fr": "Conception et développement de sites web"},
-        alt={"es": "Diseño web por Tom Fabre: la web de 360estudio en un portátil",
-             "en": "Web design by Tom Fabre: the 360estudio website on a laptop",
-             "fr": "Design web par Tom Fabre : le site de 360estudio sur un ordinateur portable"}),
-    ("service", "ux"): dict(src="happylife-cover",
-        title={"es": "Diseño UX/UI", "en": "UX/UI design", "fr": "Design UX/UI"},
-        kicker={"es": "Producto digital, apps e interfaces", "en": "Digital product, apps and interfaces", "fr": "Produit digital, apps et interfaces"},
-        alt={"es": "Diseño UX/UI por Tom Fabre: pantallas móviles del proyecto HappyLife",
-             "en": "UX/UI design by Tom Fabre: mobile screens from the HappyLife project",
-             "fr": "Design UX/UI par Tom Fabre : écrans mobiles du projet HappyLife"}),
-    ("projects", None): dict(src="projects-collage", gen=True,
+    ("service", "branding"): dict(slug="svc-branding", src="contazara-cover",
+        title={"es": "Branding & identidad", "en": "Branding & identity", "fr": "Branding & identité"},
+        kicker={"es": "Que te reconozcan. Incluso antes de leer tu nombre.", "en": "Be recognised. Before they even read your name.", "fr": "Être reconnu. Avant même qu'on lise ton nom."},
+        alt={"es": "Branding por Tom Fabre: identidad visual y logotipo del caso Contazara", "en": "Branding by Tom Fabre: visual identity and logo from the Contazara case", "fr": "Branding par Tom Fabre : identité visuelle et logotype du cas Contazara"}),
+    ("service", "web"): dict(slug="svc-web", src="360estudio-cover",
+        title={"es": "Web & desarrollo", "en": "Web & development", "fr": "Web & développement"},
+        kicker={"es": "Tu web debería trabajar tanto como tú.", "en": "Your website should work as hard as you do.", "fr": "Ton site devrait travailler autant que toi."},
+        alt={"es": "Web y desarrollo por Tom Fabre: la web de 360estudio en un portátil", "en": "Web and development by Tom Fabre: the 360estudio website on a laptop", "fr": "Web et développement par Tom Fabre : le site de 360estudio sur un ordinateur portable"}),
+    ("service", "ux"): dict(slug="svc-ux", src="happylife-cover",
+        title={"es": "Producto digital, UX/UI & estrategia digital", "en": "Digital product, UX/UI & digital strategy", "fr": "Produit digital, UX/UI & stratégie digitale"},
+        kicker={"es": "Menos fricción. Más ganas de volver.", "en": "Less friction. More reasons to come back.", "fr": "Moins de friction. Plus de plaisir à revenir."},
+        alt={"es": "Producto digital y UX/UI por Tom Fabre: pantallas móviles del proyecto HappyLife", "en": "Digital product and UX/UI by Tom Fabre: mobile screens from the HappyLife project", "fr": "Produit digital et UX/UI par Tom Fabre : écrans mobiles du projet HappyLife"}),
+    ("services", None): dict(slug="services", src="services", layout="list",
+        title={"es": "Servicios", "en": "Services", "fr": "Services"}, kicker={"es": "", "en": "", "fr": ""},
+        items={"es": ["Branding & identidad", "Web & desarrollo", "Producto digital, UX/UI & estrategia digital"], "en": ["Branding & identity", "Web & development", "Digital product, UX/UI & digital strategy"], "fr": ["Branding & identité", "Web & développement", "Produit digital, UX/UI & stratégie digitale"]},
+        alt={"es": "Servicios de Tom Fabre: Branding & identidad, Web & desarrollo, Producto digital, UX/UI & estrategia digital", "en": "Services by Tom Fabre: Branding & identity, Web & development, Digital product, UX/UI & digital strategy", "fr": "Services de Tom Fabre : Branding & identité, Web & développement, Produit digital, UX/UI & stratégie digitale"}),
+    ("bio", None): dict(slug="bio", src="bio", layout="quote",
+        title={"es": "Sobre mí", "en": "About me", "fr": "À propos"},
+        kicker={"es": "Diseñador digital en Madrid", "en": "Digital designer in Madrid", "fr": "Designer digital à Madrid"},
+        items={"es": ["Pensar primero.", "Crear después."], "en": ["Think first.", "Create next."], "fr": ["Penser d'abord.", "Créer ensuite."]},
+        alt={"es": "Tom Fabre, diseñador digital en Madrid: «Pensar primero. Crear después.»", "en": "Tom Fabre, digital designer in Madrid: “Think first. Create next.”", "fr": "Tom Fabre, designer digital à Madrid : « Penser d'abord. Créer ensuite. »"}),
+    ("contact", None): dict(slug="contact", src="contact", layout="list",
+        title={"es": "Contacto", "en": "Contact", "fr": "Contact"},
+        kicker={"es": "Empecemos por una conversación", "en": "Let's start with a conversation", "fr": "Commençons par une conversation"},
+        items={"es": ["hey@tomfabre.com"], "en": ["hey@tomfabre.com"], "fr": ["hey@tomfabre.com"]},
+        alt={"es": "Contacto con Tom Fabre: hey@tomfabre.com", "en": "Contact Tom Fabre: hey@tomfabre.com", "fr": "Contacter Tom Fabre : hey@tomfabre.com"}),
+    ("projects", None): dict(slug="projects-collage", src="projects-collage", gen=True,
         title={"es": "Proyectos", "en": "Projects", "fr": "Projets"},
         kicker={"es": "Contazara, À2pas, HappyLife, Binōme, Yaypegs y 360estudio", "en": "Contazara, À2pas, HappyLife, Binōme, Yaypegs and 360estudio", "fr": "Contazara, À2pas, HappyLife, Binōme, Yaypegs et 360estudio"},
-        alt={"es": "Proyectos de Tom Fabre: Contazara, À2pas, HappyLife, Binōme, Yaypegs y 360estudio",
-             "en": "Projects by Tom Fabre: Contazara, À2pas, HappyLife, Binōme, Yaypegs and 360estudio",
-             "fr": "Projets de Tom Fabre : Contazara, À2pas, HappyLife, Binōme, Yaypegs et 360estudio"}),
+        alt={"es": "Proyectos de Tom Fabre: Contazara, À2pas, HappyLife, Binōme, Yaypegs y 360estudio", "en": "Projects by Tom Fabre: Contazara, À2pas, HappyLife, Binōme, Yaypegs and 360estudio", "fr": "Projets de Tom Fabre : Contazara, À2pas, HappyLife, Binōme, Yaypegs et 360estudio"}),
 }
 OG_DESIGN = "og2"   # bump to force a re-render/cache-bust of every card after a design change
 import og_render
@@ -193,15 +209,16 @@ def _ver_files(paths, salt=""):
     h = hashlib.md5(salt.encode())
     for q in list(paths) + [og_render.__file__, og_render.FONT_LATIN, og_render.FONT_EXT]: h.update(open(q, "rb").read())
     return h.hexdigest()[:8]
-def _card(lg, slug, srcs, title, kicker, alt, kind, **extra):
-    imgs = [f"img/{x}.webp" for x in srcs]; f = f"img/og/{slug}-{lg}-{OG_W}x{OG_H}.jpg"
-    return dict(kind=kind, url=f"{SITE}/{f}?v={_ver_files(imgs, OG_DESIGN + '|' + title + '|' + kicker)}", file=f, alt=alt, w=OG_W, h=OG_H,
-                render=dict(title=title, kicker=kicker, images=imgs[0] if len(imgs) == 1 else imgs), **extra)
+def _card(lg, slug, srcs, title, kicker, alt, kind, layout="cover", items=None, **extra):
+    imgs = [f"img/{x}.webp" for x in srcs if x not in ("services", "contact", "bio")]; f = f"img/og/{slug}-{lg}-{OG_W}x{OG_H}.jpg"
+    return dict(kind=kind, url=f"{SITE}/{f}?v={_ver_files(imgs, OG_DESIGN + '|' + layout + '|' + title + '|' + kicker + '|' + '|'.join(items or []))}", file=f, alt=alt, w=OG_W, h=OG_H,
+                render=dict(title=title, kicker=kicker, images=(imgs[0] if len(imgs) == 1 else imgs) if imgs else None, items=items, layout=layout), **extra)
 def og_for(lg, page, key=None):
     """-> dict(kind, url, file, alt, w, h[, render]). kind: explicit | cover | fallback. url carries ?v=<content hash>."""
     pg = PAGE_OG.get((page, key))
     if pg:
-        return _card(lg, pg["src"], COLLAGE_SRCS if pg.get("gen") else [pg["src"]], pg["title"][lg], pg["kicker"][lg], pg["alt"][lg], "explicit")
+        return _card(lg, pg["slug"], COLLAGE_SRCS if pg.get("gen") else [pg["src"]], pg["title"][lg], pg["kicker"][lg], pg["alt"][lg], "explicit",
+                     layout=pg.get("layout", "cover"), items=(pg.get("items") or {}).get(lg))
     if page == "project":
         p = T[lg]["projects"][_proj_idx(key)]
         o = (D["SEO"][lg].get("proj", {}).get(key) or {}).get("og")
@@ -376,7 +393,7 @@ shutil.copytree("img", dist + "/img");
 os.makedirs(dist + "/img/og", exist_ok=True)
 _cards = {o["file"]: o for _lg in ("es","en","fr") for _pg, _k in ROUTES for o in [og_for(_lg, _pg, _k)] if o["kind"] != "fallback"}
 for _f, _o in sorted(_cards.items()):
-    _r = _o["render"]; og_render.render(f"{dist}/{_f}", _r["title"], _r["kicker"], OG_BRAND, OG_URL, _r["images"])
+    _r = _o["render"]; og_render.render(f"{dist}/{_f}", _r["title"], _r["kicker"], OG_BRAND, OG_URL, _r["images"], _r["items"], _r["layout"])
 for _lg in ("es","en","fr"): shutil.copy(f"extras/og-default-{_lg}.jpg", f"{dist}/og-default-{_lg}.jpg")   # official files, byte-identical
 
 # post-build social-metadata check on EVERY page (app pages + legal): abort (never ship silently) on any mismatch; prints a report

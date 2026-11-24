@@ -50,21 +50,37 @@ def _rounded(im, radius):
     m = Image.new("L", (w * SS, h * SS), 0); ImageDraw.Draw(m).rounded_rectangle((0, 0, w * SS - 1, h * SS - 1), radius * SS, fill=255)
     out = Image.new("RGBA", (w, h)); out.paste(im, (0, 0)); out.putalpha(m.resize((w, h), Image.LANCZOS)); return out
 
-def render(out, title, kicker, brand, url, images):
-    """images: one path (shown whole, 2:1) or a list of 6 paths (3x2 grid). Title/kicker text is wrapped to the left column."""
+def _list_card(items, cw, quote=False):
+    """Text block on the page background, no box. Default: coloured dot + 32px text (list). quote=True: no dots, 52px semibold lines (a short phrase)."""
+    f = _font(52, 600) if quote else _font(32, 500); pad, gap, line = 0, (6 if quote else 26), (64 if quote else 40); ind = 0 if quote else 36
+    tmp = ImageDraw.Draw(Image.new("RGB", (4, 4))); tw = cw - 2 * pad - ind
+    rows = [_wrap(tmp, t, f, tw) for t in items]; vpad = 0
+    ch = 2 * vpad + sum(len(r) * line for r in rows) + gap * (len(rows) - 1)
+    card = Image.new("RGB", (cw, ch), BG); d = ImageDraw.Draw(card); y = vpad
+    for i, r in enumerate(rows):
+        if not quote: d.ellipse((pad, y + 11, pad + 18, y + 29), fill=STRIPE[2:][i % 4])
+        for l in r: f.draw(d, (pad + ind, y), l, FG); y += line
+        y += gap
+    return card, ch
+
+def render(out, title, kicker, brand, url, images=None, items=None, layout="cover"):
+    """layout: cover (one image shown whole, 2:1, or a list of 6 paths as a 3x2 grid) | portrait (one square image) | list (card with `items`) | quote (card with a short phrase, one line per item).
+    Title/kicker text is wrapped to the left column."""
     cv = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(cv)
-    cw, ch = 616, 308                       # card, 2:1 like the covers
-    cx, cy = W - PAD - cw, (H - 8 - ch) // 2
-    if isinstance(images, str): card = _cover(images, cw, ch)
+    if layout in ("list", "quote"): cw = 520; card, ch = _list_card(items, cw, quote=(layout == "quote"))
+    elif layout == "portrait": cw = ch = 380; card = _cover(images, cw, ch)
+    elif isinstance(images, str): cw, ch = 616, 308; card = _cover(images, cw, ch)
     else:
-        gap = 6; cell_w, cell_h = (cw - 2 * gap) // 3, (ch - gap) // 2
+        cw, ch = 616, 308; gap = 6; cell_w, cell_h = (cw - 2 * gap) // 3, (ch - gap) // 2
         card = Image.new("RGB", (cw, ch), BG)
         for i, p in enumerate(images): card.paste(_cover(p, cell_w, cell_h), ((i % 3) * (cell_w + gap), (i // 3) * (cell_h + gap)))
-    card = _rounded(card, 22)
-    cv.paste(card, (cx, cy), card)
-    ring = Image.new("L", (cw * SS, ch * SS), 0); rd = ImageDraw.Draw(ring)
-    rd.rounded_rectangle((0, 0, cw * SS - 1, ch * SS - 1), 22 * SS, outline=255, width=SS)
-    cv.paste(Image.new("RGB", (cw, ch), LINE), (cx, cy), ring.resize((cw, ch), Image.LANCZOS))   # hairline border
+    cx, cy = W - PAD - cw, (H - 8 - ch) // 2
+    if layout not in ("list", "quote"):   # text-only layouts have no box/border; their block is placed after the title, to share its vertical centre
+        card = _rounded(card, 22)
+        cv.paste(card, (cx, cy), card)
+        ring = Image.new("L", (cw * SS, ch * SS), 0); rd = ImageDraw.Draw(ring)
+        rd.rounded_rectangle((0, 0, cw * SS - 1, ch * SS - 1), 22 * SS, outline=255, width=SS)
+        cv.paste(Image.new("RGB", (cw, ch), LINE), (cx, cy), ring.resize((cw, ch), Image.LANCZOS))   # hairline border
     colw = cx - PAD - 40
     _font(28, 500).draw(d, (PAD, PAD - 4), brand, FG)
     size = 84
@@ -75,6 +91,7 @@ def render(out, title, kicker, brand, url, images):
     lh = int(size * 1.06); kf = _font(26, 400); kl = _wrap(d, kicker, kf, colw) if kicker else []
     block = len(lines) * lh + (len(kl) * 34 + 18 if kl else 0)
     y = (H - 8 - block) // 2 + 4
+    if layout in ("list", "quote"): cv.paste(card, (cx, y + (block - ch) // 2))
     for l in lines: tf.draw(d, (PAD, y), l, FG); y += lh
     y += 18 - 4
     for l in kl: kf.draw(d, (PAD, y), l, MUTED); y += 34
