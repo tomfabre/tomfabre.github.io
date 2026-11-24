@@ -206,6 +206,7 @@ def render(lg, site, email, css, consent_js, nav_extra="", og_html=""):
 """
     return f"""<!doctype html>
 <html lang="{lg}">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{e(d['title'])}</title>
@@ -223,6 +224,7 @@ def render(lg, site, email, css, consent_js, nav_extra="", og_html=""):
 gtag("event", "page_view", {{ page_title: document.title, page_language: document.documentElement.lang }});
 </script>
 <style>{css}{page_css}</style>
+</head>
 <body>
 <div class="wrap lg-page">
   <header class="lg-top"><a class="lg-back" href="{HOME[lg]}">← {e(d['back'])}</a><nav class="lg-langs" aria-label="Language">{langs}</nav></header>

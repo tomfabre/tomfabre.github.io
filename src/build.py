@@ -276,7 +276,9 @@ def page_html(lg, page, key):
     h = h.replace('href="cv-alvaro-fabre.pdf"',f'href="/{cvf}"').replace('cvUrl:"cv-alvaro-fabre.pdf"',f'cvUrl:"/{cvf}"')
     if EXT_JS: h = h + f'<script>window.__CV="/{cvf}"</script>\n' + APP_TAG
     h = h + MOTION_TAGS
-    return f'<!doctype html>\n<html lang="{lg}">\n<meta charset="utf-8">\n' + h
+    # explicit <head>/<body>/<html> boundaries: browsers infer them, but simpler crawlers (LinkedIn) only read og:* tags that sit inside a real <head>
+    assert h.count("<!--BODY-->") == 1; h = h.replace("<!--BODY-->", "</head>\n<body>\n<!--BODY-->", 1) + "</body>\n</html>\n"
+    return f'<!doctype html>\n<html lang="{lg}">\n<head>\n<meta charset="utf-8">\n' + h
 npages = 0
 for lg in ("es","en","fr"):
     for page, key in ROUTES:
